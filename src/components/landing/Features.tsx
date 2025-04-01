@@ -1,5 +1,6 @@
 
 import { CheckCircle, BarChart, Zap } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const FeatureCard = ({ 
   icon: Icon,
@@ -32,11 +33,13 @@ const ModuleCard = ({
   icon,
   title,
   description,
+  link,
   delay = 0
 }: {
   icon: React.ReactNode,
   title: string,
   description: string,
+  link: string,
   delay?: number
 }) => {
   return (
@@ -47,12 +50,12 @@ const ModuleCard = ({
       <div className="mb-4 transform group-hover:scale-110 transition-transform duration-300">{icon}</div>
       <h3 className="text-lg font-semibold mb-2 group-hover:text-[#D4AF37] transition-colors duration-300">{title}</h3>
       <p className="text-gray-400 text-sm mb-3 group-hover:text-gray-300 transition-colors duration-300">{description}</p>
-      <a href="#" className="text-[#D4AF37] text-sm font-medium hover:underline inline-flex items-center">
+      <Link to={link} className="text-[#D4AF37] text-sm font-medium hover:underline inline-flex items-center">
         Learn more 
         <svg className="w-4 h-4 ml-1 transform group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
         </svg>
-      </a>
+      </Link>
     </div>
   );
 };
@@ -117,48 +120,56 @@ const Features = () => {
             icon={<div className="w-10 h-10 bg-gradient-to-br from-black to-zinc-900 text-[#D4AF37] rounded-lg flex items-center justify-center shadow-md group-hover:shadow-[#D4AF37]/20 transition-all duration-300 border border-[#D4AF37]/20">S</div>}
             title="Sales & Order Management"
             description="Manage quotes, track sales, email orders directly from your dashboard."
+            link="/modules/sales-order-management"
             delay={0.1}
           />
           <ModuleCard
             icon={<div className="w-10 h-10 bg-gradient-to-br from-black to-zinc-900 text-[#D4AF37] rounded-lg flex items-center justify-center shadow-md group-hover:shadow-[#D4AF37]/20 transition-all duration-300 border border-[#D4AF37]/20">F</div>}
             title="Finance & Accounting"
             description="Manage financial data and reporting for better decision making."
+            link="/modules/finance-accounting"
             delay={0.2}
           />
           <ModuleCard
             icon={<div className="w-10 h-10 bg-gradient-to-br from-black to-zinc-900 text-[#D4AF37] rounded-lg flex items-center justify-center shadow-md group-hover:shadow-[#D4AF37]/20 transition-all duration-300 border border-[#D4AF37]/20">P</div>}
             title="Product Design"
             description="Create and manage product designs with collaborative tools."
+            link="/modules/product-design"
             delay={0.3}
           />
           <ModuleCard
             icon={<div className="w-10 h-10 bg-gradient-to-br from-black to-zinc-900 text-[#D4AF37] rounded-lg flex items-center justify-center shadow-md group-hover:shadow-[#D4AF37]/20 transition-all duration-300 border border-[#D4AF37]/20">C</div>}
             title="Customer Service"
             description="Manage customer support issues faster, improving the experience."
+            link="/modules/customer-service"
             delay={0.4}
           />
           <ModuleCard
             icon={<div className="w-10 h-10 bg-gradient-to-br from-black to-zinc-900 text-[#D4AF37] rounded-lg flex items-center justify-center shadow-md group-hover:shadow-[#D4AF37]/20 transition-all duration-300 border border-[#D4AF37]/20">I</div>}
             title="Inventory & Logistics"
             description="Track inventory and manage shipping operations seamlessly."
+            link="/modules/inventory-logistics"
             delay={0.5}
           />
           <ModuleCard
             icon={<div className="w-10 h-10 bg-gradient-to-br from-black to-zinc-900 text-[#D4AF37] rounded-lg flex items-center justify-center shadow-md group-hover:shadow-[#D4AF37]/20 transition-all duration-300 border border-[#D4AF37]/20">P</div>}
             title="Production & Manufacturing"
             description="Track production schedules, allocations, and resource utilization."
+            link="/modules/production-manufacturing"
             delay={0.6}
           />
           <ModuleCard
             icon={<div className="w-10 h-10 bg-gradient-to-br from-black to-zinc-900 text-[#D4AF37] rounded-lg flex items-center justify-center shadow-md group-hover:shadow-[#D4AF37]/20 transition-all duration-300 border border-[#D4AF37]/20">A</div>}
             title="Analytics & Reporting"
             description="Get powerful insights from your data, events, and reports."
+            link="/modules/analytics-reporting"
             delay={0.7}
           />
           <ModuleCard
             icon={<div className="w-10 h-10 bg-gradient-to-br from-black to-zinc-900 text-[#D4AF37] rounded-lg flex items-center justify-center shadow-md group-hover:shadow-[#D4AF37]/20 transition-all duration-300 border border-[#D4AF37]/20">I</div>}
             title="Integration Platform"
             description="Seamlessly integrate with your own data and third party tools."
+            link="/modules/integration-platform"
             delay={0.8}
           />
         </div>
