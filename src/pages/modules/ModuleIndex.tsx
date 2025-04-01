@@ -180,9 +180,11 @@ const ModuleIndex = () => {
             Get started with any of our modules or bundle them together for maximum efficiency.
           </p>
           <div className="flex flex-wrap justify-center gap-4">
-            <Button variant="gold" size="lg">
-              Get Started
-            </Button>
+            <Link to="/get-started">
+              <Button variant="gold" size="lg">
+                Get Started
+              </Button>
+            </Link>
             <Button 
               variant="outline" 
               className="border-zinc-700 text-gray-300 hover:bg-zinc-800 hover:border-[#D4AF37]" 

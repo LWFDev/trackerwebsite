@@ -1,6 +1,7 @@
 
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const Hero = () => {
   return (
@@ -30,12 +31,14 @@ const Hero = () => {
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4 animate-fade-in" style={{ animationDelay: '0.3s' }}>
-              <Button 
-                size="lg" 
-                className="bg-gradient-to-r from-[#D4AF37] to-[#F2D675] text-black px-6 shadow-lg hover:shadow-[#D4AF37]/20 transition-all hover:-translate-y-1"
-              >
-                Get Started <ArrowRight className="ml-1 h-5 w-5" />
-              </Button>
+              <Link to="/get-started">
+                <Button 
+                  size="lg" 
+                  className="bg-gradient-to-r from-[#D4AF37] to-[#F2D675] text-black px-6 shadow-lg hover:shadow-[#D4AF37]/20 transition-all hover:-translate-y-1"
+                >
+                  Get Started <ArrowRight className="ml-1 h-5 w-5" />
+                </Button>
+              </Link>
               <Button 
                 size="lg" 
                 variant="outline" 

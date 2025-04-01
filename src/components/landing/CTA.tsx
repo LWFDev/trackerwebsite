@@ -1,6 +1,7 @@
 
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const CTA = () => {
   return (
@@ -27,13 +28,15 @@ const CTA = () => {
             Start your free 14-day trial today. No credit card required.
           </p>
           
-          <Button 
-            size="lg" 
-            className="px-8 shadow-xl bg-gradient-to-r from-[#D4AF37] to-[#F2D675] hover:from-[#F2D675] hover:to-[#D4AF37] text-black transform transition-all duration-300 hover:-translate-y-1 animate-fade-in"
-            style={{ animationDelay: '0.3s' }}
-          >
-            Get Started <ArrowRight className="ml-1 h-5 w-5" />
-          </Button>
+          <Link to="/get-started">
+            <Button 
+              size="lg" 
+              className="px-8 shadow-xl bg-gradient-to-r from-[#D4AF37] to-[#F2D675] hover:from-[#F2D675] hover:to-[#D4AF37] text-black transform transition-all duration-300 hover:-translate-y-1 animate-fade-in"
+              style={{ animationDelay: '0.3s' }}
+            >
+              Get Started <ArrowRight className="ml-1 h-5 w-5" />
+            </Button>
+          </Link>
           
           <p className="mt-8 text-sm text-gray-400 animate-fade-in" style={{ animationDelay: '0.4s' }}>
             Join <span className="text-[#D4AF37]">10,000+</span> businesses using Tracker

@@ -2,6 +2,7 @@
 import React from "react";
 import { Check } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { Link } from "react-router-dom";
 
 const NewUserCard = () => {
   return (
@@ -24,7 +25,9 @@ const NewUserCard = () => {
           View pricing options
         </li>
       </ul>
-      <Button variant="gold" className="w-full">Get Started</Button>
+      <Link to="/get-started">
+        <Button variant="gold" className="w-full">Get Started</Button>
+      </Link>
     </div>
   );
 };
