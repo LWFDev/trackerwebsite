@@ -39,7 +39,7 @@ const Hero = () => {
             <div className="relative">
               <div className="bg-zinc-900 rounded-lg shadow-2xl overflow-hidden border border-zinc-800">
                 <img 
-                  src="/lovable-uploads/81aa8264-24b3-486e-a7e8-38fee0dd8e68.png" 
+                  src="https://nubosync.com/wp-content/uploads/2025/02/screen-1.webp" 
                   alt="Platform dashboard" 
                   className="w-full h-auto opacity-90"
                 />
