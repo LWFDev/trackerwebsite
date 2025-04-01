@@ -1,3 +1,4 @@
+
 import { ReactNode, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
@@ -48,7 +49,9 @@ interface ModuleLayoutProps {
     title: string;
     description: string;
     primaryButtonText?: string;
+    primaryButtonLink?: string;
     secondaryButtonText?: string;
+    secondaryButtonLink?: string;
   };
   rating?: number;
   reviews?: number;
@@ -95,6 +98,12 @@ const ModuleLayout = ({
     }
   };
 
+  const scrollToMain = () => {
+    if (mainRef.current) {
+      mainRef.current.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
     <div className="min-h-screen flex flex-col bg-black">
       {/* Hero Section */}
@@ -113,13 +122,19 @@ const ModuleLayout = ({
               <h1 className="text-4xl md:text-5xl font-bold mb-4">{title}</h1>
               <p className="text-lg md:text-xl text-white/90 mb-6">{description}</p>
               
-              <div className="flex space-x-4 mb-8">
-                <Button variant="gold" className="shadow-md">
-                  Get Started <ArrowRight className="ml-1 h-5 w-5" />
+              <div className="flex flex-wrap gap-4 mb-8">
+                <Button 
+                  variant="gold" 
+                  className="shadow-md"
+                  onClick={scrollToMain}
+                >
+                  Learn More <ArrowRight className="ml-1 h-5 w-5" />
                 </Button>
-                <Button variant="outline" className="bg-zinc-800/50 text-white border-zinc-700 hover:bg-zinc-700 hover:border-[#D4AF37]">
-                  Request Demo
-                </Button>
+                <Link to="/get-started">
+                  <Button variant="outline" className="bg-zinc-800/50 text-white border-zinc-700 hover:bg-zinc-700 hover:border-[#D4AF37]">
+                    Request Demo
+                  </Button>
+                </Link>
               </div>
               
               {rating && (
@@ -156,7 +171,7 @@ const ModuleLayout = ({
           <div className="container mx-auto px-4">
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
               {stats.map((stat, index) => (
-                <div key={index} className="flex flex-col items-center text-center">
+                <div key={index} className="flex flex-col items-center text-center p-6 bg-zinc-800/50 rounded-lg border border-zinc-700 hover:border-[#D4AF37] transition-all duration-300 hover:-translate-y-1">
                   {stat.icon && <div className="mb-4">{stat.icon}</div>}
                   <div className="text-3xl font-bold mb-2 text-[#D4AF37]">{stat.value}</div>
                   <div className="text-gray-400">{stat.label}</div>
@@ -201,7 +216,7 @@ const ModuleLayout = ({
             
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {keyFeatures.features.map((feature, index) => (
-                <div key={index} className="bg-zinc-800 p-6 rounded-lg shadow-md border border-zinc-700 hover:border-[#D4AF37] transition-all">
+                <div key={index} className="bg-zinc-800 p-6 rounded-lg shadow-md border border-zinc-700 hover:border-[#D4AF37] transition-all duration-300 hover:-translate-y-1">
                   <div className="flex items-start">
                     <div className="flex-shrink-0 mr-4 text-[#D4AF37]">
                       {feature.icon}
@@ -274,7 +289,7 @@ const ModuleLayout = ({
             
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               {relatedModules.map((module, index) => (
-                <div key={index} className="bg-zinc-800 p-6 rounded-lg shadow-md border border-zinc-700 hover:border-[#D4AF37] transition-all hover:-translate-y-1">
+                <div key={index} className="bg-zinc-800 p-6 rounded-lg shadow-md border border-zinc-700 hover:border-[#D4AF37] transition-all duration-300 hover:-translate-y-1">
                   <div className="text-[#D4AF37] mb-4">{module.icon}</div>
                   <h3 className="text-xl font-semibold mb-2 text-white">{module.title}</h3>
                   <p className="text-gray-400 mb-4">{module.description}</p>
@@ -297,15 +312,19 @@ const ModuleLayout = ({
             
             <div className="flex flex-wrap justify-center gap-4">
               {ctaSection.primaryButtonText && (
-                <Button variant="gold" className="shadow-md">
-                  {ctaSection.primaryButtonText} <ArrowRight className="ml-1 h-5 w-5" />
-                </Button>
+                <Link to={ctaSection.primaryButtonLink || "/get-started"}>
+                  <Button variant="gold" className="shadow-md">
+                    {ctaSection.primaryButtonText} <ArrowRight className="ml-1 h-5 w-5" />
+                  </Button>
+                </Link>
               )}
               
               {ctaSection.secondaryButtonText && (
-                <Button variant="outline" className="bg-zinc-800/50 text-white border-zinc-700 hover:bg-zinc-700 hover:border-[#D4AF37]">
-                  {ctaSection.secondaryButtonText}
-                </Button>
+                <Link to={ctaSection.secondaryButtonLink || "/pricing"}>
+                  <Button variant="outline" className="bg-zinc-800/50 text-white border-zinc-700 hover:bg-zinc-700 hover:border-[#D4AF37]">
+                    {ctaSection.secondaryButtonText}
+                  </Button>
+                </Link>
               )}
             </div>
           </div>

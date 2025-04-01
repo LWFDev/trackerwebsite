@@ -1,116 +1,117 @@
 
 import ModuleLayout from "@/components/modules/ModuleLayout";
-import { ClipboardList, Clock, Calendar, CheckCircle, Users, BarChart2, MessageSquare, FileText, Flag, Layout } from "lucide-react";
+import { ClipboardList, Clock, Calendar, CheckCircle, Users, BarChart2, MessageSquare, FileText, Flag, Layout, Target, Trello, Copy, BellRing, Briefcase, Globe } from "lucide-react";
 
 const ProjectManagement = () => {
   return (
-    <>
-      <ModuleLayout
-        title="Project Management"
-        description="Plan, track, and manage projects with ease using our comprehensive project management solution."
-        color="purple"
-        stats={[
+    <ModuleLayout
+      title="Project Management"
+      description="Plan, track, and deliver projects successfully with our comprehensive project management platform designed for teams of all sizes."
+      color="purple"
+      stats={[
+        {
+          value: "35%",
+          label: "Faster Project Completion Rate",
+          icon: <Clock className="h-8 w-8 text-purple-500" />
+        },
+        {
+          value: "25k+",
+          label: "Projects Successfully Managed",
+          icon: <ClipboardList className="h-8 w-8 text-purple-500" />
+        },
+        {
+          value: "42%",
+          label: "Improvement in Team Collaboration",
+          icon: <Users className="h-8 w-8 text-purple-500" />
+        },
+        {
+          value: "98%",
+          label: "Customer Satisfaction Rate",
+          icon: <CheckCircle className="h-8 w-8 text-purple-500" />
+        }
+      ]}
+      mainSection={{
+        title: "Complete Project Management Solution",
+        description: "Our Project Management platform provides all the tools you need to plan, execute, and deliver successful projects while keeping your team aligned, informed, and productive."
+      }}
+      keyFeatures={{
+        title: "Comprehensive Project Toolkit",
+        description: "Everything you need to manage projects of any size or complexity",
+        features: [
           {
-            value: "35%",
-            label: "Faster project completion",
-            icon: <Clock className="h-8 w-8 text-purple-500" />
+            title: "Flexible Task Management",
+            description: "Create, assign, and track tasks with customizable workflows, priorities, dependencies, and automated notifications.",
+            icon: <CheckCircle className="h-6 w-6" />
           },
           {
-            value: "25k+",
-            label: "Projects managed",
-            icon: <ClipboardList className="h-8 w-8 text-purple-500" />
+            title: "Visual Project Planning",
+            description: "Visualize project timelines with interactive Gantt charts, Kanban boards, calendars, and resource allocation views.",
+            icon: <Trello className="h-6 w-6" />
           },
           {
-            value: "42%",
-            label: "Improved team collaboration",
-            icon: <Users className="h-8 w-8 text-purple-500" />
+            title: "Real-time Collaboration",
+            description: "Foster team communication with comments, file sharing, @mentions, and integrated discussion threads.",
+            icon: <MessageSquare className="h-6 w-6" />
           },
           {
-            value: "98%",
-            label: "Customer satisfaction",
-            icon: <CheckCircle className="h-8 w-8 text-purple-500" />
+            title: "Customizable Workflows",
+            description: "Adapt to any methodology with customizable templates, stages, automations, and approval processes.",
+            icon: <Layout className="h-6 w-6" />
+          },
+          {
+            title: "Resource Management",
+            description: "Optimize team workloads with capacity planning, resource allocation, time tracking, and availability forecasting.",
+            icon: <Users className="h-6 w-6" />
+          },
+          {
+            title: "Comprehensive Analytics",
+            description: "Track project performance with real-time dashboards showing progress, budget utilization, team productivity, and forecasts.",
+            icon: <BarChart2 className="h-6 w-6" />
           }
-        ]}
-        mainSection={{
-          title: "Project Management Simplified",
-          description: "Our Project Management module provides all the tools you need to manage projects of any size and complexity."
-        }}
-        keyFeatures={{
-          title: "Key Features",
-          description: "Everything you need to plan, track, and deliver successful projects",
-          features: [
-            {
-              title: "Task Management",
-              description: "Create, assign, and track tasks with deadlines, priorities, and dependencies.",
-              icon: <CheckCircle className="h-6 w-6" />
-            },
-            {
-              title: "Timeline & Gantt Charts",
-              description: "Visualize project schedules, milestones, and dependencies with interactive Gantt charts.",
-              icon: <Calendar className="h-6 w-6" />
-            },
-            {
-              title: "Team Collaboration",
-              description: "Facilitate team communication with comments, file sharing, and @mentions.",
-              icon: <Users className="h-6 w-6" />
-            },
-            {
-              title: "Project Templates",
-              description: "Save time by creating standardized templates for recurring project types.",
-              icon: <Layout className="h-6 w-6" />
-            },
-            {
-              title: "Resource Management",
-              description: "Allocate and track team resources, workloads, and availability.",
-              icon: <Flag className="h-6 w-6" />
-            },
-            {
-              title: "Project Analytics",
-              description: "Track project progress, team performance, and budget utilization with detailed analytics.",
-              icon: <BarChart2 className="h-6 w-6" />
-            }
-          ]
-        }}
-        specialSection={{
-          title: "Streamlined Workflows for Every Team",
-          description: "Customize your project management experience to fit your team's unique workflow and requirements.",
-          items: [
-            { text: "Flexible methodologies – Agile, Waterfall, or hybrid approaches", icon: <CheckCircle className="h-5 w-5" /> },
-            { text: "Custom workflows and approval processes", icon: <CheckCircle className="h-5 w-5" /> },
-            { text: "Automated notifications and reminders", icon: <CheckCircle className="h-5 w-5" /> },
-            { text: "Time tracking and reporting", icon: <CheckCircle className="h-5 w-5" /> },
-            { text: "Client collaboration and visibility", icon: <CheckCircle className="h-5 w-5" /> },
-            { text: "Mobile access for on-the-go project management", icon: <CheckCircle className="h-5 w-5" /> }
-          ]
-        }}
-        ctaSection={{
-          title: "Ready to Streamline Your Projects?",
-          description: "Join thousands of teams that deliver projects on time and within budget with NuboSync.",
-          primaryButtonText: "Get Started Today",
-          secondaryButtonText: "Request Demo"
-        }}
-        relatedModules={[
-          {
-            title: "Document Management",
-            icon: <FileText className="h-8 w-8" />,
-            description: "Store, organize, and share documents securely across your organization.",
-            link: "/modules/document-management"
-          },
-          {
-            title: "Analytics & Reporting",
-            icon: <BarChart2 className="h-8 w-8" />,
-            description: "Get powerful insights from your data, anytime, anywhere.",
-            link: "/modules/analytics-reporting"
-          },
-          {
-            title: "Customer Portal",
-            icon: <Users className="h-8 w-8" />,
-            description: "Provide your customers with a self-service portal for support and information.",
-            link: "/modules/customer-portal"
-          }
-        ]}
-      />
-    </>
+        ]
+      }}
+      specialSection={{
+        title: "Built for Every Project Methodology",
+        subtitle: "Adaptable Framework",
+        description: "Our platform supports any project management approach with customizable workflows and specialized tools.",
+        items: [
+          { text: "Agile project management with sprints, user stories, and velocity tracking", icon: <Target className="h-5 w-5" /> },
+          { text: "Traditional waterfall planning with critical path analysis", icon: <ClipboardList className="h-5 w-5" /> },
+          { text: "Kanban workflow visualization with WIP limits and flow metrics", icon: <Copy className="h-5 w-5" /> },
+          { text: "Hybrid approaches combining different methodologies", icon: <Briefcase className="h-5 w-5" /> },
+          { text: "Automated notifications and reminders for deadlines and milestones", icon: <BellRing className="h-5 w-5" /> },
+          { text: "Global collaboration tools for distributed teams across time zones", icon: <Globe className="h-5 w-5" /> }
+        ]
+      }}
+      ctaSection={{
+        title: "Ready to Transform Your Project Management?",
+        description: "Join thousands of teams that deliver projects successfully with our comprehensive platform.",
+        primaryButtonText: "Start Free Trial",
+        primaryButtonLink: "/get-started",
+        secondaryButtonText: "Schedule Demo",
+        secondaryButtonLink: "/pricing"
+      }}
+      relatedModules={[
+        {
+          title: "Document Management",
+          icon: <FileText className="h-8 w-8" />,
+          description: "Integrate project documentation with version control and team access management.",
+          link: "/modules/document-management"
+        },
+        {
+          title: "Analytics & Reporting",
+          icon: <BarChart2 className="h-8 w-8" />,
+          description: "Gain deeper insights into project metrics, resource utilization, and team performance.",
+          link: "/modules/analytics-reporting"
+        },
+        {
+          title: "Customer Portal",
+          icon: <Users className="h-8 w-8" />,
+          description: "Share project updates and deliverables with clients through a dedicated portal.",
+          link: "/modules/customer-portal"
+        }
+      ]}
+    />
   );
 };
 

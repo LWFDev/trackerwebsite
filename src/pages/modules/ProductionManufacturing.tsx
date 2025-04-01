@@ -1,11 +1,12 @@
+
 import ModuleLayout from "@/components/modules/ModuleLayout";
-import { Layers, Clock, Percent, Settings, BarChart2, Wrench, Clipboard, LineChart, CheckCircle, File, Users, Layout } from "lucide-react";
+import { Layers, Clock, Percent, Settings, BarChart2, Wrench, Clipboard, LineChart, CheckCircle, File, Users, Layout, Tool, Cpu, AlertTriangle, BookOpen, Database, Sliders } from "lucide-react";
 
 const ProductionManufacturing = () => {
   return (
     <ModuleLayout
       title="Production Management"
-      description="Streamline your production processes, optimize resource allocation, and increase efficiency with our comprehensive Production Management solution."
+      description="Streamline your production processes, optimize resource allocation, and increase efficiency with our comprehensive manufacturing solution."
       color="blue"
       stats={[
         {
@@ -30,73 +31,83 @@ const ProductionManufacturing = () => {
         }
       ]}
       mainSection={{
-        title: "Comprehensive Production Management",
-        description: "Our Production Management module provides all the tools you need to optimize your manufacturing processes."
+        title: "Transform Your Manufacturing Operations",
+        description: "Our Production Management module provides the tools you need to optimize your entire manufacturing process from planning to quality control, increasing efficiency while reducing costs."
       }}
       keyFeatures={{
-        title: "Key Features",
+        title: "Complete Production Control",
         description: "Everything you need to optimize your manufacturing processes",
         features: [
           {
-            title: "Production Planning",
-            description: "Create detailed production plans with resource allocation, timelines, and dependencies.",
+            title: "Advanced Production Planning",
+            description: "Create optimized production plans with intelligent resource allocation, dependency management, and capacity planning.",
             icon: <Clipboard className="h-6 w-6" />
           },
           {
-            title: "Scheduling & Capacity",
-            description: "Optimize production schedules based on capacity, priorities, and deadlines.",
+            title: "Dynamic Scheduling",
+            description: "Optimize production schedules with real-time adjustments based on priorities, capacity, and material availability.",
             icon: <Clock className="h-6 w-6" />
           },
           {
-            title: "Quality Control",
-            description: "Implement quality checks at every stage of production to ensure consistent quality.",
+            title: "Integrated Quality Management",
+            description: "Implement comprehensive quality controls with inspection points, testing protocols, and non-conformance tracking.",
             icon: <CheckCircle className="h-6 w-6" />
           },
           {
-            title: "Resource Management",
-            description: "Track and allocate materials, equipment, and human resources efficiently.",
+            title: "Intelligent Resource Management",
+            description: "Track and allocate materials, equipment, and personnel with precision to maximize utilization and minimize waste.",
             icon: <Settings className="h-6 w-6" />
           },
           {
-            title: "Performance Analytics",
-            description: "Monitor key performance indicators and identify areas for improvement.",
+            title: "Real-time Performance Monitoring",
+            description: "Monitor key performance indicators with customizable dashboards that highlight bottlenecks and improvement opportunities.",
             icon: <BarChart2 className="h-6 w-6" />
           },
           {
-            title: "Maintenance Scheduling",
-            description: "Plan and track preventive maintenance to minimize downtime and ensure equipment life.",
+            title: "Predictive Maintenance",
+            description: "Minimize downtime with condition-based monitoring, maintenance forecasting, and automated service scheduling.",
             icon: <Wrench className="h-6 w-6" />
           }
         ]
       }}
       specialSection={{
-        title: "Streamlined Production Process",
-        subtitle: "Process",
-        description: "Our platform guides you through every stage of the production lifecycle."
+        title: "Designed for Manufacturing Excellence",
+        subtitle: "Industry Solutions",
+        description: "Our production management platform is tailored to meet the unique challenges of various manufacturing environments.",
+        items: [
+          { text: "Discrete manufacturing with build-to-order and assemble-to-order workflows", icon: <Layers className="h-5 w-5" /> },
+          { text: "Process manufacturing with batch processing and formula management", icon: <Database className="h-5 w-5" /> },
+          { text: "Lean manufacturing tools including kanban and pull systems", icon: <Sliders className="h-5 w-5" /> },
+          { text: "Industry 4.0 ready with IoT integration and machine connectivity", icon: <Cpu className="h-5 w-5" /> },
+          { text: "Regulatory compliance tools for ISO, FDA, and industry standards", icon: <BookOpen className="h-5 w-5" /> },
+          { text: "Environmental and safety management capabilities", icon: <AlertTriangle className="h-5 w-5" /> }
+        ]
       }}
       ctaSection={{
-        title: "Ready to Optimize Your Production?",
-        description: "Join thousands of manufacturers that have transformed their production processes with NuboSync.",
+        title: "Ready to Transform Your Production Operations?",
+        description: "Join thousands of manufacturers that have optimized their production processes with our comprehensive solution.",
         primaryButtonText: "Get Started Today",
-        secondaryButtonText: "Request a Demo"
+        primaryButtonLink: "/get-started",
+        secondaryButtonText: "Request a Demo",
+        secondaryButtonLink: "/pricing"
       }}
       relatedModules={[
         {
           title: "Inventory & Logistics",
           icon: <File className="h-8 w-8" />,
-          description: "Track inventory and manage logistics operations seamlessly.",
+          description: "Integrate production with inventory management for seamless material flow and stock control.",
           link: "/modules/inventory-logistics"
         },
         {
           title: "Product Design",
           icon: <Layout className="h-8 w-8" />,
-          description: "Create and manage product designs with powerful customization tools.",
+          description: "Connect design and engineering directly to production for faster product development.",
           link: "/modules/product-design"
         },
         {
           title: "Analytics & Reporting",
           icon: <BarChart2 className="h-8 w-8" />,
-          description: "Get powerful insights from your data, anytime, anywhere.",
+          description: "Gain comprehensive insights into production performance, quality, and efficiency.",
           link: "/modules/analytics-reporting"
         }
       ]}

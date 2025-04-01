@@ -1,5 +1,6 @@
+
 import ModuleLayout from "@/components/modules/ModuleLayout";
-import { Package, TruckIcon, Percent, Clock, BarChart2, MapPin, Zap, QrCode, LineChart, RefreshCw, Search, Building } from "lucide-react";
+import { Package, TruckIcon, Percent, Clock, BarChart2, MapPin, Zap, QrCode, LineChart, RefreshCw, Search, Building, Box, LayoutGrid, Smartphone, AlertTriangle, ShoppingCart, ShieldCheck } from "lucide-react";
 
 const InventoryLogistics = () => {
   return (
@@ -10,17 +11,17 @@ const InventoryLogistics = () => {
       stats={[
         {
           value: "35%",
-          label: "Reduction in stockouts",
+          label: "Reduction in stockouts and lost sales",
           icon: <Percent className="h-8 w-8 text-blue-500" />
         },
         {
           value: "28%",
-          label: "Increase in inventory turnover",
+          label: "Increase in inventory turnover ratio",
           icon: <RefreshCw className="h-8 w-8 text-blue-500" />
         },
         {
           value: "42%",
-          label: "Reduction in carrying costs",
+          label: "Reduction in inventory carrying costs",
           icon: <LineChart className="h-8 w-8 text-blue-500" />
         },
         {
@@ -30,79 +31,83 @@ const InventoryLogistics = () => {
         }
       ]}
       mainSection={{
-        title: "Complete Inventory Control at Your Fingertips",
-        description: "Our Inventory Management module provides all the tools you need to optimize your inventory operations."
+        title: "Transform Your Inventory Management",
+        description: "Our comprehensive inventory solution provides real-time visibility, intelligent forecasting, and automated workflows to optimize your entire supply chain from warehouse to customer."
       }}
       keyFeatures={{
-        title: "Key Features",
-        description: "Everything you need to optimize your inventory management",
+        title: "Complete Inventory Control",
+        description: "Everything you need to optimize inventory management across your business",
         features: [
           {
-            title: "Real-time Tracking",
-            description: "Monitor inventory levels across multiple locations in real-time with automatic updates.",
+            title: "Real-time Inventory Tracking",
+            description: "Monitor stock levels across multiple locations with automatic updates, movement tracking, and customizable alerts.",
             icon: <Search className="h-6 w-6" />
           },
           {
-            title: "Barcode & RFID Integration",
-            description: "Scan and track inventory with barcode and RFID technology for accurate stock management.",
+            title: "Advanced Barcode & RFID",
+            description: "Streamline receiving, picking, and shipping with integrated barcode and RFID scanning for accurate inventory tracking.",
             icon: <QrCode className="h-6 w-6" />
           },
           {
-            title: "Automated Reordering",
-            description: "Set reorder points and automatically generate purchase orders when stock levels are low.",
+            title: "Intelligent Reordering",
+            description: "Optimize stock levels with automated purchase orders based on sales velocity, lead times, and seasonal demand patterns.",
             icon: <RefreshCw className="h-6 w-6" />
           },
           {
-            title: "Batch & Lot Tracking",
-            description: "Track batches and lots for complete traceability and quality control throughout the supply chain.",
-            icon: <Search className="h-6 w-6" />
+            title: "Comprehensive Lot Tracking",
+            description: "Maintain complete traceability with lot, batch, serial number, and expiration date tracking throughout the supply chain.",
+            icon: <Box className="h-6 w-6" />
           },
           {
-            title: "Inventory Forecasting",
-            description: "Use historical data and AI algorithms to predict future inventory needs and optimize stock levels.",
+            title: "Predictive Inventory Planning",
+            description: "Forecast future inventory needs using AI-powered algorithms that analyze historical data, trends, and seasonality.",
             icon: <BarChart2 className="h-6 w-6" />
           },
           {
-            title: "Multi-warehouse Management",
-            description: "Manage inventory across multiple warehouses and locations with transfer tracking and optimization.",
+            title: "Multi-location Management",
+            description: "Optimize inventory across warehouses, stores, and fulfillment centers with transfer management and location-specific rules.",
             icon: <Building className="h-6 w-6" />
           }
         ]
       }}
       specialSection={{
-        title: "Connects With Your Entire Business",
-        subtitle: "Seamless Integration",
-        description: "Our Inventory Management module integrates with your existing systems to provide a complete view of your business operations.",
+        title: "End-to-End Supply Chain Visibility",
+        subtitle: "Connected Operations",
+        description: "Our Inventory Management module integrates seamlessly with your entire business ecosystem for complete operational visibility.",
         items: [
-          { text: "Integrates with e-commerce platforms", icon: <Package className="h-5 w-5" /> },
-          { text: "Connects with accounting software", icon: <Package className="h-5 w-5" /> },
-          { text: "Works with shipping and logistics providers", icon: <Package className="h-5 w-5" /> },
-          { text: "Syncs with point-of-sale systems", icon: <Package className="h-5 w-5" /> }
+          { text: "Real-time synchronization with e-commerce platforms and marketplaces", icon: <ShoppingCart className="h-5 w-5" /> },
+          { text: "Automated connection with accounting for accurate financial reporting", icon: <BarChart2 className="h-5 w-5" /> },
+          { text: "Integrated shipping and logistics provider management", icon: <TruckIcon className="h-5 w-5" /> },
+          { text: "Mobile inventory management with our dedicated app", icon: <Smartphone className="h-5 w-5" /> },
+          { text: "Advanced warehouse management with bin and zone tracking", icon: <LayoutGrid className="h-5 w-5" /> },
+          { text: "Proactive quality control and defect management", icon: <ShieldCheck className="h-5 w-5" /> }
         ]
       }}
       ctaSection={{
-        title: "Ready to Optimize Your Inventory?",
-        description: "Join thousands of businesses that have transformed their inventory management with NuboSync.",
+        title: "Ready to Optimize Your Inventory Operations?",
+        description: "Join thousands of businesses that have transformed their inventory management with our comprehensive solution.",
         primaryButtonText: "Get Started Today",
-        secondaryButtonText: "Contact Sales"
+        primaryButtonLink: "/get-started",
+        secondaryButtonText: "Request a Demo",
+        secondaryButtonLink: "/pricing"
       }}
       relatedModules={[
         {
           title: "Sales & Order Management",
-          icon: <Package className="h-8 w-8" />,
-          description: "Connect teams, close more deals, and simplify your sales process.",
+          icon: <ShoppingCart className="h-8 w-8" />,
+          description: "Streamline your order processing with automated workflows and real-time inventory availability.",
           link: "/modules/sales-order-management"
         },
         {
           title: "Production & Manufacturing",
           icon: <Package className="h-8 w-8" />,
-          description: "Oversee production processes, schedules, and resource allocation.",
+          description: "Integrate inventory with production scheduling, materials planning, and quality control.",
           link: "/modules/production-manufacturing"
         },
         {
           title: "Analytics & Reporting",
           icon: <BarChart2 className="h-8 w-8" />,
-          description: "Get powerful insights from your data, anytime, anywhere.",
+          description: "Gain actionable insights with customizable reports on inventory performance and trends.",
           link: "/modules/analytics-reporting"
         }
       ]}

@@ -1,110 +1,113 @@
 
 import ModuleLayout from "@/components/modules/ModuleLayout";
-import { FileText, Search, Lock, Users, Share2, Clock, UploadCloud, Tags, CheckCircle, Shield, File } from "lucide-react";
+import { FileText, Search, Lock, Users, Share2, Clock, UploadCloud, Tags, CheckCircle, Shield, File, Database, History, Edit, Download, PenTool, Layers, Smartphone } from "lucide-react";
 
 const DocumentManagement = () => {
   return (
     <ModuleLayout
       title="Document Management"
-      description="Store, organize, and share documents securely across your organization with our powerful document management system."
+      description="Store, organize, and share documents securely across your organization with our enterprise-grade document management system."
       color="orange"
       stats={[
         {
           value: "60%",
-          label: "Less time spent searching for documents",
+          label: "Reduction in Document Search Time",
           icon: <Clock className="h-8 w-8 text-orange-500" />
         },
         {
           value: "1M+",
-          label: "Documents stored securely",
+          label: "Documents Managed Per Enterprise Client",
           icon: <FileText className="h-8 w-8 text-orange-500" />
         },
         {
           value: "99.99%",
-          label: "Uptime for document access",
+          label: "Platform Uptime Guarantee",
           icon: <CheckCircle className="h-8 w-8 text-orange-500" />
         },
         {
           value: "45%",
-          label: "Increase in team collaboration",
+          label: "Improvement in Team Collaboration",
           icon: <Users className="h-8 w-8 text-orange-500" />
         }
       ]}
       mainSection={{
-        title: "Document Management Made Simple",
-        description: "Our Document Management system provides everything you need to organize, secure, and collaborate on your important files."
+        title: "Enterprise Document Management Simplified",
+        description: "Our Document Management system provides a comprehensive solution for storing, organizing, and collaborating on all your important business documents with enterprise-grade security and powerful search capabilities."
       }}
       keyFeatures={{
-        title: "Key Features",
-        description: "Everything you need to efficiently manage your documents",
+        title: "Comprehensive Document Control",
+        description: "Everything you need to efficiently manage your organization's documents",
         features: [
           {
-            title: "Centralized Storage",
-            description: "Store all your documents in one secure, accessible location with unlimited storage.",
+            title: "Intelligent Document Repository",
+            description: "Store all document types with unlimited storage, automatic OCR, and content indexing for powerful searchability.",
             icon: <UploadCloud className="h-6 w-6" />
           },
           {
-            title: "Advanced Search",
-            description: "Find documents instantly with powerful full-text search and filters.",
+            title: "Advanced Search & Discovery",
+            description: "Find documents instantly with full-text search, filters, saved searches, and AI-powered content recognition.",
             icon: <Search className="h-6 w-6" />
           },
           {
-            title: "Version Control",
-            description: "Track changes and maintain version history for all your documents.",
-            icon: <FileText className="h-6 w-6" />
+            title: "Comprehensive Version Control",
+            description: "Track document changes with complete version history, comparison tools, and the ability to restore previous versions.",
+            icon: <History className="h-6 w-6" />
           },
           {
-            title: "Role-Based Access",
-            description: "Control who can view, edit, and share documents with granular permissions.",
+            title: "Enterprise-Grade Security",
+            description: "Protect sensitive information with granular access controls, encryption, and detailed audit trails.",
             icon: <Lock className="h-6 w-6" />
           },
           {
-            title: "Intelligent Organization",
-            description: "Organize documents with folders, tags, and metadata for intuitive navigation.",
+            title: "Smart Document Organization",
+            description: "Organize files with customizable metadata, automated tagging, and intelligent categorization for intuitive navigation.",
             icon: <Tags className="h-6 w-6" />
           },
           {
-            title: "Secure Sharing",
-            description: "Share documents internally or externally with secure, trackable links.",
+            title: "Secure Collaboration Tools",
+            description: "Collaborate effectively with document sharing, annotations, approvals, and real-time co-editing capabilities.",
             icon: <Share2 className="h-6 w-6" />
           }
         ]
       }}
       specialSection={{
-        title: "Enterprise-Grade Security",
-        description: "Keep your sensitive documents safe with our comprehensive security features.",
+        title: "Built for Enterprise Compliance",
+        subtitle: "Security & Compliance",
+        description: "Our platform meets the most stringent security and compliance requirements for organizations of all sizes.",
         items: [
-          { text: "End-to-end encryption for all documents", icon: <CheckCircle className="h-5 w-5" /> },
-          { text: "Customizable retention policies", icon: <CheckCircle className="h-5 w-5" /> },
-          { text: "Detailed audit logs and compliance reporting", icon: <CheckCircle className="h-5 w-5" /> },
-          { text: "Two-factor authentication", icon: <CheckCircle className="h-5 w-5" /> },
-          { text: "Data loss prevention", icon: <CheckCircle className="h-5 w-5" /> },
-          { text: "GDPR and CCPA compliance", icon: <CheckCircle className="h-5 w-5" /> }
+          { text: "End-to-end encryption for all documents in transit and at rest", icon: <Shield className="h-5 w-5" /> },
+          { text: "Customizable retention policies and legal holds", icon: <Clock className="h-5 w-5" /> },
+          { text: "Comprehensive audit logs and compliance reporting", icon: <FileText className="h-5 w-5" /> },
+          { text: "Multi-factor authentication and SSO integration", icon: <Lock className="h-5 w-5" /> },
+          { text: "Advanced data loss prevention capabilities", icon: <Shield className="h-5 w-5" /> },
+          { text: "Compliance with GDPR, HIPAA, SOC 2, and other standards", icon: <CheckCircle className="h-5 w-5" /> }
         ]
       }}
       ctaSection={{
-        title: "Ready to Organize Your Documents?",
-        description: "Join thousands of businesses that manage their documents efficiently with NuboSync.",
-        primaryButtonText: "Get Started Today",
-        secondaryButtonText: "Request Demo"
+        title: "Ready to Transform Your Document Management?",
+        description: "Join thousands of organizations that manage their documents securely and efficiently with our platform.",
+        primaryButtonText: "Start Free Trial",
+        primaryButtonLink: "/get-started",
+        secondaryButtonText: "Request Demo",
+        secondaryButtonLink: "/pricing"
       }}
       relatedModules={[
         {
           title: "Project Management",
           icon: <FileText className="h-8 w-8" />,
-          description: "Plan, track, and manage projects with ease.",
+          description: "Seamlessly integrate documents with project workflows and team collaboration.",
           link: "/modules/project-management"
         },
         {
           title: "Logo Hub",
-          icon: <FileText className="h-8 w-8" />,
-          description: "Centralize and manage all your brand logos in one place.",
+          icon: <File className="h-8 w-8" />,
+          description: "Manage brand assets alongside your documents for consistent brand identity.",
           link: "/modules/logo-hub"
         },
         {
           title: "Customer Portal",
           icon: <Users className="h-8 w-8" />,
-          description: "Provide your customers with a self-service portal for support and information.",
+          description: "Share documents securely with customers through a branded portal.",
           link: "/modules/customer-portal"
         }
       ]}

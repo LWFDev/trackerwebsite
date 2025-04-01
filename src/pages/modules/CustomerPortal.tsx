@@ -1,103 +1,113 @@
+
 import ModuleLayout from "@/components/modules/ModuleLayout";
-import { UserCheck, CheckCircle, Clock, File, Shield, MessageSquare, FileText, LockIcon, Calendar, CreditCard, Settings } from "lucide-react";
+import { UserCheck, CheckCircle, Clock, File, Shield, MessageSquare, FileText, LockIcon, Calendar, CreditCard, Settings, Users, Smartphone, Globe, Layers, Zap, PenTool } from "lucide-react";
 
 const CustomerPortal = () => {
   return (
     <ModuleLayout
       title="Client Portal"
-      description="Provide your clients with a secure, branded portal where they can access documents, make payments, and communicate with your team."
+      description="Provide your clients with a secure, branded portal where they can access documents, make payments, and communicate with your team seamlessly."
       color="green"
       stats={[
         {
           value: "85%",
-          label: "Increase in client satisfaction",
+          label: "Increase in Client Satisfaction",
           icon: <CheckCircle className="h-8 w-8 text-green-500" />
         },
         {
           value: "40%",
-          label: "Reduction in document-related inquiries",
-          icon: <File className="h-8 w-8 text-green-500" />
+          label: "Reduction in Support Inquiries",
+          icon: <MessageSquare className="h-8 w-8 text-green-500" />
         },
         {
           value: "30%",
-          label: "Faster payment processing",
+          label: "Faster Payment Processing",
           icon: <CreditCard className="h-8 w-8 text-green-500" />
+        },
+        {
+          value: "24/7",
+          label: "Client Access & Self-Service",
+          icon: <Clock className="h-8 w-8 text-green-500" />
         }
       ]}
       mainSection={{
-        title: "Enhance Your Client Experience",
-        description: "Our Client Portal module provides all the tools you need to deliver exceptional client service."
+        title: "Transform Your Client Experience",
+        description: "Our Client Portal creates a seamless digital experience that enables your clients to interact with your business on their terms, increasing satisfaction and loyalty while reducing support costs."
       }}
       keyFeatures={{
-        title: "Key Features",
-        description: "Everything you need to deliver a seamless client experience",
+        title: "Comprehensive Client Engagement",
+        description: "Everything you need to deliver an exceptional client experience",
         features: [
           {
             title: "Secure Document Sharing",
-            description: "Share documents securely with clients and track when they've been viewed or downloaded.",
+            description: "Share documents, contracts, and deliverables securely with automatic notifications and access tracking.",
             icon: <FileText className="h-6 w-6" />
           },
           {
-            title: "Online Payments",
-            description: "Allow clients to view invoices and make payments directly through the portal.",
+            title: "Integrated Payment System",
+            description: "Enable clients to view invoices, make payments, and manage payment methods with our secure payment processing.",
             icon: <CreditCard className="h-6 w-6" />
           },
           {
-            title: "Messaging & Communication",
-            description: "Built-in messaging system for secure communication between clients and your team.",
+            title: "Real-time Messaging",
+            description: "Provide direct communication channels with threaded conversations, file sharing, and notification preferences.",
             icon: <MessageSquare className="h-6 w-6" />
           },
           {
-            title: "Project Updates",
-            description: "Keep clients informed with real-time project updates, milestones, and progress reports.",
+            title: "Project Transparency",
+            description: "Keep clients informed with real-time project updates, milestones, and deliverable tracking.",
             icon: <Calendar className="h-6 w-6" />
           },
           {
-            title: "Custom Branding",
-            description: "Customize the portal with your brand colors, logo, and domain for a seamless client experience.",
-            icon: <File className="h-6 w-6" />
+            title: "White-Label Branding",
+            description: "Customize the portal with your brand colors, logo, domain, and personalized messaging for a seamless experience.",
+            icon: <PenTool className="h-6 w-6" />
           },
           {
             title: "Self-Service Tools",
-            description: "Empower clients with self-service tools like appointment scheduling and form submissions.",
+            description: "Empower clients with appointment scheduling, form submissions, and knowledge base access for instant support.",
             icon: <Settings className="h-6 w-6" />
           }
         ]
       }}
       specialSection={{
-        title: "Your Client Data is Safe With Us",
-        subtitle: "Enterprise-grade Security",
-        description: "Our Client Portal is built with security at its core, ensuring your sensitive client information is always protected.",
+        title: "Enterprise-Grade Security",
+        subtitle: "Built for Trust",
+        description: "Our Client Portal is designed with the highest security standards to protect your sensitive client information.",
         items: [
-          { text: "End-to-end encryption for all data", icon: <LockIcon className="h-5 w-5" /> },
-          { text: "Two-factor authentication", icon: <Shield className="h-5 w-5" /> },
-          { text: "Role-based access controls", icon: <UserCheck className="h-5 w-5" /> },
-          { text: "GDPR and CCPA compliant", icon: <CheckCircle className="h-5 w-5" /> }
+          { text: "End-to-end encryption for all data and communications", icon: <LockIcon className="h-5 w-5" /> },
+          { text: "Multi-factor authentication with customizable security policies", icon: <Shield className="h-5 w-5" /> },
+          { text: "Granular role-based access controls and permissions", icon: <UserCheck className="h-5 w-5" /> },
+          { text: "Comprehensive compliance with GDPR, CCPA, and industry regulations", icon: <CheckCircle className="h-5 w-5" /> },
+          { text: "Detailed audit trails of all portal activities", icon: <FileText className="h-5 w-5" /> },
+          { text: "Regular security updates and vulnerability testing", icon: <Shield className="h-5 w-5" /> }
         ]
       }}
       ctaSection={{
         title: "Ready to Elevate Your Client Experience?",
-        description: "Join thousands of businesses that have transformed their client relationships with NuboSync.",
-        primaryButtonText: "Get Started Today",
-        secondaryButtonText: "Request Demo"
+        description: "Join thousands of businesses that have transformed their client relationships with our comprehensive portal solution.",
+        primaryButtonText: "Start Free Trial",
+        primaryButtonLink: "/get-started",
+        secondaryButtonText: "Schedule Demo",
+        secondaryButtonLink: "/pricing"
       }}
       relatedModules={[
         {
           title: "Document Management",
           icon: <FileText className="h-8 w-8" />,
-          description: "Store, organize, and share documents securely across your organization.",
+          description: "Integrate portal document sharing with your internal document management system.",
           link: "/modules/document-management"
         },
         {
           title: "Project Management",
-          icon: <File className="h-8 w-8" />,
-          description: "Plan, track, and manage projects with ease.",
+          icon: <Calendar className="h-8 w-8" />,
+          description: "Connect client portal updates directly to your project management workflow.",
           link: "/modules/project-management"
         },
         {
           title: "Finance & Accounting",
           icon: <CreditCard className="h-8 w-8" />,
-          description: "Manage financial transactions and accounting processes efficiently.",
+          description: "Streamline client payments with integrated invoicing and financial tracking.",
           link: "/modules/finance-accounting"
         }
       ]}

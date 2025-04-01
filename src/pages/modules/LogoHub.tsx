@@ -1,108 +1,113 @@
+
 import ModuleLayout from "@/components/modules/ModuleLayout";
-import { Image, Share2, Tags, Users, Search, Shield, Globe, UploadCloud, Folder, Clock, File } from "lucide-react";
+import { Image, Share2, Tags, Users, Search, Shield, Globe, UploadCloud, Folder, Clock, File, Download, Lock, Briefcase, Edit, History, Smartphone, CheckCircle, BarChart2, RefreshCw } from "lucide-react";
 
 const LogoHub = () => {
   return (
     <ModuleLayout
       title="Logo Hub"
-      description="Centralize and manage all your brand logos in one place with powerful organization and sharing capabilities."
+      description="Centralize and manage all your brand assets in one secure platform with powerful organization, collaboration, and distribution features."
       color="purple"
       stats={[
         {
           value: "65%",
-          label: "Time saved on logo searches",
+          label: "Reduction in Logo Search Time",
           icon: <Clock className="h-8 w-8 text-gold-DEFAULT" />
         },
         {
           value: "10k+",
-          label: "Logos managed per account",
+          label: "Average Assets Managed Per Client",
           icon: <Image className="h-8 w-8 text-gold-DEFAULT" />
         },
         {
           value: "99.9%",
-          label: "Uptime for logo access",
-          icon: <Users className="h-8 w-8 text-gold-DEFAULT" />
+          label: "Platform Availability",
+          icon: <CheckCircle className="h-8 w-8 text-gold-DEFAULT" />
         },
         {
           value: "42%",
-          label: "Reduction in brand inconsistencies",
+          label: "Improvement in Brand Consistency",
           icon: <Shield className="h-8 w-8 text-gold-DEFAULT" />
         }
       ]}
       mainSection={{
-        title: "Central Brand Asset Management",
-        description: "Keep all your brand assets organized, accessible, and consistent across your organization."
+        title: "The Ultimate Brand Asset Management Solution",
+        description: "Logo Hub provides a central repository for all your brand assets, ensuring everyone in your organization has access to the right files in the right formats, every time."
       }}
       keyFeatures={{
-        title: "Key Features",
-        description: "Everything you need to efficiently manage your logo and brand assets",
+        title: "Comprehensive Brand Asset Management",
+        description: "Everything you need to organize, manage, and distribute your brand assets",
         features: [
           {
-            title: "Centralized Storage",
-            description: "Store all your logos and brand assets in one secure, accessible location.",
+            title: "Centralized Asset Repository",
+            description: "Store logos, images, videos, fonts, and brand guidelines in one secure, organized location accessible from anywhere.",
             icon: <Folder className="h-6 w-6" />
           },
           {
-            title: "Version Control",
-            description: "Track changes and maintain version history for all your logo files.",
-            icon: <Clock className="h-6 w-6" />
+            title: "Detailed Version Control",
+            description: "Track changes with complete version history, approval workflows, and the ability to restore previous versions.",
+            icon: <History className="h-6 w-6" />
           },
           {
-            title: "Intelligent Tagging",
-            description: "Organize logos with custom tags and metadata for easy searching and filtering.",
+            title: "Advanced Asset Organization",
+            description: "Organize files with customizable metadata, tags, categories, and AI-powered auto-tagging for effortless searching.",
             icon: <Tags className="h-6 w-6" />
           },
           {
-            title: "Role-Based Access",
-            description: "Control who can view, download, and modify logos with granular permissions.",
-            icon: <Users className="h-6 w-6" />
+            title: "Granular Access Control",
+            description: "Control who can view, download, and modify assets with user roles, permissions, and approval workflows.",
+            icon: <Lock className="h-6 w-6" />
           },
           {
-            title: "Instant Sharing",
-            description: "Share logos internally or externally with secure, trackable links.",
+            title: "Seamless Asset Distribution",
+            description: "Share assets internally or externally with secure, trackable links, expiration dates, and usage analytics.",
             icon: <Share2 className="h-6 w-6" />
           },
           {
-            title: "Global Accessibility",
-            description: "Access your logos from anywhere with our cloud-based platform.",
-            icon: <Globe className="h-6 w-6" />
+            title: "Format Conversion & Resizing",
+            description: "Automatically generate assets in multiple formats and sizes for different channels and use cases.",
+            icon: <Edit className="h-6 w-6" />
           }
         ]
       }}
       specialSection={{
-        title: "Brand Consistency Made Simple",
-        description: "Ensure your brand is represented consistently across all channels with our comprehensive logo management system.",
+        title: "Enterprise Brand Management",
+        subtitle: "Beyond Storage",
+        description: "Our platform goes beyond simple asset storage to provide comprehensive brand management capabilities.",
         items: [
-          { text: "Maintain brand guidelines alongside logo assets", icon: <Users className="h-5 w-5" /> },
-          { text: "Track logo usage and provide analytics on brand consistency", icon: <Users className="h-5 w-5" /> },
-          { text: "Simplify logo distribution to partners and vendors", icon: <Users className="h-5 w-5" /> },
-          { text: "Automatic format conversion for different platforms and media", icon: <Users className="h-5 w-5" /> },
-          { text: "Protect brand identity with watermarking and usage tracking", icon: <Users className="h-5 w-5" /> }
+          { text: "Digital brand guidelines with asset context and usage instructions", icon: <Briefcase className="h-5 w-5" /> },
+          { text: "Brand usage analytics showing how assets are being utilized", icon: <BarChart2 className="h-5 w-5" /> },
+          { text: "Simplified distribution to external partners and vendors", icon: <Users className="h-5 w-5" /> },
+          { text: "Mobile access with our dedicated app for on-the-go brand management", icon: <Smartphone className="h-5 w-5" /> },
+          { text: "Automated format conversion for different platforms and media", icon: <RefreshCw className="h-5 w-5" /> },
+          { text: "Brand protection with watermarking and usage tracking", icon: <Shield className="h-5 w-5" /> }
         ]
       }}
       ctaSection={{
-        title: "Ready to Organize Your Brand Assets?",
+        title: "Ready to Transform Your Brand Asset Management?",
         description: "Join thousands of businesses that manage their brand identity effectively with Logo Hub.",
-        primaryButtonText: "Get Started Today",
-        secondaryButtonText: "Request Demo"
+        primaryButtonText: "Start Free Trial",
+        primaryButtonLink: "/get-started",
+        secondaryButtonText: "Request Demo",
+        secondaryButtonLink: "/pricing"
       }}
       relatedModules={[
         {
           title: "Document Management",
           icon: <File className="h-8 w-8" />,
-          description: "Store, organize, and share documents securely across your organization.",
+          description: "Extend your asset management to all company documents and files.",
           link: "/modules/document-management"
         },
         {
           title: "Product Design",
           icon: <Image className="h-8 w-8" />,
-          description: "Create and manage product designs with powerful customization tools.",
+          description: "Seamlessly integrate brand assets into your product design workflow.",
           link: "/modules/product-design"
         },
         {
           title: "Project Management",
-          icon: <File className="h-8 w-8" />,
-          description: "Plan, track, and manage projects with ease.",
+          icon: <Folder className="h-8 w-8" />,
+          description: "Incorporate brand assets directly into your project workflows.",
           link: "/modules/project-management"
         }
       ]}

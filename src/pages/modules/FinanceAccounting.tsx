@@ -1,111 +1,114 @@
 
 import ModuleLayout from "@/components/modules/ModuleLayout";
-import { Receipt, BarChart2, CreditCard, DollarSign, FileText, PieChart, Zap, Lock, RefreshCw, Check, Clock, Users } from "lucide-react";
+import { Receipt, BarChart2, CreditCard, DollarSign, FileText, PieChart, Zap, Lock, RefreshCw, Check, Clock, Users, Calculator, Calendar, Briefcase, TrendingUp, Shield } from "lucide-react";
 
 const FinanceAccounting = () => {
   return (
     <ModuleLayout
       title="Finance & Accounting"
-      description="Manage financial transactions and accounting processes efficiently with our comprehensive solution."
+      description="Manage financial transactions and accounting processes efficiently with our comprehensive finance solution."
       color="green"
       stats={[
         {
           value: "$2.5M+",
-          label: "Processed Monthly",
+          label: "Processed Monthly Per Average Client",
           icon: <DollarSign className="h-8 w-8 text-green-500" />
         },
         {
-          value: "1.2%",
-          label: "Avg. Transaction Time",
+          value: "45%",
+          label: "Reduction in Manual Accounting Tasks",
           icon: <Clock className="h-8 w-8 text-green-500" />
         },
         {
           value: "99.99%",
-          label: "Uptime",
+          label: "Uptime for Financial Operations",
           icon: <Zap className="h-8 w-8 text-green-500" />
         },
         {
           value: "135+",
-          label: "Supported Currencies",
-          icon: <CreditCard className="h-8 w-8 text-green-500" />
+          label: "Countries and Currencies Supported",
+          icon: <Globe className="h-8 w-8 text-green-500" />
         }
       ]}
       mainSection={{
-        title: "Accept Payments Everywhere",
-        description: "Process payments across multiple channels and methods with a single integration."
+        title: "Complete Financial Management",
+        description: "Our Finance & Accounting module provides a comprehensive solution for all your financial operations, from payment processing to advanced reporting and compliance."
       }}
       keyFeatures={{
         title: "Key Features",
-        description: "Everything you need to streamline payments and stay on top",
+        description: "Everything you need to streamline financial operations and gain full control",
         features: [
           {
-            title: "Multiple Payment Methods",
-            description: "Accept credit cards, bank transfers, digital wallets, cryptocurrencies, and other methods.",
+            title: "Multi-Currency Payment Processing",
+            description: "Accept payments in 135+ currencies with automatic exchange rate calculation and consolidated reporting.",
             icon: <CreditCard className="h-6 w-6" />
           },
           {
-            title: "Automated Reconciliation",
-            description: "Automatically match transactions with invoices and update your accounting systems.",
+            title: "Intelligent Reconciliation",
+            description: "Automatically match transactions with invoices and update your accounting systems with AI-powered accuracy.",
             icon: <RefreshCw className="h-6 w-6" />
           },
           {
-            title: "Recurring Billing",
-            description: "Set up subscription payments and recurring billing schedules for customers.",
-            icon: <Clock className="h-6 w-6" />
+            title: "Subscription & Recurring Billing",
+            description: "Set up flexible subscription models with automated billing schedules, proration, and dunning management.",
+            icon: <Calendar className="h-6 w-6" />
           },
           {
-            title: "Payment Analytics",
-            description: "Track payment trends, revenue patterns, analyze conversions, and adjust your strategy.",
+            title: "Advanced Financial Analytics",
+            description: "Access real-time financial dashboards with customizable KPIs, cash flow forecasting, and trend analysis.",
             icon: <BarChart2 className="h-6 w-6" />
           },
           {
-            title: "Fraud Prevention",
-            description: "Protect your business with advanced fraud detection and prevention tools.",
-            icon: <Lock className="h-6 w-6" />
+            title: "Enterprise-Grade Security",
+            description: "Protect financial data with bank-level encryption, multi-factor authentication, and comprehensive audit trails.",
+            icon: <Shield className="h-6 w-6" />
           },
           {
-            title: "Global Payments",
-            description: "Accept payments from customers in any region with multi-currency and localization support.",
-            icon: <CreditCard className="h-6 w-6" />
+            title: "Regulatory Compliance",
+            description: "Stay compliant with automatic tax calculation, reporting for multiple jurisdictions, and built-in audit controls.",
+            icon: <Briefcase className="h-6 w-6" />
           }
         ]
       }}
       specialSection={{
-        title: "About Payments",
-        description: "Our payment processing provides a complete solution for all your processing and reporting payment needs.",
+        title: "Designed for Financial Excellence",
+        subtitle: "Business Impact",
+        description: "Our finance and accounting solutions deliver measurable results for businesses of all sizes.",
         items: [
-          { text: "Lower payment processing with automated validation", icon: <Check className="h-5 w-5" /> },
-          { text: "Reduced manual errors through automated reconciliation", icon: <Check className="h-5 w-5" /> },
-          { text: "Automated customer communications with status updates", icon: <Check className="h-5 w-5" /> },
-          { text: "Integration with your ERP and accounting systems", icon: <Check className="h-5 w-5" /> },
-          { text: "Fast payment processing", icon: <Check className="h-5 w-5" /> },
-          { text: "End-to-end encryption", icon: <Check className="h-5 w-5" /> }
+          { text: "Reduce accounting costs by up to 35% through intelligent automation", icon: <TrendingUp className="h-5 w-5" /> },
+          { text: "Improve cash flow with predictive analytics and automated collections", icon: <DollarSign className="h-5 w-5" /> },
+          { text: "Eliminate manual errors with automated reconciliation and validation", icon: <Check className="h-5 w-5" /> },
+          { text: "Gain real-time visibility into financial performance across all channels", icon: <BarChart2 className="h-5 w-5" /> },
+          { text: "Ensure compliance with built-in controls and audit trails", icon: <Shield className="h-5 w-5" /> },
+          { text: "Streamline period-end closing with automated workflows", icon: <Calendar className="h-5 w-5" /> }
         ]
       }}
       ctaSection={{
-        title: "Ready to streamline your payment processing?",
-        description: "Join thousands of businesses already using our Payments module to process transactions securely and efficiently.",
+        title: "Ready to transform your financial operations?",
+        description: "Join thousands of businesses already using our Finance & Accounting module to optimize financial processes and drive growth.",
         primaryButtonText: "Start Free Trial",
-        secondaryButtonText: "Talk to Sales"
+        primaryButtonLink: "/get-started",
+        secondaryButtonText: "View Pricing",
+        secondaryButtonLink: "/pricing"
       }}
       relatedModules={[
         {
-          title: "Orders",
+          title: "Sales & Order Management",
           icon: <FileText className="h-8 w-8" />,
-          description: "Track and process customer orders efficiently.",
+          description: "Track and process customer orders efficiently with automated workflows.",
           link: "/modules/sales-order-management"
         },
         {
-          title: "Customers",
-          icon: <Users className="h-8 w-8" />,
-          description: "Manage customer relationships and data with easy-to-use CRM tools.",
-          link: "/modules/customer-service"
+          title: "Analytics & Reporting",
+          icon: <BarChart2 className="h-8 w-8" />,
+          description: "Get powerful insights from your financial data with customizable dashboards.",
+          link: "/modules/analytics-reporting"
         },
         {
-          title: "Invoice Manager",
-          icon: <FileText className="h-8 w-8" />,
-          description: "Create and manage invoices with automated workflows.",
-          link: "/modules/document-management"
+          title: "Customer Portal",
+          icon: <Users className="h-8 w-8" />,
+          description: "Enable customer self-service for invoices, payments, and financial documents.",
+          link: "/modules/customer-portal"
         }
       ]}
     />
