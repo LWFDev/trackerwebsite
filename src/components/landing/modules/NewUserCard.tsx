@@ -1,0 +1,32 @@
+
+import React from "react";
+import { Check } from "lucide-react";
+import { Button } from "@/components/ui/button";
+
+const NewUserCard = () => {
+  return (
+    <div className="bg-zinc-800 p-6 rounded-lg border border-zinc-700">
+      <h3 className="font-medium text-white mb-2">New to Tracker?</h3>
+      <p className="text-zinc-400 text-sm mb-4">
+        Discover how our integrated modules can streamline your business operations.
+      </p>
+      <ul className="space-y-3 mb-6">
+        <li className="flex items-center text-sm text-zinc-300">
+          <Check size={16} className="mr-2 text-gold-DEFAULT" />
+          Explore all modules
+        </li>
+        <li className="flex items-center text-sm text-zinc-300">
+          <Check size={16} className="mr-2 text-gold-DEFAULT" />
+          See customer stories
+        </li>
+        <li className="flex items-center text-sm text-zinc-300">
+          <Check size={16} className="mr-2 text-gold-DEFAULT" />
+          View pricing options
+        </li>
+      </ul>
+      <Button variant="gold" className="w-full">Get Started</Button>
+    </div>
+  );
+};
+
+export default NewUserCard;
