@@ -113,9 +113,11 @@ const Header = () => {
           <Button variant="outline" className="border-zinc-700 text-gray-300 hover:bg-zinc-800">
             Sign In
           </Button>
-          <Button variant="gold">
-            Get Started
-          </Button>
+          <Link to="/get-started">
+            <Button variant="gold">
+              Get Started
+            </Button>
+          </Link>
         </div>
 
         {/* Mobile menu button */}
@@ -165,9 +167,11 @@ const Header = () => {
               <Button variant="outline" className="w-full border-zinc-700">
                 Sign In
               </Button>
-              <Button variant="gold" className="w-full">
-                Get Started
-              </Button>
+              <Link to="/get-started" className="w-full">
+                <Button variant="gold" className="w-full">
+                  Get Started
+                </Button>
+              </Link>
             </div>
           </nav>
         </div>
