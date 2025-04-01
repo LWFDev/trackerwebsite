@@ -10,7 +10,7 @@ const WorkflowStep = ({
 }) => {
   return (
     <div className="flex flex-col items-center text-center">
-      <div className="w-12 h-12 rounded-full bg-indigo-600 flex items-center justify-center text-white font-bold mb-4">
+      <div className="w-12 h-12 rounded-full bg-gold-DEFAULT flex items-center justify-center text-black font-bold mb-4">
         {number}
       </div>
       <h3 className="text-lg font-semibold mb-2">{title}</h3>
@@ -21,7 +21,7 @@ const WorkflowStep = ({
 
 const Workflow = () => {
   return (
-    <section className="py-20 bg-slate-800">
+    <section className="py-20 bg-zinc-900">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <h2 className="text-3xl font-bold mb-4">

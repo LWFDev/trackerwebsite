@@ -31,9 +31,14 @@
 
     --border: 214.3 31.8% 91.4%;
     --input: 214.3 31.8% 91.4%;
-    --ring: 262 83% 58%;
+    --ring: 41 74% 52%;
 
     --radius: 0.5rem;
+    
+    /* Gold theme colors */
+    --gold: 41 74% 52%;
+    --gold-light: 41 74% 62%;
+    --gold-dark: 41 74% 42%;
   }
 
   * {

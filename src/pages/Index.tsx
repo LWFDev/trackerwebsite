@@ -12,19 +12,19 @@ import Pricing from "@/components/landing/Pricing";
 
 const Index = () => {
   return (
-    <div className="min-h-screen flex flex-col bg-slate-900 text-white">
+    <div className="min-h-screen flex flex-col bg-black text-white">
       <Header />
       <main>
         <Hero />
-        <div className="py-12 bg-slate-800 text-center">
+        <div className="py-12 bg-zinc-900 text-center">
           <div className="container mx-auto px-4">
-            <h3 className="text-lg text-gray-400 mb-8">TRUSTED BY INDUSTRY LEADERS</h3>
+            <h3 className="text-lg text-gold-light mb-8">TRUSTED BY INDUSTRY LEADERS</h3>
             <div className="grid grid-cols-5 gap-8">
-              <div className="bg-gray-700 h-8 rounded"></div>
-              <div className="bg-gray-700 h-8 rounded"></div>
-              <div className="bg-gray-700 h-8 rounded"></div>
-              <div className="bg-gray-700 h-8 rounded"></div>
-              <div className="bg-gray-700 h-8 rounded"></div>
+              <div className="bg-zinc-800 h-8 rounded"></div>
+              <div className="bg-zinc-800 h-8 rounded"></div>
+              <div className="bg-zinc-800 h-8 rounded"></div>
+              <div className="bg-zinc-800 h-8 rounded"></div>
+              <div className="bg-zinc-800 h-8 rounded"></div>
             </div>
           </div>
         </div>

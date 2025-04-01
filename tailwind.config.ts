@@ -60,6 +60,12 @@ export default {
 					gray: '#2D3748',
 					'light-gray': '#E2E8F0',
 					'off-white': '#F7FAFC'
+				},
+				gold: {
+					DEFAULT: '#D4AF37',
+					light: '#F0D875',
+					dark: '#B08A00',
+					hover: '#E6C34B'
 				}
 			},
 			borderRadius: {
