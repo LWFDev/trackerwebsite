@@ -85,13 +85,13 @@ const ProductDesign = () => {
         },
         {
           title: "Project Management",
-          icon: <ClipboardList className="h-8 w-8" />,
+          icon: <File className="h-8 w-8" />,
           description: "Plan, track, and manage projects with ease.",
           link: "/modules/project-management"
         },
         {
           title: "Customer Portal",
-          icon: <UserCheck className="h-8 w-8" />,
+          icon: <Users className="h-8 w-8" />,
           description: "Provide your customers with a self-service portal for support and information.",
           link: "/modules/customer-portal"
         }
