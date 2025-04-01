@@ -1,3 +1,4 @@
+
 import { Question, OnboardingData } from "@/types/onboarding";
 import { BusinessForm } from "@/components/onboarding/BusinessForm";
 import { ContactForm } from "@/components/onboarding/ContactForm";
@@ -161,7 +162,22 @@ export const accountQuestions: Question[] = [
     field: "username",
     component: ({ value, onChange, isValid, setIsValid }) => (
       <AccountForm 
-        formData={{ username: value }}
+        formData={{ 
+          businessType: "", 
+          employeeCount: "", 
+          yearsInBusiness: "", 
+          decorationMethods: [],
+          firstName: "", 
+          lastName: "", 
+          email: "", 
+          phone: "", 
+          companyName: "",
+          username: value, 
+          password: "", 
+          confirmPassword: "", 
+          agreeToTerms: false, 
+          receiveUpdates: false
+        }}
         updateFormData={(data) => {
           if (data.username) {
             onChange(data.username);
@@ -180,7 +196,22 @@ export const accountQuestions: Question[] = [
     field: "password",
     component: ({ value, onChange, isValid, setIsValid }) => (
       <AccountForm 
-        formData={{ password: value, confirmPassword: "" }}
+        formData={{ 
+          businessType: "", 
+          employeeCount: "", 
+          yearsInBusiness: "", 
+          decorationMethods: [],
+          firstName: "", 
+          lastName: "", 
+          email: "", 
+          phone: "", 
+          companyName: "",
+          username: "", 
+          password: value, 
+          confirmPassword: "", 
+          agreeToTerms: false, 
+          receiveUpdates: false
+        }}
         updateFormData={(data) => {
           if (data.password && data.confirmPassword && data.password === data.confirmPassword) {
             onChange(data.password);
@@ -199,7 +230,22 @@ export const accountQuestions: Question[] = [
     field: "agreeToTerms",
     component: ({ value, onChange, isValid, setIsValid }) => (
       <AccountForm 
-        formData={{ agreeToTerms: value, receiveUpdates: false }}
+        formData={{ 
+          businessType: "", 
+          employeeCount: "", 
+          yearsInBusiness: "", 
+          decorationMethods: [],
+          firstName: "", 
+          lastName: "", 
+          email: "", 
+          phone: "", 
+          companyName: "",
+          username: "", 
+          password: "", 
+          confirmPassword: "", 
+          agreeToTerms: value, 
+          receiveUpdates: false
+        }}
         updateFormData={(data) => {
           if (data.agreeToTerms !== undefined) {
             onChange(data.agreeToTerms);

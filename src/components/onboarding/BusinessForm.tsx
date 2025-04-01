@@ -23,7 +23,7 @@ export function BusinessForm({ formData, updateFormData, questionType }: Busines
       data.employeeCount = formData.employeeCount;
     } else if (questionType === "yearsInBusiness" && formData.yearsInBusiness) {
       data.yearsInBusiness = formData.yearsInBusiness;
-    } else if (questionType === "decorationMethods" && formData.decorationMethods.length > 0) {
+    } else if (questionType === "decorationMethods" && formData.decorationMethods && formData.decorationMethods.length > 0) {
       data.decorationMethods = formData.decorationMethods;
     }
     

@@ -1,10 +1,11 @@
+
 import { useState } from "react";
 import { OnboardingData } from "@/types/onboarding";
 import { Checkbox } from "@/components/ui/checkbox";
 import { motion } from "framer-motion";
 
 interface DecorationMethodsQuestionProps {
-  formData: OnboardingData;
+  formData: Partial<OnboardingData>;
   updateFormData: (data: Partial<OnboardingData>) => void;
 }
 
@@ -20,10 +21,11 @@ export const DecorationMethodsQuestion = ({ formData, updateFormData }: Decorati
   ];
 
   const handleToggleMethod = (method: string) => {
-    const isChecked = formData.decorationMethods.includes(method);
+    const currentMethods = formData.decorationMethods || [];
+    const isChecked = currentMethods.includes(method);
     const updatedMethods = isChecked
-      ? formData.decorationMethods.filter(item => item !== method)
-      : [...formData.decorationMethods, method];
+      ? currentMethods.filter(item => item !== method)
+      : [...currentMethods, method];
     
     updateFormData({ decorationMethods: updatedMethods });
   };
@@ -35,7 +37,7 @@ export const DecorationMethodsQuestion = ({ formData, updateFormData }: Decorati
       
       <div className="space-y-3 mt-4">
         {decorationMethodOptions.map((method) => {
-          const isChecked = formData.decorationMethods.includes(method);
+          const isChecked = formData.decorationMethods?.includes(method) || false;
           
           return (
             <motion.div
