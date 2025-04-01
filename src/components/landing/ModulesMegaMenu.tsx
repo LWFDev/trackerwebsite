@@ -7,9 +7,22 @@ import {
   ShoppingCart, 
   Layers, 
   Receipt, 
-  Check 
+  Check,
+  BarChart2,
+  Zap,
+  Users,
+  FileSearch,
+  ClipboardList,
+  UserCheck,
+  PieChart,
+  TrendingUp,
+  Package,
+  Truck,
+  Paintbrush,
+  MessagesSquare
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { Link } from "react-router-dom";
 
 // Define module types
 interface Module {
@@ -23,64 +36,123 @@ interface Module {
 const modules: Record<string, Module[]> = {
   popular: [
     {
+      title: "Sales & Order Management",
+      description: "Connect teams, close more deals, and simplify your sales process",
+      icon: <ShoppingCart className="text-blue-600" />,
+      learnMoreLink: "/modules/sales-order-management"
+    },
+    {
+      title: "Analytics & Reporting",
+      description: "Get powerful insights from your data, anytime, anywhere",
+      icon: <BarChart2 className="text-blue-400" />,
+      learnMoreLink: "/modules/analytics-reporting"
+    },
+    {
       title: "Logo Hub",
-      description: "Store, organize, and manage all your logos in one central location",
+      description: "Centralize and manage all your brand logos in one place",
       icon: <Image className="text-blue-600" />,
-      learnMoreLink: "#logo-hub"
+      learnMoreLink: "/modules/logo-hub"
     },
     {
-      title: "Orders",
-      description: "Track and process customer orders with ease and efficiency",
-      icon: <ShoppingCart className="text-blue-800" />,
-      learnMoreLink: "#orders"
-    },
-    {
-      title: "Production",
-      description: "Oversee production processes and optimize workflows",
-      icon: <Layers className="text-blue-400" />,
-      learnMoreLink: "#production"
-    },
-    {
-      title: "Invoice Manager",
-      description: "Create and manage invoices with automated workflows",
-      icon: <Receipt className="text-blue-800" />,
-      learnMoreLink: "#invoice-manager"
+      title: "Customer Portal",
+      description: "Provide your customers with a self-service portal for support and information",
+      icon: <UserCheck className="text-blue-800" />,
+      learnMoreLink: "/modules/customer-portal"
     }
   ],
   categories: [
     {
-      title: "Financial",
-      description: "Accounting, invoicing, and financial reporting tools",
-      icon: <FileText className="text-green-600" />,
-      learnMoreLink: "#financial-modules"
+      title: "Business Operations",
+      description: "Modules for managing your core business operations",
+      icon: <TrendingUp className="text-green-600" />,
+      learnMoreLink: "#business-operations"
     },
     {
-      title: "Operations",
-      description: "Manufacturing, logistics, and supply chain management",
-      icon: <Layers className="text-purple-600" />,
-      learnMoreLink: "#operations-modules"
+      title: "Customer Management",
+      description: "Tools for managing customer relationships and service",
+      icon: <Users className="text-purple-600" />,
+      learnMoreLink: "#customer-management"
     },
     {
-      title: "Sales",
-      description: "CRM, order processing, and customer management",
-      icon: <ShoppingCart className="text-orange-600" />,
-      learnMoreLink: "#sales-modules"
+      title: "Production & Design",
+      description: "Solutions for product design and manufacturing",
+      icon: <Paintbrush className="text-orange-600" />,
+      learnMoreLink: "#production-design"
     }
   ],
   all: [
     {
-      title: "Logo Hub",
-      description: "Store, organize, and manage all your logos in one central location",
-      icon: <Image className="text-blue-600" />,
-      learnMoreLink: "#logo-hub"
+      title: "Sales & Order Management",
+      description: "Connect teams, close more deals, and simplify your sales process",
+      icon: <ShoppingCart className="text-blue-600" />,
+      learnMoreLink: "/modules/sales-order-management"
     },
     {
-      title: "Orders",
-      description: "Track and process customer orders with ease and efficiency",
-      icon: <ShoppingCart className="text-blue-800" />,
-      learnMoreLink: "#orders"
+      title: "Finance & Accounting",
+      description: "Manage financial transactions and accounting processes efficiently",
+      icon: <Receipt className="text-green-600" />,
+      learnMoreLink: "/modules/finance-accounting"
     },
-    // Additional modules would be listed here
+    {
+      title: "Product Design",
+      description: "Create and manage product designs with powerful customization tools",
+      icon: <Paintbrush className="text-purple-600" />,
+      learnMoreLink: "/modules/product-design"
+    },
+    {
+      title: "Customer Service",
+      description: "Manage customer support cases faster across every channel",
+      icon: <MessagesSquare className="text-blue-500" />,
+      learnMoreLink: "/modules/customer-service"
+    },
+    {
+      title: "Inventory & Logistics",
+      description: "Track inventory and manage logistics operations seamlessly",
+      icon: <Package className="text-amber-600" />,
+      learnMoreLink: "/modules/inventory-logistics"
+    },
+    {
+      title: "Production & Manufacturing",
+      description: "Oversee production processes, schedules, and resource allocation",
+      icon: <Layers className="text-blue-700" />,
+      learnMoreLink: "/modules/production-manufacturing"
+    },
+    {
+      title: "Analytics & Reporting",
+      description: "Get powerful insights from your data, anytime, anywhere",
+      icon: <BarChart2 className="text-blue-400" />,
+      learnMoreLink: "/modules/analytics-reporting"
+    },
+    {
+      title: "Integration Platform",
+      description: "Connect your teams and data with apps built in clicks, not code",
+      icon: <Zap className="text-indigo-500" />,
+      learnMoreLink: "/modules/integration-platform"
+    },
+    {
+      title: "Logo Hub",
+      description: "Centralize and manage all your brand logos in one place",
+      icon: <Image className="text-blue-600" />,
+      learnMoreLink: "/modules/logo-hub"
+    },
+    {
+      title: "Document Management",
+      description: "Store, organize, and share documents securely across your organization",
+      icon: <FileText className="text-gray-600" />,
+      learnMoreLink: "/modules/document-management"
+    },
+    {
+      title: "Project Management",
+      description: "Plan, track, and manage projects with ease",
+      icon: <ClipboardList className="text-teal-600" />,
+      learnMoreLink: "/modules/project-management"
+    },
+    {
+      title: "Customer Portal",
+      description: "Provide your customers with a self-service portal for support and information",
+      icon: <UserCheck className="text-blue-800" />,
+      learnMoreLink: "/modules/customer-portal"
+    }
   ]
 };
 
@@ -97,9 +169,9 @@ const ModulesMegaMenu = () => {
               <TabsTrigger value="categories" className="text-sm">Categories</TabsTrigger>
               <TabsTrigger value="all" className="text-sm">All Modules</TabsTrigger>
             </TabsList>
-            <a href="#all-modules" className="text-blue-500 text-sm hover:underline">
+            <Link to="/modules" className="text-blue-500 text-sm hover:underline">
               View all modules
-            </a>
+            </Link>
           </div>
 
           <TabsContent value="popular" className="mt-0">
@@ -113,7 +185,7 @@ const ModulesMegaMenu = () => {
                     <div>
                       <h3 className="font-medium text-gray-900 mb-1">{module.title}</h3>
                       <p className="text-gray-600 text-sm mb-2">{module.description}</p>
-                      <a href={module.learnMoreLink} className="text-blue-500 text-sm hover:underline">Learn more</a>
+                      <Link to={module.learnMoreLink} className="text-blue-500 text-sm hover:underline">Learn more</Link>
                     </div>
                   </div>
                 ))}
@@ -153,7 +225,7 @@ const ModulesMegaMenu = () => {
                   <div>
                     <h3 className="font-medium text-gray-900 mb-1">{category.title}</h3>
                     <p className="text-gray-600 text-sm mb-2">{category.description}</p>
-                    <a href={category.learnMoreLink} className="text-blue-500 text-sm hover:underline">View modules</a>
+                    <Link to={category.learnMoreLink} className="text-blue-500 text-sm hover:underline">View modules</Link>
                   </div>
                 </div>
               ))}
@@ -170,7 +242,7 @@ const ModulesMegaMenu = () => {
                   <div>
                     <h3 className="font-medium text-gray-900 mb-1">{module.title}</h3>
                     <p className="text-gray-600 text-sm mb-2">{module.description}</p>
-                    <a href={module.learnMoreLink} className="text-blue-500 text-sm hover:underline">Learn more</a>
+                    <Link to={module.learnMoreLink} className="text-blue-500 text-sm hover:underline">Learn more</Link>
                   </div>
                 </div>
               ))}

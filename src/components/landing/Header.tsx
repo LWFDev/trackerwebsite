@@ -3,6 +3,7 @@ import { useState, useRef, useEffect } from 'react';
 import { Button } from "@/components/ui/button";
 import { Menu, X, ChevronDown } from "lucide-react";
 import ModulesMegaMenu from './ModulesMegaMenu';
+import { Link } from 'react-router-dom';
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -53,13 +54,13 @@ const Header = () => {
     >
       <div className="container mx-auto px-4 py-3 flex items-center justify-between">
         <div className="flex items-center">
-          <div className="text-xl font-bold flex items-center text-white">
+          <Link to="/" className="text-xl font-bold flex items-center text-white">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className="mr-2">
               <rect width="24" height="24" rx="4" fill="#D4AF37"/>
               <path d="M7 12H17M7 8H17M7 16H13" stroke="black" strokeWidth="2" strokeLinecap="round"/>
             </svg>
             TRACKER
-          </div>
+          </Link>
         </div>
 
         {/* Desktop navigation */}
@@ -77,7 +78,7 @@ const Header = () => {
             </button>
           </div>
           
-          <a href="#pricing" className="text-gray-300 hover:text-gold-DEFAULT transition">Pricing</a>
+          <Link to="/pricing" className="text-gray-300 hover:text-gold-DEFAULT transition">Pricing</Link>
           
           <div className="relative group">
             <button className="flex items-center text-gray-300 hover:text-gold-DEFAULT transition">
@@ -108,27 +109,27 @@ const Header = () => {
       {isMenuOpen && (
         <div className="md:hidden bg-zinc-900 py-4 px-6 shadow-lg animate-fade-in">
           <nav className="flex flex-col space-y-4">
-            <a 
-              href="#modules" 
+            <Link 
+              to="/modules" 
               className="text-gray-300 hover:text-gold-DEFAULT transition py-2"
               onClick={() => setIsMenuOpen(false)}
             >
               Modules
-            </a>
-            <a 
-              href="#pricing" 
+            </Link>
+            <Link 
+              to="/pricing" 
               className="text-gray-300 hover:text-gold-DEFAULT transition py-2"
               onClick={() => setIsMenuOpen(false)}
             >
               Pricing
-            </a>
-            <a 
-              href="#resources" 
+            </Link>
+            <Link 
+              to="/resources" 
               className="text-gray-300 hover:text-gold-DEFAULT transition py-2"
               onClick={() => setIsMenuOpen(false)}
             >
               Resources
-            </a>
+            </Link>
             <div className="flex flex-col space-y-3 pt-4">
               <Button variant="outline" className="w-full border-zinc-700">
                 Sign In
