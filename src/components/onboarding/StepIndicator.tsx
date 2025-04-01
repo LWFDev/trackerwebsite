@@ -1,7 +1,6 @@
 
 import { Check } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Progress } from "@/components/ui/progress";
 
 interface StepIndicatorProps {
   currentStep: number;
@@ -24,10 +23,6 @@ export const StepIndicator = ({
     { id: 3, name: "Account" },
     { id: 4, name: "Complete" }
   ];
-
-  // Calculate overall progress percentage
-  const previousSectionsQuestions = currentStep > 1 ? (currentStep - 1) * (totalQuestions / totalSteps) : 0;
-  const overallProgress = ((previousSectionsQuestions + currentQuestionIndex + 1) / (totalQuestions * (totalSteps / totalSteps))) * 100;
 
   return (
     <div className="max-w-3xl mx-auto mb-8">
@@ -52,7 +47,7 @@ export const StepIndicator = ({
           <motion.div 
             className="h-full bg-[#D4AF37]"
             initial={{ width: "0%" }}
-            animate={{ width: `${overallProgress}%` }}
+            animate={{ width: `${(currentStep - 1) / (totalSteps - 1) * 100}%` }}
             transition={{ duration: 0.5 }}
           />
         </div>
