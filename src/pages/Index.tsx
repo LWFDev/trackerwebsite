@@ -15,7 +15,7 @@ const Index = () => {
         <Hero />
         <div className="py-12 bg-zinc-900 text-center">
           <div className="container mx-auto px-4">
-            <h3 className="text-lg text-gold-light mb-8">TRUSTED BY INDUSTRY LEADERS</h3>
+            <h3 className="text-lg text-gold-DEFAULT mb-8">TRUSTED BY INDUSTRY LEADERS</h3>
             <div className="grid grid-cols-2 md:grid-cols-5 gap-8">
               <div className="bg-zinc-800 h-8 rounded"></div>
               <div className="bg-zinc-800 h-8 rounded"></div>

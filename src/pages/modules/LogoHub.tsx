@@ -14,22 +14,22 @@ const LogoHub = () => {
           {
             value: "65%",
             label: "Time saved on logo searches",
-            icon: <Clock className="h-8 w-8 text-purple-500" />
+            icon: <Clock className="h-8 w-8 text-gold-DEFAULT" />
           },
           {
             value: "10k+",
             label: "Logos managed per account",
-            icon: <Image className="h-8 w-8 text-purple-500" />
+            icon: <Image className="h-8 w-8 text-gold-DEFAULT" />
           },
           {
             value: "99.9%",
             label: "Uptime for logo access",
-            icon: <Users className="h-8 w-8 text-purple-500" />
+            icon: <Users className="h-8 w-8 text-gold-DEFAULT" />
           },
           {
             value: "42%",
             label: "Reduction in brand inconsistencies",
-            icon: <Shield className="h-8 w-8 text-purple-500" />
+            icon: <Shield className="h-8 w-8 text-gold-DEFAULT" />
           }
         ]}
         mainSection={{
@@ -110,6 +110,7 @@ const LogoHub = () => {
           }
         ]}
       />
+      <Footer />
     </>
   );
 };

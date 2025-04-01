@@ -80,30 +80,30 @@ const ModuleLayout = ({
   const getBgColor = () => {
     switch (color) {
       case 'blue':
-        return 'bg-gradient-to-br from-blue-600 to-blue-400';
+        return 'bg-gradient-to-br from-zinc-800 to-zinc-900';
       case 'green':
-        return 'bg-gradient-to-br from-emerald-600 to-teal-400';
+        return 'bg-gradient-to-br from-zinc-800 to-zinc-900';
       case 'teal':
-        return 'bg-gradient-to-br from-teal-500 to-cyan-400';
+        return 'bg-gradient-to-br from-zinc-800 to-zinc-900';
       case 'purple':
-        return 'bg-gradient-to-br from-purple-600 to-indigo-400';
+        return 'bg-gradient-to-br from-zinc-800 to-zinc-900';
       case 'orange':
-        return 'bg-gradient-to-br from-orange-500 to-amber-400';
+        return 'bg-gradient-to-br from-zinc-800 to-zinc-900';
       case 'red':
-        return 'bg-gradient-to-br from-red-600 to-rose-400';
+        return 'bg-gradient-to-br from-zinc-800 to-zinc-900';
       default:
-        return 'bg-gradient-to-br from-blue-600 to-blue-400';
+        return 'bg-gradient-to-br from-zinc-800 to-zinc-900';
     }
   };
 
   return (
-    <div className="min-h-screen flex flex-col bg-white">
+    <div className="min-h-screen flex flex-col bg-black">
       {/* Hero Section */}
       <section className={`pt-24 pb-16 ${getBgColor()} text-white`}>
         <div className="container mx-auto px-4">
           <Link 
             to="/modules" 
-            className="inline-flex items-center text-white/80 hover:text-white mb-6 transition"
+            className="inline-flex items-center text-white/80 hover:text-gold-DEFAULT mb-6 transition"
           >
             <ArrowLeft size={16} className="mr-2" />
             Back to all modules
@@ -116,7 +116,7 @@ const ModuleLayout = ({
               
               <div className="flex space-x-4 mb-8">
                 <Button variant="gold">Get Started</Button>
-                <Button variant="outline" className="bg-white/10 text-white border-white/20 hover:bg-white/20">
+                <Button variant="outline" className="bg-zinc-800/50 text-white border-zinc-700 hover:bg-zinc-700 hover:border-gold-DEFAULT">
                   Request Demo
                 </Button>
               </div>
@@ -128,7 +128,7 @@ const ModuleLayout = ({
                       <Star 
                         key={i} 
                         size={18} 
-                        className={i < Math.floor(rating) ? "text-gold-DEFAULT fill-gold-DEFAULT" : "text-white/30"} 
+                        className={i < Math.floor(rating) ? "text-gold-DEFAULT fill-gold-DEFAULT" : "text-zinc-700"} 
                       />
                     ))}
                   </div>
@@ -140,7 +140,7 @@ const ModuleLayout = ({
             
             {heroImage && (
               <div className="flex justify-center">
-                <div className="bg-white/10 p-4 rounded-lg shadow-lg">
+                <div className="bg-zinc-800/50 p-4 rounded-lg shadow-lg border border-zinc-700">
                   <img src={heroImage} alt={title} className="w-full h-auto rounded max-h-[300px] object-contain" />
                 </div>
               </div>
@@ -151,14 +151,14 @@ const ModuleLayout = ({
 
       {/* Stats Section */}
       {stats && stats.length > 0 && (
-        <section className="py-16 bg-gray-50">
+        <section className="py-16 bg-zinc-900">
           <div className="container mx-auto px-4">
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
               {stats.map((stat, index) => (
                 <div key={index} className="flex flex-col items-center text-center">
                   {stat.icon && <div className="mb-4">{stat.icon}</div>}
-                  <div className="text-3xl font-bold mb-2">{stat.value}</div>
-                  <div className="text-gray-600">{stat.label}</div>
+                  <div className="text-3xl font-bold mb-2 text-gold-DEFAULT">{stat.value}</div>
+                  <div className="text-gray-400">{stat.label}</div>
                 </div>
               ))}
             </div>
@@ -168,11 +168,11 @@ const ModuleLayout = ({
 
       {/* Main Section */}
       {mainSection && (
-        <section ref={mainRef} className="py-16">
+        <section ref={mainRef} className="py-16 bg-black">
           <div className="container mx-auto px-4">
             <div className="text-center max-w-3xl mx-auto mb-12">
-              <h2 className="text-3xl font-bold mb-4">{mainSection.title}</h2>
-              <p className="text-gray-600">{mainSection.description}</p>
+              <h2 className="text-3xl font-bold mb-4 text-white">{mainSection.title}</h2>
+              <p className="text-gray-400">{mainSection.description}</p>
             </div>
             
             {mainSection.image && (
@@ -180,7 +180,7 @@ const ModuleLayout = ({
                 <img 
                   src={mainSection.image} 
                   alt={mainSection.title} 
-                  className="max-w-full rounded-lg shadow-lg border border-gray-200"
+                  className="max-w-full rounded-lg shadow-lg border border-zinc-800"
                 />
               </div>
             )}
@@ -190,24 +190,24 @@ const ModuleLayout = ({
 
       {/* Key Features Section */}
       {keyFeatures && (
-        <section className="py-16 bg-gray-50">
+        <section className="py-16 bg-zinc-900">
           <div className="container mx-auto px-4">
             <div className="text-center max-w-3xl mx-auto mb-12">
-              <span className="inline-block text-sm font-semibold tracking-wider text-blue-600 uppercase mb-2">Features</span>
-              <h2 className="text-3xl font-bold mb-4">{keyFeatures.title}</h2>
-              <p className="text-gray-600">{keyFeatures.description}</p>
+              <span className="inline-block text-sm font-semibold tracking-wider text-gold-DEFAULT uppercase mb-2">Features</span>
+              <h2 className="text-3xl font-bold mb-4 text-white">{keyFeatures.title}</h2>
+              <p className="text-gray-400">{keyFeatures.description}</p>
             </div>
             
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {keyFeatures.features.map((feature, index) => (
-                <div key={index} className="bg-white p-6 rounded-lg shadow-sm border border-gray-100">
+                <div key={index} className="bg-zinc-800 p-6 rounded-lg shadow-md border border-zinc-700 hover:border-gold-DEFAULT transition-all">
                   <div className="flex items-start">
-                    <div className="flex-shrink-0 mr-4 text-blue-500">
+                    <div className="flex-shrink-0 mr-4 text-gold-DEFAULT">
                       {feature.icon}
                     </div>
                     <div>
-                      <h3 className="text-lg font-semibold mb-2">{feature.title}</h3>
-                      <p className="text-gray-600 text-sm">{feature.description}</p>
+                      <h3 className="text-lg font-semibold mb-2 text-white">{feature.title}</h3>
+                      <p className="text-gray-400 text-sm">{feature.description}</p>
                     </div>
                   </div>
                 </div>
@@ -219,16 +219,16 @@ const ModuleLayout = ({
 
       {/* Special Section */}
       {specialSection && (
-        <section className="py-16">
+        <section className="py-16 bg-black">
           <div className="container mx-auto px-4">
             <div className="text-center max-w-3xl mx-auto mb-12">
               {specialSection.subtitle && (
-                <span className="inline-block text-sm font-semibold tracking-wider text-blue-600 uppercase mb-2">
+                <span className="inline-block text-sm font-semibold tracking-wider text-gold-DEFAULT uppercase mb-2">
                   {specialSection.subtitle}
                 </span>
               )}
-              <h2 className="text-3xl font-bold mb-4">{specialSection.title}</h2>
-              {specialSection.description && <p className="text-gray-600">{specialSection.description}</p>}
+              <h2 className="text-3xl font-bold mb-4 text-white">{specialSection.title}</h2>
+              {specialSection.description && <p className="text-gray-400">{specialSection.description}</p>}
             </div>
             
             {specialSection.image && (
@@ -236,7 +236,7 @@ const ModuleLayout = ({
                 <img 
                   src={specialSection.image} 
                   alt={specialSection.title} 
-                  className="max-w-full rounded-lg shadow-lg border border-gray-200"
+                  className="max-w-full rounded-lg shadow-lg border border-zinc-800"
                 />
               </div>
             )}
@@ -247,13 +247,13 @@ const ModuleLayout = ({
                   {specialSection.items.map((item, index) => (
                     <li key={index} className="flex items-center">
                       {item.icon ? (
-                        <span className="mr-3 text-green-500">{item.icon}</span>
+                        <span className="mr-3 text-gold-DEFAULT">{item.icon}</span>
                       ) : (
-                        <svg className="w-5 h-5 mr-3 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <svg className="w-5 h-5 mr-3 text-gold-DEFAULT" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                         </svg>
                       )}
-                      <span className="text-gray-700">{item.text}</span>
+                      <span className="text-gray-300">{item.text}</span>
                     </li>
                   ))}
                 </ul>
@@ -267,17 +267,17 @@ const ModuleLayout = ({
 
       {/* Related Modules Section */}
       {relatedModules && relatedModules.length > 0 && (
-        <section className="py-16 bg-gray-50">
+        <section className="py-16 bg-zinc-900">
           <div className="container mx-auto px-4">
-            <h2 className="text-3xl font-bold mb-8 text-center">Related Modules</h2>
+            <h2 className="text-3xl font-bold mb-8 text-center text-white">Related Modules</h2>
             
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               {relatedModules.map((module, index) => (
-                <div key={index} className="bg-white p-6 rounded-lg shadow-sm border border-gray-100">
-                  <div className="text-blue-500 mb-4">{module.icon}</div>
-                  <h3 className="text-xl font-semibold mb-2">{module.title}</h3>
-                  <p className="text-gray-600 mb-4">{module.description}</p>
-                  <Link to={module.link} className="text-blue-500 hover:underline">Learn more</Link>
+                <div key={index} className="bg-zinc-800 p-6 rounded-lg shadow-md border border-zinc-700 hover:border-gold-DEFAULT transition-all">
+                  <div className="text-gold-DEFAULT mb-4">{module.icon}</div>
+                  <h3 className="text-xl font-semibold mb-2 text-white">{module.title}</h3>
+                  <p className="text-gray-400 mb-4">{module.description}</p>
+                  <Link to={module.link} className="text-gold-DEFAULT hover:underline">Learn more</Link>
                 </div>
               ))}
             </div>
@@ -300,7 +300,7 @@ const ModuleLayout = ({
               )}
               
               {ctaSection.secondaryButtonText && (
-                <Button variant="outline" className="bg-white/10 text-white border-white/20 hover:bg-white/20">
+                <Button variant="outline" className="bg-zinc-800/50 text-white border-zinc-700 hover:bg-zinc-700 hover:border-gold-DEFAULT">
                   {ctaSection.secondaryButtonText}
                 </Button>
               )}
