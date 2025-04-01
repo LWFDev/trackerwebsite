@@ -1,4 +1,3 @@
-
 import { Button } from "@/components/ui/button";
 
 const CTA = () => {
@@ -13,7 +12,10 @@ const CTA = () => {
             Start your free 14-day trial today. No credit card required.
           </p>
           
-          <Button size="lg" className="bg-gold-DEFAULT text-black hover:bg-white hover:text-black font-medium px-8 transition-colors">
+          <Button 
+            size="lg" 
+            className="bg-gold-DEFAULT text-black hover:bg-gold-light hover:text-black px-8 transition-colors"
+          >
             Get Started
           </Button>
           
