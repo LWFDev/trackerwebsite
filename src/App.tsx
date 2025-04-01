@@ -25,6 +25,7 @@ import Footer from "./components/landing/Footer";
 import GetStarted from "./pages/GetStarted";
 import Pricing from "./pages/Pricing";
 import Contact from "./pages/Contact";
+import AboutUs from "./pages/AboutUs";
 
 // Scroll to top component that activates on route change
 const ScrollToTop = () => {
@@ -69,6 +70,7 @@ const App = () => (
             <Route path="/modules/customer-portal" element={<CustomerPortal />} />
             <Route path="/pricing" element={<Pricing />} />
             <Route path="/contact" element={<Contact />} />
+            <Route path="/about" element={<AboutUs />} />
             
             {/* Route without header and footer */}
             <Route path="/get-started" element={<GetStarted />} />

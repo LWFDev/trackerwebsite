@@ -4,13 +4,16 @@ import { Button } from "@/components/ui/button";
 import { Menu, X, ChevronDown } from "lucide-react";
 import ModulesMegaMenu from './ModulesMegaMenu';
 import { Link, useLocation } from 'react-router-dom';
+import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "@/components/ui/dropdown-menu";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isModulesMenuOpen, setIsModulesMenuOpen] = useState(false);
+  const [isResourcesMenuOpen, setIsResourcesMenuOpen] = useState(false);
   const headerRef = useRef<HTMLElement>(null);
   const modulesButtonRef = useRef<HTMLDivElement>(null);
   const modulesMenuRef = useRef<HTMLDivElement>(null);
+  const resourcesButtonRef = useRef<HTMLDivElement>(null);
   const location = useLocation();
   
   // Handle clicks outside of the modules menu
@@ -37,6 +40,7 @@ const Header = () => {
   useEffect(() => {
     setIsMenuOpen(false);
     setIsModulesMenuOpen(false);
+    setIsResourcesMenuOpen(false);
   }, [location.pathname]);
 
   // Handle mouse leave for the entire header + menu area
@@ -102,10 +106,32 @@ const Header = () => {
             Pricing
           </Link>
           
-          <div className="relative group">
-            <button className="flex items-center text-gray-300 hover:text-gold-DEFAULT transition">
-              Resources <ChevronDown size={16} className="ml-1" />
-            </button>
+          <div className="relative group" ref={resourcesButtonRef}>
+            <DropdownMenu>
+              <DropdownMenuTrigger asChild>
+                <button className="flex items-center text-gray-300 hover:text-gold-DEFAULT transition">
+                  Resources <ChevronDown size={16} className="ml-1" />
+                </button>
+              </DropdownMenuTrigger>
+              <DropdownMenuContent className="bg-zinc-900 border-zinc-800 text-white">
+                <DropdownMenuItem className="hover:bg-zinc-800 hover:text-gold-DEFAULT focus:bg-zinc-800 focus:text-gold-DEFAULT cursor-pointer">
+                  <Link to="/about" className="w-full" onClick={scrollToTop}>
+                    About Us
+                  </Link>
+                </DropdownMenuItem>
+                <DropdownMenuItem className="hover:bg-zinc-800 hover:text-gold-DEFAULT focus:bg-zinc-800 focus:text-gold-DEFAULT cursor-pointer">
+                  <Link to="/contact" className="w-full" onClick={scrollToTop}>
+                    Contact
+                  </Link>
+                </DropdownMenuItem>
+                <DropdownMenuItem className="hover:bg-zinc-800 hover:text-gold-DEFAULT focus:bg-zinc-800 focus:text-gold-DEFAULT cursor-pointer">
+                  Blog
+                </DropdownMenuItem>
+                <DropdownMenuItem className="hover:bg-zinc-800 hover:text-gold-DEFAULT focus:bg-zinc-800 focus:text-gold-DEFAULT cursor-pointer">
+                  Documentation
+                </DropdownMenuItem>
+              </DropdownMenuContent>
+            </DropdownMenu>
           </div>
         </nav>
 
@@ -153,16 +179,62 @@ const Header = () => {
             >
               Pricing
             </Link>
-            <Link 
-              to="/resources" 
-              className="text-gray-300 hover:text-gold-DEFAULT transition py-2"
-              onClick={() => {
-                setIsMenuOpen(false);
-                scrollToTop();
-              }}
-            >
-              Resources
-            </Link>
+            <div className="py-2">
+              <div 
+                className="flex items-center justify-between text-gray-300 hover:text-gold-DEFAULT transition"
+                onClick={() => setIsResourcesMenuOpen(!isResourcesMenuOpen)}
+              >
+                <span>Resources</span>
+                <ChevronDown 
+                  size={16} 
+                  className={`transition-transform duration-200 ${isResourcesMenuOpen ? 'rotate-180' : ''}`} 
+                />
+              </div>
+              {isResourcesMenuOpen && (
+                <div className="ml-4 mt-2 space-y-2">
+                  <Link 
+                    to="/about" 
+                    className="block py-1 text-gray-400 hover:text-gold-DEFAULT transition"
+                    onClick={() => {
+                      setIsMenuOpen(false);
+                      scrollToTop();
+                    }}
+                  >
+                    About Us
+                  </Link>
+                  <Link 
+                    to="/contact" 
+                    className="block py-1 text-gray-400 hover:text-gold-DEFAULT transition"
+                    onClick={() => {
+                      setIsMenuOpen(false);
+                      scrollToTop();
+                    }}
+                  >
+                    Contact
+                  </Link>
+                  <Link 
+                    to="#" 
+                    className="block py-1 text-gray-400 hover:text-gold-DEFAULT transition"
+                    onClick={() => {
+                      setIsMenuOpen(false);
+                      scrollToTop();
+                    }}
+                  >
+                    Blog
+                  </Link>
+                  <Link 
+                    to="#" 
+                    className="block py-1 text-gray-400 hover:text-gold-DEFAULT transition"
+                    onClick={() => {
+                      setIsMenuOpen(false);
+                      scrollToTop();
+                    }}
+                  >
+                    Documentation
+                  </Link>
+                </div>
+              )}
+            </div>
             <div className="flex flex-col space-y-3 pt-4">
               <Button variant="outline" className="w-full border-zinc-700">
                 Sign In
