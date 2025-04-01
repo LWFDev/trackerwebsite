@@ -1,27 +1,26 @@
+
 import { useState, useRef, useEffect } from 'react';
 import { Button } from "@/components/ui/button";
-import { Menu, X, ChevronDown } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import ModulesMegaMenu from './ModulesMegaMenu';
 import { Link, useLocation } from 'react-router-dom';
-import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "@/components/ui/dropdown-menu";
+import Logo from './header/Logo';
+import MobileMenu from './header/MobileMenu';
+import ModulesButton from './header/ModulesButton';
+import ResourcesDropdown from './header/ResourcesDropdown';
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isModulesMenuOpen, setIsModulesMenuOpen] = useState(false);
-  const [isResourcesMenuOpen, setIsResourcesMenuOpen] = useState(false);
   const headerRef = useRef<HTMLElement>(null);
-  const modulesButtonRef = useRef<HTMLDivElement>(null);
   const modulesMenuRef = useRef<HTMLDivElement>(null);
-  const resourcesButtonRef = useRef<HTMLDivElement>(null);
   const location = useLocation();
   
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
       if (
         isModulesMenuOpen &&
-        modulesButtonRef.current &&
         modulesMenuRef.current &&
-        !modulesButtonRef.current.contains(event.target as Node) &&
         !modulesMenuRef.current.contains(event.target as Node)
       ) {
         setIsModulesMenuOpen(false);
@@ -37,7 +36,6 @@ const Header = () => {
   useEffect(() => {
     setIsMenuOpen(false);
     setIsModulesMenuOpen(false);
-    setIsResourcesMenuOpen(false);
   }, [location.pathname]);
 
   const handleMouseLeave = () => {
@@ -62,33 +60,14 @@ const Header = () => {
       ref={headerRef}
     >
       <div className="container mx-auto px-4 py-3 flex items-center justify-between">
-        <div className="flex items-center">
-          <Link 
-            to="/" 
-            className="text-xl font-bold flex items-center text-white"
-            onClick={scrollToTop}
-          >
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className="mr-2">
-              <rect width="24" height="24" rx="4" fill="#D4AF37"/>
-              <path d="M7 12H17M7 8H17M7 16H13" stroke="black" strokeWidth="2" strokeLinecap="round"/>
-            </svg>
-            TRACKER
-          </Link>
-        </div>
+        <Logo scrollToTop={scrollToTop} />
 
         <nav className="hidden md:flex items-center space-x-6">
-          <div 
-            className="relative group"
-            ref={modulesButtonRef}
-            onMouseEnter={handleModulesHover}
-            onClick={handleModulesClick}
-          >
-            <button 
-              className={`flex items-center transition ${location.pathname.includes('/modules') || isModulesMenuOpen ? 'text-gold-DEFAULT' : 'text-gray-300 hover:text-gold-DEFAULT'}`}
-            >
-              Modules <ChevronDown size={16} className={`ml-1 transition-transform duration-200 ${isModulesMenuOpen ? 'rotate-180' : ''}`} />
-            </button>
-          </div>
+          <ModulesButton 
+            isOpen={isModulesMenuOpen} 
+            onHover={handleModulesHover} 
+            onClick={handleModulesClick} 
+          />
           
           <Link 
             to="/pricing" 
@@ -98,33 +77,7 @@ const Header = () => {
             Pricing
           </Link>
           
-          <div className="relative group" ref={resourcesButtonRef}>
-            <DropdownMenu>
-              <DropdownMenuTrigger asChild>
-                <button className="flex items-center text-gray-300 hover:text-gold-DEFAULT transition">
-                  Resources <ChevronDown size={16} className="ml-1" />
-                </button>
-              </DropdownMenuTrigger>
-              <DropdownMenuContent className="bg-zinc-900 border-zinc-800 text-white">
-                <DropdownMenuItem className="hover:bg-zinc-800 hover:text-gold-DEFAULT focus:bg-zinc-800 focus:text-gold-DEFAULT cursor-pointer">
-                  <Link to="/about" className="w-full" onClick={scrollToTop}>
-                    About Us
-                  </Link>
-                </DropdownMenuItem>
-                <DropdownMenuItem className="hover:bg-zinc-800 hover:text-gold-DEFAULT focus:bg-zinc-800 focus:text-gold-DEFAULT cursor-pointer">
-                  <Link to="/contact" className="w-full" onClick={scrollToTop}>
-                    Contact
-                  </Link>
-                </DropdownMenuItem>
-                <DropdownMenuItem className="hover:bg-zinc-800 hover:text-gold-DEFAULT focus:bg-zinc-800 focus:text-gold-DEFAULT cursor-pointer">
-                  Blog
-                </DropdownMenuItem>
-                <DropdownMenuItem className="hover:bg-zinc-800 hover:text-gold-DEFAULT focus:bg-zinc-800 focus:text-gold-DEFAULT cursor-pointer">
-                  Documentation
-                </DropdownMenuItem>
-              </DropdownMenuContent>
-            </DropdownMenu>
-          </div>
+          <ResourcesDropdown scrollToTop={scrollToTop} />
         </nav>
 
         <div className="hidden md:flex items-center space-x-4">
@@ -146,98 +99,11 @@ const Header = () => {
         </button>
       </div>
 
-      {isMenuOpen && (
-        <div className="md:hidden bg-zinc-900 py-4 px-6 shadow-lg animate-fade-in">
-          <nav className="flex flex-col space-y-4">
-            <Link 
-              to="/modules" 
-              className={`py-2 transition ${location.pathname.includes('/modules') ? 'text-gold-DEFAULT' : 'text-gray-300 hover:text-gold-DEFAULT'}`}
-              onClick={() => {
-                setIsMenuOpen(false);
-                scrollToTop();
-              }}
-            >
-              Modules
-            </Link>
-            <Link 
-              to="/pricing" 
-              className={`py-2 transition ${location.pathname === '/pricing' ? 'text-gold-DEFAULT' : 'text-gray-300 hover:text-gold-DEFAULT'}`}
-              onClick={() => {
-                setIsMenuOpen(false);
-                scrollToTop();
-              }}
-            >
-              Pricing
-            </Link>
-            <div className="py-2">
-              <div 
-                className="flex items-center justify-between text-gray-300 hover:text-gold-DEFAULT transition"
-                onClick={() => setIsResourcesMenuOpen(!isResourcesMenuOpen)}
-              >
-                <span>Resources</span>
-                <ChevronDown 
-                  size={16} 
-                  className={`transition-transform duration-200 ${isResourcesMenuOpen ? 'rotate-180' : ''}`} 
-                />
-              </div>
-              {isResourcesMenuOpen && (
-                <div className="ml-4 mt-2 space-y-2">
-                  <Link 
-                    to="/about" 
-                    className="block py-1 text-gray-400 hover:text-gold-DEFAULT transition"
-                    onClick={() => {
-                      setIsMenuOpen(false);
-                      scrollToTop();
-                    }}
-                  >
-                    About Us
-                  </Link>
-                  <Link 
-                    to="/contact" 
-                    className="block py-1 text-gray-400 hover:text-gold-DEFAULT transition"
-                    onClick={() => {
-                      setIsMenuOpen(false);
-                      scrollToTop();
-                    }}
-                  >
-                    Contact
-                  </Link>
-                  <Link 
-                    to="#" 
-                    className="block py-1 text-gray-400 hover:text-gold-DEFAULT transition"
-                    onClick={() => {
-                      setIsMenuOpen(false);
-                      scrollToTop();
-                    }}
-                  >
-                    Blog
-                  </Link>
-                  <Link 
-                    to="#" 
-                    className="block py-1 text-gray-400 hover:text-gold-DEFAULT transition"
-                    onClick={() => {
-                      setIsMenuOpen(false);
-                      scrollToTop();
-                    }}
-                  >
-                    Documentation
-                  </Link>
-                </div>
-              )}
-            </div>
-            <div className="flex flex-col space-y-3 pt-4">
-              <Button variant="outline" className="w-full border-zinc-700">
-                Sign In
-              </Button>
-              <Link to="/get-started" className="w-full">
-                <Button variant="gold" className="w-full">
-                  Get Started
-                </Button>
-              </Link>
-            </div>
-          </nav>
-        </div>
-      )}
+      <MobileMenu 
+        isOpen={isMenuOpen} 
+        closeMenu={() => setIsMenuOpen(false)} 
+        scrollToTop={scrollToTop} 
+      />
 
       {isModulesMenuOpen && (
         <div 
