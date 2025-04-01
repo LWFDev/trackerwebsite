@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { BusinessForm } from "@/components/onboarding/BusinessForm";
@@ -79,8 +78,8 @@ const GetStarted = () => {
     receiveUpdates: false
   });
 
-  const updateFormData = (field: keyof OnboardingData, value: any) => {
-    setFormData(prev => ({ ...prev, [field]: value }));
+  const updateFormData = (data: Partial<OnboardingData>) => {
+    setFormData(prev => ({ ...prev, ...data }));
   };
 
   // Define questions for each step
