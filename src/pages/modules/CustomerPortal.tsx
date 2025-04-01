@@ -56,12 +56,12 @@ const CustomerPortal = () => {
           {
             title: "Custom Branding",
             description: "Customize the portal with your brand colors, logo, and domain for a seamless client experience.",
-            icon: <Paintbrush className="h-6 w-6" />
+            icon: <File className="h-6 w-6" />
           },
           {
             title: "Self-Service Tools",
             description: "Empower clients with self-service tools like appointment scheduling and form submissions.",
-            icon: <Tool className="h-6 w-6" />
+            icon: <Wrench className="h-6 w-6" />
           }
         ]
       }}
@@ -91,13 +91,13 @@ const CustomerPortal = () => {
         },
         {
           title: "Project Management",
-          icon: <ClipboardList className="h-8 w-8" />,
+          icon: <File className="h-8 w-8" />,
           description: "Plan, track, and manage projects with ease.",
           link: "/modules/project-management"
         },
         {
           title: "Finance & Accounting",
-          icon: <Receipt className="h-8 w-8" />,
+          icon: <CreditCard className="h-8 w-8" />,
           description: "Manage financial transactions and accounting processes efficiently.",
           link: "/modules/finance-accounting"
         }

@@ -27,7 +27,7 @@ const InventoryLogistics = () => {
         {
           value: "99.8%",
           label: "Order fulfillment accuracy",
-          icon: <CheckCircle className="h-8 w-8 text-blue-500" />
+          icon: <Package className="h-8 w-8 text-blue-500" />
         }
       ]}
       mainSection={{
@@ -75,10 +75,10 @@ const InventoryLogistics = () => {
         subtitle: "Seamless Integration",
         description: "Our Inventory Management module integrates with your existing systems to provide a complete view of your business operations.",
         items: [
-          { text: "Integrates with e-commerce platforms", icon: <Check className="h-5 w-5" /> },
-          { text: "Connects with accounting software", icon: <Check className="h-5 w-5" /> },
-          { text: "Works with shipping and logistics providers", icon: <Check className="h-5 w-5" /> },
-          { text: "Syncs with point-of-sale systems", icon: <Check className="h-5 w-5" /> }
+          { text: "Integrates with e-commerce platforms", icon: <Package className="h-5 w-5" /> },
+          { text: "Connects with accounting software", icon: <Package className="h-5 w-5" /> },
+          { text: "Works with shipping and logistics providers", icon: <Package className="h-5 w-5" /> },
+          { text: "Syncs with point-of-sale systems", icon: <Package className="h-5 w-5" /> }
         ]
       }}
       ctaSection={{
@@ -90,13 +90,13 @@ const InventoryLogistics = () => {
       relatedModules={[
         {
           title: "Sales & Order Management",
-          icon: <ShoppingCart className="h-8 w-8" />,
+          icon: <Package className="h-8 w-8" />,
           description: "Connect teams, close more deals, and simplify your sales process.",
           link: "/modules/sales-order-management"
         },
         {
           title: "Production & Manufacturing",
-          icon: <Layers className="h-8 w-8" />,
+          icon: <Package className="h-8 w-8" />,
           description: "Oversee production processes, schedules, and resource allocation.",
           link: "/modules/production-manufacturing"
         },

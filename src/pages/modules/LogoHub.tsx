@@ -1,6 +1,6 @@
 
 import ModuleLayout from "@/components/modules/ModuleLayout";
-import { Image, Share2, Tags, Users, Search, Shield, Globe, UploadCloud, Folder, Clock } from "lucide-react";
+import { Image, Share2, Tags, Users, Search, Shield, Globe, UploadCloud, Folder, Clock, File } from "lucide-react";
 
 const LogoHub = () => {
   return (
@@ -22,7 +22,7 @@ const LogoHub = () => {
         {
           value: "99.9%",
           label: "Uptime for logo access",
-          icon: <CheckCircle className="h-8 w-8 text-purple-500" />
+          icon: <Users className="h-8 w-8 text-purple-500" />
         },
         {
           value: "42%",
@@ -46,7 +46,7 @@ const LogoHub = () => {
           {
             title: "Version Control",
             description: "Track changes and maintain version history for all your logo files.",
-            icon: <History className="h-6 w-6" />
+            icon: <Clock className="h-6 w-6" />
           },
           {
             title: "Intelligent Tagging",
@@ -74,11 +74,11 @@ const LogoHub = () => {
         title: "Brand Consistency Made Simple",
         description: "Ensure your brand is represented consistently across all channels with our comprehensive logo management system.",
         items: [
-          { text: "Maintain brand guidelines alongside logo assets", icon: <Check className="h-5 w-5" /> },
-          { text: "Track logo usage and provide analytics on brand consistency", icon: <Check className="h-5 w-5" /> },
-          { text: "Simplify logo distribution to partners and vendors", icon: <Check className="h-5 w-5" /> },
-          { text: "Automatic format conversion for different platforms and media", icon: <Check className="h-5 w-5" /> },
-          { text: "Protect brand identity with watermarking and usage tracking", icon: <Check className="h-5 w-5" /> }
+          { text: "Maintain brand guidelines alongside logo assets", icon: <Users className="h-5 w-5" /> },
+          { text: "Track logo usage and provide analytics on brand consistency", icon: <Users className="h-5 w-5" /> },
+          { text: "Simplify logo distribution to partners and vendors", icon: <Users className="h-5 w-5" /> },
+          { text: "Automatic format conversion for different platforms and media", icon: <Users className="h-5 w-5" /> },
+          { text: "Protect brand identity with watermarking and usage tracking", icon: <Users className="h-5 w-5" /> }
         ]
       }}
       ctaSection={{
@@ -90,19 +90,19 @@ const LogoHub = () => {
       relatedModules={[
         {
           title: "Document Management",
-          icon: <FileText className="h-8 w-8" />,
+          icon: <File className="h-8 w-8" />,
           description: "Store, organize, and share documents securely across your organization.",
           link: "/modules/document-management"
         },
         {
           title: "Product Design",
-          icon: <Paintbrush className="h-8 w-8" />,
+          icon: <Image className="h-8 w-8" />,
           description: "Create and manage product designs with powerful customization tools.",
           link: "/modules/product-design"
         },
         {
           title: "Project Management",
-          icon: <ClipboardList className="h-8 w-8" />,
+          icon: <File className="h-8 w-8" />,
           description: "Plan, track, and manage projects with ease.",
           link: "/modules/project-management"
         }

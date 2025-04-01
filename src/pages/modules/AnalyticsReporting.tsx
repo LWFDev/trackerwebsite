@@ -22,7 +22,7 @@ const AnalyticsReporting = () => {
         {
           value: "4.9/5",
           label: "Customer Rating",
-          icon: <Star className="h-8 w-8 text-teal-500" />
+          icon: <BarChart className="h-8 w-8 text-teal-500" />
         },
         {
           value: "25%",
@@ -66,7 +66,7 @@ const AnalyticsReporting = () => {
           {
             title: "Advanced Filtering",
             description: "Drill down into your data with powerful filtering and segmentation tools.",
-            icon: <Search className="h-6 w-6" />
+            icon: <FileText className="h-6 w-6" />
           }
         ]
       }}
@@ -79,19 +79,19 @@ const AnalyticsReporting = () => {
       relatedModules={[
         {
           title: "Sales & Order Management",
-          icon: <ShoppingCart className="h-8 w-8" />,
+          icon: <BarChart className="h-8 w-8" />,
           description: "Connect teams, close more deals, and simplify your sales process.",
           link: "/modules/sales-order-management"
         },
         {
           title: "Finance & Accounting",
-          icon: <Receipt className="h-8 w-8" />,
+          icon: <FileText className="h-8 w-8" />,
           description: "Manage financial transactions and accounting processes efficiently.",
           link: "/modules/finance-accounting"
         },
         {
           title: "Production & Manufacturing",
-          icon: <Layers className="h-8 w-8" />,
+          icon: <BarChart2 className="h-8 w-8" />,
           description: "Oversee production processes, schedules, and resource allocation.",
           link: "/modules/production-manufacturing"
         }

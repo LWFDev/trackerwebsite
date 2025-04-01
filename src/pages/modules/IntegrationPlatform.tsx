@@ -1,6 +1,6 @@
 
 import ModuleLayout from "@/components/modules/ModuleLayout";
-import { Zap, Clock, Database, RefreshCw, Code, Bell, FileCode, Layout, CheckCircle } from "lucide-react";
+import { Zap, Clock, Database, RefreshCw, Code, Bell, File, Layout, CheckCircle, Users, BarChart2 } from "lucide-react";
 
 const IntegrationPlatform = () => {
   return (
@@ -61,7 +61,7 @@ const IntegrationPlatform = () => {
           {
             title: "Error Handling",
             description: "Robust error handling and retry mechanisms to ensure reliability.",
-            icon: <AlertCircle className="h-6 w-6" />
+            icon: <Bell className="h-6 w-6" />
           },
           {
             title: "Monitoring & Alerts",
@@ -85,13 +85,13 @@ const IntegrationPlatform = () => {
         },
         {
           title: "Document Management",
-          icon: <FileText className="h-8 w-8" />,
+          icon: <File className="h-8 w-8" />,
           description: "Store, organize, and share documents securely across your organization.",
           link: "/modules/document-management"
         },
         {
           title: "Customer Portal",
-          icon: <UserCheck className="h-8 w-8" />,
+          icon: <Users className="h-8 w-8" />,
           description: "Provide your customers with a self-service portal for support and information.",
           link: "/modules/customer-portal"
         }

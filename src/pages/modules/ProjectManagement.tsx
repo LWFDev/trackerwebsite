@@ -74,12 +74,12 @@ const ProjectManagement = () => {
         title: "Streamlined Workflows for Every Team",
         description: "Customize your project management experience to fit your team's unique workflow and requirements.",
         items: [
-          { text: "Flexible methodologies – Agile, Waterfall, or hybrid approaches", icon: <Check className="h-5 w-5" /> },
-          { text: "Custom workflows and approval processes", icon: <Check className="h-5 w-5" /> },
-          { text: "Automated notifications and reminders", icon: <Check className="h-5 w-5" /> },
-          { text: "Time tracking and reporting", icon: <Check className="h-5 w-5" /> },
-          { text: "Client collaboration and visibility", icon: <Check className="h-5 w-5" /> },
-          { text: "Mobile access for on-the-go project management", icon: <Check className="h-5 w-5" /> }
+          { text: "Flexible methodologies – Agile, Waterfall, or hybrid approaches", icon: <CheckCircle className="h-5 w-5" /> },
+          { text: "Custom workflows and approval processes", icon: <CheckCircle className="h-5 w-5" /> },
+          { text: "Automated notifications and reminders", icon: <CheckCircle className="h-5 w-5" /> },
+          { text: "Time tracking and reporting", icon: <CheckCircle className="h-5 w-5" /> },
+          { text: "Client collaboration and visibility", icon: <CheckCircle className="h-5 w-5" /> },
+          { text: "Mobile access for on-the-go project management", icon: <CheckCircle className="h-5 w-5" /> }
         ]
       }}
       ctaSection={{
@@ -103,7 +103,7 @@ const ProjectManagement = () => {
         },
         {
           title: "Customer Portal",
-          icon: <UserCheck className="h-8 w-8" />,
+          icon: <Users className="h-8 w-8" />,
           description: "Provide your customers with a self-service portal for support and information.",
           link: "/modules/customer-portal"
         }

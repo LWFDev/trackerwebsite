@@ -1,6 +1,6 @@
 
 import ModuleLayout from "@/components/modules/ModuleLayout";
-import { FileText, Search, Lock, Users, Share2, History, UploadCloud, Tags, CheckCircle, Shield } from "lucide-react";
+import { FileText, Search, Lock, Users, Share2, Clock, UploadCloud, Tags, CheckCircle, Shield, File } from "lucide-react";
 
 const DocumentManagement = () => {
   return (
@@ -51,7 +51,7 @@ const DocumentManagement = () => {
           {
             title: "Version Control",
             description: "Track changes and maintain version history for all your documents.",
-            icon: <History className="h-6 w-6" />
+            icon: <FileText className="h-6 w-6" />
           },
           {
             title: "Role-Based Access",
@@ -74,12 +74,12 @@ const DocumentManagement = () => {
         title: "Enterprise-Grade Security",
         description: "Keep your sensitive documents safe with our comprehensive security features.",
         items: [
-          { text: "End-to-end encryption for all documents", icon: <Check className="h-5 w-5" /> },
-          { text: "Customizable retention policies", icon: <Check className="h-5 w-5" /> },
-          { text: "Detailed audit logs and compliance reporting", icon: <Check className="h-5 w-5" /> },
-          { text: "Two-factor authentication", icon: <Check className="h-5 w-5" /> },
-          { text: "Data loss prevention", icon: <Check className="h-5 w-5" /> },
-          { text: "GDPR and CCPA compliance", icon: <Check className="h-5 w-5" /> }
+          { text: "End-to-end encryption for all documents", icon: <CheckCircle className="h-5 w-5" /> },
+          { text: "Customizable retention policies", icon: <CheckCircle className="h-5 w-5" /> },
+          { text: "Detailed audit logs and compliance reporting", icon: <CheckCircle className="h-5 w-5" /> },
+          { text: "Two-factor authentication", icon: <CheckCircle className="h-5 w-5" /> },
+          { text: "Data loss prevention", icon: <CheckCircle className="h-5 w-5" /> },
+          { text: "GDPR and CCPA compliance", icon: <CheckCircle className="h-5 w-5" /> }
         ]
       }}
       ctaSection={{
@@ -91,19 +91,19 @@ const DocumentManagement = () => {
       relatedModules={[
         {
           title: "Project Management",
-          icon: <ClipboardList className="h-8 w-8" />,
+          icon: <FileText className="h-8 w-8" />,
           description: "Plan, track, and manage projects with ease.",
           link: "/modules/project-management"
         },
         {
           title: "Logo Hub",
-          icon: <Image className="h-8 w-8" />,
+          icon: <FileText className="h-8 w-8" />,
           description: "Centralize and manage all your brand logos in one place.",
           link: "/modules/logo-hub"
         },
         {
           title: "Customer Portal",
-          icon: <UserCheck className="h-8 w-8" />,
+          icon: <Users className="h-8 w-8" />,
           description: "Provide your customers with a self-service portal for support and information.",
           link: "/modules/customer-portal"
         }

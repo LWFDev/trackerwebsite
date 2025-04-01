@@ -1,6 +1,6 @@
 
 import ModuleLayout from "@/components/modules/ModuleLayout";
-import { Receipt, BarChart2, CreditCard, DollarSign, FileText, PieChart, Zap, Lock, RefreshCw, Check } from "lucide-react";
+import { Receipt, BarChart2, CreditCard, DollarSign, FileText, PieChart, Zap, Lock, RefreshCw, Check, Clock, Users } from "lucide-react";
 
 const FinanceAccounting = () => {
   return (
@@ -27,7 +27,7 @@ const FinanceAccounting = () => {
         {
           value: "135+",
           label: "Supported Currencies",
-          icon: <Globe className="h-8 w-8 text-green-500" />
+          icon: <CreditCard className="h-8 w-8 text-green-500" />
         }
       ]}
       mainSection={{
@@ -51,7 +51,7 @@ const FinanceAccounting = () => {
           {
             title: "Recurring Billing",
             description: "Set up subscription payments and recurring billing schedules for customers.",
-            icon: <Calendar className="h-6 w-6" />
+            icon: <Clock className="h-6 w-6" />
           },
           {
             title: "Payment Analytics",
@@ -66,7 +66,7 @@ const FinanceAccounting = () => {
           {
             title: "Global Payments",
             description: "Accept payments from customers in any region with multi-currency and localization support.",
-            icon: <Globe className="h-6 w-6" />
+            icon: <CreditCard className="h-6 w-6" />
           }
         ]
       }}
@@ -91,7 +91,7 @@ const FinanceAccounting = () => {
       relatedModules={[
         {
           title: "Orders",
-          icon: <ShoppingCart className="h-8 w-8" />,
+          icon: <FileText className="h-8 w-8" />,
           description: "Track and process customer orders efficiently.",
           link: "/modules/sales-order-management"
         },

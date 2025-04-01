@@ -1,6 +1,6 @@
 
 import ModuleLayout from "@/components/modules/ModuleLayout";
-import { MessagesSquare, Users, Clock, CheckCircle, PhoneCall, Mail, MessageSquare, Globe, BarChart2, HeadphonesIcon } from "lucide-react";
+import { MessageSquare, Users, Clock, CheckCircle, PhoneCall, Mail, Settings, Globe, BarChart2, HeadphonesIcon, File } from "lucide-react";
 
 const CustomerService = () => {
   return (
@@ -51,12 +51,12 @@ const CustomerService = () => {
           {
             title: "Knowledge Base",
             description: "Create and manage a comprehensive knowledge base for customer self-service and agent support.",
-            icon: <FileText className="h-6 w-6" />
+            icon: <File className="h-6 w-6" />
           },
           {
             title: "Automated Workflows",
             description: "Automate routine support tasks with customizable workflows and triggers.",
-            icon: <Zap className="h-6 w-6" />
+            icon: <Settings className="h-6 w-6" />
           },
           {
             title: "Customer History",
@@ -79,7 +79,7 @@ const CustomerService = () => {
       relatedModules={[
         {
           title: "Customer Portal",
-          icon: <UserCheck className="h-8 w-8" />,
+          icon: <Users className="h-8 w-8" />,
           description: "Provide your customers with a self-service portal for support and information.",
           link: "/modules/customer-portal"
         },
@@ -91,7 +91,7 @@ const CustomerService = () => {
         },
         {
           title: "Document Management",
-          icon: <FileText className="h-8 w-8" />,
+          icon: <File className="h-8 w-8" />,
           description: "Store, organize, and share documents securely across your organization.",
           link: "/modules/document-management"
         }
