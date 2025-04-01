@@ -20,23 +20,15 @@ export function PasswordForm({ formData, updateFormData }: PasswordFormProps) {
     confirmPassword: formData.confirmPassword || ""
   });
 
+  // Update local state when parent props change
   useEffect(() => {
-    // Update local form data when parent formData changes
     setLocalFormData({
       password: formData.password || "",
       confirmPassword: formData.confirmPassword || ""
     });
-  }, [formData]);
+  }, [formData.password, formData.confirmPassword]);
 
-  useEffect(() => {
-    // Update the parent formData whenever local form data changes
-    // This ensures both password and confirmPassword are properly synced
-    updateFormData({
-      password: localFormData.password,
-      confirmPassword: localFormData.confirmPassword
-    });
-  }, [localFormData, updateFormData]);
-
+  // Calculate password strength
   useEffect(() => {
     if (localFormData.password) {
       let strength = 0;
@@ -64,11 +56,21 @@ export function PasswordForm({ formData, updateFormData }: PasswordFormProps) {
   const handlePasswordChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const newPassword = e.target.value;
     setLocalFormData(prev => ({ ...prev, password: newPassword }));
+    // Update parent directly on change
+    updateFormData({ 
+      password: newPassword,
+      confirmPassword: localFormData.confirmPassword 
+    });
   };
 
   const handleConfirmPasswordChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const newConfirmPassword = e.target.value;
     setLocalFormData(prev => ({ ...prev, confirmPassword: newConfirmPassword }));
+    // Update parent directly on change
+    updateFormData({ 
+      password: localFormData.password,
+      confirmPassword: newConfirmPassword 
+    });
   };
 
   const getStrengthColor = () => {

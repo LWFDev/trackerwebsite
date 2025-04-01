@@ -33,14 +33,14 @@ export const accountQuestions: Question[] = [
           confirmPassword: "" 
         }}
         updateFormData={(data) => {
-          if (data.password) {
+          // Update the password in parent state
+          if (data.password !== undefined) {
             onChange(data.password);
-            // Only set valid if both password exists and matches confirmation
-            if (data.password && data.confirmPassword && data.password === data.confirmPassword) {
-              setIsValid(true);
-            } else {
-              setIsValid(false);
-            }
+          }
+          
+          // Validate password and confirmation match
+          if (data.password && data.confirmPassword && data.password === data.confirmPassword) {
+            setIsValid(true);
           } else {
             setIsValid(false);
           }
