@@ -1,5 +1,4 @@
 
-import Header from "@/components/landing/Header";
 import Hero from "@/components/landing/Hero";
 import Features from "@/components/landing/Features";
 import Integration from "@/components/landing/Integration";
@@ -13,8 +12,7 @@ import Pricing from "@/components/landing/Pricing";
 const Index = () => {
   return (
     <div className="min-h-screen flex flex-col bg-black text-white">
-      <Header />
-      <main>
+      <main className="mt-16">
         <Hero />
         <div className="py-12 bg-zinc-900 text-center">
           <div className="container mx-auto px-4">

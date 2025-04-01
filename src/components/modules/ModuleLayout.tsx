@@ -1,4 +1,3 @@
-
 import { ReactNode, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
@@ -308,13 +307,6 @@ const ModuleLayout = ({
           </div>
         </section>
       )}
-
-      {/* Footer */}
-      <div className="py-4 bg-gray-100 text-center text-sm text-gray-600">
-        <div className="container mx-auto px-4">
-          © 2023 NuboSync. All rights reserved.
-        </div>
-      </div>
     </div>
   );
 };

@@ -1,13 +1,11 @@
 
 import ModuleLayout from "@/components/modules/ModuleLayout";
 import { UserCheck, CheckCircle, Clock, File, Shield, MessageSquare, FileText, LockIcon, Calendar, CreditCard, Settings } from "lucide-react";
-import Header from "@/components/landing/Header";
 import Footer from "@/components/landing/Footer";
 
 const CustomerPortal = () => {
   return (
     <>
-      <Header />
       <ModuleLayout
         title="Client Portal"
         description="Provide your clients with a secure, branded portal where they can access documents, make payments, and communicate with your team."
