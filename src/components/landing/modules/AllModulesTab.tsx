@@ -9,7 +9,7 @@ interface AllModulesTabProps {
 
 const AllModulesTab = ({ modules }: AllModulesTabProps) => {
   return (
-    <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
       {modules.map((module, index) => (
         <ModuleItem
           key={index}
