@@ -125,7 +125,9 @@ export function PasswordForm({ formData, updateFormData }: PasswordFormProps) {
               id="confirmPassword"
               type={showConfirmPassword ? "text" : "password"}
               value={formData.confirmPassword || ""}
-              onChange={(e) => updateFormData({ confirmPassword: e.target.value })}
+              onChange={(e) => {
+                updateFormData({ confirmPassword: e.target.value });
+              }}
               placeholder="••••••••"
               className={`
                 bg-zinc-800 border-zinc-700 text-white focus-visible:ring-[#D4AF37] focus-visible:border-[#D4AF37] pr-10
