@@ -11,8 +11,7 @@ export const useOnboardingForm = () => {
     decorationMethods: [],
     
     // Contact step
-    firstName: "",
-    lastName: "",
+    fullName: "",
     email: "",
     phone: "",
     companyName: "",

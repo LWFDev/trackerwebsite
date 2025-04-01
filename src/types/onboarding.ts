@@ -8,8 +8,7 @@ export interface OnboardingData {
   decorationMethods: string[];
   
   // Contact step
-  firstName: string;
-  lastName: string;
+  fullName: string;
   email: string;
   phone: string;
   companyName: string;

@@ -1,3 +1,4 @@
+
 import { useEffect } from "react";
 import { Input } from "@/components/ui/input";
 import { OnboardingData } from "@/types/onboarding";
@@ -30,33 +31,18 @@ export function ContactForm({ formData, updateFormData, questionType }: ContactF
         initial={{ opacity: 0, y: 10 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.2 }}
-        className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4"
+        className="space-y-2 mt-4"
       >
-        <div className="space-y-2">
-          <label htmlFor="firstName" className="text-white">First Name</label>
-          <Input 
-            id="firstName"
-            value={formData.firstName || ""}
-            onChange={(e) => {
-              updateFormData({ firstName: e.target.value });
-            }}
-            placeholder="John"
-            className="bg-zinc-800 border-zinc-700 text-white focus-visible:ring-[#D4AF37] focus-visible:border-[#D4AF37]"
-          />
-        </div>
-        
-        <div className="space-y-2">
-          <label htmlFor="lastName" className="text-white">Last Name</label>
-          <Input 
-            id="lastName"
-            value={formData.lastName || ""}
-            onChange={(e) => {
-              updateFormData({ lastName: e.target.value });
-            }}
-            placeholder="Doe"
-            className="bg-zinc-800 border-zinc-700 text-white focus-visible:ring-[#D4AF37] focus-visible:border-[#D4AF37]"
-          />
-        </div>
+        <label htmlFor="fullName" className="text-white">Full Name</label>
+        <Input 
+          id="fullName"
+          value={formData.fullName || ""}
+          onChange={(e) => {
+            updateFormData({ fullName: e.target.value });
+          }}
+          placeholder="John Doe"
+          className="bg-zinc-800 border-zinc-700 text-white focus-visible:ring-[#D4AF37] focus-visible:border-[#D4AF37]"
+        />
       </motion.div>
     </div>
   );

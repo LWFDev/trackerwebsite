@@ -1,4 +1,3 @@
-
 import { Question, OnboardingData } from "@/types/onboarding";
 import { BusinessForm } from "@/components/onboarding/BusinessForm";
 import { ContactForm } from "@/components/onboarding/ContactForm";
@@ -82,14 +81,14 @@ export const contactQuestions: Question[] = [
   {
     id: "name",
     title: "What's your name?",
-    field: "firstName",
+    field: "fullName",
     component: ({ value, onChange, isValid, setIsValid, onNext, onBack }) => (
       <ContactForm 
-        formData={{ firstName: value, lastName: "" }}
+        formData={{ fullName: value }}
         updateFormData={(data) => {
-          if (data.firstName) {
-            onChange(data.firstName);
-            setIsValid(Boolean(data.firstName));
+          if (data.fullName) {
+            onChange(data.fullName);
+            setIsValid(Boolean(data.fullName));
           }
         }}
         questionType="name"
@@ -162,22 +161,7 @@ export const accountQuestions: Question[] = [
     field: "username",
     component: ({ value, onChange, isValid, setIsValid }) => (
       <AccountForm 
-        formData={{ 
-          businessType: "", 
-          employeeCount: "", 
-          yearsInBusiness: "", 
-          decorationMethods: [],
-          firstName: "", 
-          lastName: "", 
-          email: "", 
-          phone: "", 
-          companyName: "",
-          username: value, 
-          password: "", 
-          confirmPassword: "", 
-          agreeToTerms: false, 
-          receiveUpdates: false
-        }}
+        formData={{ username: value }}
         updateFormData={(data) => {
           if (data.username) {
             onChange(data.username);
@@ -196,24 +180,9 @@ export const accountQuestions: Question[] = [
     field: "password",
     component: ({ value, onChange, isValid, setIsValid }) => (
       <AccountForm 
-        formData={{ 
-          businessType: "", 
-          employeeCount: "", 
-          yearsInBusiness: "", 
-          decorationMethods: [],
-          firstName: "", 
-          lastName: "", 
-          email: "", 
-          phone: "", 
-          companyName: "",
-          username: "", 
-          password: value, 
-          confirmPassword: "", 
-          agreeToTerms: false, 
-          receiveUpdates: false
-        }}
+        formData={{ password: value, confirmPassword: "" }}
         updateFormData={(data) => {
-          if (data.password && data.confirmPassword && data.password === data.confirmPassword) {
+          if (data.password) {
             onChange(data.password);
             setIsValid(true);
           } else {
@@ -230,22 +199,7 @@ export const accountQuestions: Question[] = [
     field: "agreeToTerms",
     component: ({ value, onChange, isValid, setIsValid }) => (
       <AccountForm 
-        formData={{ 
-          businessType: "", 
-          employeeCount: "", 
-          yearsInBusiness: "", 
-          decorationMethods: [],
-          firstName: "", 
-          lastName: "", 
-          email: "", 
-          phone: "", 
-          companyName: "",
-          username: "", 
-          password: "", 
-          confirmPassword: "", 
-          agreeToTerms: value, 
-          receiveUpdates: false
-        }}
+        formData={{ agreeToTerms: value, receiveUpdates: false }}
         updateFormData={(data) => {
           if (data.agreeToTerms !== undefined) {
             onChange(data.agreeToTerms);
