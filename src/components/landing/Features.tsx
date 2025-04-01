@@ -1,6 +1,5 @@
 
 import { CheckCircle, BarChart, Zap } from "lucide-react";
-import { motion } from "framer-motion";
 
 const FeatureCard = ({ 
   icon: Icon,
@@ -15,7 +14,7 @@ const FeatureCard = ({
 }) => {
   return (
     <div 
-      className="bg-zinc-900/80 backdrop-blur-sm p-8 rounded-xl border border-zinc-800 shadow-lg hover:shadow-gold-DEFAULT/5 transition-all duration-300 hover:-translate-y-1 hover:border-gold-DEFAULT/30 group"
+      className="bg-zinc-900/80 backdrop-blur-sm p-8 rounded-xl border border-zinc-800 shadow-lg hover:shadow-gold-DEFAULT/20 transition-all duration-300 hover:-translate-y-1 hover:border-gold-DEFAULT/30 group animate-fade-in"
       style={{ 
         animationDelay: `${delay}s`,
       }}
@@ -42,7 +41,7 @@ const ModuleCard = ({
 }) => {
   return (
     <div 
-      className="bg-zinc-900/80 backdrop-blur-sm p-6 rounded-xl border border-zinc-800 shadow-md hover:shadow-gold-DEFAULT/10 hover:border-gold-DEFAULT/30 transition-all duration-300 hover:-translate-y-1 group animate-fade-in"
+      className="bg-zinc-900/80 backdrop-blur-sm p-6 rounded-xl border border-zinc-800 shadow-md hover:shadow-gold-DEFAULT/20 hover:border-gold-DEFAULT/30 transition-all duration-300 hover:-translate-y-1 group animate-fade-in"
       style={{ animationDelay: `${delay}s` }}
     >
       <div className="mb-4 transform group-hover:scale-110 transition-transform duration-300">{icon}</div>
@@ -115,49 +114,49 @@ const Features = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           <ModuleCard
-            icon={<div className="w-10 h-10 bg-gradient-to-br from-black to-zinc-900 text-gold-DEFAULT rounded-lg flex items-center justify-center shadow-md group-hover:shadow-gold-DEFAULT/20 transition-all duration-300">S</div>}
+            icon={<div className="w-10 h-10 bg-gradient-to-br from-black to-zinc-900 text-gold-DEFAULT rounded-lg flex items-center justify-center shadow-md group-hover:shadow-gold-DEFAULT/20 transition-all duration-300 border border-gold-DEFAULT/20">S</div>}
             title="Sales & Order Management"
             description="Manage quotes, track sales, email orders directly from your dashboard."
             delay={0.1}
           />
           <ModuleCard
-            icon={<div className="w-10 h-10 bg-gradient-to-br from-black to-zinc-900 text-gold-DEFAULT rounded-lg flex items-center justify-center shadow-md group-hover:shadow-gold-DEFAULT/20 transition-all duration-300">F</div>}
+            icon={<div className="w-10 h-10 bg-gradient-to-br from-black to-zinc-900 text-gold-DEFAULT rounded-lg flex items-center justify-center shadow-md group-hover:shadow-gold-DEFAULT/20 transition-all duration-300 border border-gold-DEFAULT/20">F</div>}
             title="Finance & Accounting"
             description="Manage financial data and reporting for better decision making."
             delay={0.2}
           />
           <ModuleCard
-            icon={<div className="w-10 h-10 bg-gradient-to-br from-black to-zinc-900 text-gold-DEFAULT rounded-lg flex items-center justify-center shadow-md group-hover:shadow-gold-DEFAULT/20 transition-all duration-300">P</div>}
+            icon={<div className="w-10 h-10 bg-gradient-to-br from-black to-zinc-900 text-gold-DEFAULT rounded-lg flex items-center justify-center shadow-md group-hover:shadow-gold-DEFAULT/20 transition-all duration-300 border border-gold-DEFAULT/20">P</div>}
             title="Product Design"
             description="Create and manage product designs with collaborative tools."
             delay={0.3}
           />
           <ModuleCard
-            icon={<div className="w-10 h-10 bg-gradient-to-br from-black to-zinc-900 text-gold-DEFAULT rounded-lg flex items-center justify-center shadow-md group-hover:shadow-gold-DEFAULT/20 transition-all duration-300">C</div>}
+            icon={<div className="w-10 h-10 bg-gradient-to-br from-black to-zinc-900 text-gold-DEFAULT rounded-lg flex items-center justify-center shadow-md group-hover:shadow-gold-DEFAULT/20 transition-all duration-300 border border-gold-DEFAULT/20">C</div>}
             title="Customer Service"
             description="Manage customer support issues faster, improving the experience."
             delay={0.4}
           />
           <ModuleCard
-            icon={<div className="w-10 h-10 bg-gradient-to-br from-black to-zinc-900 text-gold-DEFAULT rounded-lg flex items-center justify-center shadow-md group-hover:shadow-gold-DEFAULT/20 transition-all duration-300">I</div>}
+            icon={<div className="w-10 h-10 bg-gradient-to-br from-black to-zinc-900 text-gold-DEFAULT rounded-lg flex items-center justify-center shadow-md group-hover:shadow-gold-DEFAULT/20 transition-all duration-300 border border-gold-DEFAULT/20">I</div>}
             title="Inventory & Logistics"
             description="Track inventory and manage shipping operations seamlessly."
             delay={0.5}
           />
           <ModuleCard
-            icon={<div className="w-10 h-10 bg-gradient-to-br from-black to-zinc-900 text-gold-DEFAULT rounded-lg flex items-center justify-center shadow-md group-hover:shadow-gold-DEFAULT/20 transition-all duration-300">P</div>}
+            icon={<div className="w-10 h-10 bg-gradient-to-br from-black to-zinc-900 text-gold-DEFAULT rounded-lg flex items-center justify-center shadow-md group-hover:shadow-gold-DEFAULT/20 transition-all duration-300 border border-gold-DEFAULT/20">P</div>}
             title="Production & Manufacturing"
             description="Track production schedules, allocations, and resource utilization."
             delay={0.6}
           />
           <ModuleCard
-            icon={<div className="w-10 h-10 bg-gradient-to-br from-black to-zinc-900 text-gold-DEFAULT rounded-lg flex items-center justify-center shadow-md group-hover:shadow-gold-DEFAULT/20 transition-all duration-300">A</div>}
+            icon={<div className="w-10 h-10 bg-gradient-to-br from-black to-zinc-900 text-gold-DEFAULT rounded-lg flex items-center justify-center shadow-md group-hover:shadow-gold-DEFAULT/20 transition-all duration-300 border border-gold-DEFAULT/20">A</div>}
             title="Analytics & Reporting"
             description="Get powerful insights from your data, events, and reports."
             delay={0.7}
           />
           <ModuleCard
-            icon={<div className="w-10 h-10 bg-gradient-to-br from-black to-zinc-900 text-gold-DEFAULT rounded-lg flex items-center justify-center shadow-md group-hover:shadow-gold-DEFAULT/20 transition-all duration-300">I</div>}
+            icon={<div className="w-10 h-10 bg-gradient-to-br from-black to-zinc-900 text-gold-DEFAULT rounded-lg flex items-center justify-center shadow-md group-hover:shadow-gold-DEFAULT/20 transition-all duration-300 border border-gold-DEFAULT/20">I</div>}
             title="Integration Platform"
             description="Seamlessly integrate with your own data and third party tools."
             delay={0.8}

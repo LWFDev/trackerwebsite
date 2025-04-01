@@ -17,7 +17,7 @@ const Integration = () => {
             <div className="inline-block px-4 py-1.5 bg-zinc-900/80 backdrop-blur-sm rounded-full border border-zinc-800 mb-6">
               <span className="text-sm text-gold-DEFAULT uppercase font-medium tracking-wider">Integrations</span>
             </div>
-            <h2 className="text-3xl font-bold mb-6 animate-fade-in">
+            <h2 className="text-3xl md:text-4xl font-bold mb-6 animate-fade-in">
               Seamlessly integrate with <span className="text-transparent bg-clip-text bg-gradient-to-r from-gold-DEFAULT to-gold-light">your existing tools</span>
             </h2>
             <p className="text-gray-400 mb-8 animate-fade-in" style={{ animationDelay: '0.2s' }}>
@@ -25,19 +25,19 @@ const Integration = () => {
             </p>
             
             <div className="space-y-5 mb-8">
-              <div className="flex items-center p-3 bg-zinc-900/60 backdrop-blur-sm rounded-lg border border-zinc-800 transform transition-all duration-300 hover:border-gold-DEFAULT/30 hover:-translate-y-1 hover:shadow-lg animate-fade-in" style={{ animationDelay: '0.3s' }}>
+              <div className="flex items-center p-3 bg-zinc-900/60 backdrop-blur-sm rounded-lg border border-zinc-800 transform transition-all duration-300 hover:border-gold-DEFAULT/50 hover:-translate-y-1 hover:shadow-lg animate-fade-in" style={{ animationDelay: '0.3s' }}>
                 <CheckCircle className="w-5 h-5 text-gold-DEFAULT mr-3" />
                 <span>Connect with popular e-commerce platforms</span>
               </div>
-              <div className="flex items-center p-3 bg-zinc-900/60 backdrop-blur-sm rounded-lg border border-zinc-800 transform transition-all duration-300 hover:border-gold-DEFAULT/30 hover:-translate-y-1 hover:shadow-lg animate-fade-in" style={{ animationDelay: '0.4s' }}>
+              <div className="flex items-center p-3 bg-zinc-900/60 backdrop-blur-sm rounded-lg border border-zinc-800 transform transition-all duration-300 hover:border-gold-DEFAULT/50 hover:-translate-y-1 hover:shadow-lg animate-fade-in" style={{ animationDelay: '0.4s' }}>
                 <CheckCircle className="w-5 h-5 text-gold-DEFAULT mr-3" />
                 <span>Sync with your accounting software</span>
               </div>
-              <div className="flex items-center p-3 bg-zinc-900/60 backdrop-blur-sm rounded-lg border border-zinc-800 transform transition-all duration-300 hover:border-gold-DEFAULT/30 hover:-translate-y-1 hover:shadow-lg animate-fade-in" style={{ animationDelay: '0.5s' }}>
+              <div className="flex items-center p-3 bg-zinc-900/60 backdrop-blur-sm rounded-lg border border-zinc-800 transform transition-all duration-300 hover:border-gold-DEFAULT/50 hover:-translate-y-1 hover:shadow-lg animate-fade-in" style={{ animationDelay: '0.5s' }}>
                 <CheckCircle className="w-5 h-5 text-gold-DEFAULT mr-3" />
                 <span>Import designs from Adobe Creative Cloud</span>
               </div>
-              <div className="flex items-center p-3 bg-zinc-900/60 backdrop-blur-sm rounded-lg border border-zinc-800 transform transition-all duration-300 hover:border-gold-DEFAULT/30 hover:-translate-y-1 hover:shadow-lg animate-fade-in" style={{ animationDelay: '0.6s' }}>
+              <div className="flex items-center p-3 bg-zinc-900/60 backdrop-blur-sm rounded-lg border border-zinc-800 transform transition-all duration-300 hover:border-gold-DEFAULT/50 hover:-translate-y-1 hover:shadow-lg animate-fade-in" style={{ animationDelay: '0.6s' }}>
                 <CheckCircle className="w-5 h-5 text-gold-DEFAULT mr-3" />
                 <span>Integrate with your production equipment</span>
               </div>
@@ -52,12 +52,12 @@ const Integration = () => {
             {[1, 2, 3, 4, 5, 6].map((item, index) => (
               <div 
                 key={index}
-                className="bg-zinc-900/70 backdrop-blur-sm rounded-xl h-32 border border-zinc-800 transform transition-all duration-300 hover:border-gold-DEFAULT/30 hover:-translate-y-1 hover:shadow-lg group animate-fade-in"
+                className="bg-zinc-900/70 backdrop-blur-sm rounded-xl h-32 border border-zinc-800 transform transition-all duration-300 hover:border-gold-DEFAULT/50 hover:-translate-y-1 hover:shadow-lg group animate-fade-in"
                 style={{ animationDelay: `${0.3 + index * 0.1}s` }}
               >
                 <div className="w-full h-full flex items-center justify-center overflow-hidden relative">
                   <div className="absolute inset-0 bg-gradient-to-br from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                  <div className="w-12 h-12 rounded-full bg-zinc-800 flex items-center justify-center group-hover:scale-110 transition-transform duration-300"></div>
+                  <div className="w-12 h-12 rounded-full bg-zinc-800 flex items-center justify-center group-hover:scale-110 transition-transform duration-300 border border-gold-DEFAULT/20"></div>
                 </div>
               </div>
             ))}

@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button";
 
 const ResultCard = () => {
   return (
-    <div className="bg-zinc-900/90 backdrop-blur-sm rounded-xl shadow-lg p-6 border border-zinc-800 transform transition-all duration-300 hover:-translate-y-2 hover:border-gold-DEFAULT/30 hover:shadow-xl animate-fade-in">
+    <div className="bg-zinc-900/90 backdrop-blur-sm rounded-xl shadow-lg p-6 border border-zinc-800 transform transition-all duration-300 hover:-translate-y-2 hover:border-gold-DEFAULT/40 hover:shadow-xl animate-fade-in">
       <h3 className="text-xl font-bold mb-4 text-transparent bg-clip-text bg-gradient-to-r from-white to-gray-400">How ABC Apparel increased production by 200%</h3>
       <p className="text-gray-400 mb-6">
         "Tracker has completely transformed our workflow. We've gone from taking days to processing orders in just a few hours."
@@ -44,7 +44,7 @@ const Results = () => {
           <div className="inline-block px-4 py-1.5 bg-zinc-900/80 backdrop-blur-sm rounded-full border border-zinc-800 mb-6">
             <span className="text-sm text-gold-DEFAULT uppercase font-medium tracking-wider">Results</span>
           </div>
-          <h2 className="text-3xl font-bold mb-4 animate-fade-in">
+          <h2 className="text-3xl md:text-4xl font-bold mb-4 animate-fade-in">
             Real results from <span className="text-transparent bg-clip-text bg-gradient-to-r from-gold-DEFAULT to-gold-light">real customers</span>
           </h2>
           <p className="text-lg text-gray-400 animate-fade-in" style={{ animationDelay: '0.2s' }}>
@@ -56,7 +56,7 @@ const Results = () => {
           <div className="md:w-1/3">
             <ResultCard />
           </div>
-          <div className="md:w-2/3 bg-zinc-900/60 backdrop-blur-sm rounded-xl p-8 border border-zinc-800 transform transition-all duration-300 hover:border-gold-DEFAULT/30 hover:shadow-lg">
+          <div className="md:w-2/3 bg-zinc-900/60 backdrop-blur-sm rounded-xl p-8 border border-zinc-800 transform transition-all duration-300 hover:border-gold-DEFAULT/40 hover:shadow-lg animate-fade-in" style={{ animationDelay: '0.2s' }}>
             <ResultMetric percentage="65%" text="reduction in design time" delay={0.1} />
             <ResultMetric percentage="3x" text="faster client approvals" delay={0.2} />
             <ResultMetric percentage="45%" text="increase in production capacity" delay={0.3} />

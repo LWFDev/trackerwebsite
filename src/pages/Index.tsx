@@ -23,7 +23,7 @@ const Index = () => {
               {[...Array(5)].map((_, index) => (
                 <div 
                   key={index} 
-                  className="bg-zinc-800/60 backdrop-blur-sm h-12 rounded-lg border border-zinc-700 animate-pulse-light hover:border-gold-DEFAULT/30 transition-all duration-300"
+                  className="bg-zinc-800/60 backdrop-blur-sm h-12 rounded-lg border border-zinc-700 hover:border-gold-DEFAULT/40 transition-all duration-300 animate-pulse-light"
                   style={{ animationDelay: `${index * 0.2}s` }}
                 ></div>
               ))}

@@ -7,7 +7,7 @@ const Hero = () => {
     <section className="relative pt-24 pb-16 bg-black text-white overflow-hidden">
       {/* Background elements */}
       <div className="absolute top-0 left-0 w-full h-full overflow-hidden z-0">
-        <div className="absolute w-[500px] h-[500px] rounded-full bg-gradient-to-r from-gold-DEFAULT/20 to-gold-DEFAULT/5 blur-[120px] -top-40 -right-40"></div>
+        <div className="absolute w-[600px] h-[600px] rounded-full bg-gradient-to-r from-gold-DEFAULT/20 to-gold-light/10 blur-[130px] -top-40 -right-40"></div>
         <div className="absolute w-[500px] h-[500px] rounded-full bg-zinc-800/30 blur-[100px] -bottom-60 -left-20"></div>
       </div>
 
@@ -21,7 +21,7 @@ const Hero = () => {
               </div>
             </div>
             
-            <h1 className="text-4xl md:text-5xl font-bold mb-6 leading-tight animate-fade-in">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight animate-fade-in">
               Digitize production, <span className="text-transparent bg-clip-text bg-gradient-to-r from-gold-DEFAULT to-gold-light">enable profit.</span>
             </h1>
             
@@ -32,8 +32,7 @@ const Hero = () => {
             <div className="flex flex-col sm:flex-row gap-4 animate-fade-in" style={{ animationDelay: '0.3s' }}>
               <Button 
                 size="lg" 
-                variant="gold" 
-                className="px-6 shadow-lg transition-all hover:translate-y-[-2px]"
+                className="bg-gradient-to-r from-gold-DEFAULT to-gold-light text-black px-6 shadow-lg hover:shadow-gold-DEFAULT/20 transition-all hover:translate-y-[-2px]"
               >
                 Get Started <ArrowRight className="ml-1 h-5 w-5" />
               </Button>
@@ -47,11 +46,11 @@ const Hero = () => {
             </div>
             
             <div className="mt-12 grid grid-cols-2 gap-8 animate-fade-in" style={{ animationDelay: '0.4s' }}>
-              <div className="bg-zinc-900/60 backdrop-blur-sm p-4 rounded-lg border border-zinc-800">
+              <div className="bg-zinc-900/60 backdrop-blur-sm p-4 rounded-lg border border-zinc-800 hover:border-gold-DEFAULT/50 transition-all duration-300">
                 <div className="text-3xl font-bold mb-1 text-transparent bg-clip-text bg-gradient-to-r from-gold-DEFAULT to-gold-light">1,000,000+</div>
                 <div className="text-gray-400 text-sm">Garments Processed</div>
               </div>
-              <div className="bg-zinc-900/60 backdrop-blur-sm p-4 rounded-lg border border-zinc-800">
+              <div className="bg-zinc-900/60 backdrop-blur-sm p-4 rounded-lg border border-zinc-800 hover:border-gold-DEFAULT/50 transition-all duration-300">
                 <div className="text-3xl font-bold mb-1 text-transparent bg-clip-text bg-gradient-to-r from-gold-DEFAULT to-gold-light">2,000+</div>
                 <div className="text-gray-400 text-sm">Workflows Automated</div>
               </div>
@@ -61,11 +60,11 @@ const Hero = () => {
           <div className="md:w-1/2 animate-fade-in" style={{ animationDelay: '0.5s' }}>
             <div className="relative">
               {/* Decorative elements */}
-              <div className="absolute w-20 h-20 bg-gradient-to-r from-gold-DEFAULT/30 to-gold-DEFAULT/10 rounded-xl blur-lg -top-6 -left-6 animate-pulse-light"></div>
+              <div className="absolute w-20 h-20 bg-gradient-to-r from-gold-DEFAULT/30 to-gold-light/20 rounded-xl blur-lg -top-6 -left-6 animate-pulse-light"></div>
               <div className="absolute w-16 h-16 bg-zinc-800/50 rounded-xl blur-lg -bottom-4 -right-4 animate-pulse-light" style={{ animationDelay: '1s' }}></div>
               
               {/* Main image */}
-              <div className="bg-zinc-900 rounded-xl shadow-2xl overflow-hidden border border-zinc-800 hover:border-gold-DEFAULT transition-all duration-500 transform hover:translate-y-[-5px] hover:shadow-gold-DEFAULT/20 hover:shadow-xl relative z-10">
+              <div className="bg-zinc-900 rounded-xl shadow-2xl overflow-hidden border border-zinc-800 hover:border-gold-DEFAULT/50 transition-all duration-500 transform hover:translate-y-[-5px] hover:shadow-gold-DEFAULT/20 hover:shadow-xl relative z-10">
                 <div className="absolute inset-0 bg-gradient-to-tr from-black/40 to-transparent z-20 pointer-events-none"></div>
                 <img 
                   src="https://nubosync.com/wp-content/uploads/2025/02/screen-1.webp" 

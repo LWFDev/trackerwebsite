@@ -11,7 +11,7 @@ const CTA = () => {
       </div>
 
       <div className="container mx-auto px-4 relative z-10">
-        <div className="max-w-3xl mx-auto text-center backdrop-blur-sm p-10 rounded-2xl bg-zinc-900/50 border border-zinc-800 shadow-xl">
+        <div className="max-w-3xl mx-auto text-center backdrop-blur-sm p-10 rounded-2xl bg-zinc-900/50 border border-zinc-800 hover:border-gold-DEFAULT/30 transition-all duration-500 shadow-xl">
           <div className="inline-block px-4 py-1.5 bg-black/30 backdrop-blur-sm rounded-full border border-zinc-700 mb-6 animate-fade-in">
             <span className="text-sm text-gold-DEFAULT uppercase font-medium tracking-wider flex items-center">
               <span className="bg-gold-DEFAULT w-2 h-2 rounded-full mr-2"></span>
