@@ -1,7 +1,6 @@
 
 import ModuleLayout from "@/components/modules/ModuleLayout";
 import { BarChart2, PieChart, TrendingUp, Users, Clock, LineChart, BarChart, Calendar, FileText, RefreshCw } from "lucide-react";
-import Footer from "@/components/landing/Footer";
 
 const AnalyticsReporting = () => {
   return (
@@ -110,7 +109,6 @@ const AnalyticsReporting = () => {
           }
         ]}
       />
-      <Footer />
     </>
   );
 };
