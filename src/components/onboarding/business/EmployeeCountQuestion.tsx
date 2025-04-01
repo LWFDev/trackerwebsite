@@ -1,5 +1,4 @@
 
-import { useState } from "react";
 import { OnboardingData } from "@/types/onboarding";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { motion } from "framer-motion";

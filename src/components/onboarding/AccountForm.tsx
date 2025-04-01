@@ -7,7 +7,7 @@ import { Eye, EyeOff } from "lucide-react";
 import { motion } from "framer-motion";
 
 interface AccountFormProps {
-  formData: OnboardingData;
+  formData: Partial<OnboardingData>;
   updateFormData: (data: Partial<OnboardingData>) => void;
   questionType: "username" | "password" | "terms";
 }
@@ -19,36 +19,13 @@ export function AccountForm({ formData, updateFormData, questionType }: AccountF
   const [passwordFeedback, setPasswordFeedback] = useState("");
 
   useEffect(() => {
-    const data: Partial<OnboardingData> = {};
-    
-    if (questionType === "username" && formData.username) {
-      data.username = formData.username;
-    } else if (questionType === "password" && formData.password && 
-               formData.confirmPassword && formData.password === formData.confirmPassword) {
-      data.password = formData.password;
-      data.confirmPassword = formData.confirmPassword;
-    } else if (questionType === "terms") {
-      data.agreeToTerms = formData.agreeToTerms;
-      data.receiveUpdates = formData.receiveUpdates;
-    }
-    
-    if (Object.keys(data).length > 0) {
-      updateFormData(data);
-    }
-  }, [questionType, formData, updateFormData]);
-
-  useEffect(() => {
     if (formData.password) {
       let strength = 0;
       
       if (formData.password.length >= 8) strength += 1;
-      
       if (/[A-Z]/.test(formData.password)) strength += 1;
-      
       if (/[a-z]/.test(formData.password)) strength += 1;
-      
       if (/[0-9]/.test(formData.password)) strength += 1;
-      
       if (/[^A-Za-z0-9]/.test(formData.password)) strength += 1;
       
       setPasswordStrength(strength);
@@ -87,7 +64,7 @@ export function AccountForm({ formData, updateFormData, questionType }: AccountF
         <label htmlFor="username" className="text-white">Username</label>
         <Input 
           id="username"
-          value={formData.username}
+          value={formData.username || ""}
           onChange={(e) => updateFormData({ username: e.target.value })}
           placeholder="johndoe"
           className="bg-zinc-800 border-zinc-700 text-white focus-visible:ring-[#D4AF37] focus-visible:border-[#D4AF37]"
@@ -116,7 +93,7 @@ export function AccountForm({ formData, updateFormData, questionType }: AccountF
             <Input 
               id="password"
               type={showPassword ? "text" : "password"}
-              value={formData.password}
+              value={formData.password || ""}
               onChange={(e) => updateFormData({ password: e.target.value })}
               placeholder="••••••••"
               className="bg-zinc-800 border-zinc-700 text-white focus-visible:ring-[#D4AF37] focus-visible:border-[#D4AF37] pr-10"
@@ -175,7 +152,7 @@ export function AccountForm({ formData, updateFormData, questionType }: AccountF
             <Input 
               id="confirmPassword"
               type={showConfirmPassword ? "text" : "password"}
-              value={formData.confirmPassword}
+              value={formData.confirmPassword || ""}
               onChange={(e) => updateFormData({ confirmPassword: e.target.value })}
               placeholder="••••••••"
               className={`

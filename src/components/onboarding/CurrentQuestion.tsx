@@ -7,7 +7,7 @@ import { Question, OnboardingData } from "@/types/onboarding";
 
 interface CurrentQuestionProps {
   question: Question;
-  formData: OnboardingData;
+  formData: Partial<OnboardingData>;
   updateFormData: (data: Partial<OnboardingData>) => void;
   onNext: () => void;
   onBack: () => void;

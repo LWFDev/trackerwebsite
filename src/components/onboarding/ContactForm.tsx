@@ -10,26 +10,6 @@ interface ContactFormProps {
 }
 
 export function ContactForm({ formData, updateFormData, questionType }: ContactFormProps) {
-  // Make sure validity is updated when component mounts
-  useEffect(() => {
-    const data: Partial<OnboardingData> = {};
-    
-    if (questionType === "name" && formData.firstName && formData.lastName) {
-      data.firstName = formData.firstName;
-      data.lastName = formData.lastName;
-    } else if (questionType === "company" && formData.companyName) {
-      data.companyName = formData.companyName;
-    } else if (questionType === "email" && formData.email) {
-      data.email = formData.email;
-    } else if (questionType === "phone" && formData.phone) {
-      data.phone = formData.phone;
-    }
-    
-    if (Object.keys(data).length > 0) {
-      updateFormData(data);
-    }
-  }, [questionType, formData, updateFormData]);
-
   // Email validation
   const isValidEmail = (email: string) => {
     return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
@@ -58,9 +38,7 @@ export function ContactForm({ formData, updateFormData, questionType }: ContactF
             id="firstName"
             value={formData.firstName || ""}
             onChange={(e) => {
-              const value = e.target.value;
-              updateFormData({ firstName: value });
-              console.log("Updating firstName to:", value);
+              updateFormData({ firstName: e.target.value });
             }}
             placeholder="John"
             className="bg-zinc-800 border-zinc-700 text-white focus-visible:ring-[#D4AF37] focus-visible:border-[#D4AF37]"
@@ -73,9 +51,7 @@ export function ContactForm({ formData, updateFormData, questionType }: ContactF
             id="lastName"
             value={formData.lastName || ""}
             onChange={(e) => {
-              const value = e.target.value;
-              updateFormData({ lastName: value });
-              console.log("Updating lastName to:", value);
+              updateFormData({ lastName: e.target.value });
             }}
             placeholder="Doe"
             className="bg-zinc-800 border-zinc-700 text-white focus-visible:ring-[#D4AF37] focus-visible:border-[#D4AF37]"
