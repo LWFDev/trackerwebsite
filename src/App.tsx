@@ -23,6 +23,7 @@ import ProjectManagement from "./pages/modules/ProjectManagement";
 import CustomerPortal from "./pages/modules/CustomerPortal";
 import Footer from "./components/landing/Footer";
 import GetStarted from "./pages/GetStarted";
+import Pricing from "./pages/Pricing";
 
 // Scroll to top component that activates on route change
 const ScrollToTop = () => {
@@ -65,6 +66,7 @@ const App = () => (
             <Route path="/modules/document-management" element={<DocumentManagement />} />
             <Route path="/modules/project-management" element={<ProjectManagement />} />
             <Route path="/modules/customer-portal" element={<CustomerPortal />} />
+            <Route path="/pricing" element={<Pricing />} />
             
             {/* Route without header and footer */}
             <Route path="/get-started" element={<GetStarted />} />
