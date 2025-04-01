@@ -6,14 +6,11 @@ import Workflow from "@/components/landing/Workflow";
 import Results from "@/components/landing/Results";
 import CTA from "@/components/landing/CTA";
 import Testimonials from "@/components/landing/Testimonials";
-import Pricing from "@/components/landing/Pricing";
 import Header from "@/components/landing/Header";
-import Footer from "@/components/landing/Footer";
 
 const Index = () => {
   return (
     <div className="min-h-screen flex flex-col bg-black text-white">
-      <Header />
       <main className="pt-16"> {/* Added padding-top to accommodate fixed header */}
         <Hero />
         <div className="py-12 bg-zinc-900 text-center relative overflow-hidden">
@@ -38,10 +35,8 @@ const Index = () => {
         <Workflow />
         <Results />
         <Testimonials />
-        <Pricing />
         <CTA />
       </main>
-      <Footer />
     </div>
   );
 };

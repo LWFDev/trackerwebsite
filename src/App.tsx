@@ -32,149 +32,31 @@ const App = () => (
       <Sonner />
       <BrowserRouter>
         <div className="flex flex-col min-h-screen">
+          <Header />
           <Routes>
-            {/* Routes with header and footer */}
-            <Route path="/" element={
-              <>
-                <Header />
-                <main className="flex-grow">
-                  <Index />
-                </main>
-                <Footer />
-              </>
-            } />
-            <Route path="/modules" element={
-              <>
-                <Header />
-                <main className="flex-grow">
-                  <ModuleIndex />
-                </main>
-                <Footer />
-              </>
-            } />
-            <Route path="/modules/sales-order-management" element={
-              <>
-                <Header />
-                <main className="flex-grow">
-                  <SalesOrderManagement />
-                </main>
-                <Footer />
-              </>
-            } />
-            <Route path="/modules/finance-accounting" element={
-              <>
-                <Header />
-                <main className="flex-grow">
-                  <FinanceAccounting />
-                </main>
-                <Footer />
-              </>
-            } />
-            <Route path="/modules/product-design" element={
-              <>
-                <Header />
-                <main className="flex-grow">
-                  <ProductDesign />
-                </main>
-                <Footer />
-              </>
-            } />
-            <Route path="/modules/customer-service" element={
-              <>
-                <Header />
-                <main className="flex-grow">
-                  <CustomerService />
-                </main>
-                <Footer />
-              </>
-            } />
-            <Route path="/modules/inventory-logistics" element={
-              <>
-                <Header />
-                <main className="flex-grow">
-                  <InventoryLogistics />
-                </main>
-                <Footer />
-              </>
-            } />
-            <Route path="/modules/production-manufacturing" element={
-              <>
-                <Header />
-                <main className="flex-grow">
-                  <ProductionManufacturing />
-                </main>
-                <Footer />
-              </>
-            } />
-            <Route path="/modules/analytics-reporting" element={
-              <>
-                <Header />
-                <main className="flex-grow">
-                  <AnalyticsReporting />
-                </main>
-                <Footer />
-              </>
-            } />
-            <Route path="/modules/integration-platform" element={
-              <>
-                <Header />
-                <main className="flex-grow">
-                  <IntegrationPlatform />
-                </main>
-                <Footer />
-              </>
-            } />
-            <Route path="/modules/logo-hub" element={
-              <>
-                <Header />
-                <main className="flex-grow">
-                  <LogoHub />
-                </main>
-                <Footer />
-              </>
-            } />
-            <Route path="/modules/document-management" element={
-              <>
-                <Header />
-                <main className="flex-grow">
-                  <DocumentManagement />
-                </main>
-                <Footer />
-              </>
-            } />
-            <Route path="/modules/project-management" element={
-              <>
-                <Header />
-                <main className="flex-grow">
-                  <ProjectManagement />
-                </main>
-                <Footer />
-              </>
-            } />
-            <Route path="/modules/customer-portal" element={
-              <>
-                <Header />
-                <main className="flex-grow">
-                  <CustomerPortal />
-                </main>
-                <Footer />
-              </>
-            } />
+            {/* Route with just content */}
+            <Route path="/" element={<Index />} />
+            <Route path="/modules" element={<ModuleIndex />} />
+            <Route path="/modules/sales-order-management" element={<SalesOrderManagement />} />
+            <Route path="/modules/finance-accounting" element={<FinanceAccounting />} />
+            <Route path="/modules/product-design" element={<ProductDesign />} />
+            <Route path="/modules/customer-service" element={<CustomerService />} />
+            <Route path="/modules/inventory-logistics" element={<InventoryLogistics />} />
+            <Route path="/modules/production-manufacturing" element={<ProductionManufacturing />} />
+            <Route path="/modules/analytics-reporting" element={<AnalyticsReporting />} />
+            <Route path="/modules/integration-platform" element={<IntegrationPlatform />} />
+            <Route path="/modules/logo-hub" element={<LogoHub />} />
+            <Route path="/modules/document-management" element={<DocumentManagement />} />
+            <Route path="/modules/project-management" element={<ProjectManagement />} />
+            <Route path="/modules/customer-portal" element={<CustomerPortal />} />
             
-            {/* Routes without header and footer */}
+            {/* Route without header and footer */}
             <Route path="/get-started" element={<GetStarted />} />
             
             {/* Catch-all route */}
-            <Route path="*" element={
-              <>
-                <Header />
-                <main className="flex-grow">
-                  <NotFound />
-                </main>
-                <Footer />
-              </>
-            } />
+            <Route path="*" element={<NotFound />} />
           </Routes>
+          <Footer />
         </div>
       </BrowserRouter>
     </TooltipProvider>
