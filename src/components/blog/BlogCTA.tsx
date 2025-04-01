@@ -18,7 +18,7 @@ const BlogCTA = () => {
           </h2>
           
           <p className="text-xl text-gray-300 mb-8 animate-fade-in">
-            Start your free 14-day trial today. No credit card required.
+            Start your free 14-day trial today.
           </p>
           
           <Link to="/get-started">
