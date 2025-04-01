@@ -9,7 +9,7 @@ interface CategoriesTabProps {
 
 const CategoriesTab = ({ categories }: CategoriesTabProps) => {
   return (
-    <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+    <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
       {categories.map((category, index) => (
         <ModuleItem
           key={index}
