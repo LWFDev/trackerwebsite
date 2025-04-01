@@ -3,145 +3,92 @@ import { Button } from "@/components/ui/button";
 import { Check, Info, X } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
-
 const PricingPage = () => {
-  const pricingPlans = [
-    {
-      name: "Starter",
-      price: "$899",
-      description: "For small businesses getting started",
-      features: [
-        "Up to 10 users",
-        "5GB storage",
-        "Standard report generation",
-        "Email support",
-        "Basic analytics dashboard",
-        "Standard API access",
-        "Community support",
-      ],
-      buttonText: "Get Started",
-      highlighted: false
-    },
-    {
-      name: "Professional",
-      price: "$1,499",
-      description: "For growing businesses that need more features",
-      features: [
-        "Up to 50 users",
-        "50GB storage", 
-        "Advanced report generation",
-        "Priority email & chat support",
-        "Custom reporting dashboards",
-        "White-label options",
-        "Full integration capabilities",
-        "Custom workflow automations",
-        "Advanced API access",
-      ],
-      buttonText: "Get Started",
-      highlighted: true
-    },
-    {
-      name: "Enterprise",
-      price: "Custom",
-      description: "For large organizations with advanced needs",
-      features: [
-        "Unlimited users",
-        "Unlimited storage",
-        "Advanced report generation",
-        "24/7 priority support",
-        "Custom analytics dashboards",
-        "Dedicated account manager",
-        "SLA guarantees",
-        "Advanced security features",
-        "Custom API integrations",
-      ],
-      buttonText: "Contact Sales",
-      highlighted: false
-    }
-  ];
-
-  const comparisonFeatures = [
-    {
-      feature: "Users",
-      starter: "Up to 10",
-      professional: "Up to 50",
-      enterprise: "Unlimited"
-    },
-    {
-      feature: "Storage",
-      starter: "5GB",
-      professional: "50GB",
-      enterprise: "Unlimited"
-    },
-    {
-      feature: "Report Generation",
-      starter: "Basic",
-      professional: "Advanced",
-      enterprise: "Advanced"
-    },
-    {
-      feature: "API Access",
-      starter: "Limited",
-      professional: "Full Access",
-      enterprise: "Custom"
-    },
-    {
-      feature: "Support",
-      starter: "Email only",
-      professional: "Email, Chat & Phone",
-      enterprise: "24/7 Priority"
-    },
-    {
-      feature: "Analytics",
-      starter: "Basic",
-      professional: "Advanced",
-      enterprise: "Advanced"
-    },
-    {
-      feature: "Custom Branding",
-      starter: false,
-      professional: true,
-      enterprise: true
-    },
-    {
-      feature: "Dedicated Account Manager",
-      starter: false,
-      professional: false,
-      enterprise: true
-    },
-    {
-      feature: "SLA Guarantees",
-      starter: false,
-      professional: false,
-      enterprise: true
-    }
-  ];
-
-  const faqs = [
-    {
-      question: "Can I switch plans later?",
-      answer: "Yes, you can upgrade or downgrade your plan at any time. When upgrading, your new features will be available immediately. If downgrading, the changes will apply at the start of your next billing cycle."
-    },
-    {
-      question: "What happens after my free trial?",
-      answer: "After your free trial ends, your account will automatically convert to the plan you selected during signup. You'll only be charged once the trial is over, and we'll send you a reminder before this happens."
-    },
-    {
-      question: "Do you offer discounts for annual billing?",
-      answer: "Yes, you save up to 20% by choosing annual billing over monthly billing, which is automatically calculated and applied to the displayed prices."
-    },
-    {
-      question: "What payment methods do you accept?",
-      answer: "We accept all major credit cards (Visa, MasterCard, American Express, Discover), PayPal, and bank transfers for annual enterprise plans."
-    },
-    {
-      question: "Can I get a refund if I'm not satisfied?",
-      answer: "We offer a 30-day money-back guarantee for all new subscriptions. If you're not satisfied, contact our support team within 30 days of your purchase for a full refund."
-    }
-  ];
-  
-  return (
-    <div className="min-h-screen bg-black">
+  const pricingPlans = [{
+    name: "Starter",
+    price: "$899",
+    description: "For small businesses getting started",
+    features: ["Up to 10 users", "5GB storage", "Standard report generation", "Email support", "Basic analytics dashboard", "Standard API access", "Community support"],
+    buttonText: "Get Started",
+    highlighted: false
+  }, {
+    name: "Professional",
+    price: "$1,499",
+    description: "For growing businesses that need more features",
+    features: ["Up to 50 users", "50GB storage", "Advanced report generation", "Priority email & chat support", "Custom reporting dashboards", "White-label options", "Full integration capabilities", "Custom workflow automations", "Advanced API access"],
+    buttonText: "Get Started",
+    highlighted: true
+  }, {
+    name: "Enterprise",
+    price: "Custom",
+    description: "For large organizations with advanced needs",
+    features: ["Unlimited users", "Unlimited storage", "Advanced report generation", "24/7 priority support", "Custom analytics dashboards", "Dedicated account manager", "SLA guarantees", "Advanced security features", "Custom API integrations"],
+    buttonText: "Contact Sales",
+    highlighted: false
+  }];
+  const comparisonFeatures = [{
+    feature: "Users",
+    starter: "Up to 10",
+    professional: "Up to 50",
+    enterprise: "Unlimited"
+  }, {
+    feature: "Storage",
+    starter: "5GB",
+    professional: "50GB",
+    enterprise: "Unlimited"
+  }, {
+    feature: "Report Generation",
+    starter: "Basic",
+    professional: "Advanced",
+    enterprise: "Advanced"
+  }, {
+    feature: "API Access",
+    starter: "Limited",
+    professional: "Full Access",
+    enterprise: "Custom"
+  }, {
+    feature: "Support",
+    starter: "Email only",
+    professional: "Email, Chat & Phone",
+    enterprise: "24/7 Priority"
+  }, {
+    feature: "Analytics",
+    starter: "Basic",
+    professional: "Advanced",
+    enterprise: "Advanced"
+  }, {
+    feature: "Custom Branding",
+    starter: false,
+    professional: true,
+    enterprise: true
+  }, {
+    feature: "Dedicated Account Manager",
+    starter: false,
+    professional: false,
+    enterprise: true
+  }, {
+    feature: "SLA Guarantees",
+    starter: false,
+    professional: false,
+    enterprise: true
+  }];
+  const faqs = [{
+    question: "Can I switch plans later?",
+    answer: "Yes, you can upgrade or downgrade your plan at any time. When upgrading, your new features will be available immediately. If downgrading, the changes will apply at the start of your next billing cycle."
+  }, {
+    question: "What happens after my free trial?",
+    answer: "After your free trial ends, your account will automatically convert to the plan you selected during signup. You'll only be charged once the trial is over, and we'll send you a reminder before this happens."
+  }, {
+    question: "Do you offer discounts for annual billing?",
+    answer: "Yes, you save up to 20% by choosing annual billing over monthly billing, which is automatically calculated and applied to the displayed prices."
+  }, {
+    question: "What payment methods do you accept?",
+    answer: "We accept all major credit cards (Visa, MasterCard, American Express, Discover), PayPal, and bank transfers for annual enterprise plans."
+  }, {
+    question: "Can I get a refund if I'm not satisfied?",
+    answer: "We offer a 30-day money-back guarantee for all new subscriptions. If you're not satisfied, contact our support team within 30 days of your purchase for a full refund."
+  }];
+  return <div className="min-h-screen bg-black">
       {/* Hero Section */}
       <div className="pt-24 pb-16 bg-zinc-900 text-white relative overflow-hidden">
         <div className="absolute top-0 left-0 w-full h-full overflow-hidden z-0">
@@ -161,64 +108,38 @@ const PricingPage = () => {
       <div className="py-16 bg-black relative z-10">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-            {pricingPlans.map((plan, index) => (
-              <div 
-                key={index} 
-                className={cn(
-                  "bg-zinc-900 rounded-lg border shadow-sm p-6 relative transition-all duration-300 hover:-translate-y-1",
-                  plan.highlighted 
-                    ? "border-[#D4AF37] ring-2 ring-[#D4AF37]/20 hover:shadow-[#D4AF37]/30" 
-                    : "border-zinc-800 hover:shadow-zinc-800/30"
-                )}
-              >
-                {plan.highlighted && (
-                  <div className="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+            {pricingPlans.map((plan, index) => <div key={index} className={cn("bg-zinc-900 rounded-lg border shadow-sm p-6 relative transition-all duration-300 hover:-translate-y-1", plan.highlighted ? "border-[#D4AF37] ring-2 ring-[#D4AF37]/20 hover:shadow-[#D4AF37]/30" : "border-zinc-800 hover:shadow-zinc-800/30")}>
+                {plan.highlighted && <div className="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
                     <span className="bg-gradient-to-r from-[#D4AF37] to-[#F2D675] text-black text-xs font-semibold px-4 py-1 rounded-full">
                       Most popular
                     </span>
-                  </div>
-                )}
+                  </div>}
                 <div className="text-center">
                   <h3 className="text-xl font-semibold mb-2">{plan.name}</h3>
                   <div className="flex flex-col justify-center items-center mb-4">
                     <span className={`text-4xl font-bold ${plan.highlighted ? 'text-[#D4AF37]' : 'text-white'}`}>
                       {plan.price}
                     </span>
-                    {plan.price !== "Custom" && (
-                      <span className="text-gray-500 text-sm mt-1">Billed annually</span>
-                    )}
+                    {plan.price !== "Custom" && <span className="text-gray-500 text-sm mt-1">Billed annually</span>}
                   </div>
                   <p className="text-gray-400 mb-6 text-sm">{plan.description}</p>
-                  <Button 
-                    className={`w-full mb-6 ${
-                      plan.highlighted 
-                        ? 'bg-gradient-to-r from-[#D4AF37] to-[#F2D675] hover:from-[#F2D675] hover:to-[#D4AF37] text-black' 
-                        : (plan.name === 'Starter' || plan.name === 'Enterprise' 
-                            ? 'bg-zinc-800 hover:bg-zinc-700 text-white' 
-                            : 'bg-zinc-800 hover:bg-zinc-700')
-                    }`}
-                  >
+                  <Button className={`w-full mb-6 ${plan.highlighted ? 'bg-gradient-to-r from-[#D4AF37] to-[#F2D675] hover:from-[#F2D675] hover:to-[#D4AF37] text-black' : plan.name === 'Starter' || plan.name === 'Enterprise' ? 'bg-zinc-800 hover:bg-zinc-700 text-white' : 'bg-zinc-800 hover:bg-zinc-700'}`}>
                     {plan.buttonText}
                   </Button>
                 </div>
                 <div className="space-y-3">
                   <p className="text-sm font-medium text-gray-300 mb-2">WHAT'S INCLUDED:</p>
                   <ul className="space-y-3">
-                    {plan.features.map((feature, i) => (
-                      <li key={i} className="flex items-start">
+                    {plan.features.map((feature, i) => <li key={i} className="flex items-start">
                         <Check className="h-5 w-5 text-[#D4AF37] shrink-0 mr-2" />
                         <span className="text-gray-300 text-sm">{feature}</span>
-                      </li>
-                    ))}
+                      </li>)}
                   </ul>
                 </div>
-              </div>
-            ))}
+              </div>)}
           </div>
           
-          <div className="text-center text-gray-400 mt-8 text-sm max-w-2xl mx-auto">
-            All plans include a 14-day free trial. No credit card required.
-          </div>
+          <div className="text-center text-gray-400 mt-8 text-sm max-w-2xl mx-auto">All plans include a 14-day free trial.</div>
         </div>
       </div>
 
@@ -240,32 +161,18 @@ const PricingPage = () => {
                 </tr>
               </thead>
               <tbody>
-                {comparisonFeatures.map((item, index) => (
-                  <tr key={index} className="border-b border-zinc-800">
+                {comparisonFeatures.map((item, index) => <tr key={index} className="border-b border-zinc-800">
                     <td className="p-4 text-left font-medium">{item.feature}</td>
                     <td className="p-4 text-center">
-                      {typeof item.starter === 'boolean' ? (
-                        item.starter ? <Check className="h-5 w-5 text-[#D4AF37] mx-auto" /> : <X className="h-5 w-5 text-gray-500 mx-auto" />
-                      ) : (
-                        <span className="text-gray-300">{item.starter}</span>
-                      )}
+                      {typeof item.starter === 'boolean' ? item.starter ? <Check className="h-5 w-5 text-[#D4AF37] mx-auto" /> : <X className="h-5 w-5 text-gray-500 mx-auto" /> : <span className="text-gray-300">{item.starter}</span>}
                     </td>
                     <td className="p-4 text-center">
-                      {typeof item.professional === 'boolean' ? (
-                        item.professional ? <Check className="h-5 w-5 text-[#D4AF37] mx-auto" /> : <X className="h-5 w-5 text-gray-500 mx-auto" />
-                      ) : (
-                        <span className="text-gray-300">{item.professional}</span>
-                      )}
+                      {typeof item.professional === 'boolean' ? item.professional ? <Check className="h-5 w-5 text-[#D4AF37] mx-auto" /> : <X className="h-5 w-5 text-gray-500 mx-auto" /> : <span className="text-gray-300">{item.professional}</span>}
                     </td>
                     <td className="p-4 text-center">
-                      {typeof item.enterprise === 'boolean' ? (
-                        item.enterprise ? <Check className="h-5 w-5 text-[#D4AF37] mx-auto" /> : <X className="h-5 w-5 text-gray-500 mx-auto" />
-                      ) : (
-                        <span className="text-gray-300">{item.enterprise}</span>
-                      )}
+                      {typeof item.enterprise === 'boolean' ? item.enterprise ? <Check className="h-5 w-5 text-[#D4AF37] mx-auto" /> : <X className="h-5 w-5 text-gray-500 mx-auto" /> : <span className="text-gray-300">{item.enterprise}</span>}
                     </td>
-                  </tr>
-                ))}
+                  </tr>)}
               </tbody>
             </table>
           </div>
@@ -280,20 +187,14 @@ const PricingPage = () => {
           </h2>
           
           <Accordion type="single" collapsible className="space-y-4">
-            {faqs.map((faq, index) => (
-              <AccordionItem 
-                key={index} 
-                value={`faq-${index}`}
-                className="border border-zinc-800 rounded-lg overflow-hidden bg-zinc-900"
-              >
+            {faqs.map((faq, index) => <AccordionItem key={index} value={`faq-${index}`} className="border border-zinc-800 rounded-lg overflow-hidden bg-zinc-900">
                 <AccordionTrigger className="px-6 py-4 hover:bg-zinc-800 transition-colors">
                   <span className="text-left">{faq.question}</span>
                 </AccordionTrigger>
                 <AccordionContent className="px-6 py-4 text-gray-400">
                   {faq.answer}
                 </AccordionContent>
-              </AccordionItem>
-            ))}
+              </AccordionItem>)}
           </Accordion>
         </div>
       </div>
@@ -318,8 +219,6 @@ const PricingPage = () => {
           </div>
         </div>
       </div>
-    </div>
-  );
+    </div>;
 };
-
 export default PricingPage;
