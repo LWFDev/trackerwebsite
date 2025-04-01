@@ -1,6 +1,6 @@
 
 import ModuleLayout from "@/components/modules/ModuleLayout";
-import { Layers, Clock, Percent, Settings, BarChart2, Tool, Clipboard, LineChart, CheckCircle } from "lucide-react";
+import { Layers, Clock, Percent, Settings, BarChart2, Wrench, Clipboard, LineChart, CheckCircle, File, Users, Layout } from "lucide-react";
 
 const ProductionManufacturing = () => {
   return (
@@ -46,7 +46,7 @@ const ProductionManufacturing = () => {
           {
             title: "Scheduling & Capacity",
             description: "Optimize production schedules based on capacity, priorities, and deadlines.",
-            icon: <Calendar className="h-6 w-6" />
+            icon: <Clock className="h-6 w-6" />
           },
           {
             title: "Quality Control",
@@ -66,7 +66,7 @@ const ProductionManufacturing = () => {
           {
             title: "Maintenance Scheduling",
             description: "Plan and track preventive maintenance to minimize downtime and ensure equipment life.",
-            icon: <Tool className="h-6 w-6" />
+            icon: <Wrench className="h-6 w-6" />
           }
         ]
       }}
@@ -84,13 +84,13 @@ const ProductionManufacturing = () => {
       relatedModules={[
         {
           title: "Inventory & Logistics",
-          icon: <Package className="h-8 w-8" />,
+          icon: <File className="h-8 w-8" />,
           description: "Track inventory and manage logistics operations seamlessly.",
           link: "/modules/inventory-logistics"
         },
         {
           title: "Product Design",
-          icon: <Paintbrush className="h-8 w-8" />,
+          icon: <Layout className="h-8 w-8" />,
           description: "Create and manage product designs with powerful customization tools.",
           link: "/modules/product-design"
         },
