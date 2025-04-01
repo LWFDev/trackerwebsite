@@ -19,6 +19,15 @@ export const DecorationMethodsQuestion = ({ formData, updateFormData }: Decorati
     "Other"
   ];
 
+  const handleToggleMethod = (method: string) => {
+    const isChecked = formData.decorationMethods.includes(method);
+    const updatedMethods = isChecked
+      ? formData.decorationMethods.filter(item => item !== method)
+      : [...formData.decorationMethods, method];
+    
+    updateFormData({ decorationMethods: updatedMethods });
+  };
+
   return (
     <div className="space-y-6">
       <h2 className="text-xl font-bold text-white">What decoration methods do you offer?</h2>
@@ -35,31 +44,20 @@ export const DecorationMethodsQuestion = ({ formData, updateFormData }: Decorati
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.2 }}
+              onClick={() => handleToggleMethod(method)}
+              className="cursor-pointer"
             >
               <div
                 className={`
-                  flex items-center space-x-3 space-y-0 rounded-md p-4 cursor-pointer
+                  flex items-center space-x-3 space-y-0 rounded-md p-4
                   ${isChecked ? 'bg-[#D4AF37]/10 border-[#D4AF37]/50' : 'border-zinc-800'}
                   border hover:border-[#D4AF37]/50 transition-colors
                 `}
-                onClick={() => {
-                  const updatedMethods = isChecked
-                    ? formData.decorationMethods.filter(item => item !== method)
-                    : [...formData.decorationMethods, method];
-                  
-                  updateFormData({ decorationMethods: updatedMethods });
-                }}
               >
                 <Checkbox
                   id={method}
                   checked={isChecked}
-                  onCheckedChange={(checked) => {
-                    const updatedMethods = checked
-                      ? [...formData.decorationMethods, method]
-                      : formData.decorationMethods.filter(item => item !== method);
-                    
-                    updateFormData({ decorationMethods: updatedMethods });
-                  }}
+                  onCheckedChange={() => handleToggleMethod(method)}
                   className="border-zinc-600 data-[state=checked]:bg-[#D4AF37] data-[state=checked]:text-black"
                 />
                 <label htmlFor={method} className="font-medium cursor-pointer flex-1 text-gray-300">
