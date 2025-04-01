@@ -20,6 +20,7 @@ import LogoHub from "./pages/modules/LogoHub";
 import DocumentManagement from "./pages/modules/DocumentManagement";
 import ProjectManagement from "./pages/modules/ProjectManagement";
 import CustomerPortal from "./pages/modules/CustomerPortal";
+import Footer from "./components/landing/Footer";
 
 const queryClient = new QueryClient();
 
@@ -29,25 +30,30 @@ const App = () => (
       <Toaster />
       <Sonner />
       <BrowserRouter>
-        <Header />
-        <Routes>
-          <Route path="/" element={<Index />} />
-          <Route path="/modules" element={<ModuleIndex />} />
-          <Route path="/modules/sales-order-management" element={<SalesOrderManagement />} />
-          <Route path="/modules/finance-accounting" element={<FinanceAccounting />} />
-          <Route path="/modules/product-design" element={<ProductDesign />} />
-          <Route path="/modules/customer-service" element={<CustomerService />} />
-          <Route path="/modules/inventory-logistics" element={<InventoryLogistics />} />
-          <Route path="/modules/production-manufacturing" element={<ProductionManufacturing />} />
-          <Route path="/modules/analytics-reporting" element={<AnalyticsReporting />} />
-          <Route path="/modules/integration-platform" element={<IntegrationPlatform />} />
-          <Route path="/modules/logo-hub" element={<LogoHub />} />
-          <Route path="/modules/document-management" element={<DocumentManagement />} />
-          <Route path="/modules/project-management" element={<ProjectManagement />} />
-          <Route path="/modules/customer-portal" element={<CustomerPortal />} />
-          {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
-          <Route path="*" element={<NotFound />} />
-        </Routes>
+        <div className="flex flex-col min-h-screen">
+          <Header />
+          <main className="flex-grow">
+            <Routes>
+              <Route path="/" element={<Index />} />
+              <Route path="/modules" element={<ModuleIndex />} />
+              <Route path="/modules/sales-order-management" element={<SalesOrderManagement />} />
+              <Route path="/modules/finance-accounting" element={<FinanceAccounting />} />
+              <Route path="/modules/product-design" element={<ProductDesign />} />
+              <Route path="/modules/customer-service" element={<CustomerService />} />
+              <Route path="/modules/inventory-logistics" element={<InventoryLogistics />} />
+              <Route path="/modules/production-manufacturing" element={<ProductionManufacturing />} />
+              <Route path="/modules/analytics-reporting" element={<AnalyticsReporting />} />
+              <Route path="/modules/integration-platform" element={<IntegrationPlatform />} />
+              <Route path="/modules/logo-hub" element={<LogoHub />} />
+              <Route path="/modules/document-management" element={<DocumentManagement />} />
+              <Route path="/modules/project-management" element={<ProjectManagement />} />
+              <Route path="/modules/customer-portal" element={<CustomerPortal />} />
+              {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
+              <Route path="*" element={<NotFound />} />
+            </Routes>
+          </main>
+          <Footer />
+        </div>
       </BrowserRouter>
     </TooltipProvider>
   </QueryClientProvider>

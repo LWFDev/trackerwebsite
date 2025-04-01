@@ -3,7 +3,7 @@ import { useState, useRef, useEffect } from 'react';
 import { Button } from "@/components/ui/button";
 import { Menu, X, ChevronDown } from "lucide-react";
 import ModulesMegaMenu from './ModulesMegaMenu';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -11,6 +11,7 @@ const Header = () => {
   const headerRef = useRef<HTMLElement>(null);
   const modulesButtonRef = useRef<HTMLDivElement>(null);
   const modulesMenuRef = useRef<HTMLDivElement>(null);
+  const location = useLocation();
   
   // Handle clicks outside of the modules menu
   useEffect(() => {
@@ -31,6 +32,12 @@ const Header = () => {
       document.removeEventListener('mousedown', handleClickOutside);
     };
   }, [isModulesMenuOpen]);
+
+  // Close mobile menu when changing routes
+  useEffect(() => {
+    setIsMenuOpen(false);
+    setIsModulesMenuOpen(false);
+  }, [location.pathname]);
 
   // Handle mouse leave for the entire header + menu area
   const handleMouseLeave = () => {
@@ -72,13 +79,18 @@ const Header = () => {
             onClick={handleModulesClick}
           >
             <button 
-              className={`flex items-center transition ${isModulesMenuOpen ? 'text-gold-DEFAULT' : 'text-gray-300 hover:text-gold-DEFAULT'}`}
+              className={`flex items-center transition ${location.pathname.includes('/modules') || isModulesMenuOpen ? 'text-gold-DEFAULT' : 'text-gray-300 hover:text-gold-DEFAULT'}`}
             >
               Modules <ChevronDown size={16} className={`ml-1 transition-transform duration-200 ${isModulesMenuOpen ? 'rotate-180' : ''}`} />
             </button>
           </div>
           
-          <Link to="/pricing" className="text-gray-300 hover:text-gold-DEFAULT transition">Pricing</Link>
+          <Link 
+            to="/pricing" 
+            className={`transition ${location.pathname === '/pricing' ? 'text-gold-DEFAULT' : 'text-gray-300 hover:text-gold-DEFAULT'}`}
+          >
+            Pricing
+          </Link>
           
           <div className="relative group">
             <button className="flex items-center text-gray-300 hover:text-gold-DEFAULT transition">
@@ -111,14 +123,14 @@ const Header = () => {
           <nav className="flex flex-col space-y-4">
             <Link 
               to="/modules" 
-              className="text-gray-300 hover:text-gold-DEFAULT transition py-2"
+              className={`py-2 transition ${location.pathname.includes('/modules') ? 'text-gold-DEFAULT' : 'text-gray-300 hover:text-gold-DEFAULT'}`}
               onClick={() => setIsMenuOpen(false)}
             >
               Modules
             </Link>
             <Link 
               to="/pricing" 
-              className="text-gray-300 hover:text-gold-DEFAULT transition py-2"
+              className={`py-2 transition ${location.pathname === '/pricing' ? 'text-gold-DEFAULT' : 'text-gray-300 hover:text-gold-DEFAULT'}`}
               onClick={() => setIsMenuOpen(false)}
             >
               Pricing
