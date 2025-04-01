@@ -6,7 +6,7 @@ import {
   FileText, 
   ShoppingCart, 
   Layers, 
-  FileInvoice, 
+  Receipt, 
   Check 
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -43,7 +43,7 @@ const modules: Record<string, Module[]> = {
     {
       title: "Invoice Manager",
       description: "Create and manage invoices with automated workflows",
-      icon: <FileInvoice className="text-blue-800" />,
+      icon: <Receipt className="text-blue-800" />,
       learnMoreLink: "#invoice-manager"
     }
   ],
