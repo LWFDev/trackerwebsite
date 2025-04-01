@@ -1,3 +1,4 @@
+
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { BusinessForm } from "@/components/onboarding/BusinessForm";
@@ -167,7 +168,7 @@ const GetStarted = () => {
           updateFormData={(data) => {
             if (data.firstName && data.lastName) {
               onChange(data.firstName);
-              updateFormData("lastName", data.lastName);
+              updateFormData({ lastName: data.lastName });
               setIsValid(true);
             } else {
               setIsValid(false);
@@ -266,7 +267,7 @@ const GetStarted = () => {
           updateFormData={(data) => {
             if (data.password && data.confirmPassword && data.password === data.confirmPassword) {
               onChange(data.password);
-              updateFormData("confirmPassword", data.confirmPassword);
+              updateFormData({ confirmPassword: data.confirmPassword });
               setIsValid(true);
             } else {
               setIsValid(false);
@@ -287,7 +288,7 @@ const GetStarted = () => {
             if (data.agreeToTerms !== undefined) {
               onChange(data.agreeToTerms);
               if (data.receiveUpdates !== undefined) {
-                updateFormData("receiveUpdates", data.receiveUpdates);
+                updateFormData({ receiveUpdates: data.receiveUpdates });
               }
               setIsValid(data.agreeToTerms);
             } else {
@@ -433,7 +434,7 @@ const GetStarted = () => {
                   <>
                     {currentQuestion.component({
                       value: formData[currentQuestion.field],
-                      onChange: (value) => updateFormData(currentQuestion.field, value),
+                      onChange: (value) => updateFormData({ [currentQuestion.field]: value }),
                       onNext: handleNext,
                       onBack: handleBack,
                       isValid,
