@@ -57,8 +57,12 @@ export function ContactForm({ formData, updateFormData, questionType }: ContactF
           <label htmlFor="firstName" className="text-white">First Name</label>
           <Input 
             id="firstName"
-            value={formData.firstName}
-            onChange={(e) => updateFormData({ firstName: e.target.value })}
+            value={formData.firstName || ""}
+            onChange={(e) => {
+              const value = e.target.value;
+              updateFormData({ firstName: value });
+              console.log("Updating firstName to:", value);
+            }}
             placeholder="John"
             className="bg-zinc-800 border-zinc-700 text-white focus-visible:ring-[#D4AF37] focus-visible:border-[#D4AF37]"
           />
@@ -68,8 +72,12 @@ export function ContactForm({ formData, updateFormData, questionType }: ContactF
           <label htmlFor="lastName" className="text-white">Last Name</label>
           <Input 
             id="lastName"
-            value={formData.lastName}
-            onChange={(e) => updateFormData({ lastName: e.target.value })}
+            value={formData.lastName || ""}
+            onChange={(e) => {
+              const value = e.target.value;
+              updateFormData({ lastName: value });
+              console.log("Updating lastName to:", value);
+            }}
             placeholder="Doe"
             className="bg-zinc-800 border-zinc-700 text-white focus-visible:ring-[#D4AF37] focus-visible:border-[#D4AF37]"
           />
@@ -92,7 +100,7 @@ export function ContactForm({ formData, updateFormData, questionType }: ContactF
         <label htmlFor="companyName" className="text-white">Company Name</label>
         <Input 
           id="companyName"
-          value={formData.companyName}
+          value={formData.companyName || ""}
           onChange={(e) => updateFormData({ companyName: e.target.value })}
           placeholder="Awesome Apparel Co."
           className="bg-zinc-800 border-zinc-700 text-white focus-visible:ring-[#D4AF37] focus-visible:border-[#D4AF37]"
@@ -116,7 +124,7 @@ export function ContactForm({ formData, updateFormData, questionType }: ContactF
         <Input 
           id="email"
           type="email"
-          value={formData.email}
+          value={formData.email || ""}
           onChange={(e) => {
             const value = e.target.value;
             updateFormData({ email: value });
@@ -150,7 +158,7 @@ export function ContactForm({ formData, updateFormData, questionType }: ContactF
         <Input 
           id="phone"
           type="tel"
-          value={formData.phone}
+          value={formData.phone || ""}
           onChange={(e) => {
             const value = e.target.value;
             updateFormData({ phone: value });
