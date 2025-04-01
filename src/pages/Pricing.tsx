@@ -3,6 +3,8 @@ import { Button } from "@/components/ui/button";
 import { Check, Info, X } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
+import { Link } from "react-router-dom";
+
 const PricingPage = () => {
   const pricingPlans = [{
     name: "Starter",
@@ -88,8 +90,8 @@ const PricingPage = () => {
     question: "Can I get a refund if I'm not satisfied?",
     answer: "We offer a 30-day money-back guarantee for all new subscriptions. If you're not satisfied, contact our support team within 30 days of your purchase for a full refund."
   }];
+
   return <div className="min-h-screen bg-black">
-      {/* Hero Section */}
       <div className="pt-24 pb-16 bg-zinc-900 text-white relative overflow-hidden">
         <div className="absolute top-0 left-0 w-full h-full overflow-hidden z-0">
           <div className="absolute w-[600px] h-[600px] rounded-full bg-[#D4AF37]/5 blur-[120px] top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"></div>
@@ -104,7 +106,6 @@ const PricingPage = () => {
         </div>
       </div>
 
-      {/* Pricing Cards */}
       <div className="py-16 bg-black relative z-10">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
@@ -143,7 +144,6 @@ const PricingPage = () => {
         </div>
       </div>
 
-      {/* Feature Comparison Table */}
       <div className="py-16 bg-zinc-900">
         <div className="container mx-auto px-4">
           <h2 className="text-3xl font-bold mb-12 text-center">
@@ -179,7 +179,6 @@ const PricingPage = () => {
         </div>
       </div>
 
-      {/* FAQ Section */}
       <div className="py-16 bg-black">
         <div className="container mx-auto px-4 max-w-4xl">
           <h2 className="text-3xl font-bold mb-12 text-center">
@@ -199,7 +198,6 @@ const PricingPage = () => {
         </div>
       </div>
 
-      {/* Contact Sales CTA */}
       <div className="py-16 bg-zinc-900 relative overflow-hidden">
         <div className="absolute top-0 left-0 w-full h-full overflow-hidden z-0">
           <div className="absolute w-[500px] h-[500px] rounded-full bg-[#D4AF37]/5 blur-[100px] top-1/2 -left-1/4 transform -translate-y-1/2"></div>
@@ -213,12 +211,15 @@ const PricingPage = () => {
             <p className="text-gray-300 mb-8 max-w-2xl mx-auto">
               Our team is ready to help you find the perfect plan for your business needs. Let us know what your requirements are, and we'll create a tailored solution.
             </p>
-            <Button variant="gold" size="lg" className="font-medium">
-              Contact Sales
-            </Button>
+            <Link to="/contact">
+              <Button variant="gold" size="lg" className="font-medium">
+                Contact Sales
+              </Button>
+            </Link>
           </div>
         </div>
       </div>
     </div>;
 };
+
 export default PricingPage;
