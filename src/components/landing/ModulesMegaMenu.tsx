@@ -165,9 +165,24 @@ const ModulesMegaMenu = () => {
         <Tabs defaultValue="popular" onValueChange={setActiveTab} className="w-full">
           <div className="flex justify-between items-center mb-6">
             <TabsList className="bg-zinc-800">
-              <TabsTrigger value="popular" className="text-sm hover:text-gold-DEFAULT data-[state=active]:text-gold-DEFAULT data-[state=active]:bg-zinc-800">Popular</TabsTrigger>
-              <TabsTrigger value="categories" className="text-sm hover:text-gold-DEFAULT data-[state=active]:text-gold-DEFAULT data-[state=active]:bg-zinc-800">Categories</TabsTrigger>
-              <TabsTrigger value="all" className="text-sm hover:text-gold-DEFAULT data-[state=active]:text-gold-DEFAULT data-[state=active]:bg-zinc-800">All Modules</TabsTrigger>
+              <TabsTrigger 
+                value="popular" 
+                className="text-sm hover:text-gold-DEFAULT data-[state=active]:text-gold-DEFAULT data-[state=active]:bg-zinc-800"
+              >
+                Popular
+              </TabsTrigger>
+              <TabsTrigger 
+                value="categories" 
+                className="text-sm hover:text-gold-DEFAULT data-[state=active]:text-gold-DEFAULT data-[state=active]:bg-zinc-800"
+              >
+                Categories
+              </TabsTrigger>
+              <TabsTrigger 
+                value="all" 
+                className="text-sm hover:text-gold-DEFAULT data-[state=active]:text-gold-DEFAULT data-[state=active]:bg-zinc-800"
+              >
+                All Modules
+              </TabsTrigger>
             </TabsList>
             <Link to="/modules" className="text-gold-DEFAULT text-sm hover:underline">
               View all modules
