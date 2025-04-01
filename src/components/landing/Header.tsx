@@ -1,40 +1,51 @@
 
 import { useState } from 'react';
 import { Button } from "@/components/ui/button";
-import { Menu, X } from "lucide-react";
+import { Menu, X, ChevronDown } from "lucide-react";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-md border-b">
-      <div className="container mx-auto px-4 py-4 flex items-center justify-between">
+    <header className="fixed top-0 left-0 right-0 z-50 bg-white border-b">
+      <div className="container mx-auto px-4 py-3 flex items-center justify-between">
         <div className="flex items-center">
-          <div className="text-2xl font-bold">
-            <span className="gradient-text">Flick</span>
+          <div className="text-xl font-bold flex items-center">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className="mr-2">
+              <rect width="24" height="24" rx="4" fill="#1E40AF"/>
+              <path d="M7 12H17M7 8H17M7 16H13" stroke="white" strokeWidth="2" strokeLinecap="round"/>
+            </svg>
+            TRACKER
           </div>
         </div>
 
         {/* Desktop navigation */}
-        <nav className="hidden md:flex items-center space-x-8">
-          <a href="#features" className="text-gray-600 hover:text-flick-purple transition">Features</a>
-          <a href="#components" className="text-gray-600 hover:text-flick-purple transition">Components</a>
-          <a href="#testimonials" className="text-gray-600 hover:text-flick-purple transition">Testimonials</a>
-          <a href="#pricing" className="text-gray-600 hover:text-flick-purple transition">Pricing</a>
+        <nav className="hidden md:flex items-center space-x-6">
+          <div className="relative group">
+            <button className="flex items-center text-gray-700 hover:text-blue-600 transition">
+              Modules <ChevronDown size={16} className="ml-1" />
+            </button>
+          </div>
+          <a href="#pricing" className="text-gray-700 hover:text-blue-600 transition">Pricing</a>
+          <div className="relative group">
+            <button className="flex items-center text-gray-700 hover:text-blue-600 transition">
+              Resources <ChevronDown size={16} className="ml-1" />
+            </button>
+          </div>
         </nav>
 
         <div className="hidden md:flex items-center space-x-4">
-          <Button variant="outline" className="border-flick-purple text-flick-purple hover:bg-flick-purple/10">
-            Log in
+          <Button variant="outline" className="border-gray-300 text-gray-700 hover:bg-gray-100">
+            Sign In
           </Button>
-          <Button className="bg-flick-purple hover:bg-flick-purple/90">
+          <Button className="bg-blue-600 hover:bg-blue-700">
             Get Started
           </Button>
         </div>
 
         {/* Mobile menu button */}
         <button 
-          className="md:hidden text-flick-gray p-2" 
+          className="md:hidden text-gray-700 p-2" 
           onClick={() => setIsMenuOpen(!isMenuOpen)}
         >
           {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
@@ -46,38 +57,31 @@ const Header = () => {
         <div className="md:hidden bg-white py-4 px-6 shadow-lg animate-fade-in">
           <nav className="flex flex-col space-y-4">
             <a 
-              href="#features" 
-              className="text-gray-600 hover:text-flick-purple transition py-2"
+              href="#modules" 
+              className="text-gray-700 hover:text-blue-600 transition py-2"
               onClick={() => setIsMenuOpen(false)}
             >
-              Features
-            </a>
-            <a 
-              href="#components" 
-              className="text-gray-600 hover:text-flick-purple transition py-2"
-              onClick={() => setIsMenuOpen(false)}
-            >
-              Components
-            </a>
-            <a 
-              href="#testimonials" 
-              className="text-gray-600 hover:text-flick-purple transition py-2"
-              onClick={() => setIsMenuOpen(false)}
-            >
-              Testimonials
+              Modules
             </a>
             <a 
               href="#pricing" 
-              className="text-gray-600 hover:text-flick-purple transition py-2"
+              className="text-gray-700 hover:text-blue-600 transition py-2"
               onClick={() => setIsMenuOpen(false)}
             >
               Pricing
             </a>
+            <a 
+              href="#resources" 
+              className="text-gray-700 hover:text-blue-600 transition py-2"
+              onClick={() => setIsMenuOpen(false)}
+            >
+              Resources
+            </a>
             <div className="flex flex-col space-y-3 pt-4">
-              <Button variant="outline" className="border-flick-purple text-flick-purple hover:bg-flick-purple/10 w-full">
-                Log in
+              <Button variant="outline" className="w-full">
+                Sign In
               </Button>
-              <Button className="bg-flick-purple hover:bg-flick-purple/90 w-full">
+              <Button className="bg-blue-600 hover:bg-blue-700 w-full">
                 Get Started
               </Button>
             </div>

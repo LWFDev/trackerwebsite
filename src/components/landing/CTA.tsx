@@ -1,44 +1,24 @@
 
 import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { ArrowRight } from "lucide-react";
-import { useToast } from "@/hooks/use-toast";
 
 const CTA = () => {
-  const { toast } = useToast();
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    toast({
-      title: "Success!",
-      description: "Thank you for subscribing to our newsletter!"
-    });
-  };
-
   return (
-    <section className="py-20 bg-gray-50">
+    <section className="py-20 bg-slate-900 text-white">
       <div className="container mx-auto px-4">
         <div className="max-w-3xl mx-auto text-center">
           <h2 className="text-3xl md:text-4xl font-bold mb-6">
-            Ready to get started?
+            Ready to transform your workflow?
           </h2>
-          <p className="text-xl text-gray-600 mb-8">
-            Join thousands of satisfied customers using our platform today.
+          <p className="text-xl text-gray-300 mb-8">
+            Start your free 14-day trial today. No credit card required.
           </p>
           
-          <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-4 max-w-lg mx-auto mb-10">
-            <Input
-              type="email"
-              placeholder="Enter your email"
-              className="h-12"
-              required
-            />
-            <Button type="submit" className="h-12 bg-[#7C3AED] hover:bg-[#6D28D9] gap-2">
-              Get Started <ArrowRight size={16} />
-            </Button>
-          </form>
+          <Button size="lg" className="bg-blue-600 hover:bg-blue-700 px-8">
+            Get Started
+          </Button>
           
-          <p className="text-sm text-gray-500">
-            No credit card required. Start with a free 14-day trial.
+          <p className="mt-8 text-sm text-gray-400">
+            Join 10,000+ businesses using Tracker
           </p>
         </div>
       </div>
