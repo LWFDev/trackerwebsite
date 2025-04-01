@@ -1,4 +1,3 @@
-
 import React, { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Check, Info, X } from "lucide-react";
@@ -222,7 +221,9 @@ const PricingPage = () => {
                     className={`w-full mb-6 ${
                       plan.highlighted 
                         ? 'bg-gradient-to-r from-[#D4AF37] to-[#F2D675] hover:from-[#F2D675] hover:to-[#D4AF37] text-black' 
-                        : 'bg-zinc-800 hover:bg-zinc-700'
+                        : (plan.name === 'Starter' || plan.name === 'Enterprise' 
+                            ? 'bg-zinc-800 hover:bg-zinc-700 text-white' 
+                            : 'bg-zinc-800 hover:bg-zinc-700')
                     }`}
                   >
                     {plan.buttonText}
