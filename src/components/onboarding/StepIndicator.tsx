@@ -1,6 +1,7 @@
 
 import { Check } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
+import { Progress } from "@/components/ui/progress";
 
 interface StepIndicatorProps {
   currentStep: number;
@@ -24,15 +25,12 @@ export const StepIndicator = ({
     { id: 4, name: "Complete" }
   ];
 
-  // Calculate progress percentage for the current section
-  const sectionProgress = ((currentQuestionIndex + 1) / totalQuestions) * 100;
-  
-  // Calculate overall progress
+  // Calculate overall progress percentage
   const previousSectionsQuestions = currentStep > 1 ? (currentStep - 1) * (totalQuestions / totalSteps) : 0;
   const overallProgress = ((previousSectionsQuestions + currentQuestionIndex + 1) / (totalQuestions * (totalSteps / totalSteps))) * 100;
 
   return (
-    <div className="max-w-3xl mx-auto">
+    <div className="max-w-3xl mx-auto mb-8">
       {/* Section title with animation */}
       <AnimatePresence mode="wait">
         <motion.div
@@ -41,86 +39,72 @@ export const StepIndicator = ({
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: -10 }}
           transition={{ duration: 0.3 }}
-          className="mb-4 text-center"
+          className="mb-6 text-center"
         >
-          <h3 className="text-lg font-medium text-[#D4AF37]">{questionTitle}</h3>
+          <h2 className="text-2xl font-bold text-[#D4AF37]">{questionTitle}</h2>
         </motion.div>
       </AnimatePresence>
 
       {/* Step indicators */}
-      <div className="flex items-center justify-between mb-1">
-        {steps.map((step, index) => (
-          <div key={step.id} className="flex flex-col items-center relative">
-            {/* Step indicator */}
-            <div 
+      <div className="flex items-center justify-between relative mb-2">
+        {/* Progress line behind the circles */}
+        <div className="absolute top-1/2 left-0 w-full h-[2px] bg-zinc-800 -translate-y-1/2 z-0">
+          <motion.div 
+            className="h-full bg-[#D4AF37]"
+            initial={{ width: "0%" }}
+            animate={{ width: `${overallProgress}%` }}
+            transition={{ duration: 0.5 }}
+          />
+        </div>
+
+        {steps.map((step) => (
+          <div key={step.id} className="flex flex-col items-center z-10">
+            {/* Step circle indicator */}
+            <motion.div 
               className={`
-                flex items-center justify-center w-10 h-10 rounded-full z-10
+                flex items-center justify-center w-10 h-10 rounded-full
                 ${currentStep > step.id 
-                  ? 'bg-[#D4AF37] text-black' 
+                  ? 'bg-[#D4AF37] border-[#D4AF37]' 
                   : currentStep === step.id 
-                    ? 'bg-[#D4AF37] text-black' 
-                    : 'bg-zinc-700 text-white'
+                    ? 'bg-[#D4AF37] border-[#D4AF37]' 
+                    : 'bg-zinc-700 border-zinc-700'
                 }
-                border-4 ${currentStep >= step.id ? 'border-[#F2D675]/20' : 'border-zinc-800'}
-                transition-all duration-300
+                border-2 transition-all duration-300
               `}
+              initial={{ scale: 0.9 }}
+              animate={{ 
+                scale: currentStep === step.id ? 1.1 : 1,
+                backgroundColor: currentStep >= step.id ? '#D4AF37' : '#27272a' 
+              }}
+              transition={{ duration: 0.3 }}
             >
               {currentStep > step.id ? (
-                <Check className="h-4 w-4" />
+                <Check className="h-5 w-5 text-black" />
               ) : (
-                <span className="text-sm">{step.id}</span>
+                <span className={`text-sm font-medium ${currentStep === step.id ? 'text-black' : 'text-white'}`}>
+                  {step.id}
+                </span>
               )}
-            </div>
+            </motion.div>
             
             {/* Step name */}
-            <div className="mt-1 text-xs text-center">
-              <p 
-                className={`
-                  font-medium
-                  ${currentStep === step.id ? 'text-[#D4AF37]' : 'text-gray-400'}
-                `}
-              >
-                {step.name}
-              </p>
-            </div>
-            
-            {/* Connector line */}
-            {index < steps.length - 1 && (
-              <div className="absolute top-5 left-10 w-full h-0.5 bg-zinc-700">
-                {/* Progress overlay on connector */}
-                {(currentStep > step.id || (currentStep === step.id && currentQuestionIndex > 0)) && (
-                  <motion.div 
-                    className="h-full bg-[#D4AF37]"
-                    initial={{ width: currentStep > step.id ? "100%" : "0%" }}
-                    animate={{ 
-                      width: currentStep > step.id 
-                        ? "100%" 
-                        : currentStep === step.id 
-                          ? `${sectionProgress}%` 
-                          : "0%" 
-                    }}
-                    transition={{ duration: 0.5 }}
-                  />
-                )}
-              </div>
-            )}
+            <motion.p
+              className={`mt-2 text-xs font-medium ${currentStep === step.id ? 'text-[#D4AF37]' : 'text-gray-400'}`}
+              animate={{ 
+                color: currentStep === step.id ? '#D4AF37' : '#9ca3af',
+                scale: currentStep === step.id ? 1.05 : 1
+              }}
+              transition={{ duration: 0.3 }}
+            >
+              {step.name}
+            </motion.p>
           </div>
         ))}
       </div>
       
-      {/* Overall progress bar */}
-      <div className="w-full bg-zinc-700 rounded-full h-1.5 mt-1">
-        <motion.div 
-          className="bg-[#D4AF37] h-1.5 rounded-full"
-          initial={{ width: "0%" }}
-          animate={{ width: `${overallProgress}%` }}
-          transition={{ duration: 0.5 }}
-        />
-      </div>
-      
       {/* Question counter */}
-      <div className="text-center mt-1">
-        <p className="text-xs text-gray-400">
+      <div className="text-center mt-4">
+        <p className="text-sm text-gray-400">
           Question {currentQuestionIndex + 1} of {totalQuestions} in {steps[currentStep - 1]?.name}
         </p>
       </div>
