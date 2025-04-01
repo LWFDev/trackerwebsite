@@ -62,9 +62,9 @@ export default {
 					'off-white': '#F7FAFC'
 				},
 				gold: {
-					DEFAULT: 'hsl(var(--gold))',
-					light: 'hsl(var(--gold-light))',
-					dark: 'hsl(var(--gold-dark))',
+					DEFAULT: '#D4AF37',
+					light: '#F2D675',
+					dark: '#9E7F1D',
 					hover: '#E6C34B'
 				}
 			},
