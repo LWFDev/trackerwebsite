@@ -7,6 +7,7 @@ import ModulesMegaMenu from './ModulesMegaMenu';
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isModulesMenuOpen, setIsModulesMenuOpen] = useState(false);
+  const headerRef = useRef<HTMLElement>(null);
   const modulesButtonRef = useRef<HTMLDivElement>(null);
   const modulesMenuRef = useRef<HTMLDivElement>(null);
   
@@ -30,13 +31,26 @@ const Header = () => {
     };
   }, [isModulesMenuOpen]);
 
-  // Toggle the modules menu when hovering over the modules button
+  // Handle mouse leave for the entire header + menu area
+  const handleMouseLeave = () => {
+    setIsModulesMenuOpen(false);
+  };
+
+  // Toggle the modules menu when clicking the modules button
+  const handleModulesClick = () => {
+    setIsModulesMenuOpen(!isModulesMenuOpen);
+  };
+
+  // Open the modules menu when hovering over the modules button
   const handleModulesHover = () => {
     setIsModulesMenuOpen(true);
   };
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-black border-b border-zinc-800">
+    <header 
+      className="fixed top-0 left-0 right-0 z-50 bg-black border-b border-zinc-800"
+      ref={headerRef}
+    >
       <div className="container mx-auto px-4 py-3 flex items-center justify-between">
         <div className="flex items-center">
           <div className="text-xl font-bold flex items-center text-white">
@@ -54,19 +68,13 @@ const Header = () => {
             className="relative group"
             ref={modulesButtonRef}
             onMouseEnter={handleModulesHover}
+            onClick={handleModulesClick}
           >
             <button 
               className={`flex items-center transition ${isModulesMenuOpen ? 'text-gold-DEFAULT' : 'text-gray-300 hover:text-gold-DEFAULT'}`}
-              onClick={() => setIsModulesMenuOpen(!isModulesMenuOpen)}
             >
               Modules <ChevronDown size={16} className={`ml-1 transition-transform duration-200 ${isModulesMenuOpen ? 'rotate-180' : ''}`} />
             </button>
-            
-            {isModulesMenuOpen && (
-              <div ref={modulesMenuRef} onMouseLeave={() => setIsModulesMenuOpen(false)}>
-                <ModulesMegaMenu />
-              </div>
-            )}
           </div>
           
           <a href="#pricing" className="text-gray-300 hover:text-gold-DEFAULT transition">Pricing</a>
@@ -130,6 +138,16 @@ const Header = () => {
               </Button>
             </div>
           </nav>
+        </div>
+      )}
+
+      {/* Mega menu container */}
+      {isModulesMenuOpen && (
+        <div 
+          ref={modulesMenuRef}
+          onMouseLeave={handleMouseLeave}
+        >
+          <ModulesMegaMenu />
         </div>
       )}
     </header>

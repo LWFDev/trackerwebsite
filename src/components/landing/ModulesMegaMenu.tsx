@@ -88,7 +88,7 @@ const ModulesMegaMenu = () => {
   const [activeTab, setActiveTab] = useState("popular");
 
   return (
-    <div className="absolute top-full left-0 w-full bg-white border-t border-zinc-200 shadow-lg animate-fade-in z-50">
+    <div className="fixed top-[60px] left-0 w-full bg-white shadow-lg z-50 border-t border-zinc-200">
       <div className="container mx-auto p-6">
         <Tabs defaultValue="popular" onValueChange={setActiveTab} className="w-full">
           <div className="flex justify-between items-center mb-6">
