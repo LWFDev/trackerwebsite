@@ -13,15 +13,20 @@ const Index = () => {
     <div className="min-h-screen flex flex-col bg-black text-white">
       <main>
         <Hero />
-        <div className="py-12 bg-zinc-900 text-center">
-          <div className="container mx-auto px-4">
-            <h3 className="text-lg text-gold-DEFAULT mb-8">TRUSTED BY INDUSTRY LEADERS</h3>
+        <div className="py-12 bg-zinc-900 text-center relative overflow-hidden">
+          <div className="absolute top-0 left-0 w-full h-full overflow-hidden z-0">
+            <div className="absolute w-[600px] h-[600px] rounded-full bg-gold-DEFAULT/5 blur-[120px] top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"></div>
+          </div>
+          <div className="container mx-auto px-4 relative z-10">
+            <h3 className="text-lg text-gold-DEFAULT mb-8 font-medium">TRUSTED BY INDUSTRY LEADERS</h3>
             <div className="grid grid-cols-2 md:grid-cols-5 gap-8">
-              <div className="bg-zinc-800 h-8 rounded"></div>
-              <div className="bg-zinc-800 h-8 rounded"></div>
-              <div className="bg-zinc-800 h-8 rounded"></div>
-              <div className="bg-zinc-800 h-8 rounded"></div>
-              <div className="bg-zinc-800 h-8 rounded"></div>
+              {[...Array(5)].map((_, index) => (
+                <div 
+                  key={index} 
+                  className="bg-zinc-800/60 backdrop-blur-sm h-12 rounded-lg border border-zinc-700 animate-pulse-light hover:border-gold-DEFAULT/30 transition-all duration-300"
+                  style={{ animationDelay: `${index * 0.2}s` }}
+                ></div>
+              ))}
             </div>
           </div>
         </div>

@@ -4,56 +4,78 @@ import { ArrowRight } from "lucide-react";
 
 const Hero = () => {
   return (
-    <section className="pt-24 pb-16 bg-black text-white">
-      <div className="container mx-auto px-4">
+    <section className="relative pt-24 pb-16 bg-black text-white overflow-hidden">
+      {/* Background elements */}
+      <div className="absolute top-0 left-0 w-full h-full overflow-hidden z-0">
+        <div className="absolute w-[500px] h-[500px] rounded-full bg-gradient-to-r from-gold-DEFAULT/20 to-gold-DEFAULT/5 blur-[120px] -top-40 -right-40"></div>
+        <div className="absolute w-[500px] h-[500px] rounded-full bg-zinc-800/30 blur-[100px] -bottom-60 -left-20"></div>
+      </div>
+
+      <div className="container mx-auto px-4 relative z-10">
         <div className="flex flex-col md:flex-row items-center">
           <div className="md:w-1/2 md:pr-8 mb-10 md:mb-0">
-            <div className="text-sm text-[#D4AF37] uppercase mb-3 font-medium tracking-wider">AUTOMATE. ORGANIZE. SIMPLIFY.</div>
-            <h1 className="text-4xl md:text-5xl font-bold mb-6">
-              Digitize production, enable profit.
+            <div className="inline-block px-4 py-1.5 bg-zinc-900/80 backdrop-blur-sm rounded-full border border-zinc-800 mb-6">
+              <div className="text-sm text-gold-DEFAULT uppercase font-medium tracking-wider flex items-center">
+                <span className="bg-gold-DEFAULT w-2 h-2 rounded-full mr-2"></span>
+                AUTOMATE. ORGANIZE. SIMPLIFY.
+              </div>
+            </div>
+            
+            <h1 className="text-4xl md:text-5xl font-bold mb-6 leading-tight animate-fade-in">
+              Digitize production, <span className="text-transparent bg-clip-text bg-gradient-to-r from-gold-DEFAULT to-gold-light">enable profit.</span>
             </h1>
-            <p className="text-lg text-gray-300 mb-8 max-w-lg">
-              The end-to-end platform that <span className="text-[#D4AF37]">automates order handling</span>, <span className="text-[#D4AF37]">manages inventory</span>, and <span className="text-[#D4AF37]">optimizes production instantly</span> - simpler, clearer and more effectively.
+            
+            <p className="text-lg text-gray-300 mb-8 max-w-lg animate-fade-in" style={{ animationDelay: '0.2s' }}>
+              The end-to-end platform that <span className="text-gold-DEFAULT">automates order handling</span>, <span className="text-gold-DEFAULT">manages inventory</span>, and <span className="text-gold-DEFAULT">optimizes production instantly</span> - simpler, clearer and more effectively.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4">
+            
+            <div className="flex flex-col sm:flex-row gap-4 animate-fade-in" style={{ animationDelay: '0.3s' }}>
               <Button 
                 size="lg" 
                 variant="gold" 
-                className="px-6 shadow-md"
+                className="px-6 shadow-lg transition-all hover:translate-y-[-2px]"
               >
                 Get Started <ArrowRight className="ml-1 h-5 w-5" />
               </Button>
               <Button 
                 size="lg" 
                 variant="outline" 
-                className="border-[#D4AF37] text-[#D4AF37] hover:bg-[#D4AF37]/10"
+                className="border-gold-DEFAULT text-gold-DEFAULT hover:bg-gold-DEFAULT/10 transition-all hover:translate-y-[-2px]"
               >
                 Contact Sales
               </Button>
             </div>
             
-            <div className="mt-12 grid grid-cols-2 gap-8">
-              <div>
-                <div className="text-3xl font-bold mb-1 text-[#D4AF37]">1,000,000+</div>
+            <div className="mt-12 grid grid-cols-2 gap-8 animate-fade-in" style={{ animationDelay: '0.4s' }}>
+              <div className="bg-zinc-900/60 backdrop-blur-sm p-4 rounded-lg border border-zinc-800">
+                <div className="text-3xl font-bold mb-1 text-transparent bg-clip-text bg-gradient-to-r from-gold-DEFAULT to-gold-light">1,000,000+</div>
                 <div className="text-gray-400 text-sm">Garments Processed</div>
               </div>
-              <div>
-                <div className="text-3xl font-bold mb-1 text-[#D4AF37]">2,000+</div>
+              <div className="bg-zinc-900/60 backdrop-blur-sm p-4 rounded-lg border border-zinc-800">
+                <div className="text-3xl font-bold mb-1 text-transparent bg-clip-text bg-gradient-to-r from-gold-DEFAULT to-gold-light">2,000+</div>
                 <div className="text-gray-400 text-sm">Workflows Automated</div>
               </div>
             </div>
           </div>
           
-          <div className="md:w-1/2">
+          <div className="md:w-1/2 animate-fade-in" style={{ animationDelay: '0.5s' }}>
             <div className="relative">
-              <div className="bg-zinc-900 rounded-lg shadow-2xl overflow-hidden border border-zinc-800 hover:border-[#D4AF37] transition-all">
+              {/* Decorative elements */}
+              <div className="absolute w-20 h-20 bg-gradient-to-r from-gold-DEFAULT/30 to-gold-DEFAULT/10 rounded-xl blur-lg -top-6 -left-6 animate-pulse-light"></div>
+              <div className="absolute w-16 h-16 bg-zinc-800/50 rounded-xl blur-lg -bottom-4 -right-4 animate-pulse-light" style={{ animationDelay: '1s' }}></div>
+              
+              {/* Main image */}
+              <div className="bg-zinc-900 rounded-xl shadow-2xl overflow-hidden border border-zinc-800 hover:border-gold-DEFAULT transition-all duration-500 transform hover:translate-y-[-5px] hover:shadow-gold-DEFAULT/20 hover:shadow-xl relative z-10">
+                <div className="absolute inset-0 bg-gradient-to-tr from-black/40 to-transparent z-20 pointer-events-none"></div>
                 <img 
                   src="https://nubosync.com/wp-content/uploads/2025/02/screen-1.webp" 
                   alt="Platform dashboard" 
                   className="w-full h-auto opacity-90"
                 />
               </div>
-              <div className="absolute -bottom-4 -right-4 bg-[#D4AF37] text-black px-4 py-2 rounded font-medium shadow-lg">
+              
+              {/* New Features badge */}
+              <div className="absolute -bottom-4 -right-4 bg-gradient-to-r from-gold-DEFAULT to-gold-light text-black px-4 py-2 rounded-lg font-medium shadow-lg z-30 animate-float">
                 New Features
               </div>
             </div>
