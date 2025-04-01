@@ -88,7 +88,7 @@ button:hover {
 }
 
 /* Animation classes */
-.fade-in {
+.animate-fade-in {
   animation: fadeIn 0.5s ease-out forwards;
 }
 
@@ -103,7 +103,7 @@ button:hover {
   }
 }
 
-.slide-in {
+.animate-slide-in {
   animation: slideIn 0.5s ease-out forwards;
 }
 
@@ -115,6 +115,34 @@ button:hover {
   to {
     transform: translateX(0);
     opacity: 1;
+  }
+}
+
+/* Pulsing animation for logo placeholders */
+.animate-pulse-light {
+  animation: pulseLight 2s ease-in-out infinite;
+}
+
+@keyframes pulseLight {
+  0%, 100% { 
+    opacity: 1; 
+  }
+  50% { 
+    opacity: 0.7; 
+  }
+}
+
+/* Floating animation for badges */
+.animate-float {
+  animation: float 4s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% { 
+    transform: translateY(0); 
+  }
+  50% { 
+    transform: translateY(-10px); 
   }
 }
 
@@ -145,5 +173,17 @@ button:hover {
 
   .gold-border {
     @apply border-[#D4AF37];
+  }
+  
+  .gold-gradient {
+    @apply bg-gradient-to-r from-gold-DEFAULT to-gold-light;
+  }
+  
+  .gold-gradient-text {
+    @apply text-transparent bg-clip-text bg-gradient-to-r from-gold-DEFAULT to-gold-light;
+  }
+  
+  .backdrop-blur {
+    @apply backdrop-blur-sm bg-black/50;
   }
 }

@@ -32,14 +32,14 @@ const Hero = () => {
             <div className="flex flex-col sm:flex-row gap-4 animate-fade-in" style={{ animationDelay: '0.3s' }}>
               <Button 
                 size="lg" 
-                className="bg-gradient-to-r from-gold-DEFAULT to-gold-light text-black px-6 shadow-lg hover:shadow-gold-DEFAULT/20 transition-all hover:translate-y-[-2px]"
+                className="bg-gradient-to-r from-gold-DEFAULT to-gold-light text-black px-6 shadow-lg hover:shadow-gold-DEFAULT/20 transition-all hover:-translate-y-1"
               >
                 Get Started <ArrowRight className="ml-1 h-5 w-5" />
               </Button>
               <Button 
                 size="lg" 
                 variant="outline" 
-                className="border-gold-DEFAULT text-gold-DEFAULT hover:bg-gold-DEFAULT/10 transition-all hover:translate-y-[-2px]"
+                className="border-gold-DEFAULT text-gold-DEFAULT hover:bg-gold-DEFAULT/10 transition-all hover:-translate-y-1"
               >
                 Contact Sales
               </Button>
@@ -64,10 +64,10 @@ const Hero = () => {
               <div className="absolute w-16 h-16 bg-zinc-800/50 rounded-xl blur-lg -bottom-4 -right-4 animate-pulse-light" style={{ animationDelay: '1s' }}></div>
               
               {/* Main image */}
-              <div className="bg-zinc-900 rounded-xl shadow-2xl overflow-hidden border border-zinc-800 hover:border-gold-DEFAULT/50 transition-all duration-500 transform hover:translate-y-[-5px] hover:shadow-gold-DEFAULT/20 hover:shadow-xl relative z-10">
+              <div className="bg-zinc-900 rounded-xl shadow-2xl overflow-hidden border border-zinc-800 hover:border-gold-DEFAULT/50 transition-all duration-500 transform hover:-translate-y-1 hover:shadow-gold-DEFAULT/20 hover:shadow-xl relative z-10">
                 <div className="absolute inset-0 bg-gradient-to-tr from-black/40 to-transparent z-20 pointer-events-none"></div>
                 <img 
-                  src="https://nubosync.com/wp-content/uploads/2025/02/screen-1.webp" 
+                  src="https://placehold.co/900x500/2a2a2a/CCCCCC" 
                   alt="Platform dashboard" 
                   className="w-full h-auto opacity-90"
                 />
