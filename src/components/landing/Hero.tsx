@@ -1,4 +1,3 @@
-
 import { Button } from "@/components/ui/button";
 
 const Hero = () => {
@@ -17,7 +16,8 @@ const Hero = () => {
             <div className="flex flex-col sm:flex-row gap-4">
               <Button 
                 size="lg" 
-                className="bg-gold-DEFAULT text-black hover:bg-gold-light hover:text-black px-6 transition-colors"
+                variant="gold" 
+                className="px-6"
               >
                 Get Started
               </Button>

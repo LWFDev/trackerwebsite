@@ -1,3 +1,4 @@
+
 import { Button } from "@/components/ui/button";
 
 const CTA = () => {
@@ -14,7 +15,8 @@ const CTA = () => {
           
           <Button 
             size="lg" 
-            className="bg-gold-DEFAULT text-black hover:bg-gold-light hover:text-black px-8 transition-colors"
+            variant="gold" 
+            className="px-8"
           >
             Get Started
           </Button>
