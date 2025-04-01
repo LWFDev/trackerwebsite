@@ -1,7 +1,7 @@
 
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import { onboardingSteps } from "@/constants/onboardingQuestions";
+import { onboardingSteps } from "@/constants/onboarding";
 import { Question, OnboardingData } from "@/types/onboarding";
 
 export const useOnboardingNavigation = (formData: OnboardingData) => {
