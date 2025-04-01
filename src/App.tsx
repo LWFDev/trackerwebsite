@@ -3,7 +3,8 @@ import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
+import { useEffect } from "react";
 import Header from "./components/landing/Header";
 import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
@@ -23,6 +24,20 @@ import CustomerPortal from "./pages/modules/CustomerPortal";
 import Footer from "./components/landing/Footer";
 import GetStarted from "./pages/GetStarted";
 
+// Scroll to top component that activates on route change
+const ScrollToTop = () => {
+  const { pathname } = useLocation();
+  
+  useEffect(() => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+  }, [pathname]);
+  
+  return null;
+};
+
 const queryClient = new QueryClient();
 
 const App = () => (
@@ -33,6 +48,7 @@ const App = () => (
       <BrowserRouter>
         <div className="flex flex-col min-h-screen">
           <Header />
+          <ScrollToTop />
           <Routes>
             {/* Route with just content */}
             <Route path="/" element={<Index />} />
