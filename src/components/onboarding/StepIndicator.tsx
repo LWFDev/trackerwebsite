@@ -40,18 +40,8 @@ export const StepIndicator = ({
         </motion.div>
       </AnimatePresence>
 
-      {/* Step indicators */}
+      {/* Step indicators without the horizontal line */}
       <div className="flex items-center justify-between relative mb-2">
-        {/* Progress line behind the circles */}
-        <div className="absolute top-1/2 left-0 w-full h-[2px] bg-zinc-800 -translate-y-1/2 z-0">
-          <motion.div 
-            className="h-full bg-[#D4AF37]"
-            initial={{ width: "0%" }}
-            animate={{ width: `${(currentStep - 1) / (totalSteps - 1) * 100}%` }}
-            transition={{ duration: 0.5 }}
-          />
-        </div>
-
         {steps.map((step) => (
           <div key={step.id} className="flex flex-col items-center z-10">
             {/* Step circle indicator */}
