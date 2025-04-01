@@ -28,11 +28,19 @@ export const accountQuestions: Question[] = [
     field: "password",
     component: ({ value, onChange, isValid, setIsValid }) => (
       <AccountForm 
-        formData={{ password: value, confirmPassword: "" }}
+        formData={{ 
+          password: value, 
+          confirmPassword: "" 
+        }}
         updateFormData={(data) => {
           if (data.password) {
             onChange(data.password);
-            setIsValid(true);
+            // Only set valid if both password exists and matches confirmation
+            if (data.password && data.confirmPassword && data.password === data.confirmPassword) {
+              setIsValid(true);
+            } else {
+              setIsValid(false);
+            }
           } else {
             setIsValid(false);
           }
