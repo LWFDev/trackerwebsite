@@ -1,3 +1,4 @@
+
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
@@ -25,6 +26,8 @@ import GetStarted from "./pages/GetStarted";
 import Pricing from "./pages/Pricing";
 import Contact from "./pages/Contact";
 import AboutUs from "./pages/AboutUs";
+import Blog from "./pages/Blog";
+import BlogPost from "./pages/BlogPost";
 
 const ScrollToTop = () => {
   const { pathname } = useLocation();
@@ -68,6 +71,10 @@ const App = () => (
             <Route path="/pricing" element={<Pricing />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/about" element={<AboutUs />} />
+            
+            {/* Blog Routes */}
+            <Route path="/blog" element={<Blog />} />
+            <Route path="/blog/:slug" element={<BlogPost />} />
             
             <Route path="/get-started" element={<GetStarted />} />
             
