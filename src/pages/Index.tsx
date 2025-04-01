@@ -8,6 +8,7 @@ import CTA from "@/components/landing/CTA";
 import Testimonials from "@/components/landing/Testimonials";
 import Pricing from "@/components/landing/Pricing";
 import Header from "@/components/landing/Header";
+import Footer from "@/components/landing/Footer";
 
 const Index = () => {
   return (
@@ -40,6 +41,7 @@ const Index = () => {
         <Pricing />
         <CTA />
       </main>
+      <Footer />
     </div>
   );
 };
