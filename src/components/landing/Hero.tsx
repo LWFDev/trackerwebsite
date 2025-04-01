@@ -15,7 +15,7 @@ const Hero = () => {
               The end-to-end platform that <span className="text-gold-DEFAULT">automates order handling</span>, <span className="text-gold-DEFAULT">manages inventory</span>, and <span className="text-gold-DEFAULT">optimizes production instantly</span> - simpler, clearer and more effectively.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
-              <Button size="lg" className="bg-gold-DEFAULT text-black hover:bg-gold-light hover:text-black px-6">
+              <Button size="lg" className="bg-gold-DEFAULT text-black hover:bg-white hover:text-black font-medium px-6 transition-colors">
                 Get Started
               </Button>
               <Button size="lg" variant="outline" className="border-gold-DEFAULT text-gold-DEFAULT hover:bg-gold-light/10">
