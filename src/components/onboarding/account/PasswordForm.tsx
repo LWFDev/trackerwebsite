@@ -15,16 +15,28 @@ export function PasswordForm({ formData, updateFormData }: PasswordFormProps) {
   const [showConfirmPassword, setShowConfirmPassword] = useState(false);
   const [passwordStrength, setPasswordStrength] = useState(0);
   const [passwordFeedback, setPasswordFeedback] = useState("");
+  const [localFormData, setLocalFormData] = useState({
+    password: formData.password || "",
+    confirmPassword: formData.confirmPassword || ""
+  });
 
   useEffect(() => {
-    if (formData.password) {
+    // Update local form data when parent formData changes
+    setLocalFormData({
+      password: formData.password || "",
+      confirmPassword: formData.confirmPassword || ""
+    });
+  }, [formData]);
+
+  useEffect(() => {
+    if (localFormData.password) {
       let strength = 0;
       
-      if (formData.password.length >= 8) strength += 1;
-      if (/[A-Z]/.test(formData.password)) strength += 1;
-      if (/[a-z]/.test(formData.password)) strength += 1;
-      if (/[0-9]/.test(formData.password)) strength += 1;
-      if (/[^A-Za-z0-9]/.test(formData.password)) strength += 1;
+      if (localFormData.password.length >= 8) strength += 1;
+      if (/[A-Z]/.test(localFormData.password)) strength += 1;
+      if (/[a-z]/.test(localFormData.password)) strength += 1;
+      if (/[0-9]/.test(localFormData.password)) strength += 1;
+      if (/[^A-Za-z0-9]/.test(localFormData.password)) strength += 1;
       
       setPasswordStrength(strength);
       
@@ -38,7 +50,19 @@ export function PasswordForm({ formData, updateFormData }: PasswordFormProps) {
       setPasswordStrength(0);
       setPasswordFeedback("");
     }
-  }, [formData.password]);
+  }, [localFormData.password]);
+
+  const handlePasswordChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const newPassword = e.target.value;
+    setLocalFormData(prev => ({ ...prev, password: newPassword }));
+    updateFormData({ password: newPassword });
+  };
+
+  const handleConfirmPasswordChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const newConfirmPassword = e.target.value;
+    setLocalFormData(prev => ({ ...prev, confirmPassword: newConfirmPassword }));
+    updateFormData({ confirmPassword: newConfirmPassword });
+  };
 
   const getStrengthColor = () => {
     if (passwordStrength <= 1) return "bg-red-500";
@@ -65,8 +89,8 @@ export function PasswordForm({ formData, updateFormData }: PasswordFormProps) {
             <Input 
               id="password"
               type={showPassword ? "text" : "password"}
-              value={formData.password || ""}
-              onChange={(e) => updateFormData({ password: e.target.value })}
+              value={localFormData.password}
+              onChange={handlePasswordChange}
               placeholder="••••••••"
               className="bg-zinc-800 border-zinc-700 text-white focus-visible:ring-[#D4AF37] focus-visible:border-[#D4AF37] pr-10"
             />
@@ -79,7 +103,7 @@ export function PasswordForm({ formData, updateFormData }: PasswordFormProps) {
             </button>
           </div>
           
-          {formData.password && (
+          {localFormData.password && (
             <div className="space-y-1 mt-2">
               <div className="flex justify-between text-xs">
                 <span className="text-gray-400">Password strength:</span>
@@ -101,16 +125,16 @@ export function PasswordForm({ formData, updateFormData }: PasswordFormProps) {
               </div>
               
               <ul className="text-xs text-gray-400 mt-2 space-y-1">
-                <li className={formData.password.length >= 8 ? "text-green-500" : ""}>
+                <li className={localFormData.password.length >= 8 ? "text-green-500" : ""}>
                   • At least 8 characters
                 </li>
-                <li className={/[A-Z]/.test(formData.password) ? "text-green-500" : ""}>
+                <li className={/[A-Z]/.test(localFormData.password) ? "text-green-500" : ""}>
                   • Includes uppercase letter
                 </li>
-                <li className={/[0-9]/.test(formData.password) ? "text-green-500" : ""}>
+                <li className={/[0-9]/.test(localFormData.password) ? "text-green-500" : ""}>
                   • Includes number
                 </li>
-                <li className={/[^A-Za-z0-9]/.test(formData.password) ? "text-green-500" : ""}>
+                <li className={/[^A-Za-z0-9]/.test(localFormData.password) ? "text-green-500" : ""}>
                   • Includes special character
                 </li>
               </ul>
@@ -124,14 +148,12 @@ export function PasswordForm({ formData, updateFormData }: PasswordFormProps) {
             <Input 
               id="confirmPassword"
               type={showConfirmPassword ? "text" : "password"}
-              value={formData.confirmPassword || ""}
-              onChange={(e) => {
-                updateFormData({ confirmPassword: e.target.value });
-              }}
+              value={localFormData.confirmPassword}
+              onChange={handleConfirmPasswordChange}
               placeholder="••••••••"
               className={`
                 bg-zinc-800 border-zinc-700 text-white focus-visible:ring-[#D4AF37] focus-visible:border-[#D4AF37] pr-10
-                ${formData.confirmPassword && formData.password !== formData.confirmPassword ? 'border-red-500' : ''}
+                ${localFormData.confirmPassword && localFormData.password !== localFormData.confirmPassword ? 'border-red-500' : ''}
               `}
             />
             <button 
@@ -142,7 +164,7 @@ export function PasswordForm({ formData, updateFormData }: PasswordFormProps) {
               {showConfirmPassword ? <EyeOff size={18} /> : <Eye size={18} />}
             </button>
           </div>
-          {formData.confirmPassword && formData.password !== formData.confirmPassword && (
+          {localFormData.confirmPassword && localFormData.password !== localFormData.confirmPassword && (
             <p className="text-red-500 text-sm">Passwords do not match</p>
           )}
         </div>
