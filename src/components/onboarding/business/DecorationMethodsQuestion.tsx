@@ -1,5 +1,5 @@
-
-import { OnboardingData } from "@/pages/GetStarted";
+import { useState } from "react";
+import { OnboardingData } from "@/types/onboarding";
 import { Checkbox } from "@/components/ui/checkbox";
 import { motion } from "framer-motion";
 

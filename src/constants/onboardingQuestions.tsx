@@ -1,5 +1,4 @@
-
-import { Question } from "@/types/onboarding";
+import { Question, OnboardingData } from "@/types/onboarding";
 import { BusinessForm } from "@/components/onboarding/BusinessForm";
 import { ContactForm } from "@/components/onboarding/ContactForm";
 import { AccountForm } from "@/components/onboarding/AccountForm";
@@ -87,11 +86,9 @@ export const contactQuestions: Question[] = [
       <ContactForm 
         formData={{ firstName: value, lastName: "" }}
         updateFormData={(data) => {
-          if (data.firstName && data.lastName) {
+          if (data.firstName) {
             onChange(data.firstName);
-            setIsValid(true);
-          } else {
-            setIsValid(false);
+            setIsValid(Boolean(data.firstName));
           }
         }}
         questionType="name"

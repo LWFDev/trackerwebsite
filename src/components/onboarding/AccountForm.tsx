@@ -1,8 +1,8 @@
-
-import { useState, useEffect } from "react";
+import { useEffect, useState } from "react";
 import { Input } from "@/components/ui/input";
-import { Checkbox } from "@/components/ui/checkbox";
-import { OnboardingData } from "@/pages/GetStarted";
+import { Switch } from "@/components/ui/switch";
+import { Label } from "@/components/ui/label";
+import { OnboardingData } from "@/types/onboarding";
 import { Eye, EyeOff } from "lucide-react";
 import { motion } from "framer-motion";
 
@@ -18,7 +18,6 @@ export function AccountForm({ formData, updateFormData, questionType }: AccountF
   const [passwordStrength, setPasswordStrength] = useState(0);
   const [passwordFeedback, setPasswordFeedback] = useState("");
 
-  // Make sure validity is updated when component mounts
   useEffect(() => {
     const data: Partial<OnboardingData> = {};
     
@@ -38,29 +37,22 @@ export function AccountForm({ formData, updateFormData, questionType }: AccountF
     }
   }, [questionType, formData, updateFormData]);
 
-  // Calculate password strength
   useEffect(() => {
     if (formData.password) {
       let strength = 0;
       
-      // Length check
       if (formData.password.length >= 8) strength += 1;
       
-      // Contains uppercase
       if (/[A-Z]/.test(formData.password)) strength += 1;
       
-      // Contains lowercase
       if (/[a-z]/.test(formData.password)) strength += 1;
       
-      // Contains number
       if (/[0-9]/.test(formData.password)) strength += 1;
       
-      // Contains special character
       if (/[^A-Za-z0-9]/.test(formData.password)) strength += 1;
       
       setPasswordStrength(strength);
       
-      // Feedback based on strength
       if (strength === 0) setPasswordFeedback("Very weak");
       else if (strength === 1) setPasswordFeedback("Weak");
       else if (strength === 2) setPasswordFeedback("Fair");
@@ -138,7 +130,6 @@ export function AccountForm({ formData, updateFormData, questionType }: AccountF
             </button>
           </div>
           
-          {/* Password strength meter */}
           {formData.password && (
             <div className="space-y-1 mt-2">
               <div className="flex justify-between text-xs">
@@ -227,19 +218,19 @@ export function AccountForm({ formData, updateFormData, questionType }: AccountF
           `}
           onClick={() => updateFormData({ agreeToTerms: !formData.agreeToTerms })}
         >
-          <Checkbox
+          <Switch
             id="agreeToTerms"
             checked={formData.agreeToTerms}
             onCheckedChange={(checked) => updateFormData({ agreeToTerms: checked as boolean })}
             className="border-zinc-600 data-[state=checked]:bg-[#D4AF37] data-[state=checked]:text-black mt-1"
           />
           <div className="space-y-1 leading-none">
-            <label htmlFor="agreeToTerms" className="text-gray-300 font-medium cursor-pointer">
+            <Label htmlFor="agreeToTerms" className="text-gray-300 font-medium cursor-pointer">
               I agree to the 
               <a href="#" className="text-[#D4AF37] hover:underline mx-1">Terms of Service</a>
               and
               <a href="#" className="text-[#D4AF37] hover:underline ml-1">Privacy Policy</a>
-            </label>
+            </Label>
             <p className="text-gray-500 text-sm">
               By creating an account, you agree to our terms and conditions.
             </p>
@@ -254,16 +245,16 @@ export function AccountForm({ formData, updateFormData, questionType }: AccountF
           `}
           onClick={() => updateFormData({ receiveUpdates: !formData.receiveUpdates })}
         >
-          <Checkbox
+          <Switch
             id="receiveUpdates"
             checked={formData.receiveUpdates}
             onCheckedChange={(checked) => updateFormData({ receiveUpdates: checked as boolean })}
             className="border-zinc-600 data-[state=checked]:bg-[#D4AF37] data-[state=checked]:text-black mt-1"
           />
           <div className="space-y-1 leading-none">
-            <label htmlFor="receiveUpdates" className="text-gray-300 font-medium cursor-pointer">
+            <Label htmlFor="receiveUpdates" className="text-gray-300 font-medium cursor-pointer">
               I would like to receive updates about new features and promotions
-            </label>
+            </Label>
             <p className="text-gray-500 text-sm">
               We'll send you occasional emails about product updates, industry news, and special offers.
             </p>
@@ -273,7 +264,6 @@ export function AccountForm({ formData, updateFormData, questionType }: AccountF
     </div>
   );
 
-  // Render specific question based on questionType
   switch (questionType) {
     case "username":
       return renderUsernameQuestion();

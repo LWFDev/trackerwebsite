@@ -1,13 +1,13 @@
 
 import { useEffect } from "react";
-import { OnboardingData } from "@/pages/GetStarted";
+import { OnboardingData } from "@/types/onboarding";
 import { BusinessTypeQuestion } from "./business/BusinessTypeQuestion";
 import { EmployeeCountQuestion } from "./business/EmployeeCountQuestion";
 import { YearsInBusinessQuestion } from "./business/YearsInBusinessQuestion";
 import { DecorationMethodsQuestion } from "./business/DecorationMethodsQuestion";
 
 interface BusinessFormProps {
-  formData: OnboardingData;
+  formData: Partial<OnboardingData>;
   updateFormData: (data: Partial<OnboardingData>) => void;
   questionType: "businessType" | "employeeCount" | "yearsInBusiness" | "decorationMethods";
 }

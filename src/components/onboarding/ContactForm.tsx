@@ -1,11 +1,11 @@
 
 import { useEffect } from "react";
 import { Input } from "@/components/ui/input";
-import { OnboardingData } from "@/pages/GetStarted";
+import { OnboardingData } from "@/types/onboarding";
 import { motion } from "framer-motion";
 
 interface ContactFormProps {
-  formData: OnboardingData;
+  formData: Partial<OnboardingData>;
   updateFormData: (data: Partial<OnboardingData>) => void;
   questionType: "name" | "company" | "email" | "phone";
 }

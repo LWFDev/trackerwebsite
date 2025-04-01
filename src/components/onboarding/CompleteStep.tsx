@@ -1,6 +1,6 @@
-
 import { Button } from "@/components/ui/button";
-import { OnboardingData } from "@/pages/GetStarted";
+import { motion } from "framer-motion";
+import { OnboardingData } from "@/types/onboarding";
 import { Check, ArrowRight } from "lucide-react";
 
 interface CompleteStepProps {
