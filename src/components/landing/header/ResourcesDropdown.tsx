@@ -27,7 +27,7 @@ const ResourcesDropdown = ({ scrollToTop }: ResourcesDropdownProps) => {
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
     >
-      <DropdownMenu open={isOpen} onOpenChange={setIsOpen}>
+      <DropdownMenu open={isOpen} onOpenChange={setIsOpen} modal={false}>
         <DropdownMenuTrigger asChild>
           <button className="flex items-center text-gray-300 hover:text-gold-DEFAULT transition">
             Resources <ChevronDown size={16} className="ml-1" />
