@@ -1,10 +1,39 @@
 
-import { useState } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import { Button } from "@/components/ui/button";
 import { Menu, X, ChevronDown } from "lucide-react";
+import ModulesMegaMenu from './ModulesMegaMenu';
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isModulesMenuOpen, setIsModulesMenuOpen] = useState(false);
+  const modulesButtonRef = useRef<HTMLDivElement>(null);
+  const modulesMenuRef = useRef<HTMLDivElement>(null);
+  
+  // Handle clicks outside of the modules menu
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (
+        isModulesMenuOpen &&
+        modulesButtonRef.current &&
+        modulesMenuRef.current &&
+        !modulesButtonRef.current.contains(event.target as Node) &&
+        !modulesMenuRef.current.contains(event.target as Node)
+      ) {
+        setIsModulesMenuOpen(false);
+      }
+    };
+
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, [isModulesMenuOpen]);
+
+  // Toggle the modules menu when hovering over the modules button
+  const handleModulesHover = () => {
+    setIsModulesMenuOpen(true);
+  };
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-black border-b border-zinc-800">
@@ -21,12 +50,27 @@ const Header = () => {
 
         {/* Desktop navigation */}
         <nav className="hidden md:flex items-center space-x-6">
-          <div className="relative group">
-            <button className="flex items-center text-gray-300 hover:text-gold-DEFAULT transition">
-              Modules <ChevronDown size={16} className="ml-1" />
+          <div 
+            className="relative group"
+            ref={modulesButtonRef}
+            onMouseEnter={handleModulesHover}
+          >
+            <button 
+              className={`flex items-center transition ${isModulesMenuOpen ? 'text-gold-DEFAULT' : 'text-gray-300 hover:text-gold-DEFAULT'}`}
+              onClick={() => setIsModulesMenuOpen(!isModulesMenuOpen)}
+            >
+              Modules <ChevronDown size={16} className={`ml-1 transition-transform duration-200 ${isModulesMenuOpen ? 'rotate-180' : ''}`} />
             </button>
+            
+            {isModulesMenuOpen && (
+              <div ref={modulesMenuRef} onMouseLeave={() => setIsModulesMenuOpen(false)}>
+                <ModulesMegaMenu />
+              </div>
+            )}
           </div>
+          
           <a href="#pricing" className="text-gray-300 hover:text-gold-DEFAULT transition">Pricing</a>
+          
           <div className="relative group">
             <button className="flex items-center text-gray-300 hover:text-gold-DEFAULT transition">
               Resources <ChevronDown size={16} className="ml-1" />
@@ -38,7 +82,7 @@ const Header = () => {
           <Button variant="outline" className="border-zinc-700 text-gray-300 hover:bg-zinc-800">
             Sign In
           </Button>
-          <Button className="bg-gold-DEFAULT hover:bg-gold-hover text-black">
+          <Button variant="gold">
             Get Started
           </Button>
         </div>
@@ -81,7 +125,7 @@ const Header = () => {
               <Button variant="outline" className="w-full border-zinc-700">
                 Sign In
               </Button>
-              <Button className="bg-gold-DEFAULT hover:bg-gold-hover text-black w-full">
+              <Button variant="gold" className="w-full">
                 Get Started
               </Button>
             </div>
