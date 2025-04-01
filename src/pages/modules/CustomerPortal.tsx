@@ -1,6 +1,6 @@
 
 import ModuleLayout from "@/components/modules/ModuleLayout";
-import { UserCheck, CheckCircle, Clock, File, Shield, MessageSquare, FileText, LockIcon, Calendar, CreditCard } from "lucide-react";
+import { UserCheck, CheckCircle, Clock, File, Shield, MessageSquare, FileText, LockIcon, Calendar, CreditCard, Settings } from "lucide-react";
 
 const CustomerPortal = () => {
   return (
@@ -61,7 +61,7 @@ const CustomerPortal = () => {
           {
             title: "Self-Service Tools",
             description: "Empower clients with self-service tools like appointment scheduling and form submissions.",
-            icon: <Wrench className="h-6 w-6" />
+            icon: <Settings className="h-6 w-6" />
           }
         ]
       }}
