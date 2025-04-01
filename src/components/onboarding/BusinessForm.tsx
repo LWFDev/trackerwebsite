@@ -1,50 +1,17 @@
 
-import { useForm } from "react-hook-form";
-import { zodResolver } from "@hookform/resolvers/zod";
-import * as z from "zod";
-import { Button } from "@/components/ui/button";
-import {
-  Form,
-  FormControl,
-  FormField,
-  FormItem,
-  FormLabel,
-  FormMessage,
-} from "@/components/ui/form";
+import { useEffect } from "react";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { Checkbox } from "@/components/ui/checkbox";
 import { OnboardingData } from "@/pages/GetStarted";
-import { ArrowRight } from "lucide-react";
-
-const formSchema = z.object({
-  businessType: z.string().min(1, "Please select a business type"),
-  employeeCount: z.string().min(1, "Please select employee count"),
-  yearsInBusiness: z.string().min(1, "Please select years in business"),
-  decorationMethods: z.array(z.string()).min(1, "Please select at least one decoration method"),
-});
+import { motion } from "framer-motion";
 
 interface BusinessFormProps {
   formData: OnboardingData;
   updateFormData: (data: Partial<OnboardingData>) => void;
-  onNext: () => void;
+  questionType: "businessType" | "employeeCount" | "yearsInBusiness" | "decorationMethods";
 }
 
-export function BusinessForm({ formData, updateFormData, onNext }: BusinessFormProps) {
-  const form = useForm<z.infer<typeof formSchema>>({
-    resolver: zodResolver(formSchema),
-    defaultValues: {
-      businessType: formData.businessType || "",
-      employeeCount: formData.employeeCount || "",
-      yearsInBusiness: formData.yearsInBusiness || "",
-      decorationMethods: formData.decorationMethods || [],
-    },
-  });
-
-  function onSubmit(values: z.infer<typeof formSchema>) {
-    updateFormData(values);
-    onNext();
-  }
-
+export function BusinessForm({ formData, updateFormData, questionType }: BusinessFormProps) {
   const businessTypes = [
     "Embroidery Shop",
     "Screen Printing Shop",
@@ -77,158 +44,201 @@ export function BusinessForm({ formData, updateFormData, onNext }: BusinessFormP
     "Other"
   ];
 
-  return (
-    <Form {...form}>
-      <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
-        <div className="space-y-3">
-          <h1 className="text-2xl font-bold text-white">Tell us about your business</h1>
-          <p className="text-gray-400">This helps us customize your experience with Tracker.</p>
-        </div>
+  useEffect(() => {
+    // Ensure validity is updated when the component mounts
+    const data: Partial<OnboardingData> = {};
+    
+    if (questionType === "businessType" && formData.businessType) {
+      data.businessType = formData.businessType;
+    } else if (questionType === "employeeCount" && formData.employeeCount) {
+      data.employeeCount = formData.employeeCount;
+    } else if (questionType === "yearsInBusiness" && formData.yearsInBusiness) {
+      data.yearsInBusiness = formData.yearsInBusiness;
+    } else if (questionType === "decorationMethods" && formData.decorationMethods.length > 0) {
+      data.decorationMethods = formData.decorationMethods;
+    }
+    
+    if (Object.keys(data).length > 0) {
+      updateFormData(data);
+    }
+  }, [questionType, formData, updateFormData]);
 
-        <FormField
-          control={form.control}
-          name="businessType"
-          render={({ field }) => (
-            <FormItem className="space-y-5">
-              <FormLabel className="text-white text-base">What type of business do you operate?</FormLabel>
-              <FormControl>
-                <RadioGroup
-                  onValueChange={field.onChange}
-                  defaultValue={field.value}
-                  className="flex flex-col space-y-3"
-                >
-                  {businessTypes.map((type) => (
-                    <FormItem
-                      key={type}
-                      className="flex items-center space-x-3 space-y-0 rounded-md p-3 border border-zinc-800 hover:border-[#D4AF37]/50 hover:bg-zinc-800/50 transition-colors"
-                    >
-                      <FormControl>
-                        <RadioGroupItem value={type} className="border-zinc-600 text-[#D4AF37]" />
-                      </FormControl>
-                      <FormLabel className="font-normal cursor-pointer flex-1 text-gray-300">{type}</FormLabel>
-                    </FormItem>
-                  ))}
-                </RadioGroup>
-              </FormControl>
-              <FormMessage className="text-red-500" />
-            </FormItem>
-          )}
-        />
-
-        <FormField
-          control={form.control}
-          name="employeeCount"
-          render={({ field }) => (
-            <FormItem className="space-y-5">
-              <FormLabel className="text-white text-base">How many employees do you have?</FormLabel>
-              <FormControl>
-                <RadioGroup
-                  onValueChange={field.onChange}
-                  defaultValue={field.value}
-                  className="flex flex-col space-y-3"
-                >
-                  {employeeCounts.map((count) => (
-                    <FormItem
-                      key={count}
-                      className="flex items-center space-x-3 space-y-0 rounded-md p-3 border border-zinc-800 hover:border-[#D4AF37]/50 hover:bg-zinc-800/50 transition-colors"
-                    >
-                      <FormControl>
-                        <RadioGroupItem value={count} className="border-zinc-600 text-[#D4AF37]" />
-                      </FormControl>
-                      <FormLabel className="font-normal cursor-pointer flex-1 text-gray-300">{count}</FormLabel>
-                    </FormItem>
-                  ))}
-                </RadioGroup>
-              </FormControl>
-              <FormMessage className="text-red-500" />
-            </FormItem>
-          )}
-        />
-
-        <FormField
-          control={form.control}
-          name="yearsInBusiness"
-          render={({ field }) => (
-            <FormItem className="space-y-5">
-              <FormLabel className="text-white text-base">How long have you been in business?</FormLabel>
-              <FormControl>
-                <RadioGroup
-                  onValueChange={field.onChange}
-                  defaultValue={field.value}
-                  className="flex flex-col space-y-3"
-                >
-                  {yearsInBusinessOptions.map((option) => (
-                    <FormItem
-                      key={option}
-                      className="flex items-center space-x-3 space-y-0 rounded-md p-3 border border-zinc-800 hover:border-[#D4AF37]/50 hover:bg-zinc-800/50 transition-colors"
-                    >
-                      <FormControl>
-                        <RadioGroupItem value={option} className="border-zinc-600 text-[#D4AF37]" />
-                      </FormControl>
-                      <FormLabel className="font-normal cursor-pointer flex-1 text-gray-300">{option}</FormLabel>
-                    </FormItem>
-                  ))}
-                </RadioGroup>
-              </FormControl>
-              <FormMessage className="text-red-500" />
-            </FormItem>
-          )}
-        />
-
-        <FormField
-          control={form.control}
-          name="decorationMethods"
-          render={() => (
-            <FormItem className="space-y-5">
-              <FormLabel className="text-white text-base">What decoration methods do you offer? (Select all that apply)</FormLabel>
-              <div className="space-y-3">
-                {decorationMethodOptions.map((method) => (
-                  <FormField
-                    key={method}
-                    control={form.control}
-                    name="decorationMethods"
-                    render={({ field }) => {
-                      return (
-                        <FormItem
-                          key={method}
-                          className="flex items-center space-x-3 space-y-0 rounded-md p-3 border border-zinc-800 hover:border-[#D4AF37]/50 hover:bg-zinc-800/50 transition-colors"
-                        >
-                          <FormControl>
-                            <Checkbox
-                              checked={field.value?.includes(method)}
-                              onCheckedChange={(checked) => {
-                                return checked
-                                  ? field.onChange([...field.value, method])
-                                  : field.onChange(
-                                      field.value?.filter(
-                                        (value) => value !== method
-                                      )
-                                    );
-                              }}
-                              className="border-zinc-600 data-[state=checked]:bg-[#D4AF37] data-[state=checked]:text-black"
-                            />
-                          </FormControl>
-                          <FormLabel className="font-normal cursor-pointer flex-1 text-gray-300">
-                            {method}
-                          </FormLabel>
-                        </FormItem>
-                      );
-                    }}
-                  />
-                ))}
-              </div>
-              <FormMessage className="text-red-500" />
-            </FormItem>
-          )}
-        />
-
-        <div className="flex justify-end pt-4">
-          <Button type="submit" variant="gold" className="w-32">
-            Continue
-            <ArrowRight className="ml-2 h-4 w-4" />
-          </Button>
-        </div>
-      </form>
-    </Form>
+  const renderBusinessTypeQuestion = () => (
+    <div className="space-y-6">
+      <h2 className="text-xl font-bold text-white">What type of business do you operate?</h2>
+      <p className="text-gray-400">Select the option that best describes your business.</p>
+      
+      <RadioGroup
+        value={formData.businessType}
+        onValueChange={(value) => updateFormData({ businessType: value })}
+        className="flex flex-col space-y-3 mt-4"
+      >
+        {businessTypes.map((type) => (
+          <motion.div
+            key={type}
+            whileHover={{ scale: 1.01, backgroundColor: "rgba(255, 255, 255, 0.05)" }}
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.2 }}
+          >
+            <div
+              className={`
+                flex items-center space-x-3 space-y-0 rounded-md p-4 cursor-pointer
+                ${formData.businessType === type ? 'bg-[#D4AF37]/10 border-[#D4AF37]/50' : 'border-zinc-800'}
+                border hover:border-[#D4AF37]/50 transition-colors
+              `}
+              onClick={() => updateFormData({ businessType: type })}
+            >
+              <RadioGroupItem value={type} id={type} className="border-zinc-600 text-[#D4AF37]" />
+              <label htmlFor={type} className="font-medium cursor-pointer flex-1 text-gray-300">
+                {type}
+              </label>
+            </div>
+          </motion.div>
+        ))}
+      </RadioGroup>
+    </div>
   );
+
+  const renderEmployeeCountQuestion = () => (
+    <div className="space-y-6">
+      <h2 className="text-xl font-bold text-white">How many employees do you have?</h2>
+      <p className="text-gray-400">This helps us tailor our features to your company size.</p>
+      
+      <RadioGroup
+        value={formData.employeeCount}
+        onValueChange={(value) => updateFormData({ employeeCount: value })}
+        className="flex flex-col space-y-3 mt-4"
+      >
+        {employeeCounts.map((count) => (
+          <motion.div
+            key={count}
+            whileHover={{ scale: 1.01, backgroundColor: "rgba(255, 255, 255, 0.05)" }}
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.2 }}
+          >
+            <div
+              className={`
+                flex items-center space-x-3 space-y-0 rounded-md p-4 cursor-pointer
+                ${formData.employeeCount === count ? 'bg-[#D4AF37]/10 border-[#D4AF37]/50' : 'border-zinc-800'}
+                border hover:border-[#D4AF37]/50 transition-colors
+              `}
+              onClick={() => updateFormData({ employeeCount: count })}
+            >
+              <RadioGroupItem value={count} id={count} className="border-zinc-600 text-[#D4AF37]" />
+              <label htmlFor={count} className="font-medium cursor-pointer flex-1 text-gray-300">
+                {count}
+              </label>
+            </div>
+          </motion.div>
+        ))}
+      </RadioGroup>
+    </div>
+  );
+
+  const renderYearsInBusinessQuestion = () => (
+    <div className="space-y-6">
+      <h2 className="text-xl font-bold text-white">How long have you been in business?</h2>
+      <p className="text-gray-400">We'll adapt our recommendations based on your experience.</p>
+      
+      <RadioGroup
+        value={formData.yearsInBusiness}
+        onValueChange={(value) => updateFormData({ yearsInBusiness: value })}
+        className="flex flex-col space-y-3 mt-4"
+      >
+        {yearsInBusinessOptions.map((option) => (
+          <motion.div
+            key={option}
+            whileHover={{ scale: 1.01, backgroundColor: "rgba(255, 255, 255, 0.05)" }}
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.2 }}
+          >
+            <div
+              className={`
+                flex items-center space-x-3 space-y-0 rounded-md p-4 cursor-pointer
+                ${formData.yearsInBusiness === option ? 'bg-[#D4AF37]/10 border-[#D4AF37]/50' : 'border-zinc-800'}
+                border hover:border-[#D4AF37]/50 transition-colors
+              `}
+              onClick={() => updateFormData({ yearsInBusiness: option })}
+            >
+              <RadioGroupItem value={option} id={option} className="border-zinc-600 text-[#D4AF37]" />
+              <label htmlFor={option} className="font-medium cursor-pointer flex-1 text-gray-300">
+                {option}
+              </label>
+            </div>
+          </motion.div>
+        ))}
+      </RadioGroup>
+    </div>
+  );
+
+  const renderDecorationMethodsQuestion = () => (
+    <div className="space-y-6">
+      <h2 className="text-xl font-bold text-white">What decoration methods do you offer?</h2>
+      <p className="text-gray-400">Select all that apply to your business.</p>
+      
+      <div className="space-y-3 mt-4">
+        {decorationMethodOptions.map((method) => {
+          const isChecked = formData.decorationMethods.includes(method);
+          
+          return (
+            <motion.div
+              key={method}
+              whileHover={{ scale: 1.01, backgroundColor: "rgba(255, 255, 255, 0.05)" }}
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.2 }}
+            >
+              <div
+                className={`
+                  flex items-center space-x-3 space-y-0 rounded-md p-4 cursor-pointer
+                  ${isChecked ? 'bg-[#D4AF37]/10 border-[#D4AF37]/50' : 'border-zinc-800'}
+                  border hover:border-[#D4AF37]/50 transition-colors
+                `}
+                onClick={() => {
+                  const updatedMethods = isChecked
+                    ? formData.decorationMethods.filter(item => item !== method)
+                    : [...formData.decorationMethods, method];
+                  
+                  updateFormData({ decorationMethods: updatedMethods });
+                }}
+              >
+                <Checkbox
+                  id={method}
+                  checked={isChecked}
+                  onCheckedChange={(checked) => {
+                    const updatedMethods = checked
+                      ? [...formData.decorationMethods, method]
+                      : formData.decorationMethods.filter(item => item !== method);
+                    
+                    updateFormData({ decorationMethods: updatedMethods });
+                  }}
+                  className="border-zinc-600 data-[state=checked]:bg-[#D4AF37] data-[state=checked]:text-black"
+                />
+                <label htmlFor={method} className="font-medium cursor-pointer flex-1 text-gray-300">
+                  {method}
+                </label>
+              </div>
+            </motion.div>
+          );
+        })}
+      </div>
+    </div>
+  );
+
+  // Render specific question based on questionType
+  switch (questionType) {
+    case "businessType":
+      return renderBusinessTypeQuestion();
+    case "employeeCount":
+      return renderEmployeeCountQuestion();
+    case "yearsInBusiness":
+      return renderYearsInBusinessQuestion();
+    case "decorationMethods":
+      return renderDecorationMethodsQuestion();
+    default:
+      return null;
+  }
 }
