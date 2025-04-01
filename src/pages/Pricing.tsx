@@ -1,16 +1,14 @@
-import React, { useState } from "react";
+import React from "react";
 import { Button } from "@/components/ui/button";
 import { Check, Info, X } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 
 const PricingPage = () => {
-  const [billingInterval, setBillingInterval] = useState<"monthly" | "annually">("annually");
-  
   const pricingPlans = [
     {
       name: "Starter",
-      price: billingInterval === "annually" ? "$899" : "$999",
+      price: "$899",
       description: "For small businesses getting started",
       features: [
         "Up to 10 users",
@@ -26,7 +24,7 @@ const PricingPage = () => {
     },
     {
       name: "Professional",
-      price: billingInterval === "annually" ? "$1,499" : "$1,699",
+      price: "$1,499",
       description: "For growing businesses that need more features",
       features: [
         "Up to 50 users",
@@ -156,32 +154,6 @@ const PricingPage = () => {
           <p className="text-xl text-gray-300 max-w-3xl mx-auto mb-10">
             Choose the plan that's right for your business
           </p>
-          
-          {/* Billing Toggle */}
-          <div className="flex justify-center items-center space-x-4 mb-12">
-            <button
-              onClick={() => setBillingInterval("monthly")}
-              className={cn(
-                "px-4 py-2 rounded-md",
-                billingInterval === "monthly" 
-                  ? "bg-zinc-800 text-[#D4AF37]" 
-                  : "text-zinc-400 hover:text-white"
-              )}
-            >
-              Monthly
-            </button>
-            <button
-              onClick={() => setBillingInterval("annually")}
-              className={cn(
-                "px-4 py-2 rounded-md flex items-center",
-                billingInterval === "annually" 
-                  ? "bg-zinc-800 text-[#D4AF37]" 
-                  : "text-zinc-400 hover:text-white"
-              )}
-            >
-              Annual (Save 10%)
-            </button>
-          </div>
         </div>
       </div>
 
@@ -208,12 +180,12 @@ const PricingPage = () => {
                 )}
                 <div className="text-center">
                   <h3 className="text-xl font-semibold mb-2">{plan.name}</h3>
-                  <div className="flex justify-center items-baseline mb-4">
+                  <div className="flex flex-col justify-center items-center mb-4">
                     <span className={`text-4xl font-bold ${plan.highlighted ? 'text-[#D4AF37]' : 'text-white'}`}>
                       {plan.price}
                     </span>
                     {plan.price !== "Custom" && (
-                      <span className="text-gray-500 ml-1">/month</span>
+                      <span className="text-gray-500 text-sm mt-1">Billed annually</span>
                     )}
                   </div>
                   <p className="text-gray-400 mb-6 text-sm">{plan.description}</p>
