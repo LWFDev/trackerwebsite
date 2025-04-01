@@ -1,6 +1,5 @@
-
 import ModuleLayout from "@/components/modules/ModuleLayout";
-import { Receipt, BarChart2, CreditCard, DollarSign, FileText, PieChart, Zap, Lock, RefreshCw, Check, Clock, Users, Calculator, Calendar, Briefcase, TrendingUp, Shield } from "lucide-react";
+import { Receipt, BarChart2, CreditCard, DollarSign, FileText, PieChart, Zap, Lock, RefreshCw, Check, Clock, Users, Calculator, Calendar, Briefcase, TrendingUp, Shield, Globe } from "lucide-react";
 
 const FinanceAccounting = () => {
   return (

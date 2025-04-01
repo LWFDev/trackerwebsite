@@ -1,6 +1,5 @@
-
 import ModuleLayout from "@/components/modules/ModuleLayout";
-import { Zap, Clock, Database, RefreshCw, Code, Bell, File, Layout, CheckCircle, Users, BarChart2, Globe, Link2, Shield, Server, Plug, Map, PuzzlePiece } from "lucide-react";
+import { Zap, Clock, Database, RefreshCw, Code, Bell, File, Layout, CheckCircle, Users, BarChart2, Globe, Link2, Shield, Server, Plug, Map, Puzzle } from "lucide-react";
 
 const IntegrationPlatform = () => {
   return (

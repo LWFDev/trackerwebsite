@@ -1,6 +1,5 @@
-
 import ModuleLayout from "@/components/modules/ModuleLayout";
-import { Layers, Clock, Percent, Settings, BarChart2, Wrench, Clipboard, LineChart, CheckCircle, File, Users, Layout, Tool, Cpu, AlertTriangle, BookOpen, Database, Sliders } from "lucide-react";
+import { Layers, Clock, Percent, Settings, BarChart2, Wrench, Clipboard, LineChart, CheckCircle, File, Users, Layout, Wrench as WrenchIcon, Cpu, AlertTriangle, BookOpen, Database, Sliders } from "lucide-react";
 
 const ProductionManufacturing = () => {
   return (
@@ -66,7 +65,7 @@ const ProductionManufacturing = () => {
           {
             title: "Predictive Maintenance",
             description: "Minimize downtime with condition-based monitoring, maintenance forecasting, and automated service scheduling.",
-            icon: <Wrench className="h-6 w-6" />
+            icon: <WrenchIcon className="h-6 w-6" />
           }
         ]
       }}
