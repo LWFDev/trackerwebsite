@@ -1,4 +1,3 @@
-
 import { useState, useRef, useEffect } from 'react';
 import { Button } from "@/components/ui/button";
 import { Menu, X, ChevronDown } from "lucide-react";
@@ -16,7 +15,6 @@ const Header = () => {
   const resourcesButtonRef = useRef<HTMLDivElement>(null);
   const location = useLocation();
   
-  // Handle clicks outside of the modules menu
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
       if (
@@ -36,29 +34,24 @@ const Header = () => {
     };
   }, [isModulesMenuOpen]);
 
-  // Close mobile menu when changing routes
   useEffect(() => {
     setIsMenuOpen(false);
     setIsModulesMenuOpen(false);
     setIsResourcesMenuOpen(false);
   }, [location.pathname]);
 
-  // Handle mouse leave for the entire header + menu area
   const handleMouseLeave = () => {
     setIsModulesMenuOpen(false);
   };
 
-  // Toggle the modules menu when clicking the modules button
   const handleModulesClick = () => {
     setIsModulesMenuOpen(!isModulesMenuOpen);
   };
 
-  // Open the modules menu when hovering over the modules button
   const handleModulesHover = () => {
     setIsModulesMenuOpen(true);
   };
 
-  // Scroll to top function for all links
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
@@ -83,7 +76,6 @@ const Header = () => {
           </Link>
         </div>
 
-        {/* Desktop navigation */}
         <nav className="hidden md:flex items-center space-x-6">
           <div 
             className="relative group"
@@ -146,7 +138,6 @@ const Header = () => {
           </Link>
         </div>
 
-        {/* Mobile menu button */}
         <button 
           className="md:hidden text-gray-300 p-2" 
           onClick={() => setIsMenuOpen(!isMenuOpen)}
@@ -155,7 +146,6 @@ const Header = () => {
         </button>
       </div>
 
-      {/* Mobile menu */}
       {isMenuOpen && (
         <div className="md:hidden bg-zinc-900 py-4 px-6 shadow-lg animate-fade-in">
           <nav className="flex flex-col space-y-4">
@@ -249,7 +239,6 @@ const Header = () => {
         </div>
       )}
 
-      {/* Mega menu container */}
       {isModulesMenuOpen && (
         <div 
           ref={modulesMenuRef}

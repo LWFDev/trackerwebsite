@@ -1,4 +1,3 @@
-
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
@@ -27,7 +26,6 @@ import Pricing from "./pages/Pricing";
 import Contact from "./pages/Contact";
 import AboutUs from "./pages/AboutUs";
 
-// Scroll to top component that activates on route change
 const ScrollToTop = () => {
   const { pathname } = useLocation();
   
@@ -53,7 +51,6 @@ const App = () => (
           <Header />
           <ScrollToTop />
           <Routes>
-            {/* Route with just content */}
             <Route path="/" element={<Index />} />
             <Route path="/modules" element={<ModuleIndex />} />
             <Route path="/modules/sales-order-management" element={<SalesOrderManagement />} />
@@ -72,10 +69,8 @@ const App = () => (
             <Route path="/contact" element={<Contact />} />
             <Route path="/about" element={<AboutUs />} />
             
-            {/* Route without header and footer */}
             <Route path="/get-started" element={<GetStarted />} />
             
-            {/* Catch-all route */}
             <Route path="*" element={<NotFound />} />
           </Routes>
           <Footer />
