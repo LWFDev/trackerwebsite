@@ -6,6 +6,11 @@ import { ChevronDown } from "lucide-react"
 
 import { cn } from "@/lib/utils"
 
+// Function to scroll to top
+const scrollToTop = () => {
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+};
+
 const NavigationMenu = React.forwardRef<
   React.ElementRef<typeof NavigationMenuPrimitive.Root>,
   React.ComponentPropsWithoutRef<typeof NavigationMenuPrimitive.Root>
@@ -78,7 +83,21 @@ const NavigationMenuContent = React.forwardRef<
 ))
 NavigationMenuContent.displayName = NavigationMenuPrimitive.Content.displayName
 
-const NavigationMenuLink = NavigationMenuPrimitive.Link
+// Enhanced NavigationMenuLink with scroll to top functionality
+const NavigationMenuLink = React.forwardRef<
+  React.ElementRef<typeof NavigationMenuPrimitive.Link>,
+  React.ComponentPropsWithoutRef<typeof NavigationMenuPrimitive.Link>
+>(({ onClick, ...props }, ref) => (
+  <NavigationMenuPrimitive.Link
+    ref={ref}
+    onClick={(e) => {
+      scrollToTop();
+      onClick?.(e);
+    }}
+    {...props}
+  />
+))
+NavigationMenuLink.displayName = NavigationMenuPrimitive.Link.displayName
 
 const NavigationMenuViewport = React.forwardRef<
   React.ElementRef<typeof NavigationMenuPrimitive.Viewport>,

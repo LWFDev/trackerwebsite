@@ -54,6 +54,11 @@ const Header = () => {
     setIsModulesMenuOpen(true);
   };
 
+  // Scroll to top function for all links
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
   return (
     <header 
       className="fixed top-0 left-0 right-0 z-50 bg-black border-b border-zinc-800"
@@ -61,7 +66,11 @@ const Header = () => {
     >
       <div className="container mx-auto px-4 py-3 flex items-center justify-between">
         <div className="flex items-center">
-          <Link to="/" className="text-xl font-bold flex items-center text-white">
+          <Link 
+            to="/" 
+            className="text-xl font-bold flex items-center text-white"
+            onClick={scrollToTop}
+          >
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className="mr-2">
               <rect width="24" height="24" rx="4" fill="#D4AF37"/>
               <path d="M7 12H17M7 8H17M7 16H13" stroke="black" strokeWidth="2" strokeLinecap="round"/>
@@ -88,6 +97,7 @@ const Header = () => {
           <Link 
             to="/pricing" 
             className={`transition ${location.pathname === '/pricing' ? 'text-gold-DEFAULT' : 'text-gray-300 hover:text-gold-DEFAULT'}`}
+            onClick={scrollToTop}
           >
             Pricing
           </Link>
@@ -124,21 +134,30 @@ const Header = () => {
             <Link 
               to="/modules" 
               className={`py-2 transition ${location.pathname.includes('/modules') ? 'text-gold-DEFAULT' : 'text-gray-300 hover:text-gold-DEFAULT'}`}
-              onClick={() => setIsMenuOpen(false)}
+              onClick={() => {
+                setIsMenuOpen(false);
+                scrollToTop();
+              }}
             >
               Modules
             </Link>
             <Link 
               to="/pricing" 
               className={`py-2 transition ${location.pathname === '/pricing' ? 'text-gold-DEFAULT' : 'text-gray-300 hover:text-gold-DEFAULT'}`}
-              onClick={() => setIsMenuOpen(false)}
+              onClick={() => {
+                setIsMenuOpen(false);
+                scrollToTop();
+              }}
             >
               Pricing
             </Link>
             <Link 
               to="/resources" 
               className="text-gray-300 hover:text-gold-DEFAULT transition py-2"
-              onClick={() => setIsMenuOpen(false)}
+              onClick={() => {
+                setIsMenuOpen(false);
+                scrollToTop();
+              }}
             >
               Resources
             </Link>
