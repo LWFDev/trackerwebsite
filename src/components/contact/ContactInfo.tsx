@@ -53,10 +53,6 @@ const ContactInfo = () => {
           </div>
         </div>
       </div>
-      
-      {/* Map */}
-      <div className="h-[300px] bg-zinc-800 rounded-lg overflow-hidden border border-zinc-700 relative">
-      </div>
     </div>
   );
 };
