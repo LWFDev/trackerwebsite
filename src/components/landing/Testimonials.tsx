@@ -6,11 +6,11 @@ import { Star } from "lucide-react";
 const testimonials = [
   {
     id: 1,
-    content: "Tracker has transformed our development workflow. The components are beautiful, accessible, and incredibly easy to customize. It's saved us weeks of development time.",
-    author: "Sarah Johnson",
-    role: "Lead Developer at TechFlow",
-    avatar: "/placeholder.svg",
-    initials: "SJ",
+    content: "Tracker saved us two days a week of human time, absolutely huge!",
+    author: "Adrian Noott",
+    role: "AGAME Sports",
+    avatar: "https://mebuisworks.com/wp-content/uploads/2024/12/adrian-agame-150x150-1.webp",
+    initials: "AN",
     delay: 0.3
   },
   {
