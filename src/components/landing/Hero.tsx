@@ -59,10 +59,8 @@ const Hero = () => {
           animationDelay: '0.5s'
         }}>
             <div className="relative">
-              {/* Removed decorative background elements */}
-              
               {/* Main image */}
-              <div className="bg-zinc-900 rounded-xl shadow-2xl overflow-hidden hover:shadow-[#D4AF37]/20 hover:shadow-xl relative z-10">
+              <div className="rounded-xl shadow-2xl overflow-hidden hover:shadow-[#D4AF37]/20 hover:shadow-xl relative z-10">
                 <img alt="Platform dashboard" className="w-full h-auto" src="https://mebuisworks.com/wp-content/uploads/2024/11/1-1024x680.webp" />
               </div>
               
