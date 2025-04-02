@@ -56,14 +56,6 @@ const ContactInfo = () => {
       
       {/* Map */}
       <div className="h-[300px] bg-zinc-800 rounded-lg overflow-hidden border border-zinc-700 relative">
-        <div className="w-full h-full bg-zinc-800 opacity-80"></div>
-        <div className="absolute inset-0 flex flex-col items-center justify-center">
-          <MapPin className="h-12 w-12 text-[#D4AF37] mb-2" />
-          <p className="text-center text-gray-400 max-w-xs">
-            Interactive map would be displayed here <br />
-            (Google Maps or similar integration)
-          </p>
-        </div>
       </div>
     </div>
   );
