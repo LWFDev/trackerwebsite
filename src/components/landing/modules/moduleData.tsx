@@ -1,4 +1,3 @@
-
 import React from "react";
 import { 
   Image, 
@@ -32,10 +31,10 @@ const modules: ModulesData = {
       learnMoreLink: "/modules/sales-order-management"
     },
     {
-      title: "Analytics & Reporting",
-      description: "Get powerful insights from your data, anytime, anywhere",
-      icon: <BarChart2 className="text-gold-DEFAULT" />,
-      learnMoreLink: "/modules/analytics-reporting"
+      title: "Product Design",
+      description: "Create and manage product designs with powerful customization tools",
+      icon: <Paintbrush className="text-gold-DEFAULT" />,
+      learnMoreLink: "/modules/product-design"
     },
     {
       title: "Logo Hub",
