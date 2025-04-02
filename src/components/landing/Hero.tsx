@@ -69,7 +69,7 @@ const Hero = () => {
               {/* Main image */}
               <div className="bg-zinc-900 rounded-xl shadow-2xl overflow-hidden border border-zinc-800 hover:border-[#D4AF37]/50 transition-all duration-500 transform hover:-translate-y-1 hover:shadow-[#D4AF37]/20 hover:shadow-xl relative z-10">
                 <div className="absolute inset-0 bg-gradient-to-tr from-black/40 to-transparent z-20 pointer-events-none"></div>
-                <img src="https://placehold.co/900x500/2a2a2a/CCCCCC" alt="Platform dashboard" className="w-full h-auto opacity-90" />
+                <img alt="Platform dashboard" className="w-full h-auto opacity-90" src="https://mebuisworks.com/wp-content/uploads/2024/11/1-1024x680.webp" />
               </div>
               
               {/* New Features badge */}
