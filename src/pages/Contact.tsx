@@ -1,4 +1,3 @@
-
 import React from "react";
 import { useForm } from "react-hook-form";
 import { Button } from "@/components/ui/button";
@@ -7,28 +6,24 @@ import { Textarea } from "@/components/ui/textarea";
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
 import { Mail, Phone, MapPin, Clock } from "lucide-react";
 import { toast } from "@/hooks/use-toast";
-
 const ContactPage = () => {
   const form = useForm({
     defaultValues: {
       name: "",
       email: "",
       subject: "",
-      message: "",
-    },
+      message: ""
+    }
   });
-
-  const onSubmit = (data) => {
+  const onSubmit = data => {
     console.log(data);
     toast({
       title: "Message sent",
-      description: "We'll get back to you as soon as possible.",
+      description: "We'll get back to you as soon as possible."
     });
     form.reset();
   };
-
-  return (
-    <div className="min-h-screen bg-black">
+  return <div className="min-h-screen bg-black">
       {/* Hero Section */}
       <div className="pt-24 pb-16 bg-zinc-900 text-white relative overflow-hidden">
         <div className="absolute top-0 left-0 w-full h-full overflow-hidden z-0">
@@ -54,68 +49,44 @@ const ContactPage = () => {
               <Form {...form}>
                 <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <FormField
-                      control={form.control}
-                      name="name"
-                      render={({ field }) => (
-                        <FormItem>
+                    <FormField control={form.control} name="name" render={({
+                    field
+                  }) => <FormItem>
                           <FormLabel>Name</FormLabel>
                           <FormControl>
                             <Input placeholder="Your name" {...field} />
                           </FormControl>
                           <FormMessage />
-                        </FormItem>
-                      )}
-                    />
-                    <FormField
-                      control={form.control}
-                      name="email"
-                      render={({ field }) => (
-                        <FormItem>
+                        </FormItem>} />
+                    <FormField control={form.control} name="email" render={({
+                    field
+                  }) => <FormItem>
                           <FormLabel>Email</FormLabel>
                           <FormControl>
                             <Input placeholder="Your email" type="email" {...field} />
                           </FormControl>
                           <FormMessage />
-                        </FormItem>
-                      )}
-                    />
+                        </FormItem>} />
                   </div>
-                  <FormField
-                    control={form.control}
-                    name="subject"
-                    render={({ field }) => (
-                      <FormItem>
+                  <FormField control={form.control} name="subject" render={({
+                  field
+                }) => <FormItem>
                         <FormLabel>Subject</FormLabel>
                         <FormControl>
                           <Input placeholder="Subject" {...field} />
                         </FormControl>
                         <FormMessage />
-                      </FormItem>
-                    )}
-                  />
-                  <FormField
-                    control={form.control}
-                    name="message"
-                    render={({ field }) => (
-                      <FormItem>
+                      </FormItem>} />
+                  <FormField control={form.control} name="message" render={({
+                  field
+                }) => <FormItem>
                         <FormLabel>Message</FormLabel>
                         <FormControl>
-                          <Textarea
-                            placeholder="Your message"
-                            className="min-h-[150px]"
-                            {...field}
-                          />
+                          <Textarea placeholder="Your message" className="min-h-[150px]" {...field} />
                         </FormControl>
                         <FormMessage />
-                      </FormItem>
-                    )}
-                  />
-                  <Button
-                    type="submit"
-                    variant="gold"
-                    className="w-full md:w-auto"
-                  >
+                      </FormItem>} />
+                  <Button type="submit" variant="gold" className="w-full md:w-auto">
                     Send Message
                   </Button>
                 </form>
@@ -133,8 +104,8 @@ const ContactPage = () => {
                     </div>
                     <div>
                       <h3 className="text-lg font-medium mb-1">Email</h3>
-                      <p className="text-gray-400">support@tracker.com</p>
-                      <p className="text-gray-400">sales@tracker.com</p>
+                      <p className="text-gray-400">support@trackmybusiness.us</p>
+                      <p className="text-gray-400">sales@trackmybusiness.us</p>
                     </div>
                   </div>
                   <div className="flex items-start">
@@ -143,7 +114,7 @@ const ContactPage = () => {
                     </div>
                     <div>
                       <h3 className="text-lg font-medium mb-1">Phone</h3>
-                      <p className="text-gray-400">+1 (800) 123-4567</p>
+                      <p className="text-gray-400">+1 (817) 764-0200</p>
                       <p className="text-gray-400">+1 (555) 987-6543</p>
                     </div>
                   </div>
@@ -239,8 +210,6 @@ const ContactPage = () => {
           </div>
         </div>
       </div>
-    </div>
-  );
+    </div>;
 };
-
 export default ContactPage;
