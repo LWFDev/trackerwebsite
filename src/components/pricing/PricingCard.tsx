@@ -3,6 +3,7 @@ import React from "react";
 import { Button } from "@/components/ui/button";
 import { Check } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { Link } from "react-router-dom";
 
 interface PricingPlan {
   name: string;
@@ -18,6 +19,9 @@ interface PricingCardProps {
 }
 
 const PricingCard = ({ plan }: PricingCardProps) => {
+  // Determine the button link based on the plan name
+  const buttonLink = plan.name === "Enterprise" ? "/contact" : "/get-started";
+
   return (
     <div className={cn("bg-zinc-900 rounded-lg border shadow-sm p-6 relative transition-all duration-300 hover:-translate-y-1", plan.highlighted ? "border-[#D4AF37] ring-2 ring-[#D4AF37]/20 hover:shadow-[#D4AF37]/30" : "border-zinc-800 hover:shadow-zinc-800/30")}>
       {plan.highlighted && <div className="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
@@ -34,9 +38,11 @@ const PricingCard = ({ plan }: PricingCardProps) => {
           {plan.price !== "Custom" && <span className="text-gray-500 text-sm mt-1">Billed annually</span>}
         </div>
         <p className="text-gray-400 mb-6 text-sm">{plan.description}</p>
-        <Button className={`w-full mb-6 ${plan.highlighted ? 'bg-gradient-to-r from-[#D4AF37] to-[#F2D675] hover:from-[#F2D675] hover:to-[#D4AF37] text-black' : plan.name === 'Starter' || plan.name === 'Enterprise' ? 'bg-zinc-800 hover:bg-zinc-700 text-white' : 'bg-zinc-800 hover:bg-zinc-700'}`}>
-          {plan.buttonText}
-        </Button>
+        <Link to={buttonLink}>
+          <Button className={`w-full mb-6 ${plan.highlighted ? 'bg-gradient-to-r from-[#D4AF37] to-[#F2D675] hover:from-[#F2D675] hover:to-[#D4AF37] text-black' : plan.name === 'Starter' || plan.name === 'Enterprise' ? 'bg-zinc-800 hover:bg-zinc-700 text-white' : 'bg-zinc-800 hover:bg-zinc-700'}`}>
+            {plan.buttonText}
+          </Button>
+        </Link>
       </div>
       <div className="space-y-3">
         <p className="text-sm font-medium text-gray-300 mb-2">WHAT'S INCLUDED:</p>
