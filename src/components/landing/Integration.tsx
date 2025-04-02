@@ -3,6 +3,30 @@ import { Button } from "@/components/ui/button";
 import { CheckCircle } from "lucide-react";
 
 const Integration = () => {
+  // Define the integration logos with their names and paths
+  const integrationLogos = [
+    {
+      name: "Shopify",
+      image: "/lovable-uploads/a061c746-21cc-421c-8f26-239f553bcf06.png"
+    },
+    {
+      name: "WooCommerce",
+      image: "/lovable-uploads/c25b44a2-426c-4f30-9e20-b4cf6ae40e2e.png"
+    },
+    {
+      name: "ShipStation",
+      image: "/lovable-uploads/70e89c9a-2a2a-47bf-84af-d0d6cecca1e3.png"
+    },
+    {
+      name: "alphabroder",
+      image: "/lovable-uploads/43dfb005-d4c4-43ef-846a-545265bad44a.png"
+    },
+    {
+      name: "SanMar",
+      image: "/lovable-uploads/e4f4a469-9951-418c-b168-1634003acc41.png"
+    }
+  ];
+
   return (
     <section className="py-20 bg-black relative overflow-hidden">
       {/* Background gradient */}
@@ -49,7 +73,7 @@ const Integration = () => {
           </div>
           
           <div className="md:w-1/2 grid grid-cols-2 gap-6">
-            {[1, 2, 3, 4, 5, 6].map((item, index) => (
+            {integrationLogos.map((logo, index) => (
               <div 
                 key={index}
                 className="bg-zinc-900/70 backdrop-blur-sm rounded-xl h-32 border border-zinc-800 transform transition-all duration-300 hover:border-[#D4AF37]/50 hover:-translate-y-1 hover:shadow-lg group animate-fade-in"
@@ -57,7 +81,11 @@ const Integration = () => {
               >
                 <div className="w-full h-full flex items-center justify-center overflow-hidden relative">
                   <div className="absolute inset-0 bg-gradient-to-br from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                  <div className="w-12 h-12 rounded-full bg-zinc-800 flex items-center justify-center group-hover:scale-110 transition-transform duration-300 border border-[#D4AF37]/20"></div>
+                  <img 
+                    src={logo.image} 
+                    alt={logo.name} 
+                    className="h-12 w-auto max-w-[80%] object-contain opacity-70 group-hover:opacity-100 transition-opacity duration-300 filter grayscale"
+                  />
                 </div>
               </div>
             ))}
