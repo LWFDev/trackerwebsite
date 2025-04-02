@@ -1,11 +1,11 @@
 
+import React from 'react';
 import Hero from "@/components/landing/Hero";
 import Features from "@/components/landing/Features";
 import Integration from "@/components/landing/Integration";
 import Workflow from "@/components/landing/Workflow";
-import Results from "@/components/landing/Results";
-import CTA from "@/components/landing/CTA";
 import Testimonials from "@/components/landing/Testimonials";
+import CTA from "@/components/landing/CTA";
 
 const Index = () => {
   return (
@@ -15,7 +15,6 @@ const Index = () => {
         <Features />
         <Integration />
         <Workflow />
-        <Results />
         <Testimonials />
         <CTA />
       </main>
