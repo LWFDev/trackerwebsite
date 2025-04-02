@@ -8,6 +8,7 @@ const ProductDesign = () => {
       title="Proof & Mockup Designer"
       description="Create professional mockups and proofs in seconds with our intuitive designer that seamlessly integrates with your workflow."
       color="teal"
+      heroImage="https://nubosync.com/wp-content/uploads/2025/04/Screenshot-2025-04-02-101424.png"
       stats={[
         {
           value: "85%",
