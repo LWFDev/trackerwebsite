@@ -15,11 +15,11 @@ const testimonials = [
   },
   {
     id: 2,
-    content: "I've used many tracking systems, but Tracker stands out. The documentation is excellent, and the features are so well designed. It's now our go-to for all projects.",
-    author: "Michael Chen",
-    role: "Frontend Engineer at StartupX",
-    avatar: "/placeholder.svg",
-    initials: "MC",
+    content: "We can pick and pack 50 orders per hour per person, we calculate Tracker is a minimum of 10 times faster than our old manual process.",
+    author: "Richard Curran",
+    role: "Pure Optical",
+    avatar: "https://mebuisworks.com/wp-content/uploads/2024/12/richard-pure-optical-150x150.webp",
+    initials: "RC",
     delay: 0.4
   },
   {
