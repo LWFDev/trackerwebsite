@@ -82,9 +82,11 @@ const MobileMenu = ({ isOpen, closeMenu, scrollToTop }: MobileMenuProps) => {
           )}
         </div>
         <div className="flex flex-col space-y-3 pt-4">
-          <Button variant="outline" className="w-full border-zinc-700">
-            Sign In
-          </Button>
+          <Link to="/login" className="w-full">
+            <Button variant="outline" className="w-full border-zinc-700">
+              Sign In
+            </Button>
+          </Link>
           <Link to="/get-started" className="w-full">
             <Button variant="gold" className="w-full">
               Get Started

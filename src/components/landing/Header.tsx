@@ -1,5 +1,4 @@
-
-import { useState, useRef, useEffect } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
 import ModulesMegaMenu from './ModulesMegaMenu';
@@ -81,9 +80,11 @@ const Header = () => {
         </nav>
 
         <div className="hidden md:flex items-center space-x-4">
-          <Button variant="outline" className="border-zinc-700 text-gray-300 hover:bg-zinc-800">
-            Sign In
-          </Button>
+          <Link to="/login">
+            <Button variant="outline" className="border-zinc-700 text-gray-300 hover:bg-zinc-800">
+              Sign In
+            </Button>
+          </Link>
           <Link to="/get-started">
             <Button variant="gold">
               Get Started
