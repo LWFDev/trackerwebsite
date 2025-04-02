@@ -1,4 +1,3 @@
-
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
@@ -39,9 +38,11 @@ const Hero = () => {
                   Get Started <ArrowRight className="ml-1 h-5 w-5" />
                 </Button>
               </Link>
-              <Button size="lg" variant="outline" className="border-[#D4AF37] text-[#D4AF37] hover:bg-[#D4AF37]/10 transition-all hover:-translate-y-1">
-                Contact Sales
-              </Button>
+              <Link to="/contact">
+                <Button size="lg" variant="outline" className="border-[#D4AF37] text-[#D4AF37] hover:bg-[#D4AF37]/10 transition-all hover:-translate-y-1">
+                  Contact Sales
+                </Button>
+              </Link>
             </div>
             
             <div className="mt-12 grid grid-cols-2 gap-8 animate-fade-in" style={{
