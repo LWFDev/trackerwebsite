@@ -3,7 +3,7 @@ import React from "react";
 
 const AboutHero = () => {
   return (
-    <div className="pt-24 pb-16 bg-black text-white relative overflow-hidden">
+    <div className="pt-24 pb-16 bg-black text-white relative overflow-hidden flex items-center min-h-[30vh]">
       <div className="absolute top-0 left-0 w-full h-full overflow-hidden z-0">
         <div className="absolute w-[600px] h-[600px] rounded-full bg-gold-DEFAULT/10 blur-[120px] top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"></div>
       </div>
