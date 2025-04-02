@@ -31,7 +31,7 @@ const modules: ModulesData = {
       learnMoreLink: "/modules/sales-order-management"
     },
     {
-      title: "Product Design",
+      title: "Product Designer",
       description: "Create and manage product designs with powerful customization tools",
       icon: <Paintbrush className="text-gold-DEFAULT" />,
       learnMoreLink: "/modules/product-design"
@@ -83,7 +83,7 @@ const modules: ModulesData = {
       learnMoreLink: "/modules/finance-accounting"
     },
     {
-      title: "Product Design",
+      title: "Product Designer",
       description: "Create and manage product designs with powerful customization tools",
       icon: <Paintbrush className="text-gold-DEFAULT" />,
       learnMoreLink: "/modules/product-design"
