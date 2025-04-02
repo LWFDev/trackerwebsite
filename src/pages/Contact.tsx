@@ -6,6 +6,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
 import { Mail, Phone, MapPin, Clock } from "lucide-react";
 import { toast } from "@/hooks/use-toast";
+
 const ContactPage = () => {
   const form = useForm({
     defaultValues: {
@@ -15,6 +16,7 @@ const ContactPage = () => {
       message: ""
     }
   });
+
   const onSubmit = data => {
     console.log(data);
     toast({
@@ -23,6 +25,7 @@ const ContactPage = () => {
     });
     form.reset();
   };
+
   return <div className="min-h-screen bg-black">
       {/* Hero Section */}
       <div className="pt-24 pb-16 bg-zinc-900 text-white relative overflow-hidden">
@@ -125,9 +128,9 @@ const ContactPage = () => {
                     <div>
                       <h3 className="text-lg font-medium mb-1">Office</h3>
                       <p className="text-gray-400">
-                        1234 Manufacturing Way <br />
-                        Suite 500 <br />
-                        San Francisco, CA 94107
+                        1908 Lone Star Rd. <br />
+                        Suite B <br />
+                        Mansfield, TX 76063
                       </p>
                     </div>
                   </div>
@@ -212,4 +215,5 @@ const ContactPage = () => {
       </div>
     </div>;
 };
+
 export default ContactPage;
