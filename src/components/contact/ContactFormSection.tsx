@@ -7,9 +7,18 @@ const ContactFormSection = () => {
   return (
     <div className="py-16 bg-black">
       <div className="container mx-auto px-4">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-          <ContactForm />
-          <ContactInfo />
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
+          <div className="lg:col-span-2 grid grid-cols-1 lg:grid-cols-2 gap-12">
+            <ContactForm />
+            <ContactInfo />
+          </div>
+          <div className="rounded-lg overflow-hidden border border-zinc-800 shadow-lg">
+            <img 
+              src="https://nubosync.com/wp-content/uploads/2025/04/Screenshot-2025-04-02-101424.png" 
+              alt="System dashboard"
+              className="w-full h-full object-cover"
+            />
+          </div>
         </div>
       </div>
     </div>
