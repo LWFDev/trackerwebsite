@@ -24,11 +24,11 @@ const testimonials = [
   },
   {
     id: 3,
-    content: "The level of polish in Tracker is impressive. Every feature feels thoughtfully crafted, and the automation system is powerful yet simple. Absolutely worth every penny.",
-    author: "Emily Rodriguez",
-    role: "UI/UX Designer at DesignCo",
-    avatar: "/placeholder.svg",
-    initials: "ER",
+    content: "Tracker has transformed our internal systems completely, allowing us the freedom to concentrate on development and growth.",
+    author: "Josie Morris",
+    role: "Woolcool",
+    avatar: "https://mebuisworks.com/wp-content/uploads/2024/12/josie-coolwool-150x150.webp",
+    initials: "JM",
     delay: 0.5
   }
 ];
