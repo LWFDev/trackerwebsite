@@ -1,4 +1,3 @@
-
 import React from "react";
 import { Mail, Phone, MapPin, Clock } from "lucide-react";
 
@@ -25,7 +24,6 @@ const ContactInfo = () => {
             <div>
               <h3 className="text-lg font-medium mb-1">Phone</h3>
               <p className="text-gray-400">+1 (817) 764-0200</p>
-              <p className="text-gray-400">+1 (555) 987-6543</p>
             </div>
           </div>
           <div className="flex items-start">
