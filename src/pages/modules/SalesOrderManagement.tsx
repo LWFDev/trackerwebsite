@@ -8,6 +8,7 @@ const SalesOrderManagement = () => {
       title="Sales & Order Management"
       description="Connect teams, close more deals, and simplify your sales process with our comprehensive Orders module."
       color="blue"
+      heroImage="https://nubosync.com/wp-content/uploads/2025/04/Screenshot-2025-04-02-100541.png"
       stats={[
         {
           value: "Save 40%",
