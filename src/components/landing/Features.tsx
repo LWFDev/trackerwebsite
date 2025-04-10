@@ -1,4 +1,5 @@
-import { CheckCircle, BarChart, Zap } from "lucide-react";
+
+import { CheckCircle, BarChart, Zap, Layers, Users, Shield } from "lucide-react";
 import { Link, useNavigate } from "react-router-dom";
 
 const FeatureCard = ({ 
@@ -95,6 +96,26 @@ const Features = () => {
           <p className="text-lg text-gray-400 animate-fade-in" style={{ animationDelay: '0.2s' }}>
             TRACKER covers all of your key needs in one business platform
           </p>
+        </div>
+
+        {/* Feature illustration */}
+        <div className="relative mb-20 overflow-hidden rounded-xl border border-zinc-800 shadow-xl animate-fade-in" style={{ animationDelay: '0.3s' }}>
+          <div className="absolute inset-0 bg-gradient-to-r from-black via-transparent to-black opacity-30 z-10"></div>
+          <img 
+            src="/lovable-uploads/306ecd7f-001d-4958-ae16-8ae72964eb98.png" 
+            alt="Platform features" 
+            className="w-full h-auto"
+          />
+          <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black to-transparent h-1/3 z-10"></div>
+          <div className="absolute bottom-0 left-0 right-0 p-6 z-20">
+            <div className="flex flex-wrap gap-3 justify-center">
+              <span className="bg-zinc-800/80 backdrop-blur-sm px-3 py-1 rounded-full text-sm text-[#D4AF37] border border-zinc-700">Automation</span>
+              <span className="bg-zinc-800/80 backdrop-blur-sm px-3 py-1 rounded-full text-sm text-[#D4AF37] border border-zinc-700">Analytics</span>
+              <span className="bg-zinc-800/80 backdrop-blur-sm px-3 py-1 rounded-full text-sm text-[#D4AF37] border border-zinc-700">Integration</span>
+              <span className="bg-zinc-800/80 backdrop-blur-sm px-3 py-1 rounded-full text-sm text-[#D4AF37] border border-zinc-700">Workflow</span>
+              <span className="bg-zinc-800/80 backdrop-blur-sm px-3 py-1 rounded-full text-sm text-[#D4AF37] border border-zinc-700">Security</span>
+            </div>
+          </div>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-20">
