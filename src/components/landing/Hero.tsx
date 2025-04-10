@@ -4,8 +4,6 @@ import { Link } from "react-router-dom";
 
 const Hero = () => {
   return <section className="relative pt-24 pb-16 text-white overflow-hidden">
-      {/* Removed background elements */}
-      
       <div className="container mx-auto px-4 relative z-10">
         <div className="flex flex-col md:flex-row items-center">
           <div className="md:w-1/2 md:pr-8 mb-10 md:mb-0">
@@ -59,12 +57,10 @@ const Hero = () => {
           animationDelay: '0.5s'
         }}>
             <div className="relative">
-              {/* Main image */}
-              <div className="rounded-xl shadow-2xl overflow-hidden hover:shadow-[#D4AF37]/20 hover:shadow-xl relative z-10">
+              <div className="rounded-xl shadow-2xl overflow-hidden">
                 <img alt="Platform dashboard" className="w-full h-auto" src="https://mebuisworks.com/wp-content/uploads/2024/11/1-1024x680.webp" />
               </div>
               
-              {/* New Features badge */}
               <div className="absolute -bottom-4 -right-4 bg-gradient-to-r from-[#D4AF37] to-[#F2D675] text-black px-4 py-2 rounded-lg font-medium shadow-lg z-30 animate-float">
                 New Features
               </div>
