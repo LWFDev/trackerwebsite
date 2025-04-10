@@ -1,6 +1,4 @@
 
-import { ArrowRight } from "lucide-react";
-
 const WorkflowStep = ({ 
   number, 
   title, 
@@ -45,18 +43,6 @@ const Workflow = () => {
           </p>
         </div>
 
-        {/* Workflow diagram */}
-        <div className="mb-16 relative">
-          <div className="flex justify-center mb-10">
-            <img 
-              src="/lovable-uploads/9721006a-2365-4a7b-87fa-1d3850b2c1a8.png" 
-              alt="Workflow diagram" 
-              className="max-w-full h-auto rounded-xl shadow-2xl border border-zinc-800 animate-fade-in"
-              style={{ animationDelay: '0.3s' }}
-            />
-          </div>
-        </div>
-
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 relative">
           {/* Connection line */}
           <div className="hidden md:block absolute top-8 left-[12.5%] right-[12.5%] h-0.5 bg-gradient-to-r from-transparent via-[#D4AF37]/50 to-transparent"></div>
@@ -85,14 +71,6 @@ const Workflow = () => {
             description="Monitor progress from order to delivery."
             delay={0.4} 
           />
-        </div>
-        
-        {/* Call to action button */}
-        <div className="text-center mt-12 animate-fade-in" style={{ animationDelay: '0.5s' }}>
-          <button className="inline-flex items-center text-[#D4AF37] font-medium hover:text-[#F2D675] transition-colors">
-            Learn more about our workflow
-            <ArrowRight className="ml-2 h-4 w-4" />
-          </button>
         </div>
       </div>
     </section>

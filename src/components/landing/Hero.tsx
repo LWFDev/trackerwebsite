@@ -1,15 +1,10 @@
-
 import { Button } from "@/components/ui/button";
-import { ArrowRight, CheckCircle2, ShieldCheck, Zap } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const Hero = () => {
   return <section className="relative pt-24 pb-16 text-white overflow-hidden">
-      {/* Background elements */}
-      <div className="absolute top-0 left-0 w-full h-full overflow-hidden z-0">
-        <div className="absolute w-[600px] h-[600px] rounded-full bg-[#D4AF37]/5 blur-[150px] top-1/3 left-1/4 transform -translate-x-1/2 -translate-y-1/2"></div>
-        <div className="absolute w-[500px] h-[500px] rounded-full bg-zinc-800/30 blur-[100px] bottom-0 right-0"></div>
-      </div>
+      {/* Removed background elements */}
       
       <div className="container mx-auto px-4 relative z-10">
         <div className="flex flex-col md:flex-row items-center">
@@ -46,27 +41,16 @@ const Hero = () => {
               </Link>
             </div>
             
-            {/* Key benefits */}
-            <div className="mt-8 space-y-4 animate-fade-in" style={{
+            <div className="mt-12 grid grid-cols-2 gap-8 animate-fade-in" style={{
             animationDelay: '0.4s'
           }}>
-              <div className="flex items-center gap-3">
-                <div className="flex-shrink-0 w-8 h-8 rounded-full bg-[#D4AF37]/10 flex items-center justify-center">
-                  <CheckCircle2 className="w-5 h-5 text-[#D4AF37]" />
-                </div>
-                <p className="text-gray-300">Reduce order processing time by up to 75%</p>
+              <div className="bg-zinc-900/60 backdrop-blur-sm p-4 rounded-lg border border-zinc-800 hover:border-[#D4AF37]/50 transition-all duration-300">
+                <div className="text-3xl font-bold mb-1 text-transparent bg-clip-text bg-gradient-to-r from-[#D4AF37] to-[#F2D675]">1,000,000+</div>
+                <div className="text-gray-400 text-sm">Garments Processed</div>
               </div>
-              <div className="flex items-center gap-3">
-                <div className="flex-shrink-0 w-8 h-8 rounded-full bg-[#D4AF37]/10 flex items-center justify-center">
-                  <ShieldCheck className="w-5 h-5 text-[#D4AF37]" />
-                </div>
-                <p className="text-gray-300">End-to-end encrypted data security</p>
-              </div>
-              <div className="flex items-center gap-3">
-                <div className="flex-shrink-0 w-8 h-8 rounded-full bg-[#D4AF37]/10 flex items-center justify-center">
-                  <Zap className="w-5 h-5 text-[#D4AF37]" />
-                </div>
-                <p className="text-gray-300">Lightning-fast implementation (avg. 2 weeks)</p>
+              <div className="bg-zinc-900/60 backdrop-blur-sm p-4 rounded-lg border border-zinc-800 hover:border-[#D4AF37]/50 transition-all duration-300">
+                <div className="text-3xl font-bold mb-1 text-transparent bg-clip-text bg-gradient-to-r from-[#D4AF37] to-[#F2D675]">2,000+</div>
+                <div className="text-gray-400 text-sm">Workflows Optimized</div>
               </div>
             </div>
           </div>
@@ -75,44 +59,14 @@ const Hero = () => {
           animationDelay: '0.5s'
         }}>
             <div className="relative">
-              {/* Floating elements */}
-              <div className="absolute -top-6 -left-6 bg-zinc-900/80 backdrop-blur-sm p-3 rounded-lg border border-zinc-800 z-20 shadow-xl animate-float" style={{ animationDelay: '0.7s' }}>
-                <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 rounded-full bg-[#D4AF37]/20 flex items-center justify-center">
-                    <span className="text-[#D4AF37] font-bold">+32%</span>
-                  </div>
-                  <div className="text-sm">
-                    <p className="font-medium">Efficiency Boost</p>
-                    <p className="text-gray-400 text-xs">Last month</p>
-                  </div>
-                </div>
-              </div>
-              
               {/* Main image */}
-              <div className="rounded-xl shadow-2xl overflow-hidden hover:shadow-[#D4AF37]/20 hover:shadow-xl relative z-10 border border-zinc-800">
+              <div className="rounded-xl shadow-2xl overflow-hidden hover:shadow-[#D4AF37]/20 hover:shadow-xl relative z-10">
                 <img alt="Platform dashboard" className="w-full h-auto" src="https://mebuisworks.com/wp-content/uploads/2024/11/1-1024x680.webp" />
-                
-                {/* Overlay gradient */}
-                <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent pointer-events-none"></div>
               </div>
               
               {/* New Features badge */}
               <div className="absolute -bottom-4 -right-4 bg-gradient-to-r from-[#D4AF37] to-[#F2D675] text-black px-4 py-2 rounded-lg font-medium shadow-lg z-30 animate-float">
                 New Features
-              </div>
-              
-              {/* Stats card */}
-              <div className="absolute -bottom-8 left-1/4 transform -translate-x-1/2 bg-zinc-900/90 backdrop-blur-sm p-4 rounded-xl border border-zinc-800 shadow-xl z-20 animate-float" style={{ animationDelay: '1s' }}>
-                <div className="grid grid-cols-2 gap-4">
-                  <div>
-                    <div className="text-2xl font-bold text-[#D4AF37]">1M+</div>
-                    <div className="text-xs text-gray-400">Garments Processed</div>
-                  </div>
-                  <div>
-                    <div className="text-2xl font-bold text-[#D4AF37]">2K+</div>
-                    <div className="text-xs text-gray-400">Workflows Optimized</div>
-                  </div>
-                </div>
               </div>
             </div>
           </div>

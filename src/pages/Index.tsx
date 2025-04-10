@@ -6,7 +6,6 @@ import Integration from "@/components/landing/Integration";
 import Workflow from "@/components/landing/Workflow";
 import Testimonials from "@/components/landing/Testimonials";
 import CTA from "@/components/landing/CTA";
-import Results from "@/components/landing/Results";
 
 const Index = () => {
   return (
@@ -14,9 +13,8 @@ const Index = () => {
       <main className="pt-16">
         <Hero />
         <Features />
-        <Workflow />
-        <Results />
         <Integration />
+        <Workflow />
         <Testimonials />
         <CTA />
       </main>
