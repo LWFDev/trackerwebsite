@@ -1,6 +1,10 @@
-
-import { CheckCircle, BarChart, Zap } from "lucide-react";
+import React from "react";
 import { Link, useNavigate } from "react-router-dom";
+import { 
+  Image, 
+  MessagesSquare, 
+  Paintbrush 
+} from "lucide-react";
 
 const FeatureCard = ({ 
   icon: Icon,
@@ -48,7 +52,6 @@ const ModuleCard = ({
     e.preventDefault();
     window.scrollTo({ top: 0, behavior: 'smooth' });
     
-    // Use setTimeout to allow the scroll to start before navigation
     setTimeout(() => {
       navigate(link);
     }, 100);
@@ -79,7 +82,6 @@ const ModuleCard = ({
 const Features = () => {
   return (
     <section id="features" className="py-20 bg-black relative overflow-hidden">
-      {/* Background elements */}
       <div className="absolute top-0 left-0 w-full h-full overflow-hidden z-0">
         <div className="absolute w-[600px] h-[600px] rounded-full bg-zinc-900/30 blur-[100px] top-40 -left-20"></div>
         <div className="absolute w-[500px] h-[500px] rounded-full bg-[#D4AF37]/5 blur-[120px] bottom-20 right-10"></div>
@@ -140,21 +142,21 @@ const Features = () => {
             delay={0.1}
           />
           <ModuleCard
-            icon={<img src="/lovable-uploads/db54b3f2-59c0-417b-a807-bdbd57610c7d.png" alt="Finance" className="w-10 h-10 rounded-lg" />}
+            icon={<MessagesSquare className="w-10 h-10" />}
             title="Finance & Accounting"
             description="Manage financial data and reporting for better decision making."
             link="/modules/finance-accounting"
             delay={0.2}
           />
           <ModuleCard
-            icon={<img src="/lovable-uploads/21a12b27-efed-4d20-8969-1ce62300e72a.png" alt="Design" className="w-10 h-10 rounded-lg" />}
+            icon={<Image className="w-10 h-10" />}
             title="Product Design"
             description="Create and manage product designs with collaborative tools."
             link="/modules/product-design"
             delay={0.3}
           />
           <ModuleCard
-            icon={<img src="/lovable-uploads/b3acb84d-8cfc-42e1-a991-17786e1f98c9.png" alt="Customer Service" className="w-10 h-10 rounded-lg" />}
+            icon={<Paintbrush className="w-10 h-10" />}
             title="Customer Service"
             description="Manage customer support issues faster, improving the experience."
             link="/modules/customer-service"
