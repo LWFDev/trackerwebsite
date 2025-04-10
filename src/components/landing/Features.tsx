@@ -1,3 +1,4 @@
+
 import { CheckCircle, BarChart, Zap } from "lucide-react";
 import { Link, useNavigate } from "react-router-dom";
 
@@ -132,59 +133,59 @@ const Features = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           <ModuleCard
-            icon={<div className="w-10 h-10 bg-gradient-to-br from-black to-zinc-900 text-[#D4AF37] rounded-lg flex items-center justify-center shadow-md group-hover:shadow-[#D4AF37]/20 transition-all duration-300 border border-[#D4AF37]/20">S</div>}
+            icon={<img src="/lovable-uploads/925ddde6-e888-47a5-bc80-c85df4a9fa26.png" alt="Shopping Cart" className="w-10 h-10 rounded-lg" />}
             title="Sales & Order Management"
             description="Manage quotes, track sales, email orders directly from your dashboard."
             link="/modules/sales-order-management"
             delay={0.1}
           />
           <ModuleCard
-            icon={<div className="w-10 h-10 bg-gradient-to-br from-black to-zinc-900 text-[#D4AF37] rounded-lg flex items-center justify-center shadow-md group-hover:shadow-[#D4AF37]/20 transition-all duration-300 border border-[#D4AF37]/20">F</div>}
+            icon={<img src="/lovable-uploads/db54b3f2-59c0-417b-a807-bdbd57610c7d.png" alt="Finance" className="w-10 h-10 rounded-lg" />}
             title="Finance & Accounting"
             description="Manage financial data and reporting for better decision making."
             link="/modules/finance-accounting"
             delay={0.2}
           />
           <ModuleCard
-            icon={<div className="w-10 h-10 bg-gradient-to-br from-black to-zinc-900 text-[#D4AF37] rounded-lg flex items-center justify-center shadow-md group-hover:shadow-[#D4AF37]/20 transition-all duration-300 border border-[#D4AF37]/20">P</div>}
+            icon={<img src="/lovable-uploads/21a12b27-efed-4d20-8969-1ce62300e72a.png" alt="Design" className="w-10 h-10 rounded-lg" />}
             title="Product Design"
             description="Create and manage product designs with collaborative tools."
             link="/modules/product-design"
             delay={0.3}
           />
           <ModuleCard
-            icon={<div className="w-10 h-10 bg-gradient-to-br from-black to-zinc-900 text-[#D4AF37] rounded-lg flex items-center justify-center shadow-md group-hover:shadow-[#D4AF37]/20 transition-all duration-300 border border-[#D4AF37]/20">C</div>}
+            icon={<img src="/lovable-uploads/b3acb84d-8cfc-42e1-a991-17786e1f98c9.png" alt="Customer Service" className="w-10 h-10 rounded-lg" />}
             title="Customer Service"
             description="Manage customer support issues faster, improving the experience."
             link="/modules/customer-service"
             delay={0.4}
           />
           <ModuleCard
-            icon={<div className="w-10 h-10 bg-gradient-to-br from-black to-zinc-900 text-[#D4AF37] rounded-lg flex items-center justify-center shadow-md group-hover:shadow-[#D4AF37]/20 transition-all duration-300 border border-[#D4AF37]/20">I</div>}
+            icon={<img src="/lovable-uploads/972552ea-a023-480e-8094-fcee4fa2f200.png" alt="Inventory" className="w-10 h-10 rounded-lg" />}
             title="Inventory & Logistics"
             description="Track inventory and manage shipping operations seamlessly."
             link="/modules/inventory-logistics"
             delay={0.5}
           />
           <ModuleCard
-            icon={<div className="w-10 h-10 bg-gradient-to-br from-black to-zinc-900 text-[#D4AF37] rounded-lg flex items-center justify-center shadow-md group-hover:shadow-[#D4AF37]/20 transition-all duration-300 border border-[#D4AF37]/20">P</div>}
+            icon={<img src="/lovable-uploads/f1e4ea1d-07f7-48d5-aa20-c50891291083.png" alt="Production" className="w-10 h-10 rounded-lg" />}
             title="Production & Manufacturing"
             description="Track production schedules, allocations, and resource utilization."
             link="/modules/production-manufacturing"
             delay={0.6}
           />
           <ModuleCard
-            icon={<div className="w-10 h-10 bg-gradient-to-br from-black to-zinc-900 text-[#D4AF37] rounded-lg flex items-center justify-center shadow-md group-hover:shadow-[#D4AF37]/20 transition-all duration-300 border border-[#D4AF37]/20">A</div>}
+            icon={<img src="/lovable-uploads/21b9829f-379e-4192-ba9b-f5175847a165.png" alt="Analytics" className="w-10 h-10 rounded-lg" />}
             title="Analytics & Reporting"
             description="Get powerful insights from your data, events, and reports."
             link="/modules/analytics-reporting"
             delay={0.7}
           />
           <ModuleCard
-            icon={<div className="w-10 h-10 bg-gradient-to-br from-black to-zinc-900 text-[#D4AF37] rounded-lg flex items-center justify-center shadow-md group-hover:shadow-[#D4AF37]/20 transition-all duration-300 border border-[#D4AF37]/20">I</div>}
-            title="Integration Platform"
-            description="Seamlessly integrate with your own data and third party tools."
-            link="/modules/integration-platform"
+            icon={<img src="/lovable-uploads/cac46aad-7090-45f2-b15d-50e424cf84d1.png" alt="Logo Hub" className="w-10 h-10 rounded-lg" />}
+            title="Logo Hub"
+            description="Centralize all your logos and brand assets in one place."
+            link="/modules/logo-hub"
             delay={0.8}
           />
         </div>
