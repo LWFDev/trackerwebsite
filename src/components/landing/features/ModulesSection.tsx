@@ -67,7 +67,7 @@ const ModulesSection = () => {
           delay={0.7}
         />
         <ModuleCard
-          icon={<img src="/lovable-uploads/e5ad0901-4dde-40da-a19e-48cea2067633.png" alt="Logos" className="w-10 h-10 rounded-lg" />}
+          icon={<img src="/lovable-uploads/e5ad0901-4dde-4da-a19e-48cea2067633.png" alt="Logos" className="w-10 h-10 rounded-lg" />}
           title="Logos"
           description="Upload, categorize, and manage customer logos and artwork files."
           link="/modules/logo-hub"
