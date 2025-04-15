@@ -18,7 +18,7 @@ const ModulesSection = () => {
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
         <ModuleCard
-          icon={<img src="/lovable-uploads/728cf67b-7031-433e-b3e6-395bfe654652.png" alt="Sales & Order Management" className="w-10 h-10 rounded-lg" />}
+          icon={<img src="/lovable-uploads/cc1b3039-9322-4ad6-b41e-9229ed5b8940.png" alt="Sales & Order Management" className="w-10 h-10 rounded-lg" />}
           title="Sales & Order Management"
           description="Manage quotes, track sales, email orders directly from your dashboard."
           link="/modules/sales-order-management"
