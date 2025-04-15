@@ -1,4 +1,3 @@
-
 import React from "react";
 import ModuleCard from "./ModuleCard";
 import SectionTitle from "./SectionTitle";
@@ -32,7 +31,7 @@ const ModulesSection = () => {
           delay={0.2}
         />
         <ModuleCard
-          icon={<img src="/lovable-uploads/4f462409-1909-4f6c-b235-dc001e17c78a.png" alt="Product Design" className="w-10 h-10 rounded-lg" />}
+          icon={<img src="/lovable-uploads/9f87abc4-dc21-425b-9d53-87e075883a7f.png" alt="Product Design" className="w-10 h-10 rounded-lg" />}
           title="Product Design"
           description="Create and manage product designs with collaborative tools."
           link="/modules/product-design"
