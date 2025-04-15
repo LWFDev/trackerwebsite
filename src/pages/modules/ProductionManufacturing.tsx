@@ -1,12 +1,11 @@
-
 import ModuleLayout from "@/components/modules/ModuleLayout";
 import { Layers, Clock, Percent, Settings, BarChart2, Wrench, Clipboard, LineChart, CheckCircle, File, Users, Layout, Wrench as WrenchIcon, Cpu, AlertTriangle, BookOpen, Database, Sliders } from "lucide-react";
 
-const Production = () => {
+const ProductionManufacturing = () => {
   return (
     <ModuleLayout
-      title="Production"
-      description="Schedule, assign, and track every job from setup through final output with visual production queues."
+      title="Production Management"
+      description="Streamline your production processes, optimize resource allocation, and increase efficiency with our comprehensive manufacturing solution."
       color="blue"
       stats={[
         {
@@ -31,20 +30,20 @@ const Production = () => {
         }
       ]}
       mainSection={{
-        title: "Transform Your Production Operations",
-        description: "Our Production module provides the tools you need to optimize your entire production process from planning to final delivery, increasing efficiency while reducing costs."
+        title: "Transform Your Manufacturing Operations",
+        description: "Our Production Management module provides the tools you need to optimize your entire manufacturing process from planning to quality control, increasing efficiency while reducing costs."
       }}
       keyFeatures={{
         title: "Complete Production Control",
-        description: "Everything you need to optimize your production processes",
+        description: "Everything you need to optimize your manufacturing processes",
         features: [
           {
-            title: "Visual Production Planning",
+            title: "Advanced Production Planning",
             description: "Create optimized production plans with intelligent resource allocation, dependency management, and capacity planning.",
             icon: <Clipboard className="h-6 w-6" />
           },
           {
-            title: "Dynamic Job Scheduling",
+            title: "Dynamic Scheduling",
             description: "Optimize production schedules with real-time adjustments based on priorities, capacity, and material availability.",
             icon: <Clock className="h-6 w-6" />
           },
@@ -64,23 +63,23 @@ const Production = () => {
             icon: <BarChart2 className="h-6 w-6" />
           },
           {
-            title: "Production Floor Tracking",
-            description: "Track job progress in real-time with digital production boards, operator updates, and automated status changes.",
+            title: "Predictive Maintenance",
+            description: "Minimize downtime with condition-based monitoring, maintenance forecasting, and automated service scheduling.",
             icon: <WrenchIcon className="h-6 w-6" />
           }
         ]
       }}
       specialSection={{
-        title: "Designed for Production Excellence",
+        title: "Designed for Manufacturing Excellence",
         subtitle: "Industry Solutions",
-        description: "Our production management platform is tailored to meet the unique challenges of various decoration methods.",
+        description: "Our production management platform is tailored to meet the unique challenges of various manufacturing environments.",
         items: [
-          { text: "Screen printing with color separation tracking and press management", icon: <Layers className="h-5 w-5" /> },
-          { text: "Embroidery with stitch count estimates and digitizing status", icon: <Database className="h-5 w-5" /> },
-          { text: "DTG and DTF printing with pretreatment and curing tracking", icon: <Sliders className="h-5 w-5" /> },
-          { text: "Sublimation with temperature and pressure specifications", icon: <Cpu className="h-5 w-5" /> },
-          { text: "Heat transfer vinyl with cutting and weeding tracking", icon: <BookOpen className="h-5 w-5" /> },
-          { text: "Laser engraving with power and speed settings", icon: <AlertTriangle className="h-5 w-5" /> }
+          { text: "Discrete manufacturing with build-to-order and assemble-to-order workflows", icon: <Layers className="h-5 w-5" /> },
+          { text: "Process manufacturing with batch processing and formula management", icon: <Database className="h-5 w-5" /> },
+          { text: "Lean manufacturing tools including kanban and pull systems", icon: <Sliders className="h-5 w-5" /> },
+          { text: "Industry 4.0 ready with IoT integration and machine connectivity", icon: <Cpu className="h-5 w-5" /> },
+          { text: "Regulatory compliance tools for ISO, FDA, and industry standards", icon: <BookOpen className="h-5 w-5" /> },
+          { text: "Environmental and safety management capabilities", icon: <AlertTriangle className="h-5 w-5" /> }
         ]
       }}
       ctaSection={{
@@ -93,26 +92,26 @@ const Production = () => {
       }}
       relatedModules={[
         {
-          title: "Inventory",
+          title: "Inventory & Logistics",
           icon: <File className="h-8 w-8" />,
-          description: "Monitor stock levels, track item movement, and get automatic low-stock alerts across locations.",
-          link: "/modules/inventory"
+          description: "Integrate production with inventory management for seamless material flow and stock control.",
+          link: "/modules/inventory-logistics"
         },
         {
-          title: "Product Designer",
+          title: "Product Design",
           icon: <Layout className="h-8 w-8" />,
-          description: "Allow users to customize garments visually with drag-and-drop logos, text, and artwork placements.",
-          link: "/modules/product-designer"
+          description: "Connect design and engineering directly to production for faster product development.",
+          link: "/modules/product-design"
         },
         {
-          title: "Sales & Orders",
+          title: "Analytics & Reporting",
           icon: <BarChart2 className="h-8 w-8" />,
-          description: "Manage incoming orders, quotes, and job details in one streamlined dashboard, keeping your sales pipeline moving.",
-          link: "/modules/sales-orders"
+          description: "Gain comprehensive insights into production performance, quality, and efficiency.",
+          link: "/modules/analytics-reporting"
         }
       ]}
     />
   );
 };
 
-export default Production;
+export default ProductionManufacturing;

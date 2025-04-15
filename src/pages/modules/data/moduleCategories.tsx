@@ -2,23 +2,17 @@
 import React from "react";
 import { 
   ShoppingCart, 
+  Receipt, 
+  Paintbrush, 
+  MessagesSquare, 
   Package, 
   Layers, 
-  Users,
   BarChart2, 
+  Zap, 
   Image, 
   FileText, 
   ClipboardList, 
-  UserCheck,
-  Truck,
-  Warehouse,
-  Box,
-  PaintBrush,
-  Database,
-  TShirt,
-  UserCog,
-  FileInvoice,
-  Building
+  UserCheck 
 } from "lucide-react";
 
 // Module categories data
@@ -27,53 +21,53 @@ export const moduleCategories = [
     title: "Business Operations",
     modules: [
       {
-        title: "Sales & Orders",
-        description: "Manage incoming orders, quotes, and job details in one streamlined dashboard, keeping your sales pipeline moving.",
+        title: "Sales & Order Management",
+        description: "Connect teams, close more deals, and simplify your sales process.",
         icon: <ShoppingCart className="h-8 w-8 text-[#D4AF37]" />,
-        link: "/modules/sales-orders",
+        link: "/modules/sales-order-management",
         color: "bg-blue-500/20",
         category: "Sales"
       },
       {
-        title: "Warehouse",
-        description: "Track item locations, transfers, and storage with real-time warehouse visibility and control.",
-        icon: <Warehouse className="h-8 w-8 text-[#D4AF37]" />,
-        link: "/modules/warehouse",
+        title: "Finance & Accounting",
+        description: "Manage financial transactions and accounting processes efficiently.",
+        icon: <Receipt className="h-8 w-8 text-[#D4AF37]" />,
+        link: "/modules/finance-accounting",
         color: "bg-indigo-500/20",
-        category: "Inventory"
+        category: "Finance"
       },
       {
-        title: "Inventory",
-        description: "Monitor stock levels, track item movement, and get automatic low-stock alerts across locations.",
-        icon: <Box className="h-8 w-8 text-[#D4AF37]" />,
-        link: "/modules/inventory",
+        title: "Inventory & Logistics",
+        description: "Track inventory and manage logistics operations seamlessly.",
+        icon: <Package className="h-8 w-8 text-[#D4AF37]" />,
+        link: "/modules/inventory-logistics",
         color: "bg-cyan-500/20",
         category: "Inventory"
       },
       {
-        title: "Production",
-        description: "Schedule, assign, and track every job from setup through final output with visual production queues.",
+        title: "Production & Manufacturing",
+        description: "Oversee production processes, schedules, and resource allocation.",
         icon: <Layers className="h-8 w-8 text-[#D4AF37]" />,
-        link: "/modules/production",
+        link: "/modules/production-manufacturing",
         color: "bg-purple-500/20",
         category: "Production"
       }
     ]
   },
   {
-    title: "Customer Management",
+    title: "Client Management",
     modules: [
       {
-        title: "Customer Database",
-        description: "Store all customer details, communication logs, and order history in one centralized, searchable profile.",
-        icon: <Database className="h-8 w-8 text-[#D4AF37]" />,
-        link: "/modules/customer-database",
+        title: "Customer Service",
+        description: "Manage customer support cases faster across every channel.",
+        icon: <MessagesSquare className="h-8 w-8 text-[#D4AF37]" />,
+        link: "/modules/customer-service",
         color: "bg-teal-500/20",
         category: "Support"
       },
       {
         title: "Customer Portal",
-        description: "Give customers a branded login to review orders, approve proofs, and track job progress in real-time.",
+        description: "Provide your customers with a self-service portal for support and information.",
         icon: <UserCheck className="h-8 w-8 text-[#D4AF37]" />,
         link: "/modules/customer-portal",
         color: "bg-teal-500/20",
@@ -85,57 +79,57 @@ export const moduleCategories = [
     title: "Design & Content",
     modules: [
       {
-        title: "Product Designer",
-        description: "Allow users to customize garments visually with drag-and-drop logos, text, and artwork placements.",
-        icon: <PaintBrush className="h-8 w-8 text-[#D4AF37]" />,
-        link: "/modules/product-designer",
+        title: "Product Design",
+        description: "Create and manage product designs with powerful customization tools.",
+        icon: <Paintbrush className="h-8 w-8 text-[#D4AF37]" />,
+        link: "/modules/product-design",
         color: "bg-emerald-500/20",
         category: "Design"
       },
       {
-        title: "Logo Management",
-        description: "Upload, categorize, and manage customer logos and artwork files with built-in version tracking.",
+        title: "Logo Hub",
+        description: "Centralize and manage all your brand logos in one place.",
         icon: <Image className="h-8 w-8 text-[#D4AF37]" />,
-        link: "/modules/logo-management",
+        link: "/modules/logo-hub",
         color: "bg-emerald-500/20",
         category: "Design"
       },
       {
-        title: "Base Garment",
-        description: "Set up your core product catalog, including styles, sizes, colors, and default pricing.",
-        icon: <TShirt className="h-8 w-8 text-[#D4AF37]" />,
-        link: "/modules/base-garment",
-        color: "bg-emerald-500/20",
-        category: "Design"
-      },
-      {
-        title: "Artworkers",
-        description: "Assign artwork tasks, manage approvals, and ensure timely proof delivery for every order.",
-        icon: <UserCog className="h-8 w-8 text-[#D4AF37]" />,
-        link: "/modules/artworkers",
+        title: "Document Management",
+        description: "Store, organize, and share documents securely across your organization.",
+        icon: <FileText className="h-8 w-8 text-[#D4AF37]" />,
+        link: "/modules/document-management",
         color: "bg-emerald-500/20",
         category: "Design"
       }
     ]
   },
   {
-    title: "Supplier Management",
+    title: "Project & Analytics",
     modules: [
       {
-        title: "Suppliers",
-        description: "Maintain supplier contacts, price lists, and product availability to streamline purchasing decisions.",
-        icon: <Building className="h-8 w-8 text-[#D4AF37]" />,
-        link: "/modules/suppliers",
+        title: "Project Management",
+        description: "Plan, track, and manage projects with ease.",
+        icon: <ClipboardList className="h-8 w-8 text-[#D4AF37]" />,
+        link: "/modules/project-management",
         color: "bg-amber-500/20",
-        category: "Suppliers"
+        category: "Analytics"
       },
       {
-        title: "Purchase Orders",
-        description: "Create, send, and track POs with direct links to incoming inventory and supplier fulfillment.",
-        icon: <FileInvoice className="h-8 w-8 text-[#D4AF37]" />,
-        link: "/modules/purchase-orders",
+        title: "Analytics & Reporting",
+        description: "Get powerful insights from your data, anytime, anywhere.",
+        icon: <BarChart2 className="h-8 w-8 text-[#D4AF37]" />,
+        link: "/modules/analytics-reporting",
         color: "bg-amber-500/20",
-        category: "Suppliers"
+        category: "Analytics"
+      },
+      {
+        title: "Integration Platform",
+        description: "Connect your teams and data with apps built in clicks, not code.",
+        icon: <Zap className="h-8 w-8 text-[#D4AF37]" />,
+        link: "/modules/integration-platform",
+        color: "bg-rose-500/20",
+        category: "Integrations"
       }
     ]
   }

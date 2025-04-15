@@ -2,11 +2,11 @@
 import ModuleLayout from "@/components/modules/ModuleLayout";
 import { Package, TruckIcon, Percent, Clock, BarChart2, MapPin, Zap, QrCode, LineChart, RefreshCw, Search, Building, Box, LayoutGrid, Smartphone, AlertTriangle, ShoppingCart, ShieldCheck } from "lucide-react";
 
-const Inventory = () => {
+const InventoryLogistics = () => {
   return (
     <ModuleLayout
-      title="Inventory"
-      description="Monitor stock levels, track item movement, and get automatic low-stock alerts across locations."
+      title="Inventory Management"
+      description="Gain complete visibility and control over your inventory with real-time tracking, automated reordering, and powerful analytics."
       color="blue"
       stats={[
         {
@@ -73,9 +73,9 @@ const Inventory = () => {
       specialSection={{
         title: "End-to-End Supply Chain Visibility",
         subtitle: "Connected Operations",
-        description: "Our Inventory module integrates seamlessly with your entire business ecosystem for complete operational visibility.",
+        description: "Our Inventory Management module integrates seamlessly with your entire business ecosystem for complete operational visibility.",
         items: [
-          { text: "Real-time synchronization with sales orders and production scheduling", icon: <ShoppingCart className="h-5 w-5" /> },
+          { text: "Real-time synchronization with e-commerce platforms and marketplaces", icon: <ShoppingCart className="h-5 w-5" /> },
           { text: "Automated connection with accounting for accurate financial reporting", icon: <BarChart2 className="h-5 w-5" /> },
           { text: "Integrated shipping and logistics provider management", icon: <TruckIcon className="h-5 w-5" /> },
           { text: "Mobile inventory management with our dedicated app", icon: <Smartphone className="h-5 w-5" /> },
@@ -93,26 +93,26 @@ const Inventory = () => {
       }}
       relatedModules={[
         {
-          title: "Sales & Orders",
+          title: "Sales & Order Management",
           icon: <ShoppingCart className="h-8 w-8" />,
-          description: "Manage incoming orders, quotes, and job details in one streamlined dashboard, keeping your sales pipeline moving.",
-          link: "/modules/sales-orders"
+          description: "Streamline your order processing with automated workflows and real-time inventory availability.",
+          link: "/modules/sales-order-management"
         },
         {
-          title: "Production",
+          title: "Production & Manufacturing",
           icon: <Package className="h-8 w-8" />,
-          description: "Schedule, assign, and track every job from setup through final output with visual production queues.",
-          link: "/modules/production"
+          description: "Integrate inventory with production scheduling, materials planning, and quality control.",
+          link: "/modules/production-manufacturing"
         },
         {
-          title: "Warehouse",
+          title: "Analytics & Reporting",
           icon: <BarChart2 className="h-8 w-8" />,
-          description: "Track item locations, transfers, and storage with real-time warehouse visibility and control.",
-          link: "/modules/warehouse"
+          description: "Gain actionable insights with customizable reports on inventory performance and trends.",
+          link: "/modules/analytics-reporting"
         }
       ]}
     />
   );
 };
 
-export default Inventory;
+export default InventoryLogistics;

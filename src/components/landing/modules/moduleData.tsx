@@ -1,22 +1,23 @@
-
 import React from "react";
 import { 
   Image, 
   FileText, 
   ShoppingCart, 
   Layers, 
-  Box,
-  Users,
+  Receipt, 
+  Check,
   BarChart2,
-  Database,
-  Warehouse,
-  TShirt,
-  PaintBrush,
-  UserCog,
-  Building,
-  FileInvoice,
+  Zap,
+  Users,
+  FileSearch,
+  ClipboardList,
   UserCheck,
-  TrendingUp
+  PieChart,
+  TrendingUp,
+  Package,
+  Truck,
+  Paintbrush,
+  MessagesSquare
 } from "lucide-react";
 import { ModulesData } from "./types";
 
@@ -24,26 +25,26 @@ import { ModulesData } from "./types";
 const modules: ModulesData = {
   popular: [
     {
-      title: "Sales & Orders",
-      description: "Manage incoming orders, quotes, and job details in one streamlined dashboard, keeping your sales pipeline moving.",
+      title: "Sales & Order Management",
+      description: "Connect teams, close more deals, and simplify your sales process",
       icon: <ShoppingCart className="text-gold-DEFAULT" />,
-      learnMoreLink: "/modules/sales-orders"
+      learnMoreLink: "/modules/sales-order-management"
     },
     {
       title: "Product Designer",
-      description: "Allow users to customize garments visually with drag-and-drop logos, text, and artwork placements.",
-      icon: <PaintBrush className="text-gold-DEFAULT" />,
-      learnMoreLink: "/modules/product-designer"
+      description: "Create and manage product designs with powerful customization tools",
+      icon: <Paintbrush className="text-gold-DEFAULT" />,
+      learnMoreLink: "/modules/product-design"
     },
     {
-      title: "Logo Management",
-      description: "Upload, categorize, and manage customer logos and artwork files with built-in version tracking.",
+      title: "Logo Hub",
+      description: "Centralize and manage all your brand logos in one place",
       icon: <Image className="text-gold-DEFAULT" />,
-      learnMoreLink: "/modules/logo-management"
+      learnMoreLink: "/modules/logo-hub"
     },
     {
       title: "Customer Portal",
-      description: "Give customers a branded login to review orders, approve proofs, and track job progress in real-time.",
+      description: "Provide your customers with a self-service portal for support and information",
       icon: <UserCheck className="text-gold-DEFAULT" />,
       learnMoreLink: "/modules/customer-portal"
     }
@@ -62,82 +63,82 @@ const modules: ModulesData = {
       learnMoreLink: "#customer-management"
     },
     {
-      title: "Design & Content",
-      description: "Solutions for product design and customization",
-      icon: <PaintBrush className="text-gold-DEFAULT" />,
-      learnMoreLink: "#design-content"
+      title: "Production & Design",
+      description: "Solutions for product design and manufacturing",
+      icon: <Paintbrush className="text-gold-DEFAULT" />,
+      learnMoreLink: "#production-design"
     }
   ],
   all: [
     {
-      title: "Sales & Orders",
-      description: "Manage incoming orders, quotes, and job details in one streamlined dashboard, keeping your sales pipeline moving.",
+      title: "Sales & Order Management",
+      description: "Connect teams, close more deals, and simplify your sales process",
       icon: <ShoppingCart className="text-gold-DEFAULT" />,
-      learnMoreLink: "/modules/sales-orders"
+      learnMoreLink: "/modules/sales-order-management"
     },
     {
-      title: "Warehouse",
-      description: "Track item locations, transfers, and storage with real-time warehouse visibility and control.",
-      icon: <Warehouse className="text-gold-DEFAULT" />,
-      learnMoreLink: "/modules/warehouse"
+      title: "Finance & Accounting",
+      description: "Manage financial transactions and accounting processes efficiently",
+      icon: <Receipt className="text-gold-DEFAULT" />,
+      learnMoreLink: "/modules/finance-accounting"
     },
     {
       title: "Product Designer",
-      description: "Allow users to customize garments visually with drag-and-drop logos, text, and artwork placements.",
-      icon: <PaintBrush className="text-gold-DEFAULT" />,
-      learnMoreLink: "/modules/product-designer"
+      description: "Create and manage product designs with powerful customization tools",
+      icon: <Paintbrush className="text-gold-DEFAULT" />,
+      learnMoreLink: "/modules/product-design"
     },
     {
-      title: "Customer Database",
-      description: "Store all customer details, communication logs, and order history in one centralized, searchable profile.",
-      icon: <Database className="text-gold-DEFAULT" />,
-      learnMoreLink: "/modules/customer-database"
+      title: "Customer Service",
+      description: "Manage customer support cases faster across every channel",
+      icon: <MessagesSquare className="text-gold-DEFAULT" />,
+      learnMoreLink: "/modules/customer-service"
     },
     {
-      title: "Inventory",
-      description: "Monitor stock levels, track item movement, and get automatic low-stock alerts across locations.",
-      icon: <Box className="text-gold-DEFAULT" />,
-      learnMoreLink: "/modules/inventory"
+      title: "Inventory & Logistics",
+      description: "Track inventory and manage logistics operations seamlessly",
+      icon: <Package className="text-gold-DEFAULT" />,
+      learnMoreLink: "/modules/inventory-logistics"
     },
     {
-      title: "Production",
-      description: "Schedule, assign, and track every job from setup through final output with visual production queues.",
+      title: "Production & Manufacturing",
+      description: "Oversee production processes, schedules, and resource allocation",
       icon: <Layers className="text-gold-DEFAULT" />,
-      learnMoreLink: "/modules/production"
+      learnMoreLink: "/modules/production-manufacturing"
     },
     {
-      title: "Base Garment",
-      description: "Set up your core product catalog, including styles, sizes, colors, and default pricing.",
-      icon: <TShirt className="text-gold-DEFAULT" />,
-      learnMoreLink: "/modules/base-garment"
+      title: "Analytics & Reporting",
+      description: "Get powerful insights from your data, anytime, anywhere",
+      icon: <BarChart2 className="text-gold-DEFAULT" />,
+      learnMoreLink: "/modules/analytics-reporting"
     },
     {
-      title: "Logo Management",
-      description: "Upload, categorize, and manage customer logos and artwork files with built-in version tracking.",
+      title: "Integration Platform",
+      description: "Connect your teams and data with apps built in clicks, not code",
+      icon: <Zap className="text-gold-DEFAULT" />,
+      learnMoreLink: "/modules/integration-platform"
+    },
+    {
+      title: "Logo Hub",
+      description: "Centralize and manage all your brand logos in one place",
       icon: <Image className="text-gold-DEFAULT" />,
-      learnMoreLink: "/modules/logo-management"
+      learnMoreLink: "/modules/logo-hub"
     },
     {
-      title: "Suppliers",
-      description: "Maintain supplier contacts, price lists, and product availability to streamline purchasing decisions.",
-      icon: <Building className="text-gold-DEFAULT" />,
-      learnMoreLink: "/modules/suppliers"
+      title: "Document Management",
+      description: "Store, organize, and share documents securely across your organization",
+      icon: <FileText className="text-gold-DEFAULT" />,
+      learnMoreLink: "/modules/document-management"
     },
     {
-      title: "Purchase Orders",
-      description: "Create, send, and track POs with direct links to incoming inventory and supplier fulfillment.",
-      icon: <FileInvoice className="text-gold-DEFAULT" />,
-      learnMoreLink: "/modules/purchase-orders"
-    },
-    {
-      title: "Artworkers",
-      description: "Assign artwork tasks, manage approvals, and ensure timely proof delivery for every order.",
-      icon: <UserCog className="text-gold-DEFAULT" />,
-      learnMoreLink: "/modules/artworkers"
+      title: "Project Management",
+      description: "Plan, track, and manage projects with ease",
+      icon: <ClipboardList className="text-gold-DEFAULT" />,
+      learnMoreLink: "/modules/project-management"
     },
     {
       title: "Customer Portal",
-      description: "Give customers a branded login to review orders, approve proofs, and track job progress in real-time.",
+      description: "Provide your customers with a self-service portal for support and information",
       icon: <UserCheck className="text-gold-DEFAULT" />,
       learnMoreLink: "/modules/customer-portal"
     }

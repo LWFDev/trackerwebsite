@@ -5,8 +5,8 @@ import { UserCheck, CheckCircle, Clock, File, Shield, MessageSquare, FileText, L
 const CustomerPortal = () => {
   return (
     <ModuleLayout
-      title="Customer Portal"
-      description="Give customers a branded login to review orders, approve proofs, and track job progress in real-time."
+      title="Client Portal"
+      description="Provide your clients with a secure, branded portal where they can access documents, make payments, and communicate with your team seamlessly."
       color="green"
       stats={[
         {
@@ -21,31 +21,31 @@ const CustomerPortal = () => {
         },
         {
           value: "30%",
-          label: "Faster Order Approval Process",
+          label: "Faster Payment Processing",
           icon: <CreditCard className="h-8 w-8 text-green-500" />
         },
         {
           value: "24/7",
-          label: "Customer Access & Self-Service",
+          label: "Client Access & Self-Service",
           icon: <Clock className="h-8 w-8 text-green-500" />
         }
       ]}
       mainSection={{
-        title: "Transform Your Customer Experience",
-        description: "Our Customer Portal creates a seamless digital experience that enables your clients to interact with your business on their terms, increasing satisfaction and loyalty while reducing support costs."
+        title: "Transform Your Client Experience",
+        description: "Our Client Portal creates a seamless digital experience that enables your clients to interact with your business on their terms, increasing satisfaction and loyalty while reducing support costs."
       }}
       keyFeatures={{
-        title: "Comprehensive Customer Engagement",
-        description: "Everything customers need to stay informed and in control",
+        title: "Comprehensive Client Engagement",
+        description: "Everything you need to deliver an exceptional client experience",
         features: [
           {
-            title: "Secure Order Tracking",
-            description: "Give customers real-time visibility into their order status, from proof approval to delivery.",
+            title: "Secure Document Sharing",
+            description: "Share documents, contracts, and deliverables securely with automatic notifications and access tracking.",
             icon: <FileText className="h-6 w-6" />
           },
           {
             title: "Integrated Payment System",
-            description: "Enable customers to view invoices, make payments, and manage payment methods with our secure payment processing.",
+            description: "Enable clients to view invoices, make payments, and manage payment methods with our secure payment processing.",
             icon: <CreditCard className="h-6 w-6" />
           },
           {
@@ -54,8 +54,8 @@ const CustomerPortal = () => {
             icon: <MessageSquare className="h-6 w-6" />
           },
           {
-            title: "Artwork Approval",
-            description: "Streamline the proof approval process with online proofing, markup tools, and revision tracking.",
+            title: "Project Transparency",
+            description: "Keep clients informed with real-time project updates, milestones, and deliverable tracking.",
             icon: <Calendar className="h-6 w-6" />
           },
           {
@@ -65,7 +65,7 @@ const CustomerPortal = () => {
           },
           {
             title: "Self-Service Tools",
-            description: "Empower customers with reorder capabilities, order history access, and asset libraries for instant support.",
+            description: "Empower clients with appointment scheduling, form submissions, and knowledge base access for instant support.",
             icon: <Settings className="h-6 w-6" />
           }
         ]
@@ -73,7 +73,7 @@ const CustomerPortal = () => {
       specialSection={{
         title: "Enterprise-Grade Security",
         subtitle: "Built for Trust",
-        description: "Our Customer Portal is designed with the highest security standards to protect your sensitive customer information.",
+        description: "Our Client Portal is designed with the highest security standards to protect your sensitive client information.",
         items: [
           { text: "End-to-end encryption for all data and communications", icon: <LockIcon className="h-5 w-5" /> },
           { text: "Multi-factor authentication with customizable security policies", icon: <Shield className="h-5 w-5" /> },
@@ -84,8 +84,8 @@ const CustomerPortal = () => {
         ]
       }}
       ctaSection={{
-        title: "Ready to Elevate Your Customer Experience?",
-        description: "Join thousands of businesses that have transformed their customer relationships with our comprehensive portal solution.",
+        title: "Ready to Elevate Your Client Experience?",
+        description: "Join thousands of businesses that have transformed their client relationships with our comprehensive portal solution.",
         primaryButtonText: "Start Free Trial",
         primaryButtonLink: "/get-started",
         secondaryButtonText: "Schedule Demo",
@@ -93,22 +93,22 @@ const CustomerPortal = () => {
       }}
       relatedModules={[
         {
-          title: "Customer Database",
+          title: "Document Management",
           icon: <FileText className="h-8 w-8" />,
-          description: "Store all customer details, communication logs, and order history in one centralized, searchable profile.",
-          link: "/modules/customer-database"
+          description: "Integrate portal document sharing with your internal document management system.",
+          link: "/modules/document-management"
         },
         {
-          title: "Sales & Orders",
+          title: "Project Management",
           icon: <Calendar className="h-8 w-8" />,
-          description: "Manage incoming orders, quotes, and job details in one streamlined dashboard, keeping your sales pipeline moving.",
-          link: "/modules/sales-orders"
+          description: "Connect client portal updates directly to your project management workflow.",
+          link: "/modules/project-management"
         },
         {
-          title: "Logo Management",
+          title: "Finance & Accounting",
           icon: <CreditCard className="h-8 w-8" />,
-          description: "Upload, categorize, and manage customer logos and artwork files with built-in version tracking.",
-          link: "/modules/logo-management"
+          description: "Streamline client payments with integrated invoicing and financial tracking.",
+          link: "/modules/finance-accounting"
         }
       ]}
     />
