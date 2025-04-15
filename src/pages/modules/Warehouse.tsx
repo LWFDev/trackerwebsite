@@ -1,6 +1,20 @@
 
 import ModuleLayout from "@/components/modules/ModuleLayout";
-import { Package, TruckIcon, BarChart2, Layers, CheckCircle, Users, Search, Map, Forklift, Smartphone, Zap, LineChart } from "lucide-react";
+import { 
+  Package, 
+  TruckIcon, 
+  BarChart2, 
+  Layers, 
+  CheckCircle, 
+  Users, 
+  Search, 
+  Map, 
+  Smartphone, 
+  Zap, 
+  LineChart,
+  ShoppingCart,
+  FileSpreadsheet
+} from "lucide-react";
 
 const Warehouse = () => {
   return (
@@ -51,7 +65,7 @@ const Warehouse = () => {
           {
             title: "Intelligent Put-Away",
             description: "Optimize item storage with suggestions based on product characteristics, turnover rates, and space utilization.",
-            icon: <Forklift className="h-6 w-6" />
+            icon: <ForkliftIcon className="h-6 w-6" />
           },
           {
             title: "Efficient Picking Operations",
@@ -139,7 +153,7 @@ const QrCode = ({ className }: { className?: string }) => (
   </svg>
 );
 
-const Forklift = ({ className }: { className?: string }) => (
+const ForkliftIcon = ({ className }: { className?: string }) => (
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}>
     <path d="M12 12V5c0-1.1-.9-2-2-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h5c1.1 0 2-.9 2-2v-3"></path>
     <path d="M19 20c1.1 0 2-.9 2-2v-6l-3-6c-.3-.7-1-1.2-1.8-1.2H12v7"></path>
