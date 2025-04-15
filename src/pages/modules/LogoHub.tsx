@@ -2,11 +2,11 @@
 import ModuleLayout from "@/components/modules/ModuleLayout";
 import { Image, Share2, Tags, Users, Search, Shield, Globe, UploadCloud, Folder, Clock, File, Download, Lock, Briefcase, Edit, History, Smartphone, CheckCircle, BarChart2, RefreshCw } from "lucide-react";
 
-const LogoHub = () => {
+const LogoManagement = () => {
   return (
     <ModuleLayout
-      title="Logo Hub"
-      description="Centralize and manage all your brand assets in one secure platform with powerful organization, collaboration, and distribution features."
+      title="Logo Management"
+      description="Upload, categorize, and manage customer logos and artwork files with built-in version tracking."
       color="purple"
       stats={[
         {
@@ -32,15 +32,15 @@ const LogoHub = () => {
       ]}
       mainSection={{
         title: "The Ultimate Brand Asset Management Solution",
-        description: "Logo Hub provides a central repository for all your brand assets, ensuring everyone in your organization has access to the right files in the right formats, every time."
+        description: "Logo Management provides a central repository for all your customer logos and artwork, ensuring everyone in your organization has access to the right files in the right formats, every time."
       }}
       keyFeatures={{
         title: "Comprehensive Brand Asset Management",
-        description: "Everything you need to organize, manage, and distribute your brand assets",
+        description: "Everything you need to organize, manage, and distribute your customer artwork",
         features: [
           {
             title: "Centralized Asset Repository",
-            description: "Store logos, images, videos, fonts, and brand guidelines in one secure, organized location accessible from anywhere.",
+            description: "Store logos, images, vectors, and artwork in one secure, organized location accessible from anywhere.",
             icon: <Folder className="h-6 w-6" />
           },
           {
@@ -65,7 +65,7 @@ const LogoHub = () => {
           },
           {
             title: "Format Conversion & Resizing",
-            description: "Automatically generate assets in multiple formats and sizes for different channels and use cases.",
+            description: "Automatically generate assets in multiple formats and sizes for different production methods and applications.",
             icon: <Edit className="h-6 w-6" />
           }
         ]
@@ -73,19 +73,19 @@ const LogoHub = () => {
       specialSection={{
         title: "Enterprise Brand Management",
         subtitle: "Beyond Storage",
-        description: "Our platform goes beyond simple asset storage to provide comprehensive brand management capabilities.",
+        description: "Our platform goes beyond simple asset storage to provide comprehensive artwork management capabilities.",
         items: [
-          { text: "Digital brand guidelines with asset context and usage instructions", icon: <Briefcase className="h-5 w-5" /> },
-          { text: "Brand usage analytics showing how assets are being utilized", icon: <BarChart2 className="h-5 w-5" /> },
-          { text: "Simplified distribution to external partners and vendors", icon: <Users className="h-5 w-5" /> },
+          { text: "Customer-specific artwork catalogs with usage history", icon: <Briefcase className="h-5 w-5" /> },
+          { text: "Artwork usage analytics showing placement and frequency", icon: <BarChart2 className="h-5 w-5" /> },
+          { text: "Simplified distribution to production teams and departments", icon: <Users className="h-5 w-5" /> },
           { text: "Mobile access with our dedicated app for on-the-go brand management", icon: <Smartphone className="h-5 w-5" /> },
-          { text: "Automated format conversion for different platforms and media", icon: <RefreshCw className="h-5 w-5" /> },
+          { text: "Automated format conversion for different production methods", icon: <RefreshCw className="h-5 w-5" /> },
           { text: "Brand protection with watermarking and usage tracking", icon: <Shield className="h-5 w-5" /> }
         ]
       }}
       ctaSection={{
-        title: "Ready to Transform Your Brand Asset Management?",
-        description: "Join thousands of businesses that manage their brand identity effectively with Logo Hub.",
+        title: "Ready to Transform Your Logo Management?",
+        description: "Join thousands of businesses that manage their customer artwork effectively with Logo Management.",
         primaryButtonText: "Start Free Trial",
         primaryButtonLink: "/get-started",
         secondaryButtonText: "Request Demo",
@@ -93,26 +93,26 @@ const LogoHub = () => {
       }}
       relatedModules={[
         {
-          title: "Document Management",
+          title: "Product Designer",
           icon: <File className="h-8 w-8" />,
-          description: "Extend your asset management to all company documents and files.",
-          link: "/modules/document-management"
+          description: "Use managed logos directly in your product design workflow.",
+          link: "/modules/product-designer"
         },
         {
-          title: "Product Design",
+          title: "Artworkers",
           icon: <Image className="h-8 w-8" />,
-          description: "Seamlessly integrate brand assets into your product design workflow.",
-          link: "/modules/product-design"
+          description: "Assign artwork tasks and manage the artwork approval process.",
+          link: "/modules/artworkers"
         },
         {
-          title: "Project Management",
+          title: "Customer Portal",
           icon: <Folder className="h-8 w-8" />,
-          description: "Incorporate brand assets directly into your project workflows.",
-          link: "/modules/project-management"
+          description: "Let customers access and approve their logos and artwork.",
+          link: "/modules/customer-portal"
         }
       ]}
     />
   );
 };
 
-export default LogoHub;
+export default LogoManagement;

@@ -2,11 +2,11 @@
 import ModuleLayout from "@/components/modules/ModuleLayout";
 import { ShoppingCart, Clock, DollarSign, LineChart, CheckCircle, Table, TruckIcon, BarChart2, MessageSquare, CreditCard, Users, Settings, Globe } from "lucide-react";
 
-const SalesOrderManagement = () => {
+const SalesOrders = () => {
   return (
     <ModuleLayout
-      title="Sales & Order Management"
-      description="Connect teams, close more deals, and simplify your sales process with our comprehensive Orders module."
+      title="Sales & Orders"
+      description="Manage incoming orders, quotes, and job details in one streamlined dashboard, keeping your sales pipeline moving."
       color="blue"
       heroImage="https://nubosync.com/wp-content/uploads/2025/04/Screenshot-2025-04-02-100541.png"
       stats={[
@@ -33,7 +33,7 @@ const SalesOrderManagement = () => {
       ]}
       mainSection={{
         title: "Streamline Your Entire Order Process",
-        description: "From quote to fulfillment, our Sales & Order Management module provides all the tools you need to manage your order process efficiently, reduce errors, and increase customer satisfaction."
+        description: "From quote to fulfillment, our Sales & Orders module provides all the tools you need to manage your order process efficiently, reduce errors, and increase customer satisfaction."
       }}
       keyFeatures={{
         title: "Comprehensive Order Management",
@@ -55,13 +55,13 @@ const SalesOrderManagement = () => {
             icon: <CreditCard className="h-6 w-6" />
           },
           {
-            title: "Intelligent Shipping Management",
-            description: "Manage shipping and delivery with integrated carrier services, automatic rate calculation, and tracking number generation.",
+            title: "Intelligent Job Management",
+            description: "Manage job specs, priority levels, due dates, and production requirements in one central location.",
             icon: <TruckIcon className="h-6 w-6" />
           },
           {
             title: "Automated Customer Communication",
-            description: "Keep customers informed with automated email and SMS notifications for order confirmations, shipments, and delivery updates.",
+            description: "Keep customers informed with automated email and SMS notifications for order confirmations, proofs, and delivery updates.",
             icon: <MessageSquare className="h-6 w-6" />
           },
           {
@@ -74,18 +74,18 @@ const SalesOrderManagement = () => {
       specialSection={{
         title: "Seamless Integration Across Your Business",
         subtitle: "Unified Experience",
-        description: "Our Sales & Order Management module integrates seamlessly with your entire business ecosystem.",
+        description: "Our Sales & Orders module integrates seamlessly with your entire business ecosystem.",
         items: [
-          { text: "Connects with your CRM system to leverage customer data", icon: <Users className="h-5 w-5" /> },
+          { text: "Connects with your Customer Database for complete customer history", icon: <Users className="h-5 w-5" /> },
           { text: "Integrates with inventory for accurate stock availability", icon: <TruckIcon className="h-5 w-5" /> },
           { text: "Links with accounting for streamlined financial tracking", icon: <DollarSign className="h-5 w-5" /> },
-          { text: "Connects with shipping providers for automated fulfillment", icon: <TruckIcon className="h-5 w-5" /> },
+          { text: "Connects with production for automated job creation", icon: <TruckIcon className="h-5 w-5" /> },
           { text: "Syncs with analytics for comprehensive business insights", icon: <BarChart2 className="h-5 w-5" /> }
         ]
       }}
       ctaSection={{
         title: "Ready to Streamline Your Order Management?",
-        description: "Join thousands of businesses that have transformed their order process with NuboSync.",
+        description: "Join thousands of businesses that have transformed their order process with our platform.",
         primaryButtonText: "Get Started Today",
         primaryButtonLink: "/get-started",
         secondaryButtonText: "See Pricing",
@@ -93,26 +93,26 @@ const SalesOrderManagement = () => {
       }}
       relatedModules={[
         {
-          title: "Inventory & Logistics",
+          title: "Inventory",
           icon: <TruckIcon className="h-8 w-8" />,
-          description: "Track inventory and manage logistics operations seamlessly.",
-          link: "/modules/inventory-logistics"
+          description: "Monitor stock levels, track item movement, and get automatic low-stock alerts across locations.",
+          link: "/modules/inventory"
         },
         {
           title: "Customer Portal",
           icon: <MessageSquare className="h-8 w-8" />,
-          description: "Provide your customers with a self-service portal for support and information.",
+          description: "Give customers a branded login to review orders, approve proofs, and track job progress in real-time.",
           link: "/modules/customer-portal"
         },
         {
-          title: "Analytics & Reporting",
+          title: "Production",
           icon: <BarChart2 className="h-8 w-8" />,
-          description: "Get powerful insights from your data, anytime, anywhere.",
-          link: "/modules/analytics-reporting"
+          description: "Schedule, assign, and track every job from setup through final output with visual production queues.",
+          link: "/modules/production"
         }
       ]}
     />
   );
 };
 
-export default SalesOrderManagement;
+export default SalesOrders;
