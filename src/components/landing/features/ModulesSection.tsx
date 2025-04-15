@@ -18,14 +18,14 @@ const ModulesSection = () => {
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
         <ModuleCard
-          icon={<img src="/lovable-uploads/62625f08-6c74-40d2-ad82-d39c8e88166e.png" alt="Sales & Order Management" className="w-10 h-10 rounded-lg" />}
+          icon={<img src="/lovable-uploads/ff724d99-20cb-4926-8ea8-b88f5f69ef43.png" alt="Sales & Order Management" className="w-10 h-10 rounded-lg" />}
           title="Sales & Order Management"
           description="Manage quotes, track sales, email orders directly from your dashboard."
           link="/modules/sales-order-management"
           delay={0.1}
         />
         <ModuleCard
-          icon={<img src="/lovable-uploads/369d3355-34ed-4efa-a369-eadbdacb23d9.png" alt="Customer Service" className="w-10 h-10 rounded-lg" />}
+          icon={<img src="/lovable-uploads/62625f08-6c74-40d2-ad82-d39c8e88166e.png" alt="Finance & Accounting" className="w-10 h-10 rounded-lg" />}
           title="Finance & Accounting"
           description="Manage financial data and reporting for better decision making."
           link="/modules/finance-accounting"
