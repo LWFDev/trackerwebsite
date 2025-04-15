@@ -28,7 +28,7 @@ export const moduleCategories = [
         title: "Sales & Orders",
         description: "Manage incoming orders, quotes, and job details in one streamlined dashboard, keeping your sales pipeline moving.",
         icon: <ShoppingCart className="h-8 w-8 text-[#D4AF37]" />,
-        link: "/modules/sales-order-management",
+        link: "/modules/sales-orders",
         color: "bg-blue-500/20",
         category: "Sales"
       },
@@ -36,7 +36,7 @@ export const moduleCategories = [
         title: "Warehouse",
         description: "Track item locations, transfers, and storage with real-time warehouse visibility and control.",
         icon: <Package className="h-8 w-8 text-[#D4AF37]" />,
-        link: "/modules/inventory-logistics",
+        link: "/modules/warehouse",
         color: "bg-indigo-500/20",
         category: "Warehouse"
       },
@@ -44,7 +44,7 @@ export const moduleCategories = [
         title: "Inventory",
         description: "Monitor stock levels, track item movement, and get automatic low-stock alerts across locations.",
         icon: <Package className="h-8 w-8 text-[#D4AF37]" />,
-        link: "/modules/inventory-logistics",
+        link: "/modules/inventory",
         color: "bg-cyan-500/20",
         category: "Inventory"
       },
@@ -52,7 +52,7 @@ export const moduleCategories = [
         title: "Production",
         description: "Schedule, assign, and track every job from setup through final output with visual production queues.",
         icon: <Layers className="h-8 w-8 text-[#D4AF37]" />,
-        link: "/modules/production-manufacturing",
+        link: "/modules/production",
         color: "bg-purple-500/20",
         category: "Production"
       }
@@ -65,7 +65,7 @@ export const moduleCategories = [
         title: "Customer Database",
         description: "Store all customer details, communication logs, and order history in one centralized, searchable profile.",
         icon: <Users className="h-8 w-8 text-[#D4AF37]" />,
-        link: "/modules/customer-service",
+        link: "/modules/customer-database",
         color: "bg-teal-500/20",
         category: "Support"
       },
@@ -86,7 +86,7 @@ export const moduleCategories = [
         title: "Product Designer",
         description: "Allow users to customize garments visually with drag-and-drop logos, text, and artwork placements.",
         icon: <Paintbrush className="h-8 w-8 text-[#D4AF37]" />,
-        link: "/modules/product-design",
+        link: "/modules/product-designer",
         color: "bg-emerald-500/20",
         category: "Design"
       },
@@ -94,7 +94,7 @@ export const moduleCategories = [
         title: "Logos",
         description: "Upload, categorize, and manage customer logos and artwork files with built-in version tracking.",
         icon: <Image className="h-8 w-8 text-[#D4AF37]" />,
-        link: "/modules/logo-hub",
+        link: "/modules/logos",
         color: "bg-emerald-500/20",
         category: "Design"
       },
@@ -102,7 +102,7 @@ export const moduleCategories = [
         title: "Artworkers",
         description: "Assign artwork tasks, manage approvals, and ensure timely proof delivery for every order.",
         icon: <Paintbrush className="h-8 w-8 text-[#D4AF37]" />,
-        link: "/modules/product-design",
+        link: "/modules/artworkers",
         color: "bg-emerald-500/20",
         category: "Design"
       }
@@ -115,7 +115,7 @@ export const moduleCategories = [
         title: "Base Garments",
         description: "Set up your core product catalog, including styles, sizes, colors, and default pricing.",
         icon: <Shirt className="h-8 w-8 text-[#D4AF37]" />,
-        link: "/modules/production-manufacturing",
+        link: "/modules/base-garments",
         color: "bg-amber-500/20",
         category: "Products"
       },
@@ -123,7 +123,7 @@ export const moduleCategories = [
         title: "Suppliers",
         description: "Maintain supplier contacts, price lists, and product availability to streamline purchasing decisions.",
         icon: <Building className="h-8 w-8 text-[#D4AF37]" />,
-        link: "/modules/finance-accounting",
+        link: "/modules/suppliers",
         color: "bg-amber-500/20",
         category: "Suppliers"
       },
@@ -131,7 +131,7 @@ export const moduleCategories = [
         title: "Purchase Orders",
         description: "Create, send, and track POs with direct links to incoming inventory and supplier fulfillment.",
         icon: <FileSpreadsheet className="h-8 w-8 text-[#D4AF37]" />,
-        link: "/modules/finance-accounting",
+        link: "/modules/purchase-orders",
         color: "bg-rose-500/20",
         category: "Purchasing"
       }

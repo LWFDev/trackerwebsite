@@ -1,25 +1,24 @@
-
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
+import { BrowserRouter, Routes, Route, useLocation, Navigate } from "react-router-dom";
 import { useEffect } from "react";
 import Header from "./components/landing/Header";
 import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
 import ModuleIndex from "./pages/modules/ModuleIndex";
-import SalesOrderManagement from "./pages/modules/SalesOrderManagement";
-import FinanceAccounting from "./pages/modules/FinanceAccounting";
-import ProductDesign from "./pages/modules/ProductDesign";
-import CustomerService from "./pages/modules/CustomerService";
-import InventoryLogistics from "./pages/modules/InventoryLogistics";
-import ProductionManufacturing from "./pages/modules/ProductionManufacturing";
-import AnalyticsReporting from "./pages/modules/AnalyticsReporting";
-import IntegrationPlatform from "./pages/modules/IntegrationPlatform";
-import LogoHub from "./pages/modules/LogoHub";
-import DocumentManagement from "./pages/modules/DocumentManagement";
-import ProjectManagement from "./pages/modules/ProjectManagement";
+import SalesOrders from "./pages/modules/SalesOrders";
+import Warehouse from "./pages/modules/Warehouse";
+import CustomerDatabase from "./pages/modules/CustomerDatabase";
+import BaseGarments from "./pages/modules/BaseGarments";
+import Logos from "./pages/modules/Logos";
+import ProductDesigner from "./pages/modules/ProductDesigner";
+import Inventory from "./pages/modules/Inventory";
+import Production from "./pages/modules/Production";
+import Suppliers from "./pages/modules/Suppliers";
+import PurchaseOrders from "./pages/modules/PurchaseOrders";
+import Artworkers from "./pages/modules/Artworkers";
 import CustomerPortal from "./pages/modules/CustomerPortal";
 import Footer from "./components/landing/Footer";
 import GetStarted from "./pages/GetStarted";
@@ -54,7 +53,6 @@ const App = () => (
         <div className="flex flex-col min-h-screen">
           <ScrollToTop />
           <Routes>
-            {/* Routes with header and footer */}
             <Route path="/" element={
               <>
                 <Header />
@@ -69,80 +67,81 @@ const App = () => (
                 <Footer />
               </>
             } />
-            <Route path="/modules/sales-order-management" element={
+            
+            <Route path="/modules/sales-orders" element={
               <>
                 <Header />
-                <SalesOrderManagement />
+                <SalesOrders />
                 <Footer />
               </>
             } />
-            <Route path="/modules/finance-accounting" element={
+            <Route path="/modules/warehouse" element={
               <>
                 <Header />
-                <FinanceAccounting />
+                <Warehouse />
                 <Footer />
               </>
             } />
-            <Route path="/modules/product-design" element={
+            <Route path="/modules/customer-database" element={
               <>
                 <Header />
-                <ProductDesign />
+                <CustomerDatabase />
                 <Footer />
               </>
             } />
-            <Route path="/modules/customer-service" element={
+            <Route path="/modules/base-garments" element={
               <>
                 <Header />
-                <CustomerService />
+                <BaseGarments />
                 <Footer />
               </>
             } />
-            <Route path="/modules/inventory-logistics" element={
+            <Route path="/modules/logos" element={
               <>
                 <Header />
-                <InventoryLogistics />
+                <Logos />
                 <Footer />
               </>
             } />
-            <Route path="/modules/production-manufacturing" element={
+            <Route path="/modules/product-designer" element={
               <>
                 <Header />
-                <ProductionManufacturing />
+                <ProductDesigner />
                 <Footer />
               </>
             } />
-            <Route path="/modules/analytics-reporting" element={
+            <Route path="/modules/inventory" element={
               <>
                 <Header />
-                <AnalyticsReporting />
+                <Inventory />
                 <Footer />
               </>
             } />
-            <Route path="/modules/integration-platform" element={
+            <Route path="/modules/production" element={
               <>
                 <Header />
-                <IntegrationPlatform />
+                <Production />
                 <Footer />
               </>
             } />
-            <Route path="/modules/logo-hub" element={
+            <Route path="/modules/suppliers" element={
               <>
                 <Header />
-                <LogoHub />
+                <Suppliers />
                 <Footer />
               </>
             } />
-            <Route path="/modules/document-management" element={
+            <Route path="/modules/purchase-orders" element={
               <>
                 <Header />
-                <DocumentManagement />
+                <PurchaseOrders />
                 <Footer />
               </>
             } />
-            <Route path="/modules/project-management" element={
+            <Route path="/modules/artworkers" element={
               <>
                 <Header />
-                <ProjectManagement />
+                <Artworkers />
                 <Footer />
               </>
             } />
@@ -153,6 +152,15 @@ const App = () => (
                 <Footer />
               </>
             } />
+            
+            <Route path="/modules/sales-order-management" element={<Navigate to="/modules/sales-orders" replace />} />
+            <Route path="/modules/finance-accounting" element={<Navigate to="/modules/purchase-orders" replace />} />
+            <Route path="/modules/product-design" element={<Navigate to="/modules/product-designer" replace />} />
+            <Route path="/modules/customer-service" element={<Navigate to="/modules/customer-database" replace />} />
+            <Route path="/modules/inventory-logistics" element={<Navigate to="/modules/inventory" replace />} />
+            <Route path="/modules/production-manufacturing" element={<Navigate to="/modules/production" replace />} />
+            <Route path="/modules/logo-hub" element={<Navigate to="/modules/logos" replace />} />
+            
             <Route path="/pricing" element={
               <>
                 <Header />
@@ -196,7 +204,6 @@ const App = () => (
               </>
             } />
             
-            {/* Routes without header and footer */}
             <Route path="/login" element={<Login />} />
             
             <Route path="*" element={

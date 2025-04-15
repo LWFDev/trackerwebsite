@@ -5,8 +5,8 @@ import { UserCheck, CheckCircle, Clock, File, Shield, MessageSquare, FileText, L
 const CustomerPortal = () => {
   return (
     <ModuleLayout
-      title="Client Portal"
-      description="Provide your clients with a secure, branded portal where they can access documents, make payments, and communicate with your team seamlessly."
+      title="Customer Portal"
+      description="Give customers a branded login to review orders, approve proofs, and track job progress in real-time."
       color="green"
       stats={[
         {
@@ -32,7 +32,7 @@ const CustomerPortal = () => {
       ]}
       mainSection={{
         title: "Transform Your Client Experience",
-        description: "Our Client Portal creates a seamless digital experience that enables your clients to interact with your business on their terms, increasing satisfaction and loyalty while reducing support costs."
+        description: "Our Customer Portal creates a seamless digital experience that enables your clients to interact with your business on their terms, increasing satisfaction and loyalty while reducing support costs."
       }}
       keyFeatures={{
         title: "Comprehensive Client Engagement",
@@ -73,7 +73,7 @@ const CustomerPortal = () => {
       specialSection={{
         title: "Enterprise-Grade Security",
         subtitle: "Built for Trust",
-        description: "Our Client Portal is designed with the highest security standards to protect your sensitive client information.",
+        description: "Our Customer Portal is designed with the highest security standards to protect your sensitive client information.",
         items: [
           { text: "End-to-end encryption for all data and communications", icon: <LockIcon className="h-5 w-5" /> },
           { text: "Multi-factor authentication with customizable security policies", icon: <Shield className="h-5 w-5" /> },
@@ -93,22 +93,22 @@ const CustomerPortal = () => {
       }}
       relatedModules={[
         {
-          title: "Document Management",
+          title: "Customer Database",
           icon: <FileText className="h-8 w-8" />,
-          description: "Integrate portal document sharing with your internal document management system.",
-          link: "/modules/document-management"
+          description: "Store all customer details, communication logs, and order history in one centralized, searchable profile.",
+          link: "/modules/customer-database"
         },
         {
-          title: "Project Management",
+          title: "Sales & Orders",
           icon: <Calendar className="h-8 w-8" />,
-          description: "Connect client portal updates directly to your project management workflow.",
-          link: "/modules/project-management"
+          description: "Manage incoming orders, quotes, and job details in one streamlined dashboard.",
+          link: "/modules/sales-orders"
         },
         {
-          title: "Finance & Accounting",
+          title: "Artworkers",
           icon: <CreditCard className="h-8 w-8" />,
-          description: "Streamline client payments with integrated invoicing and financial tracking.",
-          link: "/modules/finance-accounting"
+          description: "Assign artwork tasks, manage approvals, and ensure timely proof delivery for every order.",
+          link: "/modules/artworkers"
         }
       ]}
     />
