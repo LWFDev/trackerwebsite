@@ -9,14 +9,16 @@ import AboutUs from "@/pages/AboutUs";
 import Blog from "@/pages/Blog";
 import BlogPost from "@/pages/BlogPost";
 
-export const MainRoutes = () => (
-  <>
-    <Route path="/" element={<Layout><Index /></Layout>} />
-    <Route path="/pricing" element={<Layout><Pricing /></Layout>} />
-    <Route path="/contact" element={<Layout><Contact /></Layout>} />
-    <Route path="/about" element={<Layout><AboutUs /></Layout>} />
-    <Route path="/blog" element={<Layout><Blog /></Layout>} />
-    <Route path="/blog/:slug" element={<Layout><BlogPost /></Layout>} />
-    <Route path="/get-started" element={<Layout><GetStarted /></Layout>} />
-  </>
-);
+export const MainRoutes = () => {
+  return (
+    <>
+      <Route path="/" element={<Layout><Index /></Layout>} />
+      <Route path="/pricing" element={<Layout><Pricing /></Layout>} />
+      <Route path="/contact" element={<Layout><Contact /></Layout>} />
+      <Route path="/about" element={<Layout><AboutUs /></Layout>} />
+      <Route path="/blog" element={<Layout><Blog /></Layout>} />
+      <Route path="/blog/:slug" element={<Layout><BlogPost /></Layout>} />
+      <Route path="/get-started" element={<Layout><GetStarted /></Layout>} />
+    </>
+  );
+};
