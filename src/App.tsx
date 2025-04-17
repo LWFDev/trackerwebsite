@@ -21,15 +21,9 @@ const App = () => {
         <BrowserRouter>
           <PageTransition>
             <Routes>
-              <Route>
-                <MainRoutes />
-              </Route>
-              <Route>
-                <ModuleRoutes />
-              </Route>
-              <Route>
-                <AuthRoutes />
-              </Route>
+              <MainRoutes />
+              <ModuleRoutes />
+              <AuthRoutes />
               
               <Route path="*" element={<Layout><NotFound /></Layout>} />
             </Routes>
