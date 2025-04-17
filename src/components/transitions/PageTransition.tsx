@@ -1,54 +1,76 @@
 
-import { useEffect, useState } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { useLocation } from 'react-router-dom';
 
-interface Props {
+interface PageTransitionProps {
   children: React.ReactNode;
 }
 
-const PageTransition = ({ children }: Props) => {
-  const [isTransitioning, setIsTransitioning] = useState(false);
-  const [displayChildren, setDisplayChildren] = useState<React.ReactNode>(children);
-  const [shouldRenderNewContent, setShouldRenderNewContent] = useState(false);
+const PageTransition = ({ children }: PageTransitionProps) => {
   const location = useLocation();
-
-  useEffect(() => {
-    // Start transition - fade to black
-    setIsTransitioning(true);
-    
-    // Wait for the fade-out to complete before swapping content
-    const fadeOutTimeout = setTimeout(() => {
-      // Once faded out, we can update the content
-      setShouldRenderNewContent(true);
-      
-      // After content is updated, allow time for content to load and render
-      const contentLoadTimeout = setTimeout(() => {
-        // Now fade back in 
-        setIsTransitioning(false);
-        window.scrollTo(0, 0);
-      }, 300); // Give time for content to render
-      
-      return () => clearTimeout(contentLoadTimeout);
-    }, 300); // Wait until fully faded out
-
-    return () => clearTimeout(fadeOutTimeout);
-  }, [location.pathname]);
+  const [displayedChildren, setDisplayedChildren] = useState(children);
+  const [transitioning, setTransitioning] = useState(false);
+  const [transitionPhase, setTransitionPhase] = useState<'idle' | 'fadeOut' | 'loading' | 'fadeIn'>('idle');
+  const pendingChildrenRef = useRef<React.ReactNode>(null);
   
-  // Only update displayed children when we should render new content
+  // This effect handles the page transition sequence
   useEffect(() => {
-    if (shouldRenderNewContent) {
-      setDisplayChildren(children);
-      setShouldRenderNewContent(false);
+    // Store the new children in the ref but don't update the state yet
+    pendingChildrenRef.current = children;
+    
+    // Only trigger transition if we have new content to show
+    if (!transitioning) {
+      // Start transition sequence
+      setTransitioning(true);
+      setTransitionPhase('fadeOut');
+      
+      // Phase 1: Fade out current content
+      const fadeOutTimer = setTimeout(() => {
+        // Phase 2: Load new content
+        setTransitionPhase('loading');
+        setDisplayedChildren(pendingChildrenRef.current);
+        
+        // Phase 3: Fade in new content after a short delay to ensure DOM updates
+        const loadingTimer = setTimeout(() => {
+          window.scrollTo(0, 0);
+          setTransitionPhase('fadeIn');
+          
+          // Phase 4: Return to idle state after fade in completes
+          const fadeInTimer = setTimeout(() => {
+            setTransitionPhase('idle');
+            setTransitioning(false);
+          }, 400);
+          
+          return () => clearTimeout(fadeInTimer);
+        }, 250); 
+        
+        return () => clearTimeout(loadingTimer);
+      }, 400);
+      
+      return () => clearTimeout(fadeOutTimer);
     }
-  }, [shouldRenderNewContent, children]);
-
+  }, [location.pathname, children, transitioning]);
+  
+  // Compute the CSS classes based on the current transition phase
+  const getTransitionClasses = () => {
+    switch (transitionPhase) {
+      case 'fadeOut':
+        return 'opacity-0';
+      case 'loading':
+        return 'opacity-0';
+      case 'fadeIn':
+        return 'opacity-100';
+      case 'idle':
+      default:
+        return 'opacity-100';
+    }
+  };
+  
   return (
-    <div
-      className={`min-h-screen transition-all duration-300 ease-in-out ${
-        isTransitioning ? 'opacity-0 bg-black' : 'opacity-100'
-      }`}
+    <div 
+      className={`min-h-screen transition-opacity duration-400 ease-in-out bg-black ${getTransitionClasses()}`}
     >
-      {displayChildren}
+      {displayedChildren}
     </div>
   );
 };
