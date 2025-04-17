@@ -1,10 +1,8 @@
-
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route, Navigate, useLocation } from "react-router-dom";
-import { useEffect } from "react";
 import PageTransition from "./components/transitions/PageTransition";
 import Header from "./components/landing/Header";
 import Footer from "./components/landing/Footer";
@@ -31,19 +29,6 @@ import Blog from "./pages/Blog";
 import BlogPost from "./pages/BlogPost";
 import Login from "./pages/Login";
 
-const ScrollToTop = () => {
-  const { pathname } = useLocation();
-  
-  useEffect(() => {
-    window.scrollTo({
-      top: 0,
-      behavior: 'smooth'
-    });
-  }, [pathname]);
-  
-  return null;
-};
-
 const queryClient = new QueryClient();
 
 const App = () => (
@@ -54,7 +39,6 @@ const App = () => (
       <BrowserRouter>
         <PageTransition>
           <div className="flex flex-col min-h-screen">
-            <ScrollToTop />
             <Routes>
               <Route path="/" element={
                 <>

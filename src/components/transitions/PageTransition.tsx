@@ -9,32 +9,42 @@ interface Props {
 const PageTransition = ({ children }: Props) => {
   const [isTransitioning, setIsTransitioning] = useState(false);
   const [displayChildren, setDisplayChildren] = useState<React.ReactNode>(children);
+  const [shouldRenderNewContent, setShouldRenderNewContent] = useState(false);
   const location = useLocation();
 
   useEffect(() => {
     // Start transition - fade to black
     setIsTransitioning(true);
-
-    // Wait for fade out to complete before updating children
+    
+    // Wait for the fade-out to complete before swapping content
     const fadeOutTimeout = setTimeout(() => {
-      // Now that screen is black, update children
-      setDisplayChildren(children);
+      // Once faded out, we can update the content
+      setShouldRenderNewContent(true);
       
-      // Wait for content to load, then fade back in
-      const fadeInTimeout = setTimeout(() => {
-        window.scrollTo({ top: 0, behavior: 'smooth' });
+      // After content is updated, allow time for content to load and render
+      const contentLoadTimeout = setTimeout(() => {
+        // Now fade back in 
         setIsTransitioning(false);
-      }, 800); // Longer delay before fade in to ensure content is loaded
+        window.scrollTo(0, 0);
+      }, 300); // Give time for content to render
       
-      return () => clearTimeout(fadeInTimeout);
-    }, 600); // Ensure fade-out is complete before loading new content (slightly longer than transition-duration)
+      return () => clearTimeout(contentLoadTimeout);
+    }, 300); // Wait until fully faded out
 
     return () => clearTimeout(fadeOutTimeout);
-  }, [location.pathname, children]);
+  }, [location.pathname]);
+  
+  // Only update displayed children when we should render new content
+  useEffect(() => {
+    if (shouldRenderNewContent) {
+      setDisplayChildren(children);
+      setShouldRenderNewContent(false);
+    }
+  }, [shouldRenderNewContent, children]);
 
   return (
     <div
-      className={`min-h-screen transition-opacity duration-600 ease-in-out ${
+      className={`min-h-screen transition-all duration-300 ease-in-out ${
         isTransitioning ? 'opacity-0 bg-black' : 'opacity-100'
       }`}
     >
