@@ -8,31 +8,37 @@ interface Props {
 
 const PageTransition = ({ children }: Props) => {
   const [isTransitioning, setIsTransitioning] = useState(false);
+  const [displayChildren, setDisplayChildren] = useState<React.ReactNode>(children);
   const location = useLocation();
 
   useEffect(() => {
-    // Start transition when location changes
+    // Start transition - fade to black
     setIsTransitioning(true);
 
-    // Allow more time for content to load before starting to fade back in
-    const timeout = setTimeout(() => {
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-      // Delay the fade-in to ensure content has loaded
-      setTimeout(() => {
+    // Wait for fade out to complete before updating children
+    const fadeOutTimeout = setTimeout(() => {
+      // Update children only after the screen is black
+      setDisplayChildren(children);
+      
+      // Wait a bit longer before starting the fade in
+      const fadeInTimeout = setTimeout(() => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
         setIsTransitioning(false);
-      }, 300); // Additional delay before starting to fade in
-    }, 600); // Longer initial transition time (was 300ms)
+      }, 600); // Longer delay before fade in
+      
+      return () => clearTimeout(fadeInTimeout);
+    }, 500); // Wait for fade-out to complete (matches duration-500)
 
-    return () => clearTimeout(timeout);
-  }, [location.pathname]);
+    return () => clearTimeout(fadeOutTimeout);
+  }, [location.pathname, children]);
 
   return (
     <div
       className={`min-h-screen transition-opacity duration-500 ease-in-out ${
-        isTransitioning ? 'opacity-0' : 'opacity-100'
+        isTransitioning ? 'opacity-0 bg-black' : 'opacity-100'
       }`}
     >
-      {children}
+      {displayChildren}
     </div>
   );
 };
