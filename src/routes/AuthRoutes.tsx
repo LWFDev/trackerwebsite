@@ -1,9 +1,3 @@
 
-import { Route } from "react-router-dom";
-import Login from "@/pages/Login";
-
-export const AuthRoutes = () => (
-  <>
-    <Route path="/login" element={<Login />} />
-  </>
-);
+// This file is kept for backward compatibility but routes are now defined in App.tsx
+export const AuthRoutes = () => null;
