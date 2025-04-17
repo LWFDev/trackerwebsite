@@ -19,7 +19,6 @@ const PageTransition = ({ children }: PageTransitionProps) => {
       setTimeout(() => {
         setDisplayLocation(location);
         setIsExiting(false);
-        window.scrollTo(0, 0);
       }, 300); // Match the exit animation duration
     }
   }, [location, displayLocation]);
@@ -54,4 +53,3 @@ const PageTransition = ({ children }: PageTransitionProps) => {
 };
 
 export default PageTransition;
-
