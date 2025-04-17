@@ -10,32 +10,48 @@ interface PageTransitionProps {
 const PageTransition = ({ children }: PageTransitionProps) => {
   const location = useLocation();
   const [displayLocation, setDisplayLocation] = useState(location);
+  const [isExiting, setIsExiting] = useState(false);
   
   useEffect(() => {
     if (location !== displayLocation) {
-      setDisplayLocation(location);
-      // Scroll to top on route change
-      window.scrollTo(0, 0);
+      setIsExiting(true);
+      // Wait for exit animation to complete before updating location
+      setTimeout(() => {
+        setDisplayLocation(location);
+        setIsExiting(false);
+        window.scrollTo(0, 0);
+      }, 300); // Match the exit animation duration
     }
   }, [location, displayLocation]);
 
   return (
     <AnimatePresence mode="wait">
       <motion.div
-        key={location.pathname}
+        key={displayLocation.pathname}
         initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        exit={{ opacity: 0 }}
-        transition={{ 
-          duration: 0.3, 
-          ease: "easeInOut" 
+        animate={{ 
+          opacity: 1,
+          transition: {
+            duration: 0.3,
+            ease: "easeInOut",
+            when: "beforeChildren" // Ensures parent fades in before children
+          }
+        }}
+        exit={{ 
+          opacity: 0,
+          transition: {
+            duration: 0.3,
+            ease: "easeInOut",
+            when: "afterChildren" // Ensures children fade out before parent
+          }
         }}
         className="min-h-screen"
       >
-        {children}
+        {!isExiting && children}
       </motion.div>
     </AnimatePresence>
   );
 };
 
 export default PageTransition;
+
