@@ -8,9 +8,8 @@ import PageTransition from "./components/transitions/PageTransition";
 import { MainRoutes } from "./routes/MainRoutes";
 import { ModuleRoutes } from "./routes/ModuleRoutes";
 import { AuthRoutes } from "./routes/AuthRoutes";
-import Header from "./components/landing/Header";
+import Layout from "./components/layout/Layout";
 import NotFound from "./pages/NotFound";
-import Footer from "./components/landing/Footer";
 
 const queryClient = new QueryClient();
 
@@ -27,13 +26,7 @@ const App = () => (
               <ModuleRoutes />
               <AuthRoutes />
               
-              <Route path="*" element={
-                <>
-                  <Header />
-                  <NotFound />
-                  <Footer />
-                </>
-              } />
+              <Route path="*" element={<Layout><NotFound /></Layout>} />
             </Routes>
           </div>
         </PageTransition>
