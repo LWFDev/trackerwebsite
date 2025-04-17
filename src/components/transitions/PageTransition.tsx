@@ -17,24 +17,24 @@ const PageTransition = ({ children }: Props) => {
 
     // Wait for fade out to complete before updating children
     const fadeOutTimeout = setTimeout(() => {
-      // Update children only after the screen is black
+      // Now that screen is black, update children
       setDisplayChildren(children);
       
-      // Wait a bit longer before starting the fade in
+      // Wait for content to load, then fade back in
       const fadeInTimeout = setTimeout(() => {
         window.scrollTo({ top: 0, behavior: 'smooth' });
         setIsTransitioning(false);
-      }, 600); // Longer delay before fade in
+      }, 800); // Longer delay before fade in to ensure content is loaded
       
       return () => clearTimeout(fadeInTimeout);
-    }, 500); // Wait for fade-out to complete (matches duration-500)
+    }, 600); // Ensure fade-out is complete before loading new content (slightly longer than transition-duration)
 
     return () => clearTimeout(fadeOutTimeout);
   }, [location.pathname, children]);
 
   return (
     <div
-      className={`min-h-screen transition-opacity duration-500 ease-in-out ${
+      className={`min-h-screen transition-opacity duration-600 ease-in-out ${
         isTransitioning ? 'opacity-0 bg-black' : 'opacity-100'
       }`}
     >
