@@ -1,6 +1,5 @@
 
 import React from "react";
-import { TrendingUp, Users, Paintbrush } from "lucide-react";
 import { ModulesData } from "./types";
 
 const modules: ModulesData = {
@@ -34,19 +33,19 @@ const modules: ModulesData = {
     {
       title: "Business Operations",
       description: "Modules for managing your core business operations",
-      icon: <TrendingUp className="text-gold-DEFAULT h-8 w-8" />,
+      icon: <img src="/lovable-uploads/1.webp" alt="Business Operations" className="h-8 w-8" />,
       learnMoreLink: "#business-operations"
     },
     {
       title: "Customer Management",
       description: "Tools for managing customer relationships and service",
-      icon: <Users className="text-gold-DEFAULT h-8 w-8" />,
+      icon: <img src="/lovable-uploads/3.webp" alt="Customer Management" className="h-8 w-8" />,
       learnMoreLink: "#customer-management"
     },
     {
       title: "Production & Design",
       description: "Solutions for product design and manufacturing",
-      icon: <Paintbrush className="text-gold-DEFAULT h-8 w-8" />,
+      icon: <img src="/lovable-uploads/9.webp" alt="Production & Design" className="h-8 w-8" />,
       learnMoreLink: "#production-design"
     }
   ],
