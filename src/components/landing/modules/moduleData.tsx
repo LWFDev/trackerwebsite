@@ -34,19 +34,19 @@ const modules: ModulesData = {
     {
       title: "Business Operations",
       description: "Modules for managing your core business operations",
-      icon: <TrendingUp className="text-gold-DEFAULT" />,
+      icon: <TrendingUp className="text-gold-DEFAULT h-8 w-8" />,
       learnMoreLink: "#business-operations"
     },
     {
       title: "Customer Management",
       description: "Tools for managing customer relationships and service",
-      icon: <Users className="text-gold-DEFAULT" />,
+      icon: <Users className="text-gold-DEFAULT h-8 w-8" />,
       learnMoreLink: "#customer-management"
     },
     {
       title: "Production & Design",
       description: "Solutions for product design and manufacturing",
-      icon: <Paintbrush className="text-gold-DEFAULT" />,
+      icon: <Paintbrush className="text-gold-DEFAULT h-8 w-8" />,
       learnMoreLink: "#production-design"
     }
   ],
