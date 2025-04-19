@@ -1,7 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
-
 const Hero = () => {
   return <section className="relative pt-24 pb-16 text-white overflow-hidden">
       <div className="container mx-auto px-4 relative z-10">
@@ -9,7 +8,7 @@ const Hero = () => {
           <div className="md:w-1/2 md:pr-8 mb-10 md:mb-0">
             <div className="inline-block px-4 py-1.5 bg-zinc-900/80 backdrop-blur-sm rounded-full border border-zinc-800 mb-6">
               <div className="text-sm text-[#D4AF37] uppercase font-medium tracking-wider flex items-center">
-                <span className="bg-[#D4AF37] w-2 h-2 rounded-full mr-2"></span>
+                
                 AUTOMATE. ORGANIZE. SIMPLIFY.
               </div>
             </div>
