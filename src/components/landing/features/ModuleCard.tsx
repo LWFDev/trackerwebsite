@@ -22,7 +22,7 @@ const ModuleCard = ({ icon, title, description, link, delay = 0 }: ModuleCardPro
           
           {/* Content */}
           <div className="relative z-10">
-            <div className="mb-5 p-3 bg-zinc-800 w-12 h-12 rounded-lg border border-zinc-700 flex items-center justify-center group-hover:bg-[#D4AF37]/10 group-hover:border-[#D4AF37]/30 transition-all duration-300">
+            <div className="mb-5 w-10 h-10 flex items-center justify-center text-[#D4AF37] transition-transform duration-300 group-hover:scale-110">
               {icon}
             </div>
             
