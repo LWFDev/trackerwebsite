@@ -1,10 +1,11 @@
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import PricingCard from "./PricingCard";
 import { ScrollReveal } from "@/components/ui/scroll-reveal";
 import { Switch } from "@/components/ui/switch";
-import { Check } from "lucide-react";
+import { Check, Sparkles } from "lucide-react";
 import { toast } from "@/components/ui/use-toast";
+import { motion } from "framer-motion";
 
 interface PricingPlan {
   name: string;
@@ -20,6 +21,17 @@ interface PricingPlan {
 
 const PricingPlans = () => {
   const [billingCycle, setBillingCycle] = useState<'monthly' | 'annually'>('annually');
+  const [animateSwitch, setAnimateSwitch] = useState(false);
+  
+  // Add pulse animation effect to pricing toggle periodically
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setAnimateSwitch(true);
+      setTimeout(() => setAnimateSwitch(false), 1000);
+    }, 8000);
+    
+    return () => clearInterval(interval);
+  }, []);
   
   const toggleBillingCycle = () => {
     const newCycle = billingCycle === 'annually' ? 'monthly' : 'annually';
@@ -63,40 +75,85 @@ const PricingPlans = () => {
     highlighted: false
   }];
 
+  // Staggered animation for cards
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.2
+      }
+    }
+  };
+  
+  const cardVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: { 
+      opacity: 1, 
+      y: 0,
+      transition: {
+        type: "spring",
+        stiffness: 300,
+        damping: 20
+      }
+    }
+  };
+
   return (
     <div className="py-16 bg-black relative z-10">
-      <div className="container mx-auto px-4">
+      {/* Dynamic background elements */}
+      <div className="absolute top-0 left-0 w-full h-full overflow-hidden">
+        <div className="absolute w-[600px] h-[600px] rounded-full bg-[#D4AF37]/5 blur-[150px] -top-[200px] right-0 animate-pulse-light"></div>
+        <div className="absolute w-[800px] h-[800px] rounded-full bg-[#D4AF37]/5 blur-[150px] -bottom-[300px] left-0 animate-pulse-light" style={{ animationDelay: '1s' }}></div>
+      </div>
+      
+      <div className="container mx-auto px-4 relative z-10">
         <ScrollReveal className="text-center mb-12" threshold={0.1} delay={100}>
-          <div className="flex items-center justify-center gap-4 mb-8">
+          <div className={`flex items-center justify-center gap-4 mb-8 ${animateSwitch ? 'animate-bounce-light' : ''}`}>
             <span className={`text-sm ${billingCycle === 'monthly' ? 'text-white' : 'text-gray-400'}`}>Monthly</span>
             <Switch 
               checked={billingCycle === 'annually'} 
               onCheckedChange={toggleBillingCycle}
-              className="data-[state=checked]:bg-[#D4AF37]"
-            />
+              className="data-[state=checked]:bg-[#D4AF37] relative"
+            >
+              {animateSwitch && (
+                <span className="absolute -top-1 -right-1 flex h-3 w-3">
+                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#D4AF37] opacity-75"></span>
+                  <span className="relative inline-flex rounded-full h-3 w-3 bg-[#D4AF37]"></span>
+                </span>
+              )}
+            </Switch>
             <div className="flex flex-col items-start">
               <span className={`text-sm ${billingCycle === 'annually' ? 'text-white' : 'text-gray-400'}`}>
                 Annually
               </span>
               {billingCycle === 'annually' && (
-                <span className="text-xs text-[#D4AF37]">Save 20%</span>
+                <span className="text-xs text-[#D4AF37] flex items-center gap-1">
+                  <Sparkles className="h-3 w-3" /> Save 20%
+                </span>
               )}
             </div>
           </div>
         </ScrollReveal>
         
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+        <motion.div 
+          className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto"
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.2 }}
+        >
           {pricingPlans.map((plan, index) => (
-            <ScrollReveal key={index} threshold={0.1} delay={100 + index * 100}>
+            <motion.div key={index} variants={cardVariants}>
               <PricingCard 
                 plan={{
                   ...plan, 
                   price: plan.price[billingCycle]
                 }} 
               />
-            </ScrollReveal>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
         
         <ScrollReveal className="text-center text-gray-400 mt-8 text-sm max-w-2xl mx-auto" threshold={0.1} delay={400}>
           <div className="flex items-center justify-center gap-2 mt-8">
