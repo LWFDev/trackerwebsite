@@ -1,6 +1,7 @@
 
 import React, { useEffect, useRef, useState } from 'react';
 import { Truck } from 'lucide-react';
+import { useIsMobile } from '@/hooks/use-mobile';
 
 interface AnimatedTruckDividerProps {
   className?: string;
@@ -10,6 +11,7 @@ const AnimatedTruckDivider = ({ className = "" }: AnimatedTruckDividerProps) => 
   const [trucks, setTrucks] = useState<number[]>([0]);
   const truckContainerRef = useRef<HTMLDivElement>(null);
   const animationRefs = useRef<Animation[]>([]);
+  const isMobile = useIsMobile();
 
   useEffect(() => {
     const animateTrucks = () => {
@@ -32,8 +34,9 @@ const AnimatedTruckDivider = ({ className = "" }: AnimatedTruckDividerProps) => 
         const startDelay = index * minDelay + randomAdditionalDelay;
         
         // Vary the starting positions and timing for a more natural look
-        const startPosition = -50 - (Math.random() * 100);
-        const duration = 7000 + (Math.random() * 2000); // Between 7-9 seconds
+        // Use smaller values for mobile to fit smaller screens
+        const startPosition = isMobile ? -30 - (Math.random() * 50) : -50 - (Math.random() * 100);
+        const duration = isMobile ? 5000 + (Math.random() * 1500) : 7000 + (Math.random() * 2000); // Faster on mobile
         
         // Use setTimeout to stagger the start of animations
         setTimeout(() => {
@@ -56,7 +59,9 @@ const AnimatedTruckDivider = ({ className = "" }: AnimatedTruckDividerProps) => 
           if (index === 0) {
             animation.onfinish = () => {
               setTrucks(prevTrucks => {
-                if (prevTrucks.length >= 10) return prevTrucks;
+                // Limit trucks to fewer on mobile
+                const maxTrucks = isMobile ? 6 : 10;
+                if (prevTrucks.length >= maxTrucks) return prevTrucks;
                 return [...prevTrucks, prevTrucks.length];
               });
               
@@ -67,8 +72,8 @@ const AnimatedTruckDivider = ({ className = "" }: AnimatedTruckDividerProps) => 
             // For other trucks, just restart their own animation
             animation.onfinish = () => {
               // Just restart this specific truck's animation with new random values
-              const newStartPosition = -50 - (Math.random() * 100);
-              const newDuration = 7000 + (Math.random() * 2000);
+              const newStartPosition = isMobile ? -30 - (Math.random() * 50) : -50 - (Math.random() * 100);
+              const newDuration = isMobile ? 5000 + (Math.random() * 1500) : 7000 + (Math.random() * 2000);
               
               const newAnimation = (element as HTMLElement).animate(
                 [
@@ -105,10 +110,14 @@ const AnimatedTruckDivider = ({ className = "" }: AnimatedTruckDividerProps) => 
         if (animation) animation.cancel();
       });
     };
-  }, [trucks.length]);
+  }, [trucks.length, isMobile]);
+
+  // Adjust truck size for mobile
+  const truckSize = isMobile ? 24 : 36;
+  const height = isMobile ? 'h-12' : 'h-16';
 
   return (
-    <div className={`relative w-full h-16 my-8 ${className}`}>
+    <div className={`relative w-full ${height} my-4 sm:my-8 ${className}`}>
       {/* Dotted line */}
       <div className="absolute top-1/2 left-0 w-full h-1 border-t-4 border-dotted border-zinc-700 transform -translate-y-1/2"></div>
       
@@ -124,7 +133,7 @@ const AnimatedTruckDivider = ({ className = "" }: AnimatedTruckDividerProps) => 
             }}
           >
             <Truck 
-              size={36} 
+              size={truckSize} 
               className="text-gold-light" 
             />
           </div>
