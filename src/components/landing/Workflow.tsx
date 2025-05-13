@@ -44,16 +44,21 @@ const Workflow = () => {
     const animateDot = () => {
       if (!dotRef.current || !lineRef.current) return;
 
-      const keyframes = [
-        { left: '0%', transform: 'translateY(-50%)', easing: 'ease-in-out' },
-        { left: '100%', transform: 'translateY(-50%)', easing: 'ease-in-out' },
-        { left: '0%', transform: 'translateY(-50%)', easing: 'ease-in-out' },
-      ];
+      // Modified animation to only go left to right and then restart
+      const animation = dotRef.current.animate(
+        [
+          { left: '0%', transform: 'translateY(-50%)' },
+          { left: '100%', transform: 'translateY(-50%)' }
+        ],
+        {
+          duration: 4000,
+          iterations: Infinity,
+          easing: 'linear'
+        }
+      );
 
-      dotRef.current.animate(keyframes, {
-        duration: 8000,
-        iterations: Infinity,
-      });
+      // No need for a separate 'reset' animation as the infinite iterations
+      // will automatically restart the animation from the beginning
     };
 
     animateDot();
