@@ -26,66 +26,74 @@ const AnimatedTruckDivider = ({ className = "" }: AnimatedTruckDividerProps) => 
       const truckElements = truckContainerRef.current.querySelectorAll('.truck-element');
       
       truckElements.forEach((element, index) => {
+        // Ensure a minimum delay of 0.4 seconds between trucks
+        const minDelay = 400; // 0.4 seconds in milliseconds
+        const randomAdditionalDelay = Math.random() * 600; // Random additional delay up to 0.6 seconds
+        const startDelay = index * minDelay + randomAdditionalDelay;
+        
         // Vary the starting positions and timing for a more natural look
         const startPosition = -50 - (Math.random() * 100);
         const duration = 7000 + (Math.random() * 2000); // Between 7-9 seconds
         
-        const animation = (element as HTMLElement).animate(
-          [
-            { left: `${startPosition}px`, transform: 'translateY(-50%)' },
-            { left: 'calc(100% + 50px)', transform: 'translateY(-50%)' }
-          ],
-          {
-            duration,
-            iterations: 1,
-            easing: 'linear',
-            fill: 'forwards'
-          }
-        );
-        
-        animationRefs.current.push(animation);
-        
-        // Only the first truck adds a new truck when it finishes
-        if (index === 0) {
-          animation.onfinish = () => {
-            setTrucks(prevTrucks => {
-              if (prevTrucks.length >= 10) return prevTrucks;
-              return [...prevTrucks, prevTrucks.length];
-            });
-            
-            // Restart animation
-            animateTrucks();
-          };
-        } else {
-          // For other trucks, just restart their own animation
-          animation.onfinish = () => {
-            // Just restart this specific truck's animation with new random values
-            const newStartPosition = -50 - (Math.random() * 100);
-            const newDuration = 7000 + (Math.random() * 2000);
-            
-            const newAnimation = (element as HTMLElement).animate(
-              [
-                { left: `${newStartPosition}px`, transform: 'translateY(-50%)' },
-                { left: 'calc(100% + 50px)', transform: 'translateY(-50%)' }
-              ],
-              {
-                duration: newDuration,
-                iterations: 1,
-                easing: 'linear',
-                fill: 'forwards'
-              }
-            );
-            
-            // Update the reference
-            const indexToReplace = animationRefs.current.indexOf(animation);
-            if (indexToReplace !== -1) {
-              animationRefs.current[indexToReplace] = newAnimation;
+        // Use setTimeout to stagger the start of animations
+        setTimeout(() => {
+          const animation = (element as HTMLElement).animate(
+            [
+              { left: `${startPosition}px`, transform: 'translateY(-50%)' },
+              { left: 'calc(100% + 50px)', transform: 'translateY(-50%)' }
+            ],
+            {
+              duration,
+              iterations: 1,
+              easing: 'linear',
+              fill: 'forwards'
             }
-            
-            // Set the same onfinish handler
-            newAnimation.onfinish = animation.onfinish;
-          };
-        }
+          );
+          
+          animationRefs.current.push(animation);
+          
+          // Only the first truck adds a new truck when it finishes
+          if (index === 0) {
+            animation.onfinish = () => {
+              setTrucks(prevTrucks => {
+                if (prevTrucks.length >= 10) return prevTrucks;
+                return [...prevTrucks, prevTrucks.length];
+              });
+              
+              // Restart animation
+              animateTrucks();
+            };
+          } else {
+            // For other trucks, just restart their own animation
+            animation.onfinish = () => {
+              // Just restart this specific truck's animation with new random values
+              const newStartPosition = -50 - (Math.random() * 100);
+              const newDuration = 7000 + (Math.random() * 2000);
+              
+              const newAnimation = (element as HTMLElement).animate(
+                [
+                  { left: `${newStartPosition}px`, transform: 'translateY(-50%)' },
+                  { left: 'calc(100% + 50px)', transform: 'translateY(-50%)' }
+                ],
+                {
+                  duration: newDuration,
+                  iterations: 1,
+                  easing: 'linear',
+                  fill: 'forwards'
+                }
+              );
+              
+              // Update the reference
+              const indexToReplace = animationRefs.current.indexOf(animation);
+              if (indexToReplace !== -1) {
+                animationRefs.current[indexToReplace] = newAnimation;
+              }
+              
+              // Set the same onfinish handler
+              newAnimation.onfinish = animation.onfinish;
+            };
+          }
+        }, startDelay);
       });
     };
 
