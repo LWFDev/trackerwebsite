@@ -39,8 +39,8 @@ const AnimatedTruckDivider = ({ className = "" }: AnimatedTruckDividerProps) => 
         setTimeout(() => {
           const animation = (element as HTMLElement).animate(
             [
-              { left: `${startPosition}px`, transform: 'translateY(-50%)' },
-              { left: 'calc(100% + 50px)', transform: 'translateY(-50%)' }
+              { transform: `translateX(${startPosition}px) translateY(-50%)` },
+              { transform: `translateX(calc(100vw + 50px)) translateY(-50%)` }
             ],
             {
               duration,
@@ -72,8 +72,8 @@ const AnimatedTruckDivider = ({ className = "" }: AnimatedTruckDividerProps) => 
               
               const newAnimation = (element as HTMLElement).animate(
                 [
-                  { left: `${newStartPosition}px`, transform: 'translateY(-50%)' },
-                  { left: 'calc(100% + 50px)', transform: 'translateY(-50%)' }
+                  { transform: `translateX(${newStartPosition}px) translateY(-50%)` },
+                  { transform: `translateX(calc(100vw + 50px)) translateY(-50%)` }
                 ],
                 {
                   duration: newDuration,
@@ -118,7 +118,7 @@ const AnimatedTruckDivider = ({ className = "" }: AnimatedTruckDividerProps) => 
         {trucks.map((id) => (
           <div 
             key={id}
-            className="absolute top-1/2 left-0 z-10 truck-element"
+            className="absolute top-1/2 transform -translate-y-1/2 truck-element"
             style={{
               filter: 'drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3))'
             }}
