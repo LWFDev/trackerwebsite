@@ -54,17 +54,19 @@ const AnimatedTruckDivider = ({ className = "" }: AnimatedTruckDividerProps) => 
           />
         </div>
         
-        {/* Add simple keyframes for the animation */}
-        <style jsx>{`
-          @keyframes truckMove {
-            0% {
-              transform: translateX(-50px) translateY(-50%);
+        {/* Add style with keyframes animation */}
+        <style dangerouslySetInnerHTML={{
+          __html: `
+            @keyframes truckMove {
+              0% {
+                transform: translateX(-50px) translateY(-50%);
+              }
+              100% {
+                transform: translateX(calc(100vw + 50px)) translateY(-50%);
+              }
             }
-            100% {
-              transform: translateX(calc(100vw + 50px)) translateY(-50%);
-            }
-          }
-        `}</style>
+          `
+        }} />
       </div>
     </div>
   );
