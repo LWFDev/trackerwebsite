@@ -1,36 +1,77 @@
 
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, Suspense, lazy } from "react";
+import { motion } from "framer-motion";
+
+// Eagerly load critical components
 import PricingHero from "@/components/pricing/PricingHero";
 import PricingPlans from "@/components/pricing/PricingPlans";
-import FeatureComparison from "@/components/pricing/FeatureComparison";
-import PricingFAQ from "@/components/pricing/PricingFAQ";
-import ContactCTA from "@/components/pricing/ContactCTA";
 import { ScrollReveal } from "@/components/ui/scroll-reveal";
-import { motion } from "framer-motion";
-import VisualElements from "@/components/pricing/VisualElements";
-import FloatingObjects from "@/components/pricing/FloatingObjects";
+import InteractiveGlowBackground from "@/components/pricing/InteractiveGlowBackground";
+import SplashEffect from "@/components/pricing/SplashEffect";
+import BubbleAnimation from "@/components/pricing/BubbleAnimation";
+
+// Lazy load non-critical components
+const FeatureComparison = lazy(() => import("@/components/pricing/FeatureComparison"));
+const PricingFAQ = lazy(() => import("@/components/pricing/PricingFAQ"));
+const ContactCTA = lazy(() => import("@/components/pricing/ContactCTA"));
+const GeometricObjects = lazy(() => import("@/components/pricing/GeometricObjects"));
+const VisualElements = lazy(() => import("@/components/pricing/VisualElements"));
+const FloatingObjects = lazy(() => import("@/components/pricing/FloatingObjects"));
+
+// Loading fallback component
+const LoadingFallback = () => (
+  <div className="w-full py-12 flex justify-center">
+    <motion.div
+      className="w-10 h-10 rounded-full border-2 border-transparent border-t-[#D4AF37] border-r-[#D4AF37]"
+      animate={{ rotate: 360 }}
+      transition={{ duration: 1, repeat: Infinity, ease: "linear" }}
+    />
+  </div>
+);
 
 const PricingPage = () => {
   const [isLoading, setIsLoading] = useState(true);
-  
-  // Performance optimization - lazy loading
   const [isClientRendered, setIsClientRendered] = useState(false);
+  const [visibleSections, setVisibleSections] = useState<string[]>([]);
   
-  // Loading animation
+  // Performance optimization - progressive loading
   useEffect(() => {
-    // Simulate loading
-    const timer = setTimeout(() => {
+    // Initial quick loading state
+    const quickLoader = setTimeout(() => {
       setIsLoading(false);
     }, 600);
     
-    // Scroll to top when component mounts
+    // Scroll to top
     window.scrollTo(0, 0);
+    
+    // Track visible sections for progressive enhancement
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            setVisibleSections(prev => [...prev, entry.target.id]);
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.1 }
+    );
+    
+    // Observe section elements
+    const sections = document.querySelectorAll('[data-section]');
+    sections.forEach(section => observer.observe(section));
     
     // Flag that client-side rendering is complete
     setIsClientRendered(true);
     
-    return () => clearTimeout(timer);
+    return () => {
+      clearTimeout(quickLoader);
+      observer.disconnect();
+    };
   }, []);
+
+  // Handle section visibility
+  const isSectionVisible = (id: string) => visibleSections.includes(id);
 
   return (
     <div className="min-h-screen bg-black overflow-hidden">
@@ -49,14 +90,24 @@ const PricingPage = () => {
           transition={{ duration: 0.5 }}
           className="relative"
         >
-          {/* Visual elements rendered only on client side for performance */}
+          {/* Interactive glow background - always rendered */}
+          <InteractiveGlowBackground intensity={0.08} />
+          
+          {/* Top section with splash effects */}
+          <div className="relative">
+            <SplashEffect position="left" topOffset="15%" size="large" />
+            <SplashEffect position="right" topOffset="30%" size="medium" />
+            <BubbleAnimation count={12} area="top" />
+          </div>
+          
+          {/* Visual elements - lazy loaded based on client-side rendering */}
           {isClientRendered && (
-            <>
+            <Suspense fallback={null}>
               <VisualElements />
-              <FloatingObjects />
-            </>
+            </Suspense>
           )}
           
+          {/* Hero section */}
           <PricingHero />
           
           <div className="relative">
@@ -64,8 +115,19 @@ const PricingPage = () => {
             <div className="absolute top-0 right-0 w-1/3 h-1/2 bg-[#D4AF37]/5 rounded-full blur-[150px] -z-10 animate-pulse-light"></div>
             <div className="absolute bottom-0 left-0 w-1/2 h-1/3 bg-[#D4AF37]/5 rounded-full blur-[150px] -z-10 animate-pulse-light" style={{ animationDelay: '1s' }}></div>
             
-            <PricingPlans />
+            {/* Geometric objects */}
+            {isClientRendered && (
+              <Suspense fallback={null}>
+                <GeometricObjects density="medium" />
+              </Suspense>
+            )}
             
+            {/* Pricing plans section */}
+            <div id="pricing-plans" data-section="pricing-plans">
+              <PricingPlans />
+            </div>
+            
+            {/* Consultation CTA section */}
             <ScrollReveal threshold={0.1} delay={300} className="py-10 md:py-16">
               <div className="container mx-auto px-4">
                 <motion.div 
@@ -76,7 +138,7 @@ const PricingPage = () => {
                   }}
                   transition={{ type: "spring", stiffness: 400, damping: 15 }}
                 >
-                  {/* Visual accents */}
+                  {/* Decorative elements */}
                   <motion.div 
                     className="absolute -top-20 -right-20 w-40 h-40 rounded-full bg-[#D4AF37]/5"
                     animate={{
@@ -90,6 +152,13 @@ const PricingPage = () => {
                       ease: "easeInOut"
                     }}
                   />
+                  
+                  {/* Bottom bubbles */}
+                  {isClientRendered && (
+                    <div className="absolute -bottom-10 left-0 w-full">
+                      <BubbleAnimation count={8} area="bottom" opacity={0.1} />
+                    </div>
+                  )}
                   
                   <div className="text-center md:text-left relative z-10">
                     <h3 className="text-xl md:text-2xl font-semibold mb-2">Need help choosing the right plan?</h3>
@@ -119,15 +188,38 @@ const PricingPage = () => {
               </div>
             </ScrollReveal>
             
-            <FeatureComparison />
+            {/* Feature comparison section - lazy loaded */}
+            <div id="feature-comparison" data-section="feature-comparison">
+              <Suspense fallback={<LoadingFallback />}>
+                <FeatureComparison />
+              </Suspense>
+            </div>
             
             {/* Visual separator with gradient line */}
             <div className="max-w-7xl mx-auto my-16">
               <div className="h-px bg-gradient-to-r from-transparent via-[#D4AF37]/40 to-transparent"></div>
             </div>
             
-            <PricingFAQ />
-            <ContactCTA />
+            {/* Floating objects - only rendered when section becomes visible */}
+            {isClientRendered && isSectionVisible("pricing-faq") && (
+              <Suspense fallback={null}>
+                <FloatingObjects />
+              </Suspense>
+            )}
+            
+            {/* FAQ section - lazy loaded */}
+            <div id="pricing-faq" data-section="pricing-faq">
+              <Suspense fallback={<LoadingFallback />}>
+                <PricingFAQ />
+              </Suspense>
+            </div>
+            
+            {/* Contact CTA - lazy loaded */}
+            <div id="contact-cta" data-section="contact-cta">
+              <Suspense fallback={<LoadingFallback />}>
+                <ContactCTA />
+              </Suspense>
+            </div>
           </div>
         </motion.div>
       )}
