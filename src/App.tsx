@@ -3,7 +3,8 @@ import React from 'react';
 import {
   BrowserRouter as Router,
   Route,
-  Routes
+  Routes,
+  useLocation
 } from "react-router-dom";
 import Index from "@/pages/Index";
 import Modules from "@/pages/Modules";
@@ -18,27 +19,34 @@ import Layout from "@/components/layout/Layout";
 import CustomCursor from '@/components/ui/custom-cursor';
 import PageTransition from '@/components/transitions/PageTransition';
 
+// Wrapper component that contains the PageTransition and routes
+const AppRoutes = () => {
+  return (
+    <PageTransition>
+      <Layout>
+        <Routes>
+          <Route path="/" element={<Index />} />
+          <Route path="/modules" element={<Modules />} />
+          <Route path="/pricing" element={<Pricing />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/get-started" element={<GetStarted />} />
+          <Route path="/terms" element={<TermsOfService />} />
+          <Route path="/privacy" element={<PrivacyPolicy />} />
+          <Route path="*" element={<NotFound />} />
+        </Routes>
+      </Layout>
+    </PageTransition>
+  );
+};
+
 function App() {
   return (
     <>
       <CustomCursor />
-      <PageTransition>
-        <Router>
-          <Layout>
-            <Routes>
-              <Route path="/" element={<Index />} />
-              <Route path="/modules" element={<Modules />} />
-              <Route path="/pricing" element={<Pricing />} />
-              <Route path="/contact" element={<Contact />} />
-              <Route path="/login" element={<Login />} />
-              <Route path="/get-started" element={<GetStarted />} />
-              <Route path="/terms" element={<TermsOfService />} />
-              <Route path="/privacy" element={<PrivacyPolicy />} />
-              <Route path="*" element={<NotFound />} />
-            </Routes>
-          </Layout>
-        </Router>
-      </PageTransition>
+      <Router>
+        <AppRoutes />
+      </Router>
     </>
   );
 }
