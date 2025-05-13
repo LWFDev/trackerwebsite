@@ -9,7 +9,7 @@ const testimonials = [
     content: "Tracker saved us two days a week of human time, absolutely huge!",
     author: "Adrian Noott",
     role: "AGAME Sports",
-    avatar: "/lovable-uploads/c78cb5cd-6b30-4b76-ab3d-95defabc532a.png",
+    avatar: "https://mebuisworks.com/wp-content/uploads/2024/12/adrian-agame-150x150-1.webp",
     initials: "AN",
     delay: 0.3
   },
@@ -18,7 +18,7 @@ const testimonials = [
     content: "We can pick and pack 50 orders per hour per person, we calculate Tracker is a minimum of 10 times faster than our old manual process.",
     author: "Richard Curran",
     role: "Pure Optical",
-    avatar: "/lovable-uploads/306ecd7f-001d-4958-ae16-8ae72964eb98.png",
+    avatar: "https://mebuisworks.com/wp-content/uploads/2024/12/richard-pure-optical-150x150.webp",
     initials: "RC",
     delay: 0.4
   },
@@ -27,7 +27,7 @@ const testimonials = [
     content: "Tracker has transformed our internal systems completely, allowing us the freedom to concentrate on development and growth.",
     author: "Josie Morris",
     role: "Woolcool",
-    avatar: "/lovable-uploads/21b9829f-379e-4192-ba9b-f5175847a165.png",
+    avatar: "https://mebuisworks.com/wp-content/uploads/2024/12/josie-coolwool-150x150.webp",
     initials: "JM",
     delay: 0.5
   }
