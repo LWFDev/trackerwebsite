@@ -12,14 +12,14 @@ import StatsBanner from "@/components/landing/StatsBanner";
 import { Separator } from "@/components/ui/separator";
 import ScrollAnimationInit from "@/components/ui/scroll-animation-init";
 
-// Improved section dividers
+// Improved section dividers - flipped horizontally
 const WaveDivider = ({ className = "", inverted = false }: { className?: string; inverted?: boolean }) => (
   <div className={`w-full overflow-hidden ${className}`}>
     <svg className="w-full h-24" viewBox="0 0 1440 74" fill="none" xmlns="http://www.w3.org/2000/svg">
       <path 
         d={inverted 
-          ? "M0 5C0 5 187.06 74 720 74C1252.94 74 1440 5 1440 5V0H0V5Z" 
-          : "M1440 69C1440 69 1252.94 0 720 0C187.06 0 0 69 0 69V74H1440V69Z"
+          ? "M0 69C0 69 187.06 0 720 0C1252.94 0 1440 69 1440 69V74H0V69Z" 
+          : "M1440 5C1440 5 1252.94 74 720 74C187.06 74 0 5 0 5V0H1440V5Z"
         } 
         fill="currentColor" 
       />
@@ -30,7 +30,7 @@ const WaveDivider = ({ className = "", inverted = false }: { className?: string;
 const ZigzagDivider = ({ className = "" }: { className?: string }) => (
   <div className={`w-full overflow-hidden ${className}`}>
     <svg className="w-full h-16" viewBox="0 0 1440 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <path d="M0 48L60 42.7C120 37.3 240 26.7 360 21.3C480 16 600 16 720 24C840 32 960 48 1080 48C1200 48 1320 32 1380 24L1440 16V0H1380C1320 0 1200 0 1080 0C960 0 840 0 720 0C600 0 480 0 360 0C240 0 120 0 60 0H0V48Z" fill="currentColor" />
+      <path d="M1440 48L1380 42.7C1320 37.3 1200 26.7 1080 21.3C960 16 840 16 720 24C600 32 480 48 360 48C240 48 120 32 60 24L0 16V0H60C120 0 240 0 360 0C480 0 600 0 720 0C840 0 960 0 1080 0C1200 0 1320 0 1380 0H1440V48Z" fill="currentColor" />
     </svg>
   </div>
 );
@@ -38,7 +38,7 @@ const ZigzagDivider = ({ className = "" }: { className?: string }) => (
 const ArrowDivider = ({ className = "" }: { className?: string }) => (
   <div className={`w-full overflow-hidden ${className}`}>
     <svg className="w-full h-12" viewBox="0 0 1200 30" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <path d="M0 30L50 25C100 20 200 10 300 5C400 0 500 0 600 10C700 20 800 30 900 30C1000 30 1100 20 1150 15L1200 10V0H0V30Z" fill="currentColor" />
+      <path d="M1200 30L1150 25C1100 20 1000 10 900 5C800 0 700 0 600 10C500 20 400 30 300 30C200 30 100 20 50 15L0 10V0H1200V30Z" fill="currentColor" />
     </svg>
   </div>
 );
@@ -46,7 +46,7 @@ const ArrowDivider = ({ className = "" }: { className?: string }) => (
 const CurvyDivider = ({ className = "" }: { className?: string }) => (
   <div className={`w-full overflow-hidden ${className}`}>
     <svg className="w-full h-16" viewBox="0 0 1440 100" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
-      <path d="M0,0 C240,100 720,100 1440,0 L1440,100 L0,100 Z" fill="currentColor" />
+      <path d="M1440,0 C1200,100 720,100 0,0 L0,100 L1440,100 Z" fill="currentColor" />
     </svg>
   </div>
 );
@@ -54,16 +54,16 @@ const CurvyDivider = ({ className = "" }: { className?: string }) => (
 const TriangleDivider = ({ className = "" }: { className?: string }) => (
   <div className={`w-full overflow-hidden ${className}`}>
     <svg className="w-full h-16" viewBox="0 0 100 10" preserveAspectRatio="none">
-      <polygon points="100 0 50 10 0 0 0 10 100 10" fill="currentColor"/>
+      <polygon points="0 0 50 10 100 0 100 10 0 10" fill="currentColor"/>
     </svg>
   </div>
 );
 
-// SVG curve divider
+// SVG curve divider - flipped horizontally
 const SlopesDivider = ({ className = "" }: { className?: string }) => (
   <div className={`w-full overflow-hidden ${className}`}>
     <svg className="w-full h-16" viewBox="0 0 100 10" preserveAspectRatio="none">
-      <path d="M0 10 L0 0 L35 5 L65 0 L100 5 L100 10 Z" fill="currentColor" />
+      <path d="M100 10 L100 0 L65 5 L35 0 L0 5 L0 10 Z" fill="currentColor" />
     </svg>
   </div>
 );
