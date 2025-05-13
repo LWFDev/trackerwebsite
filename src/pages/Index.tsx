@@ -1,4 +1,3 @@
-
 import React from 'react';
 import Hero from "@/components/landing/Hero";
 import Features from "@/components/landing/Features";
@@ -54,7 +53,7 @@ const CurvyDivider = ({ className = "" }: { className?: string }) => (
 const TriangleDivider = ({ className = "" }: { className?: string }) => (
   <div className={`w-full overflow-hidden ${className}`}>
     <svg className="w-full h-16" viewBox="0 0 100 10" preserveAspectRatio="none">
-      <polygon points="0 0 50 10 100 0 100 10 0 10" fill="currentColor"/>
+      <polygon points="100 0 50 10 0 0 0 10 100 10" fill="currentColor"/>
     </svg>
   </div>
 );
