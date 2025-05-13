@@ -7,7 +7,6 @@ import PricingFAQ from "@/components/pricing/PricingFAQ";
 import ContactCTA from "@/components/pricing/ContactCTA";
 import { ScrollReveal } from "@/components/ui/scroll-reveal";
 import { motion } from "framer-motion";
-import AnimatedTruckDivider from "@/components/landing/AnimatedTruckDivider";
 
 const PricingPage = () => {
   const [isLoading, setIsLoading] = useState(true);
@@ -49,10 +48,6 @@ const PricingPage = () => {
             <PricingPlans />
             
             <ScrollReveal threshold={0.1} delay={300} className="py-10 md:py-16">
-              <AnimatedTruckDivider className="max-w-7xl mx-auto" />
-            </ScrollReveal>
-            
-            <ScrollReveal threshold={0.1} delay={300} className="py-10 md:py-16">
               <div className="container mx-auto px-4">
                 <motion.div 
                   className="flex flex-col md:flex-row items-center justify-center gap-8 max-w-5xl mx-auto bg-zinc-900/50 backdrop-blur-md border border-zinc-800 rounded-xl p-6 md:p-8"
@@ -92,7 +87,10 @@ const PricingPage = () => {
             
             <FeatureComparison />
             
-            <AnimatedTruckDivider className="max-w-7xl mx-auto my-8" />
+            {/* Added visual separator with gradient line instead of truck animation */}
+            <div className="max-w-7xl mx-auto my-16">
+              <div className="h-px bg-gradient-to-r from-transparent via-[#D4AF37]/40 to-transparent"></div>
+            </div>
             
             <PricingFAQ />
             <ContactCTA />
