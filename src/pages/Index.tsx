@@ -12,22 +12,9 @@ import StatsBanner from "@/components/landing/StatsBanner";
 import StoryTelling from "@/components/landing/StoryTelling";
 import { Separator } from "@/components/ui/separator";
 import ScrollAnimationInit from "@/components/ui/scroll-animation-init";
+import AnimatedTruckDivider from "@/components/landing/AnimatedTruckDivider";
 
 // Improved section dividers
-const WaveDivider = ({ className = "", inverted = false }: { className?: string; inverted?: boolean }) => (
-  <div className={`w-full overflow-hidden ${className}`}>
-    <svg className="w-full h-24" viewBox="0 0 1440 74" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <path 
-        d={inverted 
-          ? "M0 69C0 69 187.06 0 720 0C1252.94 0 1440 69 1440 69V74H0V69Z" 
-          : "M1440 5C1440 5 1252.94 74 720 74C187.06 74 0 5 0 5V0H1440V5Z"
-        } 
-        fill="currentColor" 
-      />
-    </svg>
-  </div>
-);
-
 const ZigzagDivider = ({ className = "" }: { className?: string }) => (
   <div className={`w-full overflow-hidden ${className}`}>
     <svg className="w-full h-16" viewBox="0 0 1440 48" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -93,7 +80,7 @@ const Index = () => {
         <Hero />
         
         <div className="relative text-zinc-900 mb-[-1px]">
-          <WaveDivider />
+          <AnimatedTruckDivider />
         </div>
         
         <Features />
@@ -143,7 +130,7 @@ const Index = () => {
         <Testimonials />
         
         <div className="relative text-zinc-900 mb-[-1px]">
-          <WaveDivider inverted={true} />
+          <AnimatedTruckDivider />
         </div>
         
         <CTA />
