@@ -28,6 +28,7 @@ import Suppliers from "@/pages/modules/Suppliers";
 import PurchaseOrders from "@/pages/modules/PurchaseOrders";
 import Artworkers from "@/pages/modules/Artworkers";
 import CustomerPortal from "@/pages/modules/CustomerPortal";
+import ScrollAnimationInit from "./components/ui/scroll-animation-init";
 
 // Create a new query client
 const queryClient = new QueryClient();
@@ -37,6 +38,7 @@ const App = () => {
     <QueryClientProvider client={queryClient}>
       <TooltipProvider>
         <BrowserRouter>
+          <ScrollAnimationInit />
           <PageTransition>
             <Routes>
               {/* Main Routes */}

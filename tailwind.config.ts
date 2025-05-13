@@ -97,6 +97,22 @@ export default {
 				'slide-in-right': {
 					'0%': { transform: 'translateX(100%)', opacity: '0' },
 					'100%': { transform: 'translateX(0)', opacity: '1' }
+				},
+				'spin-slow': {
+					'0%': { transform: 'rotate(0deg)' },
+					'100%': { transform: 'rotate(360deg)' }
+				},
+				'wave': {
+					'0%, 100%': { transform: 'translateY(0)' },
+					'50%': { transform: 'translateY(-5px)' }
+				},
+				'morph': {
+					'0%, 100%': { borderRadius: '60% 40% 30% 70%/60% 30% 70% 40%' },
+					'50%': { borderRadius: '30% 60% 70% 40%/50% 60% 30% 60%' }
+				},
+				'shimmer': {
+					'0%': { backgroundPosition: '100% 0' },
+					'100%': { backgroundPosition: '-100% 0' }
 				}
 			},
 			animation: {
@@ -105,7 +121,16 @@ export default {
 				'fade-in': 'fade-in 0.7s ease-out',
 				'float': 'float 4s ease-in-out infinite',
 				'pulse-light': 'pulse-light 2s ease-in-out infinite',
-				'slide-in-right': 'slide-in-right 0.5s ease-out'
+				'slide-in-right': 'slide-in-right 0.5s ease-out',
+				'spin-slow': 'spin-slow 12s linear infinite',
+				'wave': 'wave 2.5s ease-in-out infinite',
+				'morph': 'morph 8s ease-in-out infinite',
+				'shimmer': 'shimmer 2.5s infinite'
+			},
+			backgroundImage: {
+				'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
+				'grid-pattern': "url(\"data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23ffffff' fill-opacity='0.05' fill-rule='evenodd'%3E%3Ccircle cx='3' cy='3' r='1'/%3E%3C/g%3E%3C/svg%3E\")",
+				'dot-pattern': "url(\"data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23D4AF37' fill-opacity='0.05' fill-rule='evenodd'%3E%3Ccircle cx='3' cy='3' r='1'/%3E%3C/g%3E%3C/svg%3E\")"
 			}
 		}
 	},
