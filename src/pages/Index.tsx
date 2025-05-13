@@ -1,3 +1,4 @@
+
 import React from 'react';
 import Hero from "@/components/landing/Hero";
 import Features from "@/components/landing/Features";
@@ -8,10 +9,11 @@ import CTA from "@/components/landing/CTA";
 import Results from "@/components/landing/Results";
 import WhyChooseUs from "@/components/landing/WhyChooseUs";
 import StatsBanner from "@/components/landing/StatsBanner";
+import StoryTelling from "@/components/landing/StoryTelling";
 import { Separator } from "@/components/ui/separator";
 import ScrollAnimationInit from "@/components/ui/scroll-animation-init";
 
-// Improved section dividers - flipped horizontally
+// Improved section dividers
 const WaveDivider = ({ className = "", inverted = false }: { className?: string; inverted?: boolean }) => (
   <div className={`w-full overflow-hidden ${className}`}>
     <svg className="w-full h-24" viewBox="0 0 1440 74" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -113,6 +115,13 @@ const Index = () => {
         
         <div className="relative text-zinc-900 mb-[-1px]">
           <ZigzagDivider />
+        </div>
+        
+        {/* New StoryTelling component */}
+        <StoryTelling />
+        
+        <div className="relative text-zinc-950 mb-[-1px]">
+          <CurvyDivider />
         </div>
         
         {/* Add WhyChooseUs section */}
