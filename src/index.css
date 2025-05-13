@@ -89,9 +89,10 @@ button:hover {
   transition: all 0.2s ease;
 }
 
-/* Animation classes */
+/* Performance optimized animation classes */
 .animate-fade-in {
   animation: fadeIn 0.5s ease-out forwards;
+  will-change: opacity, transform;
 }
 
 @keyframes fadeIn {
@@ -107,6 +108,7 @@ button:hover {
 
 .animate-slide-in {
   animation: slideIn 0.5s ease-out forwards;
+  will-change: transform, opacity;
 }
 
 @keyframes slideIn {
@@ -120,9 +122,9 @@ button:hover {
   }
 }
 
-/* Pulsing animation for logo placeholders */
+/* Optimized pulsing animation */
 .animate-pulse-light {
-  animation: pulseLight 2s ease-in-out infinite;
+  animation: pulseLight 3s ease-in-out;
 }
 
 @keyframes pulseLight {
@@ -134,9 +136,9 @@ button:hover {
   }
 }
 
-/* Floating animation for badges */
+/* Reduced floating animation */
 .animate-float {
-  animation: float 4s ease-in-out infinite;
+  animation: float 6s ease-in-out;
 }
 
 @keyframes float {
@@ -144,13 +146,13 @@ button:hover {
     transform: translateY(0); 
   }
   50% { 
-    transform: translateY(-10px); 
+    transform: translateY(-8px); 
   }
 }
 
-/* Slow spinning animation */
+/* Slower spinning animation */
 .animate-spin-slow {
-  animation: spin 12s linear infinite;
+  animation: spin 18s linear;
 }
 
 @keyframes spin {
@@ -162,39 +164,9 @@ button:hover {
   }
 }
 
-/* Shine effect */
-.animate-shine {
-  position: relative;
-  overflow: hidden;
-}
+/* Removed shine effect - was performance heavy */
 
-.animate-shine::after {
-  content: '';
-  position: absolute;
-  top: -50%;
-  left: -50%;
-  width: 200%;
-  height: 200%;
-  background: linear-gradient(
-    to right,
-    rgba(255, 255, 255, 0) 0%,
-    rgba(255, 255, 255, 0.1) 50%,
-    rgba(255, 255, 255, 0) 100%
-  );
-  transform: rotate(45deg);
-  animation: shine 3s infinite;
-}
-
-@keyframes shine {
-  0% {
-    transform: translateX(-100%) rotate(45deg);
-  }
-  20%, 100% {
-    transform: translateX(100%) rotate(45deg);
-  }
-}
-
-/* Morph animation for blobs */
+/* Less intensive morph animation */
 @keyframes morph {
   0%, 100% {
     border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
@@ -205,10 +177,11 @@ button:hover {
 }
 
 .animate-morph {
-  animation: morph 8s ease-in-out infinite;
+  animation: morph 12s ease-in-out;
+  animation-iteration-count: 1;
 }
 
-/* Shimmer effect for buttons and highlights */
+/* Optimized shimmer effect */
 @keyframes shimmer {
   0% {
     background-position: 100% 0;
@@ -219,14 +192,16 @@ button:hover {
 }
 
 .animate-shimmer {
-  animation: shimmer 2.5s infinite;
+  animation: shimmer 4s;
+  animation-iteration-count: 2;
   background-size: 200% 100%;
 }
 
-/* Reveal animation */
+/* Reveal animation - optimized */
 .animate-reveal {
   animation: reveal 0.8s ease-out forwards;
   opacity: 0;
+  will-change: opacity, transform;
 }
 
 @keyframes reveal {
@@ -240,9 +215,9 @@ button:hover {
   }
 }
 
-/* Wave animation */
+/* Reduced wave animation */
 .animate-wave {
-  animation: wave 2s ease-in-out infinite;
+  animation: wave 4s ease-in-out;
 }
 
 @keyframes wave {
@@ -254,9 +229,9 @@ button:hover {
   }
 }
 
-/* Bounce animation */
+/* Optimized bounce animation */
 .animate-bounce-light {
-  animation: bounce 2s ease-in-out infinite;
+  animation: bounce 3s ease-in-out;
 }
 
 @keyframes bounce {
@@ -264,11 +239,11 @@ button:hover {
     transform: translateY(0);
   }
   50% {
-    transform: translateY(-15px);
+    transform: translateY(-10px);
   }
 }
 
-/* Staggered animations for child elements */
+/* Staggered animations - optimized for performance */
 .stagger-parent {
   overflow: hidden;
 }
@@ -284,9 +259,9 @@ button:hover {
   transform: translateY(0);
 }
 
-/* Parallax effect styles */
+/* Simplified parallax effect styles */
 .parallax-element {
-  transition: transform 0.2s ease-out;
+  transition: transform 0.5s ease-out;
 }
 
 /* Consistent card styling */
@@ -296,15 +271,14 @@ button:hover {
 
 .card-hover:hover {
   transform: translateY(-5px);
-  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.3);
 }
 
-/* Glowing effect */
+/* Reduced glowing effect */
 .glow-on-hover:hover {
-  box-shadow: 0 0 15px 2px rgba(212, 175, 55, 0.4);
+  box-shadow: 0 0 15px 2px rgba(212, 175, 55, 0.3);
 }
 
-/* Smooth transitions */
+/* Smooth transitions - optimized */
 .transition-all {
   transition: all 0.3s ease;
 }
@@ -314,11 +288,12 @@ button:hover {
   @apply bg-zinc-800 border border-zinc-700 shadow-md hover:shadow-lg transition-all;
 }
 
-/* Soft reveal animations when scrolling */
+/* Optimized reveal animations when scrolling */
 .reveal-on-scroll {
   opacity: 0;
   transform: translateY(20px);
   transition: opacity 0.8s ease, transform 0.8s ease;
+  will-change: opacity, transform;
 }
 
 .reveal-on-scroll.revealed {
@@ -359,29 +334,11 @@ button:hover {
   
   /* Enhanced button styles */
   .btn-glow:hover {
-    box-shadow: 0 0 20px 5px rgba(212, 175, 55, 0.4);
+    box-shadow: 0 0 20px 5px rgba(212, 175, 55, 0.3);
   }
   
   /* Text underline animation */
   .hover-underline {
     @apply relative after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 after:bg-[#D4AF37] hover:after:w-full after:transition-all after:duration-300;
-  }
-  
-  /* Particle background */
-  .particle-bg {
-    position: relative;
-    overflow: hidden;
-  }
-  
-  .particle-bg::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-image: radial-gradient(#D4AF37 1px, transparent 1px);
-    background-size: 30px 30px;
-    opacity: 0.05;
   }
 }

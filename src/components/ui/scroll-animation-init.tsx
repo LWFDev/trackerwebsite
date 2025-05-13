@@ -12,28 +12,41 @@ const ScrollAnimationInit = () => {
       );
     };
 
-    // Function to handle scroll
+    // Function to handle scroll with throttling
+    let isScrolling = false;
     const handleScroll = () => {
-      const elements = document.querySelectorAll(".reveal-on-scroll:not(.revealed)");
-      
-      elements.forEach((element) => {
-        if (isElementInViewport(element)) {
-          element.classList.add("revealed");
-          // Add staggered animation for child elements
-          const children = element.querySelectorAll('.stagger-item');
-          children.forEach((child, index) => {
-            (child as HTMLElement).style.animationDelay = `${index * 0.1}s`;
-            child.classList.add('stagger-revealed');
+      if (!isScrolling) {
+        window.requestAnimationFrame(() => {
+          const elements = document.querySelectorAll(".reveal-on-scroll:not(.revealed)");
+          
+          elements.forEach((element) => {
+            if (isElementInViewport(element)) {
+              element.classList.add("revealed");
+              // Add staggered animation for child elements - more performance friendly
+              const children = element.querySelectorAll('.stagger-item');
+              children.forEach((child, index) => {
+                // Limit the number of staggered items that get animated
+                if (index < 10) {
+                  setTimeout(() => {
+                    child.classList.add('stagger-revealed');
+                  }, index * 50);
+                } else {
+                  child.classList.add('stagger-revealed');
+                }
+              });
+            }
           });
-        }
-      });
+          isScrolling = false;
+        });
+        isScrolling = true;
+      }
     };
 
-    // Initial check
-    setTimeout(handleScroll, 100);
+    // Initial check with delay to improve page load performance
+    setTimeout(handleScroll, 200);
     
-    // Add scroll event listener
-    window.addEventListener("scroll", handleScroll);
+    // Add throttled scroll event listener
+    window.addEventListener("scroll", handleScroll, { passive: true });
     
     // Clean up
     return () => {
@@ -41,7 +54,7 @@ const ScrollAnimationInit = () => {
     };
   }, []);
 
-  return null; // This component doesn't render anything
+  return null;
 };
 
 export default ScrollAnimationInit;

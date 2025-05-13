@@ -10,7 +10,7 @@ import Results from "@/components/landing/Results";
 import { Separator } from "@/components/ui/separator";
 import ScrollAnimationInit from "@/components/ui/scroll-animation-init";
 
-// Custom section dividers
+// Simplified section dividers
 const WaveDivider = ({ className = "", inverted = false }: { className?: string; inverted?: boolean }) => (
   <div className={`w-full overflow-hidden ${className}`}>
     <svg className="w-full h-24" viewBox="0 0 1440 74" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -41,7 +41,7 @@ const ArrowDivider = ({ className = "" }: { className?: string }) => (
   </div>
 );
 
-// New dividers
+// Simplified dividers
 const CurvyDivider = ({ className = "" }: { className?: string }) => (
   <div className={`w-full overflow-hidden ${className}`}>
     <svg className="w-full h-16" viewBox="0 0 1440 100" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
@@ -58,30 +58,12 @@ const TriangleDivider = ({ className = "" }: { className?: string }) => (
   </div>
 );
 
+// Reduced number of floating icons for performance
 const FloatingIcons = () => (
   <div className="absolute inset-0 overflow-hidden pointer-events-none">
-    <div className="absolute top-[20%] left-[10%] w-16 h-16 rounded-lg border border-[#D4AF37]/20 opacity-40 rotate-12 animate-float" style={{ animationDelay: "0s" }}></div>
-    <div className="absolute top-[60%] right-[5%] w-24 h-24 rounded-full border border-[#D4AF37]/20 opacity-30 -rotate-12 animate-float" style={{ animationDelay: "1.5s" }}></div>
-    <div className="absolute top-[40%] left-[80%] w-20 h-20 rounded-md border border-[#D4AF37]/20 opacity-25 rotate-45 animate-float" style={{ animationDelay: "1s" }}></div>
-    <div className="absolute top-[80%] left-[20%] w-12 h-12 rounded-full border border-[#D4AF37]/20 opacity-30 animate-float" style={{ animationDelay: "2s" }}></div>
-    
-    {/* Additional floating elements */}
-    <div className="absolute top-[30%] right-[25%] w-14 h-14 bg-gradient-to-br from-[#D4AF37]/10 to-[#F2D675]/5 rounded-full opacity-30 animate-float" style={{ animationDelay: "1.8s" }}></div>
-    <div className="absolute top-[70%] left-[40%] w-10 h-10 border border-[#D4AF37]/15 rounded-lg rotate-15 opacity-20 animate-float" style={{ animationDelay: "2.3s" }}></div>
-    <div className="absolute top-[15%] left-[60%] w-8 h-8 bg-gradient-to-br from-[#D4AF37]/5 to-transparent rounded-full opacity-25 animate-float" style={{ animationDelay: "1.2s" }}></div>
-    
-    {/* Animated symbols */}
-    <div className="absolute top-[50%] left-[15%] animate-float opacity-30" style={{ animationDelay: "0.9s" }}>
-      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1" className="text-[#D4AF37]/40">
-        <circle cx="12" cy="12" r="10"></circle>
-        <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
-      </svg>
-    </div>
-    <div className="absolute top-[25%] right-[30%] animate-float opacity-20" style={{ animationDelay: "1.7s" }}>
-      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1" className="text-[#D4AF37]/30">
-        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
-      </svg>
-    </div>
+    <div className="absolute top-[20%] left-[10%] w-16 h-16 rounded-lg border border-[#D4AF37]/20 opacity-40 rotate-12"></div>
+    <div className="absolute top-[60%] right-[5%] w-24 h-24 rounded-full border border-[#D4AF37]/20 opacity-30 -rotate-12"></div>
+    <div className="absolute top-[40%] left-[80%] w-20 h-20 rounded-md border border-[#D4AF37]/20 opacity-25 rotate-45"></div>
   </div>
 );
 
@@ -90,11 +72,10 @@ const Index = () => {
     <div className="min-h-screen flex flex-col bg-black text-white relative">
       <ScrollAnimationInit />
       
-      {/* Background gradients that stay fixed */}
+      {/* Simplified static background gradients instead of animated */}
       <div className="fixed inset-0 pointer-events-none">
-        <div className="absolute top-0 left-0 w-[800px] h-[800px] rounded-full bg-[#D4AF37]/5 blur-[150px] opacity-30 animate-morph"></div>
-        <div className="absolute bottom-0 right-0 w-[600px] h-[600px] rounded-full bg-zinc-800/20 blur-[100px] opacity-40 animate-morph" style={{ animationDelay: "2s" }}></div>
-        <div className="absolute top-1/3 right-1/4 w-[400px] h-[400px] rounded-full bg-[#D4AF37]/5 blur-[80px] opacity-20 animate-morph" style={{ animationDelay: "4s" }}></div>
+        <div className="absolute top-0 left-0 w-[800px] h-[800px] rounded-full bg-[#D4AF37]/5 blur-[150px] opacity-30"></div>
+        <div className="absolute bottom-0 right-0 w-[600px] h-[600px] rounded-full bg-zinc-800/20 blur-[100px] opacity-40"></div>
       </div>
       
       <main className="pt-16 relative">
@@ -142,7 +123,7 @@ const Index = () => {
         
         <CTA />
         
-        {/* Floating icons and decorative elements */}
+        {/* Simplified static floating icons */}
         <FloatingIcons />
       </main>
     </div>

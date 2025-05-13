@@ -35,9 +35,14 @@ export const ScrollReveal = ({
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            setTimeout(() => {
+            // Use setTimeout conditionally to reduce number of timers
+            if (delay > 0) {
+              setTimeout(() => {
+                setIsVisible(true);
+              }, delay);
+            } else {
               setIsVisible(true);
-            }, delay);
+            }
             
             if (once) {
               observer.unobserve(entry.target);
@@ -47,7 +52,10 @@ export const ScrollReveal = ({
           }
         });
       },
-      { threshold, rootMargin: "10px" }
+      { 
+        threshold, 
+        rootMargin: "10px" 
+      }
     );
 
     observer.observe(currentRef);
@@ -73,6 +81,7 @@ export const ScrollReveal = ({
     return 'translate(0, 0)';
   };
 
+  // Use more performant CSS properties for animations
   return (
     <div
       ref={ref}
@@ -81,10 +90,15 @@ export const ScrollReveal = ({
         opacity: isVisible ? 1 : 0,
         transform: getTransform(),
         transitionDuration: `${duration}ms`,
+        // Use will-change only when transitioning
+        willChange: isVisible ? 'auto' : 'opacity, transform',
       }}
     >
-      {stagger ? React.Children.map(children, child => (
-        <div className="stagger-item">{child}</div>
+      {stagger ? React.Children.map(children, (child, index) => (
+        // Limit staggered animations to first 10 items
+        <div className="stagger-item" style={{
+          transitionDelay: index < 10 ? `${index * 50}ms` : '0ms'
+        }}>{child}</div>
       )) : children}
     </div>
   );
