@@ -43,7 +43,7 @@ const ScrollAnimationInit = () => {
     };
 
     // Initial check with delay to improve page load performance
-    setTimeout(handleScroll, 200);
+    setTimeout(handleScroll, 400); // Increased delay for initial load
     
     // Add throttled scroll event listener
     window.addEventListener("scroll", handleScroll, { passive: true });

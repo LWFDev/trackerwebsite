@@ -7,10 +7,12 @@ import Workflow from "@/components/landing/Workflow";
 import Testimonials from "@/components/landing/Testimonials";
 import CTA from "@/components/landing/CTA";
 import Results from "@/components/landing/Results";
+import WhyChooseUs from "@/components/landing/WhyChooseUs";
+import StatsBanner from "@/components/landing/StatsBanner";
 import { Separator } from "@/components/ui/separator";
 import ScrollAnimationInit from "@/components/ui/scroll-animation-init";
 
-// Simplified section dividers
+// Improved section dividers
 const WaveDivider = ({ className = "", inverted = false }: { className?: string; inverted?: boolean }) => (
   <div className={`w-full overflow-hidden ${className}`}>
     <svg className="w-full h-24" viewBox="0 0 1440 74" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -41,7 +43,6 @@ const ArrowDivider = ({ className = "" }: { className?: string }) => (
   </div>
 );
 
-// Simplified dividers
 const CurvyDivider = ({ className = "" }: { className?: string }) => (
   <div className={`w-full overflow-hidden ${className}`}>
     <svg className="w-full h-16" viewBox="0 0 1440 100" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
@@ -54,6 +55,15 @@ const TriangleDivider = ({ className = "" }: { className?: string }) => (
   <div className={`w-full overflow-hidden ${className}`}>
     <svg className="w-full h-16" viewBox="0 0 100 10" preserveAspectRatio="none">
       <polygon points="100 0 50 10 0 0 0 10 100 10" fill="currentColor"/>
+    </svg>
+  </div>
+);
+
+// SVG curve divider
+const SlopesDivider = ({ className = "" }: { className?: string }) => (
+  <div className={`w-full overflow-hidden ${className}`}>
+    <svg className="w-full h-16" viewBox="0 0 100 10" preserveAspectRatio="none">
+      <path d="M0 10 L0 0 L35 5 L65 0 L100 5 L100 10 Z" fill="currentColor" />
     </svg>
   </div>
 );
@@ -87,8 +97,11 @@ const Index = () => {
         
         <Features />
         
+        {/* Add StatsBanner section */}
+        <StatsBanner />
+        
         <div className="relative text-black mb-[-1px]">
-          <CurvyDivider />
+          <SlopesDivider />
         </div>
         
         <Workflow />
@@ -99,6 +112,13 @@ const Index = () => {
         
         <Results />
         
+        <div className="relative text-zinc-900 mb-[-1px]">
+          <ZigzagDivider />
+        </div>
+        
+        {/* Add WhyChooseUs section */}
+        <WhyChooseUs />
+        
         <div className="relative">
           <Separator className="h-[1px] bg-gradient-to-r from-transparent via-[#D4AF37]/30 to-transparent my-0" />
           <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-black border border-[#D4AF37]/30 flex items-center justify-center transform rotate-45">
@@ -108,11 +128,8 @@ const Index = () => {
         
         <Integration />
         
-        <div className="relative">
-          <Separator className="h-[1px] bg-gradient-to-r from-transparent via-[#D4AF37]/30 to-transparent my-0" />
-          <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-black border border-[#D4AF37]/30 flex items-center justify-center">
-            <div className="w-6 h-6 rounded-full bg-gradient-to-br from-[#D4AF37]/30 to-[#F2D675]/20"></div>
-          </div>
+        <div className="relative text-zinc-900 mb-[-1px]">
+          <CurvyDivider />
         </div>
         
         <Testimonials />

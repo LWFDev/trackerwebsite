@@ -1,6 +1,6 @@
 
 import { ScrollReveal } from "@/components/ui/scroll-reveal";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, Award } from "lucide-react";
 import { Link } from "react-router-dom";
 import { useState } from "react";
 
@@ -10,9 +10,10 @@ type ModuleCardProps = {
   description: string;
   link: string;
   delay?: number;
+  featured?: boolean;
 };
 
-const ModuleCard = ({ icon, title, description, link, delay = 0 }: ModuleCardProps) => {
+const ModuleCard = ({ icon, title, description, link, delay = 0, featured = false }: ModuleCardProps) => {
   const [isHovered, setIsHovered] = useState(false);
 
   return (
@@ -31,6 +32,15 @@ const ModuleCard = ({ icon, title, description, link, delay = 0 }: ModuleCardPro
         >
           {/* Simplified hover effect */}
           <div className="absolute -inset-0.5 bg-gradient-to-r from-[#D4AF37]/0 to-[#D4AF37]/0 rounded-xl opacity-0 group-hover:opacity-100 group-hover:from-[#D4AF37]/20 group-hover:to-[#F2D675]/20 transition-all duration-300"></div>
+          
+          {/* Featured badge */}
+          {featured && (
+            <div className="absolute -top-3 -right-2 z-10">
+              <div className="bg-[#D4AF37] text-black text-xs font-bold px-3 py-1 rounded-full flex items-center">
+                <Award size={12} className="mr-1" /> POPULAR
+              </div>
+            </div>
+          )}
           
           <div className="relative h-full bg-zinc-900/80 border border-zinc-800 rounded-lg p-6 transition-all duration-300 group-hover:border-[#D4AF37]/30 group-hover:shadow-md flex flex-col">
             {/* Simplified decorative corner accent */}
@@ -53,6 +63,20 @@ const ModuleCard = ({ icon, title, description, link, delay = 0 }: ModuleCardPro
                 className={`ml-1 w-4 h-4 transition-transform duration-300 ease-out ${isHovered ? 'translate-x-1' : ''}`}
               />
             </div>
+            
+            {/* "New" indicator for selected items */}
+            {title.includes("Designer") || title.includes("Logos") ? (
+              <div className="absolute top-5 right-5 bg-zinc-800 text-xs font-bold px-2 py-0.5 rounded text-[#D4AF37] border border-[#D4AF37]/30">
+                NEW
+              </div>
+            ) : null}
+            
+            {/* "Patent pending" for specific modules */}
+            {title.includes("Warehouse") || title.includes("Production") ? (
+              <div className="absolute bottom-4 right-4 text-xs text-gray-500">
+                Patent Pending
+              </div>
+            ) : null}
             
             {/* Removed particle effect on hover (small dots) for better performance */}
           </div>
