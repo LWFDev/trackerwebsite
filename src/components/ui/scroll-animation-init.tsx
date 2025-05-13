@@ -7,7 +7,7 @@ const ScrollAnimationInit = () => {
     const isElementInViewport = (el: Element) => {
       const rect = el.getBoundingClientRect();
       return (
-        rect.top <= (window.innerHeight || document.documentElement.clientHeight) * 0.8 &&
+        rect.top <= (window.innerHeight || document.documentElement.clientHeight) * 0.85 &&
         rect.bottom >= 0
       );
     };
@@ -19,12 +19,18 @@ const ScrollAnimationInit = () => {
       elements.forEach((element) => {
         if (isElementInViewport(element)) {
           element.classList.add("revealed");
+          // Add staggered animation for child elements
+          const children = element.querySelectorAll('.stagger-item');
+          children.forEach((child, index) => {
+            (child as HTMLElement).style.animationDelay = `${index * 0.1}s`;
+            child.classList.add('stagger-revealed');
+          });
         }
       });
     };
 
     // Initial check
-    handleScroll();
+    setTimeout(handleScroll, 100);
     
     // Add scroll event listener
     window.addEventListener("scroll", handleScroll);

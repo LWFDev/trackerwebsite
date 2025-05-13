@@ -47,11 +47,13 @@
   
   body {
     @apply bg-background text-foreground antialiased;
+    font-feature-settings: "rlig" 1, "calt" 1;
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   }
 
   html {
     @apply scroll-smooth;
+    scroll-behavior: smooth;
   }
 }
 
@@ -192,6 +194,35 @@ button:hover {
   }
 }
 
+/* Morph animation for blobs */
+@keyframes morph {
+  0%, 100% {
+    border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+  }
+  50% {
+    border-radius: 30% 60% 70% 40% / 50% 60% 30% 60%;
+  }
+}
+
+.animate-morph {
+  animation: morph 8s ease-in-out infinite;
+}
+
+/* Shimmer effect for buttons and highlights */
+@keyframes shimmer {
+  0% {
+    background-position: 100% 0;
+  }
+  100% {
+    background-position: -100% 0;
+  }
+}
+
+.animate-shimmer {
+  animation: shimmer 2.5s infinite;
+  background-size: 200% 100%;
+}
+
 /* Reveal animation */
 .animate-reveal {
   animation: reveal 0.8s ease-out forwards;
@@ -207,6 +238,55 @@ button:hover {
     opacity: 1;
     transform: scale(1);
   }
+}
+
+/* Wave animation */
+.animate-wave {
+  animation: wave 2s ease-in-out infinite;
+}
+
+@keyframes wave {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+/* Bounce animation */
+.animate-bounce-light {
+  animation: bounce 2s ease-in-out infinite;
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-15px);
+  }
+}
+
+/* Staggered animations for child elements */
+.stagger-parent {
+  overflow: hidden;
+}
+
+.stagger-item {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.stagger-item.stagger-revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Parallax effect styles */
+.parallax-element {
+  transition: transform 0.2s ease-out;
 }
 
 /* Consistent card styling */
@@ -232,6 +312,18 @@ button:hover {
 /* Dark theme card styles */
 .dark-card {
   @apply bg-zinc-800 border border-zinc-700 shadow-md hover:shadow-lg transition-all;
+}
+
+/* Soft reveal animations when scrolling */
+.reveal-on-scroll {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.reveal-on-scroll.revealed {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 @layer utilities {
@@ -264,16 +356,32 @@ button:hover {
   .gold-glass {
     @apply backdrop-blur-md bg-[#D4AF37]/5 border border-[#D4AF37]/20 shadow-lg;
   }
-}
-
-/* Soft reveal animations when scrolling */
-.reveal-on-scroll {
-  opacity: 0;
-  transform: translateY(20px);
-  transition: opacity 0.8s ease, transform 0.8s ease;
-}
-
-.reveal-on-scroll.revealed {
-  opacity: 1;
-  transform: translateY(0);
+  
+  /* Enhanced button styles */
+  .btn-glow:hover {
+    box-shadow: 0 0 20px 5px rgba(212, 175, 55, 0.4);
+  }
+  
+  /* Text underline animation */
+  .hover-underline {
+    @apply relative after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 after:bg-[#D4AF37] hover:after:w-full after:transition-all after:duration-300;
+  }
+  
+  /* Particle background */
+  .particle-bg {
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .particle-bg::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: radial-gradient(#D4AF37 1px, transparent 1px);
+    background-size: 30px 30px;
+    opacity: 0.05;
+  }
 }

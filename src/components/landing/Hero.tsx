@@ -6,6 +6,7 @@ import { useEffect, useRef } from "react";
 
 const Hero = () => {
   const blobRef = useRef<HTMLDivElement>(null);
+  const floatingElementsRef = useRef<HTMLDivElement>(null);
 
   // Animate the background blob on mount
   useEffect(() => {
@@ -25,6 +26,32 @@ const Hero = () => {
     animateBlob();
   }, []);
 
+  // Parallax effect for floating elements
+  useEffect(() => {
+    const handleMouseMove = (e: MouseEvent) => {
+      if (!floatingElementsRef.current) return;
+      
+      const elements = floatingElementsRef.current.querySelectorAll('.parallax-element');
+      const { clientX, clientY } = e;
+      const centerX = window.innerWidth / 2;
+      const centerY = window.innerHeight / 2;
+      
+      // Calculate distance from center (normalized)
+      const moveX = (clientX - centerX) / centerX;
+      const moveY = (clientY - centerY) / centerY;
+      
+      elements.forEach((element, index) => {
+        const factor = (index + 1) * 5; // Different factors for different elements
+        const x = moveX * factor;
+        const y = moveY * factor;
+        (element as HTMLElement).style.transform = `translate(${x}px, ${y}px)`;
+      });
+    };
+    
+    window.addEventListener('mousemove', handleMouseMove);
+    return () => window.removeEventListener('mousemove', handleMouseMove);
+  }, []);
+
   return (
     <section className="relative pt-24 pb-16 text-white overflow-hidden">
       {/* Animated background elements */}
@@ -35,11 +62,32 @@ const Hero = () => {
           className="absolute w-[900px] h-[900px] rounded-full bg-gradient-to-r from-[#D4AF37]/10 via-[#F2D675]/5 to-[#D4AF37]/10 blur-[80px] top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 transition-transform duration-3000 ease-in-out"
         ></div>
         
-        {/* Floating shapes */}
-        <div className="absolute top-20 left-[10%] w-16 h-16 border border-[#D4AF37]/20 rounded-full animate-float opacity-20"></div>
-        <div className="absolute bottom-40 right-[15%] w-24 h-24 border border-[#D4AF37]/20 rounded-full animate-float opacity-30" style={{ animationDelay: '1s' }}></div>
-        <div className="absolute top-[30%] right-[10%] w-32 h-32 border-2 border-[#D4AF37]/10 rounded-xl rotate-45 animate-float opacity-20" style={{ animationDelay: '1.5s' }}></div>
-        <div className="absolute bottom-[10%] left-[20%] w-20 h-20 border-2 border-[#D4AF37]/10 rounded-full animate-float opacity-10" style={{ animationDelay: '2s' }}></div>
+        {/* Floating elements with parallax effect */}
+        <div ref={floatingElementsRef} className="absolute inset-0 pointer-events-none">
+          <div className="absolute top-20 left-[10%] w-16 h-16 border border-[#D4AF37]/20 rounded-full animate-float parallax-element opacity-20"></div>
+          <div className="absolute bottom-40 right-[15%] w-24 h-24 border border-[#D4AF37]/20 rounded-full animate-float parallax-element opacity-30" style={{ animationDelay: '1s' }}></div>
+          <div className="absolute top-[30%] right-[10%] w-32 h-32 border-2 border-[#D4AF37]/10 rounded-xl rotate-45 animate-float parallax-element opacity-20" style={{ animationDelay: '1.5s' }}></div>
+          <div className="absolute bottom-[10%] left-[20%] w-20 h-20 border-2 border-[#D4AF37]/10 rounded-full animate-float parallax-element opacity-10" style={{ animationDelay: '2s' }}></div>
+          
+          {/* Additional floating elements */}
+          <div className="absolute top-[40%] left-[5%] w-12 h-12 bg-gradient-to-r from-[#D4AF37]/5 to-[#F2D675]/5 rounded-lg animate-float parallax-element opacity-30" style={{ animationDelay: '2.5s' }}></div>
+          <div className="absolute top-[15%] right-[20%] w-16 h-16 border border-[#D4AF37]/10 rounded-md rotate-12 animate-float parallax-element opacity-20" style={{ animationDelay: '0.7s' }}></div>
+          <div className="absolute bottom-[30%] right-[5%] w-28 h-28 border-2 border-[#D4AF37]/5 rounded-full animate-float parallax-element opacity-15" style={{ animationDelay: '1.3s' }}></div>
+          
+          {/* Animated symbols/icons */}
+          <div className="absolute top-[25%] left-[30%] animate-float parallax-element opacity-40" style={{ animationDelay: '1.8s' }}>
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1" className="text-[#D4AF37]/30">
+              <circle cx="12" cy="12" r="10"></circle>
+              <line x1="12" y1="16" x2="12" y2="12"></line>
+              <line x1="12" y1="8" x2="12" y2="8"></line>
+            </svg>
+          </div>
+          <div className="absolute bottom-[15%] right-[25%] animate-float parallax-element opacity-30" style={{ animationDelay: '0.5s' }}>
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1" className="text-[#D4AF37]/30">
+              <path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path>
+            </svg>
+          </div>
+        </div>
         
         {/* Grid pattern */}
         <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxnIGZpbGw9IiMyMTIxMjEiIGZpbGwtb3BhY2l0eT0iMC4wMyI+PHBhdGggZD0iTTM2IDM0djLIMzR2LTJoMnptMC0xMHYyaC0ydi0yaDJ6bTEwIDBoMnYyaC0ydi0yek0yMCAyNGgydjJoLTJ2LTJ6bS0xMCAwaDJ2MmgtMnYtMnptMTAgMTBoMnYyaC0ydi0yek0zMCAyNGgydjJoLTJ2LTJ6bTEwIDBo')] opacity-[0.03]"></div>
@@ -119,9 +167,29 @@ const Hero = () => {
                 <img alt="Platform dashboard" className="w-full h-auto" src="https://mebuisworks.com/wp-content/uploads/2024/11/1-1024x680.webp" />
               </div>
               
+              {/* Floating feature badges */}
               <div className="absolute -bottom-4 -right-4 bg-gradient-to-r from-[#D4AF37] to-[#F2D675] text-black px-4 py-2 rounded-lg font-medium shadow-lg z-30 animate-float flex items-center gap-1">
                 <span className="w-2 h-2 bg-black rounded-full animate-pulse"></span>
                 New Features
+              </div>
+              
+              <div className="absolute top-10 -right-8 bg-zinc-900/90 backdrop-blur-sm px-4 py-3 rounded-lg font-medium shadow-lg z-30 animate-float border border-[#D4AF37]/30 text-white" style={{ animationDelay: '1s' }}>
+                <div className="flex items-center gap-2">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="text-[#D4AF37]">
+                    <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                    <path d="M22 4L12 14.01l-3-3"></path>
+                  </svg>
+                  <span>Real-time Updates</span>
+                </div>
+              </div>
+              
+              <div className="absolute -left-6 bottom-20 bg-zinc-900/90 backdrop-blur-sm px-4 py-3 rounded-lg font-medium shadow-lg z-30 animate-float border border-[#D4AF37]/30 text-white" style={{ animationDelay: '1.5s' }}>
+                <div className="flex items-center gap-2">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="text-[#D4AF37]">
+                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                  </svg>
+                  <span>Advanced Security</span>
+                </div>
               </div>
               
               {/* Decorative elements */}

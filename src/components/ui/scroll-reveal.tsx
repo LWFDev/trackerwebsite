@@ -8,6 +8,9 @@ interface ScrollRevealProps {
   delay?: number; // Delay in ms
   distance?: string; // CSS value like "20px"
   once?: boolean; // Only animate once
+  direction?: "up" | "down" | "left" | "right"; // Animation direction
+  duration?: number; // Animation duration in ms
+  stagger?: boolean; // Enable staggered animation for children
 }
 
 export const ScrollReveal = ({
@@ -17,6 +20,9 @@ export const ScrollReveal = ({
   delay = 0,
   distance = "20px",
   once = true,
+  direction = "up",
+  duration = 700,
+  stagger = false,
 }: ScrollRevealProps) => {
   const [isVisible, setIsVisible] = useState(false);
   const ref = useRef<HTMLDivElement>(null);
@@ -41,7 +47,7 @@ export const ScrollReveal = ({
           }
         });
       },
-      { threshold }
+      { threshold, rootMargin: "10px" }
     );
 
     observer.observe(currentRef);
@@ -53,16 +59,33 @@ export const ScrollReveal = ({
     };
   }, [delay, once, threshold]);
 
+  // Calculate transform based on direction
+  const getTransform = () => {
+    if (!isVisible) {
+      switch (direction) {
+        case "up": return `translateY(${distance})`;
+        case "down": return `translateY(-${distance})`;
+        case "left": return `translateX(${distance})`;
+        case "right": return `translateX(-${distance})`;
+        default: return `translateY(${distance})`;
+      }
+    }
+    return 'translate(0, 0)';
+  };
+
   return (
     <div
       ref={ref}
-      className={`${className} transition-all duration-700 ease-out`}
+      className={`${className} ${stagger ? 'stagger-parent' : ''} transition-all ease-out`}
       style={{
         opacity: isVisible ? 1 : 0,
-        transform: isVisible ? 'translateY(0)' : `translateY(${distance})`,
+        transform: getTransform(),
+        transitionDuration: `${duration}ms`,
       }}
     >
-      {children}
+      {stagger ? React.Children.map(children, child => (
+        <div className="stagger-item">{child}</div>
+      )) : children}
     </div>
   );
 };
