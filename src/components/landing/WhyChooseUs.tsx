@@ -1,6 +1,6 @@
 
 import { ScrollReveal } from "@/components/ui/scroll-reveal";
-import { Award, CheckCircle, Shield, TrendingUp } from "lucide-react";
+import { Award, CheckCircle, Cpu, TrendingUp } from "lucide-react";
 
 const FeatureItem = ({ 
   icon, 
@@ -63,9 +63,9 @@ const WhyChooseUs = () => {
           />
           
           <FeatureItem 
-            icon={<Shield size={24} />}
-            title="Secure & Reliable"
-            description="99.9% uptime with enterprise-grade security to protect your business data."
+            icon={<Cpu size={24} />}
+            title="Advanced Machine Management"
+            description="Sophisticated monitoring and control for all your production equipment with real-time alerts."
             delay={200}
           />
           

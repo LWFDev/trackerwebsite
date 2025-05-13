@@ -1,6 +1,6 @@
 
 import ModuleLayout from "@/components/modules/ModuleLayout";
-import { UserCheck, CheckCircle, Clock, File, Shield, MessageSquare, FileText, LockIcon, Calendar, CreditCard, Settings, Users, Smartphone, Globe, Layers, Zap, PenTool } from "lucide-react";
+import { UserCheck, CheckCircle, Clock, File, Cpu, MessageSquare, FileText, Settings, Calendar, CreditCard, Users, Smartphone, Globe, Layers, Zap, PenTool } from "lucide-react";
 
 const CustomerPortal = () => {
   return (
@@ -71,16 +71,16 @@ const CustomerPortal = () => {
         ]
       }}
       specialSection={{
-        title: "Enterprise-Grade Security",
-        subtitle: "Built for Trust",
-        description: "Our Customer Portal is designed with the highest security standards to protect your sensitive client information.",
+        title: "Advanced Machine Management",
+        subtitle: "Built for Efficiency",
+        description: "Our Customer Portal integrates sophisticated machine monitoring to keep clients informed about production progress.",
         items: [
-          { text: "End-to-end encryption for all data and communications", icon: <LockIcon className="h-5 w-5" /> },
-          { text: "Multi-factor authentication with customizable security policies", icon: <Shield className="h-5 w-5" /> },
-          { text: "Granular role-based access controls and permissions", icon: <UserCheck className="h-5 w-5" /> },
-          { text: "Comprehensive compliance with GDPR, CCPA, and industry regulations", icon: <CheckCircle className="h-5 w-5" /> },
-          { text: "Detailed audit trails of all portal activities", icon: <FileText className="h-5 w-5" /> },
-          { text: "Regular security updates and vulnerability testing", icon: <Shield className="h-5 w-5" /> }
+          { text: "End-to-end production tracking with real-time updates", icon: <File className="h-5 w-5" /> },
+          { text: "Multi-factor verification for equipment operating parameters", icon: <Cpu className="h-5 w-5" /> },
+          { text: "Granular production scheduling and resource allocation", icon: <UserCheck className="h-5 w-5" /> },
+          { text: "Comprehensive compliance with industry quality standards", icon: <CheckCircle className="h-5 w-5" /> },
+          { text: "Detailed audit trails of all production activities", icon: <FileText className="h-5 w-5" /> },
+          { text: "Regular performance optimization and preventative maintenance", icon: <Settings className="h-5 w-5" /> }
         ]
       }}
       ctaSection={{

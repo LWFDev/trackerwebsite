@@ -1,6 +1,6 @@
 
 import React from "react";
-import { CheckCircle, Zap, BarChart, Shield, Globe } from "lucide-react";
+import { CheckCircle, Zap, BarChart, Cpu, Globe } from "lucide-react";
 import FeatureCard from "./FeatureCard";
 import SectionTitle from "./SectionTitle";
 import { ScrollReveal } from "@/components/ui/scroll-reveal";
@@ -46,23 +46,23 @@ const FeaturesSection = () => {
           <div className="relative z-10">
             <div className="flex flex-col md:flex-row md:items-center justify-between gap-6">
               <div className="max-w-xl">
-                <h3 className="text-2xl font-bold mb-4">Enterprise-Grade <span className="text-[#D4AF37]">Security & Reliability</span></h3>
-                <p className="text-gray-400">Our platform is built with enterprise-level security and 99.99% uptime guarantee, ensuring your business critical data is always safe and accessible.</p>
+                <h3 className="text-2xl font-bold mb-4">Advanced <span className="text-[#D4AF37]">Machine Management</span></h3>
+                <p className="text-gray-400">Our platform offers sophisticated machine monitoring and control systems with 99.99% reliability, ensuring your production equipment is always operating at peak efficiency.</p>
               </div>
               
               <div className="flex gap-6">
                 <div className="flex flex-col items-center">
                   <div className="w-12 h-12 rounded-full bg-zinc-800 border border-zinc-700 flex items-center justify-center text-[#D4AF37] mb-2">
-                    <Shield className="w-5 h-5" />
+                    <Cpu className="w-5 h-5" />
                   </div>
-                  <span className="text-sm text-gray-400">Advanced Security</span>
+                  <span className="text-sm text-gray-400">Smart Monitoring</span>
                 </div>
                 
                 <div className="flex flex-col items-center">
                   <div className="w-12 h-12 rounded-full bg-zinc-800 border border-zinc-700 flex items-center justify-center text-[#D4AF37] mb-2">
                     <Globe className="w-5 h-5" />
                   </div>
-                  <span className="text-sm text-gray-400">Global Availability</span>
+                  <span className="text-sm text-gray-400">Remote Access</span>
                 </div>
               </div>
             </div>
