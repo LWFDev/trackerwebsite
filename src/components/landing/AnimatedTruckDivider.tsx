@@ -10,17 +10,23 @@ const AnimatedTruckDivider = ({ className = "" }: AnimatedTruckDividerProps) => 
   const [trucks, setTrucks] = useState<number[]>([0]);
   const truckContainerRef = useRef<HTMLDivElement>(null);
   const animationRefs = useRef<Animation[]>([]);
+  const timerRefs = useRef<NodeJS.Timeout[]>([]);
 
   useEffect(() => {
     const animateTrucks = () => {
       if (!truckContainerRef.current) return;
       
-      // Clear previous animations
+      // Clear previous animations and timers
       animationRefs.current.forEach(animation => {
         if (animation) animation.cancel();
       });
       
+      timerRefs.current.forEach(timer => {
+        clearTimeout(timer);
+      });
+      
       animationRefs.current = [];
+      timerRefs.current = [];
       
       // Create animations for all trucks
       const truckElements = truckContainerRef.current.querySelectorAll('.truck-element');
@@ -36,7 +42,7 @@ const AnimatedTruckDivider = ({ className = "" }: AnimatedTruckDividerProps) => 
         const duration = 7000 + (Math.random() * 2000); // Between 7-9 seconds
         
         // Use setTimeout to stagger the start of animations
-        setTimeout(() => {
+        const timer = setTimeout(() => {
           const animation = (element as HTMLElement).animate(
             [
               { transform: `translateX(${startPosition}px) translateY(-50%)` },
@@ -54,14 +60,43 @@ const AnimatedTruckDivider = ({ className = "" }: AnimatedTruckDividerProps) => 
           
           // Only the first truck adds a new truck when it finishes
           if (index === 0) {
-            animation.onfinish = () => {
+            // Create a timer to add a new truck when the animation completes
+            const newTruckTimer = setTimeout(() => {
               setTrucks(prevTrucks => {
                 if (prevTrucks.length >= 10) return prevTrucks;
                 return [...prevTrucks, prevTrucks.length];
               });
+            }, duration);
+            
+            timerRefs.current.push(newTruckTimer);
+            
+            // Setup continuous animation loop
+            animation.onfinish = () => {
+              // Start a new animation immediately without waiting
+              const newStartPosition = -50 - (Math.random() * 100);
+              const newDuration = 7000 + (Math.random() * 2000);
               
-              // Restart animation
-              animateTrucks();
+              const newAnimation = (element as HTMLElement).animate(
+                [
+                  { transform: `translateX(${newStartPosition}px) translateY(-50%)` },
+                  { transform: `translateX(calc(100vw + 50px)) translateY(-50%)` }
+                ],
+                {
+                  duration: newDuration,
+                  iterations: 1,
+                  easing: 'linear',
+                  fill: 'forwards'
+                }
+              );
+              
+              // Update the reference
+              const indexToReplace = animationRefs.current.indexOf(animation);
+              if (indexToReplace !== -1) {
+                animationRefs.current[indexToReplace] = newAnimation;
+              }
+              
+              // Set the same onfinish handler for continuous animation
+              newAnimation.onfinish = animation.onfinish;
             };
           } else {
             // For other trucks, just restart their own animation
@@ -94,15 +129,21 @@ const AnimatedTruckDivider = ({ className = "" }: AnimatedTruckDividerProps) => 
             };
           }
         }, startDelay);
+        
+        timerRefs.current.push(timer);
       });
     };
 
     animateTrucks();
     
     return () => {
-      // Cleanup animations
+      // Cleanup animations and timers
       animationRefs.current.forEach(animation => {
         if (animation) animation.cancel();
+      });
+      
+      timerRefs.current.forEach(timer => {
+        clearTimeout(timer);
       });
     };
   }, [trucks.length]);
