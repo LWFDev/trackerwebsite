@@ -16,7 +16,6 @@ import TermsOfService from "@/pages/TermsOfService";
 import PrivacyPolicy from "@/pages/PrivacyPolicy";
 import NotFound from "@/pages/NotFound";
 import Layout from "@/components/layout/Layout";
-import CustomCursor from '@/components/ui/custom-cursor';
 import PageTransition from '@/components/transitions/PageTransition';
 
 // Wrapper component that contains the PageTransition and routes
@@ -42,12 +41,9 @@ const AppRoutes = () => {
 
 function App() {
   return (
-    <>
-      <CustomCursor />
-      <Router>
-        <AppRoutes />
-      </Router>
-    </>
+    <Router>
+      <AppRoutes />
+    </Router>
   );
 }
 
