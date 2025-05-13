@@ -4,10 +4,11 @@ import FeaturesSection from "./features/FeaturesSection";
 import ModulesSection from "./features/ModulesSection";
 import { ScrollReveal } from "@/components/ui/scroll-reveal";
 import BackgroundElements from "./features/BackgroundElements";
+import { Separator } from "@/components/ui/separator";
 
 const Features = () => {
   return (
-    <section id="features" className="py-20 bg-black relative overflow-hidden">
+    <section id="features" className="py-24 bg-black relative overflow-hidden">
       {/* Animated background elements */}
       <BackgroundElements />
 
@@ -15,6 +16,10 @@ const Features = () => {
         <ScrollReveal>
           <FeaturesSection />
         </ScrollReveal>
+        
+        <div className="my-16">
+          <Separator className="h-px bg-gradient-to-r from-transparent via-zinc-800 to-transparent" />
+        </div>
         
         <ScrollReveal delay={300}>
           <ModulesSection />

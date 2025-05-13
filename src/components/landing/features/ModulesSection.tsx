@@ -2,6 +2,10 @@
 import React from "react";
 import ModuleCard from "./ModuleCard";
 import SectionTitle from "./SectionTitle";
+import { Button } from "@/components/ui/button";
+import { ArrowRight } from "lucide-react";
+import { Link } from "react-router-dom";
+import { ScrollReveal } from "@/components/ui/scroll-reveal";
 
 const ModulesSection = () => {
   return (
@@ -45,6 +49,9 @@ const ModulesSection = () => {
           link="/modules/base-garments"
           delay={0.4}
         />
+      </div>
+      
+      <div className="mt-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
         <ModuleCard
           icon={<img src="/lovable-uploads/9ed005ea-9015-43b6-b721-149fd7e96dc3.png" alt="Logos" className="w-10 h-10" />}
           title="Logos"
@@ -73,35 +80,16 @@ const ModulesSection = () => {
           link="/modules/production"
           delay={0.8}
         />
-        <ModuleCard
-          icon={<img src="/lovable-uploads/89eb9fd7-66d8-4124-b584-7895d0032ef3.png" alt="Suppliers" className="w-10 h-10" />}
-          title="Suppliers"
-          description="Maintain supplier contacts and product availability data."
-          link="/modules/suppliers"
-          delay={0.9}
-        />
-        <ModuleCard
-          icon={<img src="/lovable-uploads/9a36183f-4238-4b3a-b0e0-43a4488f0214.png" alt="Purchase Orders" className="w-10 h-10" />}
-          title="Purchase Orders"
-          description="Create and track purchase orders with supplier fulfillment."
-          link="/modules/purchase-orders"
-          delay={1.0}
-        />
-        <ModuleCard
-          icon={<img src="/lovable-uploads/5a59d4b9-43ac-485e-830d-ee80fc2e0905.png" alt="Artworkers" className="w-10 h-10" />}
-          title="Artworkers"
-          description="Assign artwork tasks and manage proof approvals."
-          link="/modules/artworkers"
-          delay={1.1}
-        />
-        <ModuleCard
-          icon={<img src="/lovable-uploads/c78cb5cd-6b30-4b76-ab3d-95defabc532a.png" alt="Customer Portal" className="w-10 h-10" />}
-          title="Customer Portal"
-          description="Give customers access to orders, proofs, and tracking."
-          link="/modules/customer-portal"
-          delay={1.2}
-        />
       </div>
+
+      <ScrollReveal delay={0.9} className="mt-12 text-center">
+        <Link to="/modules">
+          <Button variant="outline" size="lg" className="border-[#D4AF37]/30 hover:border-[#D4AF37] hover:bg-[#D4AF37]/10 text-[#D4AF37] group">
+            View all modules
+            <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
+          </Button>
+        </Link>
+      </ScrollReveal>
     </>
   );
 };
