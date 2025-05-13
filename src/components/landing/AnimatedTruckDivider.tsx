@@ -9,113 +9,111 @@ interface AnimatedTruckDividerProps {
 const AnimatedTruckDivider = ({ className = "" }: AnimatedTruckDividerProps) => {
   const [trucks, setTrucks] = useState<number[]>([0]);
   const truckContainerRef = useRef<HTMLDivElement>(null);
-  const animationRefs = useRef<Animation[]>([]);
-  const timerRefs = useRef<NodeJS.Timeout[]>([]);
+  const animationsRunningRef = useRef<boolean>(false);
+  const animationRefs = useRef<(Animation | null)[]>([]);
   
-  // Use to track the first truck's animation state
-  const isFirstCycleRef = useRef<boolean>(true);
+  // Cleanup function to cancel all animations
+  const cleanupAnimations = () => {
+    if (animationRefs.current) {
+      animationRefs.current.forEach(animation => {
+        if (animation) animation.cancel();
+      });
+      animationRefs.current = [];
+    }
+  };
 
   useEffect(() => {
-    const animateTrucks = () => {
+    if (!truckContainerRef.current || animationsRunningRef.current) return;
+    
+    // Start animations only once
+    animationsRunningRef.current = true;
+    
+    // Add more trucks gradually
+    const maxTrucks = 6;
+    let currentTrucks = 1;
+    
+    const addTruckInterval = setInterval(() => {
+      if (currentTrucks < maxTrucks) {
+        setTrucks(prev => [...prev, prev.length]);
+        currentTrucks++;
+      } else {
+        clearInterval(addTruckInterval);
+      }
+    }, 2000);
+    
+    // Setup continuous animations for all trucks
+    const setupAnimations = () => {
       if (!truckContainerRef.current) return;
       
-      // Clear previous animations and timers
-      animationRefs.current.forEach(animation => {
-        if (animation) animation.cancel();
-      });
-      
-      timerRefs.current.forEach(timer => {
-        clearTimeout(timer);
-      });
-      
-      animationRefs.current = [];
-      timerRefs.current = [];
-      
-      // Create animations for all trucks
       const truckElements = truckContainerRef.current.querySelectorAll('.truck-element');
+      if (!truckElements.length) return;
       
-      truckElements.forEach((element, index) => {
-        // Configure animation parameters
-        const minDelay = 400; // 0.4 seconds in milliseconds
-        const randomAdditionalDelay = Math.random() * 600; // Random additional delay up to 0.6 seconds
-        const startDelay = index * minDelay + randomAdditionalDelay;
+      // Cancel previous animations
+      cleanupAnimations();
+      
+      truckElements.forEach((truckElement, index) => {
+        const truck = truckElement as HTMLElement;
         
-        // Vary the starting positions and timing for a more natural look
-        const startPosition = -50 - (Math.random() * 100);
-        const duration = 7000 + (Math.random() * 2000); // Between 7-9 seconds
-
-        // Create animation cycle
-        const createContinuousAnimation = (element: HTMLElement, isInitial = false) => {
-          const startPos = isInitial ? startPosition : -50 - (Math.random() * 100);
-          const animDuration = isInitial ? duration : 7000 + (Math.random() * 2000);
-          
-          // Create a new animation
-          const animation = element.animate(
-            [
-              { transform: `translateX(${startPos}px) translateY(-50%)` },
-              { transform: `translateX(calc(100vw + 50px)) translateY(-50%)` }
-            ],
-            {
-              duration: animDuration,
-              iterations: 1,
-              easing: 'linear',
-              fill: 'forwards'
-            }
-          );
-          
-          // Special handling for first truck
-          if (index === 0) {
-            // Schedule spawning of new truck based on animation duration
-            const newTruckTimer = setTimeout(() => {
-              setTrucks(prevTrucks => {
-                if (prevTrucks.length >= 10) return prevTrucks;
-                return [...prevTrucks, prevTrucks.length];
-              });
-            }, animDuration);
-            
-            timerRefs.current.push(newTruckTimer);
-            
-            // Pre-schedule the next animation to start exactly when this one finishes
-            // This is the key to preventing the pause
-            const nextAnimationTimer = setTimeout(() => {
-              // Schedule the next animation to start exactly when current one completes
-              createContinuousAnimation(element);
-            }, animDuration - 20); // Start slightly before current animation ends to ensure no gap
-            
-            timerRefs.current.push(nextAnimationTimer);
-          } else {
-            // For other trucks, use the onfinish to start the next cycle
-            animation.onfinish = () => {
-              createContinuousAnimation(element);
-            };
-          }
-          
-          return animation;
-        };
+        // Calculate random speeds and starting positions
+        const speed = 12 + Math.random() * 6; // seconds to cross screen
+        const delay = index * 0.8 + Math.random() * 1.5; // staggered starts
         
-        // Use setTimeout to stagger the start of initial animations
-        const timer = setTimeout(() => {
-          const animation = createContinuousAnimation(element as HTMLElement, true);
-          animationRefs.current.push(animation);
-        }, startDelay);
+        // Set initial position
+        truck.style.transform = 'translateX(-50px) translateY(-50%)';
         
-        timerRefs.current.push(timer);
+        // Create infinite CSS animation with keyframes
+        truck.style.animation = `truckMove ${speed}s linear ${delay}s infinite`;
       });
     };
-
-    animateTrucks();
+    
+    // Add a keyframe rule for truck animation to ensure smooth, infinite movement
+    const addKeyframeRule = () => {
+      const styleSheet = document.createElement('style');
+      styleSheet.id = 'truck-animation-style';
+      styleSheet.textContent = `
+        @keyframes truckMove {
+          0% {
+            transform: translateX(-50px) translateY(-50%);
+          }
+          100% {
+            transform: translateX(calc(100vw + 50px)) translateY(-50%);
+          }
+        }
+      `;
+      document.head.appendChild(styleSheet);
+    };
+    
+    // Add the keyframe rule only if it doesn't exist already
+    if (!document.getElementById('truck-animation-style')) {
+      addKeyframeRule();
+    }
+    
+    // Start the animations
+    setupAnimations();
+    
+    // Update animations when trucks are added
+    const updateAnimationObserver = new MutationObserver(() => {
+      setupAnimations();
+    });
+    
+    if (truckContainerRef.current) {
+      updateAnimationObserver.observe(truckContainerRef.current, { 
+        childList: true 
+      });
+    }
     
     return () => {
-      // Cleanup animations and timers
-      animationRefs.current.forEach(animation => {
-        if (animation) animation.cancel();
-      });
+      clearInterval(addTruckInterval);
+      updateAnimationObserver.disconnect();
+      cleanupAnimations();
       
-      timerRefs.current.forEach(timer => {
-        clearTimeout(timer);
-      });
+      // Remove the style element when component unmounts
+      const styleElement = document.getElementById('truck-animation-style');
+      if (styleElement) {
+        document.head.removeChild(styleElement);
+      }
     };
-  }, [trucks.length]);
+  }, []);
 
   return (
     <div className={`relative w-full h-16 my-8 ${className}`}>
@@ -123,7 +121,7 @@ const AnimatedTruckDivider = ({ className = "" }: AnimatedTruckDividerProps) => 
       <div className="absolute top-1/2 left-0 w-full h-1 border-t-4 border-dotted border-zinc-700 transform -translate-y-1/2"></div>
       
       {/* Container for animated trucks */}
-      <div ref={truckContainerRef} className="relative w-full h-full">
+      <div ref={truckContainerRef} className="relative w-full h-full overflow-hidden">
         {/* Render all trucks */}
         {trucks.map((id) => (
           <div 
