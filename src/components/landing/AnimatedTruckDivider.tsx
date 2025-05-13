@@ -11,6 +11,9 @@ const AnimatedTruckDivider = ({ className = "" }: AnimatedTruckDividerProps) => 
   const truckContainerRef = useRef<HTMLDivElement>(null);
   const animationRefs = useRef<Animation[]>([]);
   const timerRefs = useRef<NodeJS.Timeout[]>([]);
+  
+  // Use to track the first truck's animation state
+  const isFirstCycleRef = useRef<boolean>(true);
 
   useEffect(() => {
     const animateTrucks = () => {
@@ -32,7 +35,7 @@ const AnimatedTruckDivider = ({ className = "" }: AnimatedTruckDividerProps) => 
       const truckElements = truckContainerRef.current.querySelectorAll('.truck-element');
       
       truckElements.forEach((element, index) => {
-        // Ensure a minimum delay of 0.4 seconds between trucks
+        // Configure animation parameters
         const minDelay = 400; // 0.4 seconds in milliseconds
         const randomAdditionalDelay = Math.random() * 600; // Random additional delay up to 0.6 seconds
         const startDelay = index * minDelay + randomAdditionalDelay;
@@ -40,94 +43,60 @@ const AnimatedTruckDivider = ({ className = "" }: AnimatedTruckDividerProps) => 
         // Vary the starting positions and timing for a more natural look
         const startPosition = -50 - (Math.random() * 100);
         const duration = 7000 + (Math.random() * 2000); // Between 7-9 seconds
-        
-        // Use setTimeout to stagger the start of animations
-        const timer = setTimeout(() => {
-          const animation = (element as HTMLElement).animate(
+
+        // Create animation cycle
+        const createContinuousAnimation = (element: HTMLElement, isInitial = false) => {
+          const startPos = isInitial ? startPosition : -50 - (Math.random() * 100);
+          const animDuration = isInitial ? duration : 7000 + (Math.random() * 2000);
+          
+          // Create a new animation
+          const animation = element.animate(
             [
-              { transform: `translateX(${startPosition}px) translateY(-50%)` },
+              { transform: `translateX(${startPos}px) translateY(-50%)` },
               { transform: `translateX(calc(100vw + 50px)) translateY(-50%)` }
             ],
             {
-              duration,
+              duration: animDuration,
               iterations: 1,
               easing: 'linear',
               fill: 'forwards'
             }
           );
           
-          animationRefs.current.push(animation);
-          
-          // Only the first truck adds a new truck when it finishes
+          // Special handling for first truck
           if (index === 0) {
-            // Create a timer to add a new truck when the animation completes
+            // Schedule spawning of new truck based on animation duration
             const newTruckTimer = setTimeout(() => {
               setTrucks(prevTrucks => {
                 if (prevTrucks.length >= 10) return prevTrucks;
                 return [...prevTrucks, prevTrucks.length];
               });
-            }, duration);
+            }, animDuration);
             
             timerRefs.current.push(newTruckTimer);
             
-            // Setup continuous animation loop
-            animation.onfinish = () => {
-              // Start a new animation immediately without waiting
-              const newStartPosition = -50 - (Math.random() * 100);
-              const newDuration = 7000 + (Math.random() * 2000);
-              
-              const newAnimation = (element as HTMLElement).animate(
-                [
-                  { transform: `translateX(${newStartPosition}px) translateY(-50%)` },
-                  { transform: `translateX(calc(100vw + 50px)) translateY(-50%)` }
-                ],
-                {
-                  duration: newDuration,
-                  iterations: 1,
-                  easing: 'linear',
-                  fill: 'forwards'
-                }
-              );
-              
-              // Update the reference
-              const indexToReplace = animationRefs.current.indexOf(animation);
-              if (indexToReplace !== -1) {
-                animationRefs.current[indexToReplace] = newAnimation;
-              }
-              
-              // Set the same onfinish handler for continuous animation
-              newAnimation.onfinish = animation.onfinish;
-            };
+            // Pre-schedule the next animation to start exactly when this one finishes
+            // This is the key to preventing the pause
+            const nextAnimationTimer = setTimeout(() => {
+              // Schedule the next animation to start exactly when current one completes
+              createContinuousAnimation(element);
+            }, animDuration - 20); // Start slightly before current animation ends to ensure no gap
+            
+            timerRefs.current.push(nextAnimationTimer);
           } else {
-            // For other trucks, just restart their own animation
+            // For other trucks, use the onfinish to start the next cycle
             animation.onfinish = () => {
-              // Just restart this specific truck's animation with new random values
-              const newStartPosition = -50 - (Math.random() * 100);
-              const newDuration = 7000 + (Math.random() * 2000);
-              
-              const newAnimation = (element as HTMLElement).animate(
-                [
-                  { transform: `translateX(${newStartPosition}px) translateY(-50%)` },
-                  { transform: `translateX(calc(100vw + 50px)) translateY(-50%)` }
-                ],
-                {
-                  duration: newDuration,
-                  iterations: 1,
-                  easing: 'linear',
-                  fill: 'forwards'
-                }
-              );
-              
-              // Update the reference
-              const indexToReplace = animationRefs.current.indexOf(animation);
-              if (indexToReplace !== -1) {
-                animationRefs.current[indexToReplace] = newAnimation;
-              }
-              
-              // Set the same onfinish handler
-              newAnimation.onfinish = animation.onfinish;
+              createContinuousAnimation(element);
             };
           }
+          
+          return animation;
+        };
+        
+        // Use setTimeout to stagger the start of initial animations
+        const timer = setTimeout(() => {
+          const animation = createContinuousAnimation(element as HTMLElement, true);
+          animationRefs.current.push(animation);
         }, startDelay);
         
         timerRefs.current.push(timer);
