@@ -7,19 +7,29 @@ import PricingFAQ from "@/components/pricing/PricingFAQ";
 import ContactCTA from "@/components/pricing/ContactCTA";
 import { ScrollReveal } from "@/components/ui/scroll-reveal";
 import { motion } from "framer-motion";
+import VisualElements from "@/components/pricing/VisualElements";
+import FloatingObjects from "@/components/pricing/FloatingObjects";
 
 const PricingPage = () => {
   const [isLoading, setIsLoading] = useState(true);
   
+  // Performance optimization - lazy loading
+  const [isClientRendered, setIsClientRendered] = useState(false);
+  
   // Loading animation
   useEffect(() => {
     // Simulate loading
-    setTimeout(() => {
+    const timer = setTimeout(() => {
       setIsLoading(false);
     }, 600);
     
     // Scroll to top when component mounts
     window.scrollTo(0, 0);
+    
+    // Flag that client-side rendering is complete
+    setIsClientRendered(true);
+    
+    return () => clearTimeout(timer);
   }, []);
 
   return (
@@ -37,7 +47,16 @@ const PricingPage = () => {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.5 }}
+          className="relative"
         >
+          {/* Visual elements rendered only on client side for performance */}
+          {isClientRendered && (
+            <>
+              <VisualElements />
+              <FloatingObjects />
+            </>
+          )}
+          
           <PricingHero />
           
           <div className="relative">
@@ -50,18 +69,33 @@ const PricingPage = () => {
             <ScrollReveal threshold={0.1} delay={300} className="py-10 md:py-16">
               <div className="container mx-auto px-4">
                 <motion.div 
-                  className="flex flex-col md:flex-row items-center justify-center gap-8 max-w-5xl mx-auto bg-zinc-900/50 backdrop-blur-md border border-zinc-800 rounded-xl p-6 md:p-8"
+                  className="flex flex-col md:flex-row items-center justify-center gap-8 max-w-5xl mx-auto bg-zinc-900/50 backdrop-blur-md border border-zinc-800 rounded-xl p-6 md:p-8 relative overflow-hidden"
                   whileHover={{ 
                     boxShadow: '0 20px 80px -10px rgba(212, 175, 55, 0.15)',
                     y: -5
                   }}
                   transition={{ type: "spring", stiffness: 400, damping: 15 }}
                 >
-                  <div className="text-center md:text-left">
+                  {/* Visual accents */}
+                  <motion.div 
+                    className="absolute -top-20 -right-20 w-40 h-40 rounded-full bg-[#D4AF37]/5"
+                    animate={{
+                      scale: [1, 1.2, 1],
+                      opacity: [0.5, 0.3, 0.5],
+                    }}
+                    transition={{
+                      duration: 4,
+                      repeat: Infinity,
+                      repeatType: "reverse",
+                      ease: "easeInOut"
+                    }}
+                  />
+                  
+                  <div className="text-center md:text-left relative z-10">
                     <h3 className="text-xl md:text-2xl font-semibold mb-2">Need help choosing the right plan?</h3>
                     <p className="text-gray-400">Our team is ready to assist you with any questions you might have.</p>
                   </div>
-                  <a href="/contact" className="shrink-0">
+                  <a href="/contact" className="shrink-0 relative z-10">
                     <motion.button 
                       className="bg-zinc-800 hover:bg-zinc-700 text-white px-6 py-3 rounded-lg transition-colors relative overflow-hidden group"
                       whileHover={{ y: -2 }}
@@ -87,7 +121,7 @@ const PricingPage = () => {
             
             <FeatureComparison />
             
-            {/* Added visual separator with gradient line instead of truck animation */}
+            {/* Visual separator with gradient line */}
             <div className="max-w-7xl mx-auto my-16">
               <div className="h-px bg-gradient-to-r from-transparent via-[#D4AF37]/40 to-transparent"></div>
             </div>
