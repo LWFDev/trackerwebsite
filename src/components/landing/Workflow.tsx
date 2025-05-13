@@ -1,5 +1,5 @@
 
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import ScrollReveal from "@/components/ui/scroll-reveal";
 
 const WorkflowStep = ({ 
@@ -13,6 +13,43 @@ const WorkflowStep = ({
   description: string,
   delay?: number
 }) => {
+  const [isHovered, setIsHovered] = useState(false);
+  const cardRef = useRef<HTMLDivElement>(null);
+
+  // 3D tilt effect on hover
+  useEffect(() => {
+    const card = cardRef.current;
+    if (!card) return;
+    
+    const handleMouseMove = (e: MouseEvent) => {
+      if (!isHovered) return;
+      
+      const rect = card.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
+      
+      // Calculate tilt based on mouse position
+      const centerX = rect.width / 2;
+      const centerY = rect.height / 2;
+      const tiltX = (y - centerY) / 20;
+      const tiltY = (centerX - x) / 20;
+      
+      card.style.transform = `perspective(1000px) rotateX(${tiltX}deg) rotateY(${tiltY}deg) scale(1.05)`;
+    };
+    
+    const handleMouseLeave = () => {
+      card.style.transform = 'perspective(1000px) rotateX(0) rotateY(0) scale(1)';
+    };
+    
+    if (isHovered) {
+      document.addEventListener('mousemove', handleMouseMove);
+    }
+    
+    return () => {
+      document.removeEventListener('mousemove', handleMouseMove);
+    };
+  }, [isHovered]);
+  
   return (
     <ScrollReveal 
       delay={delay * 200} 
@@ -21,15 +58,21 @@ const WorkflowStep = ({
       direction="up"
       distance="30px"
     >
-      <div className="relative">
+      <div 
+        className="relative" 
+        ref={cardRef} 
+        onMouseEnter={() => setIsHovered(true)}
+        onMouseLeave={() => setIsHovered(false)}
+        style={{ transition: 'transform 0.2s ease-out' }}
+      >
         <div className="absolute inset-0 bg-gradient-to-r from-[#D4AF37]/20 to-[#F2D675]/30 rounded-xl blur-md opacity-0 group-hover:opacity-100 transition-all duration-300"></div>
         <div className="w-16 h-16 rounded-xl bg-gradient-to-br relative z-10 from-[#D4AF37] to-[#F2D675] flex items-center justify-center text-black font-bold mb-5 text-xl shadow-lg shadow-[#D4AF37]/20 transform transition-all duration-500 group-hover:scale-110 group-hover:shadow-[#D4AF37]/40">
           {/* Animated highlight effect */}
           <span className="absolute inset-0 w-full h-full bg-white/10 rounded-xl opacity-0 group-hover:opacity-100 animate-pulse"></span>
-          {number}
+          <span className="relative z-10">{number}</span>
         </div>
       </div>
-      <h3 className="text-lg font-semibold mb-3 group-hover:text-[#D4AF37] transition-colors duration-300">{title}</h3>
+      <h3 className="font-playfair text-lg font-semibold mb-3 group-hover:text-[#D4AF37] transition-colors duration-300">{title}</h3>
       <p className="text-gray-400 text-sm group-hover:text-gray-300 transition-colors duration-300 max-w-[250px] mx-auto">{description}</p>
     </ScrollReveal>
   );
@@ -38,6 +81,13 @@ const WorkflowStep = ({
 const Workflow = () => {
   const lineRef = useRef<HTMLDivElement>(null);
   const dotRef = useRef<HTMLDivElement>(null);
+  const [activeStep, setActiveStep] = useState(0);
+  const stepsRef = useRef<Array<HTMLDivElement | null>>([]);
+  
+  // Interactive timeline effects
+  const handleStepEnter = (index: number) => {
+    setActiveStep(index);
+  };
 
   // Animate the dot moving along the line
   useEffect(() => {
@@ -68,15 +118,15 @@ const Workflow = () => {
     <section className="py-20 bg-zinc-900 relative overflow-hidden">
       {/* Background elements */}
       <div className="absolute top-0 left-0 w-full h-full overflow-hidden z-0">
-        {/* Animated gradient blobs */}
+        {/* Enhanced animated gradient blobs */}
         <div className="absolute w-[700px] h-[700px] rounded-full bg-[#D4AF37]/5 blur-[150px] animate-morph top-1/2 -left-40 transform -translate-y-1/2"></div>
         <div className="absolute w-[700px] h-[700px] rounded-full bg-zinc-800/30 blur-[150px] animate-morph top-1/2 -right-40 transform -translate-y-1/2" style={{ animationDelay: '2s' }}></div>
         
-        {/* Floating elements */}
-        <div className="absolute top-20 left-[25%] w-12 h-12 rounded-md border border-[#D4AF37]/10 opacity-20 rotate-12 animate-float" style={{ animationDelay: '1.1s' }}></div>
-        <div className="absolute bottom-40 right-[20%] w-16 h-16 rounded-full border border-[#D4AF37]/10 opacity-20 animate-float" style={{ animationDelay: '2.3s' }}></div>
-        <div className="absolute top-[30%] right-[35%] w-10 h-10 border border-[#D4AF37]/10 rounded-lg rotate-45 animate-float" style={{ animationDelay: '1.4s' }}></div>
-        <div className="absolute bottom-[15%] left-[40%] w-8 h-8 border border-[#D4AF37]/10 rounded-full animate-float" style={{ animationDelay: '1.8s' }}></div>
+        {/* Enhanced floating elements with parallax effect */}
+        <div className="absolute top-20 left-[25%] w-12 h-12 rounded-md border border-[#D4AF37]/10 opacity-20 rotate-12 animate-float parallax-element" style={{ animationDelay: '1.1s' }}></div>
+        <div className="absolute bottom-40 right-[20%] w-16 h-16 rounded-full border border-[#D4AF37]/10 opacity-20 animate-float parallax-element" style={{ animationDelay: '2.3s' }}></div>
+        <div className="absolute top-[30%] right-[35%] w-10 h-10 border border-[#D4AF37]/10 rounded-lg rotate-45 animate-float parallax-element" style={{ animationDelay: '1.4s' }}></div>
+        <div className="absolute bottom-[15%] left-[40%] w-8 h-8 border border-[#D4AF37]/10 rounded-full animate-float parallax-element" style={{ animationDelay: '1.8s' }}></div>
         
         {/* Grid pattern */}
         <div className="absolute inset-0 bg-grid-pattern opacity-[0.03]"></div>
@@ -97,7 +147,7 @@ const Workflow = () => {
                 Workflow
               </span>
             </div>
-            <h2 className="text-3xl font-bold mb-4 animate-fade-in">
+            <h2 className="font-playfair text-3xl font-bold mb-4 animate-fade-in">
               Streamline your <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#D4AF37] to-[#F2D675] relative">
                 entire workflow
                 <svg className="absolute -bottom-2 left-0 w-full h-2 text-[#D4AF37]/30" viewBox="0 0 400 12" preserveAspectRatio="none">
@@ -112,7 +162,7 @@ const Workflow = () => {
         </ScrollReveal>
 
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 relative">
-          {/* Animated connection line with dot moving across */}
+          {/* Interactive timeline with improved animations */}
           <div ref={lineRef} className="hidden md:block absolute top-8 left-[12.5%] right-[12.5%] h-0.5 bg-gradient-to-r from-transparent via-[#D4AF37]/50 to-transparent">
             <div 
               ref={dotRef} 

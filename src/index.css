@@ -1,4 +1,6 @@
 
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -54,6 +56,11 @@
   html {
     @apply scroll-smooth;
     scroll-behavior: smooth;
+  }
+  
+  /* Custom font classes */
+  .font-playfair {
+    font-family: 'Playfair Display', serif;
   }
 }
 

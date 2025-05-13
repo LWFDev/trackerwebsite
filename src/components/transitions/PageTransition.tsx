@@ -19,31 +19,53 @@ const PageTransition = ({ children }: PageTransitionProps) => {
       setTimeout(() => {
         setDisplayLocation(location);
         setIsExiting(false);
-      }, 300); // Match the exit animation duration
+      }, 400); // Match the exit animation duration
     }
   }, [location, displayLocation]);
+
+  // Customize variants based on navigation direction
+  const getVariants = () => {
+    // Simple implementation - you could expand this to track actual navigation direction
+    const direction = Math.random() > 0.5 ? 1 : -1;
+    
+    return {
+      initial: { 
+        opacity: 0,
+        x: 10 * direction,
+        scale: 0.98
+      },
+      animate: { 
+        opacity: 1,
+        x: 0,
+        scale: 1,
+        transition: {
+          duration: 0.5,
+          ease: [0.22, 1, 0.36, 1], // Custom easing
+          when: "beforeChildren",
+          staggerChildren: 0.1
+        }
+      },
+      exit: { 
+        opacity: 0,
+        x: -10 * direction,
+        scale: 0.98,
+        transition: {
+          duration: 0.4,
+          ease: [0.22, 1, 0.36, 1],
+          when: "afterChildren"
+        }
+      }
+    };
+  };
 
   return (
     <AnimatePresence mode="wait">
       <motion.div
         key={displayLocation.pathname}
-        initial={{ opacity: 0 }}
-        animate={{ 
-          opacity: 1,
-          transition: {
-            duration: 0.3,
-            ease: "easeInOut",
-            when: "beforeChildren" // Ensures parent fades in before children
-          }
-        }}
-        exit={{ 
-          opacity: 0,
-          transition: {
-            duration: 0.3,
-            ease: "easeInOut",
-            when: "afterChildren" // Ensures children fade out before parent
-          }
-        }}
+        variants={getVariants()}
+        initial="initial"
+        animate="animate"
+        exit="exit"
         className="min-h-screen"
       >
         {!isExiting && children}
