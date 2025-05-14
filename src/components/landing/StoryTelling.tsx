@@ -38,19 +38,19 @@ const StoryTelling = () => {
               <TabsList className="bg-zinc-900/70 backdrop-blur-sm border border-zinc-800 p-1">
                 <TabsTrigger
                   value="challenge"
-                  className={`px-5 py-2.5 ${activeTab === "challenge" ? "bg-[#D4AF37] text-black" : "text-gray-400"}`}
+                  className={`px-5 py-2.5 ${activeTab === "challenge" ? "bg-[#D4AF37] text-white" : "text-gray-400"}`}
                 >
                   Challenge
                 </TabsTrigger>
                 <TabsTrigger
                   value="solution" 
-                  className={`px-5 py-2.5 ${activeTab === "solution" ? "bg-[#D4AF37] text-black" : "text-gray-400"}`}
+                  className={`px-5 py-2.5 ${activeTab === "solution" ? "bg-[#D4AF37] text-white" : "text-gray-400"}`}
                 >
                   Solution
                 </TabsTrigger>
                 <TabsTrigger
                   value="results"
-                  className={`px-5 py-2.5 ${activeTab === "results" ? "bg-[#D4AF37] text-black" : "text-gray-400"}`}
+                  className={`px-5 py-2.5 ${activeTab === "results" ? "bg-[#D4AF37] text-white" : "text-gray-400"}`}
                 >
                   Results
                 </TabsTrigger>
