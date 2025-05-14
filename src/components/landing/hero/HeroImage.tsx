@@ -29,9 +29,9 @@ export const HeroImage = () => {
               New Features
             </div>
             
-            <div className="absolute top-10 -right-8 bg-zinc-900/90 backdrop-blur-sm px-4 py-3 rounded-lg font-medium shadow-lg z-30 animate-float border border-[#D4AF37]/30 text-white" style={{ animationDelay: '1s' }}>
-              <div className="flex items-center gap-2">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="text-[#D4AF37]">
+            <div className="absolute top-10 -right-8 bg-zinc-900/90 backdrop-blur-sm px-2 py-1.5 rounded-lg text-xs font-medium shadow-lg z-30 animate-float border border-[#D4AF37]/30 text-white" style={{ animationDelay: '1s' }}>
+              <div className="flex items-center gap-1">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="text-[#D4AF37]">
                   <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
                   <path d="M22 4L12 14.01l-3-3"></path>
                 </svg>
