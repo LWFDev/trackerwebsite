@@ -8,6 +8,7 @@ import Logo from "@/components/landing/header/Logo";
 import MobileMenu from "@/components/landing/header/MobileMenu";
 import ModulesButton from "@/components/landing/header/ModulesButton";
 import ResourcesDropdown from "@/components/landing/header/ResourcesDropdown";
+import ModulesMegaMenu from "@/components/landing/ModulesMegaMenu";
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -45,9 +46,21 @@ const Header = () => {
     setIsModulesMenuOpen(!isModulesMenuOpen);
   };
 
+  // Close modules menu when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (isModulesMenuOpen && !(event.target as Element).closest('.modules-menu-container')) {
+        setIsModulesMenuOpen(false);
+      }
+    };
+
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => document.removeEventListener('mousedown', handleClickOutside);
+  }, [isModulesMenuOpen]);
+
   return (
     <motion.header
-      className={`fixed top-0 inset-x-0 z-50 transition-all duration-300 ${
+      className={`fixed top-0 inset-x-0 z-50 transition-all duration-300 modules-menu-container ${
         isScrolled ? "bg-black/90 backdrop-blur-sm py-2" : "bg-transparent py-4"
       }`}
       initial={{ y: -100, opacity: 0 }}
@@ -110,6 +123,9 @@ const Header = () => {
         {/* Mobile Menu */}
         <MobileMenu isOpen={isOpen} setIsOpen={setIsOpen} />
       </div>
+
+      {/* Modules Mega Menu */}
+      {isModulesMenuOpen && <ModulesMegaMenu />}
     </motion.header>
   );
 };
