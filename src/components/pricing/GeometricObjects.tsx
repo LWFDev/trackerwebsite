@@ -1,4 +1,3 @@
-
 import React, { useRef, useEffect } from "react";
 import { motion } from "framer-motion";
 
@@ -163,7 +162,7 @@ const GeometricObjects: React.FC<GeometricObjectProps> = ({
           animate={{
             opacity: [0, 0.5, 0],
             scale: [0.5, 1, 0.5],
-            rotation: [0, shape.rotation, 0],
+            rotate: [0, shape.rotation, 0], // Changed 'rotation' to 'rotate' which is the correct property in Framer Motion
             y: [0, -20, 0],
           }}
           transition={{
