@@ -17,7 +17,7 @@ export const HeroImage = () => {
         <div className="absolute -inset-0.5 bg-gradient-to-r from-[#D4AF37] to-[#F2D675] opacity-20 blur-lg rounded-xl transform group-hover:scale-105 transition-all duration-300"></div>
         <div className="rounded-xl shadow-2xl overflow-hidden relative border border-zinc-800">
           <div className="absolute inset-0 bg-gradient-to-tr from-black/30 via-transparent to-transparent z-10"></div>
-          <img alt="Platform dashboard" className="w-full h-auto" src="https://mebuisworks.com/wp-content/uploads/2024/11/1-1024x680.webp" />
+          <img alt="Platform dashboard" className="w-full h-auto" src="https://mebuisworks.com/wp-content/uploads/2025/05/Homepage-hero-copy.png" />
         </div>
         
         {/* Floating feature badges - simplified for mobile */}
