@@ -12,7 +12,13 @@ import ResourcesDropdown from "@/components/landing/header/ResourcesDropdown";
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
+  const [isModulesMenuOpen, setIsModulesMenuOpen] = useState(false);
   const location = useLocation();
+
+  // Function to scroll to top of page
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
 
   // Check if current route is active
   const isActive = (path: string) => {
@@ -30,6 +36,15 @@ const Header = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  // Handle opening modules menu
+  const handleModulesHover = () => {
+    setIsModulesMenuOpen(true);
+  };
+
+  const handleModulesClick = () => {
+    setIsModulesMenuOpen(!isModulesMenuOpen);
+  };
+
   return (
     <motion.header
       className={`fixed top-0 inset-x-0 z-50 transition-all duration-300 ${
@@ -41,21 +56,25 @@ const Header = () => {
     >
       <div className="container mx-auto flex items-center justify-between px-4">
         {/* Logo */}
-        <Logo />
+        <Logo scrollToTop={scrollToTop} />
 
         {/* Desktop Menu */}
         <nav className="hidden md:flex items-center space-x-6">
           <Link to="/" className={`${navigationMenuTriggerStyle()} ${isActive("/")}`}>
             Home
           </Link>
-          <ModulesButton />
+          <ModulesButton 
+            isOpen={isModulesMenuOpen}
+            onHover={handleModulesHover}
+            onClick={handleModulesClick}
+          />
           <Link to="/pricing" className={`${navigationMenuTriggerStyle()} ${isActive("/pricing")}`}>
             Pricing
           </Link>
           <Link to="/documentation" className={`${navigationMenuTriggerStyle()} ${isActive("/documentation")}`}>
             Documentation
           </Link>
-          <ResourcesDropdown />
+          <ResourcesDropdown scrollToTop={scrollToTop} />
         </nav>
 
         {/* Authentication Button Group */}
