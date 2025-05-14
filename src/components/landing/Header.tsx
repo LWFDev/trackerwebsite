@@ -71,9 +71,6 @@ const Header = () => {
           <Link to="/pricing" className={`${navigationMenuTriggerStyle()} ${isActive("/pricing")}`}>
             Pricing
           </Link>
-          <Link to="/documentation" className={`${navigationMenuTriggerStyle()} ${isActive("/documentation")}`}>
-            Documentation
-          </Link>
           <ResourcesDropdown scrollToTop={scrollToTop} />
         </nav>
 
