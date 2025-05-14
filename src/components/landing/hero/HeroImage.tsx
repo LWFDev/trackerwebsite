@@ -14,8 +14,9 @@ export const HeroImage = () => {
       transition={{ duration: 0.8, delay: 0.3 }}
     >
       <div className="relative">
-        <div className="absolute -inset-0.5 bg-gradient-to-r from-[#D4AF37] to-[#F2D675] opacity-20 blur-lg rounded-xl transform group-hover:scale-105 transition-all duration-300"></div>
-        <div className="rounded-xl shadow-2xl overflow-hidden relative border border-zinc-800">
+        {/* Bubble shaped background glow instead of border */}
+        <div className="absolute -inset-4 bg-gradient-to-r from-[#D4AF37] to-[#F2D675] opacity-20 blur-[40px] rounded-full transform group-hover:scale-105 transition-all duration-300"></div>
+        <div className="rounded-xl shadow-2xl overflow-hidden relative">
           <div className="absolute inset-0 bg-gradient-to-tr from-black/30 via-transparent to-transparent z-10"></div>
           <img alt="Platform dashboard" className="w-full h-auto" src="https://mebuisworks.com/wp-content/uploads/2025/05/Homepage-hero-copy.png" />
         </div>
