@@ -1,120 +1,100 @@
-import React, { useState, useRef, useEffect } from 'react';
+
+import React, { useState, useEffect } from "react";
+import { useLocation, Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { Menu, X } from "lucide-react";
-import ModulesMegaMenu from './ModulesMegaMenu';
-import { Link, useLocation } from 'react-router-dom';
-import Logo from './header/Logo';
-import MobileMenu from './header/MobileMenu';
-import ModulesButton from './header/ModulesButton';
-import ResourcesDropdown from './header/ResourcesDropdown';
+import { motion } from "framer-motion";
+import { navigationMenuTriggerStyle } from "@/components/ui/navigation-menu";
+import Logo from "@/components/landing/header/Logo";
+import MobileMenu from "@/components/landing/header/MobileMenu";
+import ModulesButton from "@/components/landing/header/ModulesButton";
+import ResourcesDropdown from "@/components/landing/header/ResourcesDropdown";
 
 const Header = () => {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [isModulesMenuOpen, setIsModulesMenuOpen] = useState(false);
-  const headerRef = useRef<HTMLElement>(null);
-  const modulesMenuRef = useRef<HTMLDivElement>(null);
+  const [isScrolled, setIsScrolled] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
   const location = useLocation();
-  
+
+  // Check if current route is active
+  const isActive = (path: string) => {
+    return location.pathname === path ? "text-gold-DEFAULT" : "text-white";
+  };
+
+  // Handle scroll effect for header
   useEffect(() => {
-    const handleClickOutside = (event: MouseEvent) => {
-      if (
-        isModulesMenuOpen &&
-        modulesMenuRef.current &&
-        !modulesMenuRef.current.contains(event.target as Node)
-      ) {
-        setIsModulesMenuOpen(false);
-      }
+    const handleScroll = () => {
+      const offset = window.scrollY;
+      setIsScrolled(offset > 50);
     };
 
-    document.addEventListener('mousedown', handleClickOutside);
-    return () => {
-      document.removeEventListener('mousedown', handleClickOutside);
-    };
-  }, [isModulesMenuOpen]);
-
-  useEffect(() => {
-    setIsMenuOpen(false);
-    setIsModulesMenuOpen(false);
-  }, [location.pathname]);
-
-  const handleMouseLeave = () => {
-    setIsModulesMenuOpen(false);
-  };
-
-  const handleModulesClick = () => {
-    setIsModulesMenuOpen(!isModulesMenuOpen);
-  };
-
-  const handleModulesHover = () => {
-    setIsModulesMenuOpen(true);
-  };
-
-  const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   return (
-    <header 
-      className="fixed top-0 left-0 right-0 z-50 bg-black border-b border-zinc-800"
-      ref={headerRef}
+    <motion.header
+      className={`fixed top-0 inset-x-0 z-50 transition-all duration-300 ${
+        isScrolled ? "bg-black/90 backdrop-blur-sm py-2" : "bg-transparent py-4"
+      }`}
+      initial={{ y: -100, opacity: 0 }}
+      animate={{ y: 0, opacity: 1 }}
+      transition={{ duration: 0.5 }}
     >
-      <div className="container mx-auto px-4 py-3 flex items-center justify-between">
-        <Logo scrollToTop={scrollToTop} />
+      <div className="container mx-auto flex items-center justify-between px-4">
+        {/* Logo */}
+        <Logo />
 
+        {/* Desktop Menu */}
         <nav className="hidden md:flex items-center space-x-6">
-          <ModulesButton 
-            isOpen={isModulesMenuOpen} 
-            onHover={handleModulesHover} 
-            onClick={handleModulesClick} 
-          />
-          
-          <Link 
-            to="/pricing" 
-            className={`transition ${location.pathname === '/pricing' ? 'text-gold-DEFAULT' : 'text-gray-300 hover:text-gold-DEFAULT'}`}
-            onClick={scrollToTop}
-          >
+          <Link to="/" className={`${navigationMenuTriggerStyle()} ${isActive("/")}`}>
+            Home
+          </Link>
+          <ModulesButton />
+          <Link to="/pricing" className={`${navigationMenuTriggerStyle()} ${isActive("/pricing")}`}>
             Pricing
           </Link>
-          
-          <ResourcesDropdown scrollToTop={scrollToTop} />
+          <Link to="/documentation" className={`${navigationMenuTriggerStyle()} ${isActive("/documentation")}`}>
+            Documentation
+          </Link>
+          <ResourcesDropdown />
         </nav>
 
-        <div className="hidden md:flex items-center space-x-4">
-          <Link to="/login">
-            <Button variant="outline" className="border-zinc-700 text-gray-300 hover:bg-zinc-800">
-              Sign In
-            </Button>
+        {/* Authentication Button Group */}
+        <div className="hidden md:flex items-center space-x-3">
+          <Link to="/login" className="text-sm text-white hover:text-gold-light">
+            Login
           </Link>
           <Link to="/get-started">
-            <Button variant="gold">
-              Get Started
-            </Button>
+            <Button variant="gold">Get Started</Button>
           </Link>
         </div>
 
-        <button 
-          className="md:hidden text-gray-300 p-2" 
-          onClick={() => setIsMenuOpen(!isMenuOpen)}
+        {/* Mobile Menu Toggle */}
+        <button
+          className="md:hidden text-white p-2"
+          onClick={() => setIsOpen(true)}
+          aria-label="Open menu"
         >
-          {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="2"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          >
+            <line x1="3" y1="12" x2="21" y2="12" />
+            <line x1="3" y1="6" x2="21" y2="6" />
+            <line x1="3" y1="18" x2="21" y2="18" />
+          </svg>
         </button>
+
+        {/* Mobile Menu */}
+        <MobileMenu isOpen={isOpen} setIsOpen={setIsOpen} />
       </div>
-
-      <MobileMenu 
-        isOpen={isMenuOpen} 
-        closeMenu={() => setIsMenuOpen(false)} 
-        scrollToTop={scrollToTop} 
-      />
-
-      {isModulesMenuOpen && (
-        <div 
-          ref={modulesMenuRef}
-          onMouseLeave={handleMouseLeave}
-        >
-          <ModulesMegaMenu />
-        </div>
-      )}
-    </header>
+    </motion.header>
   );
 };
 

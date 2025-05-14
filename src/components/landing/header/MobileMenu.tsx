@@ -1,147 +1,164 @@
 
-import { useState } from 'react';
-import { ChevronDown } from 'lucide-react';
-import { Link } from 'react-router-dom';
-import { Button } from "@/components/ui/button";
+import React, { useEffect } from "react";
+import { Link } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
+import { Button } from "@/components/ui/button";
+import { X, ChevronRight } from "lucide-react";
 
 interface MobileMenuProps {
   isOpen: boolean;
-  closeMenu: () => void;
-  scrollToTop: () => void;
+  setIsOpen: (isOpen: boolean) => void;
 }
 
-const MobileMenu = ({ isOpen, closeMenu, scrollToTop }: MobileMenuProps) => {
-  const [isResourcesMenuOpen, setIsResourcesMenuOpen] = useState(false);
+const MobileMenu = ({ isOpen, setIsOpen }: MobileMenuProps) => {
+  // Close menu on route change
+  useEffect(() => {
+    return () => {
+      if (isOpen) setIsOpen(false);
+    };
+  }, []);
 
-  if (!isOpen) return null;
-
-  const handleLinkClick = () => {
-    closeMenu();
-    scrollToTop();
-  };
-
-  const menuVariants = {
-    hidden: { opacity: 0, y: -20 },
-    visible: { 
-      opacity: 1, 
-      y: 0,
-      transition: { 
-        duration: 0.3,
-        staggerChildren: 0.1
+  // Close menu when clicking outside
+  useEffect(() => {
+    const handleOutsideClick = (event: MouseEvent) => {
+      const target = event.target as HTMLElement;
+      if (isOpen && !target.closest(".mobile-menu-content")) {
+        setIsOpen(false);
       }
-    },
-    exit: { 
-      opacity: 0, 
-      y: -20,
-      transition: { duration: 0.2 }
-    }
-  };
+    };
 
-  const itemVariants = {
-    hidden: { opacity: 0, x: -20 },
-    visible: { opacity: 1, x: 0 },
-    exit: { opacity: 0, x: -20 }
-  };
+    document.addEventListener("mousedown", handleOutsideClick);
+    return () => document.removeEventListener("mousedown", handleOutsideClick);
+  }, [isOpen, setIsOpen]);
+
+  // Lock body scroll when menu is open
+  useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "auto";
+    }
+    return () => {
+      document.body.style.overflow = "auto";
+    };
+  }, [isOpen]);
 
   return (
     <AnimatePresence>
       {isOpen && (
-        <motion.div 
-          className="md:hidden fixed inset-x-0 top-[60px] bg-zinc-900/95 backdrop-blur-md py-4 px-6 shadow-lg z-40 border-b border-zinc-800"
-          initial="hidden"
-          animate="visible"
-          exit="exit"
-          variants={menuVariants}
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          transition={{ duration: 0.2 }}
+          className="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 flex justify-end"
         >
-          <nav className="flex flex-col space-y-4">
-            <motion.div variants={itemVariants}>
-              <Link 
-                to="/modules" 
-                className="py-3 block w-full transition text-gray-300 hover:text-gold-DEFAULT"
-                onClick={handleLinkClick}
+          <motion.div
+            initial={{ x: "100%" }}
+            animate={{ x: 0 }}
+            exit={{ x: "100%" }}
+            transition={{ type: "spring", damping: 25, stiffness: 300 }}
+            className="mobile-menu-content w-4/5 max-w-sm bg-zinc-900 h-full flex flex-col overflow-y-auto"
+          >
+            <div className="p-4 flex justify-between items-center border-b border-zinc-800">
+              <h2 className="text-xl font-bold text-white">Menu</h2>
+              <button
+                onClick={() => setIsOpen(false)}
+                aria-label="Close menu"
+                className="text-zinc-400 hover:text-white transition-colors"
               >
-                Modules
-              </Link>
-            </motion.div>
+                <X size={24} />
+              </button>
+            </div>
 
-            <motion.div variants={itemVariants}>
-              <Link 
-                to="/pricing" 
-                className="py-3 block w-full transition text-gray-300 hover:text-gold-DEFAULT"
-                onClick={handleLinkClick}
-              >
-                Pricing
-              </Link>
-            </motion.div>
-
-            <motion.div variants={itemVariants} className="py-2">
-              <div 
-                className="flex items-center justify-between text-gray-300 hover:text-gold-DEFAULT transition py-1"
-                onClick={() => setIsResourcesMenuOpen(!isResourcesMenuOpen)}
-              >
-                <span>Resources</span>
-                <ChevronDown 
-                  size={16} 
-                  className={`transition-transform duration-200 ${isResourcesMenuOpen ? 'rotate-180' : ''}`} 
-                />
-              </div>
-
-              <AnimatePresence>
-                {isResourcesMenuOpen && (
-                  <motion.div 
-                    className="ml-4 mt-2 space-y-3"
-                    initial={{ opacity: 0, height: 0 }}
-                    animate={{ opacity: 1, height: 'auto' }}
-                    exit={{ opacity: 0, height: 0 }}
-                    transition={{ duration: 0.2 }}
+            <nav className="flex-1 p-4">
+              <ul className="space-y-1">
+                <li>
+                  <Link
+                    to="/"
+                    className="flex items-center justify-between w-full p-3 rounded-md hover:bg-zinc-800 text-white"
+                    onClick={() => setIsOpen(false)}
                   >
-                    <Link 
-                      to="/about" 
-                      className="block py-2 text-gray-400 hover:text-gold-DEFAULT transition"
-                      onClick={handleLinkClick}
-                    >
-                      About Us
-                    </Link>
-                    <Link 
-                      to="/contact" 
-                      className="block py-2 text-gray-400 hover:text-gold-DEFAULT transition"
-                      onClick={handleLinkClick}
-                    >
-                      Contact
-                    </Link>
-                    <Link 
-                      to="#" 
-                      className="block py-2 text-gray-400 hover:text-gold-DEFAULT transition"
-                      onClick={handleLinkClick}
-                    >
-                      Blog
-                    </Link>
-                    <Link 
-                      to="#" 
-                      className="block py-2 text-gray-400 hover:text-gold-DEFAULT transition"
-                      onClick={handleLinkClick}
-                    >
-                      Documentation
-                    </Link>
-                  </motion.div>
-                )}
-              </AnimatePresence>
-            </motion.div>
+                    <span>Home</span>
+                    <ChevronRight size={18} className="text-zinc-500" />
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    to="/modules"
+                    className="flex items-center justify-between w-full p-3 rounded-md hover:bg-zinc-800 text-white"
+                    onClick={() => setIsOpen(false)}
+                  >
+                    <span>Modules</span>
+                    <ChevronRight size={18} className="text-zinc-500" />
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    to="/pricing"
+                    className="flex items-center justify-between w-full p-3 rounded-md hover:bg-zinc-800 text-white"
+                    onClick={() => setIsOpen(false)}
+                  >
+                    <span>Pricing</span>
+                    <ChevronRight size={18} className="text-zinc-500" />
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    to="/documentation"
+                    className="flex items-center justify-between w-full p-3 rounded-md hover:bg-zinc-800 text-white"
+                    onClick={() => setIsOpen(false)}
+                  >
+                    <span>Documentation</span>
+                    <ChevronRight size={18} className="text-zinc-500" />
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    to="/about"
+                    className="flex items-center justify-between w-full p-3 rounded-md hover:bg-zinc-800 text-white"
+                    onClick={() => setIsOpen(false)}
+                  >
+                    <span>About Us</span>
+                    <ChevronRight size={18} className="text-zinc-500" />
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    to="/blog"
+                    className="flex items-center justify-between w-full p-3 rounded-md hover:bg-zinc-800 text-white"
+                    onClick={() => setIsOpen(false)}
+                  >
+                    <span>Blog</span>
+                    <ChevronRight size={18} className="text-zinc-500" />
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    to="/contact"
+                    className="flex items-center justify-between w-full p-3 rounded-md hover:bg-zinc-800 text-white"
+                    onClick={() => setIsOpen(false)}
+                  >
+                    <span>Contact</span>
+                    <ChevronRight size={18} className="text-zinc-500" />
+                  </Link>
+                </li>
+              </ul>
+            </nav>
 
-            <motion.div variants={itemVariants} className="flex flex-col space-y-3 pt-4">
-              <Link to="/login" className="w-full">
-                <Button variant="outline" className="w-full border-zinc-700">
-                  Sign In
-                </Button>
-              </Link>
-              <Link to="/get-started" className="w-full">
-                <Button variant="gold" className="w-full">
-                  Get Started
-                </Button>
-              </Link>
-            </motion.div>
-          </nav>
+            <div className="border-t border-zinc-800 p-4">
+              <div className="flex flex-col space-y-3">
+                <Link to="/login" className="text-center text-white hover:text-gold-light py-2">
+                  Log In
+                </Link>
+                <Link to="/get-started" onClick={() => setIsOpen(false)}>
+                  <Button variant="gold" className="w-full">
+                    Get Started
+                  </Button>
+                </Link>
+              </div>
+            </div>
+          </motion.div>
         </motion.div>
       )}
     </AnimatePresence>

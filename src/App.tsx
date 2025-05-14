@@ -15,6 +15,7 @@ import Blog from "@/pages/Blog";
 import BlogPost from "@/pages/BlogPost";
 import NotFound from "./pages/NotFound";
 import Login from "@/pages/Login";
+import Documentation from "@/pages/Documentation";
 import ModuleIndex from "@/pages/modules/ModuleIndex";
 import SalesOrders from "@/pages/modules/SalesOrders";
 import Warehouse from "@/pages/modules/Warehouse";
@@ -49,6 +50,11 @@ const App = () => {
               <Route path="/blog" element={<Layout><Blog /></Layout>} />
               <Route path="/blog/:slug" element={<Layout><BlogPost /></Layout>} />
               <Route path="/get-started" element={<Layout><GetStarted /></Layout>} />
+              
+              {/* Documentation Routes */}
+              <Route path="/documentation" element={<Layout><Documentation /></Layout>} />
+              <Route path="/documentation/:category" element={<Layout><Documentation /></Layout>} />
+              <Route path="/documentation/:category/:doc" element={<Layout><Documentation /></Layout>} />
               
               {/* Module Routes */}
               <Route path="/modules" element={<Layout><ModuleIndex /></Layout>} />
