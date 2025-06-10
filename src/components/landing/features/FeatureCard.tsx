@@ -1,7 +1,7 @@
 
 import React from "react";
+import { motion } from "framer-motion";
 import { LucideIcon } from "lucide-react";
-import { ScrollReveal } from "@/components/ui/scroll-reveal";
 
 interface FeatureCardProps {
   icon: LucideIcon;
@@ -12,16 +12,20 @@ interface FeatureCardProps {
 
 const FeatureCard = ({ icon: Icon, title, description, delay = 0 }: FeatureCardProps) => {
   return (
-    <ScrollReveal delay={delay} direction="up" className="group">
-      <div className="h-full p-6 bg-zinc-900/80 backdrop-blur-sm rounded-xl border border-zinc-800 transition-all duration-300 hover:border-[#D4AF37]/40 hover:shadow-lg hover:shadow-[#D4AF37]/5 flex flex-col">
-        <div className="mb-5 p-3 bg-zinc-800 w-12 h-12 rounded-lg border border-zinc-700 flex items-center justify-center text-[#D4AF37] group-hover:bg-[#D4AF37]/10 group-hover:border-[#D4AF37]/30 transition-all duration-300">
-          <Icon className="w-5 h-5" />
-        </div>
-        
+    <motion.div
+      className="group bg-zinc-900/50 backdrop-blur-sm p-6 rounded-xl border border-zinc-800 hover:border-[#D4AF37]/50 transition-all duration-300 hover:-translate-y-1 relative overflow-hidden"
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.6, delay }}
+      viewport={{ once: true }}
+    >
+      <div className="absolute inset-0 bg-gradient-to-br from-[#D4AF37]/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+      <div className="relative z-10">
+        <Icon className="h-8 w-8 text-[#D4AF37] mb-4 group-hover:scale-110 transition-transform duration-300" />
         <h3 className="text-xl font-semibold mb-3 group-hover:text-[#D4AF37] transition-colors duration-300">{title}</h3>
-        <p className="text-gray-400 group-hover:text-gray-300 transition-colors duration-300">{description}</p>
+        <p className="text-gray-400 group-hover:text-gray-300 transition-colors duration-300">An intuitive place to streamline workflow from sales & ordering thru fulfillment.</p>
       </div>
-    </ScrollReveal>
+    </motion.div>
   );
 };
 
