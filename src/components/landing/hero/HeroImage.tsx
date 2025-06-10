@@ -24,7 +24,7 @@ export const HeroImage = () => {
         {/* Floating feature badges - simplified for mobile */}
         {!isMobile && (
           <>
-            <div className="absolute -bottom-4 -right-4 bg-gradient-to-r from-[#D4AF37] to-[#F2D675] text-black px-4 py-2 rounded-lg font-medium shadow-lg z-30 animate-float flex items-center gap-1">
+            <div className="absolute -bottom-4 -right-4 bg-gradient-to-r from-lime-400 to-lime-300 text-black px-4 py-2 rounded-lg font-medium shadow-lg z-30 animate-float flex items-center gap-1">
               <span className="w-2 h-2 bg-black rounded-full animate-pulse"></span>
               New Features
             </div>
@@ -52,7 +52,7 @@ export const HeroImage = () => {
         
         {/* Mobile-only feature badge */}
         {isMobile && (
-          <div className="absolute -bottom-2 right-2 bg-gradient-to-r from-[#D4AF37] to-[#F2D675] text-black px-3 py-1 rounded-lg text-xs font-medium shadow-lg z-30 flex items-center gap-1">
+          <div className="absolute -bottom-2 right-2 bg-gradient-to-r from-lime-400 to-lime-300 text-black px-3 py-1 rounded-lg text-xs font-medium shadow-lg z-30 flex items-center gap-1">
             <span className="w-1.5 h-1.5 bg-black rounded-full animate-pulse"></span>
             New Features
           </div>
