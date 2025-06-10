@@ -1,4 +1,5 @@
 
+
 import React from "react";
 import FeatureCard from "./FeatureCard";
 import SectionTitle from "./SectionTitle";
@@ -24,7 +25,7 @@ const FeaturesSection = () => {
           
           <div className="relative z-10">
             <div className="flex flex-col md:flex-row md:items-center justify-between gap-6">
-              <div className="w-full md:w-1/4 flex justify-center">
+              <div className="w-full md:w-1/5 flex justify-center">
                 <DotLottieReact
                   src="https://lottie.host/cb7fc09c-7c94-4e8f-9d32-5e3b86be59ad/hvFaWyxz3X.lottie"
                   loop
@@ -59,3 +60,4 @@ const FeaturesSection = () => {
     </>;
 };
 export default FeaturesSection;
+
