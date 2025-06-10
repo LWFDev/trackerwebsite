@@ -20,9 +20,9 @@ export const HeroContent = () => {
       </div>
       
       <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight animate-fade-in">
-        Digitize production, <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#D4AF37] to-[#F2D675] relative">
+        Digitize production, <span className="text-transparent bg-clip-text bg-gradient-to-r from-lime-400 to-lime-600 relative">
           enable profit.
-          <svg className="absolute -bottom-2 left-0 w-full h-2 text-[#D4AF37]/30" viewBox="0 0 400 12" preserveAspectRatio="none">
+          <svg className="absolute -bottom-2 left-0 w-full h-2 text-lime-500/30" viewBox="0 0 400 12" preserveAspectRatio="none">
             <path d="M0,1 C150,12 250,12 400,1" stroke="currentColor" strokeWidth="2" fill="none" />
           </svg>
         </span>
