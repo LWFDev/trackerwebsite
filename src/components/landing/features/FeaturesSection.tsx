@@ -27,7 +27,7 @@ const FeaturesSection = () => {
             <div className="flex flex-col md:flex-row md:items-center justify-between gap-6">
               <div className="w-full md:w-1/5 flex justify-center">
                 <DotLottieReact
-                  src="https://lottie.host/cb7fc09c-7c94-4e8f-9d32-5e3b86be59ad/hvFaWyxz3X.lottie"
+                  src="https://lottie.host/6bea3863-262d-4bcd-9cf9-d9d77ccf2cec/E7OzZqw4Vx.lottie"
                   loop
                   autoplay
                 />
