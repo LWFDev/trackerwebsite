@@ -1,5 +1,3 @@
-
-
 import React from "react";
 import FeatureCard from "./FeatureCard";
 import SectionTitle from "./SectionTitle";
@@ -27,13 +25,13 @@ const FeaturesSection = () => {
         />
         <FeatureCard 
           title="Centralized Data" 
-          description="Keep all your business data in one place for easy access and better decision making." 
+          description="The ultimate Logo, Proof, and Approvals management system, to include Wilcom EMB/DST renderings, Job Sheets, in-plant order management, scheduling, and tracking as well as fulfillment logistics tracking." 
           delay={0.2}
           lottieSource="https://lottie.host/220d2e76-382d-4908-a817-6bcc6f3e87b8/DgUxlrKJnu.lottie"
         />
         <FeatureCard 
           title="Real-time Insights" 
-          description="Get real-time insights into your business performance with powerful analytics tools." 
+          description="Art jobs & productivity, Scheduling and production dashboards, staging, orders on the floor, QA/QC & fulfilment. Metabase & PowerBI dashboarding available." 
           delay={0.3}
           lottieSource="https://lottie.host/0df94694-68d2-4628-9b38-8bcf2ff9d8a0/zEiHejuuNO.lottie"
         />
@@ -74,4 +72,3 @@ const FeaturesSection = () => {
 };
 
 export default FeaturesSection;
-
