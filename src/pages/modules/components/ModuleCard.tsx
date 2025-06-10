@@ -16,20 +16,22 @@ interface ModuleCardProps {
 
 const ModuleCard = ({ module }: ModuleCardProps) => {
   // Function to handle smooth scrolling and navigation
-  const handleModuleClick = (e: React.MouseEvent<HTMLAnchorElement>, link: string) => {
+  const handleModuleClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
     e.preventDefault();
     window.scrollTo({ top: 0, behavior: 'smooth' });
     
     // Navigate after scroll starts
     setTimeout(() => {
-      window.location.href = link;
+      window.location.href = module.link;
     }, 100);
   };
 
   return (
-    <div 
+    <Link 
+      to={module.link} 
+      onClick={handleModuleClick}
       className={cn(
-        "rounded-lg overflow-hidden shadow-lg transition-all duration-300 hover:-translate-y-1 hover:shadow-xl border border-zinc-800 hover:border-[#D4AF37]",
+        "block rounded-lg overflow-hidden shadow-lg transition-all duration-300 hover:-translate-y-1 hover:shadow-xl border border-zinc-800 hover:border-[#D4AF37]",
         module.color || "bg-zinc-900"
       )}
     >
@@ -44,19 +46,15 @@ const ModuleCard = ({ module }: ModuleCardProps) => {
         <p className="text-gray-300 mb-6">{module.description}</p>
         <div className="flex justify-between items-center">
           <span className="text-zinc-400 text-sm">{module.category}</span>
-          <Link 
-            to={module.link} 
-            onClick={(e) => handleModuleClick(e, module.link)}
-            className="inline-flex items-center text-gold-DEFAULT hover:text-gold-light"
-          >
+          <div className="inline-flex items-center text-gold-DEFAULT hover:text-gold-light">
             Explore 
             <svg className="w-4 h-4 ml-1 transform group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
             </svg>
-          </Link>
+          </div>
         </div>
       </div>
-    </div>
+    </Link>
   );
 };
 
