@@ -1,3 +1,4 @@
+
 import React from "react";
 import { motion } from "framer-motion";
 import { DotLottieReact } from '@lottiefiles/dotlottie-react';
@@ -31,7 +32,7 @@ const FeatureCard = ({
           <DotLottieReact src={lottieSource} loop autoplay />
         </div>
         <h3 className="text-xl font-semibold mb-3 group-hover:text-[#D4AF37] transition-colors duration-300">{title}</h3>
-        <p className="text-gray-400 group-hover:text-gray-300 transition-colors duration-300">An intuitive place to streamline workflows from sales &amp; ordering thru fulfillment.</p>
+        <p className="text-gray-400 group-hover:text-gray-300 transition-colors duration-300">{description}</p>
       </div>
     </motion.div>;
 };
