@@ -1,4 +1,5 @@
 
+
 import React from "react";
 import { motion } from "framer-motion";
 import { DotLottieReact } from '@lottiefiles/dotlottie-react';
@@ -27,7 +28,7 @@ const FeatureCard = ({
     once: true
   }}>
       <div className="absolute inset-0 bg-gradient-to-br from-[#D4AF37]/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-      <div className="relative z-10">
+      <div className="relative z-10 text-center">
         <div className="w-full mb-4">
           <DotLottieReact src={lottieSource} loop autoplay />
         </div>
@@ -37,3 +38,4 @@ const FeatureCard = ({
     </motion.div>;
 };
 export default FeatureCard;
+
