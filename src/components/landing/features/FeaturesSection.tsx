@@ -1,9 +1,8 @@
-
 import React from "react";
-import { CheckCircle, Zap, BarChart, Cpu, Globe } from "lucide-react";
 import FeatureCard from "./FeatureCard";
 import SectionTitle from "./SectionTitle";
 import { ScrollReveal } from "@/components/ui/scroll-reveal";
+import { Cpu, Globe } from "lucide-react";
 
 const FeaturesSection = () => {
   return (
@@ -20,19 +19,16 @@ const FeaturesSection = () => {
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
         <FeatureCard 
-          icon={CheckCircle}
           title="Streamlined Workflow" 
           description="A common intuitive place and streamline your workflow from sales ordering to fulfillment." 
           delay={0.1}
         />
         <FeatureCard 
-          icon={Zap}
           title="Centralized Data" 
           description="Keep all your business data in one place for easy access and better decision making." 
           delay={0.2}
         />
         <FeatureCard 
-          icon={BarChart}
           title="Real-time Insights" 
           description="Get real-time insights into your business performance with powerful analytics tools." 
           delay={0.3}
