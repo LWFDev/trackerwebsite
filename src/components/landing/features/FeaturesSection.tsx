@@ -1,4 +1,5 @@
 
+
 import React from "react";
 import FeatureCard from "./FeatureCard";
 import SectionTitle from "./SectionTitle";
@@ -34,6 +35,7 @@ const FeaturesSection = () => {
           title="Real-time Insights" 
           description="Get real-time insights into your business performance with powerful analytics tools." 
           delay={0.3}
+          lottieSource="https://lottie.host/0df94694-68d2-4628-9b38-8bcf2ff9d8a0/zEiHejuuNO.lottie"
         />
       </div>
 
@@ -72,3 +74,4 @@ const FeaturesSection = () => {
 };
 
 export default FeaturesSection;
+
