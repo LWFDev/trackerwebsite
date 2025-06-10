@@ -7,9 +7,10 @@ interface FeatureCardProps {
   title: string;
   description: string;
   delay?: number;
+  lottieSource?: string;
 }
 
-const FeatureCard = ({ title, description, delay = 0 }: FeatureCardProps) => {
+const FeatureCard = ({ title, description, delay = 0, lottieSource = "https://lottie.host/62b8c56f-d7f9-45a1-9ca8-7b5e45be9cb3/bSOogqbBcQ.lottie" }: FeatureCardProps) => {
   return (
     <motion.div
       className="group bg-zinc-900/50 backdrop-blur-sm p-6 rounded-xl border border-zinc-800 hover:border-[#D4AF37]/50 transition-all duration-300 hover:-translate-y-1 relative overflow-hidden"
@@ -22,7 +23,7 @@ const FeatureCard = ({ title, description, delay = 0 }: FeatureCardProps) => {
       <div className="relative z-10">
         <div className="w-full mb-4">
           <DotLottieReact
-            src="https://lottie.host/62b8c56f-d7f9-45a1-9ca8-7b5e45be9cb3/bSOogqbBcQ.lottie"
+            src={lottieSource}
             loop
             autoplay
           />

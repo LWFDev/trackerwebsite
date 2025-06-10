@@ -1,3 +1,4 @@
+
 import React from "react";
 import FeatureCard from "./FeatureCard";
 import SectionTitle from "./SectionTitle";
@@ -27,6 +28,7 @@ const FeaturesSection = () => {
           title="Centralized Data" 
           description="Keep all your business data in one place for easy access and better decision making." 
           delay={0.2}
+          lottieSource="https://lottie.host/220d2e76-382d-4908-a817-6bcc6f3e87b8/DgUxlrKJnu.lottie"
         />
         <FeatureCard 
           title="Real-time Insights" 
