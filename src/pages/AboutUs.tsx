@@ -3,7 +3,6 @@ import React from "react";
 import AboutHero from "@/components/about/AboutHero";
 import AboutStory from "@/components/about/AboutStory";
 import AboutValues from "@/components/about/AboutValues";
-import AboutTestimonials from "@/components/about/AboutTestimonials";
 import AboutCTA from "@/components/about/AboutCTA";
 
 const AboutUs = () => {
@@ -12,7 +11,6 @@ const AboutUs = () => {
       <AboutHero />
       <AboutStory />
       <AboutValues />
-      <AboutTestimonials />
       <AboutCTA />
     </div>
   );
