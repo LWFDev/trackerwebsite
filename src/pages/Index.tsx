@@ -136,12 +136,10 @@ const Index = () => {
     >
       <ScrollAnimationInit />
       
-      {/* Enhanced background gradients with maroon accents */}
+      {/* Simplified static background gradients instead of animated */}
       <div className="fixed inset-0 pointer-events-none">
         <div className="absolute top-0 left-0 w-full max-w-[600px] h-[600px] rounded-full bg-[#D4AF37]/5 blur-[150px] opacity-30"></div>
         <div className="absolute bottom-0 right-0 w-full max-w-[500px] h-[500px] rounded-full bg-zinc-800/20 blur-[100px] opacity-40"></div>
-        <div className="absolute top-1/3 right-1/4 w-[300px] h-[300px] rounded-full bg-red-900/10 blur-[120px] opacity-20"></div>
-        <div className="absolute bottom-1/4 left-1/3 w-[250px] h-[250px] rounded-full bg-red-800/8 blur-[100px] opacity-25"></div>
       </div>
       
       <main className="pt-16 relative">
@@ -153,11 +151,8 @@ const Index = () => {
         
         <Features />
         
-        {/* Add StatsBanner section with maroon accent */}
-        <div className="relative">
-          <div className="absolute inset-0 bg-gradient-to-r from-transparent via-red-900/5 to-transparent"></div>
-          <StatsBanner />
-        </div>
+        {/* Add StatsBanner section */}
+        <StatsBanner />
         
         <div className="relative text-black mb-[-1px]">
           <SlopesDivider />
@@ -175,26 +170,20 @@ const Index = () => {
           <ZigzagDivider />
         </div>
         
-        {/* New StoryTelling component with maroon accent */}
-        <div className="relative">
-          <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-red-800/30 to-transparent"></div>
-          <StoryTelling />
-        </div>
+        {/* New StoryTelling component */}
+        <StoryTelling />
         
         <div className="relative text-zinc-950 mb-[-1px]">
           <CurvyDivider />
         </div>
         
-        {/* Add WhyChooseUs section with maroon highlights */}
-        <div className="relative">
-          <div className="absolute top-1/4 right-0 w-32 h-32 bg-red-900/10 blur-[60px] rounded-full"></div>
-          <WhyChooseUs />
-        </div>
+        {/* Add WhyChooseUs section */}
+        <WhyChooseUs />
         
         <div className="relative">
           <Separator className="h-[1px] bg-gradient-to-r from-transparent via-[#D4AF37]/30 to-transparent my-0" />
-          <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-black border border-red-800/40 flex items-center justify-center transform rotate-45">
-            <div className="w-6 h-6 rounded-sm bg-gradient-to-br from-red-900/30 to-red-800/20"></div>
+          <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-black border border-[#D4AF37]/30 flex items-center justify-center transform rotate-45">
+            <div className="w-6 h-6 rounded-sm bg-gradient-to-br from-[#D4AF37]/30 to-[#F2D675]/20"></div>
           </div>
         </div>
         
@@ -212,23 +201,8 @@ const Index = () => {
         
         <CTA />
         
-        {/* Enhanced floating icons with maroon accents */}
-        <div className="absolute inset-0 overflow-hidden pointer-events-none">
-          {!isMobile ? (
-            <>
-              <div className="absolute top-[20%] left-[10%] w-16 h-16 rounded-lg border border-[#D4AF37]/20 opacity-40 rotate-12"></div>
-              <div className="absolute top-[60%] right-[5%] w-24 h-24 rounded-full border border-red-800/20 opacity-30 -rotate-12"></div>
-              <div className="absolute top-[40%] left-[80%] w-20 h-20 rounded-md border border-red-900/20 opacity-25 rotate-45"></div>
-              <div className="absolute bottom-[20%] left-[15%] w-12 h-12 rounded-full bg-red-800/10 opacity-20"></div>
-              <div className="absolute top-[10%] right-[30%] w-14 h-14 rounded-lg border border-red-900/15 opacity-25 rotate-[30deg]"></div>
-            </>
-          ) : (
-            <>
-              <div className="absolute top-[20%] left-[10%] w-10 h-10 rounded-lg border border-[#D4AF37]/20 opacity-40 rotate-12"></div>
-              <div className="absolute top-[60%] right-[10%] w-16 h-16 rounded-full border border-red-800/20 opacity-30 -rotate-12"></div>
-            </>
-          )}
-        </div>
+        {/* Simplified static floating icons */}
+        <FloatingIcons />
       </main>
     </motion.div>
   );
