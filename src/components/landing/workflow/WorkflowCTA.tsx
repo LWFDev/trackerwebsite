@@ -14,8 +14,6 @@ const WorkflowCTA = () => {
             <div className="absolute inset-0 bg-[#D4AF37]/20 rounded-full blur-md opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
           </div>
         </div>
-        {/* Flowing underline */}
-        <div className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-[#D4AF37] to-[#F2D675] group-hover:w-full transition-all duration-500"></div>
       </div>
     </div>
   );
