@@ -256,7 +256,7 @@ const ModuleLayout = ({
             </div>
             
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {keyFeatures.features.map((feature, index) => <div key={index} className="bg-zinc-800 p-6 rounded-lg shadow-md border border-zinc-700 hover:border-[#D4AF37] transition-all duration-300 hover:-translate-y-1">
+              {keyFeatures.features.map((feature, index) => <div key={index} className="bg-zinc-800 p-6 rounded-lg shadow-md border border-[#D4AF37] -translate-y-1">
                   <div className="flex items-start">
                     <div className="flex-shrink-0 mr-4 text-[#D4AF37]">
                       {feature.icon}
