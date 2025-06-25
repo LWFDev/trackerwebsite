@@ -24,8 +24,8 @@ const AboutStory = () => {
           <div className="flex-1 flex justify-center">
             <div className="w-full max-w-md aspect-square rounded-lg overflow-hidden">
               <img 
-                src="/lovable-uploads/f64e33f5-8eef-4836-9f10-b0fb9ae73279.png" 
-                alt="Tracker employee packing merchandise in warehouse" 
+                src="/lovable-uploads/04fa63cc-8ed1-41b7-9db2-2a72195d5617.png" 
+                alt="Tracker employee packing merchandise in warehouse with embroidery machines" 
                 className="w-full h-full object-cover"
               />
             </div>
