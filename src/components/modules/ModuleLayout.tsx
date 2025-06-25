@@ -2,6 +2,7 @@ import { ReactNode, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { ArrowLeft, Star, ArrowRight } from 'lucide-react';
+
 interface Stats {
   value: string;
   label: string;
@@ -85,6 +86,7 @@ const ModuleLayout = ({
   relatedModules
 }: ModuleLayoutProps) => {
   const mainRef = useRef<HTMLDivElement>(null);
+  
   const getBgColor = () => {
     switch (color) {
       case 'blue':
@@ -103,6 +105,7 @@ const ModuleLayout = ({
         return 'bg-gradient-to-br from-zinc-800 to-zinc-900';
     }
   };
+  
   const scrollToMain = () => {
     if (mainRef.current) {
       mainRef.current.scrollIntoView({
@@ -110,6 +113,65 @@ const ModuleLayout = ({
       });
     }
   };
+  
+  const getModuleCardColor = (moduleTitle: string) => {
+    switch (moduleTitle) {
+      case 'Sales & Orders':
+        return 'bg-blue-500/20 border-blue-500/40 hover:border-blue-500';
+      case 'Warehouse':
+        return 'bg-indigo-500/20 border-indigo-500/40 hover:border-indigo-500';
+      case 'Inventory':
+        return 'bg-cyan-500/20 border-cyan-500/40 hover:border-cyan-500';
+      case 'Production':
+        return 'bg-purple-500/20 border-purple-500/40 hover:border-purple-500';
+      case 'Customer Database':
+      case 'Customer Portal':
+        return 'bg-teal-500/20 border-teal-500/40 hover:border-teal-500';
+      case 'Product Designer':
+      case 'Logos':
+      case 'Artworkers':
+        return 'bg-emerald-500/20 border-emerald-500/40 hover:border-emerald-500';
+      case 'Base Garments':
+      case 'Suppliers':
+        return 'bg-amber-500/20 border-amber-500/40 hover:border-amber-500';
+      case 'Purchase Orders':
+        return 'bg-rose-500/20 border-rose-500/40 hover:border-rose-500';
+      default:
+        return 'bg-zinc-800 border-zinc-700 hover:border-[#D4AF37]';
+    }
+  };
+  
+  const getModuleIcon = (moduleTitle: string) => {
+    switch (moduleTitle) {
+      case 'Sales & Orders':
+        return <img src="/lovable-uploads/e43639fe-8f28-4447-8659-16c1baee9b53.png" alt="Sales & Orders" className="h-8 w-8" />;
+      case 'Warehouse':
+        return <img src="/lovable-uploads/2788046a-56b7-45e9-8c62-0dcdf981aad7.png" alt="Warehouse" className="h-8 w-8" />;
+      case 'Inventory':
+        return <img src="/lovable-uploads/513894e2-04e7-42fc-a8be-9bc390b066ed.png" alt="Inventory" className="h-8 w-8" />;
+      case 'Production':
+        return <img src="/lovable-uploads/d42f1f67-bb61-4af4-bf00-41e4dd3055e8.png" alt="Production" className="h-8 w-8" />;
+      case 'Customer Database':
+        return <img src="/lovable-uploads/f888f0f0-5dc9-4944-b5ed-64b239b1e58e.png" alt="Customers" className="h-8 w-8" />;
+      case 'Customer Portal':
+        return <img src="/lovable-uploads/c78cb5cd-6b30-4b76-ab3d-95defabc532a.png" alt="Customer Portal" className="h-8 w-8" />;
+      case 'Product Designer':
+        return <img src="/lovable-uploads/165c6ded-645a-41df-ba0c-b54b428c3953.png" alt="Product Designer" className="h-8 w-8" />;
+      case 'Logos':
+        return <img src="/lovable-uploads/9ed005ea-9015-43b6-b721-149fd7e96dc3.png" alt="Logos" className="h-8 w-8" />;
+      case 'Artworkers':
+        return <img src="/lovable-uploads/5a59d4b9-43ac-485e-830d-ee80fc2e0905.png" alt="Artworkers" className="h-8 w-8" />;
+      case 'Base Garments':
+        return <img src="/lovable-uploads/9646681d-05d8-4c78-9601-8a8b99451f0e.png" alt="Base Garments" className="h-8 w-8" />;
+      case 'Suppliers':
+        return <img src="/lovable-uploads/89eb9fd7-66d8-4124-b584-7895d0032ef3.png" alt="Suppliers" className="h-8 w-8" />;
+      case 'Purchase Orders':
+        return <img src="/lovable-uploads/9a36183f-4238-4b3a-b0e0-43a4488f0214.png" alt="Purchase Orders" className="h-8 w-8" />;
+      default:
+        return <div className="h-8 w-8 bg-[#D4AF37] rounded"></div>;
+    }
+  };
+  
   return <div className="min-h-screen flex flex-col bg-black">
       {/* Hero Section */}
       <section className={`pt-24 pb-16 ${getBgColor()} text-white`}>
@@ -307,8 +369,8 @@ const ModuleLayout = ({
             <h2 className="text-3xl font-bold mb-8 text-center text-white">Related Modules</h2>
             
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              {relatedModules.map((module, index) => <div key={index} className="bg-zinc-800 p-6 rounded-lg shadow-md border border-zinc-700 hover:border-[#D4AF37] transition-all duration-300 hover:-translate-y-1">
-                  <div className="text-[#D4AF37] mb-4">{module.icon}</div>
+              {relatedModules.map((module, index) => <div key={index} className={`p-6 rounded-lg shadow-md transition-all duration-300 hover:-translate-y-1 ${getModuleCardColor(module.title)}`}>
+                  <div className="mb-4">{getModuleIcon(module.title)}</div>
                   <h3 className="text-xl font-semibold mb-2 text-white">{module.title}</h3>
                   <p className="text-gray-400 mb-4">{module.description}</p>
                   <Link to={module.link} className="text-[#D4AF37] hover:underline inline-flex items-center">
