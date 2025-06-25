@@ -1,4 +1,3 @@
-
 import ModuleLayout from "@/components/modules/ModuleLayout";
 import { UserCheck, CheckCircle, Clock, File, Cpu, MessageSquare, FileText, Settings, Calendar, CreditCard, Users, Smartphone, Globe, Layers, Zap, PenTool } from "lucide-react";
 
@@ -8,6 +7,27 @@ const CustomerPortal = () => {
       title="Customer Portal"
       description="Give customers a branded login to review orders, approve proofs, and track job progress in real-time."
       color="green"
+      heroImage="/lovable-uploads/ef76fc5f-ac19-42c6-9b19-ebeae2578340.png"
+      heroImageCallouts={[
+        {
+          text: "Customer Search Interface",
+          position: { top: "20%", left: "-25%" },
+          icon: <Users className="h-4 w-4" />,
+          delay: "0.5s"
+        },
+        {
+          text: "Advanced Filtering Options",
+          position: { top: "40%", right: "-25%" },
+          icon: <Settings className="h-4 w-4" />,
+          delay: "1s"
+        },
+        {
+          text: "Customer Account Management",
+          position: { bottom: "25%", left: "-25%" },
+          icon: <UserCheck className="h-4 w-4" />,
+          delay: "1.5s"
+        }
+      ]}
       stats={[
         {
           value: "85%",
