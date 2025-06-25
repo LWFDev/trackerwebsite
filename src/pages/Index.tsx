@@ -21,7 +21,7 @@ const ZigzagDivider = ({ className = "" }: { className?: string }) => {
   
   return (
     <div className={`w-full overflow-hidden ${className}`}>
-      <svg className={`w-full ${isMobile ? 'h-8' : 'h-16'}`} viewBox="0 0 1440 48" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+      <svg className={`w-full ${isMobile ? 'h-8' : 'h-16'}`} viewBox="0 0 1440 48" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" style={{ transform: 'scaleY(-1)' }}>
         <path d="M1440 48L1380 42.7C1320 37.3 1200 26.7 1080 21.3C960 16 840 16 720 24C600 32 480 48 360 48C240 48 120 32 60 24L0 16V0H60C120 0 240 0 360 0C480 0 600 0 720 0C840 0 960 0 1080 0C1200 0 1320 0 1380 0H1440V48Z" fill="currentColor" />
       </svg>
     </div>
