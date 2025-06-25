@@ -22,11 +22,11 @@ const AboutStory = () => {
             </div>
           </div>
           <div className="flex-1 flex justify-center">
-            <div className="w-full max-w-md aspect-square bg-zinc-800/50 rounded-lg border border-zinc-700 flex items-center justify-center">
+            <div className="w-full max-w-md aspect-square rounded-lg overflow-hidden">
               <img 
-                src="/lovable-uploads/1550609f-a25b-430c-8544-7a89b9def04f.png" 
-                alt="About Tracker" 
-                className="w-16 h-16 opacity-30"
+                src="/lovable-uploads/f64e33f5-8eef-4836-9f10-b0fb9ae73279.png" 
+                alt="Tracker employee packing merchandise in warehouse" 
+                className="w-full h-full object-cover"
               />
             </div>
           </div>
