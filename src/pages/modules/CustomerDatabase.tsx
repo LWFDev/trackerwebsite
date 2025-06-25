@@ -8,6 +8,7 @@ const CustomerDatabase = () => {
       title="Customer Database"
       description="Store all customer details, communication logs, and order history in one centralized, searchable profile."
       color="teal"
+      heroImage="/lovable-uploads/d746be04-9858-4d51-88d0-94c9e02b8a79.png"
       stats={[
         {
           value: "360°",
