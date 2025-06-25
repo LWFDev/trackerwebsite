@@ -1,17 +1,18 @@
-
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import ScrollReveal from "@/components/ui/scroll-reveal";
 
 const WorkflowStep = ({ 
   number, 
   title, 
   description,
-  delay = 0
+  delay = 0,
+  isActive = false
 }: { 
   number: string, 
   title: string, 
   description: string,
-  delay?: number
+  delay?: number,
+  isActive?: boolean
 }) => {
   return (
     <ScrollReveal 
@@ -22,29 +23,29 @@ const WorkflowStep = ({
       distance="30px"
     >
       <div className="relative mb-6">
-        {/* Enhanced glow effect */}
-        <div className="absolute inset-0 bg-gradient-to-r from-[#D4AF37]/30 to-[#F2D675]/40 rounded-2xl blur-xl opacity-0 group-hover:opacity-100 transition-all duration-500 scale-150"></div>
-        <div className="absolute inset-0 bg-gradient-to-br from-[#D4AF37]/20 to-[#F2D675]/30 rounded-xl blur-md opacity-50 group-hover:opacity-100 transition-all duration-300 animate-pulse"></div>
+        {/* Enhanced glow effect - triggered by dot position */}
+        <div className={`absolute inset-0 bg-gradient-to-r from-[#D4AF37]/30 to-[#F2D675]/40 rounded-2xl blur-xl transition-all duration-500 scale-150 ${isActive ? 'opacity-100' : 'opacity-0'}`}></div>
+        <div className={`absolute inset-0 bg-gradient-to-br from-[#D4AF37]/20 to-[#F2D675]/30 rounded-xl blur-md transition-all duration-300 animate-pulse ${isActive ? 'opacity-100' : 'opacity-50'}`}></div>
         
         {/* Main number circle with enhanced styling */}
-        <div className="w-20 h-20 rounded-2xl bg-gradient-to-br relative z-10 from-[#D4AF37] via-[#F2D675] to-[#D4AF37] flex items-center justify-center text-black font-bold text-2xl shadow-2xl shadow-[#D4AF37]/40 transform transition-all duration-500 group-hover:scale-125 group-hover:rotate-3 group-hover:shadow-[#D4AF37]/60 border-2 border-[#F2D675]/50">
+        <div className={`w-20 h-20 rounded-2xl bg-gradient-to-br relative z-10 from-[#D4AF37] via-[#F2D675] to-[#D4AF37] flex items-center justify-center text-black font-bold text-2xl shadow-2xl shadow-[#D4AF37]/40 transform transition-all duration-500 border-2 border-[#F2D675]/50 ${isActive ? 'scale-125 rotate-3 shadow-[#D4AF37]/60' : 'scale-100 rotate-0'}`}>
           {/* Animated shine effect */}
-          <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-white/30 to-transparent rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 animate-pulse"></div>
+          <div className={`absolute inset-0 bg-gradient-to-tr from-transparent via-white/30 to-transparent rounded-2xl transition-opacity duration-300 animate-pulse ${isActive ? 'opacity-100' : 'opacity-0'}`}></div>
           {/* Rotating border */}
-          <div className="absolute -inset-1 bg-gradient-to-r from-[#D4AF37] via-[#F2D675] to-[#D4AF37] rounded-2xl opacity-0 group-hover:opacity-100 animate-spin-slow transition-opacity duration-500 blur-sm"></div>
+          <div className={`absolute -inset-1 bg-gradient-to-r from-[#D4AF37] via-[#F2D675] to-[#D4AF37] rounded-2xl animate-spin-slow transition-opacity duration-500 blur-sm ${isActive ? 'opacity-100' : 'opacity-0'}`}></div>
           <span className="relative z-10">{number}</span>
         </div>
         
         {/* Floating particles */}
-        <div className="absolute -top-2 -right-2 w-3 h-3 bg-[#D4AF37] rounded-full opacity-0 group-hover:opacity-100 animate-bounce transition-all duration-300 delay-100"></div>
-        <div className="absolute -bottom-2 -left-2 w-2 h-2 bg-[#F2D675] rounded-full opacity-0 group-hover:opacity-100 animate-float transition-all duration-300 delay-200"></div>
+        <div className={`absolute -top-2 -right-2 w-3 h-3 bg-[#D4AF37] rounded-full animate-bounce transition-all duration-300 delay-100 ${isActive ? 'opacity-100' : 'opacity-0'}`}></div>
+        <div className={`absolute -bottom-2 -left-2 w-2 h-2 bg-[#F2D675] rounded-full animate-float transition-all duration-300 delay-200 ${isActive ? 'opacity-100' : 'opacity-0'}`}></div>
       </div>
       
-      <h3 className="text-xl font-bold mb-4 group-hover:text-[#D4AF37] transition-all duration-300 transform group-hover:scale-105">{title}</h3>
-      <p className="text-gray-400 text-sm group-hover:text-gray-200 transition-colors duration-300 max-w-[280px] mx-auto leading-relaxed">{description}</p>
+      <h3 className={`text-xl font-bold mb-4 transition-all duration-300 transform ${isActive ? 'text-[#D4AF37] scale-105' : 'text-white scale-100'}`}>{title}</h3>
+      <p className={`text-sm transition-colors duration-300 max-w-[280px] mx-auto leading-relaxed ${isActive ? 'text-gray-200' : 'text-gray-400'}`}>{description}</p>
       
       {/* Bottom accent line */}
-      <div className="w-0 h-1 bg-gradient-to-r from-[#D4AF37] to-[#F2D675] mt-4 group-hover:w-20 transition-all duration-500 rounded-full"></div>
+      <div className={`h-1 bg-gradient-to-r from-[#D4AF37] to-[#F2D675] mt-4 transition-all duration-500 rounded-full ${isActive ? 'w-20' : 'w-0'}`}></div>
     </ScrollReveal>
   );
 };
@@ -52,8 +53,9 @@ const WorkflowStep = ({
 const Workflow = () => {
   const lineRef = useRef<HTMLDivElement>(null);
   const dotRef = useRef<HTMLDivElement>(null);
+  const [activeStep, setActiveStep] = useState(0);
 
-  // Enhanced dot animation with multiple effects
+  // Enhanced dot animation with step activation
   useEffect(() => {
     const animateDot = () => {
       if (!dotRef.current || !lineRef.current) return;
@@ -92,6 +94,24 @@ const Workflow = () => {
           easing: 'ease-in-out'
         }
       );
+
+      // Track animation progress and activate steps
+      const startTime = Date.now();
+      const updateActiveStep = () => {
+        const elapsed = (Date.now() - startTime) % 5000;
+        const progress = elapsed / 5000;
+        
+        let currentStep = 0;
+        if (progress >= 0.2 && progress < 0.4) currentStep = 1;
+        else if (progress >= 0.4 && progress < 0.6) currentStep = 2;
+        else if (progress >= 0.6 && progress < 0.8) currentStep = 3;
+        else if (progress >= 0.8) currentStep = 4;
+        
+        setActiveStep(currentStep);
+        requestAnimationFrame(updateActiveStep);
+      };
+      
+      updateActiveStep();
     };
 
     animateDot();
@@ -189,24 +209,28 @@ const Workflow = () => {
             title="Upload & Organize" 
             description="Store all your logos and designs in one secure, searchable location for instant access."
             delay={1} 
+            isActive={activeStep === 1}
           />
           <WorkflowStep 
             number="02" 
             title="Create Proofs" 
             description="Generate stunning professional mockups that wow your customers every time."
             delay={2} 
+            isActive={activeStep === 2}
           />
           <WorkflowStep 
             number="03" 
             title="Get Approvals" 
             description="Streamline client feedback with automated approval workflows and notifications."
             delay={3} 
+            isActive={activeStep === 3}
           />
           <WorkflowStep 
             number="04" 
             title="Track Production" 
             description="Monitor every aspect of your production pipeline from order to final delivery."
             delay={4} 
+            isActive={activeStep === 4}
           />
         </div>
         
