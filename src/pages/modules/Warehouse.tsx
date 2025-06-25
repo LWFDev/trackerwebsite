@@ -22,6 +22,7 @@ const Warehouse = () => {
       title="Warehouse"
       description="Track item locations, transfers, and storage with real-time warehouse visibility and control."
       color="indigo"
+      heroImage="/lovable-uploads/b967fa34-27f3-4bde-8864-dd74e1e5fea9.png"
       stats={[
         {
           value: "40%",
