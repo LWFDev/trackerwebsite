@@ -1,4 +1,3 @@
-
 import ModuleLayout from "@/components/modules/ModuleLayout";
 import { ShoppingCart, Clock, DollarSign, LineChart, CheckCircle, Table, TruckIcon, BarChart2, MessageSquare, CreditCard, Users, Settings, Globe } from "lucide-react";
 
@@ -9,6 +8,26 @@ const SalesOrders = () => {
       description="Manage incoming orders, quotes, and job details in one streamlined dashboard, keeping your sales pipeline moving."
       color="blue"
       heroImage="https://nubosync.com/wp-content/uploads/2025/04/Screenshot-2025-04-02-100541.png"
+      heroImageCallouts={[
+        {
+          text: "Order Management Dashboard",
+          position: { top: "20%", left: "-20%" },
+          icon: <ShoppingCart className="h-4 w-4" />,
+          delay: "0.5s"
+        },
+        {
+          text: "Real-time Status Tracking",
+          position: { top: "40%", right: "-20%" },
+          icon: <LineChart className="h-4 w-4" />,
+          delay: "1s"
+        },
+        {
+          text: "Customer Order History",
+          position: { bottom: "25%", left: "-20%" },
+          icon: <Table className="h-4 w-4" />,
+          delay: "1.5s"
+        }
+      ]}
       stats={[
         {
           value: "Save 40%",
