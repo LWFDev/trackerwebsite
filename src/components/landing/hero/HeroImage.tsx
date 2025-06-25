@@ -24,14 +24,14 @@ export const HeroImage = () => {
         {/* Floating feature badges - simplified for mobile */}
         {!isMobile && (
           <>
-            <div className="absolute -bottom-4 -right-4 bg-gradient-to-r from-lime-500 to-lime-400 text-black px-4 py-2 rounded-lg font-medium shadow-lg z-30 animate-float flex items-center gap-1">
-              <span className="w-2 h-2 bg-black rounded-full animate-pulse"></span>
+            <div className="absolute -bottom-4 -right-4 bg-gradient-to-r from-red-900 to-red-700 text-white px-4 py-2 rounded-lg font-medium shadow-lg z-30 animate-float flex items-center gap-1">
+              <span className="w-2 h-2 bg-white rounded-full animate-pulse"></span>
               New Features
             </div>
             
-            <div className="absolute top-10 -right-8 bg-zinc-900/90 backdrop-blur-sm px-2 py-1.5 rounded-lg text-xs font-medium shadow-lg z-30 animate-float border border-lime-500/30 text-white" style={{ animationDelay: '1s' }}>
+            <div className="absolute top-10 -right-8 bg-zinc-900/90 backdrop-blur-sm px-2 py-1.5 rounded-lg text-xs font-medium shadow-lg z-30 animate-float border border-red-800/30 text-white" style={{ animationDelay: '1s' }}>
               <div className="flex items-center gap-1">
-                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="text-lime-500">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="text-red-600">
                   <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
                   <path d="M22 4L12 14.01l-3-3"></path>
                 </svg>
@@ -39,9 +39,9 @@ export const HeroImage = () => {
               </div>
             </div>
             
-            <div className="absolute -left-6 bottom-20 bg-zinc-900/90 backdrop-blur-sm px-4 py-3 rounded-lg font-medium shadow-lg z-30 animate-float border border-lime-500/30 text-white" style={{ animationDelay: '1.5s' }}>
+            <div className="absolute -left-6 bottom-20 bg-zinc-900/90 backdrop-blur-sm px-4 py-3 rounded-lg font-medium shadow-lg z-30 animate-float border border-red-800/30 text-white" style={{ animationDelay: '1.5s' }}>
               <div className="flex items-center gap-2">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="text-lime-500">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="text-red-600">
                   <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
                 </svg>
                 <span>Advanced Security</span>
@@ -52,8 +52,8 @@ export const HeroImage = () => {
         
         {/* Mobile-only feature badge */}
         {isMobile && (
-          <div className="absolute -bottom-2 right-2 bg-gradient-to-r from-lime-500 to-lime-400 text-black px-3 py-1 rounded-lg text-xs font-medium shadow-lg z-30 flex items-center gap-1">
-            <span className="w-1.5 h-1.5 bg-black rounded-full animate-pulse"></span>
+          <div className="absolute -bottom-2 right-2 bg-gradient-to-r from-red-900 to-red-700 text-white px-3 py-1 rounded-lg text-xs font-medium shadow-lg z-30 flex items-center gap-1">
+            <span className="w-1.5 h-1.5 bg-white rounded-full animate-pulse"></span>
             New Features
           </div>
         )}
