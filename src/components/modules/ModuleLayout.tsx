@@ -219,13 +219,23 @@ const ModuleLayout = ({
       {mainSection && (
         <section ref={mainRef} className="py-16 bg-black">
           <div className="container mx-auto px-4">
-            <div className="text-center max-w-3xl mx-auto mb-12">
-              <h2 className="text-3xl font-bold mb-4 text-white">{mainSection.title}</h2>
-              <p className="text-gray-400">{mainSection.description}</p>
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+              <div>
+                <h2 className="text-3xl font-bold mb-4 text-white">{mainSection.title}</h2>
+                <p className="text-gray-400">{mainSection.description}</p>
+              </div>
+              
+              <div className="flex justify-center">
+                <img 
+                  src="/lovable-uploads/bd71cf26-6d3f-4aa3-a4e0-d2aa9db5670f.png" 
+                  alt="Inventory tracking in action" 
+                  className="max-w-full rounded-lg shadow-lg border border-zinc-800"
+                />
+              </div>
             </div>
             
             {mainSection.image && (
-              <div className="flex justify-center">
+              <div className="flex justify-center mt-12">
                 <img 
                   src={mainSection.image} 
                   alt={mainSection.title} 
