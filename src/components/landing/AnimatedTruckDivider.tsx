@@ -118,12 +118,13 @@ const AnimatedTruckDivider = ({ className = "" }: AnimatedTruckDividerProps) => 
 
   return (
     <div className={`relative w-full ${height} my-4 sm:my-8 ${className}`}>
-      {/* Dotted line */}
+      {/* Dotted line with maroon accent */}
       <div className="absolute top-1/2 left-0 w-full h-1 border-t-4 border-dotted border-zinc-700 transform -translate-y-1/2"></div>
+      <div className="absolute top-1/2 left-1/4 w-1/2 h-1 border-t-4 border-dotted border-red-800/40 transform -translate-y-1/2"></div>
       
       {/* Container for animated trucks */}
       <div ref={truckContainerRef} className="relative w-full h-full">
-        {/* Render all trucks */}
+        {/* Render all trucks - some with maroon color */}
         {trucks.map((id) => (
           <div 
             key={id}
@@ -134,7 +135,7 @@ const AnimatedTruckDivider = ({ className = "" }: AnimatedTruckDividerProps) => 
           >
             <Truck 
               size={truckSize} 
-              className="text-gold-light" 
+              className={id % 3 === 0 ? "text-red-800" : "text-gold-light"} 
             />
           </div>
         ))}
