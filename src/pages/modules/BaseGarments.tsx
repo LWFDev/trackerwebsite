@@ -7,24 +7,24 @@ const BaseGarments = () => {
       title="Base Garments"
       description="Set up your core product catalog, including styles, sizes, colors, and default pricing."
       color="amber"
-      heroImage="/lovable-uploads/f1e4ea1d-07f7-48d5-aa20-c50891291083.png"
+      heroImage="/lovable-uploads/1c671d53-6777-41e1-9540-6a665533f0ae.png"
       heroImageCallouts={[
         {
-          text: "Product Style Catalog",
-          position: { top: "20%", left: "-15%" },
-          icon: <Shirt className="h-4 w-4" />,
+          text: "Product Catalog Browser",
+          position: { top: "15%", left: "-20%" },
+          icon: <Search className="h-4 w-4" />,
           delay: "0.5s"
         },
         {
-          text: "Color & Size Variants",
-          position: { top: "30%", right: "-15%" },
-          icon: <Palette className="h-4 w-4" />,
+          text: "Advanced Product Filtering",
+          position: { top: "35%", right: "-20%" },
+          icon: <Settings className="h-4 w-4" />,
           delay: "1s"
         },
         {
-          text: "Pricing Configuration",
-          position: { bottom: "20%", left: "-15%" },
-          icon: <Tag className="h-4 w-4" />,
+          text: "Product Grid Display",
+          position: { bottom: "20%", left: "-20%" },
+          icon: <Shirt className="h-4 w-4" />,
           delay: "1.5s"
         }
       ]}
