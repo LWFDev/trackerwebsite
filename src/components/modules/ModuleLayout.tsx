@@ -183,6 +183,13 @@ const ModuleLayout = ({
           
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
             <div>
+              {/* Module Icon */}
+              <div className="mb-6">
+                <div className="w-16 h-16 bg-indigo-500/20 border border-indigo-500/40 rounded-lg flex items-center justify-center">
+                  <img src="/lovable-uploads/2788046a-56b7-45e9-8c62-0dcdf981aad7.png" alt="Warehouse" className="h-10 w-10" />
+                </div>
+              </div>
+              
               <h1 className="text-4xl md:text-5xl font-bold mb-4">{title}</h1>
               <p className="text-lg md:text-xl text-white/90 mb-6">{description}</p>
               
