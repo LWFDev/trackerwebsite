@@ -1,4 +1,3 @@
-
 import ModuleLayout from "@/components/modules/ModuleLayout";
 import { Shirt, Tag, PlusCircle, Search, ShieldCheck, Palette, Zap, Layers, Settings, CheckCircle, ShoppingCart, Paintbrush, Package } from "lucide-react";
 
@@ -8,6 +7,27 @@ const BaseGarments = () => {
       title="Base Garments"
       description="Set up your core product catalog, including styles, sizes, colors, and default pricing."
       color="amber"
+      heroImage="/lovable-uploads/f1e4ea1d-07f7-48d5-aa20-c50891291083.png"
+      heroImageCallouts={[
+        {
+          text: "Product Style Catalog",
+          position: { top: "25%", left: "20%" },
+          icon: <Shirt className="h-4 w-4" />,
+          delay: "0.5s"
+        },
+        {
+          text: "Color & Size Variants",
+          position: { top: "45%", right: "15%" },
+          icon: <Palette className="h-4 w-4" />,
+          delay: "1s"
+        },
+        {
+          text: "Pricing Configuration",
+          position: { bottom: "30%", left: "15%" },
+          icon: <Tag className="h-4 w-4" />,
+          delay: "1.5s"
+        }
+      ]}
       stats={[
         {
           value: "30,000+",

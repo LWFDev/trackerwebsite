@@ -22,11 +22,24 @@ interface KeyFeatureSection {
   features: Feature[];
 }
 
+interface HeroImageCallout {
+  text: string;
+  position: {
+    top?: string;
+    bottom?: string;
+    left?: string;
+    right?: string;
+  };
+  icon?: ReactNode;
+  delay?: string;
+}
+
 interface ModuleLayoutProps {
   title: string;
   description: string;
   color: string;
   heroImage?: string;
+  heroImageCallouts?: HeroImageCallout[];
   stats?: Stats[];
   mainSection?: {
     title: string;
@@ -68,6 +81,7 @@ const ModuleLayout = ({
   description,
   color,
   heroImage,
+  heroImageCallouts,
   stats,
   mainSection,
   keyFeatures,
@@ -156,8 +170,27 @@ const ModuleLayout = ({
             
             {heroImage && (
               <div className="flex justify-center">
-                <div className="bg-zinc-800/50 p-4 rounded-lg shadow-lg border border-zinc-700">
+                <div className="relative bg-zinc-800/50 p-4 rounded-lg shadow-lg border border-zinc-700">
                   <img src={heroImage} alt={title} className="w-full h-auto rounded max-h-[300px] object-contain" />
+                  
+                  {/* Floating Callout Boxes */}
+                  {heroImageCallouts && heroImageCallouts.map((callout, index) => (
+                    <div
+                      key={index}
+                      className="absolute bg-zinc-900/90 backdrop-blur-sm px-3 py-2 rounded-lg text-xs font-medium shadow-lg z-30 animate-float border border-[#D4AF37]/30 text-white"
+                      style={{
+                        ...callout.position,
+                        animationDelay: callout.delay || '0s'
+                      }}
+                    >
+                      <div className="flex items-center gap-2">
+                        {callout.icon && (
+                          <span className="text-[#D4AF37]">{callout.icon}</span>
+                        )}
+                        <span>{callout.text}</span>
+                      </div>
+                    </div>
+                  ))}
                 </div>
               </div>
             )}

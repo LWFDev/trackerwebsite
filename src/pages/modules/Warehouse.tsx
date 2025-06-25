@@ -1,4 +1,3 @@
-
 import ModuleLayout from "@/components/modules/ModuleLayout";
 import { 
   Package, 
@@ -23,6 +22,26 @@ const Warehouse = () => {
       description="Track item locations, transfers, and storage with real-time warehouse visibility and control."
       color="indigo"
       heroImage="/lovable-uploads/b967fa34-27f3-4bde-8864-dd74e1e5fea9.png"
+      heroImageCallouts={[
+        {
+          text: "Real-time Inventory Tracking",
+          position: { top: "20%", left: "15%" },
+          icon: <Package className="h-4 w-4" />,
+          delay: "0.5s"
+        },
+        {
+          text: "Location Management System",
+          position: { top: "50%", right: "10%" },
+          icon: <Map className="h-4 w-4" />,
+          delay: "1s"
+        },
+        {
+          text: "Mobile Scanning Interface",
+          position: { bottom: "25%", left: "25%" },
+          icon: <Smartphone className="h-4 w-4" />,
+          delay: "1.5s"
+        }
+      ]}
       stats={[
         {
           value: "40%",

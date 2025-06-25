@@ -1,4 +1,3 @@
-
 import ModuleLayout from "@/components/modules/ModuleLayout";
 import { Users, Search, Filter, FileText, MessageSquare, Clock, List, Calendar, Zap, BarChart2, ShoppingCart, UserCheck, Globe } from "lucide-react";
 
@@ -9,6 +8,26 @@ const CustomerDatabase = () => {
       description="Store all customer details, communication logs, and order history in one centralized, searchable profile."
       color="teal"
       heroImage="/lovable-uploads/d746be04-9858-4d51-88d0-94c9e02b8a79.png"
+      heroImageCallouts={[
+        {
+          text: "Customer Profile Details",
+          position: { top: "15%", left: "10%" },
+          icon: <Users className="h-4 w-4" />,
+          delay: "0.5s"
+        },
+        {
+          text: "Order History Tracking",
+          position: { top: "60%", right: "15%" },
+          icon: <ShoppingCart className="h-4 w-4" />,
+          delay: "1s"
+        },
+        {
+          text: "Communication Timeline",
+          position: { bottom: "20%", left: "20%" },
+          icon: <MessageSquare className="h-4 w-4" />,
+          delay: "1.5s"
+        }
+      ]}
       stats={[
         {
           value: "360°",
