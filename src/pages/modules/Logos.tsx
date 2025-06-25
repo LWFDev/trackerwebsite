@@ -8,6 +8,27 @@ const Logos = () => {
       title="Logos"
       description="Upload, categorize, and manage customer logos and artwork files with built-in version tracking."
       color="purple"
+      heroImage="/lovable-uploads/8286bf20-d222-4f89-8b71-0dcf23a14319.png"
+      heroImageCallouts={[
+        {
+          text: "Logo Library Browser",
+          position: { top: "15%", left: "-20%" },
+          icon: <Search className="h-4 w-4" />,
+          delay: "0.5s"
+        },
+        {
+          text: "Advanced Filtering System",
+          position: { top: "35%", right: "-20%" },
+          icon: <Tags className="h-4 w-4" />,
+          delay: "1s"
+        },
+        {
+          text: "Logo Status Management",
+          position: { bottom: "20%", left: "-20%" },
+          icon: <CheckCircle className="h-4 w-4" />,
+          delay: "1.5s"
+        }
+      ]}
       stats={[
         {
           value: "65%",
