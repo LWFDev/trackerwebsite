@@ -1,4 +1,3 @@
-
 import React, { useEffect } from 'react';
 import Hero from "@/components/landing/Hero";
 import Features from "@/components/landing/Features";
@@ -8,7 +7,6 @@ import Testimonials from "@/components/landing/Testimonials";
 import CTA from "@/components/landing/CTA";
 import Results from "@/components/landing/Results";
 import WhyChooseUs from "@/components/landing/WhyChooseUs";
-import StatsBanner from "@/components/landing/StatsBanner";
 import StoryTelling from "@/components/landing/StoryTelling";
 import { Separator } from "@/components/ui/separator";
 import ScrollAnimationInit from "@/components/ui/scroll-animation-init";
@@ -150,9 +148,6 @@ const Index = () => {
         </div>
         
         <Features />
-        
-        {/* Add StatsBanner section */}
-        <StatsBanner />
         
         <div className="relative text-black mb-[-1px]">
           <SlopesDivider />
