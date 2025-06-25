@@ -60,31 +60,31 @@ const AboutValues = () => {
           {values.map((value, index) => (
             <div 
               key={index} 
-              className="group relative overflow-hidden"
+              className="relative overflow-hidden"
               style={{ animationDelay: `${index * 0.1}s` }}
             >
-              {/* Card background with gradient */}
-              <div className={`absolute inset-0 bg-gradient-to-br ${value.bgColor} opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-xl`}></div>
+              {/* Card background with gradient - always visible */}
+              <div className={`absolute inset-0 bg-gradient-to-br ${value.bgColor} rounded-xl`}></div>
               
               {/* Main card */}
-              <div className="relative bg-zinc-900/80 backdrop-blur-sm p-8 rounded-xl border border-zinc-800 hover:border-gold-DEFAULT/40 transition-all duration-500 group-hover:transform group-hover:scale-105 group-hover:shadow-2xl group-hover:shadow-gold-DEFAULT/10 h-full">
-                {/* Icon container with glow effect */}
+              <div className="relative bg-zinc-900/80 backdrop-blur-sm p-8 rounded-xl border border-gold-DEFAULT/40 transform scale-105 shadow-2xl shadow-gold-DEFAULT/10 h-full">
+                {/* Icon container with glow effect - always visible */}
                 <div className="mb-6 relative">
-                  <div className="absolute inset-0 bg-gold-DEFAULT/20 rounded-full blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                  <div className="relative w-16 h-16 bg-zinc-800 rounded-full flex items-center justify-center group-hover:bg-gold-DEFAULT/10 transition-colors duration-500">
+                  <div className="absolute inset-0 bg-gold-DEFAULT/20 rounded-full blur-xl"></div>
+                  <div className="relative w-16 h-16 bg-gold-DEFAULT/10 rounded-full flex items-center justify-center">
                     {value.icon}
                   </div>
                 </div>
                 
-                <h3 className="text-2xl font-bold mb-4 group-hover:text-gold-DEFAULT transition-colors duration-300">
+                <h3 className="text-2xl font-bold mb-4 text-gold-DEFAULT">
                   {value.title}
                 </h3>
-                <p className="text-gray-400 group-hover:text-gray-300 transition-colors duration-300 leading-relaxed">
+                <p className="text-gray-300 leading-relaxed">
                   {value.description}
                 </p>
                 
-                {/* Subtle bottom accent */}
-                <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-gold-DEFAULT/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                {/* Bottom accent - always visible */}
+                <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-gold-DEFAULT/50 to-transparent"></div>
               </div>
             </div>
           ))}
