@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from "react";
 import { useLocation, Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
@@ -73,9 +72,6 @@ const Header = () => {
 
         {/* Desktop Menu */}
         <nav className="hidden md:flex items-center space-x-6">
-          <Link to="/" className={`${navigationMenuTriggerStyle()} ${isActive("/")}`}>
-            Home
-          </Link>
           <ModulesButton 
             isOpen={isModulesMenuOpen}
             onHover={handleModulesHover}
