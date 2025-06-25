@@ -11,19 +11,19 @@ const BaseGarments = () => {
       heroImageCallouts={[
         {
           text: "Product Style Catalog",
-          position: { top: "25%", left: "20%" },
+          position: { top: "20%", left: "-15%" },
           icon: <Shirt className="h-4 w-4" />,
           delay: "0.5s"
         },
         {
           text: "Color & Size Variants",
-          position: { top: "45%", right: "15%" },
+          position: { top: "30%", right: "-15%" },
           icon: <Palette className="h-4 w-4" />,
           delay: "1s"
         },
         {
           text: "Pricing Configuration",
-          position: { bottom: "30%", left: "15%" },
+          position: { bottom: "20%", left: "-15%" },
           icon: <Tag className="h-4 w-4" />,
           delay: "1.5s"
         }

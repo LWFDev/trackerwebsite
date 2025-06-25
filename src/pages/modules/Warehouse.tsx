@@ -25,19 +25,19 @@ const Warehouse = () => {
       heroImageCallouts={[
         {
           text: "Real-time Inventory Tracking",
-          position: { top: "20%", left: "15%" },
+          position: { top: "15%", left: "-25%" },
           icon: <Package className="h-4 w-4" />,
           delay: "0.5s"
         },
         {
           text: "Location Management System",
-          position: { top: "50%", right: "10%" },
+          position: { top: "40%", right: "-25%" },
           icon: <Map className="h-4 w-4" />,
           delay: "1s"
         },
         {
           text: "Mobile Scanning Interface",
-          position: { bottom: "25%", left: "25%" },
+          position: { bottom: "25%", left: "-25%" },
           icon: <Smartphone className="h-4 w-4" />,
           delay: "1.5s"
         }

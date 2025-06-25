@@ -11,19 +11,19 @@ const CustomerDatabase = () => {
       heroImageCallouts={[
         {
           text: "Customer Profile Details",
-          position: { top: "15%", left: "10%" },
+          position: { top: "15%", left: "-20%" },
           icon: <Users className="h-4 w-4" />,
           delay: "0.5s"
         },
         {
           text: "Order History Tracking",
-          position: { top: "60%", right: "15%" },
+          position: { top: "45%", right: "-20%" },
           icon: <ShoppingCart className="h-4 w-4" />,
           delay: "1s"
         },
         {
           text: "Communication Timeline",
-          position: { bottom: "20%", left: "20%" },
+          position: { bottom: "20%", left: "-20%" },
           icon: <MessageSquare className="h-4 w-4" />,
           delay: "1.5s"
         }
