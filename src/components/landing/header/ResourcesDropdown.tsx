@@ -45,11 +45,6 @@ const ResourcesDropdown = ({ scrollToTop }: ResourcesDropdownProps) => {
             </Link>
           </DropdownMenuItem>
           <DropdownMenuItem className="hover:bg-zinc-800 hover:text-gold-DEFAULT focus:bg-zinc-800 focus:text-gold-DEFAULT cursor-pointer">
-            <Link to="/blog" className="w-full" onClick={scrollToTop}>
-              Blog
-            </Link>
-          </DropdownMenuItem>
-          <DropdownMenuItem className="hover:bg-zinc-800 hover:text-gold-DEFAULT focus:bg-zinc-800 focus:text-gold-DEFAULT cursor-pointer">
             <Link to="#" className="w-full" onClick={scrollToTop}>
               Documentation
             </Link>
