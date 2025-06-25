@@ -229,7 +229,7 @@ const ModuleLayout = ({
                 <img 
                   src="/lovable-uploads/bd71cf26-6d3f-4aa3-a4e0-d2aa9db5670f.png" 
                   alt="Inventory tracking in action" 
-                  className="max-w-full rounded-lg shadow-lg border border-zinc-800"
+                  className="max-w-full max-h-[225px] rounded-lg shadow-lg border border-zinc-800 object-contain"
                 />
               </div>
             </div>
