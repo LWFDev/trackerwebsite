@@ -1,4 +1,3 @@
-
 import ModuleLayout from "@/components/modules/ModuleLayout";
 import { Package, TruckIcon, Percent, Clock, BarChart2, MapPin, Zap, QrCode, LineChart, RefreshCw, Search, Building, Box, LayoutGrid, Smartphone, AlertTriangle, ShoppingCart, ShieldCheck } from "lucide-react";
 
@@ -8,6 +7,27 @@ const Inventory = () => {
       title="Inventory"
       description="Monitor stock levels, track item movement, and get automatic low-stock alerts across locations."
       color="blue"
+      heroImage="/lovable-uploads/da887be9-f204-4f42-8349-f1ee3a8bd239.png"
+      heroImageCallouts={[
+        {
+          text: "Real-time Stock Monitoring",
+          position: { top: "15%", left: "-20%" },
+          icon: <BarChart2 className="h-4 w-4" />,
+          delay: "0.5s"
+        },
+        {
+          text: "Multi-location Tracking",
+          position: { top: "35%", right: "-20%" },
+          icon: <Building className="h-4 w-4" />,
+          delay: "1s"
+        },
+        {
+          text: "Automated Alerts & Reordering",
+          position: { bottom: "20%", left: "-20%" },
+          icon: <AlertTriangle className="h-4 w-4" />,
+          delay: "1.5s"
+        }
+      ]}
       stats={[
         {
           value: "35%",
