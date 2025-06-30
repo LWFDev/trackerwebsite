@@ -16,7 +16,7 @@ const ModuleCard = ({ icon, title, description, link, delay = 0 }: ModuleCardPro
   return (
     <ScrollReveal delay={delay} direction="up" className="group">
       <Link to={link} className="block h-full">
-        <div className="h-full p-6 bg-zinc-900/80 backdrop-blur-sm rounded-xl border border-zinc-800 transition-all duration-300 hover:border-[#D4AF37]/40 hover:shadow-lg hover:shadow-[#D4AF37]/5 relative overflow-hidden">
+        <div className="h-full p-6 bg-gray-50 dark:bg-zinc-900/80 backdrop-blur-sm rounded-xl border border-gray-200 dark:border-zinc-800 transition-all duration-300 hover:border-[#D4AF37]/40 hover:shadow-lg hover:shadow-[#D4AF37]/5 relative overflow-hidden">
           {/* Subtle gradient overlay that appears on hover */}
           <div className="absolute inset-0 bg-gradient-to-tr from-[#D4AF37]/0 to-[#D4AF37]/0 group-hover:from-[#D4AF37]/2 group-hover:to-[#D4AF37]/10 transition-all duration-500"></div>
           
@@ -26,10 +26,10 @@ const ModuleCard = ({ icon, title, description, link, delay = 0 }: ModuleCardPro
               {icon}
             </div>
             
-            <h3 className="text-lg font-semibold mb-2 text-white group-hover:text-[#D4AF37] transition-colors duration-300">{title}</h3>
-            <p className="text-sm text-gray-400 group-hover:text-gray-300 transition-colors duration-300 mb-8">{description}</p>
+            <h3 className="text-lg font-semibold mb-2 text-gray-900 dark:text-white group-hover:text-[#D4AF37] transition-colors duration-300">{title}</h3>
+            <p className="text-sm text-gray-600 dark:text-gray-400 group-hover:text-gray-500 dark:group-hover:text-gray-300 transition-colors duration-300 mb-8">{description}</p>
             
-            <div className="absolute bottom-6 right-6 w-6 h-6 rounded-full bg-zinc-800 border border-zinc-700 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300 transform group-hover:translate-x-0 translate-x-4">
+            <div className="absolute bottom-6 right-6 w-6 h-6 rounded-full bg-gray-200 dark:bg-zinc-800 border border-gray-300 dark:border-zinc-700 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300 transform group-hover:translate-x-0 translate-x-4">
               <ArrowUpRight className="w-3 h-3 text-[#D4AF37]" />
             </div>
           </div>
