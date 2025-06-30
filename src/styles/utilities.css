@@ -1,0 +1,77 @@
+
+@layer utilities {
+  .gold-text {
+    @apply text-[#D4AF37];
+  }
+
+  .gold-border {
+    @apply border-[#D4AF37];
+  }
+  
+  .gold-gradient {
+    @apply bg-gradient-to-r from-[#D4AF37] to-[#F2D675];
+  }
+  
+  .gold-gradient-text {
+    @apply text-transparent bg-clip-text bg-gradient-to-r from-[#D4AF37] to-[#F2D675];
+  }
+  
+  .backdrop-blur {
+    @apply backdrop-blur-sm bg-black/50;
+  }
+  
+  /* Glassmorphism effect */
+  .glass-morphism {
+    @apply backdrop-blur-md bg-white/5 border border-white/10 shadow-lg;
+  }
+  
+  /* Golden glassmorphism effect */
+  .gold-glass {
+    @apply backdrop-blur-md bg-[#D4AF37]/5 border border-[#D4AF37]/20 shadow-lg;
+  }
+  
+  /* Enhanced button styles */
+  .btn-glow:hover {
+    box-shadow: 0 0 20px 5px rgba(212, 175, 55, 0.3);
+  }
+  
+  /* Text underline animation */
+  .hover-underline {
+    @apply relative after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 after:bg-[#D4AF37] hover:after:w-full after:transition-all after:duration-300;
+  }
+  
+  /* Theme-specific utilities */
+  .theme-surface {
+    @apply bg-white dark:bg-zinc-900;
+  }
+  
+  .theme-card {
+    @apply bg-gray-50 dark:bg-zinc-900/50;
+  }
+  
+  .theme-border {
+    @apply border-gray-200 dark:border-zinc-800;
+  }
+  
+  .theme-text {
+    @apply text-gray-900 dark:text-white;
+  }
+  
+  .theme-text-secondary {
+    @apply text-gray-600 dark:text-gray-400;
+  }
+  
+  .theme-hover {
+    @apply hover:bg-gray-100 dark:hover:bg-zinc-800;
+  }
+}
+
+/* Dark theme card styles */
+.dark-card {
+  @apply bg-zinc-800 border border-zinc-700 shadow-md hover:shadow-lg transition-all;
+}
+
+/* Light theme card styles */
+.light-card {
+  @apply bg-white border border-gray-200 shadow-md hover:shadow-lg transition-all;
+}

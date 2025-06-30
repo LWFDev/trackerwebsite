@@ -1,0 +1,43 @@
+
+/* Scrollbar styles for both themes */
+.light {
+  scrollbar-color: #9ca3af #f3f4f6;
+}
+
+.dark {
+  scrollbar-color: #4b5563 #111111;
+}
+
+/* Chrome, Edge, and Safari scrollbar */
+.light *::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+.light *::-webkit-scrollbar-track {
+  background: #f3f4f6;
+}
+
+.light *::-webkit-scrollbar-thumb {
+  background-color: #9ca3af;
+  border-radius: 20px;
+}
+
+.dark *::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+.dark *::-webkit-scrollbar-track {
+  background: #111111;
+}
+
+.dark *::-webkit-scrollbar-thumb {
+  background-color: #4b5563;
+  border-radius: 20px;
+}
+
+/* Firefox fallback */
+* {
+  scrollbar-width: thin;
+}
