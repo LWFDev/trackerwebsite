@@ -5,7 +5,7 @@ import { HeroImage } from "@/components/landing/hero/HeroImage";
 
 const Hero = () => {
   return (
-    <section className="relative pt-16 md:pt-24 pb-8 md:pb-16 text-gray-900 dark:text-white overflow-hidden transition-colors duration-300">
+    <section className="relative pt-16 md:pt-24 pb-8 md:pb-16 text-gray-900 dark:text-white light:text-gray-900 overflow-hidden transition-colors duration-300">
       {/* Animated background elements */}
       <AnimatedBackground />
 

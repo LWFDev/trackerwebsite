@@ -18,7 +18,7 @@ const FeatureCard = ({
 }: FeatureCardProps) => {
   return (
     <motion.div 
-      className="group bg-gray-50 dark:bg-zinc-900/50 backdrop-blur-sm p-6 rounded-xl border border-gray-200 dark:border-zinc-800 hover:border-[#D4AF37]/50 transition-all duration-300 hover:-translate-y-1 relative overflow-hidden"
+      className="group bg-gray-50 dark:bg-zinc-900/50 light:bg-white backdrop-blur-sm p-6 rounded-xl border border-gray-200 dark:border-zinc-800 light:border-gray-200 hover:border-[#D4AF37]/50 transition-all duration-300 hover:-translate-y-1 relative overflow-hidden"
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.6, delay }}
@@ -29,8 +29,8 @@ const FeatureCard = ({
         <div className="w-full mb-4">
           <DotLottieReact src={lottieSource} loop autoplay />
         </div>
-        <h3 className="text-xl font-semibold mb-3 text-gray-900 dark:text-white group-hover:text-[#D4AF37] transition-colors duration-300">{title}</h3>
-        <p className="text-gray-600 dark:text-gray-400 group-hover:text-gray-500 dark:group-hover:text-gray-300 transition-colors duration-300">{description}</p>
+        <h3 className="text-xl font-semibold mb-3 text-gray-900 dark:text-white light:text-gray-900 group-hover:text-[#D4AF37] transition-colors duration-300">{title}</h3>
+        <p className="text-gray-600 dark:text-gray-400 light:text-gray-600 group-hover:text-gray-500 dark:group-hover:text-gray-300 light:group-hover:text-gray-500 transition-colors duration-300">{description}</p>
       </div>
     </motion.div>
   );
