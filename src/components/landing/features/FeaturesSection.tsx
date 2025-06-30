@@ -19,7 +19,7 @@ const FeaturesSection = () => {
       </div>
 
       <ScrollReveal>
-        <div className="relative p-8 bg-gradient-to-br from-zinc-900 to-zinc-950 rounded-xl border border-zinc-800 overflow-hidden mb-12">
+        <div className="relative p-8 bg-gray-800 dark:bg-gradient-to-br dark:from-zinc-900 dark:to-zinc-950 light:bg-gray-800 rounded-xl border border-gray-700 dark:border-zinc-800 light:border-gray-700 overflow-hidden mb-12">
           <div className="absolute top-0 right-0 w-[300px] h-[300px] bg-[#D4AF37]/10 rounded-full blur-[80px] -translate-y-1/2 translate-x-1/4"></div>
           
           <div className="relative z-10">
@@ -33,23 +33,23 @@ const FeaturesSection = () => {
               </div>
               
               <div className="max-w-xl">
-                <h3 className="text-2xl font-bold mb-4">Advanced <span className="text-[#D4AF37]">Management</span></h3>
-                <p className="text-gray-400">Our platform will deliver logos directly to embroidery machines (Barudan/Tajima) using bNET or Pulse.  Sending images to screen burners or tablets next to heat seal to get orientations correct.  From orders to logos to proofs to production and fulfillment its all cloud based - you can access it from anywhere.</p>
+                <h3 className="text-2xl font-bold mb-4 text-white">Advanced <span className="text-[#D4AF37]">Management</span></h3>
+                <p className="text-gray-300">Our platform will deliver logos directly to embroidery machines (Barudan/Tajima) using bNET or Pulse.  Sending images to screen burners or tablets next to heat seal to get orientations correct.  From orders to logos to proofs to production and fulfillment its all cloud based - you can access it from anywhere.</p>
               </div>
               
               <div className="flex gap-6">
                 <div className="flex flex-col items-center">
-                  <div className="w-12 h-12 rounded-full bg-zinc-800 border border-zinc-700 flex items-center justify-center text-[#D4AF37] mb-2">
+                  <div className="w-12 h-12 rounded-full bg-gray-700 dark:bg-zinc-800 light:bg-gray-700 border border-gray-600 dark:border-zinc-700 light:border-gray-600 flex items-center justify-center text-[#D4AF37] mb-2">
                     <Cpu className="w-5 h-5" />
                   </div>
-                  <span className="text-sm text-gray-400">Smart Monitoring</span>
+                  <span className="text-sm text-gray-300">Smart Monitoring</span>
                 </div>
                 
                 <div className="flex flex-col items-center">
-                  <div className="w-12 h-12 rounded-full bg-zinc-800 border border-zinc-700 flex items-center justify-center text-[#D4AF37] mb-2">
+                  <div className="w-12 h-12 rounded-full bg-gray-700 dark:bg-zinc-800 light:bg-gray-700 border border-gray-600 dark:border-zinc-700 light:border-gray-600 flex items-center justify-center text-[#D4AF37] mb-2">
                     <Globe className="w-5 h-5" />
                   </div>
-                  <span className="text-sm text-gray-400">Remote Access</span>
+                  <span className="text-sm text-gray-300">Remote Access</span>
                 </div>
               </div>
             </div>

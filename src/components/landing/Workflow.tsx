@@ -33,7 +33,7 @@ const Workflow = () => {
   ];
 
   return (
-    <section className="py-24 bg-gray-50 dark:bg-zinc-900 light:bg-white text-gray-900 dark:text-white light:text-gray-900 relative overflow-hidden transition-colors duration-300">
+    <section className="py-24 bg-gray-50 dark:bg-zinc-900 light:bg-gray-50 text-gray-900 dark:text-white light:text-gray-900 relative overflow-hidden transition-colors duration-300">
       <WorkflowBackground />
 
       <div className="container mx-auto px-4 relative z-10">

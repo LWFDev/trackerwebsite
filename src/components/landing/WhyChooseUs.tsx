@@ -15,12 +15,16 @@ const FeatureItem = ({
 }) => {
   return (
     <ScrollReveal delay={delay} direction="up" className="flex items-start">
-      <div className="mr-4 p-3 bg-zinc-900/80 rounded-lg border border-zinc-800 text-[#D4AF37]">
+      <div className="mr-4 p-3 bg-gray-800/80 dark:bg-zinc-900/80 light:bg-gray-800/80 rounded-lg border border-gray-700 dark:border-zinc-800 light:border-gray-700 text-[#D4AF37]">
         {icon}
       </div>
       <div>
-        <h3 className="text-lg font-semibold mb-2">{title}</h3>
-        <p className="text-gray-400">{description}</p>
+        <h3 className="text-lg font-semibold mb-2 text-white">
+          {title}
+        </h3>
+        <p className="text-gray-300">
+          {description}
+        </p>
       </div>
     </ScrollReveal>
   );
@@ -28,7 +32,7 @@ const FeatureItem = ({
 
 const WhyChooseUs = () => {
   return (
-    <section className="py-20 bg-black relative overflow-hidden">
+    <section className="py-20 bg-gray-900 dark:bg-black light:bg-gray-900 relative overflow-hidden">
       {/* Background elements */}
       <div className="absolute top-0 left-0 w-full h-full overflow-hidden z-0">
         <div className="absolute w-[600px] h-[600px] rounded-full bg-[#D4AF37]/5 blur-[120px] top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"></div>
@@ -36,13 +40,13 @@ const WhyChooseUs = () => {
 
       <div className="container mx-auto px-4 relative z-10">
         <div className="text-center mb-16">
-          <div className="inline-block px-4 py-1.5 bg-zinc-900/80 backdrop-blur-sm rounded-full border border-zinc-800 mb-6">
+          <div className="inline-block px-4 py-1.5 bg-gray-800/80 dark:bg-zinc-900/80 light:bg-gray-800/80 backdrop-blur-sm rounded-full border border-gray-700 dark:border-zinc-800 light:border-gray-700 mb-6">
             <span className="text-sm text-[#D4AF37] uppercase font-medium tracking-wider">Why Choose Us</span>
           </div>
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">
+          <h2 className="text-3xl md:text-4xl font-bold mb-4 text-white">
             Built for <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#D4AF37] to-[#F2D675]">embroidery businesses</span>
           </h2>
-          <p className="text-lg text-gray-400 max-w-2xl mx-auto">
+          <p className="text-lg text-gray-300 max-w-2xl mx-auto">
             Our platform is designed specifically for the unique needs of garment decoration businesses
           </p>
         </div>

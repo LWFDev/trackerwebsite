@@ -12,11 +12,11 @@ import { ScrollReveal } from "@/components/ui/scroll-reveal";
 
 const Results = () => {
   return (
-    <section className="py-20 bg-black dark:bg-black light:bg-gray-50 relative overflow-hidden transition-colors duration-300">
+    <section className="py-20 bg-gray-900 dark:bg-black light:bg-gray-900 relative overflow-hidden transition-colors duration-300">
       {/* Background elements */}
       <div className="absolute top-0 left-0 w-full h-full overflow-hidden z-0">
         <div className="absolute w-[800px] h-[800px] rounded-full bg-[#D4AF37]/5 blur-[150px] top-1/2 left-0 transform -translate-x-1/2 -translate-y-1/2"></div>
-        <div className="absolute w-[600px] h-[600px] rounded-full bg-zinc-900/30 dark:bg-zinc-900/30 light:bg-gray-200/30 blur-[100px] bottom-0 right-0"></div>
+        <div className="absolute w-[600px] h-[600px] rounded-full bg-gray-800/30 dark:bg-zinc-900/30 light:bg-gray-800/30 blur-[100px] bottom-0 right-0"></div>
       </div>
 
       <div className="container mx-auto px-4 relative z-10">
@@ -40,7 +40,7 @@ const Results = () => {
             delay={100}
           />
 
-          <div className="bg-zinc-900/60 dark:bg-zinc-900/60 light:bg-white/80 backdrop-blur-sm rounded-xl p-8 border border-zinc-800 dark:border-zinc-800 light:border-gray-200 transform transition-all duration-300 hover:border-[#D4AF37]/40 flex flex-col">
+          <div className="bg-gray-800/80 dark:bg-zinc-900/60 light:bg-gray-800/80 backdrop-blur-sm rounded-xl p-8 border border-gray-700 dark:border-zinc-800 light:border-gray-700 transform transition-all duration-300 hover:border-[#D4AF37]/40 flex flex-col">
             <ResultMetric 
               icon={<TrendingUp size={24} />} 
               percentage="65%" 

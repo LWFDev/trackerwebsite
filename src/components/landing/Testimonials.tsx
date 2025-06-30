@@ -61,7 +61,7 @@ const testimonials = [
 
 const TestimonialCard = ({ testimonial }) => {
   return (
-    <Card key={testimonial.id} className="border-zinc-800 bg-zinc-900/90 backdrop-blur-sm text-white hover:border-[#D4AF37]/30 transition-all duration-300 hover:-translate-y-1 animate-fade-in" style={{ animationDelay: `${testimonial.delay}s` }}>
+    <Card key={testimonial.id} className="border-gray-700 dark:border-zinc-800 light:border-gray-700 bg-gray-800/90 dark:bg-zinc-900/90 light:bg-gray-800/90 backdrop-blur-sm text-white hover:border-[#D4AF37]/30 transition-all duration-300 hover:-translate-y-1 animate-fade-in" style={{ animationDelay: `${testimonial.delay}s` }}>
       <CardContent className="p-6">
         <div className="flex mb-4">
           {[...Array(5)].map((_, i) => (
@@ -77,7 +77,7 @@ const TestimonialCard = ({ testimonial }) => {
             </AvatarFallback>
           </Avatar>
           <div>
-            <p className="font-medium">{testimonial.author}</p>
+            <p className="font-medium text-white">{testimonial.author}</p>
             <p className="text-sm text-[#D4AF37]">{testimonial.role}</p>
           </div>
         </div>
@@ -105,23 +105,23 @@ const Testimonials = () => {
   );
 
   return (
-    <section id="testimonials" className="py-20 bg-black relative overflow-hidden">
+    <section id="testimonials" className="py-20 bg-gray-900 dark:bg-black light:bg-gray-900 relative overflow-hidden">
       {/* Background elements */}
       <div className="absolute top-0 left-0 w-full h-full overflow-hidden z-0">
         <div className="absolute w-[600px] h-[600px] rounded-full bg-[#D4AF37]/5 blur-[130px] -top-1/4 -right-1/4"></div>
-        <div className="absolute w-[500px] h-[500px] rounded-full bg-zinc-800/30 blur-[100px] -bottom-1/4 -left-1/4"></div>
+        <div className="absolute w-[500px] h-[500px] rounded-full bg-gray-700/30 dark:bg-zinc-800/30 light:bg-gray-700/30 blur-[100px] -bottom-1/4 -left-1/4"></div>
       </div>
     
       <div className="container mx-auto px-4 relative z-10">
         <ScrollReveal>
           <div className="text-center mb-16">
-            <div className="inline-block px-4 py-1.5 bg-zinc-900/80 backdrop-blur-sm rounded-full border border-zinc-800 mb-6">
+            <div className="inline-block px-4 py-1.5 bg-gray-800/80 dark:bg-zinc-900/80 light:bg-gray-800/80 backdrop-blur-sm rounded-full border border-gray-700 dark:border-zinc-800 light:border-gray-700 mb-6">
               <span className="text-sm text-[#D4AF37] uppercase font-medium tracking-wider">Testimonials</span>
             </div>
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-white">
               Trusted by <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#D4AF37] to-[#F2D675]">Businesses Worldwide</span>
             </h2>
-            <p className="text-xl text-gray-400 max-w-2xl mx-auto">
+            <p className="text-xl text-gray-300 max-w-2xl mx-auto">
               See what our users have to say about Tracker
             </p>
           </div>
@@ -139,16 +139,16 @@ const Testimonials = () => {
             <Button 
               variant="outline" 
               size="icon" 
-              className="bg-zinc-900 border-zinc-800 hover:bg-zinc-800 hover:border-[#D4AF37]/30"
+              className="bg-gray-800 dark:bg-zinc-900 light:bg-gray-800 border-gray-700 dark:border-zinc-800 light:border-gray-700 hover:bg-gray-700 dark:hover:bg-zinc-800 light:hover:bg-gray-700 hover:border-[#D4AF37]/30"
               onClick={prevPage}
             >
-              <ChevronLeft className="h-5 w-5" />
+              <ChevronLeft className="h-5 w-5 text-white" />
             </Button>
             <div className="flex gap-2 items-center">
               {[...Array(totalPages)].map((_, i) => (
                 <button 
                   key={i} 
-                  className={`h-2 transition-all duration-300 rounded-full ${i === activeIndex ? 'w-8 bg-[#D4AF37]' : 'w-2 bg-zinc-700'}`}
+                  className={`h-2 transition-all duration-300 rounded-full ${i === activeIndex ? 'w-8 bg-[#D4AF37]' : 'w-2 bg-gray-600 dark:bg-zinc-700 light:bg-gray-600'}`}
                   onClick={() => setActiveIndex(i)}
                 />
               ))}
@@ -156,10 +156,10 @@ const Testimonials = () => {
             <Button 
               variant="outline" 
               size="icon" 
-              className="bg-zinc-900 border-zinc-800 hover:bg-zinc-800 hover:border-[#D4AF37]/30"
+              className="bg-gray-800 dark:bg-zinc-900 light:bg-gray-800 border-gray-700 dark:border-zinc-800 light:border-gray-700 hover:bg-gray-700 dark:hover:bg-zinc-800 light:hover:bg-gray-700 hover:border-[#D4AF37]/30"
               onClick={nextPage}
             >
-              <ChevronRight className="h-5 w-5" />
+              <ChevronRight className="h-5 w-5 text-white" />
             </Button>
           </div>
         )}
@@ -171,7 +171,7 @@ const Testimonials = () => {
                 key={`logo-${testimonial.id}`} 
                 className="flex items-center justify-center grayscale opacity-40 hover:grayscale-0 hover:opacity-100 transition-all duration-300"
               >
-                <div className="text-xl font-bold text-gray-500">{testimonial.company}</div>
+                <div className="text-xl font-bold text-gray-400">{testimonial.company}</div>
               </div>
             ))}
           </div>
