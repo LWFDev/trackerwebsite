@@ -1,3 +1,4 @@
+
 import React, { useEffect } from 'react';
 import Hero from "@/components/landing/Hero";
 import Features from "@/components/landing/Features";
@@ -30,6 +31,7 @@ const ZigzagDivider = ({
       </svg>
     </div>;
 };
+
 const ArrowDivider = ({
   className = ""
 }: {
@@ -42,6 +44,7 @@ const ArrowDivider = ({
       </svg>
     </div>;
 };
+
 const CurvyDivider = ({
   className = ""
 }: {
@@ -54,6 +57,7 @@ const CurvyDivider = ({
       </svg>
     </div>;
 };
+
 const TriangleDivider = ({
   className = ""
 }: {
@@ -95,11 +99,10 @@ const FloatingIcons = () => {
       <div className="absolute top-[40%] left-[80%] w-20 h-20 rounded-md border border-[#D4AF37]/20 opacity-25 rotate-45"></div>
     </div>;
 };
+
 const Index = () => {
   const isMobile = useIsMobile();
-  const {
-    toast
-  } = useToast();
+  const { toast } = useToast();
 
   // Show welcome toast for mobile users
   useEffect(() => {
@@ -113,55 +116,56 @@ const Index = () => {
       }, 1500);
     }
   }, [isMobile, toast]);
+
   const fadeInVariants = {
-    hidden: {
-      opacity: 0
-    },
-    visible: {
-      opacity: 1,
-      transition: {
-        duration: 0.8
-      }
-    }
+    hidden: { opacity: 0 },
+    visible: { opacity: 1, transition: { duration: 0.8 } }
   };
-  return <motion.div className="min-h-screen flex flex-col bg-black text-white relative" initial="hidden" animate="visible" variants={fadeInVariants}>
+
+  return (
+    <motion.div 
+      className="min-h-screen flex flex-col bg-white dark:bg-black text-gray-900 dark:text-white relative transition-colors duration-300" 
+      initial="hidden" 
+      animate="visible" 
+      variants={fadeInVariants}
+    >
       <ScrollAnimationInit />
       
       {/* Simplified static background gradients instead of animated */}
       <div className="fixed inset-0 pointer-events-none">
         <div className="absolute top-0 left-0 w-full max-w-[600px] h-[600px] rounded-full bg-[#D4AF37]/5 blur-[150px] opacity-30"></div>
-        <div className="absolute bottom-0 right-0 w-full max-w-[500px] h-[500px] rounded-full bg-zinc-800/20 blur-[100px] opacity-40"></div>
+        <div className="absolute bottom-0 right-0 w-full max-w-[500px] h-[500px] rounded-full bg-gray-200 dark:bg-zinc-800/20 blur-[100px] opacity-40"></div>
       </div>
       
       <main className="pt-16 relative">
         <Hero />
         
-        <div className="relative text-zinc-900 mb-[-1px]">
+        <div className="relative text-gray-600 dark:text-zinc-900 mb-[-1px]">
           <AnimatedTruckDivider />
         </div>
         
         <Features />
         
-        <div className="relative text-black mb-[-1px]">
+        <div className="relative text-gray-900 dark:text-black mb-[-1px]">
           <SlopesDivider />
         </div>
         
         <Workflow />
         
-        <div className="relative text-zinc-900 mb-[-1px]">
+        <div className="relative text-gray-600 dark:text-zinc-900 mb-[-1px]">
           <TriangleDivider />
         </div>
         
         <Results />
         
-        <div className="relative text-zinc-900 mb-[-1px]">
+        <div className="relative text-gray-600 dark:text-zinc-900 mb-[-1px]">
           <ZigzagDivider />
         </div>
         
         {/* New StoryTelling component */}
         <StoryTelling />
         
-        <div className="relative text-zinc-950 mb-[-1px]">
+        <div className="relative text-gray-700 dark:text-zinc-950 mb-[-1px]">
           <CurvyDivider />
         </div>
         
@@ -170,20 +174,20 @@ const Index = () => {
         
         <div className="relative">
           <Separator className="h-[1px] bg-gradient-to-r from-transparent via-[#D4AF37]/30 to-transparent my-0" />
-          <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-black border border-[#D4AF37]/30 flex items-center justify-center transform rotate-45">
+          <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-white dark:bg-black border border-[#D4AF37]/30 flex items-center justify-center transform rotate-45">
             <div className="w-6 h-6 rounded-sm bg-gradient-to-br from-[#D4AF37]/30 to-[#F2D675]/20"></div>
           </div>
         </div>
         
         <Integration />
         
-        <div className="relative text-zinc-900 mb-[-1px]">
+        <div className="relative text-gray-600 dark:text-zinc-900 mb-[-1px]">
           <CurvyDivider />
         </div>
         
         <Testimonials />
         
-        <div className="relative text-zinc-900 mb-[-1px]">
+        <div className="relative text-gray-600 dark:text-zinc-900 mb-[-1px]">
           <AnimatedTruckDivider />
         </div>
         
@@ -192,6 +196,8 @@ const Index = () => {
         {/* Simplified static floating icons */}
         <FloatingIcons />
       </main>
-    </motion.div>;
+    </motion.div>
+  );
 };
+
 export default Index;

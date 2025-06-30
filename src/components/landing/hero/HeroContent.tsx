@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 import { motion } from "framer-motion";
+import { useIsMobile } from "@/hooks/use-mobile";
 
 export const HeroContent = () => {
   return (
@@ -12,7 +13,7 @@ export const HeroContent = () => {
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.8 }}
     >
-      <div className="inline-block px-4 py-1.5 bg-zinc-900/80 backdrop-blur-md rounded-full border border-zinc-800 mb-6 shadow-lg shadow-black/20 hover:shadow-[#D4AF37]/10 transition-all duration-500">
+      <div className="inline-block px-4 py-1.5 bg-gray-100 dark:bg-zinc-900/80 backdrop-blur-md rounded-full border border-gray-300 dark:border-zinc-800 mb-6 shadow-lg shadow-black/20 hover:shadow-[#D4AF37]/10 transition-all duration-500">
         <div className="text-sm text-[#D4AF37] uppercase font-medium tracking-wider flex items-center">
           <span className="inline-block w-2 h-2 rounded-full bg-[#D4AF37] mr-2 animate-pulse"></span>
           AUTOMATE. ORGANIZE. SIMPLIFY.
@@ -28,7 +29,7 @@ export const HeroContent = () => {
         </span>
       </h1>
       
-      <p className="text-base md:text-lg text-gray-300 mb-8 max-w-lg animate-fade-in" style={{
+      <p className="text-base md:text-lg text-gray-600 dark:text-gray-300 mb-8 max-w-lg animate-fade-in" style={{
         animationDelay: '0.2s'
       }}>
         The end-to-end platform that <span className="text-[#D4AF37]">automates order handling</span>, <span className="text-[#D4AF37]">manages inventory</span>, and <span className="text-[#D4AF37]">optimizes production instantly</span> - simpler, clearer and more effectively.
@@ -85,12 +86,10 @@ const StatCard = ({ number, label }: StatCardProps) => {
   return (
     <div className="relative group">
       <div className="absolute inset-0 bg-gradient-to-r from-[#D4AF37]/20 to-[#F2D675]/20 rounded-lg blur-sm transform group-hover:scale-105 transition-all duration-300 opacity-0 group-hover:opacity-100"></div>
-      <div className="bg-zinc-900/60 backdrop-blur-sm p-4 rounded-lg border border-zinc-800 hover:border-[#D4AF37]/50 transition-all duration-300 relative z-10">
+      <div className="bg-gray-50 dark:bg-zinc-900/60 backdrop-blur-sm p-4 rounded-lg border border-gray-200 dark:border-zinc-800 hover:border-[#D4AF37]/50 transition-all duration-300 relative z-10">
         <div className="text-2xl md:text-3xl font-bold mb-1 text-transparent bg-clip-text bg-gradient-to-r from-[#D4AF37] to-[#F2D675] group-hover:from-[#F2D675] group-hover:to-[#D4AF37] transition-all duration-300">{number}</div>
-        <div className="text-gray-400 text-xs sm:text-sm">{label}</div>
+        <div className="text-gray-500 dark:text-gray-400 text-xs sm:text-sm">{label}</div>
       </div>
     </div>
   );
 };
-
-import { useIsMobile } from "@/hooks/use-mobile";
