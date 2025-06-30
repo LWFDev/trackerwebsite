@@ -66,7 +66,7 @@ const StatsGrid = () => {
     }}>
       <StatCard 
         number="1,000,000+" 
-        label="Garments Processed" 
+        label="Logos Managed" 
       />
       <StatCard 
         number="2,000+" 
