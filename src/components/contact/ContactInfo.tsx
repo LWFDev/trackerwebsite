@@ -15,7 +15,7 @@ const ContactInfo = () => {
           line3: ""
         },
         hours: {
-          weekdays: "Monday - Friday: 9am - 5pm GMT",
+          weekdays: "Monday - Friday: 9am - 6pm GMT",
           weekend: "Saturday - Sunday: Closed"
         },
         companyRegistration: "09826463",
