@@ -6,6 +6,7 @@ import { Switch } from "@/components/ui/switch";
 import { Check, Sparkles } from "lucide-react";
 import { toast } from "@/components/ui/use-toast";
 import { motion } from "framer-motion";
+import { useLocalization } from "@/contexts/LocalizationContext";
 
 interface PricingPlan {
   name: string;
@@ -20,8 +21,21 @@ interface PricingPlan {
 }
 
 const PricingPlans = () => {
+  const { locale, t } = useLocalization();
   const [billingCycle, setBillingCycle] = useState<'monthly' | 'annually'>('annually');
   const [animateSwitch, setAnimateSwitch] = useState(false);
+  
+  // Currency conversion rate (USD to GBP)
+  const USD_TO_GBP_RATE = 0.79;
+  
+  const convertPrice = (usdPrice: string) => {
+    if (usdPrice === "Custom") return usdPrice;
+    
+    const numericPrice = parseInt(usdPrice.replace('$', '').replace(',', ''));
+    const gbpPrice = Math.round(numericPrice * USD_TO_GBP_RATE);
+    
+    return locale === 'UK' ? `£${gbpPrice.toLocaleString()}` : usdPrice;
+  };
   
   // Add pulse animation effect to pricing toggle periodically
   useEffect(() => {
@@ -44,34 +58,62 @@ const PricingPlans = () => {
   };
 
   const pricingPlans: PricingPlan[] = [{
-    name: "Starter",
+    name: t("Starter"),
     price: {
       monthly: "$1,099",
       annually: "$899",
     },
-    description: "For small businesses getting started",
-    features: ["Up to 10 users", "5GB storage", "Standard report generation", "Email support", "Basic analytics dashboard", "Standard API access", "Community support"],
-    buttonText: "Get Started",
+    description: t("For small businesses getting started"),
+    features: [
+      t("Up to 10 users"), 
+      t("5GB storage"), 
+      t("Standard report generation"), 
+      t("Email support"), 
+      t("Basic analytics dashboard"), 
+      t("Standard API access"), 
+      t("Community support")
+    ],
+    buttonText: t("Get Started"),
     highlighted: false
   }, {
-    name: "Professional",
+    name: t("Professional"),
     price: {
       monthly: "$1,899",
       annually: "$1,499",
     },
-    description: "For growing businesses that need more features",
-    features: ["Up to 50 users", "50GB storage", "Advanced report generation", "Priority email & chat support", "Custom reporting dashboards", "White-label options", "Full integration capabilities", "Custom workflow automations", "Advanced API access"],
-    buttonText: "Get Started",
+    description: t("For growing businesses that need more features"),
+    features: [
+      t("Up to 50 users"), 
+      t("50GB storage"), 
+      t("Advanced report generation"), 
+      t("Priority email & chat support"), 
+      t("Custom reporting dashboards"), 
+      t("White-label options"), 
+      t("Full integration capabilities"), 
+      t("Custom workflow automations"), 
+      t("Advanced API access")
+    ],
+    buttonText: t("Get Started"),
     highlighted: true
   }, {
-    name: "Enterprise",
+    name: t("Enterprise"),
     price: {
       monthly: "Custom",
       annually: "Custom",
     },
-    description: "For large organizations with advanced needs",
-    features: ["Unlimited users", "Unlimited storage", "Advanced report generation", "24/7 priority support", "Custom analytics dashboards", "Dedicated account manager", "SLA guarantees", "Advanced security features", "Custom API integrations"],
-    buttonText: "Contact Sales",
+    description: t("For large organizations with advanced needs"),
+    features: [
+      t("Unlimited users"), 
+      t("Unlimited storage"), 
+      t("Advanced report generation"), 
+      t("24/7 priority support"), 
+      t("Custom analytics dashboards"), 
+      t("Dedicated account manager"), 
+      t("SLA guarantees"), 
+      t("Advanced security features"), 
+      t("Custom API integrations")
+    ],
+    buttonText: t("Contact Sales"),
     highlighted: false
   }];
 
@@ -110,7 +152,7 @@ const PricingPlans = () => {
       <div className="container mx-auto px-4 relative z-10">
         <ScrollReveal className="text-center mb-12" threshold={0.1} delay={100}>
           <div className={`flex items-center justify-center gap-4 mb-8 ${animateSwitch ? 'animate-bounce-light' : ''}`}>
-            <span className={`text-sm ${billingCycle === 'monthly' ? 'text-white' : 'text-gray-400'}`}>Monthly</span>
+            <span className={`text-sm ${billingCycle === 'monthly' ? 'text-white' : 'text-gray-400'}`}>{t("Monthly")}</span>
             <Switch 
               checked={billingCycle === 'annually'} 
               onCheckedChange={toggleBillingCycle}
@@ -125,11 +167,11 @@ const PricingPlans = () => {
             </Switch>
             <div className="flex flex-col items-start">
               <span className={`text-sm ${billingCycle === 'annually' ? 'text-white' : 'text-gray-400'}`}>
-                Annually
+                {t("Annually")}
               </span>
               {billingCycle === 'annually' && (
                 <span className="text-xs text-[#D4AF37] flex items-center gap-1">
-                  <Sparkles className="h-3 w-3" /> Save 20%
+                  <Sparkles className="h-3 w-3" /> {t("Save 20%")}
                 </span>
               )}
             </div>
@@ -148,7 +190,7 @@ const PricingPlans = () => {
               <PricingCard 
                 plan={{
                   ...plan, 
-                  price: plan.price[billingCycle]
+                  price: convertPrice(plan.price[billingCycle])
                 }} 
               />
             </motion.div>
@@ -158,7 +200,7 @@ const PricingPlans = () => {
         <ScrollReveal className="text-center text-gray-400 mt-8 text-sm max-w-2xl mx-auto" threshold={0.1} delay={400}>
           <div className="flex items-center justify-center gap-2 mt-8">
             <Check className="h-4 w-4 text-[#D4AF37]" />
-            <p>All plans include a 14-day free trial with no credit card required</p>
+            <p>{t("All plans include a 14-day free trial with no credit card required")}</p>
           </div>
         </ScrollReveal>
       </div>
