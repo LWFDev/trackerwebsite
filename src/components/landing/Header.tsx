@@ -9,6 +9,7 @@ import MobileMenu from "@/components/landing/header/MobileMenu";
 import ModulesButton from "@/components/landing/header/ModulesButton";
 import ResourcesDropdown from "@/components/landing/header/ResourcesDropdown";
 import ModulesMegaMenu from "@/components/landing/ModulesMegaMenu";
+import FlagSelector from "@/components/ui/FlagSelector";
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -86,6 +87,7 @@ const Header = () => {
 
         {/* Authentication Button Group */}
         <div className="hidden md:flex items-center space-x-3">
+          <FlagSelector />
           <Link to="/get-started">
             <Button variant="gold">Get Started</Button>
           </Link>

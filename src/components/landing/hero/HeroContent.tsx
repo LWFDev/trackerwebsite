@@ -4,8 +4,11 @@ import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 import { motion } from "framer-motion";
 import { useIsMobile } from "@/hooks/use-mobile";
+import { useLocalization } from "@/contexts/LocalizationContext";
 
 export const HeroContent = () => {
+  const { t } = useLocalization();
+
   return (
     <motion.div 
       className="md:w-1/2 md:pr-8 mb-10 md:mb-0"
@@ -16,13 +19,13 @@ export const HeroContent = () => {
       <div className="inline-block px-4 py-1.5 bg-gray-100 dark:bg-zinc-900/80 light:bg-gray-100 backdrop-blur-md rounded-full border border-gray-300 dark:border-zinc-800 light:border-gray-300 mb-6 shadow-lg shadow-black/20 hover:shadow-[#D4AF37]/10 transition-all duration-500">
         <div className="text-sm text-[#D4AF37] uppercase font-medium tracking-wider flex items-center">
           <span className="inline-block w-2 h-2 rounded-full bg-[#D4AF37] mr-2 animate-pulse"></span>
-          AUTOMATE. ORGANIZE. SIMPLIFY.
+          {t("AUTOMATE. ORGANIZE. SIMPLIFY.")}
         </div>
       </div>
       
       <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight animate-fade-in">
-        Digitize production, <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#D4AF37] to-[#F2D675] relative">
-          enable profit.
+        {t("Digitize production, ")} <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#D4AF37] to-[#F2D675] relative">
+          {t("enable profit.")}
           <svg className="absolute -bottom-2 left-0 w-full h-2 text-[#D4AF37]/30" viewBox="0 0 400 12" preserveAspectRatio="none">
             <path d="M0,1 C150,12 250,12 400,1" stroke="currentColor" strokeWidth="2" fill="none" />
           </svg>
@@ -32,7 +35,7 @@ export const HeroContent = () => {
       <p className="text-base md:text-lg text-gray-600 dark:text-gray-300 light:text-gray-600 mb-8 max-w-lg animate-fade-in" style={{
         animationDelay: '0.2s'
       }}>
-        The end-to-end platform that <span className="text-[#D4AF37]">automates order handling</span>, <span className="text-[#D4AF37]">manages inventory</span>, and <span className="text-[#D4AF37]">optimizes production instantly</span> - simpler, clearer and more effectively.
+        {t("The end-to-end platform that ")} <span className="text-[#D4AF37]">{t("automates order handling")}</span>, <span className="text-[#D4AF37]">{t("manages inventory")}</span>, {t("and ")} <span className="text-[#D4AF37]">{t("optimizes production instantly")}</span> {t("- simpler, clearer and more effectively.")}.
       </p>
       
       <div className="flex flex-col sm:flex-row gap-4 animate-fade-in" style={{
@@ -42,14 +45,14 @@ export const HeroContent = () => {
           <Button size="lg" className="w-full sm:w-auto group bg-gradient-to-r from-[#D4AF37] to-[#F2D675] text-black px-6 shadow-lg hover:shadow-[#D4AF37]/30 transition-all duration-300 hover:-translate-y-1 relative overflow-hidden">
             <span className="absolute inset-0 w-full h-full bg-white/20 transform -translate-x-full group-hover:translate-x-0 transition-transform duration-300"></span>
             <span className="relative z-10 flex items-center">
-              Get Started <ArrowRight className="ml-1 h-5 w-5 group-hover:translate-x-1 transition-transform duration-300" />
+              {t("Get Started")} <ArrowRight className="ml-1 h-5 w-5 group-hover:translate-x-1 transition-transform duration-300" />
             </span>
           </Button>
         </Link>
         <Link to="/contact" className="w-full sm:w-auto">
           <Button size="lg" variant="outline" className="w-full sm:w-auto group border-[#D4AF37] text-[#D4AF37] hover:bg-[#D4AF37]/10 transition-all duration-300 hover:-translate-y-1 relative overflow-hidden">
             <span className="absolute inset-0 w-full h-full bg-[#D4AF37]/5 transform -translate-x-full group-hover:translate-x-0 transition-transform duration-300"></span>
-            <span className="relative z-10">Contact Sales</span>
+            <span className="relative z-10">{t("Contact Sales")}</span>
           </Button>
         </Link>
       </div>
@@ -61,17 +64,19 @@ export const HeroContent = () => {
 
 const StatsGrid = () => {
   const isMobile = useIsMobile();
+  const { t } = useLocalization();
+  
   return (
     <div className={`mt-12 grid grid-cols-2 gap-4 sm:gap-8 animate-fade-in ${isMobile ? 'mx-auto max-w-md' : ''}`} style={{
       animationDelay: '0.4s'
     }}>
       <StatCard 
         number="1,000,000+" 
-        label="Logos Managed" 
+        label={t("Logos Managed")} 
       />
       <StatCard 
         number="2,000+" 
-        label="Workflows Optimized" 
+        label={t("Workflows Optimized")} 
       />
     </div>
   );

@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { X, ChevronRight } from "lucide-react";
+import FlagSelector from "@/components/ui/FlagSelector";
 
 interface MobileMenuProps {
   isOpen: boolean;
@@ -148,6 +149,9 @@ const MobileMenu = ({ isOpen, setIsOpen }: MobileMenuProps) => {
 
             <div className="border-t border-zinc-800 p-4">
               <div className="flex flex-col space-y-3">
+                <div className="flex justify-center">
+                  <FlagSelector />
+                </div>
                 <Link to="/get-started" onClick={() => setIsOpen(false)}>
                   <Button variant="gold" className="w-full">
                     Get Started

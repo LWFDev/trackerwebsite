@@ -1,14 +1,15 @@
-
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
 import { ScrollReveal } from "@/components/ui/scroll-reveal";
 import { useRef } from "react";
 import { useIsMobile } from "@/hooks/use-mobile";
+import { useLocalization } from "@/contexts/LocalizationContext";
 
 const CTA = () => {
   const containerRef = useRef<HTMLDivElement>(null);
   const isMobile = useIsMobile();
+  const { t } = useLocalization();
   
   return (
     <section className="py-12 md:py-20 bg-gray-800 dark:bg-zinc-900 light:bg-white text-white dark:text-white light:text-gray-900 relative overflow-hidden">
@@ -45,13 +46,13 @@ const CTA = () => {
                 <div className="inline-block px-3 sm:px-4 py-1 sm:py-1.5 bg-black/30 dark:bg-black/30 light:bg-gray-100 rounded-full border border-gray-600 dark:border-zinc-700 light:border-gray-300 mb-4 sm:mb-6">
                   <span className="text-xs sm:text-sm text-[#D4AF37] uppercase font-medium tracking-wider flex items-center">
                     <span className="bg-[#D4AF37] w-1.5 sm:w-2 h-1.5 sm:h-2 rounded-full mr-2"></span>
-                    Get Started Today
+                    {t("Get Started Today")}
                   </span>
                 </div>
 
                 <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 sm:mb-6 text-white dark:text-white light:text-gray-900">
-                  Ready to <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#D4AF37] to-[#F2D675] relative">
-                    transform your workflow?
+                  {t("Ready to ")} <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#D4AF37] to-[#F2D675] relative">
+                    {t("transform your workflow?")}
                     <svg className="absolute -bottom-2 left-0 w-full h-2 text-[#D4AF37]/30" viewBox="0 0 400 12" preserveAspectRatio="none">
                       <path d="M0,1 C150,12 250,12 400,1" stroke="currentColor" strokeWidth="2" fill="none" />
                     </svg>
@@ -59,19 +60,19 @@ const CTA = () => {
                 </h2>
                 
                 <p className="text-base sm:text-xl text-gray-300 dark:text-gray-300 light:text-gray-600 mb-6 sm:mb-8">
-                  Start your free 14-day trial today. No credit card required.
+                  {t("Start your free 14-day trial today. No credit card required.")}
                 </p>
                 
                 <Link to="/get-started" className="block w-full sm:inline-block sm:w-auto">
                   <Button size="lg" className="w-full sm:w-auto group px-6 sm:px-8 shadow-xl bg-gradient-to-r from-[#D4AF37] to-[#F2D675] hover:from-[#F2D675] hover:to-[#D4AF37] text-black transform transition-all duration-300 hover:-translate-y-1 relative overflow-hidden">
                     <span className="relative z-10 flex items-center">
-                      Get Started <ArrowRight className="ml-1 h-5 w-5 group-hover:translate-x-1 transition-transform duration-300" />
+                      {t("Get Started")} <ArrowRight className="ml-1 h-5 w-5 group-hover:translate-x-1 transition-transform duration-300" />
                     </span>
                   </Button>
                 </Link>
                 
                 <p className="mt-6 sm:mt-8 text-xs sm:text-sm text-gray-400 dark:text-gray-400 light:text-gray-500">
-                  Join <span className="text-[#D4AF37]">garment decoration</span> businesses using Tracker
+                  {t("Join ")} <span className="text-[#D4AF37]">{t("garment decoration")}</span> {t("businesses using Tracker")}
                 </p>
                 
                 {/* Simplified corner decorations */}
@@ -90,17 +91,17 @@ const CTA = () => {
         <div className="flex flex-wrap justify-center gap-2 sm:gap-6 mt-8 sm:mt-12">
           <ScrollReveal delay={300} direction="up" className="bg-gray-800/80 dark:bg-zinc-900/80 light:bg-white/90 px-3 sm:px-5 py-2 sm:py-3 rounded-full border border-gray-700 dark:border-zinc-800 light:border-gray-200 flex items-center gap-2 shadow-lg hover:border-[#D4AF37]/30 transition-all duration-300">
             <div className="w-2 sm:w-3 h-2 sm:h-3 rounded-full bg-[#D4AF37]/40"></div>
-            <span className="text-gray-300 dark:text-gray-300 light:text-gray-600 text-xs sm:text-sm">14 Day Guarantee</span>
+            <span className="text-gray-300 dark:text-gray-300 light:text-gray-600 text-xs sm:text-sm">{t("14 Day Guarantee")}</span>
           </ScrollReveal>
           
           <ScrollReveal delay={400} direction="up" className="bg-gray-800/80 dark:bg-zinc-900/80 light:bg-white/90 px-3 sm:px-5 py-2 sm:py-3 rounded-full border border-gray-700 dark:border-zinc-800 light:border-gray-200 flex items-center gap-2 shadow-lg hover:border-[#D4AF37]/30 transition-all duration-300">
             <div className="w-2 sm:w-3 h-2 sm:h-3 rounded-full bg-[#D4AF37]/40"></div>
-            <span className="text-gray-300 dark:text-gray-300 light:text-gray-600 text-xs sm:text-sm">24/7 Support Available</span>
+            <span className="text-gray-300 dark:text-gray-300 light:text-gray-600 text-xs sm:text-sm">{t("24/7 Support Available")}</span>
           </ScrollReveal>
           
           <ScrollReveal delay={500} direction="up" className="bg-gray-800/80 dark:bg-zinc-900/80 light:bg-white/90 px-3 sm:px-5 py-2 sm:py-3 rounded-full border border-gray-700 dark:border-zinc-800 light:border-gray-200 flex items-center gap-2 shadow-lg hover:border-[#D4AF37]/30 transition-all duration-300">
             <div className="w-2 sm:w-3 h-2 sm:h-3 rounded-full bg-[#D4AF37]/40"></div>
-            <span className="text-gray-300 dark:text-gray-300 light:text-gray-600 text-xs sm:text-sm">99.9% Uptime</span>
+            <span className="text-gray-300 dark:text-gray-300 light:text-gray-600 text-xs sm:text-sm">{t("99.9% Uptime")}</span>
           </ScrollReveal>
         </div>
       </div>
