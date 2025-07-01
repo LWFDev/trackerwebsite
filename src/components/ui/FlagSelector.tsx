@@ -2,6 +2,7 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { useLocalization, Locale } from '@/contexts/LocalizationContext';
 import { motion, AnimatePresence } from 'framer-motion';
+import { Flag } from 'lucide-react';
 
 const FlagSelector = () => {
   const { locale, setLocale } = useLocalization();
@@ -25,22 +26,14 @@ const FlagSelector = () => {
     setIsOpen(false);
   };
 
-  const getFlagEmoji = (locale: Locale) => {
-    // Using Unicode flag emojis with explicit font handling
-    return locale === 'US' ? '🇺🇸' : '🇬🇧';
-  };
-
   return (
     <div className="relative" ref={dropdownRef}>
       <button
         onClick={() => setIsOpen(!isOpen)}
         className="flex items-center space-x-2 px-3 py-2 rounded-md bg-gray-100/10 dark:bg-zinc-900/50 light:bg-gray-100/10 backdrop-blur-sm border border-gray-300/20 dark:border-zinc-800/50 light:border-gray-300/20 hover:border-[#D4AF37]/50 transition-all duration-200 text-white"
         aria-label={`Current language: ${locale}`}
-        style={{ fontFamily: 'system-ui, -apple-system, "Segoe UI", Roboto, sans-serif' }}
       >
-        <span className="text-xl" style={{ fontFamily: 'Apple Color Emoji, Segoe UI Emoji, Noto Color Emoji, system-ui' }}>
-          {getFlagEmoji(locale)}
-        </span>
+        <Flag className="w-4 h-4 text-[#D4AF37]" />
         <span className="text-sm font-medium">{locale}</span>
         <svg
           className={`w-4 h-4 transition-transform duration-200 ${isOpen ? 'rotate-180' : ''}`}
@@ -71,14 +64,8 @@ const FlagSelector = () => {
                       ? 'bg-[#D4AF37]/10 text-[#D4AF37]' 
                       : 'text-white dark:text-white light:text-gray-900'
                   }`}
-                  style={{ fontFamily: 'system-ui, -apple-system, "Segoe UI", Roboto, sans-serif' }}
                 >
-                  <span 
-                    className="text-xl" 
-                    style={{ fontFamily: 'Apple Color Emoji, Segoe UI Emoji, Noto Color Emoji, system-ui' }}
-                  >
-                    {getFlagEmoji(localeOption)}
-                  </span>
+                  <Flag className="w-4 h-4" />
                   <span className="font-medium">{localeOption}</span>
                   {locale === localeOption && (
                     <div className="ml-auto">
