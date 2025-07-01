@@ -148,9 +148,6 @@ const MobileMenu = ({ isOpen, setIsOpen }: MobileMenuProps) => {
 
             <div className="border-t border-zinc-800 p-4">
               <div className="flex flex-col space-y-3">
-                <Link to="/login" className="text-center text-white hover:text-gold-light py-2">
-                  Log In
-                </Link>
                 <Link to="/get-started" onClick={() => setIsOpen(false)}>
                   <Button variant="gold" className="w-full">
                     Get Started

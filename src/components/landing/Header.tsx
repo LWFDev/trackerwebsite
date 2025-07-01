@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect } from "react";
 import { useLocation, Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
@@ -85,9 +86,6 @@ const Header = () => {
 
         {/* Authentication Button Group */}
         <div className="hidden md:flex items-center space-x-3">
-          <Link to="/login" className="text-sm text-white hover:text-gold-light">
-            Login
-          </Link>
           <Link to="/get-started">
             <Button variant="gold">Get Started</Button>
           </Link>
