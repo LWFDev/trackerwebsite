@@ -29,18 +29,15 @@ const FlagSelector = () => {
     return locale === 'US' ? '🇺🇸' : '🇬🇧';
   };
 
-  const getCountryName = (locale: Locale) => {
-    return locale === 'US' ? 'United States' : 'United Kingdom';
-  };
-
   return (
     <div className="relative" ref={dropdownRef}>
       <button
         onClick={() => setIsOpen(!isOpen)}
         className="flex items-center space-x-2 px-3 py-2 rounded-md bg-gray-100/10 dark:bg-zinc-900/50 light:bg-gray-100/10 backdrop-blur-sm border border-gray-300/20 dark:border-zinc-800/50 light:border-gray-300/20 hover:border-[#D4AF37]/50 transition-all duration-200 text-white"
-        aria-label={`Current language: ${getCountryName(locale)}`}
+        aria-label={`Current language: ${locale}`}
       >
         <span className="text-lg">{getFlagEmoji(locale)}</span>
+        <span className="text-sm font-medium">{locale}</span>
         <svg
           className={`w-4 h-4 transition-transform duration-200 ${isOpen ? 'rotate-180' : ''}`}
           fill="none"
@@ -58,7 +55,7 @@ const FlagSelector = () => {
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: -10, scale: 0.95 }}
             transition={{ duration: 0.15 }}
-            className="absolute top-full left-0 mt-2 w-48 bg-gray-900/95 dark:bg-zinc-900/95 light:bg-white/95 backdrop-blur-md border border-gray-700 dark:border-zinc-800 light:border-gray-200 rounded-lg shadow-xl overflow-hidden z-50"
+            className="absolute top-full left-0 mt-2 w-32 bg-gray-900/95 dark:bg-zinc-900/95 light:bg-white/95 backdrop-blur-md border border-gray-700 dark:border-zinc-800 light:border-gray-200 rounded-lg shadow-xl overflow-hidden z-50"
           >
             <div className="py-1">
               {(['US', 'UK'] as Locale[]).map((localeOption) => (
@@ -72,12 +69,7 @@ const FlagSelector = () => {
                   }`}
                 >
                   <span className="text-xl">{getFlagEmoji(localeOption)}</span>
-                  <div className="flex flex-col">
-                    <span className="font-medium">{getCountryName(localeOption)}</span>
-                    <span className="text-xs opacity-75">
-                      {localeOption === 'US' ? 'American English' : 'British English'}
-                    </span>
-                  </div>
+                  <span className="font-medium">{localeOption}</span>
                   {locale === localeOption && (
                     <div className="ml-auto">
                       <svg className="w-4 h-4 text-[#D4AF37]" fill="currentColor" viewBox="0 0 20 20">
