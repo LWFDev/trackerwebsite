@@ -1,4 +1,3 @@
-
 import React from "react";
 import { Mail, Phone, MapPin, Clock } from "lucide-react";
 import { useLocalization } from "@/contexts/LocalizationContext";
@@ -51,8 +50,8 @@ const ContactInfo = () => {
             </div>
             <div>
               <h3 className="text-lg font-medium mb-1">{t("Email")}</h3>
-              <p className="text-gray-400">support@trackmybusiness.us</p>
-              <p className="text-gray-400">sales@trackmybusiness.us</p>
+              <p className="text-gray-400">support@trackmybusiness.com</p>
+              <p className="text-gray-400">sales@trackmybusiness.com</p>
             </div>
           </div>
           <div className="flex items-start">
