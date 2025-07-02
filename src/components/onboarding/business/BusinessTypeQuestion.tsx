@@ -53,7 +53,6 @@ export const BusinessTypeQuestion = ({ formData, updateFormData }: BusinessTypeQ
               <Checkbox
                 id={type}
                 checked={isChecked}
-                readOnly
                 className="h-5 w-5 border-zinc-600 data-[state=checked]:bg-[#D4AF37] data-[state=checked]:text-black pointer-events-none"
               />
               <label htmlFor={type} className="font-medium cursor-pointer flex-1 text-gray-300 pointer-events-none">
