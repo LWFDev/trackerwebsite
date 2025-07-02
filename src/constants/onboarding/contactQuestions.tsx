@@ -1,6 +1,7 @@
 
 import { Question } from "@/types/onboarding";
 import { ContactForm } from "@/components/onboarding/ContactForm";
+import { TermsForm } from "@/components/onboarding/account/TermsForm";
 
 export const contactQuestions: Question[] = [
   {
@@ -74,6 +75,25 @@ export const contactQuestions: Question[] = [
           }
         }}
         questionType="phone"
+      />
+    )
+  },
+  {
+    id: "terms",
+    title: "Almost done!",
+    field: "agreeToTerms",
+    component: ({ value, onChange, isValid, setIsValid, onNext, onBack }) => (
+      <TermsForm 
+        formData={{ 
+          agreeToTerms: value,
+          receiveUpdates: false // We'll handle this separately if needed
+        }}
+        updateFormData={(data) => {
+          if (data.agreeToTerms !== undefined) {
+            onChange(data.agreeToTerms);
+            setIsValid(Boolean(data.agreeToTerms));
+          }
+        }}
       />
     )
   }
