@@ -1,8 +1,7 @@
-
 import React from 'react';
 import { ScrollReveal } from '@/components/ui/scroll-reveal';
 import { Card, CardContent } from '@/components/ui/card';
-import { Mail, Phone, Clock, MessageCircle } from 'lucide-react';
+import { Mail, Phone, Clock } from 'lucide-react';
 
 const SupportContact = () => {
   return (
@@ -23,7 +22,7 @@ const SupportContact = () => {
         </ScrollReveal>
 
         <ScrollReveal direction="up" distance="30px" duration={600} delay={200}>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
             <Card className="bg-zinc-800/30 border-zinc-700/50 hover:bg-zinc-800/50 transition-colors duration-300">
               <CardContent className="p-6 text-center">
                 <div className="w-16 h-16 bg-gradient-to-r from-[#D4AF37] to-[#F2D675] rounded-full flex items-center justify-center mx-auto mb-4">
@@ -32,17 +31,6 @@ const SupportContact = () => {
                 <h3 className="text-lg font-semibold text-white mb-2">Email Support</h3>
                 <p className="text-gray-400 text-sm mb-4">Get detailed help via email</p>
                 <p className="text-[#D4AF37] font-medium">support@tracker.com</p>
-              </CardContent>
-            </Card>
-
-            <Card className="bg-zinc-800/30 border-zinc-700/50 hover:bg-zinc-800/50 transition-colors duration-300">
-              <CardContent className="p-6 text-center">
-                <div className="w-16 h-16 bg-gradient-to-r from-[#D4AF37] to-[#F2D675] rounded-full flex items-center justify-center mx-auto mb-4">
-                  <MessageCircle className="w-8 h-8 text-black" />
-                </div>
-                <h3 className="text-lg font-semibold text-white mb-2">Live Chat</h3>
-                <p className="text-gray-400 text-sm mb-4">Instant help when you need it</p>
-                <p className="text-[#D4AF37] font-medium">Available 24/7</p>
               </CardContent>
             </Card>
 
