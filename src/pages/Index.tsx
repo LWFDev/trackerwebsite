@@ -6,7 +6,6 @@ import Workflow from "@/components/landing/Workflow";
 import Testimonials from "@/components/landing/Testimonials";
 import CTA from "@/components/landing/CTA";
 import Results from "@/components/landing/Results";
-import WhyChooseUs from "@/components/landing/WhyChooseUs";
 import { Separator } from "@/components/ui/separator";
 import ScrollAnimationInit from "@/components/ui/scroll-animation-init";
 import AnimatedTruckDivider from "@/components/landing/AnimatedTruckDivider";
@@ -100,23 +99,18 @@ const Index = () => {
           <Results />
         </div>
         
-        {/* WhyChooseUs Section */}
-        <div className="bg-gradient-to-b from-yellow-50/30 via-emerald-50/20 to-slate-50/25 dark:from-yellow-950/15 dark:via-emerald-950/10 dark:to-slate-950/10">
-          <WhyChooseUs />
-        </div>
-        
         {/* Integration Section */}
-        <div className="bg-gradient-to-b from-slate-50/25 via-yellow-50/20 to-emerald-50/30 dark:from-slate-950/10 dark:via-yellow-950/10 dark:to-emerald-950/15">
+        <div className="bg-gradient-to-b from-yellow-50/30 via-emerald-50/20 to-slate-50/25 dark:from-yellow-950/15 dark:via-emerald-950/10 dark:to-slate-950/10">
           <Integration />
         </div>
         
         {/* Testimonials Section */}
-        <div className="bg-gradient-to-b from-emerald-50/30 via-slate-100/15 to-yellow-50/25 dark:from-emerald-950/15 dark:via-slate-900/10 dark:to-yellow-950/10">
+        <div className="bg-gradient-to-b from-slate-50/25 via-yellow-50/20 to-emerald-50/30 dark:from-slate-950/10 dark:via-yellow-950/10 dark:to-emerald-950/15">
           <Testimonials />
         </div>
         
         {/* CTA Section */}
-        <div className="bg-gradient-to-b from-yellow-50/25 via-emerald-50/20 to-white dark:from-yellow-950/10 dark:via-emerald-950/10 dark:to-black">
+        <div className="bg-gradient-to-b from-emerald-50/30 via-slate-100/15 to-white dark:from-emerald-950/15 dark:via-slate-900/10 dark:to-black">
           <CTA />
         </div>
         
