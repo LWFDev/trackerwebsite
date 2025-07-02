@@ -21,9 +21,8 @@ const Footer = () => {
           <div>
             <h4 className="theme-text font-medium mb-4">Product</h4>
             <ul className="space-y-2 text-sm">
-              <li><a href="#" className="hover:text-[#D4AF37] transition-colors">Features</a></li>
-              <li><a href="#" className="hover:text-[#D4AF37] transition-colors">Pricing</a></li>
               <li><Link to="/modules" className="hover:text-[#D4AF37] transition-colors">Modules</Link></li>
+              <li><a href="#" className="hover:text-[#D4AF37] transition-colors">Pricing</a></li>
             </ul>
           </div>
           <div>
@@ -46,7 +45,6 @@ const Footer = () => {
           </div>
         </div>
         
-        {/* Theme Toggle Section */}
         <div className="theme-border border-t pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <p className="text-sm mb-4 md:mb-0">© 2025 Tracker US. All rights reserved.</p>
