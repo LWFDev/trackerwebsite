@@ -1,4 +1,3 @@
-
 import { Question } from "@/types/onboarding";
 import { ContactForm } from "@/components/onboarding/ContactForm";
 import { TermsForm } from "@/components/onboarding/account/TermsForm";
@@ -86,12 +85,16 @@ export const contactQuestions: Question[] = [
       <TermsForm 
         formData={{ 
           agreeToTerms: value,
-          receiveUpdates: false // We'll handle this separately if needed
+          receiveUpdates: true // Default to true
         }}
         updateFormData={(data) => {
           if (data.agreeToTerms !== undefined) {
             onChange(data.agreeToTerms);
             setIsValid(Boolean(data.agreeToTerms));
+          }
+          // Handle receiveUpdates separately since it's not the main field for this question
+          if (data.receiveUpdates !== undefined) {
+            // This would need to be handled by the parent form if needed
           }
         }}
       />

@@ -10,6 +10,9 @@ interface TermsFormProps {
 }
 
 export function TermsForm({ formData, updateFormData }: TermsFormProps) {
+  // Default receiveUpdates to true if not set
+  const receiveUpdates = formData.receiveUpdates ?? true;
+
   return (
     <div className="space-y-6">
       <h2 className="text-xl font-bold text-white">Almost done!</h2>
@@ -51,14 +54,14 @@ export function TermsForm({ formData, updateFormData }: TermsFormProps) {
         <div 
           className={`
             flex items-start space-x-3 space-y-0 rounded-md p-4 cursor-pointer
-            ${formData.receiveUpdates ? 'bg-[#D4AF37]/10 border-[#D4AF37]/50' : 'border-zinc-800'}
+            ${receiveUpdates ? 'bg-[#D4AF37]/10 border-[#D4AF37]/50' : 'border-zinc-800'}
             border hover:border-[#D4AF37]/50 transition-colors
           `}
-          onClick={() => updateFormData({ receiveUpdates: !formData.receiveUpdates })}
+          onClick={() => updateFormData({ receiveUpdates: !receiveUpdates })}
         >
           <Switch
             id="receiveUpdates"
-            checked={formData.receiveUpdates}
+            checked={receiveUpdates}
             onCheckedChange={(checked) => updateFormData({ receiveUpdates: checked as boolean })}
             className="border-zinc-600 data-[state=checked]:bg-[#D4AF37] data-[state=checked]:text-black mt-1"
           />

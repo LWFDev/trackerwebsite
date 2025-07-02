@@ -21,7 +21,7 @@ export const useOnboardingForm = () => {
     password: "",
     confirmPassword: "",
     agreeToTerms: false,
-    receiveUpdates: false
+    receiveUpdates: true // Default to true
   });
 
   const updateFormData = (data: Partial<OnboardingData>) => {
