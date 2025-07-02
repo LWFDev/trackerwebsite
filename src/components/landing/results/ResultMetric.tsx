@@ -17,7 +17,7 @@ const ResultMetric = ({ icon, percentage, text, delay = 0 }: ResultMetricProps) 
           {icon}
         </div>
         <div>
-          <div className="mb-1 text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-[#D4AF37] to-[#F2D675]">{percentage}</div>
+          <div className="mb-1 text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-[#D4AF37] to-[#F2D675]">{percentage}</div>
           <div className="text-gray-300">{text}</div>
         </div>
       </div>
