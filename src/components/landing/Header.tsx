@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from "react";
 import { useLocation, Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
@@ -24,7 +23,7 @@ const Header = () => {
 
   // Check if current route is active
   const isActive = (path: string) => {
-    return location.pathname === path ? "text-gold-DEFAULT" : "text-white";
+    return location.pathname === path ? "text-gold-DEFAULT" : "text-[rgb(209,213,219)]";
   };
 
   // Handle scroll effect for header
