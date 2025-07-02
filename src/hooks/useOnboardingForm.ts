@@ -5,7 +5,7 @@ import { OnboardingData } from "@/types/onboarding";
 export const useOnboardingForm = () => {
   const [formData, setFormData] = useState<OnboardingData>({
     // Business step
-    businessType: "",
+    businessType: [], // Changed from "" to [] to match string[] type
     employeeCount: "",
     yearsInBusiness: "",
     decorationMethods: [],
