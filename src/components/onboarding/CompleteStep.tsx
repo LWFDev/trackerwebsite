@@ -1,16 +1,26 @@
 
+
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
 import { OnboardingData } from "@/types/onboarding";
 import { Check, ArrowRight } from "lucide-react";
+import { useNavigate } from "react-router-dom";
+
 interface CompleteStepProps {
   formData: OnboardingData;
   onComplete: () => void;
 }
+
 export function CompleteStep({
   formData,
   onComplete
 }: CompleteStepProps) {
+  const navigate = useNavigate();
+
+  const handleContactSales = () => {
+    navigate("/contact");
+  };
+
   return <div className="space-y-8">
       <div className="space-y-3">
         
@@ -35,11 +45,12 @@ export function CompleteStep({
 
       
 
-      <div className="flex justify-end pt-4">
-        <Button onClick={onComplete} variant="gold" className="w-48">
-          Get Started
+      <div className="flex justify-center pt-4">
+        <Button onClick={handleContactSales} variant="gold" className="w-48">
+          Contact sales
           <ArrowRight className="ml-2 h-4 w-4" />
         </Button>
       </div>
     </div>;
 }
+
