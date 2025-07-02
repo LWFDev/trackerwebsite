@@ -54,25 +54,25 @@ const TrackerProvides = () => {
               </Card>
             </div>
             
-            <div className="space-y-8">
-              <div className="p-6">
-              </div>
+            <div className="space-y-4">
+              <Card className="border-gray-200 shadow-sm mb-6">
+                <CardContent className="p-6">
+                </CardContent>
+              </Card>
               
-              <div className="space-y-4">
-                {keyFeatures.map((feature, index) => (
-                  <Card key={index} className="border-gray-200 hover:border-emerald-300 hover:shadow-md transition-all group">
-                    <CardContent className="p-6">
-                      <div className="flex items-center space-x-4">
-                        <div className="flex-shrink-0 w-10 h-10 bg-emerald-500 rounded-lg flex items-center justify-center text-white shadow-sm">
-                          {feature.icon}
-                        </div>
-                        <span className="font-semibold flex-1 text-gray-900">{feature.text}</span>
-                        <ArrowRight className="h-4 w-4 text-emerald-500 opacity-0 group-hover:opacity-100 transition-opacity" />
+              {keyFeatures.map((feature, index) => (
+                <Card key={index} className="border-gray-200 hover:border-emerald-300 hover:shadow-md transition-all group">
+                  <CardContent className="p-6">
+                    <div className="flex items-center space-x-4">
+                      <div className="flex-shrink-0 w-10 h-10 bg-emerald-500 rounded-lg flex items-center justify-center text-white shadow-sm">
+                        {feature.icon}
                       </div>
-                    </CardContent>
-                  </Card>
-                ))}
-              </div>
+                      <span className="font-semibold flex-1 text-gray-900">{feature.text}</span>
+                      <ArrowRight className="h-4 w-4 text-emerald-500 opacity-0 group-hover:opacity-100 transition-opacity" />
+                    </div>
+                  </CardContent>
+                </Card>
+              ))}
             </div>
           </div>
         </CardContent>
