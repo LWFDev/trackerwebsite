@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect } from "react";
 import { useLocation, Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
@@ -92,7 +93,7 @@ const Header = () => {
         <div className="hidden md:flex items-center space-x-3">
           <FlagSelector />
           <Link to="/get-started">
-            <Button variant="gold">Get Started</Button>
+            <Button variant="gold" className="text-white">Get Started</Button>
           </Link>
         </div>
 
