@@ -2,18 +2,19 @@ import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
 import { OnboardingData } from "@/types/onboarding";
 import { Check, ArrowRight } from "lucide-react";
-
 interface CompleteStepProps {
   formData: OnboardingData;
   onComplete: () => void;
 }
-
-export function CompleteStep({ formData, onComplete }: CompleteStepProps) {
-  return (
-    <div className="space-y-8">
+export function CompleteStep({
+  formData,
+  onComplete
+}: CompleteStepProps) {
+  return <div className="space-y-8">
       <div className="space-y-3">
-        <h1 className="text-2xl font-bold text-white">You're all set!</h1>
-        <p className="text-gray-400">Your account has been created and is ready to use.</p>
+        <h1 className="text-2xl font-bold text-white text-center">You're all set!</h1>
+        <p className="text-gray-400 text-center">We appreciate you taking the time to share your information.
+      </p>
       </div>
 
       <div className="flex flex-col items-center justify-center py-10">
@@ -65,6 +66,5 @@ export function CompleteStep({ formData, onComplete }: CompleteStepProps) {
           <ArrowRight className="ml-2 h-4 w-4" />
         </Button>
       </div>
-    </div>
-  );
+    </div>;
 }
