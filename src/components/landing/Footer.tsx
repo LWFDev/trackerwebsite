@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Switch } from '@/components/ui/switch';
@@ -39,7 +38,6 @@ const Footer = () => {
             <h4 className="theme-text font-medium mb-4">Company</h4>
             <ul className="space-y-2 text-sm">
               <li><a href="#" className="hover:text-[#D4AF37] transition-colors">About</a></li>
-              <li><a href="#" className="hover:text-[#D4AF37] transition-colors">Careers</a></li>
               <li><a href="#" className="hover:text-[#D4AF37] transition-colors">Privacy</a></li>
               <li><a href="#" className="hover:text-[#D4AF37] transition-colors">Terms</a></li>
             </ul>
