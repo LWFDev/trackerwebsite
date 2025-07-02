@@ -25,19 +25,19 @@ const FAQ = () => {
       faqs: [
         {
           question: "How do I know if Tracker is right for us?",
-          answer: "It all begins with an idea. Maybe you want to launch a business. Maybe you want to turn a hobby into something more. Or maybe you have a creative project to share with the world. Whatever it is, the way you tell your story online can make all the difference."
+          answer: "Tracker is designed for garment decoration businesses of all sizes, from small startups to large enterprises. If you're managing orders, inventory, production, or customer relationships in the custom apparel industry, Tracker can streamline your operations. We offer demos and consultations to help you evaluate if our platform fits your specific needs."
         },
         {
           question: "Can I have a demo to see Tracker in action?",
-          answer: "It all begins with an idea. Maybe you want to launch a business. Maybe you want to turn a hobby into something more. Or maybe you have a creative project to share with the world. Whatever it is, the way you tell your story online can make all the difference."
+          answer: "Absolutely! We provide personalized demos tailored to your business needs. During the demo, we'll show you how Tracker's modules work together to manage your entire workflow, from order intake to production and delivery. Contact our sales team to schedule a demo at your convenience."
         },
         {
           question: "Is Tracker only for garment decoration businesses?",
-          answer: "It all begins with an idea. Maybe you want to launch a business. Maybe you want to turn a hobby into something more. Or maybe you have a creative project to share with the world. Whatever it is, the way you tell your story online can make all the difference."
+          answer: "Yes, Tracker is specifically designed for the garment decoration industry, including screen printing, embroidery, promotional products, and custom apparel businesses. Our specialized modules and workflows are built to handle the unique challenges of this industry, from artwork management to production scheduling."
         },
         {
           question: "What size / type of businesses use Tracker?",
-          answer: "It all begins with an idea. Maybe you want to launch a business. Maybe you want to turn a hobby into something more. Or maybe you have a creative project to share with the world. Whatever it is, the way you tell your story online can make all the difference."
+          answer: "Tracker serves businesses ranging from small family-owned shops to large commercial operations. Our customers include screen printers, embroiderers, promotional product companies, corporate apparel suppliers, and multi-location enterprises. Our scalable platform grows with your business needs."
         }
       ]
     },
@@ -47,15 +47,15 @@ const FAQ = () => {
       faqs: [
         {
           question: "How much is Tracker?",
-          answer: "It all begins with an idea. Maybe you want to launch a business. Maybe you want to turn a hobby into something more. Or maybe you have a creative project to share with the world. Whatever it is, the way you tell your story online can make all the difference."
+          answer: "Tracker offers flexible pricing plans to suit different business sizes and needs. Our pricing is based on the modules you need and the number of users. We offer Starter, Professional, and Enterprise tiers, with the option to customize your package. Contact us for detailed pricing information and to discuss which plan works best for your business."
         },
         {
           question: "Do I have to pay for scoping?",
-          answer: "It all begins with an idea. Maybe you want to launch a business. Maybe you want to turn a hobby into something more. Or maybe you have a creative project to share with the world. Whatever it is, the way you tell your story online can make all the difference."
+          answer: "Initial consultations and basic scoping are provided at no cost to help us understand your requirements. For complex implementations requiring extensive customization or integration work, detailed scoping may be part of the implementation project cost. We'll always be transparent about any costs involved upfront."
         },
         {
           question: "Are there hidden costs once I have Tracker?",
-          answer: "All costs will be clear on your project agreement and licensing agreement. Nobody likes those sorts of surprises!"
+          answer: "All costs will be clear on your project agreement and licensing agreement. Nobody likes those sorts of surprises! Our pricing includes hosting, support, and regular updates. Any additional costs for extra modules, integrations, or customizations will be discussed and agreed upon before implementation."
         }
       ]
     },
@@ -65,19 +65,19 @@ const FAQ = () => {
       faqs: [
         {
           question: "How long does it take to implement Tracker?",
-          answer: "Depending on the complexity of the setup, it can be anything from 6 weeks to 12-18 months. Very big projects with multiple integrations (e.g. ERPs) will take longer than a smaller business with just website/accounts integration."
+          answer: "Depending on the complexity of the setup, it can be anything from 6 weeks to 12-18 months. Very big projects with multiple integrations (e.g. ERPs) will take longer than a smaller business with just website/accounts integration. We'll provide a detailed timeline during the scoping phase based on your specific requirements."
         },
         {
           question: "Do I need anything special to be able to use Tracker?",
-          answer: "Once setup, you can use Tracker anywhere you have an internet connection, via a modern web browser."
+          answer: "Once setup, you can use Tracker anywhere you have an internet connection, via a modern web browser. No special software installation is required on your computers. We recommend using updated versions of Chrome, Firefox, Safari, or Edge for the best experience."
         },
         {
           question: "How is training / onboarding managed?",
-          answer: "This will be agreed as part of the implementation process, and can be online / face to face, or a 'train the trainer' approach. Most onboarding is a mixture of online and in-person, depending on your location and the nature of the project."
+          answer: "This will be agreed as part of the implementation process, and can be online / face to face, or a 'train the trainer' approach. Most onboarding is a mixture of online and in-person, depending on your location and the nature of the project. We provide comprehensive documentation, video tutorials, and ongoing support to ensure your team is successful."
         },
         {
           question: "Can I see / talk to someone already using Tracker?",
-          answer: "As part of the discovery/onboarding process, we can arrange this for you."
+          answer: "As part of the discovery/onboarding process, we can arrange this for you. We have many satisfied customers who are happy to share their experiences and discuss how Tracker has improved their operations. Customer references and case studies can be provided upon request."
         }
       ]
     },
@@ -87,7 +87,7 @@ const FAQ = () => {
       faqs: [
         {
           question: "Is Tracker available globally or just in the UK?",
-          answer: "We have customers in UK/Europe and USA, but the system can be accessed from any internet connection. Currently we only offer the interface in English, however."
+          answer: "We have customers in UK/Europe and USA, but the system can be accessed from any internet connection. Currently we only offer the interface in English, however. Our cloud-based platform ensures reliable access worldwide with data centers strategically located for optimal performance."
         }
       ]
     },
@@ -97,31 +97,31 @@ const FAQ = () => {
       faqs: [
         {
           question: "Can I switch plans later?",
-          answer: "Yes, you can upgrade or downgrade your plan at any time. When upgrading, your new features will be available immediately. If downgrading, the changes will apply at the start of your next billing cycle."
+          answer: "Yes, you can upgrade or downgrade your plan at any time. When upgrading, your new features will be available immediately. If downgrading, the changes will apply at the start of your next billing cycle. Our team will help ensure a smooth transition and assist with any module adjustments needed."
         },
         {
           question: "What happens after my free trial?",
-          answer: "After your free trial ends, your account will automatically convert to the plan you selected during signup. You'll only be charged once the trial is over, and we'll send you a reminder before this happens."
+          answer: "After your trial period, you'll have the opportunity to choose the plan that best fits your needs. We'll work with you to ensure you're selecting the right modules and user count for your business. There's no automatic billing - we'll discuss your options and help you make an informed decision."
         },
         {
           question: "Do you offer discounts for annual billing?",
-          answer: "Yes, you save up to 20% by choosing annual billing over monthly billing, which is automatically calculated and applied to the displayed prices."
+          answer: "Yes, we offer significant savings for customers who choose annual billing over monthly payments. The exact discount varies by plan level, and we'll calculate the savings for your specific configuration. Annual billing also simplifies your budgeting and reduces administrative overhead."
         },
         {
           question: "What payment methods do you accept?",
-          answer: "We accept all major credit cards (Visa, MasterCard, American Express, Discover), PayPal, and bank transfers for annual enterprise plans."
+          answer: "We accept various payment methods including bank transfers, checks, and major credit cards for smaller accounts. For enterprise customers, we can work with your preferred payment terms and methods. Our billing team will coordinate with your accounts payable process to ensure smooth payments."
         },
         {
           question: "Can I get a refund if I'm not satisfied?",
-          answer: "We offer a 30-day money-back guarantee for all new subscriptions. If you're not satisfied, contact our support team within 30 days of your purchase for a full refund."
+          answer: "We stand behind our product and want you to be completely satisfied. While refund policies are determined on a case-by-case basis, we work hard to address any concerns and ensure you're getting value from Tracker. Our extensive trial and demo process helps ensure a good fit before you commit."
         },
         {
           question: "Do I need technical knowledge to use your platform?",
-          answer: "No, our platform is designed to be user-friendly for both technical and non-technical users. We provide comprehensive documentation and support to help you get started."
+          answer: "No, Tracker is designed to be user-friendly for garment decoration professionals, not IT experts. While some admin functions may require basic technical understanding, day-to-day operations are intuitive. We provide comprehensive training and support to help your team become proficient quickly."
         },
         {
           question: "Can I customize the platform to match my brand?",
-          answer: "Yes, our Professional and Enterprise plans include white-labeling options that allow you to customize the platform with your company's branding, colors, and logo."
+          answer: "Yes, Tracker can be customized to reflect your brand identity. This includes adding your logo, adjusting color schemes, and customizing certain interface elements. More extensive customizations are available depending on your plan level and specific requirements. We'll discuss branding options during implementation."
         }
       ]
     }
