@@ -11,6 +11,7 @@ interface ResultCardProps {
   role: string;
   delay?: number;
   videoUrl?: string;
+  thumbnailUrl?: string;
 }
 
 const ResultCard = ({
@@ -19,7 +20,8 @@ const ResultCard = ({
   person,
   role,
   delay = 0,
-  videoUrl
+  videoUrl,
+  thumbnailUrl = "/lovable-uploads/a3fe2c25-1ac0-4e99-9f2c-4a0a54841171.png"
 }: ResultCardProps) => {
   return (
     <ScrollReveal delay={delay} direction="up" duration={800} className="h-full">
@@ -32,7 +34,7 @@ const ResultCard = ({
               <DialogTrigger asChild>
                 <div className="relative cursor-pointer group">
                   <img 
-                    src="/lovable-uploads/a3fe2c25-1ac0-4e99-9f2c-4a0a54841171.png"
+                    src={thumbnailUrl}
                     alt="Video thumbnail"
                     className="w-full h-48 object-cover rounded-lg transition-transform duration-300 group-hover:scale-105"
                   />
