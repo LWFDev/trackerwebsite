@@ -1,10 +1,7 @@
-
 import React from "react";
 import ScrollReveal from "@/components/ui/scroll-reveal";
-
 const WorkflowHeader = () => {
-  return (
-    <ScrollReveal direction="down">
+  return <ScrollReveal direction="down">
       <div className="text-center mb-20 max-w-4xl mx-auto">
         {/* Enhanced badge */}
         <div className="inline-block px-6 py-2 bg-gradient-to-r from-zinc-800/90 to-zinc-700/80 dark:from-zinc-800/90 dark:to-zinc-700/80 light:from-gray-100/90 light:to-gray-200/80 backdrop-blur-md rounded-full border border-[#D4AF37]/30 mb-8 shadow-2xl shadow-[#D4AF37]/20 hover:shadow-[#D4AF37]/40 transition-all duration-300 group cursor-pointer">
@@ -32,12 +29,12 @@ const WorkflowHeader = () => {
             </svg>
           </span>
         </h2>
-        <p className="text-xl text-gray-600 dark:text-gray-300 animate-fade-in leading-relaxed transition-colors duration-300" style={{ animationDelay: '0.2s' }}>
-          From initial designs to final delivery, Tracker helps you manage every step of your production process with <span className="text-[#D4AF37] font-semibold">unprecedented efficiency</span>.
+        <p className="text-xl text-gray-600 dark:text-gray-300 animate-fade-in leading-relaxed transition-colors duration-300" style={{
+        animationDelay: '0.2s'
+      }}>
+          From initial designs to final delivery, Tracker helps you manage every step of your production process with <span className="font-semibold text-green-500">unprecedented efficiency</span>.
         </p>
       </div>
-    </ScrollReveal>
-  );
+    </ScrollReveal>;
 };
-
 export default WorkflowHeader;
