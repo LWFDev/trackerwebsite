@@ -3,7 +3,6 @@ import Hero from "@/components/landing/Hero";
 import Features from "@/components/landing/Features";
 import Integration from "@/components/landing/Integration";
 import Workflow from "@/components/landing/Workflow";
-import Testimonials from "@/components/landing/Testimonials";
 import CTA from "@/components/landing/CTA";
 import Results from "@/components/landing/Results";
 import { Separator } from "@/components/ui/separator";
@@ -102,11 +101,6 @@ const Index = () => {
         {/* Integration Section */}
         <div className="bg-gradient-to-b from-yellow-50/30 via-emerald-50/20 to-slate-50/25 dark:from-yellow-950/15 dark:via-emerald-950/10 dark:to-slate-950/10">
           <Integration />
-        </div>
-        
-        {/* Testimonials Section */}
-        <div className="bg-gradient-to-b from-slate-50/25 via-yellow-50/20 to-emerald-50/30 dark:from-slate-950/10 dark:via-yellow-950/10 dark:to-emerald-950/15">
-          <Testimonials />
         </div>
         
         {/* CTA Section */}
