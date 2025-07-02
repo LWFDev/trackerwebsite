@@ -96,7 +96,7 @@ const CTA = () => {
           
           <ScrollReveal delay={400} direction="up" className="bg-gray-800/80 dark:bg-zinc-900/80 light:bg-white/90 px-3 sm:px-5 py-2 sm:py-3 rounded-full border border-gray-700 dark:border-zinc-800 light:border-gray-200 flex items-center gap-2 shadow-lg hover:border-[#D4AF37]/30 transition-all duration-300">
             <div className="w-2 sm:w-3 h-2 sm:h-3 rounded-full bg-[#D4AF37]/40"></div>
-            <span className="text-gray-300 dark:text-gray-300 light:text-gray-600 text-xs sm:text-sm">{t("24/7 Support Available")}</span>
+            <span className="text-gray-300 dark:text-gray-300 light:text-gray-600 text-xs sm:text-sm">{t("Premium Support")}</span>
           </ScrollReveal>
           
           <ScrollReveal delay={500} direction="up" className="bg-gray-800/80 dark:bg-zinc-900/80 light:bg-white/90 px-3 sm:px-5 py-2 sm:py-3 rounded-full border border-gray-700 dark:border-zinc-800 light:border-gray-200 flex items-center gap-2 shadow-lg hover:border-[#D4AF37]/30 transition-all duration-300">
