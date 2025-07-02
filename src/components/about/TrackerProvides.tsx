@@ -55,11 +55,6 @@ const TrackerProvides = () => {
             </div>
             
             <div className="space-y-4">
-              <Card className="border-gray-200 shadow-sm mb-6">
-                <CardContent className="p-6">
-                </CardContent>
-              </Card>
-              
               {keyFeatures.map((feature, index) => (
                 <Card key={index} className="border-gray-200 hover:border-emerald-300 hover:shadow-md transition-all group">
                   <CardContent className="p-6">
