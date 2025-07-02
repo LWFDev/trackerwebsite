@@ -8,173 +8,152 @@ const ProcessJourney = () => {
       id: 1,
       title: "Ice Breaker",
       description: "Meet with you and talk about your business and your needs and expectations.",
-      color: "from-blue-400 to-blue-600",
-      position: { x: 10, y: 5 }
+      position: { x: 15, y: 20 }
     },
     {
       id: 2,
       title: "Discussion",
       description: "More in-depth discussions to ensure we understand your needs and build a detailed scope of work.",
-      color: "from-purple-400 to-purple-600",
-      position: { x: 85, y: 15 }
+      position: { x: 40, y: 10 }
     },
     {
       id: 3,
       title: "Proposal & Acceptance",
       description: "Based on the information and scope of work we will propose an implementation and customization cost, licensing costs, and timelines.",
-      color: "from-orange-400 to-orange-600",
-      position: { x: 15, y: 35 }
+      position: { x: 70, y: 25 }
     },
     {
       id: 4,
       title: "Planning",
       description: "We will begin to plan major milestones and resources needed for those milestones so your business is ready for us to implement Tracker.",
-      color: "from-green-400 to-green-600",
-      position: { x: 80, y: 45 }
+      position: { x: 85, y: 45 }
     },
     {
       id: 5,
       title: "Implementation",
       description: "We will build out a test environment, load the data, and ensure that it all works.",
-      color: "from-red-400 to-red-600",
-      position: { x: 5, y: 65 }
+      position: { x: 75, y: 65 }
     },
     {
       id: 6,
       title: "Integrations & EDIs",
       description: "We will integrate all agreed upon software packages and build out any automation for EDIs that need to be facilitated.",
-      color: "from-yellow-400 to-yellow-600",
-      position: { x: 75, y: 75 }
+      position: { x: 45, y: 75 }
     },
     {
       id: 7,
       title: "Training",
       description: "We will train your team!",
-      color: "from-indigo-400 to-indigo-600",
-      position: { x: 25, y: 85 }
+      position: { x: 25, y: 80 }
     },
     {
       id: 8,
       title: "GO-LIVE",
       description: "Let's bring it online and lets go!",
-      color: "from-emerald-400 to-emerald-600",
-      position: { x: 60, y: 90 }
+      position: { x: 10, y: 60 }
     },
     {
       id: 9,
       title: "Post GO-LIVE Support",
       description: "For 30 days post-GO-LIVE we will continue to overcome challenges that weren't caught prior to GO-LIVE. We will continue to train where needed. Then we should be smooth sailing.",
-      color: "from-[#D4AF37] to-[#F2D675]",
-      position: { x: 40, y: 95 }
+      position: { x: 5, y: 40 }
     }
   ];
 
-  const pathData = "M50,50 Q150,20 250,80 T450,60 Q550,40 650,100 T850,80 Q950,60 1050,120";
+  const pathPoints = steps.map(step => `${step.position.x},${step.position.y}`).join(' ');
 
   return (
-    <div className="relative w-full h-full min-h-[600px] overflow-hidden">
-      {/* Animated background gradient */}
-      <div className="absolute inset-0 bg-gradient-to-br from-slate-50/50 via-blue-50/30 to-purple-50/40 dark:from-slate-900/50 dark:via-blue-900/20 dark:to-purple-900/30 animate-pulse-light"></div>
-      
-      {/* Flowing path SVG */}
-      <svg className="absolute inset-0 w-full h-full opacity-20" viewBox="0 0 1200 600" preserveAspectRatio="xMidYMid slice">
-        <defs>
-          <linearGradient id="pathGradient" x1="0%" y1="0%" x2="100%" y2="0%">
-            <stop offset="0%" stopColor="#D4AF37" stopOpacity="0.3" />
-            <stop offset="50%" stopColor="#F2D675" stopOpacity="0.6" />
-            <stop offset="100%" stopColor="#D4AF37" stopOpacity="0.3" />
-          </linearGradient>
-        </defs>
-        <motion.path
-          d={pathData}
-          stroke="url(#pathGradient)"
-          strokeWidth="3"
+    <div className="absolute inset-0 bg-gradient-to-br from-slate-900/80 via-gray-900/60 to-black/70 backdrop-blur-sm">
+      {/* Connecting Path */}
+      <svg className="absolute inset-0 w-full h-full opacity-30" viewBox="0 0 100 100" preserveAspectRatio="none">
+        <motion.polyline
+          points={pathPoints}
           fill="none"
-          strokeDasharray="10,5"
+          stroke="url(#pathGradient)"
+          strokeWidth="0.5"
+          strokeDasharray="2,2"
           initial={{ pathLength: 0 }}
           animate={{ pathLength: 1 }}
-          transition={{ duration: 8, ease: "easeInOut", repeat: Infinity }}
+          transition={{ duration: 4, ease: "easeInOut", repeat: Infinity, repeatType: "loop" }}
         />
+        <defs>
+          <linearGradient id="pathGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stopColor="#D4AF37" stopOpacity="0.8" />
+            <stop offset="50%" stopColor="#F2D675" stopOpacity="0.6" />
+            <stop offset="100%" stopColor="#D4AF37" stopOpacity="0.4" />
+          </linearGradient>
+        </defs>
       </svg>
 
-      {/* Process steps */}
+      {/* Process Steps */}
       {steps.map((step, index) => (
         <motion.div
           key={step.id}
-          className="absolute transform -translate-x-1/2 -translate-y-1/2"
+          className="absolute group cursor-pointer"
           style={{ 
             left: `${step.position.x}%`, 
-            top: `${step.position.y}%` 
+            top: `${step.position.y}%`,
+            transform: 'translate(-50%, -50%)'
           }}
           initial={{ scale: 0, opacity: 0 }}
           animate={{ scale: 1, opacity: 1 }}
           transition={{ 
-            delay: index * 0.3, 
+            delay: index * 0.2, 
             duration: 0.6,
             type: "spring",
             stiffness: 100
           }}
+          whileHover={{ scale: 1.1 }}
         >
-          {/* Step circle with gradient */}
-          <div className={`relative w-16 h-16 rounded-full bg-gradient-to-br ${step.color} shadow-xl flex items-center justify-center group cursor-pointer hover:scale-110 transition-transform duration-300`}>
-            <span className="text-white font-bold text-sm">{step.id}</span>
+          {/* Step Circle */}
+          <div className="relative w-12 h-12 md:w-14 md:h-14 lg:w-16 lg:h-16 rounded-full bg-gradient-to-br from-[#D4AF37] to-[#F2D675] shadow-lg flex items-center justify-center">
+            <span className="text-black font-bold text-sm md:text-base lg:text-lg">{step.id}</span>
             
-            {/* Pulsing ring */}
-            <div className={`absolute inset-0 rounded-full bg-gradient-to-br ${step.color} opacity-30 animate-ping`}></div>
-            
-            {/* Tooltip card */}
-            <div className="absolute bottom-full mb-4 left-1/2 transform -translate-x-1/2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none z-10">
-              <div className="bg-white dark:bg-gray-800 rounded-lg shadow-2xl p-4 w-64 border border-gray-200 dark:border-gray-700">
-                <h3 className="font-bold text-sm mb-2 text-gray-900 dark:text-white">{step.title}</h3>
-                <p className="text-xs text-gray-600 dark:text-gray-300 leading-relaxed">{step.description}</p>
-                {/* Tooltip arrow */}
-                <div className="absolute top-full left-1/2 transform -translate-x-1/2 w-0 h-0 border-l-4 border-r-4 border-t-4 border-transparent border-t-white dark:border-t-gray-800"></div>
-              </div>
-            </div>
+            {/* Pulsing Ring */}
+            <motion.div 
+              className="absolute inset-0 rounded-full border-2 border-[#D4AF37]/50"
+              animate={{ scale: [1, 1.3, 1], opacity: [0.7, 0, 0.7] }}
+              transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+            />
           </div>
 
-          {/* Step title below circle */}
-          <div className="absolute top-full mt-2 left-1/2 transform -translate-x-1/2 text-center">
-            <p className="text-xs font-medium text-gray-700 dark:text-gray-300 whitespace-nowrap bg-white/80 dark:bg-gray-800/80 px-2 py-1 rounded backdrop-blur-sm">
+          {/* Step Title */}
+          <div className="absolute top-full mt-2 left-1/2 transform -translate-x-1/2 text-center min-w-max">
+            <p className="text-xs md:text-sm font-medium text-white/90 bg-black/60 px-2 py-1 rounded backdrop-blur-sm">
               {step.title}
             </p>
+          </div>
+
+          {/* Tooltip */}
+          <div className="absolute bottom-full mb-4 left-1/2 transform -translate-x-1/2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none z-20">
+            <div className="bg-white/95 dark:bg-gray-800/95 backdrop-blur-sm rounded-lg shadow-xl p-3 w-48 md:w-56 border border-gray-200/50 dark:border-gray-700/50">
+              <h3 className="font-semibold text-sm mb-2 text-gray-900 dark:text-white">{step.title}</h3>
+              <p className="text-xs text-gray-600 dark:text-gray-300 leading-relaxed">{step.description}</p>
+              {/* Tooltip Arrow */}
+              <div className="absolute top-full left-1/2 transform -translate-x-1/2 w-0 h-0 border-l-4 border-r-4 border-t-4 border-transparent border-t-white/95 dark:border-t-gray-800/95"></div>
+            </div>
           </div>
         </motion.div>
       ))}
 
-      {/* Floating particles */}
-      {[...Array(20)].map((_, i) => (
-        <motion.div
-          key={i}
-          className="absolute w-2 h-2 bg-[#D4AF37]/30 rounded-full"
-          style={{
-            left: `${Math.random() * 100}%`,
-            top: `${Math.random() * 100}%`,
-          }}
-          animate={{
-            y: [0, -20, 0],
-            opacity: [0.3, 0.8, 0.3],
-          }}
-          transition={{
-            duration: 3 + Math.random() * 2,
-            repeat: Infinity,
-            delay: Math.random() * 2,
-          }}
-        />
-      ))}
-
-      {/* Central title */}
+      {/* Central Title */}
       <motion.div 
-        className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center z-5"
+        className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center z-10 pointer-events-none"
         initial={{ opacity: 0, scale: 0.8 }}
         animate={{ opacity: 1, scale: 1 }}
-        transition={{ delay: 1, duration: 0.8 }}
+        transition={{ delay: 1.5, duration: 0.8 }}
       >
-        <h3 className="text-2xl font-bold mb-2 text-transparent bg-clip-text bg-gradient-to-r from-[#D4AF37] to-[#F2D675]">
-          Here is our process
+        <h3 className="text-xl md:text-2xl lg:text-3xl font-bold mb-2 text-transparent bg-clip-text bg-gradient-to-r from-[#D4AF37] to-[#F2D675] drop-shadow-lg">
+          Our Process Journey
         </h3>
-        <div className="w-16 h-1 bg-gradient-to-r from-[#D4AF37] to-[#F2D675] mx-auto rounded-full"></div>
+        <div className="w-12 md:w-16 h-1 bg-gradient-to-r from-[#D4AF37] to-[#F2D675] mx-auto rounded-full shadow-lg"></div>
       </motion.div>
+
+      {/* Subtle Background Elements */}
+      <div className="absolute inset-0 opacity-10">
+        <div className="absolute top-1/4 left-1/4 w-32 h-32 rounded-full bg-[#D4AF37]/20 blur-3xl"></div>
+        <div className="absolute bottom-1/3 right-1/4 w-40 h-40 rounded-full bg-[#F2D675]/15 blur-3xl"></div>
+      </div>
     </div>
   );
 };

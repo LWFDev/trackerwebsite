@@ -25,14 +25,16 @@ const WhyChooseUs = () => {
 
   return (
     <section className="py-20 bg-gradient-to-b from-white via-gray-50/50 to-white dark:from-black dark:via-gray-900/50 dark:to-black relative overflow-hidden transition-colors duration-300">
-      {/* Replace background with ProcessJourney */}
-      <ProcessJourney />
+      {/* Process Journey Background */}
+      <div className="absolute inset-0 z-0">
+        <ProcessJourney />
+      </div>
       
       <div className="container mx-auto px-4 relative z-10">
         <div className="max-w-6xl mx-auto">
-          {/* Header section - moved higher to avoid overlap */}
-          <div className="text-center mb-16 relative z-20 bg-white/90 dark:bg-black/90 backdrop-blur-sm rounded-2xl p-8 shadow-lg">
-            <div className="inline-block px-4 py-1.5 bg-gradient-to-r from-[#D4AF37]/20 to-[#F2D675]/20 rounded-full border border-[#D4AF37]/30 mb-6">
+          {/* Header section */}
+          <div className="text-center mb-16 relative z-20">
+            <div className="inline-block px-4 py-1.5 bg-gradient-to-r from-[#D4AF37]/20 to-[#F2D675]/20 rounded-full border border-[#D4AF37]/30 mb-6 backdrop-blur-sm">
               <span className="text-sm text-[#D4AF37] uppercase font-medium tracking-wider">Why Choose Tracker</span>
             </div>
             <h2 className="text-4xl md:text-5xl font-bold mb-6 text-gray-900 dark:text-white">
@@ -43,8 +45,8 @@ const WhyChooseUs = () => {
             </p>
           </div>
 
-          {/* Features grid - positioned at bottom */}
-          <div className="grid md:grid-cols-3 gap-8 relative z-20">
+          {/* Features grid */}
+          <div className="grid md:grid-cols-3 gap-8 relative z-20 mt-32">
             {features.map((feature, index) => (
               <div 
                 key={index}
