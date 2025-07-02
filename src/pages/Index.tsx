@@ -1,4 +1,3 @@
-
 import React, { useEffect } from 'react';
 import Hero from "@/components/landing/Hero";
 import Features from "@/components/landing/Features";
@@ -11,52 +10,107 @@ import WhyChooseUs from "@/components/landing/WhyChooseUs";
 import StoryTelling from "@/components/landing/StoryTelling";
 import { Separator } from "@/components/ui/separator";
 import ScrollAnimationInit from "@/components/ui/scroll-animation-init";
+import AnimatedTruckDivider from "@/components/landing/AnimatedTruckDivider";
 import { useIsMobile } from "@/hooks/use-mobile";
 import { useToast } from "@/hooks/use-toast";
 import { motion } from "framer-motion";
 
-// Simple, clean section divider
-const CleanDivider = ({ variant = "default", className = "" }: { variant?: "default" | "wave" | "diagonal"; className?: string }) => {
+// Improved section dividers with green accents
+const ZigzagDivider = ({ className = "" }: { className?: string }) => {
   const isMobile = useIsMobile();
-  
-  if (variant === "wave") {
-    return (
-      <div className={`w-full overflow-hidden ${className}`}>
-        <svg 
-          className={`w-full ${isMobile ? 'h-6' : 'h-12'}`} 
-          viewBox="0 0 1200 120" 
-          preserveAspectRatio="none"
-        >
-          <path 
-            d="M0,60 C300,30 900,90 1200,60 L1200,120 L0,120 Z" 
-            fill="currentColor" 
-          />
-        </svg>
-      </div>
-    );
-  }
-  
-  if (variant === "diagonal") {
-    return (
-      <div className={`w-full overflow-hidden ${className}`}>
-        <svg 
-          className={`w-full ${isMobile ? 'h-4' : 'h-8'}`} 
-          viewBox="0 0 1200 120" 
-          preserveAspectRatio="none"
-        >
-          <path 
-            d="M0,120 L1200,0 L1200,120 Z" 
-            fill="currentColor" 
-          />
-        </svg>
-      </div>
-    );
-  }
-  
-  // Default: subtle gradient line
   return (
-    <div className={`w-full py-4 ${className}`}>
-      <div className="h-px bg-gradient-to-r from-transparent via-gray-300 dark:via-gray-600 to-transparent"></div>
+    <div className={`w-full overflow-hidden ${className}`}>
+      <svg 
+        className={`w-full ${isMobile ? 'h-8' : 'h-16'}`} 
+        viewBox="0 0 1440 48" 
+        fill="none" 
+        xmlns="http://www.w3.org/2000/svg" 
+        preserveAspectRatio="none"
+      >
+        <path 
+          d="M0 0L60 8C120 16 240 32 360 32C480 32 600 16 720 24C840 32 960 48 1080 42.7C1200 37.3 1320 21.3 1380 13.3L1440 5.3V48H1380C1320 48 1200 48 1080 48C960 48 840 48 720 48C600 48 480 48 360 48C240 48 120 48 60 48H0V0Z" 
+          fill="currentColor" 
+        />
+      </svg>
+    </div>
+  );
+};
+
+const ArrowDivider = ({ className = "" }: { className?: string }) => {
+  const isMobile = useIsMobile();
+  return (
+    <div className={`w-full overflow-hidden ${className}`}>
+      <svg 
+        className={`w-full ${isMobile ? 'h-8' : 'h-12'}`} 
+        viewBox="0 0 1200 30" 
+        fill="none" 
+        xmlns="http://www.w3.org/2000/svg" 
+        preserveAspectRatio="none"
+      >
+        <path 
+          d="M0 0L50 5C100 10 200 20 300 20C400 20 500 10 600 20C700 30 800 30 900 25C1000 20 1100 10 1150 5L1200 0V30H0V0Z" 
+          fill="currentColor" 
+        />
+      </svg>
+    </div>
+  );
+};
+
+const CurvyDivider = ({ className = "" }: { className?: string }) => {
+  const isMobile = useIsMobile();
+  return (
+    <div className={`w-full overflow-hidden ${className}`}>
+      <svg 
+        className={`w-full ${isMobile ? 'h-10' : 'h-16'}`} 
+        viewBox="0 0 1440 100" 
+        fill="none" 
+        xmlns="http://www.w3.org/2000/svg" 
+        preserveAspectRatio="none"
+      >
+        <path 
+          d="M0 0C240 60 480 100 720 100C960 100 1200 60 1440 0V100H0V0Z" 
+          fill="currentColor" 
+        />
+      </svg>
+    </div>
+  );
+};
+
+const TriangleDivider = ({ className = "" }: { className?: string }) => {
+  const isMobile = useIsMobile();
+  return (
+    <div className={`w-full overflow-hidden ${className}`}>
+      <svg 
+        className={`w-full ${isMobile ? 'h-8' : 'h-16'}`} 
+        viewBox="0 0 1440 100" 
+        fill="none" 
+        xmlns="http://www.w3.org/2000/svg" 
+        preserveAspectRatio="none"
+      >
+        <path 
+          d="M0 100L720 0L1440 100H0Z" 
+          fill="currentColor" 
+        />
+      </svg>
+    </div>
+  );
+};
+
+// SVG curve divider - flipped horizontally
+const SlopesDivider = ({ className = "" }: { className?: string }) => {
+  const isMobile = useIsMobile();
+  return (
+    <div className={`w-full overflow-hidden ${className}`}>
+      <svg 
+        className={`w-full ${isMobile ? 'h-8' : 'h-16'}`} 
+        viewBox="0 0 100 10" 
+        preserveAspectRatio="none"
+      >
+        <path 
+          d="M0 0L35 5L65 0L100 5V10H0V0Z" 
+          fill="currentColor" 
+        />
+      </svg>
     </div>
   );
 };
@@ -122,29 +176,39 @@ const Index = () => {
       <main className="pt-16 relative">
         <Hero />
         
-        <CleanDivider variant="wave" className="text-emerald-100 dark:text-emerald-900" />
+        <div className="relative text-emerald-600 dark:text-emerald-400 mb-[-1px]">
+          <AnimatedTruckDivider />
+        </div>
         
         <Features />
         
-        <CleanDivider className="py-6" />
+        <div className="relative text-green-600 dark:text-green-400 mb-[-1px]">
+          <SlopesDivider />
+        </div>
         
         <Workflow />
         
-        <CleanDivider variant="diagonal" className="text-gray-100 dark:text-gray-900" />
+        <div className="relative text-emerald-600 dark:text-emerald-400 mb-[-1px]">
+          <TriangleDivider />
+        </div>
         
         <Results />
         
-        <CleanDivider variant="wave" className="text-emerald-100 dark:text-emerald-900" />
+        <div className="relative text-green-600 dark:text-green-400 mb-[-1px]">
+          <ZigzagDivider />
+        </div>
         
         {/* StoryTelling component */}
         <StoryTelling />
         
-        <CleanDivider className="py-8" />
+        <div className="relative text-emerald-600 dark:text-emerald-400 mb-[-1px]">
+          <CurvyDivider />
+        </div>
         
         {/* WhyChooseUs section */}
         <WhyChooseUs />
         
-        <div className="relative py-8">
+        <div className="relative">
           <Separator className="h-[1px] bg-gradient-to-r from-transparent via-emerald-500/30 to-transparent my-0" />
           <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-white dark:bg-black border border-emerald-500/30 flex items-center justify-center transform rotate-45">
             <div className="w-6 h-6 rounded-sm bg-gradient-to-br from-emerald-500/30 to-green-400/20"></div>
@@ -153,11 +217,15 @@ const Index = () => {
         
         <Integration />
         
-        <CleanDivider variant="wave" className="text-gray-100 dark:text-gray-900" />
+        <div className="relative text-green-600 dark:text-green-400 mb-[-1px]">
+          <CurvyDivider />
+        </div>
         
         <Testimonials />
         
-        <CleanDivider className="py-6" />
+        <div className="relative text-emerald-600 dark:text-emerald-400 mb-[-1px]">
+          <AnimatedTruckDivider />
+        </div>
         
         <CTA />
         
