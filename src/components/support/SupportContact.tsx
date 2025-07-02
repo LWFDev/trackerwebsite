@@ -2,10 +2,8 @@ import React from 'react';
 import { ScrollReveal } from '@/components/ui/scroll-reveal';
 import { Card, CardContent } from '@/components/ui/card';
 import { Mail, Phone, Clock } from 'lucide-react';
-
 const SupportContact = () => {
-  return (
-    <section className="py-20 bg-zinc-900/30">
+  return <section className="py-20 bg-zinc-900/30">
       <div className="container mx-auto px-6">
         <ScrollReveal direction="up" distance="30px" duration={600}>
           <div className="text-center mb-16">
@@ -30,7 +28,7 @@ const SupportContact = () => {
                 </div>
                 <h3 className="text-lg font-semibold text-white mb-2">Email Support</h3>
                 <p className="text-gray-400 text-sm mb-4">Get detailed help via email</p>
-                <p className="text-[#D4AF37] font-medium">support@tracker.com</p>
+                <p className="text-[#D4AF37] font-medium">support@tracker.us</p>
               </CardContent>
             </Card>
 
@@ -41,7 +39,7 @@ const SupportContact = () => {
                 </div>
                 <h3 className="text-lg font-semibold text-white mb-2">Phone Support</h3>
                 <p className="text-gray-400 text-sm mb-4">Speak directly with our team</p>
-                <p className="text-[#D4AF37] font-medium">+1 (555) 123-4567</p>
+                <p className="text-[#D4AF37] font-medium">+1 (817) 764-0200</p>
               </CardContent>
             </Card>
 
@@ -52,7 +50,7 @@ const SupportContact = () => {
                 </div>
                 <h3 className="text-lg font-semibold text-white mb-2">Support Hours</h3>
                 <p className="text-gray-400 text-sm mb-4">We're here when you need us</p>
-                <p className="text-[#D4AF37] font-medium">24/7 Coverage</p>
+                <p className="text-[#D4AF37] font-medium">9am - 5pm CST</p>
               </CardContent>
             </Card>
           </div>
@@ -88,8 +86,6 @@ const SupportContact = () => {
           </div>
         </ScrollReveal>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default SupportContact;
