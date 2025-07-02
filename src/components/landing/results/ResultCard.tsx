@@ -23,6 +23,17 @@ const ResultCard = ({
   videoUrl,
   thumbnailUrl = "/lovable-uploads/a3fe2c25-1ac0-4e99-9f2c-4a0a54841171.png"
 }: ResultCardProps) => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  
+  // Extract video ID from Vimeo URL and create clean embed URL
+  const getCleanVimeoUrl = (url: string) => {
+    const videoId = url.match(/video\/(\d+)/)?.[1];
+    if (videoId) {
+      return `https://player.vimeo.com/video/${videoId}?autoplay=1&loop=1&title=0&byline=0&portrait=0&controls=0&background=1&muted=1`;
+    }
+    return url;
+  };
+
   return (
     <ScrollReveal delay={delay} direction="up" duration={800} className="h-full">
       <div className="bg-gray-800/90 dark:bg-zinc-900/90 light:bg-gray-800/90 backdrop-blur-sm rounded-xl shadow-lg p-6 border border-gray-700 dark:border-zinc-800 light:border-gray-700 h-full transform transition-all duration-300 hover:-translate-y-2 hover:border-[#D4AF37]/40 hover:shadow-xl flex flex-col justify-center">
@@ -30,7 +41,7 @@ const ResultCard = ({
         {/* Video thumbnail with modal */}
         {videoUrl && (
           <div className="mb-4 rounded-lg overflow-hidden">
-            <Dialog>
+            <Dialog open={isModalOpen} onOpenChange={setIsModalOpen}>
               <DialogTrigger asChild>
                 <div className="relative cursor-pointer group">
                   <img 
@@ -45,17 +56,20 @@ const ResultCard = ({
                   </div>
                 </div>
               </DialogTrigger>
-              <DialogContent className="max-w-4xl w-full p-0">
+              <DialogContent className="max-w-4xl w-full p-0 bg-black border-0">
                 <div className="aspect-video">
-                  <iframe 
-                    title="vimeo-player" 
-                    src={videoUrl}
-                    width="100%" 
-                    height="100%" 
-                    frameBorder="0" 
-                    allowFullScreen
-                    className="w-full h-full rounded-lg"
-                  />
+                  {isModalOpen && (
+                    <iframe 
+                      title="video-player" 
+                      src={getCleanVimeoUrl(videoUrl)}
+                      width="100%" 
+                      height="100%" 
+                      frameBorder="0" 
+                      allow="autoplay; fullscreen; picture-in-picture"
+                      allowFullScreen
+                      className="w-full h-full rounded-lg"
+                    />
+                  )}
                 </div>
               </DialogContent>
             </Dialog>
