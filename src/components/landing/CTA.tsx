@@ -13,41 +13,40 @@ const CTA = () => {
   const { t } = useLocalization();
   
   return (
-    <section className="py-20 bg-gradient-to-br from-white via-green-50/30 to-gold-light/10 dark:from-zinc-900 dark:via-green-900/10 dark:to-gold-dark/10 relative overflow-hidden">
-      {/* Subtle background elements with brand colors */}
-      <div className="absolute inset-0">
-        <div className="absolute top-1/2 left-1/4 w-96 h-96 bg-gradient-to-r from-gold-light/20 to-green-100/20 rounded-full blur-3xl transform -translate-x-1/2 -translate-y-1/2"></div>
-        <div className="absolute top-1/3 right-1/4 w-80 h-80 bg-gradient-to-l from-green-100/30 to-gold-light/20 rounded-full blur-3xl"></div>
+    <section className="relative py-24 bg-white dark:bg-zinc-900 overflow-hidden">
+      {/* Subtle background pattern */}
+      <div className="absolute inset-0 opacity-50">
+        <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-slate-50/30 via-transparent to-slate-50/20 dark:from-zinc-800/20 dark:via-transparent dark:to-zinc-800/10"></div>
       </div>
 
-      <div className="container mx-auto px-4 relative z-10">
+      <div className="container mx-auto px-6 relative z-10">
         <ScrollReveal direction="up" distance="30px" duration={600}>
           <div className="max-w-4xl mx-auto text-center">
-            {/* Status badge with brand colors */}
-            <div className="inline-flex items-center px-4 py-2 bg-gradient-to-r from-gold-light/10 to-green-100/20 rounded-full border border-gold-light/30 mb-8">
-              <div className="w-2 h-2 bg-gradient-to-r from-gold-DEFAULT to-green-500 rounded-full mr-3"></div>
-              <span className="text-sm font-medium text-gold-dark dark:text-gold-light">
+            {/* Status badge */}
+            <div className="inline-flex items-center px-4 py-2 bg-slate-100/80 dark:bg-zinc-800/80 rounded-full border border-slate-200/60 dark:border-zinc-700/60 mb-8">
+              <div className="w-2 h-2 bg-green-500 rounded-full mr-3 animate-pulse"></div>
+              <span className="text-sm font-medium text-slate-700 dark:text-slate-300">
                 {t("Get Started Today")}
               </span>
             </div>
 
-            <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-6 text-gray-900 dark:text-white leading-tight">
+            <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-6 text-slate-900 dark:text-white leading-tight">
               {t("Ready to transform your workflow?")}
             </h2>
             
-            <p className="text-xl text-gray-600 dark:text-gray-300 mb-10 leading-relaxed max-w-2xl mx-auto">
+            <p className="text-xl text-slate-600 dark:text-slate-400 mb-12 leading-relaxed max-w-2xl mx-auto">
               {t("Start your free 14-day trial today. No credit card required.")}
             </p>
             
-            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12">
+            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-16">
               <Link to="/get-started" className="inline-block">
                 <Button 
                   size="lg" 
-                  className="group px-8 py-4 text-lg bg-gradient-to-r from-gold-DEFAULT to-gold-light hover:from-gold-light hover:to-gold-DEFAULT text-black font-semibold shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1"
+                  className="group bg-gradient-to-r from-yellow-600 to-yellow-500 hover:from-yellow-700 hover:to-yellow-600 text-white px-8 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-0.5 border-0 font-medium"
                 >
                   <span className="flex items-center">
                     {t("Get Started")} 
-                    <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform duration-200" />
+                    <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform duration-300" />
                   </span>
                 </Button>
               </Link>
@@ -55,33 +54,33 @@ const CTA = () => {
               <Button 
                 variant="outline" 
                 size="lg" 
-                className="px-8 py-4 text-lg border-2 border-green-500 text-green-600 hover:bg-green-500 hover:text-white dark:border-green-400 dark:text-green-400 dark:hover:bg-green-500 dark:hover:text-white transition-all duration-300"
+                className="px-8 py-4 text-lg border-2 border-slate-300 dark:border-slate-600 text-slate-700 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-800 hover:border-slate-400 dark:hover:border-slate-500 transition-all duration-300 hover:-translate-y-0.5 shadow-sm hover:shadow-md"
               >
                 {t("Schedule Demo")}
               </Button>
             </div>
             
-            <p className="text-sm text-gray-500 dark:text-gray-400 mb-12">
+            <p className="text-sm text-slate-500 dark:text-slate-400 mb-12">
               {t("Join thousands of garment decoration businesses using Tracker")}
             </p>
           </div>
         </ScrollReveal>
         
-        {/* Trust indicators with brand colors */}
-        <div className="flex flex-wrap justify-center gap-6 mt-8">
-          <ScrollReveal delay={200} direction="up" className="flex items-center gap-3 px-6 py-4 bg-white/80 dark:bg-zinc-800/80 backdrop-blur-sm rounded-xl border border-gold-light/20 shadow-sm hover:shadow-md transition-all duration-300">
-            <div className="w-3 h-3 rounded-full bg-gradient-to-r from-green-500 to-green-400"></div>
-            <span className="text-gray-700 dark:text-gray-300 text-sm font-medium">{t("14 Day Guarantee")}</span>
+        {/* Trust indicators */}
+        <div className="flex flex-wrap justify-center gap-8 mt-12">
+          <ScrollReveal delay={200} direction="up" className="flex items-center gap-3 px-6 py-4 bg-white/90 dark:bg-zinc-800/90 backdrop-blur-sm rounded-xl border border-slate-200/60 dark:border-zinc-700/60 shadow-sm hover:shadow-md transition-all duration-300">
+            <div className="w-3 h-3 rounded-full bg-green-500"></div>
+            <span className="text-slate-700 dark:text-slate-300 text-sm font-medium">{t("14 Day Guarantee")}</span>
           </ScrollReveal>
           
-          <ScrollReveal delay={300} direction="up" className="flex items-center gap-3 px-6 py-4 bg-white/80 dark:bg-zinc-800/80 backdrop-blur-sm rounded-xl border border-gold-light/20 shadow-sm hover:shadow-md transition-all duration-300">
-            <div className="w-3 h-3 rounded-full bg-gradient-to-r from-gold-DEFAULT to-gold-light"></div>
-            <span className="text-gray-700 dark:text-gray-300 text-sm font-medium">{t("Premium Support")}</span>
+          <ScrollReveal delay={300} direction="up" className="flex items-center gap-3 px-6 py-4 bg-white/90 dark:bg-zinc-800/90 backdrop-blur-sm rounded-xl border border-slate-200/60 dark:border-zinc-700/60 shadow-sm hover:shadow-md transition-all duration-300">
+            <div className="w-3 h-3 rounded-full bg-yellow-500"></div>
+            <span className="text-slate-700 dark:text-slate-300 text-sm font-medium">{t("Premium Support")}</span>
           </ScrollReveal>
           
-          <ScrollReveal delay={400} direction="up" className="flex items-center gap-3 px-6 py-4 bg-white/80 dark:bg-zinc-800/80 backdrop-blur-sm rounded-xl border border-gold-light/20 shadow-sm hover:shadow-md transition-all duration-300">
-            <div className="w-3 h-3 rounded-full bg-gradient-to-r from-green-500 to-gold-DEFAULT"></div>
-            <span className="text-gray-700 dark:text-gray-300 text-sm font-medium">{t("99.9% Uptime")}</span>
+          <ScrollReveal delay={400} direction="up" className="flex items-center gap-3 px-6 py-4 bg-white/90 dark:bg-zinc-800/90 backdrop-blur-sm rounded-xl border border-slate-200/60 dark:border-zinc-700/60 shadow-sm hover:shadow-md transition-all duration-300">
+            <div className="w-3 h-3 rounded-full bg-green-500"></div>
+            <span className="text-slate-700 dark:text-slate-300 text-sm font-medium">{t("99.9% Uptime")}</span>
           </ScrollReveal>
         </div>
       </div>
