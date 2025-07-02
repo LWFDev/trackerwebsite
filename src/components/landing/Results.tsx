@@ -12,17 +12,19 @@ import { ScrollReveal } from "@/components/ui/scroll-reveal";
 
 const Results = () => {
   return (
-    <section className="py-20 bg-gray-900 dark:bg-black light:bg-gray-900 relative overflow-hidden transition-colors duration-300">
-      {/* Background elements */}
+    <section className="py-20 bg-gradient-to-br from-emerald-900/95 via-green-800/90 to-emerald-950/95 dark:from-emerald-900/80 dark:via-green-800/75 dark:to-emerald-950/80 light:from-emerald-900/95 light:via-green-800/90 light:to-emerald-950/95 relative overflow-hidden transition-colors duration-300">
+      {/* Enhanced background elements with green theme */}
       <div className="absolute top-0 left-0 w-full h-full overflow-hidden z-0">
-        <div className="absolute w-[800px] h-[800px] rounded-full bg-[#D4AF37]/5 blur-[150px] top-1/2 left-0 transform -translate-x-1/2 -translate-y-1/2"></div>
-        <div className="absolute w-[600px] h-[600px] rounded-full bg-gray-800/30 dark:bg-zinc-900/30 light:bg-gray-800/30 blur-[100px] bottom-0 right-0"></div>
+        <div className="absolute w-[800px] h-[800px] rounded-full bg-emerald-500/10 blur-[150px] top-1/2 left-0 transform -translate-x-1/2 -translate-y-1/2"></div>
+        <div className="absolute w-[600px] h-[600px] rounded-full bg-green-400/5 blur-[100px] bottom-0 right-0"></div>
+        <div className="absolute top-1/4 right-1/4 w-32 h-32 border border-emerald-400/20 rounded-full opacity-30"></div>
+        <div className="absolute bottom-1/3 left-1/4 w-24 h-24 border border-green-500/15 rounded-lg rotate-45 opacity-25"></div>
       </div>
 
       <div className="container mx-auto px-4 relative z-10">
         <ResultsHeader />
 
-        {/* Redesigned content area with more visual elements */}
+        {/* Enhanced content area with green accents */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
           <ResultCard 
             company="ABC Apparel"
@@ -40,7 +42,7 @@ const Results = () => {
             delay={100}
           />
 
-          <div className="bg-gray-800/80 dark:bg-zinc-900/60 light:bg-gray-800/80 backdrop-blur-sm rounded-xl p-8 border border-gray-700 dark:border-zinc-800 light:border-gray-700 transform transition-all duration-300 hover:border-[#D4AF37]/40 flex flex-col">
+          <div className="bg-emerald-800/70 dark:bg-emerald-900/60 light:bg-emerald-800/70 backdrop-blur-sm rounded-xl p-8 border border-emerald-600/50 dark:border-emerald-700/50 light:border-emerald-600/50 transform transition-all duration-300 hover:border-emerald-400/60 flex flex-col">
             <ResultMetric 
               icon={<TrendingUp size={24} />} 
               percentage="65%" 
@@ -70,7 +72,7 @@ const Results = () => {
 
         <div className="text-center">
           <Link to="/case-studies">
-            <Button className="bg-gradient-to-r from-[#D4AF37] to-[#F2D675] hover:from-[#F2D675] hover:to-[#D4AF37] text-black transform transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-[#D4AF37]/20">
+            <Button className="bg-gradient-to-r from-emerald-500 to-green-400 hover:from-emerald-600 hover:to-green-500 text-white transform transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-emerald-500/20">
               Read More Case Studies
             </Button>
           </Link>

@@ -14,7 +14,7 @@ const ModulesSection = () => {
         label="Modules"
         title={
           <>
-            Modular Solutions for <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#D4AF37] to-[#F2D675]">Every Need</span>
+            Modular Solutions for <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-500 via-green-400 to-emerald-600">Every Need</span>
           </>
         }
         description="Tracker offers a comprehensive suite of modules that can be combined to create the perfect solution for your business."
@@ -84,7 +84,7 @@ const ModulesSection = () => {
 
       <ScrollReveal delay={0.9} className="mt-12 text-center">
         <Link to="/modules">
-          <Button variant="outline" size="lg" className="border-[#D4AF37]/30 hover:border-[#D4AF37] hover:bg-[#D4AF37]/10 text-[#D4AF37] group">
+          <Button variant="outline" size="lg" className="border-emerald-500/40 hover:border-emerald-400 hover:bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 group">
             View all modules
             <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
           </Button>
