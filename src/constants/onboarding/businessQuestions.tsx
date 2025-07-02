@@ -10,11 +10,13 @@ export const businessQuestions: Question[] = [
     field: "businessType",
     component: ({ value, onChange, isValid, setIsValid }) => (
       <BusinessForm 
-        formData={{ businessType: value }}
+        formData={{ businessType: value || [] }}
         updateFormData={(data) => {
-          if (data.businessType) {
+          if (data.businessType && data.businessType.length > 0) {
             onChange(data.businessType);
             setIsValid(true);
+          } else {
+            setIsValid(false);
           }
         }}
         questionType="businessType"

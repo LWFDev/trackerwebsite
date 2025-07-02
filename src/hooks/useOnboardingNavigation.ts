@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { onboardingSteps } from "@/constants/onboarding";
@@ -61,7 +60,7 @@ export const useOnboardingNavigation = (formData: OnboardingData) => {
     if (field) {
       const value = formData[field];
       // Simple validity check based on value presence
-      if (field === "decorationMethods") {
+      if (field === "decorationMethods" || field === "businessType") {
         setIsValid(Array.isArray(value) && value.length > 0);
       } else if (field === "agreeToTerms") {
         setIsValid(Boolean(value));

@@ -28,7 +28,7 @@ export function CurrentQuestion({
     if (field) {
       const value = formData[field];
       // Simple validity check based on value presence
-      if (field === "decorationMethods") {
+      if (field === "decorationMethods" || field === "businessType") {
         setIsValid(Array.isArray(value) && value.length > 0);
       } else if (field === "agreeToTerms") {
         setIsValid(Boolean(value));

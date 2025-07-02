@@ -2,7 +2,7 @@
 // Define the main form data structure
 export interface OnboardingData {
   // Business step
-  businessType: string;
+  businessType: string[]; // Changed from string to string[] for multiple selections
   employeeCount: string;
   yearsInBusiness: string;
   decorationMethods: string[];
