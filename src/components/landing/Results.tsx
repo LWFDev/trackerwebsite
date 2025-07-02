@@ -6,7 +6,6 @@ import { Link } from "react-router-dom";
 import ResultCard from "./results/ResultCard";
 import ResultMetric from "./results/ResultMetric";
 import StatsGrid from "./results/StatsGrid";
-import RoiCalculator from "./results/RoiCalculator";
 import ResultsHeader from "./results/ResultsHeader";
 import { ScrollReveal } from "@/components/ui/scroll-reveal";
 
@@ -66,9 +65,6 @@ const Results = () => {
         
         {/* Stats grid */}
         <StatsGrid />
-        
-        {/* ROI Calculator section */}
-        <RoiCalculator />
 
         <div className="text-center">
           <Link to="/case-studies">
