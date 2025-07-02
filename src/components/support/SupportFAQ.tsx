@@ -15,11 +15,11 @@ const SupportFAQ = () => {
     },
     {
       question: "How do I contact technical support?",
-      answer: "You can contact our technical support team through the ticket form below, via email at support@tracker.com, or through our live chat feature available 24/7."
+      answer: "You can contact our technical support team through the ticket form below, via email at support@tracker.com, or by phone during business hours."
     },
     {
       question: "What are your support hours?",
-      answer: "Our support team is available 24/7 to assist you. Priority support is available for Enterprise customers with guaranteed response times."
+      answer: "Our support team is available Monday through Friday, 9am - 5pm CST. We also offer priority support for Enterprise customers with faster response times."
     },
     {
       question: "Is Tracker available globally or just in the UK?",
@@ -39,7 +39,7 @@ const SupportFAQ = () => {
     },
     {
       question: "How long does it take to get support?",
-      answer: "Our average response time is under 2 hours for standard issues. Critical issues are prioritized with faster response times, especially for Enterprise customers."
+      answer: "Our average response time is under 2 hours for standard issues during business hours. Critical issues are prioritized with faster response times, especially for Enterprise customers."
     }
   ];
 
