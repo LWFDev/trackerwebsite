@@ -31,6 +31,7 @@ const Results = () => {
             person="Jane Smith"
             role="CEO, ABC Apparel"
             delay={0}
+            videoUrl="https://player.vimeo.com/video/1030900669?h=fd3735c8a0"
           />
           
           <ResultCard 
@@ -39,6 +40,7 @@ const Results = () => {
             person="Michael Johnson"
             role="Production Manager, XYZ Embroidery"
             delay={100}
+            videoUrl="https://player.vimeo.com/video/374282379?h=47c3b154f0"
           />
 
           <div className="bg-emerald-800/70 dark:bg-emerald-900/60 light:bg-emerald-800/70 backdrop-blur-sm rounded-xl p-8 border border-emerald-600/50 dark:border-emerald-700/50 light:border-emerald-600/50 transform transition-all duration-300 hover:border-emerald-400/60 flex flex-col">
