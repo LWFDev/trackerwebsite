@@ -76,14 +76,9 @@ const ResultCard = ({
           </div>
         )}
         
-        <div className="flex items-center">
-          <div className="w-12 h-12 bg-gray-700 dark:bg-zinc-800 light:bg-gray-700 rounded-full mr-3 border-2 border-[#D4AF37]/30 overflow-hidden">
-            <div className="w-full h-full bg-gradient-to-br from-gray-600 to-gray-800 dark:from-zinc-700 dark:to-zinc-900 light:from-gray-600 light:to-gray-800"></div>
-          </div>
-          <div>
-            <div className="font-medium text-white">{person}</div>
-            <div className="text-sm text-[#D4AF37]">{role}</div>
-          </div>
+        <div>
+          <div className="font-medium text-white">{person}</div>
+          <div className="text-sm text-[#D4AF37]">{role}</div>
         </div>
       </div>
     </ScrollReveal>

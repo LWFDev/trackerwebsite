@@ -28,7 +28,7 @@ const Results = () => {
           <ResultCard 
             company="ABC Apparel"
             quote="Tracker has completely transformed our workflow. We've gone from taking days to processing orders in just a few hours."
-            person="Jane Smith"
+            person="Woolcool"
             role="CEO, ABC Apparel"
             delay={0}
             videoUrl="https://player.vimeo.com/video/1030900669?h=fd3735c8a0"
@@ -37,7 +37,7 @@ const Results = () => {
           <ResultCard 
             company="XYZ Embroidery"
             quote="The product designer module has cut our design approval time by 70%. Our clients love being able to see their designs instantly."
-            person="Michael Johnson"
+            person="RS Farmah"
             role="Production Manager, XYZ Embroidery"
             delay={100}
             videoUrl="https://player.vimeo.com/video/374282379?h=47c3b154f0"
