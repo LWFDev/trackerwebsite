@@ -1,3 +1,4 @@
+
 import { Question } from "@/types/onboarding";
 import { ContactForm } from "@/components/onboarding/ContactForm";
 import { TermsForm } from "@/components/onboarding/account/TermsForm";
@@ -81,20 +82,20 @@ export const contactQuestions: Question[] = [
     id: "terms",
     title: "Almost done!",
     field: "agreeToTerms",
-    component: ({ value, onChange, isValid, setIsValid, onNext, onBack }) => (
+    component: ({ value, onChange, isValid, setIsValid, formData, updateFormData }) => (
       <TermsForm 
         formData={{ 
           agreeToTerms: value,
-          receiveUpdates: true // Default to true
+          receiveUpdates: formData?.receiveUpdates ?? true
         }}
         updateFormData={(data) => {
           if (data.agreeToTerms !== undefined) {
             onChange(data.agreeToTerms);
             setIsValid(Boolean(data.agreeToTerms));
           }
-          // Handle receiveUpdates separately since it's not the main field for this question
-          if (data.receiveUpdates !== undefined) {
-            // This would need to be handled by the parent form if needed
+          // Update the main form data for receiveUpdates
+          if (data.receiveUpdates !== undefined && updateFormData) {
+            updateFormData({ receiveUpdates: data.receiveUpdates });
           }
         }}
       />

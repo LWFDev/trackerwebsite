@@ -53,7 +53,9 @@ export function CurrentQuestion({
         onNext,
         onBack,
         isValid,
-        setIsValid
+        setIsValid,
+        formData,
+        updateFormData
       })}
       
       <div className="flex justify-end pt-4">

@@ -37,4 +37,6 @@ export interface QuestionProps {
   onBack: () => void;
   isValid: boolean;
   setIsValid: (valid: boolean) => void;
+  formData?: Partial<OnboardingData>;
+  updateFormData?: (data: Partial<OnboardingData>) => void;
 }
