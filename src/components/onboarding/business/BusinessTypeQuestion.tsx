@@ -43,7 +43,6 @@ export const BusinessTypeQuestion = ({ formData, updateFormData }: BusinessTypeQ
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.2 }}
-              onClick={() => handleToggleType(type)}
               className="cursor-pointer"
             >
               <div
@@ -52,6 +51,7 @@ export const BusinessTypeQuestion = ({ formData, updateFormData }: BusinessTypeQ
                   ${isChecked ? 'bg-[#D4AF37]/10 border-[#D4AF37]/50' : 'border-zinc-800'}
                   border hover:border-[#D4AF37]/50 transition-colors
                 `}
+                onClick={() => handleToggleType(type)}
               >
                 <Checkbox
                   id={type}
