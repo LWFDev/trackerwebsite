@@ -32,11 +32,11 @@ const IntegrationPartners = () => {
             {integrationPartners.map((partner, index) => (
               <Card 
                 key={index}
-                className="h-24 flex items-center justify-center border-gray-200 hover:border-emerald-300 hover:shadow-md transition-all group cursor-pointer"
+                className="h-24 flex items-center justify-center border-emerald-300 shadow-md cursor-pointer"
               >
                 <CardContent className="p-4 text-center">
-                  <Zap className="h-4 w-4 text-emerald-500 mx-auto mb-2 opacity-0 group-hover:opacity-100 transition-opacity" />
-                  <span className="text-gray-700 group-hover:text-emerald-700 text-sm font-semibold transition-colors">
+                  <Zap className="h-4 w-4 text-emerald-500 mx-auto mb-2" />
+                  <span className="text-emerald-700 text-sm font-semibold">
                     {partner}
                   </span>
                 </CardContent>
