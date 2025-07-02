@@ -93,7 +93,7 @@ const Header = () => {
         <div className="hidden md:flex items-center space-x-3">
           <FlagSelector />
           <Link to="/get-started">
-            <Button variant="gold" className="text-white">Get Started</Button>
+            <Button size="lg" className="w-full sm:w-auto group bg-gradient-to-r from-yellow-600 to-yellow-500 hover:from-yellow-700 hover:to-yellow-600 text-white px-8 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-0.5 border-0">Get Started</Button>
           </Link>
         </div>
 
