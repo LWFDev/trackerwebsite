@@ -1,4 +1,3 @@
-
 import React, { useEffect } from 'react';
 import Hero from "@/components/landing/Hero";
 import Features from "@/components/landing/Features";
@@ -26,11 +25,10 @@ const ZigzagDivider = ({ className = "" }: { className?: string }) => {
         viewBox="0 0 1440 48" 
         fill="none" 
         xmlns="http://www.w3.org/2000/svg" 
-        preserveAspectRatio="none" 
-        style={{ transform: 'scaleY(-1)' }}
+        preserveAspectRatio="none"
       >
         <path 
-          d="M1440 48L1380 42.7C1320 37.3 1200 26.7 1080 21.3C960 16 840 16 720 24C600 32 480 48 360 48C240 48 120 32 60 24L0 16V0H60C120 0 240 0 360 0C480 0 600 0 720 0C840 0 960 0 1080 0C1200 0 1320 0 1380 0H1440V48Z" 
+          d="M0 0L60 8C120 16 240 32 360 32C480 32 600 16 720 24C840 32 960 48 1080 42.7C1200 37.3 1320 21.3 1380 13.3L1440 5.3V48H1380C1320 48 1200 48 1080 48C960 48 840 48 720 48C600 48 480 48 360 48C240 48 120 48 60 48H0V0Z" 
           fill="currentColor" 
         />
       </svg>
@@ -50,7 +48,7 @@ const ArrowDivider = ({ className = "" }: { className?: string }) => {
         preserveAspectRatio="none"
       >
         <path 
-          d="M1200 30L1150 25C1100 20 1000 10 900 5C800 0 700 0 600 10C500 20 400 30 300 30C200 30 100 20 50 15L0 10V0H1200V30Z" 
+          d="M0 0L50 5C100 10 200 20 300 20C400 20 500 10 600 20C700 30 800 30 900 25C1000 20 1100 10 1150 5L1200 0V30H0V0Z" 
           fill="currentColor" 
         />
       </svg>
@@ -70,7 +68,7 @@ const CurvyDivider = ({ className = "" }: { className?: string }) => {
         preserveAspectRatio="none"
       >
         <path 
-          d="M1440,0 C1200,100 720,100 0,0 L0,100 L1440,100 Z" 
+          d="M0 0C240 60 480 100 720 100C960 100 1200 60 1440 0V100H0V0Z" 
           fill="currentColor" 
         />
       </svg>
@@ -79,7 +77,23 @@ const CurvyDivider = ({ className = "" }: { className?: string }) => {
 };
 
 const TriangleDivider = ({ className = "" }: { className?: string }) => {
-  return <div className={`w-full overflow-hidden ${className}`}></div>;
+  const isMobile = useIsMobile();
+  return (
+    <div className={`w-full overflow-hidden ${className}`}>
+      <svg 
+        className={`w-full ${isMobile ? 'h-8' : 'h-16'}`} 
+        viewBox="0 0 1440 100" 
+        fill="none" 
+        xmlns="http://www.w3.org/2000/svg" 
+        preserveAspectRatio="none"
+      >
+        <path 
+          d="M0 100L720 0L1440 100H0Z" 
+          fill="currentColor" 
+        />
+      </svg>
+    </div>
+  );
 };
 
 // SVG curve divider - flipped horizontally
@@ -93,7 +107,7 @@ const SlopesDivider = ({ className = "" }: { className?: string }) => {
         preserveAspectRatio="none"
       >
         <path 
-          d="M100 10 L100 0 L65 5 L35 0 L0 5 L0 10 Z" 
+          d="M0 0L35 5L65 0L100 5V10H0V0Z" 
           fill="currentColor" 
         />
       </svg>
@@ -162,32 +176,32 @@ const Index = () => {
       <main className="pt-16 relative">
         <Hero />
         
-        <div className="relative text-emerald-100 dark:text-emerald-900 mb-[-1px]">
+        <div className="relative text-emerald-600 dark:text-emerald-400 mb-[-1px]">
           <AnimatedTruckDivider />
         </div>
         
         <Features />
         
-        <div className="relative text-green-50 dark:text-green-900 mb-[-1px]">
+        <div className="relative text-green-600 dark:text-green-400 mb-[-1px]">
           <SlopesDivider />
         </div>
         
         <Workflow />
         
-        <div className="relative text-emerald-100 dark:text-emerald-900 mb-[-1px]">
+        <div className="relative text-emerald-600 dark:text-emerald-400 mb-[-1px]">
           <TriangleDivider />
         </div>
         
         <Results />
         
-        <div className="relative text-green-100 dark:text-green-900 mb-[-1px]">
+        <div className="relative text-green-600 dark:text-green-400 mb-[-1px]">
           <ZigzagDivider />
         </div>
         
         {/* StoryTelling component */}
         <StoryTelling />
         
-        <div className="relative text-emerald-50 dark:text-emerald-950 mb-[-1px]">
+        <div className="relative text-emerald-600 dark:text-emerald-400 mb-[-1px]">
           <CurvyDivider />
         </div>
         
@@ -203,13 +217,13 @@ const Index = () => {
         
         <Integration />
         
-        <div className="relative text-green-100 dark:text-green-900 mb-[-1px]">
+        <div className="relative text-green-600 dark:text-green-400 mb-[-1px]">
           <CurvyDivider />
         </div>
         
         <Testimonials />
         
-        <div className="relative text-emerald-100 dark:text-emerald-900 mb-[-1px]">
+        <div className="relative text-emerald-600 dark:text-emerald-400 mb-[-1px]">
           <AnimatedTruckDivider />
         </div>
         
