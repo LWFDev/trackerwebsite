@@ -1,4 +1,3 @@
-
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
@@ -32,6 +31,7 @@ import Suppliers from "@/pages/modules/Suppliers";
 import PurchaseOrders from "@/pages/modules/PurchaseOrders";
 import Artworkers from "@/pages/modules/Artworkers";
 import CustomerPortal from "@/pages/modules/CustomerPortal";
+import Support from "@/pages/Support";
 import ScrollAnimationInit from "./components/ui/scroll-animation-init";
 
 // Create a new query client
@@ -55,6 +55,7 @@ const App = () => {
                   <Route path="/blog" element={<Layout><Blog /></Layout>} />
                   <Route path="/blog/:slug" element={<Layout><BlogPost /></Layout>} />
                   <Route path="/faq" element={<Layout><FAQ /></Layout>} />
+                  <Route path="/support" element={<Layout><Support /></Layout>} />
                   <Route path="/get-started" element={<Layout><GetStarted /></Layout>} />
                   
                   {/* Documentation Routes */}

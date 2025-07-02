@@ -9,7 +9,8 @@ const Footer = () => {
     isDarkMode,
     toggleTheme
   } = useTheme();
-  return <footer className="theme-surface theme-text-secondary py-12 theme-border border-t transition-colors duration-300">
+  return (
+    <footer className="theme-surface theme-text-secondary py-12 theme-border border-t transition-colors duration-300">
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
           <div>
@@ -29,9 +30,8 @@ const Footer = () => {
             <h4 className="theme-text font-medium mb-4">Resources</h4>
             <ul className="space-y-2 text-sm">
               <li><Link to="/faq" className="hover:text-[#D4AF37] transition-colors">FAQ</Link></li>
+              <li><Link to="/support" className="hover:text-[#D4AF37] transition-colors">Support</Link></li>
               <li><a href="#" className="hover:text-[#D4AF37] transition-colors">Blog</a></li>
-              <li><a href="#" className="hover:text-[#D4AF37] transition-colors">Support</a></li>
-              
             </ul>
           </div>
           <div>
@@ -58,6 +58,8 @@ const Footer = () => {
           </div>
         </div>
       </div>
-    </footer>;
+    </footer>
+  );
 };
+
 export default Footer;

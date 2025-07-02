@@ -1,0 +1,107 @@
+
+import React from 'react';
+import { ScrollReveal } from '@/components/ui/scroll-reveal';
+import { Card, CardContent } from '@/components/ui/card';
+import { Mail, Phone, Clock, MessageCircle } from 'lucide-react';
+
+const SupportContact = () => {
+  return (
+    <section className="py-20 bg-zinc-900/30">
+      <div className="container mx-auto px-6">
+        <ScrollReveal direction="up" distance="30px" duration={600}>
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold mb-6">
+              Other Ways to{' '}
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#D4AF37] to-[#F2D675]">
+                Get Help
+              </span>
+            </h2>
+            <p className="text-xl text-gray-400 max-w-2xl mx-auto">
+              Choose the support method that works best for you
+            </p>
+          </div>
+        </ScrollReveal>
+
+        <ScrollReveal direction="up" distance="30px" duration={600} delay={200}>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto">
+            <Card className="bg-zinc-800/30 border-zinc-700/50 hover:bg-zinc-800/50 transition-colors duration-300">
+              <CardContent className="p-6 text-center">
+                <div className="w-16 h-16 bg-gradient-to-r from-[#D4AF37] to-[#F2D675] rounded-full flex items-center justify-center mx-auto mb-4">
+                  <Mail className="w-8 h-8 text-black" />
+                </div>
+                <h3 className="text-lg font-semibold text-white mb-2">Email Support</h3>
+                <p className="text-gray-400 text-sm mb-4">Get detailed help via email</p>
+                <p className="text-[#D4AF37] font-medium">support@tracker.com</p>
+              </CardContent>
+            </Card>
+
+            <Card className="bg-zinc-800/30 border-zinc-700/50 hover:bg-zinc-800/50 transition-colors duration-300">
+              <CardContent className="p-6 text-center">
+                <div className="w-16 h-16 bg-gradient-to-r from-[#D4AF37] to-[#F2D675] rounded-full flex items-center justify-center mx-auto mb-4">
+                  <MessageCircle className="w-8 h-8 text-black" />
+                </div>
+                <h3 className="text-lg font-semibold text-white mb-2">Live Chat</h3>
+                <p className="text-gray-400 text-sm mb-4">Instant help when you need it</p>
+                <p className="text-[#D4AF37] font-medium">Available 24/7</p>
+              </CardContent>
+            </Card>
+
+            <Card className="bg-zinc-800/30 border-zinc-700/50 hover:bg-zinc-800/50 transition-colors duration-300">
+              <CardContent className="p-6 text-center">
+                <div className="w-16 h-16 bg-gradient-to-r from-[#D4AF37] to-[#F2D675] rounded-full flex items-center justify-center mx-auto mb-4">
+                  <Phone className="w-8 h-8 text-black" />
+                </div>
+                <h3 className="text-lg font-semibold text-white mb-2">Phone Support</h3>
+                <p className="text-gray-400 text-sm mb-4">Speak directly with our team</p>
+                <p className="text-[#D4AF37] font-medium">+1 (555) 123-4567</p>
+              </CardContent>
+            </Card>
+
+            <Card className="bg-zinc-800/30 border-zinc-700/50 hover:bg-zinc-800/50 transition-colors duration-300">
+              <CardContent className="p-6 text-center">
+                <div className="w-16 h-16 bg-gradient-to-r from-[#D4AF37] to-[#F2D675] rounded-full flex items-center justify-center mx-auto mb-4">
+                  <Clock className="w-8 h-8 text-black" />
+                </div>
+                <h3 className="text-lg font-semibold text-white mb-2">Support Hours</h3>
+                <p className="text-gray-400 text-sm mb-4">We're here when you need us</p>
+                <p className="text-[#D4AF37] font-medium">24/7 Coverage</p>
+              </CardContent>
+            </Card>
+          </div>
+        </ScrollReveal>
+
+        <ScrollReveal direction="up" distance="30px" duration={600} delay={400}>
+          <div className="mt-16 max-w-4xl mx-auto">
+            <Card className="bg-zinc-800/30 border-zinc-700/50">
+              <CardContent className="p-8">
+                <h3 className="text-2xl font-bold text-white mb-4 text-center">Response Time Expectations</h3>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                  <div>
+                    <h4 className="text-lg font-semibold text-[#D4AF37] mb-3">Standard Support</h4>
+                    <ul className="space-y-2 text-gray-300">
+                      <li>• Low Priority: Within 24 hours</li>
+                      <li>• Medium Priority: Within 8 hours</li>
+                      <li>• High Priority: Within 4 hours</li>
+                      <li>• Urgent: Within 2 hours</li>
+                    </ul>
+                  </div>
+                  <div>
+                    <h4 className="text-lg font-semibold text-[#D4AF37] mb-3">Enterprise Support</h4>
+                    <ul className="space-y-2 text-gray-300">
+                      <li>• Low Priority: Within 12 hours</li>
+                      <li>• Medium Priority: Within 4 hours</li>
+                      <li>• High Priority: Within 2 hours</li>
+                      <li>• Urgent: Within 1 hour</li>
+                    </ul>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+          </div>
+        </ScrollReveal>
+      </div>
+    </section>
+  );
+};
+
+export default SupportContact;
