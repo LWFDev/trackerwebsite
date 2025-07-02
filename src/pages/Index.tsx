@@ -69,15 +69,15 @@ const Index = () => {
     >
       <ScrollAnimationInit />
       
-      {/* Professional background with subtle gradients */}
+      {/* Professional background with gold and green gradients */}
       <div className="fixed inset-0 pointer-events-none">
-        <div className="absolute top-0 left-0 w-full max-w-[800px] h-[600px] rounded-full bg-gradient-to-br from-amber-100/30 via-slate-50/20 to-emerald-100/20 dark:from-amber-900/20 dark:via-slate-900/30 dark:to-emerald-900/15 blur-[120px] opacity-60"></div>
-        <div className="absolute bottom-0 right-0 w-full max-w-[700px] h-[500px] rounded-full bg-gradient-to-tl from-emerald-100/25 via-slate-100/15 to-amber-100/20 dark:from-emerald-900/15 dark:via-slate-900/20 dark:to-amber-900/15 blur-[100px] opacity-50"></div>
+        <div className="absolute top-0 left-0 w-full max-w-[800px] h-[600px] rounded-full bg-gradient-to-br from-yellow-100/30 via-slate-50/20 to-emerald-100/20 dark:from-yellow-900/20 dark:via-slate-900/30 dark:to-emerald-900/15 blur-[120px] opacity-60"></div>
+        <div className="absolute bottom-0 right-0 w-full max-w-[700px] h-[500px] rounded-full bg-gradient-to-tl from-emerald-100/25 via-slate-100/15 to-yellow-100/20 dark:from-emerald-900/15 dark:via-slate-900/20 dark:to-yellow-900/15 blur-[100px] opacity-50"></div>
       </div>
       
       <main className="pt-16 relative">
-        {/* Hero Section - Professional coloring */}
-        <div className="bg-gradient-to-b from-white via-amber-50/30 to-slate-50/40 dark:from-black dark:via-amber-950/10 dark:to-slate-950/20">
+        {/* Hero Section - Professional gold coloring */}
+        <div className="bg-gradient-to-b from-white via-yellow-50/30 to-slate-50/40 dark:from-black dark:via-yellow-950/10 dark:to-slate-950/20">
           <Hero />
         </div>
         
@@ -87,42 +87,42 @@ const Index = () => {
         </div>
         
         {/* Features Section */}
-        <div className="bg-gradient-to-b from-slate-100/30 via-emerald-50/25 to-amber-50/20 dark:from-slate-900/15 dark:via-emerald-950/10 dark:to-amber-950/10">
+        <div className="bg-gradient-to-b from-slate-100/30 via-emerald-50/25 to-yellow-50/20 dark:from-slate-900/15 dark:via-emerald-950/10 dark:to-yellow-950/10">
           <Features />
         </div>
         
         {/* Workflow Section */}
-        <div className="bg-gradient-to-b from-amber-50/20 via-slate-50/30 to-emerald-50/25 dark:from-amber-950/10 dark:via-slate-950/15 dark:to-emerald-950/10">
+        <div className="bg-gradient-to-b from-yellow-50/20 via-slate-50/30 to-emerald-50/25 dark:from-yellow-950/10 dark:via-slate-950/15 dark:to-emerald-950/10">
           <Workflow />
         </div>
         
         {/* Results Section */}
-        <div className="bg-gradient-to-b from-emerald-50/25 via-slate-100/20 to-amber-50/30 dark:from-emerald-950/10 dark:via-slate-900/10 dark:to-amber-950/15">
+        <div className="bg-gradient-to-b from-emerald-50/25 via-slate-100/20 to-yellow-50/30 dark:from-emerald-950/10 dark:via-slate-900/10 dark:to-yellow-950/15">
           <Results />
         </div>
         
         {/* StoryTelling Section */}
-        <div className="bg-gradient-to-b from-amber-50/30 via-emerald-50/20 to-slate-50/25 dark:from-amber-950/15 dark:via-emerald-950/10 dark:to-slate-950/10">
+        <div className="bg-gradient-to-b from-yellow-50/30 via-emerald-50/20 to-slate-50/25 dark:from-yellow-950/15 dark:via-emerald-950/10 dark:to-slate-950/10">
           <StoryTelling />
         </div>
         
         {/* WhyChooseUs Section */}
-        <div className="bg-gradient-to-b from-slate-50/25 via-amber-50/20 to-emerald-50/30 dark:from-slate-950/10 dark:via-amber-950/10 dark:to-emerald-950/15">
+        <div className="bg-gradient-to-b from-slate-50/25 via-yellow-50/20 to-emerald-50/30 dark:from-slate-950/10 dark:via-yellow-950/10 dark:to-emerald-950/15">
           <WhyChooseUs />
         </div>
         
         {/* Integration Section */}
-        <div className="bg-gradient-to-b from-emerald-50/30 via-slate-100/15 to-amber-50/25 dark:from-emerald-950/15 dark:via-slate-900/10 dark:to-amber-950/10">
+        <div className="bg-gradient-to-b from-emerald-50/30 via-slate-100/15 to-yellow-50/25 dark:from-emerald-950/15 dark:via-slate-900/10 dark:to-yellow-950/10">
           <Integration />
         </div>
         
         {/* Testimonials Section */}
-        <div className="bg-gradient-to-b from-amber-50/25 via-emerald-50/20 to-slate-50/30 dark:from-amber-950/10 dark:via-emerald-950/10 dark:to-slate-950/15">
+        <div className="bg-gradient-to-b from-yellow-50/25 via-emerald-50/20 to-slate-50/30 dark:from-yellow-950/10 dark:via-emerald-950/10 dark:to-slate-950/15">
           <Testimonials />
         </div>
         
         {/* CTA Section */}
-        <div className="bg-gradient-to-b from-slate-50/30 via-amber-50/15 to-white dark:from-slate-950/15 dark:via-amber-950/8 dark:to-black">
+        <div className="bg-gradient-to-b from-slate-50/30 via-yellow-50/15 to-white dark:from-slate-950/15 dark:via-yellow-950/8 dark:to-black">
           <CTA />
         </div>
         
