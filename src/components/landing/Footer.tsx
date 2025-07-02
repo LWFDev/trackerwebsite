@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { Switch } from '@/components/ui/switch';
 import { useTheme } from '@/contexts/ThemeContext';
 import { Sun, Moon } from 'lucide-react';
+
 const Footer = () => {
   const {
     isDarkMode,
@@ -22,8 +23,7 @@ const Footer = () => {
             <ul className="space-y-2 text-sm">
               <li><a href="#" className="hover:text-[#D4AF37] transition-colors">Features</a></li>
               <li><a href="#" className="hover:text-[#D4AF37] transition-colors">Pricing</a></li>
-              <li><a href="#" className="hover:text-[#D4AF37] transition-colors">Integrations</a></li>
-              
+              <li><Link to="/modules" className="hover:text-[#D4AF37] transition-colors">Modules</Link></li>
             </ul>
           </div>
           <div>
