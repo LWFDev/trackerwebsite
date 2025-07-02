@@ -66,13 +66,9 @@ const Integration = () => {
                 <span className="text-white">Integrate with your production equipment</span>
               </div>
             </div>
-            
-            <Button className="bg-gradient-to-r from-[#D4AF37] to-[#F2D675] hover:from-[#F2D675] hover:to-[#D4AF37] text-black transition-all duration-300 hover:shadow-lg hover:shadow-[#D4AF37]/20 hover:-translate-y-1 animate-fade-in" style={{ animationDelay: '0.7s' }}>
-              Learn More
-            </Button>
           </div>
           
-          <div className="md:w-1/2 grid grid-cols-2 gap-6">
+          <div className="md:w-1/2 grid grid-cols-2 gap-6 relative">
             {integrationLogos.map((logo, index) => (
               <div 
                 key={index}
@@ -89,6 +85,13 @@ const Integration = () => {
                 </div>
               </div>
             ))}
+            
+            {/* Learn More button positioned in bottom right of grid */}
+            <div className="flex items-center justify-center bg-gray-800/70 dark:bg-zinc-900/70 light:bg-gray-800/70 backdrop-blur-sm rounded-xl h-32 border border-gray-700 dark:border-zinc-800 light:border-gray-700 transform transition-all duration-300 hover:border-[#D4AF37]/50 hover:-translate-y-1 hover:shadow-lg animate-fade-in" style={{ animationDelay: '0.7s' }}>
+              <Button className="bg-gradient-to-r from-[#D4AF37] to-[#F2D675] hover:from-[#F2D675] hover:to-[#D4AF37] text-black transition-all duration-300 hover:shadow-lg hover:shadow-[#D4AF37]/20 hover:-translate-y-1">
+                Learn More
+              </Button>
+            </div>
           </div>
         </div>
       </div>
