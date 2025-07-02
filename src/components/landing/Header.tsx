@@ -79,7 +79,11 @@ const Header = () => {
             onHover={handleModulesHover}
             onClick={handleModulesClick}
           />
-          <Link to="/pricing" className={`${navigationMenuTriggerStyle()} ${isActive("/pricing")}`}>
+          <Link 
+            to="/pricing" 
+            className={`font-normal text-base ${isActive("/pricing")} hover:text-gold-DEFAULT transition-colors duration-200`}
+            style={{ fontSize: '16px', fontWeight: 400 }}
+          >
             Pricing
           </Link>
           <ResourcesDropdown scrollToTop={scrollToTop} />
