@@ -21,7 +21,7 @@ export function CompleteStep({
         <div className="w-20 h-20 bg-[#D4AF37] rounded-full flex items-center justify-center mb-6">
           <Check className="h-10 w-10 text-black" />
         </div>
-        <h2 className="text-xl font-medium text-white mb-2">Welcome to Tracker, {formData.fullName}!</h2>
+        <h2 className="text-xl font-medium text-white mb-2">You're all set!</h2>
         <p className="text-gray-400 text-center max-w-md">
           Your account for {formData.companyName} has been created successfully. You can now access all the features of Tracker.
         </p>
