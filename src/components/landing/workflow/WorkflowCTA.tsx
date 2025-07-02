@@ -1,9 +1,10 @@
+
 import React from "react";
 const WorkflowCTA = () => {
   return <div className="hidden md:flex justify-center mt-16">
       <div className="relative group cursor-pointer">
         <div className="flex items-center space-x-2 px-6 py-3 bg-gradient-to-r from-zinc-800/50 to-zinc-700/30 border border-[#D4AF37]/20 backdrop-blur-sm hover:border-[#D4AF37]/40 transition-all duration-300 hover:shadow-lg hover:shadow-[#D4AF37]/20 rounded">
-          <span className="text-[#D4AF37] text-sm font-medium">Complete Workflow</span>
+          <span className="text-[#D4AF37] text-sm font-medium">Get Started</span>
           <div className="relative">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" className="text-[#D4AF37] group-hover:translate-x-1 transition-transform duration-300">
               <path d="M5 12h14m-7-7l7 7-7 7" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
