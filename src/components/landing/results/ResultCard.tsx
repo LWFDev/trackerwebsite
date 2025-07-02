@@ -78,7 +78,6 @@ const ResultCard = ({
         
         <div>
           <div className="font-medium text-white">{person}</div>
-          <div className="text-sm text-[#D4AF37]">{role}</div>
         </div>
       </div>
     </ScrollReveal>
