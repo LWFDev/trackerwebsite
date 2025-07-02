@@ -30,7 +30,7 @@ const GetStarted = () => {
       onBack={handleBack}
     >
       <AnimatePresence mode="wait">
-        {currentStep === 4 ? (
+        {currentStep === 3 ? (
           <CompleteStep 
             formData={formData} 
             onComplete={handleComplete} 

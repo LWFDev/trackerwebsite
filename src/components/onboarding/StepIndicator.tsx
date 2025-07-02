@@ -20,8 +20,7 @@ export const StepIndicator = ({
   const steps = [
     { id: 1, name: "Business" },
     { id: 2, name: "Contact" },
-    { id: 3, name: "Account" },
-    { id: 4, name: "Complete" }
+    { id: 3, name: "Complete" }
   ];
 
   return (
