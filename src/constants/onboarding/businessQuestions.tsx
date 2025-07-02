@@ -41,23 +41,6 @@ export const businessQuestions: Question[] = [
     )
   },
   {
-    id: "years-in-business",
-    title: "How long have you been in business?",
-    field: "yearsInBusiness",
-    component: ({ value, onChange, isValid, setIsValid }) => (
-      <BusinessForm 
-        formData={{ yearsInBusiness: value }}
-        updateFormData={(data) => {
-          if (data.yearsInBusiness) {
-            onChange(data.yearsInBusiness);
-            setIsValid(true);
-          }
-        }}
-        questionType="yearsInBusiness"
-      />
-    )
-  },
-  {
     id: "decoration-methods",
     title: "What decoration methods do you offer?",
     field: "decorationMethods",
