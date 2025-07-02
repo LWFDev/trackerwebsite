@@ -1,7 +1,5 @@
-
 import React from "react";
 import { ScrollReveal } from "@/components/ui/scroll-reveal";
-
 interface ResultCardProps {
   company: string;
   quote: string;
@@ -9,15 +7,17 @@ interface ResultCardProps {
   role: string;
   delay?: number;
 }
-
-const ResultCard = ({ company, quote, person, role, delay = 0 }: ResultCardProps) => {
-  return (
-    <ScrollReveal delay={delay} direction="up" duration={800} className="h-full">
+const ResultCard = ({
+  company,
+  quote,
+  person,
+  role,
+  delay = 0
+}: ResultCardProps) => {
+  return <ScrollReveal delay={delay} direction="up" duration={800} className="h-full">
       <div className="bg-gray-800/90 dark:bg-zinc-900/90 light:bg-gray-800/90 backdrop-blur-sm rounded-xl shadow-lg p-6 border border-gray-700 dark:border-zinc-800 light:border-gray-700 h-full transform transition-all duration-300 hover:-translate-y-2 hover:border-[#D4AF37]/40 hover:shadow-xl">
-        <h3 className="text-xl font-bold mb-4 text-white">{company}</h3>
-        <p className="text-gray-300 mb-6">
-          "{quote}"
-        </p>
+        
+        
         <div className="flex items-center">
           <div className="w-12 h-12 bg-gray-700 dark:bg-zinc-800 light:bg-gray-700 rounded-full mr-3 border-2 border-[#D4AF37]/30 overflow-hidden">
             <div className="w-full h-full bg-gradient-to-br from-gray-600 to-gray-800 dark:from-zinc-700 dark:to-zinc-900 light:from-gray-600 light:to-gray-800"></div>
@@ -28,8 +28,6 @@ const ResultCard = ({ company, quote, person, role, delay = 0 }: ResultCardProps
           </div>
         </div>
       </div>
-    </ScrollReveal>
-  );
+    </ScrollReveal>;
 };
-
 export default ResultCard;
