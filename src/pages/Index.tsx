@@ -16,7 +16,7 @@ import { useIsMobile } from "@/hooks/use-mobile";
 import { useToast } from "@/hooks/use-toast";
 import { motion } from "framer-motion";
 
-// Improved section dividers
+// Improved section dividers with green accents
 const ZigzagDivider = ({ className = "" }: { className?: string }) => {
   const isMobile = useIsMobile();
   return (
@@ -101,22 +101,22 @@ const SlopesDivider = ({ className = "" }: { className?: string }) => {
   );
 };
 
-// Reduced number of floating icons for performance
+// Enhanced floating icons with green accents
 const FloatingIcons = () => {
   const isMobile = useIsMobile();
   if (isMobile) {
     return (
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute top-[20%] left-[10%] w-10 h-10 rounded-lg border border-[#D4AF37]/20 opacity-40 rotate-12"></div>
-        <div className="absolute top-[60%] right-[10%] w-16 h-16 rounded-full border border-[#D4AF37]/20 opacity-30 -rotate-12"></div>
+        <div className="absolute top-[20%] left-[10%] w-10 h-10 rounded-lg border border-emerald-500/20 opacity-40 rotate-12"></div>
+        <div className="absolute top-[60%] right-[10%] w-16 h-16 rounded-full border border-green-400/20 opacity-30 -rotate-12"></div>
       </div>
     );
   }
   return (
     <div className="absolute inset-0 overflow-hidden pointer-events-none">
-      <div className="absolute top-[20%] left-[10%] w-16 h-16 rounded-lg border border-[#D4AF37]/20 opacity-40 rotate-12"></div>
-      <div className="absolute top-[60%] right-[5%] w-24 h-24 rounded-full border border-[#D4AF37]/20 opacity-30 -rotate-12"></div>
-      <div className="absolute top-[40%] left-[80%] w-20 h-20 rounded-md border border-[#D4AF37]/20 opacity-25 rotate-45"></div>
+      <div className="absolute top-[20%] left-[10%] w-16 h-16 rounded-lg border border-emerald-500/20 opacity-40 rotate-12"></div>
+      <div className="absolute top-[60%] right-[5%] w-24 h-24 rounded-full border border-green-400/20 opacity-30 -rotate-12"></div>
+      <div className="absolute top-[40%] left-[80%] w-20 h-20 rounded-md border border-emerald-600/20 opacity-25 rotate-45"></div>
     </div>
   );
 };
@@ -152,69 +152,70 @@ const Index = () => {
     >
       <ScrollAnimationInit />
       
-      {/* Simplified static background gradients instead of animated */}
+      {/* Enhanced background with green gradients */}
       <div className="fixed inset-0 pointer-events-none">
-        <div className="absolute top-0 left-0 w-full max-w-[600px] h-[600px] rounded-full bg-[#D4AF37]/5 blur-[150px] opacity-30"></div>
-        <div className="absolute bottom-0 right-0 w-full max-w-[500px] h-[500px] rounded-full bg-gray-200 dark:bg-zinc-800/20 blur-[100px] opacity-40"></div>
+        <div className="absolute top-0 left-0 w-full max-w-[600px] h-[600px] rounded-full bg-gradient-to-br from-emerald-500/10 via-green-400/5 to-[#D4AF37]/5 blur-[150px] opacity-40"></div>
+        <div className="absolute bottom-0 right-0 w-full max-w-[500px] h-[500px] rounded-full bg-gradient-to-tl from-green-600/10 via-emerald-400/5 to-gray-200/20 dark:to-zinc-800/20 blur-[100px] opacity-50"></div>
+        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-full max-w-[800px] h-[400px] rounded-full bg-gradient-to-r from-emerald-300/5 via-green-500/3 to-emerald-600/5 blur-[200px] opacity-30"></div>
       </div>
       
       <main className="pt-16 relative">
         <Hero />
         
-        <div className="relative text-gray-300 dark:text-gray-600 mb-[-1px]">
+        <div className="relative text-emerald-100 dark:text-emerald-900 mb-[-1px]">
           <AnimatedTruckDivider />
         </div>
         
         <Features />
         
-        <div className="relative text-gray-50 dark:text-gray-900 mb-[-1px]">
+        <div className="relative text-green-50 dark:text-green-900 mb-[-1px]">
           <SlopesDivider />
         </div>
         
         <Workflow />
         
-        <div className="relative text-gray-300 dark:text-gray-600 mb-[-1px]">
+        <div className="relative text-emerald-100 dark:text-emerald-900 mb-[-1px]">
           <TriangleDivider />
         </div>
         
         <Results />
         
-        <div className="relative text-gray-300 dark:text-gray-600 mb-[-1px]">
+        <div className="relative text-green-100 dark:text-green-900 mb-[-1px]">
           <ZigzagDivider />
         </div>
         
-        {/* New StoryTelling component */}
+        {/* StoryTelling component */}
         <StoryTelling />
         
-        <div className="relative text-gray-200 dark:text-zinc-950 mb-[-1px]">
+        <div className="relative text-emerald-50 dark:text-emerald-950 mb-[-1px]">
           <CurvyDivider />
         </div>
         
-        {/* Add WhyChooseUs section */}
+        {/* WhyChooseUs section */}
         <WhyChooseUs />
         
         <div className="relative">
-          <Separator className="h-[1px] bg-gradient-to-r from-transparent via-[#D4AF37]/30 to-transparent my-0" />
-          <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-white dark:bg-black border border-[#D4AF37]/30 flex items-center justify-center transform rotate-45">
-            <div className="w-6 h-6 rounded-sm bg-gradient-to-br from-[#D4AF37]/30 to-[#F2D675]/20"></div>
+          <Separator className="h-[1px] bg-gradient-to-r from-transparent via-emerald-500/30 to-transparent my-0" />
+          <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-white dark:bg-black border border-emerald-500/30 flex items-center justify-center transform rotate-45">
+            <div className="w-6 h-6 rounded-sm bg-gradient-to-br from-emerald-500/30 to-green-400/20"></div>
           </div>
         </div>
         
         <Integration />
         
-        <div className="relative text-gray-300 dark:text-gray-600 mb-[-1px]">
+        <div className="relative text-green-100 dark:text-green-900 mb-[-1px]">
           <CurvyDivider />
         </div>
         
         <Testimonials />
         
-        <div className="relative text-gray-300 dark:text-gray-600 mb-[-1px]">
+        <div className="relative text-emerald-100 dark:text-emerald-900 mb-[-1px]">
           <AnimatedTruckDivider />
         </div>
         
         <CTA />
         
-        {/* Simplified static floating icons */}
+        {/* Enhanced floating icons with green accents */}
         <FloatingIcons />
       </main>
     </motion.div>
