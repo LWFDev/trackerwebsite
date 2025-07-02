@@ -43,26 +43,22 @@ export const BusinessTypeQuestion = ({ formData, updateFormData }: BusinessTypeQ
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.2 }}
-              className="cursor-pointer"
+              className={`
+                flex items-center space-x-4 rounded-md p-4 cursor-pointer
+                ${isChecked ? 'bg-[#D4AF37]/10 border-[#D4AF37]/50' : 'border-zinc-800'}
+                border hover:border-[#D4AF37]/50 transition-colors
+              `}
+              onClick={() => handleToggleType(type)}
             >
-              <div
-                className={`
-                  flex items-center space-x-3 space-y-0 rounded-md p-4
-                  ${isChecked ? 'bg-[#D4AF37]/10 border-[#D4AF37]/50' : 'border-zinc-800'}
-                  border hover:border-[#D4AF37]/50 transition-colors
-                `}
-                onClick={() => handleToggleType(type)}
-              >
-                <Checkbox
-                  id={type}
-                  checked={isChecked}
-                  onCheckedChange={() => handleToggleType(type)}
-                  className="border-zinc-600 data-[state=checked]:bg-[#D4AF37] data-[state=checked]:text-black"
-                />
-                <label htmlFor={type} className="font-medium cursor-pointer flex-1 text-gray-300">
-                  {type}
-                </label>
-              </div>
+              <Checkbox
+                id={type}
+                checked={isChecked}
+                readOnly
+                className="h-5 w-5 border-zinc-600 data-[state=checked]:bg-[#D4AF37] data-[state=checked]:text-black pointer-events-none"
+              />
+              <label htmlFor={type} className="font-medium cursor-pointer flex-1 text-gray-300 pointer-events-none">
+                {type}
+              </label>
             </motion.div>
           );
         })}
