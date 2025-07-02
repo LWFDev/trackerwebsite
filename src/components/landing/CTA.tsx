@@ -13,67 +13,66 @@ const CTA = () => {
   const { t } = useLocalization();
   
   return (
-    <section className="py-12 md:py-20 bg-gray-50 dark:bg-zinc-900 relative overflow-hidden">
-      {/* Clean, minimal background */}
-      <div className="absolute top-0 left-0 w-full h-full overflow-hidden z-0">
-        {/* Subtle gradient overlay */}
-        <div className="absolute w-[800px] h-[800px] rounded-full bg-gradient-to-br from-blue-500/3 via-emerald-500/2 to-blue-600/3 blur-[100px] opacity-60 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"></div>
+    <section className="py-16 md:py-24 bg-white dark:bg-zinc-900 relative overflow-hidden">
+      {/* Subtle background elements */}
+      <div className="absolute inset-0">
+        <div className="absolute top-1/2 left-1/4 w-96 h-96 bg-blue-50/30 dark:bg-blue-900/10 rounded-full blur-3xl transform -translate-x-1/2 -translate-y-1/2"></div>
+        <div className="absolute top-1/3 right-1/4 w-80 h-80 bg-slate-50/40 dark:bg-slate-800/20 rounded-full blur-3xl"></div>
       </div>
 
       <div className="container mx-auto px-4 relative z-10">
-        <ScrollReveal direction="up" distance="40px" duration={900}>
-          <div className="max-w-4xl mx-auto text-center">
-            <div className="inline-block px-4 py-2 bg-emerald-50 dark:bg-emerald-900/20 rounded-full border border-emerald-200 dark:border-emerald-800 mb-6">
-              <span className="text-sm text-emerald-700 dark:text-emerald-300 font-medium flex items-center justify-center">
-                <span className="bg-emerald-500 w-2 h-2 rounded-full mr-2"></span>
+        <ScrollReveal direction="up" distance="30px" duration={600}>
+          <div className="max-w-3xl mx-auto text-center">
+            <div className="inline-flex items-center px-4 py-2 bg-blue-50 dark:bg-blue-900/20 rounded-full border border-blue-100 dark:border-blue-800/50 mb-8">
+              <div className="w-2 h-2 bg-blue-500 rounded-full mr-3"></div>
+              <span className="text-sm font-medium text-blue-700 dark:text-blue-300">
                 {t("Get Started Today")}
               </span>
             </div>
 
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-6 text-gray-900 dark:text-white">
-              {t("Ready to ")} 
-              <span className="text-emerald-600 dark:text-emerald-400">
-                {t("transform your workflow?")}
-              </span>
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-6 text-gray-900 dark:text-white leading-tight">
+              {t("Ready to transform your workflow?")}
             </h2>
             
-            <p className="text-lg sm:text-xl text-gray-600 dark:text-gray-300 mb-8 max-w-2xl mx-auto">
+            <p className="text-lg sm:text-xl text-gray-600 dark:text-gray-300 mb-10 leading-relaxed">
               {t("Start your free 14-day trial today. No credit card required.")}
             </p>
             
-            <Link to="/get-started" className="inline-block">
-              <Button size="lg" className="group px-8 py-4 text-lg bg-emerald-600 hover:bg-emerald-700 text-white shadow-lg hover:shadow-xl transform transition-all duration-300 hover:-translate-y-1">
-                <span className="flex items-center">
-                  {t("Get Started")} 
-                  <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform duration-300" />
-                </span>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-8">
+              <Link to="/get-started" className="inline-block">
+                <Button size="lg" className="group px-8 py-4 text-lg bg-blue-600 hover:bg-blue-700 text-white shadow-lg hover:shadow-xl transition-all duration-200">
+                  <span className="flex items-center">
+                    {t("Get Started")} 
+                    <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform duration-200" />
+                  </span>
+                </Button>
+              </Link>
+              
+              <Button variant="outline" size="lg" className="px-8 py-4 text-lg border-gray-300 dark:border-gray-600 hover:bg-gray-50 dark:hover:bg-gray-800">
+                {t("Schedule Demo")}
               </Button>
-            </Link>
+            </div>
             
-            <p className="mt-8 text-sm text-gray-500 dark:text-gray-400">
-              {t("Join thousands of ")} 
-              <span className="text-emerald-600 dark:text-emerald-400 font-medium">
-                {t("garment decoration")}
-              </span> 
-              {t(" businesses using Tracker")}
+            <p className="text-sm text-gray-500 dark:text-gray-400">
+              {t("Join thousands of garment decoration businesses using Tracker")}
             </p>
           </div>
         </ScrollReveal>
         
-        {/* Clean feature badges */}
-        <div className="flex flex-wrap justify-center gap-6 mt-12">
-          <ScrollReveal delay={300} direction="up" className="bg-white dark:bg-zinc-800 px-6 py-3 rounded-full border border-gray-200 dark:border-zinc-700 flex items-center gap-3 shadow-sm">
-            <div className="w-2 h-2 rounded-full bg-emerald-500"></div>
+        {/* Trust indicators */}
+        <div className="flex flex-wrap justify-center gap-8 mt-16">
+          <ScrollReveal delay={200} direction="up" className="flex items-center gap-3 px-6 py-3 bg-white dark:bg-zinc-800 rounded-lg border border-gray-100 dark:border-zinc-700 shadow-sm">
+            <div className="w-2 h-2 rounded-full bg-green-500"></div>
             <span className="text-gray-700 dark:text-gray-300 text-sm font-medium">{t("14 Day Guarantee")}</span>
           </ScrollReveal>
           
-          <ScrollReveal delay={400} direction="up" className="bg-white dark:bg-zinc-800 px-6 py-3 rounded-full border border-gray-200 dark:border-zinc-700 flex items-center gap-3 shadow-sm">
+          <ScrollReveal delay={300} direction="up" className="flex items-center gap-3 px-6 py-3 bg-white dark:bg-zinc-800 rounded-lg border border-gray-100 dark:border-zinc-700 shadow-sm">
             <div className="w-2 h-2 rounded-full bg-blue-500"></div>
             <span className="text-gray-700 dark:text-gray-300 text-sm font-medium">{t("Premium Support")}</span>
-          </ScrollRevear>
+          </ScrollReveal>
           
-          <ScrollReveal delay={500} direction="up" className="bg-white dark:bg-zinc-800 px-6 py-3 rounded-full border border-gray-200 dark:border-zinc-700 flex items-center gap-3 shadow-sm">
-            <div className="w-2 h-2 rounded-full bg-emerald-500"></div>
+          <ScrollReveal delay={400} direction="up" className="flex items-center gap-3 px-6 py-3 bg-white dark:bg-zinc-800 rounded-lg border border-gray-100 dark:border-zinc-700 shadow-sm">
+            <div className="w-2 h-2 rounded-full bg-green-500"></div>
             <span className="text-gray-700 dark:text-gray-300 text-sm font-medium">{t("99.9% Uptime")}</span>
           </ScrollReveal>
         </div>
