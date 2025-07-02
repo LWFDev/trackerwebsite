@@ -38,26 +38,18 @@ const CTA = () => {
               {t("Start your free 14-day trial today. No credit card required.")}
             </p>
             
-            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-16">
+            <div className="flex justify-center items-center mb-16">
               <Link to="/get-started" className="inline-block">
                 <Button 
                   size="lg" 
-                  className="group bg-gradient-to-r from-yellow-600 to-yellow-500 hover:from-yellow-700 hover:to-yellow-600 text-white px-8 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-0.5 border-0 font-medium"
+                  className="group bg-gradient-to-r from-yellow-600 to-yellow-500 hover:from-yellow-700 hover:to-yellow-600 text-white px-12 py-4 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-0.5 border-0 font-medium text-xl"
                 >
                   <span className="flex items-center">
                     {t("Get Started")} 
-                    <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform duration-300" />
+                    <ArrowRight className="ml-3 h-6 w-6 group-hover:translate-x-1 transition-transform duration-300" />
                   </span>
                 </Button>
               </Link>
-              
-              <Button 
-                variant="outline" 
-                size="lg" 
-                className="px-8 py-4 text-lg border-2 border-slate-300 dark:border-slate-600 text-slate-700 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-800 hover:border-slate-400 dark:hover:border-slate-500 transition-all duration-300 hover:-translate-y-0.5 shadow-sm hover:shadow-md"
-              >
-                {t("Schedule Demo")}
-              </Button>
             </div>
             
             <p className="text-sm text-slate-500 dark:text-slate-400 mb-12">
@@ -65,24 +57,6 @@ const CTA = () => {
             </p>
           </div>
         </ScrollReveal>
-        
-        {/* Trust indicators */}
-        <div className="flex flex-wrap justify-center gap-8 mt-12">
-          <ScrollReveal delay={200} direction="up" className="flex items-center gap-3 px-6 py-4 bg-white/90 dark:bg-zinc-800/90 backdrop-blur-sm rounded-xl border border-slate-200/60 dark:border-zinc-700/60 shadow-sm hover:shadow-md transition-all duration-300">
-            <div className="w-3 h-3 rounded-full bg-green-500"></div>
-            <span className="text-slate-700 dark:text-slate-300 text-sm font-medium">{t("14 Day Guarantee")}</span>
-          </ScrollReveal>
-          
-          <ScrollReveal delay={300} direction="up" className="flex items-center gap-3 px-6 py-4 bg-white/90 dark:bg-zinc-800/90 backdrop-blur-sm rounded-xl border border-slate-200/60 dark:border-zinc-700/60 shadow-sm hover:shadow-md transition-all duration-300">
-            <div className="w-3 h-3 rounded-full bg-yellow-500"></div>
-            <span className="text-slate-700 dark:text-slate-300 text-sm font-medium">{t("Premium Support")}</span>
-          </ScrollReveal>
-          
-          <ScrollReveal delay={400} direction="up" className="flex items-center gap-3 px-6 py-4 bg-white/90 dark:bg-zinc-800/90 backdrop-blur-sm rounded-xl border border-slate-200/60 dark:border-zinc-700/60 shadow-sm hover:shadow-md transition-all duration-300">
-            <div className="w-3 h-3 rounded-full bg-green-500"></div>
-            <span className="text-slate-700 dark:text-slate-300 text-sm font-medium">{t("99.9% Uptime")}</span>
-          </ScrollReveal>
-        </div>
       </div>
     </section>
   );
