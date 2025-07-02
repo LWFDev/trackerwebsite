@@ -1,3 +1,4 @@
+
 import React, { useEffect } from 'react';
 import Hero from "@/components/landing/Hero";
 import Features from "@/components/landing/Features";
@@ -15,61 +16,49 @@ import { useIsMobile } from "@/hooks/use-mobile";
 import { useToast } from "@/hooks/use-toast";
 import { motion } from "framer-motion";
 
-// Improved section dividers with green accents
-const ZigzagDivider = ({ className = "" }: { className?: string }) => {
+// Fixed section dividers with proper SVG paths
+const WaveDivider = ({ className = "" }: { className?: string }) => {
   const isMobile = useIsMobile();
   return (
     <div className={`w-full overflow-hidden ${className}`}>
       <svg 
         className={`w-full ${isMobile ? 'h-8' : 'h-16'}`} 
-        viewBox="0 0 1440 48" 
-        fill="none" 
-        xmlns="http://www.w3.org/2000/svg" 
+        viewBox="0 0 1200 120" 
         preserveAspectRatio="none"
+        xmlns="http://www.w3.org/2000/svg"
       >
         <path 
-          d="M0 0L60 8C120 16 240 32 360 32C480 32 600 16 720 24C840 32 960 48 1080 42.7C1200 37.3 1320 21.3 1380 13.3L1440 5.3V48H1380C1320 48 1200 48 1080 48C960 48 840 48 720 48C600 48 480 48 360 48C240 48 120 48 60 48H0V0Z" 
-          fill="currentColor" 
+          d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z" 
+          opacity=".25" 
+          fill="currentColor"
+        />
+        <path 
+          d="M0,0V15.81C13,36.92,27.64,56.86,47.69,72.05,99.41,111.27,165,111,224.58,91.58c31.15-10.15,60.09-26.07,89.67-39.8,40.92-19,84.73-46,130.83-49.67,36.26-2.85,70.9,9.42,98.6,31.56,31.77,25.39,62.32,62,103.63,73,40.44,10.79,81.35-6.69,119.13-24.28s75.16-39,116.92-43.05c59.73-5.85,113.28,22.88,168.9,38.84,30.2,8.66,59,6.17,87.09-7.5,22.43-10.89,48-26.93,60.65-49.24V0Z" 
+          opacity=".5" 
+          fill="currentColor"
+        />
+        <path 
+          d="M0,0V5.63C149.93,59,314.09,71.32,475.83,42.57c43-7.64,84.23-20.12,127.61-26.46,59-8.63,112.48,12.24,165.56,35.4C827.93,77.22,886,95.24,951.2,90c86.53-7,172.46-45.71,248.8-84.81V0Z" 
+          fill="currentColor"
         />
       </svg>
     </div>
   );
 };
 
-const ArrowDivider = ({ className = "" }: { className?: string }) => {
+const CurveDivider = ({ className = "" }: { className?: string }) => {
   const isMobile = useIsMobile();
   return (
     <div className={`w-full overflow-hidden ${className}`}>
       <svg 
-        className={`w-full ${isMobile ? 'h-8' : 'h-12'}`} 
-        viewBox="0 0 1200 30" 
-        fill="none" 
-        xmlns="http://www.w3.org/2000/svg" 
+        className={`w-full ${isMobile ? 'h-8' : 'h-16'}`} 
+        viewBox="0 0 1200 120" 
         preserveAspectRatio="none"
+        xmlns="http://www.w3.org/2000/svg"
       >
         <path 
-          d="M0 0L50 5C100 10 200 20 300 20C400 20 500 10 600 20C700 30 800 30 900 25C1000 20 1100 10 1150 5L1200 0V30H0V0Z" 
-          fill="currentColor" 
-        />
-      </svg>
-    </div>
-  );
-};
-
-const CurvyDivider = ({ className = "" }: { className?: string }) => {
-  const isMobile = useIsMobile();
-  return (
-    <div className={`w-full overflow-hidden ${className}`}>
-      <svg 
-        className={`w-full ${isMobile ? 'h-10' : 'h-16'}`} 
-        viewBox="0 0 1440 100" 
-        fill="none" 
-        xmlns="http://www.w3.org/2000/svg" 
-        preserveAspectRatio="none"
-      >
-        <path 
-          d="M0 0C240 60 480 100 720 100C960 100 1200 60 1440 0V100H0V0Z" 
-          fill="currentColor" 
+          d="M985.66,92.83C906.67,72,823.78,31,743.84,14.19c-82.26-17.34-168.06-16.33-250.45.39-57.84,11.73-114,31.07-172,41.86A600.21,600.21,0,0,1,0,27.35V120H1200V95.8C1132.19,118.92,1055.71,111.31,985.66,92.83Z" 
+          fill="currentColor"
         />
       </svg>
     </div>
@@ -82,33 +71,32 @@ const TriangleDivider = ({ className = "" }: { className?: string }) => {
     <div className={`w-full overflow-hidden ${className}`}>
       <svg 
         className={`w-full ${isMobile ? 'h-8' : 'h-16'}`} 
-        viewBox="0 0 1440 100" 
-        fill="none" 
-        xmlns="http://www.w3.org/2000/svg" 
+        viewBox="0 0 1200 120" 
         preserveAspectRatio="none"
+        xmlns="http://www.w3.org/2000/svg"
       >
         <path 
-          d="M0 100L720 0L1440 100H0Z" 
-          fill="currentColor" 
+          d="M600,112.77C268.63,112.77,0,65.52,0,7.23V120H1200V7.23C1200,65.52,931.37,112.77,600,112.77Z" 
+          fill="currentColor"
         />
       </svg>
     </div>
   );
 };
 
-// SVG curve divider - flipped horizontally
-const SlopesDivider = ({ className = "" }: { className?: string }) => {
+const ArrowDivider = ({ className = "" }: { className?: string }) => {
   const isMobile = useIsMobile();
   return (
     <div className={`w-full overflow-hidden ${className}`}>
       <svg 
         className={`w-full ${isMobile ? 'h-8' : 'h-16'}`} 
-        viewBox="0 0 100 10" 
+        viewBox="0 0 1200 120" 
         preserveAspectRatio="none"
+        xmlns="http://www.w3.org/2000/svg"
       >
         <path 
-          d="M0 0L35 5L65 0L100 5V10H0V0Z" 
-          fill="currentColor" 
+          d="M649.97,0L550.03,0,599.91,54.12,649.97,0Z" 
+          fill="currentColor"
         />
       </svg>
     </div>
@@ -183,7 +171,7 @@ const Index = () => {
         <Features />
         
         <div className="relative text-green-600 dark:text-green-400 mb-[-1px]">
-          <SlopesDivider />
+          <WaveDivider />
         </div>
         
         <Workflow />
@@ -195,14 +183,14 @@ const Index = () => {
         <Results />
         
         <div className="relative text-green-600 dark:text-green-400 mb-[-1px]">
-          <ZigzagDivider />
+          <CurveDivider />
         </div>
         
         {/* StoryTelling component */}
         <StoryTelling />
         
         <div className="relative text-emerald-600 dark:text-emerald-400 mb-[-1px]">
-          <CurvyDivider />
+          <WaveDivider />
         </div>
         
         {/* WhyChooseUs section */}
@@ -218,7 +206,7 @@ const Index = () => {
         <Integration />
         
         <div className="relative text-green-600 dark:text-green-400 mb-[-1px]">
-          <CurvyDivider />
+          <CurveDivider />
         </div>
         
         <Testimonials />
