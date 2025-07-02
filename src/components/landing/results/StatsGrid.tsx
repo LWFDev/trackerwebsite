@@ -22,7 +22,7 @@ const StatsGrid = () => {
     <ScrollReveal className="mb-12">
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
         <FeaturedStat number="10,000+" label="Orders Processed" bgColor="bg-gradient-to-br from-emerald-600 to-emerald-700 dark:from-emerald-700 dark:to-emerald-800 light:from-emerald-600 light:to-emerald-700" />
-        <FeaturedStat number="500+" label="Active businesses" bgColor="bg-gradient-to-br from-green-500 to-emerald-600 dark:from-green-600 dark:to-emerald-700 light:from-green-500 light:to-emerald-600" />
+        <FeaturedStat number="500+" label="Garments Designed" bgColor="bg-gradient-to-br from-green-500 to-emerald-600 dark:from-green-600 dark:to-emerald-700 light:from-green-500 light:to-emerald-600" />
         <FeaturedStat number="32%" label="Average time saved" bgColor="bg-gradient-to-br from-emerald-600 to-emerald-700 dark:from-emerald-700 dark:to-emerald-800 light:from-emerald-600 light:to-emerald-700" />
         <FeaturedStat number="24/7" label="Customer support" bgColor="bg-gradient-to-br from-green-500 to-emerald-600 dark:from-green-600 dark:to-emerald-700 light:from-green-500 light:to-emerald-600" />
       </div>
