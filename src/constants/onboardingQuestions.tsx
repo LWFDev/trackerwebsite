@@ -4,6 +4,5 @@
 export { 
   onboardingSteps,
   businessQuestions,
-  contactQuestions,
-  accountQuestions
+  contactQuestions
 } from './onboarding';
