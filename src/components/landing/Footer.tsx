@@ -1,28 +1,21 @@
-
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Switch } from '@/components/ui/switch';
 import { useTheme } from '@/contexts/ThemeContext';
 import { Sun, Moon } from 'lucide-react';
-
 const Footer = () => {
-  const { isDarkMode, toggleTheme } = useTheme();
-
-  return (
-    <footer className="theme-surface theme-text-secondary py-12 theme-border border-t transition-colors duration-300">
+  const {
+    isDarkMode,
+    toggleTheme
+  } = useTheme();
+  return <footer className="theme-surface theme-text-secondary py-12 theme-border border-t transition-colors duration-300">
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
           <div>
             <Link to="/" className="block">
-              <img 
-                src="https://nubosync.com/wp-content/uploads/2025/04/tracker_logo.png" 
-                alt="Tracker Logo" 
-                className="h-8 w-auto" 
-              />
+              <img src="https://nubosync.com/wp-content/uploads/2025/04/tracker_logo.png" alt="Tracker Logo" className="h-8 w-auto" />
             </Link>
-            <p className="text-sm mt-4">
-              The complete platform for managing your production workflow from design to delivery.
-            </p>
+            <p className="text-sm mt-4">Garment Decorators premier line of business software from proof &amp; logo management, to order tracking, advanced production scheduling, to logistics.</p>
           </div>
           <div>
             <h4 className="theme-text font-medium mb-4">Product</h4>
@@ -59,11 +52,7 @@ const Footer = () => {
             <p className="text-sm mb-4 md:mb-0">© 2025 Tracker US. All rights reserved.</p>
             <div className="flex items-center space-x-3">
               <Sun className="h-4 w-4 text-gray-500" />
-              <Switch 
-                checked={isDarkMode} 
-                onCheckedChange={toggleTheme}
-                className="data-[state=checked]:bg-[#D4AF37] data-[state=unchecked]:bg-gray-300"
-              />
+              <Switch checked={isDarkMode} onCheckedChange={toggleTheme} className="data-[state=checked]:bg-[#D4AF37] data-[state=unchecked]:bg-gray-300" />
               <Moon className="h-4 w-4 text-gray-500" />
               <span className="text-sm font-medium">
                 {isDarkMode ? 'Dark' : 'Light'} Mode
@@ -72,8 +61,6 @@ const Footer = () => {
           </div>
         </div>
       </div>
-    </footer>
-  );
+    </footer>;
 };
-
 export default Footer;
