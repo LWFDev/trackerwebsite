@@ -1,9 +1,7 @@
-
 import React from "react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { CheckCircle, Zap, ArrowRight, Target } from "lucide-react";
-
 const TrackerProvides = () => {
   const keyFeatures = [{
     text: "End-to-end process tracking",
@@ -18,9 +16,7 @@ const TrackerProvides = () => {
     text: "Multi-site operations support",
     icon: <ArrowRight className="h-5 w-5" />
   }];
-
-  return (
-    <section className="mb-24">
+  return <section className="mb-24">
       <div className="text-center mb-16">
         <Badge variant="outline" className="mb-6 px-6 py-3 text-gray-700 border-gray-200 bg-gray-50 font-medium">
           <Zap className="h-4 w-4 mr-2 text-emerald-600" />
@@ -37,11 +33,7 @@ const TrackerProvides = () => {
             <div className="space-y-8">
               <Card className="border-emerald-100 bg-emerald-50/50 shadow-sm">
                 <CardContent className="p-6">
-                  <img 
-                    src="/lovable-uploads/74104891-c670-4c0b-95bd-58f41eb753f3.png" 
-                    alt="Warehouse worker packing orders with Tracker system"
-                    className="w-full h-auto rounded-lg shadow-sm"
-                  />
+                  <img src="/lovable-uploads/74104891-c670-4c0b-95bd-58f41eb753f3.png" alt="Warehouse worker packing orders with Tracker system" className="w-full h-auto rounded-lg shadow-sm" />
                 </CardContent>
               </Card>
             </div>
@@ -49,31 +41,27 @@ const TrackerProvides = () => {
             <div className="space-y-4">
               <Card className="border-gold/20 bg-gold/5 shadow-sm">
                 <CardContent className="p-6">
-                  <p className="text-lg leading-relaxed text-gray-700">
+                  <p className="text-lg leading-relaxed text-slate-50">
                     Tracker provides confidence and clarity – for today's requirements as well as supporting the strategic needs and planning for tomorrow. In a fast-paced and changing world, Tracker also allows key people to have instant and secure access to business intelligence and data from anywhere there is an internet connection.
                   </p>
                 </CardContent>
               </Card>
               
-              {keyFeatures.map((feature, index) => (
-                <Card key={index} className="border-gray-200 hover:border-emerald-300 hover:shadow-md transition-all group">
+              {keyFeatures.map((feature, index) => <Card key={index} className="border-gray-200 hover:border-emerald-300 hover:shadow-md transition-all group">
                   <CardContent className="p-6">
                     <div className="flex items-center space-x-4">
                       <div className="flex-shrink-0 w-10 h-10 bg-emerald-500 rounded-lg flex items-center justify-center text-white shadow-sm">
                         {feature.icon}
                       </div>
-                      <span className="font-semibold flex-1 text-gray-900">{feature.text}</span>
+                      <span className="font-semibold flex-1 text-slate-50">{feature.text}</span>
                       <ArrowRight className="h-4 w-4 text-emerald-500 opacity-0 group-hover:opacity-100 transition-opacity" />
                     </div>
                   </CardContent>
-                </Card>
-              ))}
+                </Card>)}
             </div>
           </div>
         </CardContent>
       </Card>
-    </section>
-  );
+    </section>;
 };
-
 export default TrackerProvides;
