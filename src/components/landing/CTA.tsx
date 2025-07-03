@@ -31,7 +31,7 @@ const CTA = () => {
             </div>
 
             <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-6 text-slate-900 dark:text-white leading-tight">
-              {t("Ready to transform your workflow?")}
+              {t("Ready to transform your business?")}
             </h2>
             
             <p className="text-xl text-slate-600 dark:text-slate-400 mb-12 leading-relaxed max-w-2xl mx-auto">
