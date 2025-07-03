@@ -1,3 +1,4 @@
+
 import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
@@ -21,13 +22,13 @@ const FAQ = () => {
   const faqSections: FAQSection[] = [
     {
       title: "General Questions",
-      icon: <HelpCircle size={20} className="text-[#D4AF37]" />,
+      icon: <HelpCircle size={20} className="text-[#0176d3]" />,
       faqs: [
         {
           question: "How do I know if Tracker is right for us?",
           answer: (
             <>
-              Tracker is designed for <a href="/about" className="text-[#D4AF37] hover:underline">garment decoration businesses</a> of all sizes, from small startups to large enterprises. If you're managing orders, inventory, production, or customer relationships in the custom apparel industry, Tracker can streamline your operations. We offer <a href="/contact" className="text-[#D4AF37] hover:underline">demos and consultations</a> to help you evaluate if our platform fits your specific needs.
+              Tracker is designed for <a href="/about" className="text-[#0176d3] hover:underline font-medium">garment decoration businesses</a> of all sizes, from small startups to large enterprises. If you're managing orders, inventory, production, or customer relationships in the custom apparel industry, Tracker can streamline your operations. We offer <a href="/contact" className="text-[#0176d3] hover:underline font-medium">demos and consultations</a> to help you evaluate if our platform fits your specific needs.
             </>
           )
         },
@@ -35,7 +36,7 @@ const FAQ = () => {
           question: "Can I have a demo to see Tracker in action?",
           answer: (
             <>
-              Absolutely! We provide personalized demos tailored to your business needs. During the demo, we'll show you how Tracker's <a href="/modules" className="text-[#D4AF37] hover:underline">modules</a> work together to manage your entire workflow, from order intake to production and delivery. <a href="/contact" className="text-[#D4AF37] hover:underline">Contact our sales team</a> to schedule a demo at your convenience.
+              Absolutely! We provide personalized demos tailored to your business needs. During the demo, we'll show you how Tracker's <a href="/modules" className="text-[#0176d3] hover:underline font-medium">modules</a> work together to manage your entire workflow, from order intake to production and delivery. <a href="/contact" className="text-[#0176d3] hover:underline font-medium">Contact our sales team</a> to schedule a demo at your convenience.
             </>
           )
         },
@@ -43,7 +44,7 @@ const FAQ = () => {
           question: "Is Tracker only for garment decoration businesses?",
           answer: (
             <>
-              Yes, Tracker is specifically designed for the garment decoration industry, including screen printing, embroidery, promotional products, and custom apparel businesses. Our specialized <a href="/modules" className="text-[#D4AF37] hover:underline">modules and workflows</a> are built to handle the unique challenges of this industry, from <a href="/modules/logos" className="text-[#D4AF37] hover:underline">artwork management</a> to <a href="/modules/production" className="text-[#D4AF37] hover:underline">production scheduling</a>.
+              Yes, Tracker is specifically designed for the garment decoration industry, including screen printing, embroidery, promotional products, and custom apparel businesses. Our specialized <a href="/modules" className="text-[#0176d3] hover:underline font-medium">modules and workflows</a> are built to handle the unique challenges of this industry, from <a href="/modules/logos" className="text-[#0176d3] hover:underline font-medium">artwork management</a> to <a href="/modules/production" className="text-[#0176d3] hover:underline font-medium">production scheduling</a>.
             </>
           )
         },
@@ -51,7 +52,7 @@ const FAQ = () => {
           question: "What size / type of businesses use Tracker?",
           answer: (
             <>
-              Tracker serves businesses ranging from small family-owned shops to large commercial operations. Our customers include screen printers, embroiderers, promotional product companies, corporate apparel suppliers, and multi-location enterprises. Our scalable platform grows with your business needs. Learn more <a href="/about" className="text-[#D4AF37] hover:underline">about our story</a> and the businesses we serve.
+              Tracker serves businesses ranging from small family-owned shops to large commercial operations. Our customers include screen printers, embroiderers, promotional product companies, corporate apparel suppliers, and multi-location enterprises. Our scalable platform grows with your business needs. Learn more <a href="/about" className="text-[#0176d3] hover:underline font-medium">about our story</a> and the businesses we serve.
             </>
           )
         }
@@ -59,13 +60,13 @@ const FAQ = () => {
     },
     {
       title: "Pricing & Costs",
-      icon: <DollarSign size={20} className="text-[#D4AF37]" />,
+      icon: <DollarSign size={20} className="text-[#0176d3]" />,
       faqs: [
         {
           question: "How much is Tracker?",
           answer: (
             <>
-              Tracker offers flexible <a href="/pricing" className="text-[#D4AF37] hover:underline">pricing plans</a> to suit different business sizes and needs. Our pricing is based on the <a href="/modules" className="text-[#D4AF37] hover:underline">modules</a> you need and the number of users. We offer Starter, Professional, and Enterprise tiers, with the option to customize your package. <a href="/contact" className="text-[#D4AF37] hover:underline">Contact us</a> for detailed pricing information and to discuss which plan works best for your business.
+              Tracker offers flexible <a href="/pricing" className="text-[#0176d3] hover:underline font-medium">pricing plans</a> to suit different business sizes and needs. Our pricing is based on the <a href="/modules" className="text-[#0176d3] hover:underline font-medium">modules</a> you need and the number of users. We offer Starter, Professional, and Enterprise tiers, with the option to customize your package. <a href="/contact" className="text-[#0176d3] hover:underline font-medium">Contact us</a> for detailed pricing information and to discuss which plan works best for your business.
             </>
           )
         },
@@ -73,7 +74,7 @@ const FAQ = () => {
           question: "Do I have to pay for scoping?",
           answer: (
             <>
-              Initial <a href="/contact" className="text-[#D4AF37] hover:underline">consultations</a> and basic scoping are provided at no cost to help us understand your requirements. For complex implementations requiring extensive customization or integration work, detailed scoping may be part of the implementation project cost. We'll always be transparent about any costs involved upfront.
+              Initial <a href="/contact" className="text-[#0176d3] hover:underline font-medium">consultations</a> and basic scoping are provided at no cost to help us understand your requirements. For complex implementations requiring extensive customization or integration work, detailed scoping may be part of the implementation project cost. We'll always be transparent about any costs involved upfront.
             </>
           )
         },
@@ -81,7 +82,7 @@ const FAQ = () => {
           question: "Are there hidden costs once I have Tracker?",
           answer: (
             <>
-              All costs will be clear on your project agreement and licensing agreement. Nobody likes those sorts of surprises! Our <a href="/pricing" className="text-[#D4AF37] hover:underline">pricing</a> includes hosting, <a href="/support" className="text-[#D4AF37] hover:underline">support</a>, and regular updates. Any additional costs for extra <a href="/modules" className="text-[#D4AF37] hover:underline">modules</a>, integrations, or customizations will be discussed and agreed upon before implementation.
+              All costs will be clear on your project agreement and licensing agreement. Nobody likes those sorts of surprises! Our <a href="/pricing" className="text-[#0176d3] hover:underline font-medium">pricing</a> includes hosting, <a href="/support" className="text-[#0176d3] hover:underline font-medium">support</a>, and regular updates. Any additional costs for extra <a href="/modules" className="text-[#0176d3] hover:underline font-medium">modules</a>, integrations, or customizations will be discussed and agreed upon before implementation.
             </>
           )
         }
@@ -89,13 +90,13 @@ const FAQ = () => {
     },
     {
       title: "Implementation & Setup",
-      icon: <Settings size={20} className="text-[#D4AF37]" />,
+      icon: <Settings size={20} className="text-[#0176d3]" />,
       faqs: [
         {
           question: "How long does it take to implement Tracker?",
           answer: (
             <>
-              Depending on the complexity of the setup, it can be anything from 6 weeks to 12-18 months. Very big projects with multiple <a href="/modules/integration-platform" className="text-[#D4AF37] hover:underline">integrations</a> (e.g. ERPs) will take longer than a smaller business with just website/accounts integration. We'll provide a detailed timeline during the scoping phase based on your specific requirements. <a href="/get-started" className="text-[#D4AF37] hover:underline">Get started</a> with our implementation process today.
+              Depending on the complexity of the setup, it can be anything from 6 weeks to 12-18 months. Very big projects with multiple <a href="/modules/integration-platform" className="text-[#0176d3] hover:underline font-medium">integrations</a> (e.g. ERPs) will take longer than a smaller business with just website/accounts integration. We'll provide a detailed timeline during the scoping phase based on your specific requirements. <a href="/get-started" className="text-[#0176d3] hover:underline font-medium">Get started</a> with our implementation process today.
             </>
           )
         },
@@ -103,7 +104,7 @@ const FAQ = () => {
           question: "Do I need anything special to be able to use Tracker?",
           answer: (
             <>
-              Once setup, you can use Tracker anywhere you have an internet connection, via a modern web browser. No special software installation is required on your computers. We recommend using updated versions of Chrome, Firefox, Safari, or Edge for the best experience. Learn more about our system requirements in our <a href="/documentation" className="text-[#D4AF37] hover:underline">documentation</a>.
+              Once setup, you can use Tracker anywhere you have an internet connection, via a modern web browser. No special software installation is required on your computers. We recommend using updated versions of Chrome, Firefox, Safari, or Edge for the best experience. Learn more about our system requirements in our <a href="/documentation" className="text-[#0176d3] hover:underline font-medium">documentation</a>.
             </>
           )
         },
@@ -111,7 +112,7 @@ const FAQ = () => {
           question: "How is training / onboarding managed?",
           answer: (
             <>
-              This will be agreed as part of the implementation process, and can be online / face to face, or a 'train the trainer' approach. Most onboarding is a mixture of online and in-person, depending on your location and the nature of the project. We provide comprehensive <a href="/documentation" className="text-[#D4AF37] hover:underline">documentation</a>, video tutorials, and ongoing <a href="/support" className="text-[#D4AF37] hover:underline">support</a> to ensure your team is successful.
+              This will be agreed as part of the implementation process, and can be online / face to face, or a 'train the trainer' approach. Most onboarding is a mixture of online and in-person, depending on your location and the nature of the project. We provide comprehensive <a href="/documentation" className="text-[#0176d3] hover:underline font-medium">documentation</a>, video tutorials, and ongoing <a href="/support" className="text-[#0176d3] hover:underline font-medium">support</a> to ensure your team is successful.
             </>
           )
         },
@@ -119,7 +120,7 @@ const FAQ = () => {
           question: "Can I see / talk to someone already using Tracker?",
           answer: (
             <>
-              As part of the discovery/onboarding process, we can arrange this for you. We have many satisfied customers who are happy to share their experiences and discuss how Tracker has improved their operations. Customer references and case studies can be provided upon request. <a href="/contact" className="text-[#D4AF37] hover:underline">Contact us</a> to arrange a customer reference call.
+              As part of the discovery/onboarding process, we can arrange this for you. We have many satisfied customers who are happy to share their experiences and discuss how Tracker has improved their operations. Customer references and case studies can be provided upon request. <a href="/contact" className="text-[#0176d3] hover:underline font-medium">Contact us</a> to arrange a customer reference call.
             </>
           )
         }
@@ -127,13 +128,13 @@ const FAQ = () => {
     },
     {
       title: "Support & Access",
-      icon: <Globe size={20} className="text-[#D4AF37]" />,
+      icon: <Globe size={20} className="text-[#0176d3]" />,
       faqs: [
         {
           question: "Is Tracker available globally or just in the UK?",
           answer: (
             <>
-              We have customers in UK/Europe and USA, but the system can be accessed from any internet connection. Currently we only offer the interface in English, however. Our cloud-based platform ensures reliable access worldwide with data centers strategically located for optimal performance. Learn more <a href="/about" className="text-[#D4AF37] hover:underline">about our global reach</a>.
+              We have customers in UK/Europe and USA, but the system can be accessed from any internet connection. Currently we only offer the interface in English, however. Our cloud-based platform ensures reliable access worldwide with data centers strategically located for optimal performance. Learn more <a href="/about" className="text-[#0176d3] hover:underline font-medium">about our global reach</a>.
             </>
           )
         }
@@ -141,13 +142,13 @@ const FAQ = () => {
     },
     {
       title: "Account Management",
-      icon: <Sparkles size={20} className="text-[#D4AF37]" />,
+      icon: <Sparkles size={20} className="text-[#0176d3]" />,
       faqs: [
         {
           question: "Can I switch plans later?",
           answer: (
             <>
-              Yes, you can upgrade or downgrade your <a href="/pricing" className="text-[#D4AF37] hover:underline">plan</a> at any time. When upgrading, your new features will be available immediately. If downgrading, the changes will apply at the start of your next billing cycle. Our team will help ensure a smooth transition and assist with any <a href="/modules" className="text-[#D4AF37] hover:underline">module</a> adjustments needed.
+              Yes, you can upgrade or downgrade your <a href="/pricing" className="text-[#0176d3] hover:underline font-medium">plan</a> at any time. When upgrading, your new features will be available immediately. If downgrading, the changes will apply at the start of your next billing cycle. Our team will help ensure a smooth transition and assist with any <a href="/modules" className="text-[#0176d3] hover:underline font-medium">module</a> adjustments needed.
             </>
           )
         },
@@ -155,7 +156,7 @@ const FAQ = () => {
           question: "What happens after my free trial?",
           answer: (
             <>
-              After your trial period, you'll have the opportunity to choose the <a href="/pricing" className="text-[#D4AF37] hover:underline">plan</a> that best fits your needs. We'll work with you to ensure you're selecting the right <a href="/modules" className="text-[#D4AF37] hover:underline">modules</a> and user count for your business. There's no automatic billing - we'll discuss your options and help you make an informed decision.
+              After your trial period, you'll have the opportunity to choose the <a href="/pricing" className="text-[#0176d3] hover:underline font-medium">plan</a> that best fits your needs. We'll work with you to ensure you're selecting the right <a href="/modules" className="text-[#0176d3] hover:underline font-medium">modules</a> and user count for your business. There's no automatic billing - we'll discuss your options and help you make an informed decision.
             </>
           )
         },
@@ -163,7 +164,7 @@ const FAQ = () => {
           question: "Do you offer discounts for annual billing?",
           answer: (
             <>
-              Yes, we offer significant savings for customers who choose annual billing over monthly payments. The exact discount varies by <a href="/pricing" className="text-[#D4AF37] hover:underline">plan level</a>, and we'll calculate the savings for your specific configuration. Annual billing also simplifies your budgeting and reduces administrative overhead.
+              Yes, we offer significant savings for customers who choose annual billing over monthly payments. The exact discount varies by <a href="/pricing" className="text-[#0176d3] hover:underline font-medium">plan level</a>, and we'll calculate the savings for your specific configuration. Annual billing also simplifies your budgeting and reduces administrative overhead.
             </>
           )
         },
@@ -171,7 +172,7 @@ const FAQ = () => {
           question: "What payment methods do you accept?",
           answer: (
             <>
-              We accept various payment methods including bank transfers, checks, and major credit cards for smaller accounts. For enterprise customers, we can work with your preferred payment terms and methods. Our billing team will coordinate with your accounts payable process to ensure smooth payments. <a href="/contact" className="text-[#D4AF37] hover:underline">Contact us</a> for specific payment arrangements.
+              We accept various payment methods including bank transfers, checks, and major credit cards for smaller accounts. For enterprise customers, we can work with your preferred payment terms and methods. Our billing team will coordinate with your accounts payable process to ensure smooth payments. <a href="/contact" className="text-[#0176d3] hover:underline font-medium">Contact us</a> for specific payment arrangements.
             </>
           )
         },
@@ -179,7 +180,7 @@ const FAQ = () => {
           question: "Can I get a refund if I'm not satisfied?",
           answer: (
             <>
-              We stand behind our product and want you to be completely satisfied. While refund policies are determined on a case-by-case basis, we work hard to address any concerns and ensure you're getting value from Tracker. Our extensive trial and <a href="/contact" className="text-[#D4AF37] hover:underline">demo process</a> helps ensure a good fit before you commit.
+              We stand behind our product and want you to be completely satisfied. While refund policies are determined on a case-by-case basis, we work hard to address any concerns and ensure you're getting value from Tracker. Our extensive trial and <a href="/contact" className="text-[#0176d3] hover:underline font-medium">demo process</a> helps ensure a good fit before you commit.
             </>
           )
         },
@@ -187,7 +188,7 @@ const FAQ = () => {
           question: "Do I need technical knowledge to use your platform?",
           answer: (
             <>
-              No, Tracker is designed to be user-friendly for garment decoration professionals, not IT experts. While some admin functions may require basic technical understanding, day-to-day operations are intuitive. We provide comprehensive <a href="/documentation" className="text-[#D4AF37] hover:underline">training and documentation</a> and <a href="/support" className="text-[#D4AF37] hover:underline">support</a> to help your team become proficient quickly.
+              No, Tracker is designed to be user-friendly for garment decoration professionals, not IT experts. While some admin functions may require basic technical understanding, day-to-day operations are intuitive. We provide comprehensive <a href="/documentation" className="text-[#0176d3] hover:underline font-medium">training and documentation</a> and <a href="/support" className="text-[#0176d3] hover:underline font-medium">support</a> to help your team become proficient quickly.
             </>
           )
         },
@@ -195,7 +196,7 @@ const FAQ = () => {
           question: "Can I customize the platform to match my brand?",
           answer: (
             <>
-              Yes, Tracker can be customized to reflect your brand identity. This includes adding your logo, adjusting color schemes, and customizing certain interface elements. More extensive customizations are available depending on your <a href="/pricing" className="text-[#D4AF37] hover:underline">plan level</a> and specific requirements. We'll discuss branding options during implementation.
+              Yes, Tracker can be customized to reflect your brand identity. This includes adding your logo, adjusting color schemes, and customizing certain interface elements. More extensive customizations are available depending on your <a href="/pricing" className="text-[#0176d3] hover:underline font-medium">plan level</a> and specific requirements. We'll discuss branding options during implementation.
             </>
           )
         }
@@ -227,67 +228,41 @@ const FAQ = () => {
   };
 
   return (
-    <div className="min-h-screen bg-black relative">
-      {/* Background elements */}
-      <div className="absolute top-0 left-0 w-full h-full overflow-hidden z-0">
-        <div className="absolute w-[600px] h-[600px] rounded-full bg-[#D4AF37]/5 blur-[120px] top-1/4 right-0"></div>
-        <div className="absolute w-[800px] h-[800px] rounded-full bg-[#D4AF37]/3 blur-[150px] bottom-0 left-0"></div>
-        
-        {/* Floating particles */}
-        <div className="absolute inset-0 pointer-events-none">
-          {[...Array(8)].map((_, i) => (
-            <motion.div
-              key={i}
-              className="absolute bg-[#D4AF37]/20 rounded-full w-2 h-2"
-              initial={{
-                x: Math.random() * (typeof window !== 'undefined' ? window.innerWidth : 1200),
-                y: Math.random() * (typeof window !== 'undefined' ? window.innerHeight : 800),
-                opacity: Math.random() * 0.5 + 0.3
-              }}
-              animate={{
-                y: [null, "-20vh"],
-                opacity: [null, 0]
-              }}
-              transition={{
-                duration: Math.random() * 15 + 20,
-                repeat: Infinity,
-                ease: "linear"
-              }}
-              style={{
-                left: `${Math.random() * 100}%`,
-                top: `${Math.random() * 100}%`,
-                scale: Math.random() * 0.5 + 0.5
-              }}
-            />
-          ))}
+    <div className="min-h-screen bg-white">
+      {/* Salesforce-style header gradient */}
+      <div className="bg-gradient-to-r from-[#0176d3] to-[#1589ee] relative overflow-hidden">
+        {/* Background pattern */}
+        <div className="absolute inset-0 opacity-10">
+          <div className="absolute w-96 h-96 rounded-full bg-white/20 -top-48 -right-48"></div>
+          <div className="absolute w-64 h-64 rounded-full bg-white/10 top-32 right-1/4"></div>
+          <div className="absolute w-32 h-32 rounded-full bg-white/15 bottom-16 right-16"></div>
         </div>
-      </div>
 
-      <div className="container mx-auto px-4 py-20 relative z-10">
-        {/* Hero Section */}
-        <ScrollReveal threshold={0.1} delay={100}>
+        <div className="container mx-auto px-6 py-20 relative z-10">
           <motion.div 
-            className="mb-16 text-center"
+            className="text-center max-w-4xl mx-auto"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
           >
-            <div className="inline-flex items-center gap-2 px-4 py-1.5 bg-zinc-800/80 backdrop-blur-sm rounded-full border border-zinc-700 mb-6">
-              <HelpCircle size={16} className="text-[#D4AF37]" />
-              <span className="text-sm text-[#D4AF37] uppercase font-medium tracking-wider">Support Center</span>
+            <div className="inline-flex items-center gap-2 px-4 py-2 bg-white/20 backdrop-blur-sm rounded-full border border-white/30 mb-8">
+              <HelpCircle size={16} className="text-white" />
+              <span className="text-sm text-white font-medium tracking-wide">SUPPORT CENTER</span>
             </div>
             
-            <h1 className="text-4xl md:text-5xl font-bold text-center mb-4">
-              Frequently Asked <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#D4AF37] to-[#F2D675]">Questions</span>
+            <h1 className="text-5xl md:text-6xl font-light text-white mb-6 leading-tight">
+              Frequently Asked Questions
             </h1>
-            <p className="text-xl text-gray-400 max-w-2xl mx-auto">
+            <p className="text-xl text-white/90 max-w-2xl mx-auto font-light leading-relaxed">
               Find answers to common questions about Tracker, our pricing, implementation, and support.
             </p>
           </motion.div>
-        </ScrollReveal>
+        </div>
+      </div>
 
-        {/* FAQ Sections */}
-        <div className="max-w-4xl mx-auto space-y-12">
+      {/* FAQ Content */}
+      <div className="container mx-auto px-6 py-16">
+        <div className="max-w-4xl mx-auto">
           {faqSections.map((section, sectionIndex) => (
             <motion.div
               key={section.title}
@@ -295,14 +270,21 @@ const FAQ = () => {
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true, amount: 0.1 }}
-              className="space-y-4"
+              className="mb-16"
             >
-              <div className="flex items-center gap-3 mb-6">
-                {section.icon}
-                <h2 className="text-2xl font-semibold text-white">{section.title}</h2>
+              {/* Section Header */}
+              <div className="flex items-center gap-3 mb-8 pb-4 border-b-2 border-gray-100">
+                <div className="w-10 h-10 bg-[#0176d3] rounded-lg flex items-center justify-center">
+                  {React.cloneElement(section.icon as React.ReactElement, { 
+                    size: 20, 
+                    className: "text-white" 
+                  })}
+                </div>
+                <h2 className="text-2xl font-medium text-gray-900">{section.title}</h2>
               </div>
               
-              <Accordion type="single" collapsible className="space-y-4">
+              {/* FAQ Items */}
+              <div className="space-y-4">
                 {section.faqs.map((faq, index) => {
                   const itemId = `${section.title}-${index}`;
                   return (
@@ -311,55 +293,63 @@ const FAQ = () => {
                       variants={itemVariants}
                       onMouseEnter={() => setHoveredItem(itemId)}
                       onMouseLeave={() => setHoveredItem(null)}
+                      className={`bg-white border border-gray-200 rounded-lg shadow-sm transition-all duration-200 ${
+                        hoveredItem === itemId ? 'shadow-md border-[#0176d3]/30' : ''
+                      }`}
                     >
-                      <AccordionItem 
-                        value={`faq-${sectionIndex}-${index}`} 
-                        className={`border border-zinc-800 rounded-lg overflow-hidden bg-zinc-900/80 backdrop-blur-sm transition-all duration-300 ${hoveredItem === itemId ? 'border-[#D4AF37]/50 shadow-lg shadow-[#D4AF37]/10' : ''}`}
-                      >
-                        <AccordionTrigger className="px-6 py-4 hover:bg-zinc-800 transition-colors text-left">
-                          <span className="text-left font-medium">{faq.question}</span>
-                        </AccordionTrigger>
-                        <AccordionContent className="px-6 py-4 text-gray-300">
-                          <motion.div
-                            initial={{ opacity: 0, y: -10 }}
-                            animate={{ opacity: 1, y: 0 }}
-                            transition={{ duration: 0.3 }}
-                          >
-                            {faq.answer}
-                          </motion.div>
-                        </AccordionContent>
-                      </AccordionItem>
+                      <Accordion type="single" collapsible>
+                        <AccordionItem 
+                          value={`faq-${sectionIndex}-${index}`} 
+                          className="border-none"
+                        >
+                          <AccordionTrigger className="px-6 py-5 hover:no-underline text-left font-medium text-gray-900 hover:text-[#0176d3] data-[state=open]:text-[#0176d3] transition-colors">
+                            <span className="text-left">{faq.question}</span>
+                          </AccordionTrigger>
+                          <AccordionContent className="px-6 pb-5 text-gray-700 leading-relaxed">
+                            <motion.div
+                              initial={{ opacity: 0, y: -10 }}
+                              animate={{ opacity: 1, y: 0 }}
+                              transition={{ duration: 0.3 }}
+                            >
+                              {faq.answer}
+                            </motion.div>
+                          </AccordionContent>
+                        </AccordionItem>
+                      </Accordion>
                     </motion.div>
                   );
                 })}
-              </Accordion>
+              </div>
             </motion.div>
           ))}
         </div>
 
-        {/* Contact CTA */}
-        <ScrollReveal threshold={0.1} delay={300} className="mt-20">
-          <div className="text-center bg-zinc-900/50 backdrop-blur-md border border-zinc-800 rounded-xl p-8 max-w-3xl mx-auto">
-            <h3 className="text-2xl font-semibold mb-4">Still have questions?</h3>
-            <p className="text-gray-400 mb-6">
-              Can't find the answer you're looking for? Our team is here to help you get started.
+        {/* Contact CTA - Salesforce style */}
+        <div className="max-w-4xl mx-auto mt-20">
+          <div className="bg-gradient-to-r from-[#f3f4f6] to-[#e5e7eb] rounded-2xl p-12 text-center border border-gray-200">
+            <div className="w-16 h-16 bg-[#0176d3] rounded-full flex items-center justify-center mx-auto mb-6">
+              <HelpCircle className="w-8 h-8 text-white" />
+            </div>
+            <h3 className="text-3xl font-light text-gray-900 mb-4">Still have questions?</h3>
+            <p className="text-lg text-gray-600 mb-8 max-w-2xl mx-auto leading-relaxed">
+              Can't find the answer you're looking for? Our team is here to help you get started with Tracker.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a 
                 href="/contact" 
-                className="bg-gradient-to-r from-[#D4AF37] to-[#F2D675] hover:from-[#F2D675] hover:to-[#D4AF37] text-black px-6 py-3 rounded-lg font-medium transition-all duration-300 hover:-translate-y-1"
+                className="bg-[#0176d3] hover:bg-[#014486] text-white px-8 py-3 rounded-lg font-medium transition-all duration-200 hover:shadow-lg transform hover:-translate-y-0.5"
               >
                 Contact Support
               </a>
               <a 
                 href="/get-started" 
-                className="bg-zinc-800 hover:bg-zinc-700 text-white px-6 py-3 rounded-lg font-medium transition-colors"
+                className="bg-white hover:bg-gray-50 text-[#0176d3] px-8 py-3 rounded-lg font-medium border-2 border-[#0176d3] transition-all duration-200 hover:shadow-md"
               >
                 Get Started
               </a>
             </div>
           </div>
-        </ScrollReveal>
+        </div>
       </div>
     </div>
   );
