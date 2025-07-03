@@ -53,7 +53,7 @@ const CTA = () => {
             </div>
             
             <p className="text-sm text-slate-500 dark:text-slate-400 mb-12">
-              {t("Join thousands of garment decoration businesses using Tracker")}
+              {t("Trusted by garment decoration businesses worldwide")}
             </p>
           </div>
         </ScrollReveal>
