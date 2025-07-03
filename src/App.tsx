@@ -1,3 +1,4 @@
+
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
@@ -15,6 +16,8 @@ import AboutUs from "@/pages/AboutUs";
 import Blog from "@/pages/Blog";
 import BlogPost from "@/pages/BlogPost";
 import FAQ from "@/pages/FAQ";
+import TermsOfService from "@/pages/TermsOfService";
+import PrivacyPolicy from "@/pages/PrivacyPolicy";
 import NotFound from "./pages/NotFound";
 import Login from "@/pages/Login";
 import Documentation from "@/pages/Documentation";
@@ -55,6 +58,8 @@ const App = () => {
                   <Route path="/blog" element={<Layout><Blog /></Layout>} />
                   <Route path="/blog/:slug" element={<Layout><BlogPost /></Layout>} />
                   <Route path="/faq" element={<Layout><FAQ /></Layout>} />
+                  <Route path="/terms" element={<Layout><TermsOfService /></Layout>} />
+                  <Route path="/privacy" element={<Layout><PrivacyPolicy /></Layout>} />
                   <Route path="/support" element={<Layout><Support /></Layout>} />
                   <Route path="/get-started" element={<Layout><GetStarted /></Layout>} />
                   

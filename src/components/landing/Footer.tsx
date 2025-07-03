@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Switch } from '@/components/ui/switch';
@@ -23,7 +24,7 @@ const Footer = () => {
             <h4 className="theme-text font-medium mb-4">Product</h4>
             <ul className="space-y-2 text-sm">
               <li><Link to="/modules" className="hover:text-[#D4AF37] transition-colors">Modules</Link></li>
-              <li><a href="#" className="hover:text-[#D4AF37] transition-colors">Pricing</a></li>
+              <li><Link to="/pricing" className="hover:text-[#D4AF37] transition-colors">Pricing</Link></li>
             </ul>
           </div>
           <div>
@@ -31,15 +32,15 @@ const Footer = () => {
             <ul className="space-y-2 text-sm">
               <li><Link to="/faq" className="hover:text-[#D4AF37] transition-colors">FAQ</Link></li>
               <li><Link to="/support" className="hover:text-[#D4AF37] transition-colors">Support</Link></li>
-              <li><a href="#" className="hover:text-[#D4AF37] transition-colors">Blog</a></li>
+              <li><Link to="/blog" className="hover:text-[#D4AF37] transition-colors">Blog</Link></li>
             </ul>
           </div>
           <div>
             <h4 className="theme-text font-medium mb-4">Company</h4>
             <ul className="space-y-2 text-sm">
-              <li><a href="#" className="hover:text-[#D4AF37] transition-colors">About</a></li>
-              <li><a href="#" className="hover:text-[#D4AF37] transition-colors">Privacy</a></li>
-              <li><a href="#" className="hover:text-[#D4AF37] transition-colors">Terms</a></li>
+              <li><Link to="/about" className="hover:text-[#D4AF37] transition-colors">About</Link></li>
+              <li><Link to="/privacy" className="hover:text-[#D4AF37] transition-colors">Privacy</Link></li>
+              <li><Link to="/terms" className="hover:text-[#D4AF37] transition-colors">Terms</Link></li>
             </ul>
           </div>
         </div>
