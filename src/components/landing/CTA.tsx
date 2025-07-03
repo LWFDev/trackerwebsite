@@ -35,7 +35,7 @@ const CTA = () => {
             </h2>
             
             <p className="text-xl text-slate-600 dark:text-slate-400 mb-12 leading-relaxed max-w-2xl mx-auto">
-              {t("Streamline your garment decoration operations with comprehensive business management tools designed for your industry.")}
+              {t("Discover how modern business management tools can enhance your garment decoration operations and help your business grow.")}
             </p>
             
             <div className="flex justify-center items-center mb-16">
