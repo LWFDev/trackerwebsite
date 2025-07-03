@@ -30,7 +30,7 @@ const CTA = () => {
               </span>
             </div>
 
-            <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-6 text-slate-900 dark:text-white leading-tight">
+            <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-green-600 via-green-500 to-emerald-500 bg-clip-text text-transparent leading-tight">
               {t("Ready to transform your business?")}
             </h2>
             
