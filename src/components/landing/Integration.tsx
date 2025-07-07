@@ -56,19 +56,19 @@ const Integration = () => {
             
             <div className="space-y-5 mb-8">
               <div className="flex items-center p-3 bg-gray-800/60 dark:bg-zinc-900/60 light:bg-gray-800/60 backdrop-blur-sm rounded-lg border border-gray-700 dark:border-zinc-800 light:border-gray-700 transform transition-all duration-300 hover:border-[#D4AF37]/50 hover:-translate-y-1 hover:shadow-lg animate-fade-in" style={{ animationDelay: '0.3s' }}>
-                <CheckCircle className="w-5 h-5 text-[#D4AF37] mr-3" />
+                <CheckCircle className="w-5 h-5 text-green-500 mr-3" />
                 <span className="text-white">Connect with popular e-commerce platforms</span>
               </div>
               <div className="flex items-center p-3 bg-gray-800/60 dark:bg-zinc-900/60 light:bg-gray-800/60 backdrop-blur-sm rounded-lg border border-gray-700 dark:border-zinc-800 light:border-gray-700 transform transition-all duration-300 hover:border-[#D4AF37]/50 hover:-translate-y-1 hover:shadow-lg animate-fade-in" style={{ animationDelay: '0.4s' }}>
-                <CheckCircle className="w-5 h-5 text-[#D4AF37] mr-3" />
+                <CheckCircle className="w-5 h-5 text-green-500 mr-3" />
                 <span className="text-white">Sync with your accounting software</span>
               </div>
               <div className="flex items-center p-3 bg-gray-800/60 dark:bg-zinc-900/60 light:bg-gray-800/60 backdrop-blur-sm rounded-lg border border-gray-700 dark:border-zinc-800 light:border-gray-700 transform transition-all duration-300 hover:border-[#D4AF37]/50 hover:-translate-y-1 hover:shadow-lg animate-fade-in" style={{ animationDelay: '0.5s' }}>
-                <CheckCircle className="w-5 h-5 text-[#D4AF37] mr-3" />
+                <CheckCircle className="w-5 h-5 text-green-500 mr-3" />
                 <span className="text-white">Import designs from Adobe Creative Cloud</span>
               </div>
               <div className="flex items-center p-3 bg-gray-800/60 dark:bg-zinc-900/60 light:bg-gray-800/60 backdrop-blur-sm rounded-lg border border-gray-700 dark:border-zinc-800 light:border-gray-700 transform transition-all duration-300 hover:border-[#D4AF37]/50 hover:-translate-y-1 hover:shadow-lg animate-fade-in" style={{ animationDelay: '0.6s' }}>
-                <CheckCircle className="w-5 h-5 text-[#D4AF37] mr-3" />
+                <CheckCircle className="w-5 h-5 text-green-500 mr-3" />
                 <span className="text-white">Integrate with your production equipment</span>
               </div>
             </div>
