@@ -81,7 +81,7 @@ const Integration = () => {
                   <img 
                     src={logo.image} 
                     alt={logo.name} 
-                    className="h-12 w-auto max-w-[80%] object-contain opacity-70 group-hover:opacity-100 transition-opacity duration-300 filter grayscale"
+                    className="h-12 w-auto max-w-[80%] object-contain opacity-90 group-hover:opacity-100 transition-all duration-300 group-hover:scale-110"
                   />
                 </div>
               </div>
