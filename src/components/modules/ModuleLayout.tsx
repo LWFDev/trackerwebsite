@@ -177,14 +177,17 @@ const ModuleLayout = ({
     switch (moduleTitle) {
       case 'Sales & Order Management':
       case 'Sales Orders':
+      case 'Sales & Orders':
         return <img src="/lovable-uploads/e43639fe-8f28-4447-8659-16c1baee9b53.png" alt="Sales & Orders" className="h-10 w-10" />;
       case 'Warehouse':
         return <img src="/lovable-uploads/2788046a-56b7-45e9-8c62-0dcdf981aad7.png" alt="Warehouse" className="h-10 w-10" />;
       case 'Inventory':
       case 'Inventory & Logistics':
+      case 'Inventory Management':
         return <img src="/lovable-uploads/513894e2-04e7-42fc-a8be-9bc390b066ed.png" alt="Inventory" className="h-10 w-10" />;
       case 'Production':
       case 'Production & Manufacturing':
+      case 'Production Management':
         return <img src="/lovable-uploads/d42f1f67-bb61-4af4-bf00-41e4dd3055e8.png" alt="Production" className="h-10 w-10" />;
       case 'Customer Database':
         return <img src="/lovable-uploads/f888f0f0-5dc9-4944-b5ed-64b239b1e58e.png" alt="Customers" className="h-10 w-10" />;
@@ -204,6 +207,14 @@ const ModuleLayout = ({
         return <img src="/lovable-uploads/89eb9fd7-66d8-4124-b584-7895d0032ef3.png" alt="Suppliers" className="h-10 w-10" />;
       case 'Purchase Orders':
         return <img src="/lovable-uploads/9a36183f-4238-4b3a-b0e0-43a4488f0214.png" alt="Purchase Orders" className="h-10 w-10" />;
+      // For modules without specific uploaded icons, use a default
+      case 'Analytics & Reporting':
+      case 'Customer Service':
+      case 'Document Management':
+      case 'Finance & Accounting':
+      case 'Integrations Platform':
+      case 'Project Management':
+        return <div className="h-10 w-10 bg-[#D4AF37] rounded flex items-center justify-center text-black font-bold text-xs">{moduleTitle.charAt(0)}</div>;
       default:
         return <div className="h-10 w-10 bg-[#D4AF37] rounded"></div>;
     }
