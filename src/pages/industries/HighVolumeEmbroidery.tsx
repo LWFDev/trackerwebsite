@@ -124,6 +124,152 @@ const HighVolumeEmbroidery = () => {
         </div>
       </section>
 
+      {/* Industry-Specific Features Section */}
+      <section className="py-16 theme-surface theme-border border-y">
+        <div className="container mx-auto px-4">
+          <h2 className="text-3xl font-bold mb-12 text-center">
+            High-Volume Embroidery Specialization
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto">
+            <motion.div
+              initial={{ opacity: 0, x: -20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.5 }}
+              viewport={{ once: true }}
+            >
+              <Card className="h-full theme-surface theme-border">
+                <CardHeader>
+                  <div className="flex items-center gap-3 mb-2">
+                    <Factory className="w-6 h-6 text-gold" />
+                    <CardTitle className="text-xl">Multi-Machine Coordination</CardTitle>
+                  </div>
+                </CardHeader>
+                <CardContent>
+                  <CardDescription className="theme-text-secondary mb-4">
+                    Orchestrate 150+ embroidery machines simultaneously with real-time status monitoring and intelligent job allocation.
+                  </CardDescription>
+                  <ul className="space-y-2 theme-text-secondary">
+                    <li className="flex items-start gap-2">
+                      <div className="w-1.5 h-1.5 bg-emerald rounded-full mt-2 flex-shrink-0"></div>
+                      Real-time machine status dashboard
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <div className="w-1.5 h-1.5 bg-emerald rounded-full mt-2 flex-shrink-0"></div>
+                      Automatic job queue optimization
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <div className="w-1.5 h-1.5 bg-emerald rounded-full mt-2 flex-shrink-0"></div>
+                      Machine downtime alerts and tracking
+                    </li>
+                  </ul>
+                </CardContent>
+              </Card>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, x: 20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.5, delay: 0.1 }}
+              viewport={{ once: true }}
+            >
+              <Card className="h-full theme-surface theme-border">
+                <CardHeader>
+                  <div className="flex items-center gap-3 mb-2">
+                    <TrendingUp className="w-6 h-6 text-emerald" />
+                    <CardTitle className="text-xl">Production Analytics</CardTitle>
+                  </div>
+                </CardHeader>
+                <CardContent>
+                  <CardDescription className="theme-text-secondary mb-4">
+                    Advanced analytics to identify bottlenecks, optimize machine utilization, and predict maintenance needs.
+                  </CardDescription>
+                  <ul className="space-y-2 theme-text-secondary">
+                    <li className="flex items-start gap-2">
+                      <div className="w-1.5 h-1.5 bg-gold rounded-full mt-2 flex-shrink-0"></div>
+                      Machine efficiency reporting
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <div className="w-1.5 h-1.5 bg-gold rounded-full mt-2 flex-shrink-0"></div>
+                      Throughput optimization insights
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <div className="w-1.5 h-1.5 bg-gold rounded-full mt-2 flex-shrink-0"></div>
+                      Predictive maintenance scheduling
+                    </li>
+                  </ul>
+                </CardContent>
+              </Card>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
+      {/* Pain Points Deep Dive */}
+      <section className="py-16">
+        <div className="container mx-auto px-4">
+          <div className="max-w-4xl mx-auto">
+            <h2 className="text-3xl font-bold mb-8 text-center">
+              Solving High-Volume Embroidery Challenges
+            </h2>
+            <div className="space-y-8">
+              <motion.div 
+                className="border-l-4 border-gold pl-6"
+                initial={{ opacity: 0, x: -20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.5 }}
+                viewport={{ once: true }}
+              >
+                <h3 className="text-xl font-semibold mb-3">Machine Downtime Chaos</h3>
+                <p className="theme-text-secondary mb-3">
+                  When one of 150+ machines goes down unexpectedly, it creates a domino effect that can delay thousands 
+                  of orders and cost thousands in lost productivity.
+                </p>
+                <p className="theme-text-secondary">
+                  <strong className="text-emerald">Tracker Solution:</strong> Automatic job redistribution and real-time 
+                  machine monitoring prevent bottlenecks and minimize downtime impact.
+                </p>
+              </motion.div>
+
+              <motion.div 
+                className="border-l-4 border-emerald pl-6"
+                initial={{ opacity: 0, x: -20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.5, delay: 0.1 }}
+                viewport={{ once: true }}
+              >
+                <h3 className="text-xl font-semibold mb-3">Complex Job Scheduling</h3>
+                <p className="theme-text-secondary mb-3">
+                  Manually scheduling thousands of jobs across 150+ machines with different capabilities, thread colors, 
+                  and design complexities is virtually impossible to optimize.
+                </p>
+                <p className="theme-text-secondary">
+                  <strong className="text-gold">Tracker Solution:</strong> AI-powered scheduling algorithm considers machine 
+                  capabilities, job requirements, and deadlines to optimize production flow.
+                </p>
+              </motion.div>
+
+              <motion.div 
+                className="border-l-4 border-gold pl-6"
+                initial={{ opacity: 0, x: -20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.5, delay: 0.2 }}
+                viewport={{ once: true }}
+              >
+                <h3 className="text-xl font-semibold mb-3">Quality Control at Scale</h3>
+                <p className="theme-text-secondary mb-3">
+                  Maintaining consistent quality across massive production runs while meeting tight deadlines requires 
+                  continuous monitoring and rapid response to quality issues.
+                </p>
+                <p className="theme-text-secondary">
+                  <strong className="text-emerald">Tracker Solution:</strong> Automated quality checkpoints and real-time 
+                  alerts ensure consistent output while maintaining production speed.
+                </p>
+              </motion.div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Results Section */}
       <section className="py-16 theme-surface theme-border border-t">
         <div className="container mx-auto px-4">

@@ -124,6 +124,152 @@ const SportsAndUniforms = () => {
         </div>
       </section>
 
+      {/* Industry-Specific Features Section */}
+      <section className="py-16 theme-surface theme-border border-y">
+        <div className="container mx-auto px-4">
+          <h2 className="text-3xl font-bold mb-12 text-center">
+            Sports Industry Specialization
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto">
+            <motion.div
+              initial={{ opacity: 0, x: -20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.5 }}
+              viewport={{ once: true }}
+            >
+              <Card className="h-full theme-surface theme-border">
+                <CardHeader>
+                  <div className="flex items-center gap-3 mb-2">
+                    <Users className="w-6 h-6 text-gold" />
+                    <CardTitle className="text-xl">Team Roster Management</CardTitle>
+                  </div>
+                </CardHeader>
+                <CardContent>
+                  <CardDescription className="theme-text-secondary mb-4">
+                    Track individual player measurements, positions, and uniform requirements across entire teams and leagues.
+                  </CardDescription>
+                  <ul className="space-y-2 theme-text-secondary">
+                    <li className="flex items-start gap-2">
+                      <div className="w-1.5 h-1.5 bg-emerald rounded-full mt-2 flex-shrink-0"></div>
+                      Player-specific sizing and customization
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <div className="w-1.5 h-1.5 bg-emerald rounded-full mt-2 flex-shrink-0"></div>
+                      Bulk order management for teams
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <div className="w-1.5 h-1.5 bg-emerald rounded-full mt-2 flex-shrink-0"></div>
+                      Season-long uniform planning
+                    </li>
+                  </ul>
+                </CardContent>
+              </Card>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, x: 20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.5, delay: 0.1 }}
+              viewport={{ once: true }}
+            >
+              <Card className="h-full theme-surface theme-border">
+                <CardHeader>
+                  <div className="flex items-center gap-3 mb-2">
+                    <CheckCircle className="w-6 h-6 text-emerald" />
+                    <CardTitle className="text-xl">Event-Based Production</CardTitle>
+                  </div>
+                </CardHeader>
+                <CardContent>
+                  <CardDescription className="theme-text-secondary mb-4">
+                    Coordinate production schedules around critical sporting events, tournaments, and season starts.
+                  </CardDescription>
+                  <ul className="space-y-2 theme-text-secondary">
+                    <li className="flex items-start gap-2">
+                      <div className="w-1.5 h-1.5 bg-gold rounded-full mt-2 flex-shrink-0"></div>
+                      Championship rush order handling
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <div className="w-1.5 h-1.5 bg-gold rounded-full mt-2 flex-shrink-0"></div>
+                      Season timeline integration
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <div className="w-1.5 h-1.5 bg-gold rounded-full mt-2 flex-shrink-0"></div>
+                      Tournament delivery coordination
+                    </li>
+                  </ul>
+                </CardContent>
+              </Card>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
+      {/* Pain Points Deep Dive */}
+      <section className="py-16">
+        <div className="container mx-auto px-4">
+          <div className="max-w-4xl mx-auto">
+            <h2 className="text-3xl font-bold mb-8 text-center">
+              Why Sports Apparel Companies Choose Tracker
+            </h2>
+            <div className="space-y-8">
+              <motion.div 
+                className="border-l-4 border-gold pl-6"
+                initial={{ opacity: 0, x: -20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.5 }}
+                viewport={{ once: true }}
+              >
+                <h3 className="text-xl font-semibold mb-3">Peak Season Overload</h3>
+                <p className="theme-text-secondary mb-3">
+                  During peak sports seasons, orders can increase by 300-500%. Traditional systems buckle under this pressure, 
+                  leading to missed deadlines and unhappy coaches.
+                </p>
+                <p className="theme-text-secondary">
+                  <strong className="text-emerald">Tracker Solution:</strong> Dynamic capacity planning automatically adjusts 
+                  production schedules and resource allocation during peak periods.
+                </p>
+              </motion.div>
+
+              <motion.div 
+                className="border-l-4 border-emerald pl-6"
+                initial={{ opacity: 0, x: -20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.5, delay: 0.1 }}
+                viewport={{ once: true }}
+              >
+                <h3 className="text-xl font-semibold mb-3">Complex Customization Requirements</h3>
+                <p className="theme-text-secondary mb-3">
+                  Each team needs unique color combinations, player names, numbers, logos, and sponsor placements. 
+                  Managing these specifications manually leads to costly errors.
+                </p>
+                <p className="theme-text-secondary">
+                  <strong className="text-gold">Tracker Solution:</strong> Digital design templates and automated 
+                  specification tracking ensure every uniform meets exact team requirements.
+                </p>
+              </motion.div>
+
+              <motion.div 
+                className="border-l-4 border-gold pl-6"
+                initial={{ opacity: 0, x: -20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.5, delay: 0.2 }}
+                viewport={{ once: true }}
+              >
+                <h3 className="text-xl font-semibold mb-3">Last-Minute Championship Orders</h3>
+                <p className="theme-text-secondary mb-3">
+                  Championship teams need special uniforms, awards, and merchandise with extremely tight deadlines. 
+                  Standard production workflows can\'t accommodate these urgent requests.
+                </p>
+                <p className="theme-text-secondary">
+                  <strong className="text-emerald">Tracker Solution:</strong> Priority queue system and express 
+                  production workflows ensure championship orders are delivered on time.
+                </p>
+              </motion.div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Results Section */}
       <section className="py-16 theme-surface theme-border border-t">
         <div className="container mx-auto px-4">
