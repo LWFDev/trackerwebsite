@@ -1,7 +1,7 @@
 import { ReactNode, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
-import { ArrowLeft, Star, ArrowRight } from 'lucide-react';
+import { ArrowLeft, Star, ArrowRight, Users, BarChart2, Shirt, Package, Layers, MessageSquare, Paintbrush, Image, FileText, ShoppingCart } from 'lucide-react';
 
 interface Stats {
   value: string;
@@ -172,6 +172,99 @@ const ModuleLayout = ({
     }
   };
   
+  const getHeaderModuleIcon = (moduleTitle: string) => {
+    switch (moduleTitle) {
+      case 'Analytics & Reporting':
+        return <BarChart2 className="h-10 w-10 text-teal-400" />;
+      case 'Base Garments':
+        return <Shirt className="h-10 w-10 text-amber-400" />;
+      case 'Customer Database':
+        return <Users className="h-10 w-10 text-teal-400" />;
+      case 'Customer Portal':
+        return <MessageSquare className="h-10 w-10 text-teal-400" />;
+      case 'Customer Service':
+        return <MessageSquare className="h-10 w-10 text-blue-400" />;
+      case 'Document Management':
+        return <FileText className="h-10 w-10 text-indigo-400" />;
+      case 'Finance & Accounting':
+        return <BarChart2 className="h-10 w-10 text-green-400" />;
+      case 'Integration Platform':
+        return <Package className="h-10 w-10 text-purple-400" />;
+      case 'Inventory':
+      case 'Inventory & Logistics':
+        return <Package className="h-10 w-10 text-cyan-400" />;
+      case 'Logo Hub':
+      case 'Logos':
+        return <Image className="h-10 w-10 text-emerald-400" />;
+      case 'Product Designer':
+      case 'Product Design':
+        return <Paintbrush className="h-10 w-10 text-teal-400" />;
+      case 'Production':
+      case 'Production & Manufacturing':
+        return <Layers className="h-10 w-10 text-purple-400" />;
+      case 'Project Management':
+        return <Package className="h-10 w-10 text-blue-400" />;
+      case 'Purchase Orders':
+        return <ShoppingCart className="h-10 w-10 text-rose-400" />;
+      case 'Sales & Order Management':
+      case 'Sales Orders':
+        return <ShoppingCart className="h-10 w-10 text-blue-400" />;
+      case 'Warehouse':
+        return <Package className="h-10 w-10 text-indigo-400" />;
+      case 'Suppliers':
+        return <Package className="h-10 w-10 text-amber-400" />;
+      case 'Artworkers':
+        return <Paintbrush className="h-10 w-10 text-emerald-400" />;
+      default:
+        return <Package className="h-10 w-10 text-[#D4AF37]" />;
+    }
+  };
+  
+  const getHeaderIconBgColor = (moduleTitle: string) => {
+    switch (moduleTitle) {
+      case 'Analytics & Reporting':
+        return 'bg-teal-500/20 border-teal-500/40';
+      case 'Base Garments':
+        return 'bg-amber-500/20 border-amber-500/40';
+      case 'Customer Database':
+      case 'Customer Portal':
+        return 'bg-teal-500/20 border-teal-500/40';
+      case 'Customer Service':
+        return 'bg-blue-500/20 border-blue-500/40';
+      case 'Document Management':
+        return 'bg-indigo-500/20 border-indigo-500/40';
+      case 'Finance & Accounting':
+        return 'bg-green-500/20 border-green-500/40';
+      case 'Integration Platform':
+        return 'bg-purple-500/20 border-purple-500/40';
+      case 'Inventory':
+      case 'Inventory & Logistics':
+        return 'bg-cyan-500/20 border-cyan-500/40';
+      case 'Logo Hub':
+      case 'Logos':
+      case 'Product Designer':
+      case 'Product Design':
+      case 'Artworkers':
+        return 'bg-emerald-500/20 border-emerald-500/40';
+      case 'Production':
+      case 'Production & Manufacturing':
+        return 'bg-purple-500/20 border-purple-500/40';
+      case 'Project Management':
+        return 'bg-blue-500/20 border-blue-500/40';
+      case 'Purchase Orders':
+        return 'bg-rose-500/20 border-rose-500/40';
+      case 'Sales & Order Management':
+      case 'Sales Orders':
+        return 'bg-blue-500/20 border-blue-500/40';
+      case 'Warehouse':
+        return 'bg-indigo-500/20 border-indigo-500/40';
+      case 'Suppliers':
+        return 'bg-amber-500/20 border-amber-500/40';
+      default:
+        return 'bg-[#D4AF37]/20 border-[#D4AF37]/40';
+    }
+  };
+  
   return <div className="min-h-screen flex flex-col bg-black">
       {/* Hero Section */}
       <section className={`pt-24 pb-16 ${getBgColor()} text-white`}>
@@ -185,8 +278,8 @@ const ModuleLayout = ({
             <div>
               {/* Module Icon and Title */}
               <div className="flex items-center gap-4 mb-6">
-                <div className="w-16 h-16 bg-indigo-500/20 border border-indigo-500/40 rounded-lg flex items-center justify-center flex-shrink-0">
-                  <img src="/lovable-uploads/2788046a-56b7-45e9-8c62-0dcdf981aad7.png" alt="Warehouse" className="h-10 w-10" />
+                <div className={`w-16 h-16 ${getHeaderIconBgColor(title)} rounded-lg flex items-center justify-center flex-shrink-0`}>
+                  {getHeaderModuleIcon(title)}
                 </div>
                 <h1 className="text-4xl md:text-5xl font-bold">{title}</h1>
               </div>
