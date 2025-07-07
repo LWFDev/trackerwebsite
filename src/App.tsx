@@ -35,6 +35,7 @@ import PurchaseOrders from "@/pages/modules/PurchaseOrders";
 import Artworkers from "@/pages/modules/Artworkers";
 import CustomerPortal from "@/pages/modules/CustomerPortal";
 import Support from "@/pages/Support";
+import Industries from "@/pages/Industries";
 import ScrollAnimationInit from "./components/ui/scroll-animation-init";
 
 // Create a new query client
@@ -61,6 +62,7 @@ const App = () => {
                   <Route path="/terms" element={<Layout><TermsOfService /></Layout>} />
                   <Route path="/privacy" element={<Layout><PrivacyPolicy /></Layout>} />
                   <Route path="/support" element={<Layout><Support /></Layout>} />
+                  <Route path="/industries" element={<Layout><Industries /></Layout>} />
                   <Route path="/get-started" element={<Layout><GetStarted /></Layout>} />
                   
                   {/* Documentation Routes */}
