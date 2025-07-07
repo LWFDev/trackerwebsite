@@ -15,7 +15,7 @@ const CorporateApparel = () => {
 
   const solutions = [
     {
-      icon: <BarChart3 className="w-6 h-6 text-emerald-DEFAULT" />,
+      icon: <BarChart3 className="w-6 h-6 text-gold-DEFAULT" />,
       title: "Complex Order Management",
       description: "Handle intricate customized orders with detailed tracking for each corporate client"
     },
@@ -25,7 +25,7 @@ const CorporateApparel = () => {
       description: "Monitor unique requirements and specifications for each corporate account"
     },
     {
-      icon: <TrendingUp className="w-6 h-6 text-emerald-DEFAULT" />,
+      icon: <TrendingUp className="w-6 h-6 text-gold-DEFAULT" />,
       title: "Precise Fulfillment",
       description: "Ensure accurate order completion with detailed quality control checkpoints"
     }
@@ -33,7 +33,7 @@ const CorporateApparel = () => {
 
   const features = [
     {
-      icon: <Shield className="w-8 h-8 text-emerald-DEFAULT" />,
+      icon: <Shield className="w-8 h-8 text-gold-DEFAULT" />,
       title: "Brand Consistency Controls",
       description: "Maintain strict brand standards across all corporate client orders with automated checks."
     },
@@ -57,8 +57,8 @@ const CorporateApparel = () => {
             transition={{ duration: 0.6 }}
           >
             <div className="flex items-center gap-4 mb-6">
-              <Building2 className="w-12 h-12 text-emerald-DEFAULT" />
-              <h1 className="text-4xl md:text-6xl font-bold bg-gradient-to-r from-emerald-DEFAULT to-emerald-light bg-clip-text text-transparent">
+              <Building2 className="w-12 h-12 text-gold-DEFAULT" />
+              <h1 className="text-4xl md:text-6xl font-bold bg-gradient-to-r from-gold-DEFAULT to-emerald-DEFAULT bg-clip-text text-transparent">
                 Corporate Apparel Suppliers
               </h1>
             </div>
@@ -66,7 +66,7 @@ const CorporateApparel = () => {
               Allow suppliers of corporate wear to closely monitor complex, customized orders for various corporate clients, ensuring precise fulfillment and brand consistency.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
-              <Button asChild size="lg" variant="emerald">
+              <Button asChild size="lg" variant="gold">
                 <Link to="/get-started">Start Free Trial</Link>
               </Button>
               <Button asChild variant="emerald-outline" size="lg">
@@ -94,7 +94,7 @@ const CorporateApparel = () => {
                   transition={{ duration: 0.5, delay: index * 0.1 }}
                   viewport={{ once: true }}
                 >
-                  <div className="w-2 h-2 bg-emerald-DEFAULT rounded-full mt-3 flex-shrink-0"></div>
+                  <div className="w-2 h-2 bg-gold-DEFAULT rounded-full mt-3 flex-shrink-0"></div>
                   <p className="theme-text-secondary">{challenge}</p>
                 </motion.div>
               ))}

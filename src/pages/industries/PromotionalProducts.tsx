@@ -15,7 +15,7 @@ const PromotionalProducts = () => {
 
   const solutions = [
     {
-      icon: <BarChart3 className="w-6 h-6 text-emerald-DEFAULT" />,
+      icon: <BarChart3 className="w-6 h-6 text-gold-DEFAULT" />,
       title: "End-to-End Tracking",
       description: "Monitor promotional items from order placement through decoration to shipment"
     },
@@ -25,7 +25,7 @@ const PromotionalProducts = () => {
       description: "Handle diverse promotional products with different decoration requirements"
     },
     {
-      icon: <TrendingUp className="w-6 h-6 text-emerald-DEFAULT" />,
+      icon: <TrendingUp className="w-6 h-6 text-gold-DEFAULT" />,
       title: "Customer Satisfaction",
       description: "Enhance satisfaction with transparent tracking and timely delivery"
     }
@@ -33,7 +33,7 @@ const PromotionalProducts = () => {
 
   const features = [
     {
-      icon: <Package className="w-8 h-8 text-emerald-DEFAULT" />,
+      icon: <Package className="w-8 h-8 text-gold-DEFAULT" />,
       title: "Multi-Product Coordination",
       description: "Coordinate diverse promotional products with different decoration methods and timelines."
     },
@@ -57,8 +57,8 @@ const PromotionalProducts = () => {
             transition={{ duration: 0.6 }}
           >
             <div className="flex items-center gap-4 mb-6">
-              <Gift className="w-12 h-12 text-emerald-DEFAULT" />
-              <h1 className="text-4xl md:text-6xl font-bold bg-gradient-to-r from-emerald-DEFAULT to-emerald-light bg-clip-text text-transparent">
+              <Gift className="w-12 h-12 text-gold-DEFAULT" />
+              <h1 className="text-4xl md:text-6xl font-bold bg-gradient-to-r from-gold-DEFAULT to-emerald-DEFAULT bg-clip-text text-transparent">
                 Promotional Product Distributors
               </h1>
             </div>

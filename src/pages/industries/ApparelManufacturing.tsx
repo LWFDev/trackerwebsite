@@ -15,7 +15,7 @@ const ApparelManufacturing = () => {
 
   const solutions = [
     {
-      icon: <BarChart3 className="w-6 h-6 text-emerald-DEFAULT" />,
+      icon: <BarChart3 className="w-6 h-6 text-gold-DEFAULT" />,
       title: "Real-Time Production Insights",
       description: "Get instant visibility into production status across all manufacturing lines"
     },
@@ -25,7 +25,7 @@ const ApparelManufacturing = () => {
       description: "Quickly identify and resolve production bottlenecks before they impact delivery"
     },
     {
-      icon: <TrendingUp className="w-6 h-6 text-emerald-DEFAULT" />,
+      icon: <TrendingUp className="w-6 h-6 text-gold-DEFAULT" />,
       title: "Quality Assurance",
       description: "Ensure consistent output quality with automated tracking and alerts"
     }
@@ -33,7 +33,7 @@ const ApparelManufacturing = () => {
 
   const features = [
     {
-      icon: <Layers className="w-8 h-8 text-emerald-DEFAULT" />,
+      icon: <Layers className="w-8 h-8 text-gold-DEFAULT" />,
       title: "Multi-Line Coordination",
       description: "Coordinate production across multiple manufacturing lines with centralized oversight."
     },

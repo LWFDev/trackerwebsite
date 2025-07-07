@@ -15,7 +15,7 @@ const PrintOnDemand = () => {
 
   const solutions = [
     {
-      icon: <BarChart3 className="w-6 h-6 text-emerald-DEFAULT" />,
+      icon: <BarChart3 className="w-6 h-6 text-gold-DEFAULT" />,
       title: "Seamless Store Integration",
       description: "Connect directly with online stores for automated order import and processing"
     },
@@ -25,7 +25,7 @@ const PrintOnDemand = () => {
       description: "Provide real-time order progress tracking directly to your end customers"
     },
     {
-      icon: <TrendingUp className="w-6 h-6 text-emerald-DEFAULT" />,
+      icon: <TrendingUp className="w-6 h-6 text-gold-DEFAULT" />,
       title: "Automated Order Processing",
       description: "Handle high-volume orders with automated workflows and quality checks"
     }
@@ -44,8 +44,8 @@ const PrintOnDemand = () => {
             transition={{ duration: 0.6 }}
           >
             <div className="flex items-center gap-4 mb-6">
-              <Monitor className="w-12 h-12 text-emerald-DEFAULT" />
-              <h1 className="text-4xl md:text-6xl font-bold bg-gradient-to-r from-emerald-DEFAULT to-emerald-light bg-clip-text text-transparent">
+              <Monitor className="w-12 h-12 text-gold-DEFAULT" />
+              <h1 className="text-4xl md:text-6xl font-bold bg-gradient-to-r from-gold-DEFAULT to-emerald-DEFAULT bg-clip-text text-transparent">
                 Online Print-on-Demand
               </h1>
             </div>

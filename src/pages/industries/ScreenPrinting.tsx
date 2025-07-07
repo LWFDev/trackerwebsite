@@ -15,7 +15,7 @@ const ScreenPrinting = () => {
 
   const solutions = [
     {
-      icon: <BarChart3 className="w-6 h-6 text-emerald-DEFAULT" />,
+      icon: <BarChart3 className="w-6 h-6 text-gold-DEFAULT" />,
       title: "Multi-Order Management",
       description: "Track and coordinate multiple orders simultaneously without confusion or delays"
     },
@@ -25,7 +25,7 @@ const ScreenPrinting = () => {
       description: "Streamline setup, printing, and finishing processes for maximum efficiency"
     },
     {
-      icon: <TrendingUp className="w-6 h-6 text-emerald-DEFAULT" />,
+      icon: <TrendingUp className="w-6 h-6 text-gold-DEFAULT" />,
       title: "Delivery Time Improvement",
       description: "Reduce delivery times through better planning and resource allocation"
     }
@@ -33,7 +33,7 @@ const ScreenPrinting = () => {
 
   const features = [
     {
-      icon: <Target className="w-8 h-8 text-emerald-DEFAULT" />,
+      icon: <Target className="w-8 h-8 text-gold-DEFAULT" />,
       title: "Color Matching System",
       description: "Advanced color tracking and matching system to ensure consistency across all print runs."
     },

@@ -15,7 +15,7 @@ const WorkwearUniforms = () => {
 
   const solutions = [
     {
-      icon: <BarChart3 className="w-6 h-6 text-emerald-DEFAULT" />,
+      icon: <BarChart3 className="w-6 h-6 text-gold-DEFAULT" />,
       title: "Continuous Flow Management",
       description: "Handle high-volume, continuous order flow with automated workflow optimization"
     },
@@ -25,7 +25,7 @@ const WorkwearUniforms = () => {
       description: "Ensure on-time delivery with priority scheduling and real-time production tracking"
     },
     {
-      icon: <TrendingUp className="w-6 h-6 text-emerald-DEFAULT" />,
+      icon: <TrendingUp className="w-6 h-6 text-gold-DEFAULT" />,
       title: "Improved Inventory Control",
       description: "Optimize inventory management for diverse workwear and uniform requirements"
     }
@@ -33,7 +33,7 @@ const WorkwearUniforms = () => {
 
   const features = [
     {
-      icon: <RefreshCw className="w-8 h-8 text-emerald-DEFAULT" />,
+      icon: <RefreshCw className="w-8 h-8 text-gold-DEFAULT" />,
       title: "Continuous Order Processing",
       description: "Automate high-volume order processing with intelligent workflow management."
     },
@@ -57,8 +57,8 @@ const WorkwearUniforms = () => {
             transition={{ duration: 0.6 }}
           >
             <div className="flex items-center gap-4 mb-6">
-              <HardHat className="w-12 h-12 text-emerald-DEFAULT" />
-              <h1 className="text-4xl md:text-6xl font-bold bg-gradient-to-r from-emerald-DEFAULT to-emerald-light bg-clip-text text-transparent">
+              <HardHat className="w-12 h-12 text-gold-DEFAULT" />
+              <h1 className="text-4xl md:text-6xl font-bold bg-gradient-to-r from-gold-DEFAULT to-emerald-DEFAULT bg-clip-text text-transparent">
                 Workwear & Uniform Services
               </h1>
             </div>

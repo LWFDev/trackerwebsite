@@ -15,7 +15,7 @@ const ContractDecoration = () => {
 
   const solutions = [
     {
-      icon: <BarChart3 className="w-6 h-6 text-emerald-DEFAULT" />,
+      icon: <BarChart3 className="w-6 h-6 text-gold-DEFAULT" />,
       title: "Complex Workflow Management",
       description: "Simplify and coordinate complex decoration workflows across multiple client projects"
     },
@@ -25,7 +25,7 @@ const ContractDecoration = () => {
       description: "Provide complete visibility into all production stages and client requirements"
     },
     {
-      icon: <TrendingUp className="w-6 h-6 text-emerald-DEFAULT" />,
+      icon: <TrendingUp className="w-6 h-6 text-gold-DEFAULT" />,
       title: "Deadline Management",
       description: "Track and manage client-specific deadlines with automated alerts and notifications"
     }
@@ -33,7 +33,7 @@ const ContractDecoration = () => {
 
   const features = [
     {
-      icon: <Eye className="w-8 h-8 text-emerald-DEFAULT" />,
+      icon: <Eye className="w-8 h-8 text-gold-DEFAULT" />,
       title: "Complete Production Visibility",
       description: "Full transparency across all decoration stages for every client project and order."
     },
@@ -57,8 +57,8 @@ const ContractDecoration = () => {
             transition={{ duration: 0.6 }}
           >
             <div className="flex items-center gap-4 mb-6">
-              <Settings className="w-12 h-12 text-emerald-DEFAULT" />
-              <h1 className="text-4xl md:text-6xl font-bold bg-gradient-to-r from-emerald-DEFAULT to-emerald-light bg-clip-text text-transparent">
+              <Settings className="w-12 h-12 text-gold-DEFAULT" />
+              <h1 className="text-4xl md:text-6xl font-bold bg-gradient-to-r from-gold-DEFAULT to-emerald-DEFAULT bg-clip-text text-transparent">
                 Contract Decoration Facilities
               </h1>
             </div>

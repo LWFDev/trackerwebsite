@@ -15,7 +15,7 @@ const FashionBrands = () => {
 
   const solutions = [
     {
-      icon: <BarChart3 className="w-6 h-6 text-emerald-DEFAULT" />,
+      icon: <BarChart3 className="w-6 h-6 text-gold-DEFAULT" />,
       title: "Quality Monitoring",
       description: "Closely monitor quality standards throughout production with detailed checkpoints"
     },
@@ -25,7 +25,7 @@ const FashionBrands = () => {
       description: "Track production timelines to meet fashion cycle demands and market windows"
     },
     {
-      icon: <TrendingUp className="w-6 h-6 text-emerald-DEFAULT" />,
+      icon: <TrendingUp className="w-6 h-6 text-gold-DEFAULT" />,
       title: "Customization Compliance",
       description: "Ensure adherence to customization specs with automated compliance tracking"
     }
@@ -44,8 +44,8 @@ const FashionBrands = () => {
             transition={{ duration: 0.6 }}
           >
             <div className="flex items-center gap-4 mb-6">
-              <Sparkles className="w-12 h-12 text-emerald-DEFAULT" />
-              <h1 className="text-4xl md:text-6xl font-bold bg-gradient-to-r from-emerald-DEFAULT to-emerald-light bg-clip-text text-transparent">
+              <Sparkles className="w-12 h-12 text-gold-DEFAULT" />
+              <h1 className="text-4xl md:text-6xl font-bold bg-gradient-to-r from-gold-DEFAULT to-emerald-DEFAULT bg-clip-text text-transparent">
                 Fashion Brands & Private Labels
               </h1>
             </div>
