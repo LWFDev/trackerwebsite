@@ -80,6 +80,13 @@ const Header = () => {
             onClick={handleModulesClick}
           />
           <Link 
+            to="/industries" 
+            className={`font-normal text-base ${isActive("/industries")} hover:text-gold-DEFAULT transition-colors duration-200`}
+            style={{ fontSize: '16px', fontWeight: 400 }}
+          >
+            Industries
+          </Link>
+          <Link 
             to="/pricing" 
             className={`font-normal text-base ${isActive("/pricing")} hover:text-gold-DEFAULT transition-colors duration-200`}
             style={{ fontSize: '16px', fontWeight: 400 }}
