@@ -1,7 +1,7 @@
 import { ReactNode, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
-import { ArrowLeft, Star, ArrowRight, Users, BarChart2, Shirt, Package, Layers, MessageSquare, Paintbrush, Image, FileText, ShoppingCart } from 'lucide-react';
+import { ArrowLeft, Star, ArrowRight } from 'lucide-react';
 
 interface Stats {
   value: string;
@@ -173,95 +173,39 @@ const ModuleLayout = ({
   };
   
   const getHeaderModuleIcon = (moduleTitle: string) => {
+    // Use the same icons as the module cards
     switch (moduleTitle) {
-      case 'Analytics & Reporting':
-        return <BarChart2 className="h-10 w-10 text-teal-400" />;
-      case 'Base Garments':
-        return <Shirt className="h-10 w-10 text-amber-400" />;
-      case 'Customer Database':
-        return <Users className="h-10 w-10 text-teal-400" />;
-      case 'Customer Portal':
-        return <MessageSquare className="h-10 w-10 text-teal-400" />;
-      case 'Customer Service':
-        return <MessageSquare className="h-10 w-10 text-blue-400" />;
-      case 'Document Management':
-        return <FileText className="h-10 w-10 text-indigo-400" />;
-      case 'Finance & Accounting':
-        return <BarChart2 className="h-10 w-10 text-green-400" />;
-      case 'Integration Platform':
-        return <Package className="h-10 w-10 text-purple-400" />;
-      case 'Inventory':
-      case 'Inventory & Logistics':
-        return <Package className="h-10 w-10 text-cyan-400" />;
-      case 'Logo Hub':
-      case 'Logos':
-        return <Image className="h-10 w-10 text-emerald-400" />;
-      case 'Product Designer':
-      case 'Product Design':
-        return <Paintbrush className="h-10 w-10 text-teal-400" />;
-      case 'Production':
-      case 'Production & Manufacturing':
-        return <Layers className="h-10 w-10 text-purple-400" />;
-      case 'Project Management':
-        return <Package className="h-10 w-10 text-blue-400" />;
-      case 'Purchase Orders':
-        return <ShoppingCart className="h-10 w-10 text-rose-400" />;
       case 'Sales & Order Management':
       case 'Sales Orders':
-        return <ShoppingCart className="h-10 w-10 text-blue-400" />;
+        return <img src="/lovable-uploads/e43639fe-8f28-4447-8659-16c1baee9b53.png" alt="Sales & Orders" className="h-10 w-10" />;
       case 'Warehouse':
-        return <Package className="h-10 w-10 text-indigo-400" />;
-      case 'Suppliers':
-        return <Package className="h-10 w-10 text-amber-400" />;
-      case 'Artworkers':
-        return <Paintbrush className="h-10 w-10 text-emerald-400" />;
-      default:
-        return <Package className="h-10 w-10 text-[#D4AF37]" />;
-    }
-  };
-  
-  const getHeaderIconBgColor = (moduleTitle: string) => {
-    switch (moduleTitle) {
-      case 'Analytics & Reporting':
-        return 'bg-teal-500/20 border-teal-500/40';
-      case 'Base Garments':
-        return 'bg-amber-500/20 border-amber-500/40';
-      case 'Customer Database':
-      case 'Customer Portal':
-        return 'bg-teal-500/20 border-teal-500/40';
-      case 'Customer Service':
-        return 'bg-blue-500/20 border-blue-500/40';
-      case 'Document Management':
-        return 'bg-indigo-500/20 border-indigo-500/40';
-      case 'Finance & Accounting':
-        return 'bg-green-500/20 border-green-500/40';
-      case 'Integration Platform':
-        return 'bg-purple-500/20 border-purple-500/40';
+        return <img src="/lovable-uploads/2788046a-56b7-45e9-8c62-0dcdf981aad7.png" alt="Warehouse" className="h-10 w-10" />;
       case 'Inventory':
       case 'Inventory & Logistics':
-        return 'bg-cyan-500/20 border-cyan-500/40';
-      case 'Logo Hub':
-      case 'Logos':
-      case 'Product Designer':
-      case 'Product Design':
-      case 'Artworkers':
-        return 'bg-emerald-500/20 border-emerald-500/40';
+        return <img src="/lovable-uploads/513894e2-04e7-42fc-a8be-9bc390b066ed.png" alt="Inventory" className="h-10 w-10" />;
       case 'Production':
       case 'Production & Manufacturing':
-        return 'bg-purple-500/20 border-purple-500/40';
-      case 'Project Management':
-        return 'bg-blue-500/20 border-blue-500/40';
-      case 'Purchase Orders':
-        return 'bg-rose-500/20 border-rose-500/40';
-      case 'Sales & Order Management':
-      case 'Sales Orders':
-        return 'bg-blue-500/20 border-blue-500/40';
-      case 'Warehouse':
-        return 'bg-indigo-500/20 border-indigo-500/40';
+        return <img src="/lovable-uploads/d42f1f67-bb61-4af4-bf00-41e4dd3055e8.png" alt="Production" className="h-10 w-10" />;
+      case 'Customer Database':
+        return <img src="/lovable-uploads/f888f0f0-5dc9-4944-b5ed-64b239b1e58e.png" alt="Customers" className="h-10 w-10" />;
+      case 'Customer Portal':
+        return <img src="/lovable-uploads/c78cb5cd-6b30-4b76-ab3d-95defabc532a.png" alt="Customer Portal" className="h-10 w-10" />;
+      case 'Product Designer':
+      case 'Product Design':
+        return <img src="/lovable-uploads/165c6ded-645a-41df-ba0c-b54b428c3953.png" alt="Product Designer" className="h-10 w-10" />;
+      case 'Logos':
+      case 'Logo Hub':
+        return <img src="/lovable-uploads/9ed005ea-9015-43b6-b721-149fd7e96dc3.png" alt="Logos" className="h-10 w-10" />;
+      case 'Artworkers':
+        return <img src="/lovable-uploads/5a59d4b9-43ac-485e-830d-ee80fc2e0905.png" alt="Artworkers" className="h-10 w-10" />;
+      case 'Base Garments':
+        return <img src="/lovable-uploads/9646681d-05d8-4c78-9601-8a8b99451f0e.png" alt="Base Garments" className="h-10 w-10" />;
       case 'Suppliers':
-        return 'bg-amber-500/20 border-amber-500/40';
+        return <img src="/lovable-uploads/89eb9fd7-66d8-4124-b584-7895d0032ef3.png" alt="Suppliers" className="h-10 w-10" />;
+      case 'Purchase Orders':
+        return <img src="/lovable-uploads/9a36183f-4238-4b3a-b0e0-43a4488f0214.png" alt="Purchase Orders" className="h-10 w-10" />;
       default:
-        return 'bg-[#D4AF37]/20 border-[#D4AF37]/40';
+        return <div className="h-10 w-10 bg-[#D4AF37] rounded"></div>;
     }
   };
   
@@ -278,7 +222,7 @@ const ModuleLayout = ({
             <div>
               {/* Module Icon and Title */}
               <div className="flex items-center gap-4 mb-6">
-                <div className={`w-16 h-16 ${getHeaderIconBgColor(title)} rounded-lg flex items-center justify-center flex-shrink-0`}>
+                <div className={`w-16 h-16 ${getModuleCardColor(title)} rounded-lg flex items-center justify-center flex-shrink-0`}>
                   {getHeaderModuleIcon(title)}
                 </div>
                 <h1 className="text-4xl md:text-5xl font-bold">{title}</h1>
