@@ -36,6 +36,16 @@ import Artworkers from "@/pages/modules/Artworkers";
 import CustomerPortal from "@/pages/modules/CustomerPortal";
 import Support from "@/pages/Support";
 import Industries from "@/pages/Industries";
+import HighVolumeEmbroidery from "@/pages/industries/HighVolumeEmbroidery";
+import ScreenPrinting from "@/pages/industries/ScreenPrinting";
+import ApparelManufacturing from "@/pages/industries/ApparelManufacturing";
+import CorporateApparel from "@/pages/industries/CorporateApparel";
+import PromotionalProducts from "@/pages/industries/PromotionalProducts";
+import SportsAndUniforms from "@/pages/industries/SportsAndUniforms";
+import WorkwearUniforms from "@/pages/industries/WorkwearUniforms";
+import FashionBrands from "@/pages/industries/FashionBrands";
+import PrintOnDemand from "@/pages/industries/PrintOnDemand";
+import ContractDecoration from "@/pages/industries/ContractDecoration";
 import ScrollAnimationInit from "./components/ui/scroll-animation-init";
 
 // Create a new query client
@@ -63,6 +73,16 @@ const App = () => {
                   <Route path="/privacy" element={<Layout><PrivacyPolicy /></Layout>} />
                   <Route path="/support" element={<Layout><Support /></Layout>} />
                   <Route path="/industries" element={<Layout><Industries /></Layout>} />
+                  <Route path="/industries/high-volume-embroidery" element={<Layout><HighVolumeEmbroidery /></Layout>} />
+                  <Route path="/industries/screen-printing" element={<Layout><ScreenPrinting /></Layout>} />
+                  <Route path="/industries/apparel-manufacturing" element={<Layout><ApparelManufacturing /></Layout>} />
+                  <Route path="/industries/corporate-apparel" element={<Layout><CorporateApparel /></Layout>} />
+                  <Route path="/industries/promotional-products" element={<Layout><PromotionalProducts /></Layout>} />
+                  <Route path="/industries/sports-and-uniforms" element={<Layout><SportsAndUniforms /></Layout>} />
+                  <Route path="/industries/workwear-uniforms" element={<Layout><WorkwearUniforms /></Layout>} />
+                  <Route path="/industries/fashion-brands" element={<Layout><FashionBrands /></Layout>} />
+                  <Route path="/industries/print-on-demand" element={<Layout><PrintOnDemand /></Layout>} />
+                  <Route path="/industries/contract-decoration" element={<Layout><ContractDecoration /></Layout>} />
                   <Route path="/get-started" element={<Layout><GetStarted /></Layout>} />
                   
                   {/* Documentation Routes */}
