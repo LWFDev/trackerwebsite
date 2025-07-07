@@ -2,6 +2,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { cn } from "@/lib/utils";
+import { ArrowUpRight } from "lucide-react";
 
 interface ModuleCardProps {
   module: {
@@ -31,10 +32,15 @@ const ModuleCard = ({ module }: ModuleCardProps) => {
       to={module.link} 
       onClick={handleModuleClick}
       className={cn(
-        "block h-full rounded-lg overflow-hidden shadow-lg transition-all duration-300 hover:-translate-y-1 hover:shadow-xl border border-zinc-800 hover:border-[#D4AF37] flex flex-col",
+        "group block h-full rounded-lg overflow-hidden shadow-lg transition-all duration-300 hover:-translate-y-1 hover:shadow-xl border border-zinc-800 hover:border-[#D4AF37] flex flex-col relative",
         module.color || "bg-zinc-900"
       )}
     >
+      {/* Top-right hover icon */}
+      <div className="absolute top-4 right-4 w-6 h-6 rounded-full bg-zinc-800 border border-zinc-700 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300 transform group-hover:translate-x-0 translate-x-4 z-10">
+        <ArrowUpRight className="w-3 h-3 text-[#D4AF37]" />
+      </div>
+
       <div className="bg-zinc-900 p-4 flex items-center space-x-4">
         <div className="bg-zinc-800 p-3 rounded-lg border border-zinc-700 group-hover:border-[#D4AF37]">
           {module.icon}
@@ -46,12 +52,6 @@ const ModuleCard = ({ module }: ModuleCardProps) => {
         <p className="text-gray-300 mb-6 flex-1">{module.description}</p>
         <div className="flex justify-between items-center mt-auto">
           <span className="text-zinc-400 text-sm">{module.category}</span>
-          <div className="inline-flex items-center text-gold-DEFAULT hover:text-gold-light">
-            Explore 
-            <svg className="w-4 h-4 ml-1 transform group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-            </svg>
-          </div>
         </div>
       </div>
     </Link>
