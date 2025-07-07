@@ -31,7 +31,7 @@ const ModuleCard = ({ module }: ModuleCardProps) => {
       to={module.link} 
       onClick={handleModuleClick}
       className={cn(
-        "block rounded-lg overflow-hidden shadow-lg transition-all duration-300 hover:-translate-y-1 hover:shadow-xl border border-zinc-800 hover:border-[#D4AF37]",
+        "block h-full rounded-lg overflow-hidden shadow-lg transition-all duration-300 hover:-translate-y-1 hover:shadow-xl border border-zinc-800 hover:border-[#D4AF37] flex flex-col",
         module.color || "bg-zinc-900"
       )}
     >
@@ -42,9 +42,9 @@ const ModuleCard = ({ module }: ModuleCardProps) => {
         <h3 className="text-xl font-semibold text-white">{module.title}</h3>
       </div>
       
-      <div className="p-6 bg-black/40 backdrop-blur-sm">
-        <p className="text-gray-300 mb-6">{module.description}</p>
-        <div className="flex justify-between items-center">
+      <div className="p-6 bg-black/40 backdrop-blur-sm flex-1 flex flex-col">
+        <p className="text-gray-300 mb-6 flex-1">{module.description}</p>
+        <div className="flex justify-between items-center mt-auto">
           <span className="text-zinc-400 text-sm">{module.category}</span>
           <div className="inline-flex items-center text-gold-DEFAULT hover:text-gold-light">
             Explore 
