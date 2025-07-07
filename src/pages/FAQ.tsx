@@ -22,13 +22,13 @@ const FAQ = () => {
   const faqSections: FAQSection[] = [
     {
       title: "General Questions",
-      icon: <HelpCircle size={20} className="text-emerald-400" />,
+      icon: <HelpCircle size={20} className="text-[#D4AF37]" />,
       faqs: [
         {
           question: "How do I know if Tracker is right for us?",
           answer: (
             <>
-              Tracker is designed for <a href="/about" className="text-emerald-400 hover:text-emerald-300 underline font-medium">garment decoration businesses</a> of all sizes, from small startups to large enterprises. If you're managing orders, inventory, production, or customer relationships in the custom apparel industry, Tracker can streamline your operations. We offer <a href="/contact" className="text-emerald-400 hover:text-emerald-300 underline font-medium">demos and consultations</a> to help you evaluate if our platform fits your specific needs.
+              Tracker is designed for <a href="/about" className="text-[#D4AF37] hover:text-yellow-400 underline font-medium">garment decoration businesses</a> of all sizes, from small startups to large enterprises. If you're managing orders, inventory, production, or customer relationships in the custom apparel industry, Tracker can streamline your operations. We offer <a href="/contact" className="text-[#D4AF37] hover:text-yellow-400 underline font-medium">demos and consultations</a> to help you evaluate if our platform fits your specific needs.
             </>
           )
         },
@@ -36,7 +36,7 @@ const FAQ = () => {
           question: "Can I have a demo to see Tracker in action?",
           answer: (
             <>
-              Absolutely! We provide personalized demos tailored to your business needs. During the demo, we'll show you how Tracker's <a href="/modules" className="text-emerald-400 hover:text-emerald-300 underline font-medium">modules</a> work together to manage your entire workflow, from order intake to production and delivery. <a href="/contact" className="text-emerald-400 hover:text-emerald-300 underline font-medium">Contact our sales team</a> to schedule a demo at your convenience.
+              Absolutely! We provide personalized demos tailored to your business needs. During the demo, we'll show you how Tracker's <a href="/modules" className="text-[#D4AF37] hover:text-yellow-400 underline font-medium">modules</a> work together to manage your entire workflow, from order intake to production and delivery. <a href="/contact" className="text-[#D4AF37] hover:text-yellow-400 underline font-medium">Contact our sales team</a> to schedule a demo at your convenience.
             </>
           )
         },
@@ -44,7 +44,7 @@ const FAQ = () => {
           question: "Is Tracker only for garment decoration businesses?",
           answer: (
             <>
-              Yes, Tracker is specifically designed for the garment decoration industry, including screen printing, embroidery, promotional products, and custom apparel businesses. Our specialized <a href="/modules" className="text-emerald-400 hover:text-emerald-300 underline font-medium">modules and workflows</a> are built to handle the unique challenges of this industry, from <a href="/modules/logos" className="text-emerald-400 hover:text-emerald-300 underline font-medium">artwork management</a> to <a href="/modules/production" className="text-emerald-400 hover:text-emerald-300 underline font-medium">production scheduling</a>.
+              Yes, Tracker is specifically designed for the garment decoration industry, including screen printing, embroidery, promotional products, and custom apparel businesses. Our specialized <a href="/modules" className="text-[#D4AF37] hover:text-yellow-400 underline font-medium">modules and workflows</a> are built to handle the unique challenges of this industry, from <a href="/modules/logos" className="text-[#D4AF37] hover:text-yellow-400 underline font-medium">artwork management</a> to <a href="/modules/production" className="text-[#D4AF37] hover:text-yellow-400 underline font-medium">production scheduling</a>.
             </>
           )
         },
@@ -52,7 +52,7 @@ const FAQ = () => {
           question: "What size / type of businesses use Tracker?",
           answer: (
             <>
-              Tracker serves businesses ranging from small family-owned shops to large commercial operations. Our customers include screen printers, embroiderers, promotional product companies, corporate apparel suppliers, and multi-location enterprises. Our scalable platform grows with your business needs. Learn more <a href="/about" className="text-emerald-400 hover:text-emerald-300 underline font-medium">about our story</a> and the businesses we serve.
+              Tracker serves businesses ranging from small family-owned shops to large commercial operations. Our customers include screen printers, embroiderers, promotional product companies, corporate apparel suppliers, and multi-location enterprises. Our scalable platform grows with your business needs. Learn more <a href="/about" className="text-[#D4AF37] hover:text-yellow-400 underline font-medium">about our story</a> and the businesses we serve.
             </>
           )
         }
@@ -90,7 +90,7 @@ const FAQ = () => {
     },
     {
       title: "Implementation & Setup",
-      icon: <Settings size={20} className="text-emerald-400" />,
+      icon: <Settings size={20} className="text-[#D4AF37]" />,
       faqs: [
         {
           question: "How long does it take to implement Tracker?",
@@ -233,9 +233,9 @@ const FAQ = () => {
       <div className="bg-gradient-to-r from-zinc-900 via-black to-emerald-950 relative overflow-hidden">
         {/* Background pattern */}
         <div className="absolute inset-0 opacity-20">
-          <div className="absolute w-96 h-96 rounded-full bg-emerald-500/10 -top-48 -right-48"></div>
-          <div className="absolute w-64 h-64 rounded-full bg-[#D4AF37]/10 top-32 right-1/4"></div>
-          <div className="absolute w-32 h-32 rounded-full bg-emerald-400/15 bottom-16 right-16"></div>
+          <div className="absolute w-96 h-96 rounded-full bg-[#D4AF37]/10 -top-48 -right-48"></div>
+          <div className="absolute w-64 h-64 rounded-full bg-emerald-500/10 top-32 right-1/4"></div>
+          <div className="absolute w-32 h-32 rounded-full bg-[#D4AF37]/15 bottom-16 right-16"></div>
         </div>
 
         <div className="container mx-auto px-6 py-20 relative z-10">
@@ -245,9 +245,9 @@ const FAQ = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
           >
-            <div className="inline-flex items-center gap-2 px-4 py-2 bg-emerald-500/20 backdrop-blur-sm rounded-full border border-emerald-400/30 mb-8">
-              <HelpCircle size={16} className="text-emerald-400" />
-              <span className="text-sm text-emerald-400 font-medium tracking-wide">SUPPORT CENTER</span>
+            <div className="inline-flex items-center gap-2 px-4 py-2 bg-[#D4AF37]/20 backdrop-blur-sm rounded-full border border-[#D4AF37]/40 mb-8">
+              <HelpCircle size={16} className="text-[#D4AF37]" />
+              <span className="text-sm text-[#D4AF37] font-medium tracking-wide">SUPPORT CENTER</span>
             </div>
             
             <h1 className="text-5xl md:text-6xl font-light text-white mb-6 leading-tight">
@@ -274,10 +274,10 @@ const FAQ = () => {
             >
               {/* Section Header */}
               <div className="flex items-center gap-3 mb-8 pb-4 border-b-2 border-zinc-800">
-                <div className="w-10 h-10 bg-emerald-500/20 border border-emerald-500/40 rounded-lg flex items-center justify-center">
+                <div className={`w-10 h-10 ${section.title === "Pricing & Costs" || section.title === "Account Management" ? "bg-[#D4AF37]/20 border-[#D4AF37]/40" : "bg-emerald-500/20 border-emerald-500/40"} rounded-lg flex items-center justify-center`}>
                   {React.cloneElement(section.icon as React.ReactElement, { 
                     size: 20, 
-                    className: section.title === "Pricing & Costs" ? "text-[#D4AF37]" : "text-emerald-400"
+                    className: section.title === "Pricing & Costs" || section.title === "Account Management" ? "text-[#D4AF37]" : "text-emerald-400"
                   })}
                 </div>
                 <h2 className="text-2xl font-medium text-white">{section.title}</h2>
@@ -294,7 +294,7 @@ const FAQ = () => {
                       onMouseEnter={() => setHoveredItem(itemId)}
                       onMouseLeave={() => setHoveredItem(null)}
                       className={`bg-zinc-900/50 border border-zinc-800 rounded-lg shadow-sm transition-all duration-200 ${
-                        hoveredItem === itemId ? 'shadow-lg border-emerald-500/40 bg-zinc-900/70' : ''
+                        hoveredItem === itemId ? 'shadow-lg border-[#D4AF37]/40 bg-zinc-900/70' : ''
                       }`}
                     >
                       <Accordion type="single" collapsible>
@@ -302,7 +302,7 @@ const FAQ = () => {
                           value={`faq-${sectionIndex}-${index}`} 
                           className="border-none"
                         >
-                          <AccordionTrigger className="px-6 py-5 hover:no-underline text-left font-medium text-white hover:text-emerald-400 data-[state=open]:text-emerald-400 transition-colors">
+                          <AccordionTrigger className="px-6 py-5 hover:no-underline text-left font-medium text-white hover:text-[#D4AF37] data-[state=open]:text-[#D4AF37] transition-colors">
                             <span className="text-left">{faq.question}</span>
                           </AccordionTrigger>
                           <AccordionContent className="px-6 pb-5 text-gray-300 leading-relaxed">
@@ -326,9 +326,9 @@ const FAQ = () => {
 
         {/* Contact CTA - Salesforce style */}
         <div className="max-w-4xl mx-auto mt-20">
-          <div className="bg-gradient-to-r from-zinc-900/80 to-zinc-800/80 backdrop-blur-sm rounded-2xl p-12 text-center border border-zinc-700">
-            <div className="w-16 h-16 bg-emerald-500/20 border border-emerald-500/40 rounded-full flex items-center justify-center mx-auto mb-6">
-              <HelpCircle className="w-8 h-8 text-emerald-400" />
+          <div className="bg-gradient-to-r from-zinc-900/80 to-zinc-800/80 backdrop-blur-sm rounded-2xl p-12 text-center border border-[#D4AF37]/30">
+            <div className="w-16 h-16 bg-[#D4AF37]/20 border border-[#D4AF37]/40 rounded-full flex items-center justify-center mx-auto mb-6">
+              <HelpCircle className="w-8 h-8 text-[#D4AF37]" />
             </div>
             <h3 className="text-3xl font-light text-white mb-4">Still have questions?</h3>
             <p className="text-lg text-gray-300 mb-8 max-w-2xl mx-auto leading-relaxed">
@@ -337,13 +337,13 @@ const FAQ = () => {
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a 
                 href="/contact" 
-                className="bg-emerald-500 hover:bg-emerald-600 text-white px-8 py-3 rounded-lg font-medium transition-all duration-200 hover:shadow-lg transform hover:-translate-y-0.5"
+                className="bg-[#D4AF37] hover:bg-yellow-500 text-black px-8 py-3 rounded-lg font-medium transition-all duration-200 hover:shadow-lg transform hover:-translate-y-0.5"
               >
                 Contact Support
               </a>
               <a 
                 href="/get-started" 
-                className="bg-zinc-800 hover:bg-zinc-700 text-emerald-400 px-8 py-3 rounded-lg font-medium border-2 border-emerald-500/40 transition-all duration-200 hover:shadow-md hover:border-emerald-400"
+                className="bg-zinc-800 hover:bg-zinc-700 text-[#D4AF37] px-8 py-3 rounded-lg font-medium border-2 border-[#D4AF37]/40 transition-all duration-200 hover:shadow-md hover:border-[#D4AF37]"
               >
                 Get Started
               </a>
