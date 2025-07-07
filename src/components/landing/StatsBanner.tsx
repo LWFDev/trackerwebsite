@@ -1,6 +1,7 @@
 
 import { ScrollReveal } from "@/components/ui/scroll-reveal";
 import { useIsMobile } from "@/hooks/use-mobile";
+import { motion } from "framer-motion";
 
 const StatsBanner = () => {
   const isMobile = useIsMobile();
@@ -15,27 +16,78 @@ const StatsBanner = () => {
       </div>
       
       <div className="container mx-auto px-4 relative">
-        <div className="grid grid-cols-2 gap-4 sm:gap-8 text-center">
-          <ScrollReveal delay={0} duration={800}>
+        <motion.div 
+          className="grid grid-cols-2 gap-4 sm:gap-8 text-center"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.3 }}
+          variants={{
+            hidden: { opacity: 0 },
+            visible: {
+              opacity: 1,
+              transition: {
+                staggerChildren: 0.15,
+                delayChildren: 0.1
+              }
+            }
+          }}
+        >
+          <motion.div
+            variants={{
+              hidden: { opacity: 0, y: 20 },
+              visible: { 
+                opacity: 1, 
+                y: 0,
+                transition: { duration: 0.6, ease: "easeOut" }
+              }
+            }}
+          >
             <div className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 dark:text-white light:text-gray-900 mb-1 sm:mb-2 transition-colors duration-300">500+</div>
             <div className="text-xs sm:text-sm text-gray-600 dark:text-gray-400 light:text-gray-600 transition-colors duration-300">Active Businesses</div>
-          </ScrollReveal>
+          </motion.div>
           
-          <ScrollReveal delay={100} duration={800}>
+          <motion.div
+            variants={{
+              hidden: { opacity: 0, y: 20 },
+              visible: { 
+                opacity: 1, 
+                y: 0,
+                transition: { duration: 0.6, ease: "easeOut" }
+              }
+            }}
+          >
             <div className="text-2xl sm:text-3xl md:text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-emerald-500 to-green-400 mb-1 sm:mb-2">1M+</div>
             <div className="text-xs sm:text-sm text-gray-600 dark:text-gray-400 light:text-gray-600 transition-colors duration-300">Orders Processed</div>
-          </ScrollReveal>
+          </motion.div>
           
-          <ScrollReveal delay={200} duration={800}>
+          <motion.div
+            variants={{
+              hidden: { opacity: 0, y: 20 },
+              visible: { 
+                opacity: 1, 
+                y: 0,
+                transition: { duration: 0.6, ease: "easeOut" }
+              }
+            }}
+          >
             <div className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 dark:text-white light:text-gray-900 mb-1 sm:mb-2 transition-colors duration-300">99.9%</div>
             <div className="text-xs sm:text-sm text-gray-600 dark:text-gray-400 light:text-gray-600 transition-colors duration-300">Uptime</div>
-          </ScrollReveal>
+          </motion.div>
           
-          <ScrollReveal delay={300} duration={800}>
+          <motion.div
+            variants={{
+              hidden: { opacity: 0, y: 20 },
+              visible: { 
+                opacity: 1, 
+                y: 0,
+                transition: { duration: 0.6, ease: "easeOut" }
+              }
+            }}
+          >
             <div className="text-2xl sm:text-3xl md:text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-emerald-500 to-green-400 mb-1 sm:mb-2">24/7</div>
             <div className="text-xs sm:text-sm text-gray-600 dark:text-gray-400 light:text-gray-600 transition-colors duration-300">Customer Support</div>
-          </ScrollReveal>
-        </div>
+          </motion.div>
+        </motion.div>
       </div>
     </section>
   );
