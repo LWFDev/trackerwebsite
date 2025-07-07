@@ -85,7 +85,7 @@ interface StatCardProps {
 const StatCard = ({ number, label }: StatCardProps) => {
   return (
     <div className="relative group">
-      <div className="bg-emerald-50/60 dark:bg-emerald-900/60 backdrop-blur-sm p-4 rounded-lg border border-yellow-400/50 dark:border-yellow-500/50 transition-all duration-300 shadow-sm">
+      <div className="bg-emerald-50/30 dark:bg-emerald-900/30 backdrop-blur-sm p-4 rounded-lg border border-yellow-400/50 dark:border-yellow-500/50 transition-all duration-300 shadow-sm">
         <div className="text-2xl md:text-3xl font-bold mb-1 text-slate-800 dark:text-slate-200">{number}</div>
         <div className="text-slate-600 dark:text-slate-400 text-xs sm:text-sm font-medium">{label}</div>
       </div>
