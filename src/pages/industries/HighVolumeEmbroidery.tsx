@@ -15,7 +15,7 @@ const HighVolumeEmbroidery = () => {
 
   const solutions = [
     {
-      icon: <BarChart3 className="w-6 h-6 text-emerald-DEFAULT" />,
+      icon: <BarChart3 className="w-6 h-6 text-gold-DEFAULT" />,
       title: "Real-Time Machine Monitoring",
       description: "Track the status and performance of all 150+ machines from a single dashboard"
     },
@@ -25,7 +25,7 @@ const HighVolumeEmbroidery = () => {
       description: "Optimize machine allocation and minimize downtime with intelligent scheduling"
     },
     {
-      icon: <TrendingUp className="w-6 h-6 text-emerald-DEFAULT" />,
+      icon: <TrendingUp className="w-6 h-6 text-gold-DEFAULT" />,
       title: "Operational Efficiency Analytics",
       description: "Identify bottlenecks and optimize workflows for maximum throughput"
     }
@@ -44,8 +44,8 @@ const HighVolumeEmbroidery = () => {
             transition={{ duration: 0.6 }}
           >
             <div className="flex items-center gap-4 mb-6">
-              <Factory className="w-12 h-12 text-emerald-DEFAULT" />
-              <h1 className="text-4xl md:text-6xl font-bold bg-gradient-to-r from-emerald-DEFAULT to-emerald-light bg-clip-text text-transparent">
+              <Factory className="w-12 h-12 text-gold-DEFAULT" />
+              <h1 className="text-4xl md:text-6xl font-bold bg-gradient-to-r from-gold-DEFAULT to-emerald-DEFAULT bg-clip-text text-transparent">
                 High-Volume Embroidery Operations
               </h1>
             </div>
@@ -53,7 +53,7 @@ const HighVolumeEmbroidery = () => {
               Scale your embroidery operations with precision. Manage 150+ machines, streamline production scheduling, and boost operational efficiency with real-time tracking and analytics.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
-              <Button asChild size="lg" variant="emerald">
+              <Button asChild size="lg" variant="gold">
                 <Link to="/get-started">Start Free Trial</Link>
               </Button>
               <Button asChild variant="emerald-outline" size="lg">
@@ -105,7 +105,7 @@ const HighVolumeEmbroidery = () => {
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 viewport={{ once: true }}
               >
-                <Card className="h-full theme-surface theme-border hover:border-emerald-DEFAULT/50 transition-all duration-300">
+                <Card className="h-full theme-surface theme-border hover:border-gold-DEFAULT/50 transition-all duration-300">
                   <CardHeader>
                     <div className="flex items-center gap-3 mb-2">
                       {solution.icon}
@@ -133,7 +133,7 @@ const HighVolumeEmbroidery = () => {
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
               <div>
-                <div className="text-4xl font-bold text-emerald-DEFAULT mb-2">35%</div>
+                <div className="text-4xl font-bold text-gold-DEFAULT mb-2">35%</div>
                 <p className="theme-text-secondary">Increase in Production Efficiency</p>
               </div>
               <div>
@@ -141,11 +141,11 @@ const HighVolumeEmbroidery = () => {
                 <p className="theme-text-secondary">Reduction in Machine Downtime</p>
               </div>
               <div>
-                <div className="text-4xl font-bold text-emerald-DEFAULT mb-2">25%</div>
+                <div className="text-4xl font-bold text-gold-DEFAULT mb-2">25%</div>
                 <p className="theme-text-secondary">Faster Order Turnaround</p>
               </div>
             </div>
-            <Button asChild size="lg" variant="emerald">
+            <Button asChild size="lg" variant="gold">
               <Link to="/get-started">Transform Your Operations Today</Link>
             </Button>
           </div>
