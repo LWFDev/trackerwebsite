@@ -15,17 +15,17 @@ const SportsAndUniforms = () => {
 
   const solutions = [
     {
-      icon: <BarChart3 className="w-6 h-6 text-gold-DEFAULT" />,
+      icon: <BarChart3 className="w-6 h-6 text-gold" />,
       title: "Seasonal Demand Management",
       description: "Handle demand spikes smoothly with intelligent capacity planning and scheduling"
     },
     {
-      icon: <Clock className="w-6 h-6 text-emerald-DEFAULT" />,
+      icon: <Clock className="w-6 h-6 text-emerald" />,
       title: "Custom Uniform Production",
       description: "Streamline team uniform customization with detailed specification tracking"
     },
     {
-      icon: <TrendingUp className="w-6 h-6 text-gold-DEFAULT" />,
+      icon: <TrendingUp className="w-6 h-6 text-gold" />,
       title: "Event Deadline Management",
       description: "Ensure timely delivery for sporting events with priority scheduling"
     }
@@ -44,8 +44,8 @@ const SportsAndUniforms = () => {
             transition={{ duration: 0.6 }}
           >
             <div className="flex items-center gap-4 mb-6">
-              <Trophy className="w-12 h-12 text-gold-DEFAULT" />
-              <h1 className="text-4xl md:text-6xl font-bold bg-gradient-to-r from-gold-DEFAULT to-emerald-DEFAULT bg-clip-text text-transparent">
+              <Trophy className="w-12 h-12 text-gold" />
+              <h1 className="text-4xl md:text-6xl font-bold bg-gradient-to-r from-gold to-emerald bg-clip-text text-transparent">
                 Sportswear & Team Uniforms
               </h1>
             </div>
@@ -81,7 +81,7 @@ const SportsAndUniforms = () => {
                   transition={{ duration: 0.5, delay: index * 0.1 }}
                   viewport={{ once: true }}
                 >
-                  <div className="w-2 h-2 bg-gold-DEFAULT rounded-full mt-3 flex-shrink-0"></div>
+                  <div className="w-2 h-2 bg-gold rounded-full mt-3 flex-shrink-0"></div>
                   <p className="theme-text-secondary">{challenge}</p>
                 </motion.div>
               ))}
@@ -105,7 +105,7 @@ const SportsAndUniforms = () => {
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 viewport={{ once: true }}
               >
-                <Card className="h-full theme-surface theme-border hover:border-gold-DEFAULT/50 transition-all duration-300">
+                <Card className="h-full theme-surface theme-border hover:border-gold/50 transition-all duration-300">
                   <CardHeader>
                     <div className="flex items-center gap-3 mb-2">
                       {solution.icon}
@@ -133,15 +133,15 @@ const SportsAndUniforms = () => {
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
               <div>
-                <div className="text-4xl font-bold text-gold-DEFAULT mb-2">60%</div>
+                <div className="text-4xl font-bold text-gold mb-2">60%</div>
                 <p className="theme-text-secondary">Better Seasonal Planning</p>
               </div>
               <div>
-                <div className="text-4xl font-bold text-emerald-DEFAULT mb-2">45%</div>
+                <div className="text-4xl font-bold text-emerald mb-2">45%</div>
                 <p className="theme-text-secondary">Faster Custom Production</p>
               </div>
               <div>
-                <div className="text-4xl font-bold text-gold-DEFAULT mb-2">98%</div>
+                <div className="text-4xl font-bold text-gold mb-2">98%</div>
                 <p className="theme-text-secondary">On-Time Event Delivery</p>
               </div>
             </div>
