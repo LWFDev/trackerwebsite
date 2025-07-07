@@ -170,9 +170,9 @@ const PricingPlans = () => {
                 {t("Annually")}
               </span>
               {billingCycle === 'annually' && (
-                <span className="text-xs text-[#D4AF37] flex items-center gap-1">
-                  <Sparkles className="h-3 w-3" /> {t("Save 20%")}
-                </span>
+              <span className="text-xs text-emerald-DEFAULT flex items-center gap-1">
+                <Sparkles className="h-3 w-3" /> {t("Save 20%")}
+              </span>
               )}
             </div>
           </div>
@@ -199,7 +199,7 @@ const PricingPlans = () => {
         
         <ScrollReveal className="text-center text-gray-400 mt-8 text-sm max-w-2xl mx-auto" threshold={0.1} delay={400}>
           <div className="flex items-center justify-center gap-2 mt-8">
-            <Check className="h-4 w-4 text-[#D4AF37]" />
+            <Check className="h-4 w-4 text-emerald-DEFAULT" />
             <p>{t("All plans include a 14-day free trial with no credit card required")}</p>
           </div>
         </ScrollReveal>

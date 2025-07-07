@@ -66,6 +66,13 @@ export default {
 					light: '#F2D675',
 					dark: '#9E7F1D',
 					hover: '#E6C34B'
+				},
+				emerald: {
+					DEFAULT: '#10B981',
+					light: '#34D399',
+					dark: '#059669',
+					hover: '#0D9488',
+					subtle: '#065F46'
 				}
 			},
 			borderRadius: {

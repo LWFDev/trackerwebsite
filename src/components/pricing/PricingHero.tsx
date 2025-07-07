@@ -64,8 +64,8 @@ const PricingHero = () => {
   return <div className="pt-28 pb-20 bg-gradient-to-b from-zinc-900 to-black text-white relative overflow-hidden flex items-center min-h-[50vh]">
       {/* Interactive background elements */}
       <div className="absolute top-0 left-0 w-full h-full overflow-hidden z-0">
-        {/* Animated gradient blob with optimized animation */}
-        <div ref={glowRef} className="absolute w-[800px] h-[800px] rounded-full bg-[#D4AF37]/10 blur-[120px] top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 transition-transform duration-1000 ease-out" style={{
+        {/* Animated gradient blob with optimized animation - green accent */}
+        <div ref={glowRef} className="absolute w-[800px] h-[800px] rounded-full bg-gradient-to-r from-emerald-DEFAULT/10 to-[#D4AF37]/10 blur-[120px] top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 transition-transform duration-1000 ease-out" style={{
         willChange: 'transform'
       }}></div>
         
