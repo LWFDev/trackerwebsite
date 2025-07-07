@@ -4,27 +4,32 @@ import { CheckCircle } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const Integration = () => {
-  // Define the integration logos with their names and paths
+  // Define the integration logos with their names, paths, and background colors
   const integrationLogos = [
     {
       name: "Shopify",
-      image: "/lovable-uploads/a061c746-21cc-421c-8f26-239f553bcf06.png"
+      image: "/lovable-uploads/a061c746-21cc-421c-8f26-239f553bcf06.png",
+      bgColor: "bg-gradient-to-br from-green-500/20 to-green-600/30"
     },
     {
       name: "WooCommerce",
-      image: "/lovable-uploads/c25b44a2-426c-4f30-9e20-b4cf6ae40e2e.png"
+      image: "/lovable-uploads/c25b44a2-426c-4f30-9e20-b4cf6ae40e2e.png",
+      bgColor: "bg-gradient-to-br from-purple-500/20 to-purple-600/30"
     },
     {
       name: "ShipStation",
-      image: "/lovable-uploads/70e89c9a-2a2a-47bf-84af-d0d6cecca1e3.png"
+      image: "/lovable-uploads/70e89c9a-2a2a-47bf-84af-d0d6cecca1e3.png",
+      bgColor: "bg-gradient-to-br from-blue-500/20 to-blue-600/30"
     },
     {
       name: "alphabroder",
-      image: "/lovable-uploads/43dfb005-d4c4-43ef-846a-545265bad44a.png"
+      image: "/lovable-uploads/43dfb005-d4c4-43ef-846a-545265bad44a.png",
+      bgColor: "bg-gradient-to-br from-orange-500/20 to-orange-600/30"
     },
     {
       name: "SanMar",
-      image: "/lovable-uploads/e4f4a469-9951-418c-b168-1634003acc41.png"
+      image: "/lovable-uploads/e4f4a469-9951-418c-b168-1634003acc41.png",
+      bgColor: "bg-gradient-to-br from-red-500/20 to-red-600/30"
     }
   ];
 
@@ -73,7 +78,7 @@ const Integration = () => {
             {integrationLogos.map((logo, index) => (
               <div 
                 key={index}
-                className="bg-gray-800/70 dark:bg-zinc-900/70 light:bg-gray-800/70 backdrop-blur-sm rounded-xl h-32 border border-gray-700 dark:border-zinc-800 light:border-gray-700 transform transition-all duration-300 hover:border-[#D4AF37]/50 hover:-translate-y-1 hover:shadow-lg group animate-fade-in"
+                className={`${logo.bgColor} backdrop-blur-sm rounded-xl h-32 border border-gray-700 dark:border-zinc-800 light:border-gray-700 transform transition-all duration-300 hover:border-[#D4AF37]/50 hover:-translate-y-1 hover:shadow-lg group animate-fade-in`}
                 style={{ animationDelay: `${0.3 + index * 0.1}s` }}
               >
                 <div className="w-full h-full flex items-center justify-center overflow-hidden relative">
