@@ -1,8 +1,17 @@
+# Tracker Systems - Production Management Software
+# https://tracker-systems.com
+
+User-agent: *
+Allow: /
+
+# Crawl priority directives
 User-agent: Googlebot
 Allow: /
+Crawl-delay: 1
 
 User-agent: Bingbot
 Allow: /
+Crawl-delay: 1
 
 User-agent: Twitterbot
 Allow: /
@@ -10,5 +19,30 @@ Allow: /
 User-agent: facebookexternalhit
 Allow: /
 
-User-agent: *
+User-agent: LinkedInBot
 Allow: /
+
+# Disallow admin and internal paths
+Disallow: /admin/
+Disallow: /api/
+Disallow: /temp/
+Disallow: /*.json$
+Disallow: /*?*utm_*
+Disallow: /*?*ref=*
+Disallow: /search?*
+
+# Allow important pages
+Allow: /pricing
+Allow: /about
+Allow: /contact
+Allow: /industries/
+Allow: /modules/
+Allow: /blog/
+Allow: /support
+Allow: /documentation
+
+# Sitemap location
+Sitemap: https://tracker-systems.com/sitemap.xml
+
+# Preferred domain
+Host: tracker-systems.com
