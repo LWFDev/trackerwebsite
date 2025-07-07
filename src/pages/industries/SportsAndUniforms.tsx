@@ -15,17 +15,17 @@ const SportsAndUniforms = () => {
 
   const solutions = [
     {
-      icon: <BarChart3 className="w-6 h-6 text-gold" />,
+      icon: <BarChart3 className="w-6 h-6 text-gold-DEFAULT" />,
       title: "Seasonal Demand Management",
       description: "Handle demand spikes smoothly with intelligent capacity planning and scheduling"
     },
     {
-      icon: <Clock className="w-6 h-6 text-emerald" />,
+      icon: <Clock className="w-6 h-6 text-emerald-DEFAULT" />,
       title: "Custom Uniform Production",
       description: "Streamline team uniform customization with detailed specification tracking"
     },
     {
-      icon: <TrendingUp className="w-6 h-6 text-gold" />,
+      icon: <TrendingUp className="w-6 h-6 text-gold-DEFAULT" />,
       title: "Event Deadline Management",
       description: "Ensure timely delivery for sporting events with priority scheduling"
     }
@@ -44,8 +44,8 @@ const SportsAndUniforms = () => {
             transition={{ duration: 0.6 }}
           >
             <div className="flex items-center gap-4 mb-6">
-              <Trophy className="w-12 h-12 text-gold" />
-              <h1 className="text-4xl md:text-6xl font-bold bg-gradient-to-r from-gold to-emerald bg-clip-text text-transparent">
+              <Trophy className="w-12 h-12 text-gold-DEFAULT" />
+              <h1 className="text-4xl md:text-6xl font-bold bg-gradient-to-r from-gold-DEFAULT to-emerald-DEFAULT bg-clip-text text-transparent">
                 Sportswear & Team Uniforms
               </h1>
             </div>
@@ -81,7 +81,7 @@ const SportsAndUniforms = () => {
                   transition={{ duration: 0.5, delay: index * 0.1 }}
                   viewport={{ once: true }}
                 >
-                  <div className="w-2 h-2 bg-gold rounded-full mt-3 flex-shrink-0"></div>
+                  <div className="w-2 h-2 bg-gold-DEFAULT rounded-full mt-3 flex-shrink-0"></div>
                   <p className="theme-text-secondary">{challenge}</p>
                 </motion.div>
               ))}
@@ -105,7 +105,7 @@ const SportsAndUniforms = () => {
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 viewport={{ once: true }}
               >
-                <Card className="h-full theme-surface theme-border hover:border-gold/50 transition-all duration-300">
+                <Card className="h-full theme-surface theme-border hover:border-gold-DEFAULT/50 transition-all duration-300">
                   <CardHeader>
                     <div className="flex items-center gap-3 mb-2">
                       {solution.icon}
@@ -140,7 +140,7 @@ const SportsAndUniforms = () => {
               <Card className="h-full theme-surface theme-border">
                 <CardHeader>
                   <div className="flex items-center gap-3 mb-2">
-                    <Users className="w-6 h-6 text-gold" />
+                    <Users className="w-6 h-6 text-gold-DEFAULT" />
                     <CardTitle className="text-xl">Team Roster Management</CardTitle>
                   </div>
                 </CardHeader>
@@ -150,15 +150,15 @@ const SportsAndUniforms = () => {
                   </CardDescription>
                   <ul className="space-y-2 theme-text-secondary">
                     <li className="flex items-start gap-2">
-                      <div className="w-1.5 h-1.5 bg-emerald rounded-full mt-2 flex-shrink-0"></div>
+                      <div className="w-1.5 h-1.5 bg-emerald-DEFAULT rounded-full mt-2 flex-shrink-0"></div>
                       Player-specific sizing and customization
                     </li>
                     <li className="flex items-start gap-2">
-                      <div className="w-1.5 h-1.5 bg-emerald rounded-full mt-2 flex-shrink-0"></div>
+                      <div className="w-1.5 h-1.5 bg-emerald-DEFAULT rounded-full mt-2 flex-shrink-0"></div>
                       Bulk order management for teams
                     </li>
                     <li className="flex items-start gap-2">
-                      <div className="w-1.5 h-1.5 bg-emerald rounded-full mt-2 flex-shrink-0"></div>
+                      <div className="w-1.5 h-1.5 bg-emerald-DEFAULT rounded-full mt-2 flex-shrink-0"></div>
                       Season-long uniform planning
                     </li>
                   </ul>
@@ -175,7 +175,7 @@ const SportsAndUniforms = () => {
               <Card className="h-full theme-surface theme-border">
                 <CardHeader>
                   <div className="flex items-center gap-3 mb-2">
-                    <CheckCircle className="w-6 h-6 text-emerald" />
+                    <CheckCircle className="w-6 h-6 text-emerald-DEFAULT" />
                     <CardTitle className="text-xl">Event-Based Production</CardTitle>
                   </div>
                 </CardHeader>
@@ -185,15 +185,15 @@ const SportsAndUniforms = () => {
                   </CardDescription>
                   <ul className="space-y-2 theme-text-secondary">
                     <li className="flex items-start gap-2">
-                      <div className="w-1.5 h-1.5 bg-gold rounded-full mt-2 flex-shrink-0"></div>
+                      <div className="w-1.5 h-1.5 bg-gold-DEFAULT rounded-full mt-2 flex-shrink-0"></div>
                       Championship rush order handling
                     </li>
                     <li className="flex items-start gap-2">
-                      <div className="w-1.5 h-1.5 bg-gold rounded-full mt-2 flex-shrink-0"></div>
+                      <div className="w-1.5 h-1.5 bg-gold-DEFAULT rounded-full mt-2 flex-shrink-0"></div>
                       Season timeline integration
                     </li>
                     <li className="flex items-start gap-2">
-                      <div className="w-1.5 h-1.5 bg-gold rounded-full mt-2 flex-shrink-0"></div>
+                      <div className="w-1.5 h-1.5 bg-gold-DEFAULT rounded-full mt-2 flex-shrink-0"></div>
                       Tournament delivery coordination
                     </li>
                   </ul>
@@ -213,7 +213,7 @@ const SportsAndUniforms = () => {
             </h2>
             <div className="space-y-8">
               <motion.div 
-                className="border-l-4 border-gold pl-6"
+                className="border-l-4 border-gold-DEFAULT pl-6"
                 initial={{ opacity: 0, x: -20 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.5 }}
@@ -225,13 +225,13 @@ const SportsAndUniforms = () => {
                   leading to missed deadlines and unhappy coaches.
                 </p>
                 <p className="theme-text-secondary">
-                  <strong className="text-emerald">Tracker Solution:</strong> Dynamic capacity planning automatically adjusts 
+                  <strong className="text-emerald-DEFAULT">Tracker Solution:</strong> Dynamic capacity planning automatically adjusts 
                   production schedules and resource allocation during peak periods.
                 </p>
               </motion.div>
 
               <motion.div 
-                className="border-l-4 border-emerald pl-6"
+                className="border-l-4 border-emerald-DEFAULT pl-6"
                 initial={{ opacity: 0, x: -20 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.5, delay: 0.1 }}
@@ -243,13 +243,13 @@ const SportsAndUniforms = () => {
                   Managing these specifications manually leads to costly errors.
                 </p>
                 <p className="theme-text-secondary">
-                  <strong className="text-gold">Tracker Solution:</strong> Digital design templates and automated 
+                  <strong className="text-gold-DEFAULT">Tracker Solution:</strong> Digital design templates and automated 
                   specification tracking ensure every uniform meets exact team requirements.
                 </p>
               </motion.div>
 
               <motion.div 
-                className="border-l-4 border-gold pl-6"
+                className="border-l-4 border-gold-DEFAULT pl-6"
                 initial={{ opacity: 0, x: -20 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.5, delay: 0.2 }}
@@ -261,7 +261,7 @@ const SportsAndUniforms = () => {
                   Standard production workflows can\'t accommodate these urgent requests.
                 </p>
                 <p className="theme-text-secondary">
-                  <strong className="text-emerald">Tracker Solution:</strong> Priority queue system and express 
+                  <strong className="text-emerald-DEFAULT">Tracker Solution:</strong> Priority queue system and express 
                   production workflows ensure championship orders are delivered on time.
                 </p>
               </motion.div>
@@ -279,15 +279,15 @@ const SportsAndUniforms = () => {
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
               <div>
-                <div className="text-4xl font-bold text-gold mb-2">60%</div>
+                <div className="text-4xl font-bold text-gold-DEFAULT mb-2">60%</div>
                 <p className="theme-text-secondary">Better Seasonal Planning</p>
               </div>
               <div>
-                <div className="text-4xl font-bold text-emerald mb-2">45%</div>
+                <div className="text-4xl font-bold text-emerald-DEFAULT mb-2">45%</div>
                 <p className="theme-text-secondary">Faster Custom Production</p>
               </div>
               <div>
-                <div className="text-4xl font-bold text-gold mb-2">98%</div>
+                <div className="text-4xl font-bold text-gold-DEFAULT mb-2">98%</div>
                 <p className="theme-text-secondary">On-Time Event Delivery</p>
               </div>
             </div>
