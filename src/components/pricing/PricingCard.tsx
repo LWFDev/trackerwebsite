@@ -19,12 +19,12 @@ const PricingCard: React.FC<PricingPlanProps> = ({ plan }) => {
   return (
     <motion.div
       className={`bg-zinc-900 rounded-lg border ${
-        plan.highlighted ? "border-emerald-DEFAULT ring-2 ring-emerald-DEFAULT/20" : "border-zinc-800"
+        plan.highlighted ? "border-emerald-500 ring-2 ring-emerald-500/30" : "border-zinc-800"
       } shadow-sm p-6 relative transition-all duration-300 group h-full`}
       whileHover={{ 
         y: -5,
         boxShadow: plan.highlighted ? 
-          "0 25px 50px -12px rgba(16, 185, 129, 0.25)" : 
+          "0 25px 50px -12px rgba(16, 185, 129, 0.4)" : 
           "0 25px 50px -12px rgba(0, 0, 0, 0.25)"
       }}
       initial={{ opacity: 0, y: 20 }}
@@ -38,18 +38,18 @@ const PricingCard: React.FC<PricingPlanProps> = ({ plan }) => {
     >
       {/* Decorative elements */}
       <div 
-        className={`absolute -top-4 -right-4 w-16 h-16 rounded-full ${plan.highlighted ? 'bg-emerald-DEFAULT/5' : 'bg-[#D4AF37]/5'} opacity-0 group-hover:opacity-100 transition-opacity duration-500`}
+        className={`absolute -top-4 -right-4 w-16 h-16 rounded-full ${plan.highlighted ? 'bg-emerald-500/20' : 'bg-[#D4AF37]/5'} opacity-0 group-hover:opacity-100 transition-opacity duration-500`}
         style={{ willChange: 'opacity' }}
       ></div>
       <div 
-        className={`absolute -bottom-6 -left-6 w-24 h-24 rounded-full ${plan.highlighted ? 'bg-emerald-DEFAULT/5' : 'bg-[#D4AF37]/5'} opacity-0 group-hover:opacity-100 transition-opacity duration-500`}
+        className={`absolute -bottom-6 -left-6 w-24 h-24 rounded-full ${plan.highlighted ? 'bg-emerald-500/20' : 'bg-[#D4AF37]/5'} opacity-0 group-hover:opacity-100 transition-opacity duration-500`}
         style={{ willChange: 'opacity' }}
       ></div>
       
       {plan.highlighted && (
         <div className="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-10">
           <motion.div 
-            className="bg-gradient-to-r from-emerald-DEFAULT to-emerald-light text-white text-xs font-semibold px-5 py-1.5 rounded-full flex items-center gap-1.5"
+            className="bg-gradient-to-r from-emerald-500 to-emerald-400 text-white text-xs font-semibold px-5 py-1.5 rounded-full flex items-center gap-1.5 shadow-lg shadow-emerald-500/30"
             initial={{ y: -5 }}
             animate={{ y: [0, -5, 0] }}
             transition={{ duration: 2, repeat: Infinity, repeatType: "loop" }}
@@ -63,7 +63,7 @@ const PricingCard: React.FC<PricingPlanProps> = ({ plan }) => {
       <div className="text-center">
         <h3 className="text-lg font-semibold mb-2">{plan.name}</h3>
         <div className="flex justify-center items-baseline mb-4">
-          <span className={`text-4xl font-bold ${plan.highlighted ? 'text-emerald-DEFAULT' : 'text-white'}`}>
+          <span className={`text-4xl font-bold ${plan.highlighted ? 'text-emerald-400' : 'text-white'}`}>
             {plan.price}
           </span>
           {plan.price !== "Custom" && <span className="text-gray-500 ml-1">/month</span>}
@@ -77,7 +77,7 @@ const PricingCard: React.FC<PricingPlanProps> = ({ plan }) => {
           <Button 
             className={`w-full ${
               plan.highlighted 
-                ? 'bg-gradient-to-r from-emerald-DEFAULT to-emerald-light hover:from-emerald-light hover:to-emerald-DEFAULT text-white' 
+                ? 'bg-gradient-to-r from-emerald-500 to-emerald-400 hover:from-emerald-400 hover:to-emerald-500 text-white shadow-lg shadow-emerald-500/25 hover:shadow-emerald-500/40' 
                 : 'bg-zinc-800 hover:bg-zinc-700'
             }`}
           >
@@ -95,7 +95,7 @@ const PricingCard: React.FC<PricingPlanProps> = ({ plan }) => {
             animate={{ opacity: 1, x: 0 }}
             transition={{ delay: i * 0.1 }}
           >
-            <Check className="h-5 w-5 text-emerald-DEFAULT shrink-0 mr-2" />
+            <Check className="h-5 w-5 text-emerald-400 shrink-0 mr-2" />
             <span className="text-gray-300">{feature}</span>
           </motion.li>
         ))}

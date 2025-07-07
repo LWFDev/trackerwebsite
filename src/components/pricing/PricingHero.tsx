@@ -65,13 +65,13 @@ const PricingHero = () => {
       {/* Interactive background elements */}
       <div className="absolute top-0 left-0 w-full h-full overflow-hidden z-0">
         {/* Animated gradient blob with optimized animation - green accent */}
-        <div ref={glowRef} className="absolute w-[800px] h-[800px] rounded-full bg-gradient-to-r from-emerald-DEFAULT/10 to-[#D4AF37]/10 blur-[120px] top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 transition-transform duration-1000 ease-out" style={{
+        <div ref={glowRef} className="absolute w-[800px] h-[800px] rounded-full bg-gradient-to-r from-emerald-500/15 to-[#D4AF37]/10 blur-[120px] top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 transition-transform duration-1000 ease-out" style={{
         willChange: 'transform'
       }}></div>
         
         {/* Floating elements - using transform instead of position for better performance */}
         <div className="absolute inset-0 pointer-events-none">
-          <motion.div className="absolute top-20 left-[10%] w-16 h-16 border border-[#D4AF37]/20 rounded-full opacity-20" animate={{
+          <motion.div className="absolute top-20 left-[10%] w-16 h-16 border border-emerald-400/30 rounded-full opacity-40" animate={{
           y: [0, -20, 0]
         }} transition={{
           duration: 6,
@@ -140,8 +140,8 @@ const PricingHero = () => {
       }} className="text-center">
           <div className="inline-flex items-center gap-2 px-4 py-1.5 bg-zinc-800/80 backdrop-blur-sm rounded-full border border-zinc-700 mb-6 relative overflow-hidden group">
             <div className="absolute inset-0 bg-gradient-to-r from-[#D4AF37]/0 via-[#D4AF37]/10 to-[#D4AF37]/0 animate-shimmer"></div>
-            <Sparkles size={16} className="text-[#D4AF37]" />
-            <span className="text-sm text-[#D4AF37] uppercase font-medium tracking-wider">Premium Solutions</span>
+            <Sparkles size={16} className="text-emerald-400" />
+            <span className="text-sm text-emerald-400 uppercase font-medium tracking-wider">Premium Solutions</span>
           </div>
           
           <motion.h1 className="text-4xl md:text-6xl font-bold mb-6 leading-tight" initial={{
@@ -154,9 +154,9 @@ const PricingHero = () => {
           delay: 0.2,
           duration: 0.5
         }}>
-            Simple, Transparent <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#D4AF37] to-[#F2D675] relative">
+            Simple, Transparent <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 via-emerald-300 to-[#D4AF37] relative">
               Pricing
-              <motion.div className="absolute -bottom-1 left-0 w-full h-1 bg-gradient-to-r from-[#D4AF37] to-[#F2D675]" initial={{
+              <motion.div className="absolute -bottom-1 left-0 w-full h-1 bg-gradient-to-r from-emerald-400 via-emerald-300 to-[#D4AF37]" initial={{
               width: 0
             }} animate={{
               width: "100%"

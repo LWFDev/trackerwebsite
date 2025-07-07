@@ -145,8 +145,8 @@ const PricingPlans = () => {
     <div className="py-16 bg-black relative z-10">
       {/* Dynamic background elements */}
       <div className="absolute top-0 left-0 w-full h-full overflow-hidden">
-        <div className="absolute w-[600px] h-[600px] rounded-full bg-[#D4AF37]/5 blur-[150px] -top-[200px] right-0 animate-pulse-light"></div>
-        <div className="absolute w-[800px] h-[800px] rounded-full bg-[#D4AF37]/5 blur-[150px] -bottom-[300px] left-0 animate-pulse-light" style={{ animationDelay: '1s' }}></div>
+        <div className="absolute w-[600px] h-[600px] rounded-full bg-emerald-500/10 blur-[150px] -top-[200px] right-0 animate-pulse-light"></div>
+        <div className="absolute w-[800px] h-[800px] rounded-full bg-[#D4AF37]/8 blur-[150px] -bottom-[300px] left-0 animate-pulse-light" style={{ animationDelay: '1s' }}></div>
       </div>
       
       <div className="container mx-auto px-4 relative z-10">
@@ -156,12 +156,12 @@ const PricingPlans = () => {
             <Switch 
               checked={billingCycle === 'annually'} 
               onCheckedChange={toggleBillingCycle}
-              className="data-[state=checked]:bg-[#D4AF37] relative"
+              className="data-[state=checked]:bg-emerald-500 relative"
             >
               {animateSwitch && (
                 <span className="absolute -top-1 -right-1 flex h-3 w-3">
-                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#D4AF37] opacity-75"></span>
-                  <span className="relative inline-flex rounded-full h-3 w-3 bg-[#D4AF37]"></span>
+                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                  <span className="relative inline-flex rounded-full h-3 w-3 bg-emerald-400"></span>
                 </span>
               )}
             </Switch>
@@ -170,7 +170,7 @@ const PricingPlans = () => {
                 {t("Annually")}
               </span>
               {billingCycle === 'annually' && (
-              <span className="text-xs text-emerald-DEFAULT flex items-center gap-1">
+              <span className="text-xs text-emerald-400 flex items-center gap-1">
                 <Sparkles className="h-3 w-3" /> {t("Save 20%")}
               </span>
               )}
@@ -199,7 +199,7 @@ const PricingPlans = () => {
         
         <ScrollReveal className="text-center text-gray-400 mt-8 text-sm max-w-2xl mx-auto" threshold={0.1} delay={400}>
           <div className="flex items-center justify-center gap-2 mt-8">
-            <Check className="h-4 w-4 text-emerald-DEFAULT" />
+            <Check className="h-4 w-4 text-emerald-400" />
             <p>{t("All plans include a 14-day free trial with no credit card required")}</p>
           </div>
         </ScrollReveal>
