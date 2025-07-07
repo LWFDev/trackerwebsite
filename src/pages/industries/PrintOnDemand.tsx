@@ -15,17 +15,17 @@ const PrintOnDemand = () => {
 
   const solutions = [
     {
-      icon: <BarChart3 className="w-6 h-6 text-[#D4AF37]" />,
+      icon: <BarChart3 className="w-6 h-6 text-emerald-DEFAULT" />,
       title: "Seamless Store Integration",
       description: "Connect directly with online stores for automated order import and processing"
     },
     {
-      icon: <Clock className="w-6 h-6 text-[#D4AF37]" />,
+      icon: <Clock className="w-6 h-6 text-emerald-DEFAULT" />,
       title: "Transparent Customer Tracking",
       description: "Provide real-time order progress tracking directly to your end customers"
     },
     {
-      icon: <TrendingUp className="w-6 h-6 text-[#D4AF37]" />,
+      icon: <TrendingUp className="w-6 h-6 text-emerald-DEFAULT" />,
       title: "Automated Order Processing",
       description: "Handle high-volume orders with automated workflows and quality checks"
     }
@@ -44,8 +44,8 @@ const PrintOnDemand = () => {
             transition={{ duration: 0.6 }}
           >
             <div className="flex items-center gap-4 mb-6">
-              <Monitor className="w-12 h-12 text-[#D4AF37]" />
-              <h1 className="text-4xl md:text-6xl font-bold bg-gradient-to-r from-[#D4AF37] to-[#F2D675] bg-clip-text text-transparent">
+              <Monitor className="w-12 h-12 text-emerald-DEFAULT" />
+              <h1 className="text-4xl md:text-6xl font-bold bg-gradient-to-r from-emerald-DEFAULT to-emerald-light bg-clip-text text-transparent">
                 Online Print-on-Demand
               </h1>
             </div>
@@ -53,10 +53,10 @@ const PrintOnDemand = () => {
               Enable seamless integration with online stores to provide transparent order progress tracking directly to end customers. Automate your print-on-demand workflow for maximum efficiency.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
-              <Button asChild size="lg" className="bg-gradient-to-r from-[#D4AF37] to-[#F2D675] text-black hover:opacity-90 font-semibold">
+              <Button asChild size="lg" variant="emerald">
                 <Link to="/get-started">Start Free Trial</Link>
               </Button>
-              <Button asChild variant="outline" size="lg" className="border-[#D4AF37] text-[#D4AF37] hover:bg-[#D4AF37] hover:text-black">
+              <Button asChild variant="emerald-outline" size="lg">
                 <Link to="/contact">Schedule Demo</Link>
               </Button>
             </div>
@@ -81,7 +81,7 @@ const PrintOnDemand = () => {
                   transition={{ duration: 0.5, delay: index * 0.1 }}
                   viewport={{ once: true }}
                 >
-                  <div className="w-2 h-2 bg-[#D4AF37] rounded-full mt-3 flex-shrink-0"></div>
+                  <div className="w-2 h-2 bg-emerald-DEFAULT rounded-full mt-3 flex-shrink-0"></div>
                   <p className="theme-text-secondary">{challenge}</p>
                 </motion.div>
               ))}
@@ -105,7 +105,7 @@ const PrintOnDemand = () => {
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 viewport={{ once: true }}
               >
-                <Card className="h-full theme-surface theme-border hover:border-[#D4AF37]/50 transition-all duration-300">
+                <Card className="h-full theme-surface theme-border hover:border-emerald-DEFAULT/50 transition-all duration-300">
                   <CardHeader>
                     <div className="flex items-center gap-3 mb-2">
                       {solution.icon}
@@ -133,19 +133,19 @@ const PrintOnDemand = () => {
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
               <div>
-                <div className="text-4xl font-bold text-[#D4AF37] mb-2">75%</div>
+                <div className="text-4xl font-bold text-emerald-DEFAULT mb-2">75%</div>
                 <p className="theme-text-secondary">Reduction in Manual Processing</p>
               </div>
               <div>
-                <div className="text-4xl font-bold text-[#D4AF37] mb-2">90%</div>
+                <div className="text-4xl font-bold text-emerald-DEFAULT mb-2">90%</div>
                 <p className="theme-text-secondary">Customer Satisfaction Rate</p>
               </div>
               <div>
-                <div className="text-4xl font-bold text-[#D4AF37] mb-2">50%</div>
+                <div className="text-4xl font-bold text-emerald-DEFAULT mb-2">50%</div>
                 <p className="theme-text-secondary">Faster Order Fulfillment</p>
               </div>
             </div>
-            <Button asChild size="lg" className="bg-gradient-to-r from-[#D4AF37] to-[#F2D675] text-black hover:opacity-90 font-semibold">
+            <Button asChild size="lg" variant="emerald">
               <Link to="/get-started">Scale Your Business</Link>
             </Button>
           </div>
