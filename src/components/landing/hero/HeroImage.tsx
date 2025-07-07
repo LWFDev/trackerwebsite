@@ -1,13 +1,14 @@
 import { useIsMobile } from "@/hooks/use-mobile";
 import { motion } from "framer-motion";
+import { useState } from "react";
 
 export const HeroImage = () => {
   const isMobile = useIsMobile();
+  const [imageLoaded, setImageLoaded] = useState(false);
   
   return (
     <motion.div 
-      className="md:w-1/2 w-full animate-fade-in" 
-      style={{ animationDelay: '0.5s' }}
+      className="md:w-1/2 w-full" 
       initial={{ opacity: 0, x: 20 }}
       animate={{ opacity: 1, x: 0 }}
       transition={{ duration: 0.8, delay: 0.3 }}
@@ -15,9 +16,28 @@ export const HeroImage = () => {
       <div className="relative">
         {/* Bubble shaped background glow instead of border */}
         <div className="absolute -inset-4 bg-gradient-to-r from-[#D4AF37] to-[#F2D675] opacity-20 blur-[40px] rounded-full transform group-hover:scale-105 transition-all duration-300"></div>
+        
         <div className="rounded-xl shadow-2xl overflow-hidden relative">
           <div className="absolute inset-0 bg-gradient-to-tr from-black/30 via-transparent to-transparent z-10"></div>
-          <img alt="Platform dashboard" className="w-full h-auto" src="/lovable-uploads/89b9b32f-faca-405b-a272-133d79b8a435.png" />
+          
+          {/* Loading placeholder */}
+          {!imageLoaded && (
+            <div className="w-full h-[400px] bg-gradient-to-br from-zinc-800 to-zinc-900 animate-pulse flex items-center justify-center">
+              <div className="w-8 h-8 border-2 border-[#D4AF37] border-t-transparent rounded-full animate-spin"></div>
+            </div>
+          )}
+          
+          {/* Hero image with fade-in animation */}
+          <motion.img 
+            alt="Platform dashboard" 
+            className="w-full h-auto"
+            src="/lovable-uploads/89b9b32f-faca-405b-a272-133d79b8a435.png"
+            onLoad={() => setImageLoaded(true)}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: imageLoaded ? 1 : 0 }}
+            transition={{ duration: 0.6, ease: "easeOut" }}
+            style={{ display: imageLoaded ? 'block' : 'none' }}
+          />
         </div>
         
         {/* Floating feature badges - simplified for mobile */}
