@@ -264,56 +264,60 @@ const ModuleLayout = ({
             </div>
             
             {heroImage && <div className="flex justify-center">
-                <Dialog open={isLightboxOpen} onOpenChange={setIsLightboxOpen}>
-                  <DialogTrigger asChild>
-                    <div className="relative bg-zinc-800/50 p-4 rounded-lg shadow-lg border border-zinc-700 cursor-pointer group transition-all duration-300 hover:scale-105 hover:shadow-xl hover:border-[#D4AF37]/50">
-                      <img src={heroImage} alt={title} className="w-full h-auto rounded max-h-[300px] object-contain transition-all duration-300 group-hover:brightness-110" />
-                      
-                      {/* Hover overlay with zoom icon */}
-                      <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-all duration-300 rounded flex items-center justify-center opacity-0 group-hover:opacity-100">
-                        <div className="bg-[#D4AF37]/90 backdrop-blur-sm px-3 py-2 rounded-lg flex items-center gap-2 text-black font-medium transform scale-90 group-hover:scale-100 transition-transform duration-300">
-                          <ZoomIn className="h-4 w-4" />
-                          <span className="text-sm">View Fullscreen</span>
+                <div className="relative">
+                  <Dialog open={isLightboxOpen} onOpenChange={setIsLightboxOpen}>
+                    <DialogTrigger asChild>
+                      <div className="relative bg-zinc-800/50 p-4 rounded-lg shadow-lg border border-zinc-700 cursor-pointer group transition-all duration-300 hover:scale-105 hover:shadow-xl hover:border-[#D4AF37]/50">
+                        <img src={heroImage} alt={title} className="w-full h-auto rounded max-h-[300px] object-contain transition-all duration-300 group-hover:brightness-110" />
+                        
+                        {/* Hover overlay with zoom icon */}
+                        <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-all duration-300 rounded flex items-center justify-center opacity-0 group-hover:opacity-100">
+                          <div className="bg-[#D4AF37]/90 backdrop-blur-sm px-3 py-2 rounded-lg flex items-center gap-2 text-black font-medium transform scale-90 group-hover:scale-100 transition-transform duration-300">
+                            <ZoomIn className="h-4 w-4" />
+                            <span className="text-sm">View Fullscreen</span>
+                          </div>
                         </div>
                       </div>
-                      
-                      {/* Floating Callout Boxes */}
-                      {heroImageCallouts && heroImageCallouts.map((callout, index) => <div key={index} className="absolute bg-zinc-900/90 backdrop-blur-sm px-3 py-2 rounded-lg text-xs font-medium shadow-lg z-30 animate-float border border-[#D4AF37]/30 text-white" style={{
-                    ...callout.position,
-                    animationDelay: callout.delay || '0s'
-                  }}>
-                          <div className="flex items-center gap-2">
-                            {callout.icon && <span className="text-[#D4AF37]">{callout.icon}</span>}
-                            <span>{callout.text}</span>
-                          </div>
-                        </div>)}
-                    </div>
-                  </DialogTrigger>
+                    </DialogTrigger>
+                    
+                    <DialogContent className="max-w-6xl w-[95vw] h-[95vh] p-0 bg-black/95 border-zinc-800">
+                      <div className="relative w-full h-full flex items-center justify-center p-4">
+                        <img 
+                          src={heroImage} 
+                          alt={title} 
+                          className="max-w-full max-h-full object-contain rounded-lg shadow-2xl"
+                        />
+                        
+                        {/* Close button */}
+                        <button 
+                          onClick={() => setIsLightboxOpen(false)}
+                          className="absolute top-4 right-4 p-2 bg-zinc-800/80 hover:bg-zinc-700/80 rounded-full transition-colors group"
+                        >
+                          <X className="h-5 w-5 text-white group-hover:text-[#D4AF37]" />
+                        </button>
+                        
+                        {/* Image title overlay */}
+                        <div className="absolute bottom-4 left-4 bg-zinc-900/90 backdrop-blur-sm px-4 py-2 rounded-lg">
+                          <h3 className="text-white font-semibold">{title}</h3>
+                          <p className="text-gray-400 text-sm">Click outside or press ESC to close</p>
+                        </div>
+                      </div>
+                    </DialogContent>
+                  </Dialog>
                   
-                  <DialogContent className="max-w-6xl w-[95vw] h-[95vh] p-0 bg-black/95 border-zinc-800">
-                    <div className="relative w-full h-full flex items-center justify-center p-4">
-                      <img 
-                        src={heroImage} 
-                        alt={title} 
-                        className="max-w-full max-h-full object-contain rounded-lg shadow-2xl"
-                      />
-                      
-                      {/* Close button */}
-                      <button 
-                        onClick={() => setIsLightboxOpen(false)}
-                        className="absolute top-4 right-4 p-2 bg-zinc-800/80 hover:bg-zinc-700/80 rounded-full transition-colors group"
-                      >
-                        <X className="h-5 w-5 text-white group-hover:text-[#D4AF37]" />
-                      </button>
-                      
-                      {/* Image title overlay */}
-                      <div className="absolute bottom-4 left-4 bg-zinc-900/90 backdrop-blur-sm px-4 py-2 rounded-lg">
-                        <h3 className="text-white font-semibold">{title}</h3>
-                        <p className="text-gray-400 text-sm">Click outside or press ESC to close</p>
+                  {/* Floating Callout Boxes - RESTORED */}
+                  {heroImageCallouts && heroImageCallouts.map((callout, index) => 
+                    <div key={index} className="absolute bg-zinc-900/90 backdrop-blur-sm px-3 py-2 rounded-lg text-xs font-medium shadow-lg z-30 animate-float border border-[#D4AF37]/30 text-white pointer-events-none" style={{
+                      ...callout.position,
+                      animationDelay: callout.delay || '0s'
+                    }}>
+                      <div className="flex items-center gap-2">
+                        {callout.icon && <span className="text-[#D4AF37]">{callout.icon}</span>}
+                        <span>{callout.text}</span>
                       </div>
                     </div>
-                  </DialogContent>
-                </Dialog>
+                  )}
+                </div>
               </div>}
           </div>
         </div>
