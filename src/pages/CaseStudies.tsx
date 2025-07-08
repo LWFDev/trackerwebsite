@@ -9,17 +9,17 @@ import { motion } from 'framer-motion';
 const CaseStudies = () => {
   const caseStudies = [
     {
-      id: 'abc-apparel',
-      company: 'ABC Apparel',
-      industry: 'Custom Apparel Manufacturing',
-      challenge: 'Manual order processing taking days',
-      solution: 'Automated workflow with Tracker',
-      results: '85% reduction in processing time',
+      id: 'pure-optical',
+      company: 'Pure Optical',
+      industry: 'E-Commerce & Optical Retail',
+      challenge: 'Slow manual fulfillment processes limiting growth',
+      solution: 'Complete Tracker automation platform',
+      results: '233% productivity increase, 10x faster processing',
       image: '/lovable-uploads/a7a106f9-9817-4302-a992-e1b4320c19cd.png',
       stats: [
-        { icon: Clock, value: '85%', label: 'Time Reduction' },
-        { icon: TrendingUp, value: '40%', label: 'Revenue Increase' },
-        { icon: Users, value: '200+', label: 'Happy Customers' }
+        { icon: TrendingUp, value: '233%', label: 'Productivity Boost' },
+        { icon: Clock, value: '10x', label: 'Faster Processing' },
+        { icon: Users, value: '50', label: 'Orders/Hour/Person' }
       ]
     },
     {
