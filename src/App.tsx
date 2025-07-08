@@ -36,6 +36,10 @@ import Artworkers from "@/pages/modules/Artworkers";
 import CustomerPortal from "@/pages/modules/CustomerPortal";
 import Support from "@/pages/Support";
 import Industries from "@/pages/Industries";
+import CaseStudies from "@/pages/CaseStudies";
+import ABCApparel from "@/pages/case-studies/ABCApparel";
+import XYZEmbroidery from "@/pages/case-studies/XYZEmbroidery";
+import FashionForward from "@/pages/case-studies/FashionForward";
 import HighVolumeEmbroidery from "@/pages/industries/HighVolumeEmbroidery";
 import ScreenPrinting from "@/pages/industries/ScreenPrinting";
 import ApparelManufacturing from "@/pages/industries/ApparelManufacturing";
@@ -84,6 +88,12 @@ const App = () => {
                   <Route path="/industries/print-on-demand" element={<Layout><PrintOnDemand /></Layout>} />
                   <Route path="/industries/contract-decoration" element={<Layout><ContractDecoration /></Layout>} />
                   <Route path="/get-started" element={<Layout><GetStarted /></Layout>} />
+                  
+                  {/* Case Studies Routes */}
+                  <Route path="/case-studies" element={<Layout><CaseStudies /></Layout>} />
+                  <Route path="/case-studies/abc-apparel" element={<Layout><ABCApparel /></Layout>} />
+                  <Route path="/case-studies/xyz-embroidery" element={<Layout><XYZEmbroidery /></Layout>} />
+                  <Route path="/case-studies/fashion-forward" element={<Layout><FashionForward /></Layout>} />
                   
                   {/* Documentation Routes */}
                   <Route path="/documentation" element={<Layout><Documentation /></Layout>} />
