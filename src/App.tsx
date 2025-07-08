@@ -38,7 +38,7 @@ import Support from "@/pages/Support";
 import Industries from "@/pages/Industries";
 import CaseStudies from "@/pages/CaseStudies";
 import PureOptical from "@/pages/case-studies/PureOptical";
-import XYZEmbroidery from "@/pages/case-studies/XYZEmbroidery";
+import WoolCool from "@/pages/case-studies/WoolCool";
 import FashionForward from "@/pages/case-studies/FashionForward";
 import HighVolumeEmbroidery from "@/pages/industries/HighVolumeEmbroidery";
 import ScreenPrinting from "@/pages/industries/ScreenPrinting";
@@ -92,7 +92,7 @@ const App = () => {
                   {/* Case Studies Routes */}
                   <Route path="/case-studies" element={<Layout><CaseStudies /></Layout>} />
                   <Route path="/case-studies/pure-optical" element={<Layout><PureOptical /></Layout>} />
-                  <Route path="/case-studies/xyz-embroidery" element={<Layout><XYZEmbroidery /></Layout>} />
+                  <Route path="/case-studies/woolcool" element={<Layout><WoolCool /></Layout>} />
                   <Route path="/case-studies/fashion-forward" element={<Layout><FashionForward /></Layout>} />
                   
                   {/* Documentation Routes */}

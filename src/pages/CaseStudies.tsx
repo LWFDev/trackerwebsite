@@ -23,17 +23,17 @@ const CaseStudies = () => {
       ]
     },
     {
-      id: 'xyz-embroidery',
-      company: 'XYZ Embroidery',
-      industry: 'Custom Embroidery Services',
-      challenge: 'Slow design approval process',
-      solution: 'Product Designer module implementation',
-      results: '70% faster client approvals',
+      id: 'woolcool',
+      company: 'WoolCool',
+      industry: 'Manufacturing & Production',
+      challenge: 'Complex spreadsheets and manual processes limiting growth',
+      solution: 'Flexible Tracker platform with integrated automation',
+      results: 'Complete system transformation, increased profits, freed resources',
       image: '/lovable-uploads/b967fa34-27f3-4bde-8864-dd74e1e5fea9.png',
       stats: [
-        { icon: Clock, value: '70%', label: 'Faster Approvals' },
-        { icon: TrendingUp, value: '60%', label: 'Design Efficiency' },
-        { icon: Users, value: '95%', label: 'Client Satisfaction' }
+        { icon: Clock, value: 'Minutes', label: 'vs Hours Reports' },
+        { icon: TrendingUp, value: '8+', label: 'Years Growth' },
+        { icon: Users, value: '100%', label: 'Resource Freedom' }
       ]
     },
     {
