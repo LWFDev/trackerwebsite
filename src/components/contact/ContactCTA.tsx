@@ -1,5 +1,6 @@
 
 import React from "react";
+import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 
 const ContactCTA = () => {
@@ -17,9 +18,11 @@ const ContactCTA = () => {
           <p className="text-gray-300 mb-8 max-w-2xl mx-auto">
             Our team is ready to help you find the perfect solution for your business needs. Let's schedule a call to discuss your requirements.
           </p>
-          <Button variant="gold" size="lg" className="font-medium">
-            Schedule a Call
-          </Button>
+          <Link to="/get-started" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
+            <Button variant="gold" size="lg" className="font-medium">
+              Schedule a Call
+            </Button>
+          </Link>
         </div>
       </div>
     </div>
