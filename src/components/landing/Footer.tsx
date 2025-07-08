@@ -33,7 +33,6 @@ const Footer = () => {
             <ul className="space-y-2 text-sm">
               <li><Link to="/faq" className="hover:text-[#D4AF37] transition-colors" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>FAQ</Link></li>
               <li><Link to="/support" className="hover:text-[#D4AF37] transition-colors" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>Support</Link></li>
-              <li><Link to="/blog" className="hover:text-[#D4AF37] transition-colors" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>Blog</Link></li>
             </ul>
           </div>
           <div>
