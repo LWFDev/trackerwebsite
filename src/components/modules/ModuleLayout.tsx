@@ -466,14 +466,16 @@ const ModuleLayout = ({
             <h2 className="text-3xl font-bold mb-8 text-center text-white">Related Modules</h2>
             
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              {relatedModules.map((module, index) => <div key={index} className={`p-6 rounded-lg shadow-md transition-all duration-300 hover:-translate-y-1 ${getModuleCardColor(module.title)}`}>
+              {relatedModules.map((module, index) => 
+                <Link key={index} to={module.link} className={`block p-6 rounded-lg shadow-md transition-all duration-300 hover:-translate-y-1 ${getModuleCardColor(module.title)} group cursor-pointer`}>
                   <div className="mb-4">{getModuleIcon(module.title)}</div>
-                  <h3 className="text-xl font-semibold mb-2 text-white">{module.title}</h3>
-                  <p className="text-gray-400 mb-4">{module.description}</p>
-                  <Link to={module.link} className="text-[#D4AF37] hover:underline inline-flex items-center">
+                  <h3 className="text-xl font-semibold mb-2 text-white group-hover:text-[#D4AF37] transition-colors">{module.title}</h3>
+                  <p className="text-gray-400 mb-4 group-hover:text-gray-300 transition-colors">{module.description}</p>
+                  <div className="text-[#D4AF37] hover:underline inline-flex items-center">
                     Learn more <ArrowRight className="ml-1 h-4 w-4" />
-                  </Link>
-                </div>)}
+                  </div>
+                </Link>
+              )}
             </div>
           </div>
         </section>}
