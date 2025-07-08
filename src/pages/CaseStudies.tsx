@@ -76,10 +76,10 @@ const CaseStudies = () => {
       {/* Case Studies Grid */}
       <section className="pb-20">
         <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-stretch">
             {caseStudies.map((study, index) => (
               <ScrollReveal key={study.id} delay={index * 100}>
-                <Card className="h-full group hover:shadow-xl transition-all duration-300 border-slate-200 dark:border-slate-700 hover:border-emerald-300 dark:hover:border-emerald-600">
+                <Card className="h-full flex flex-col group hover:shadow-xl transition-all duration-300 border-slate-200 dark:border-slate-700 hover:border-emerald-300 dark:hover:border-emerald-600">
                   <CardHeader className="pb-4">
                     <div className="w-full h-48 mb-4 overflow-hidden rounded-lg">
                       <img 
@@ -96,7 +96,7 @@ const CaseStudies = () => {
                     </CardDescription>
                   </CardHeader>
                   
-                  <CardContent className="space-y-6">
+                  <CardContent className="flex flex-col flex-1 space-y-6">
                     <div>
                       <h4 className="font-semibold text-slate-900 dark:text-slate-100 mb-2">Challenge</h4>
                       <p className="text-sm text-slate-600 dark:text-slate-400">{study.challenge}</p>
@@ -123,15 +123,17 @@ const CaseStudies = () => {
                       <p className="text-sm text-emerald-700 dark:text-emerald-300 font-medium">{study.results}</p>
                     </div>
                     
-                    <Link to={`/case-studies/${study.id}`} className="block">
-                      <Button 
-                        className="w-full group bg-gradient-to-r from-emerald-600 to-green-500 hover:from-emerald-700 hover:to-green-600 text-white"
-                        onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-                      >
-                        Read Full Story
-                        <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                      </Button>
-                    </Link>
+                    <div className="mt-auto pt-4">
+                      <Link to={`/case-studies/${study.id}`} className="block">
+                        <Button 
+                          className="w-full group bg-gradient-to-r from-emerald-600 to-green-500 hover:from-emerald-700 hover:to-green-600 text-white"
+                          onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+                        >
+                          Read Full Story
+                          <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                        </Button>
+                      </Link>
+                    </div>
                   </CardContent>
                 </Card>
               </ScrollReveal>
