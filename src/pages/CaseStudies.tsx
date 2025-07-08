@@ -37,17 +37,17 @@ const CaseStudies = () => {
       ]
     },
     {
-      id: 'fashion-forward',
-      company: 'Fashion Forward Co.',
-      industry: 'Fashion Retail',
-      challenge: 'Inventory management chaos',
-      solution: 'Complete Tracker integration',
-      results: '50% reduction in stock issues',
+      id: 'agame',
+      company: 'AGAME',
+      industry: 'Embroidery & Print Production',
+      challenge: 'Manual processes limiting business scaling',
+      solution: 'Tracker ERP with Shopify integration',
+      results: 'Saved 2 days per week, enabled single-person COVID operations',
       image: '/lovable-uploads/c78cb5cd-6b30-4b76-ab3d-95defabc532a.png',
       stats: [
-        { icon: TrendingUp, value: '50%', label: 'Stock Accuracy' },
-        { icon: Clock, value: '35%', label: 'Order Processing' },
-        { icon: Users, value: '300+', label: 'SKUs Managed' }
+        { icon: Clock, value: '2 Days', label: 'Weekly Time Saved' },
+        { icon: TrendingUp, value: '60%+', label: 'Processing Reduction' },
+        { icon: Users, value: '1 Person', label: 'COVID Operations' }
       ]
     }
   ];
