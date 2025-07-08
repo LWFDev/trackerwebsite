@@ -15,17 +15,17 @@ const CorporateApparel = () => {
 
   const solutions = [
     {
-      icon: <BarChart3 className="w-6 h-6 text-gold-DEFAULT" />,
+      icon: <BarChart3 className="w-6 h-6 text-gold" />,
       title: "Complex Order Management",
       description: "Handle intricate customized orders with detailed tracking for each corporate client"
     },
     {
-      icon: <Clock className="w-6 h-6 text-emerald-DEFAULT" />,
+      icon: <Clock className="w-6 h-6 text-emerald" />,
       title: "Client-Specific Tracking",
       description: "Monitor unique requirements and specifications for each corporate account"
     },
     {
-      icon: <TrendingUp className="w-6 h-6 text-gold-DEFAULT" />,
+      icon: <TrendingUp className="w-6 h-6 text-gold" />,
       title: "Precise Fulfillment",
       description: "Ensure accurate order completion with detailed quality control checkpoints"
     }
@@ -33,12 +33,12 @@ const CorporateApparel = () => {
 
   const features = [
     {
-      icon: <Shield className="w-8 h-8 text-gold-DEFAULT" />,
+      icon: <Shield className="w-8 h-8 text-gold" />,
       title: "Brand Consistency Controls",
       description: "Maintain strict brand standards across all corporate client orders with automated checks."
     },
     {
-      icon: <FileCheck className="w-8 h-8 text-emerald-DEFAULT" />,
+      icon: <FileCheck className="w-8 h-8 text-emerald" />,
       title: "Compliance Tracking",
       description: "Track compliance with corporate guidelines and specifications for each client account."
     }
@@ -49,7 +49,7 @@ const CorporateApparel = () => {
       {/* Hero Section */}
       <section className="relative pt-24 pb-16 overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-gray-500/5 via-transparent to-slate-500/5"></div>
-        <div className="container mx-auto px-4 relative z-10">
+        <div className="container mx-auto px-4 relative z-10 py-[64px]">
           <motion.div 
             className="max-w-4xl mx-auto"
             initial={{ opacity: 0, y: 20 }}
@@ -57,8 +57,8 @@ const CorporateApparel = () => {
             transition={{ duration: 0.6 }}
           >
             <div className="flex items-center gap-4 mb-6">
-              <Building2 className="w-12 h-12 text-gold-DEFAULT" />
-              <h1 className="text-4xl md:text-6xl font-bold bg-gradient-to-r from-gold-DEFAULT to-emerald-DEFAULT bg-clip-text text-transparent">
+              <Building2 className="w-12 h-12 text-gold" />
+              <h1 className="text-4xl md:text-6xl font-bold bg-gradient-to-r from-gold to-emerald bg-clip-text text-transparent">
                 Corporate Apparel Suppliers
               </h1>
             </div>
@@ -94,7 +94,7 @@ const CorporateApparel = () => {
                   transition={{ duration: 0.5, delay: index * 0.1 }}
                   viewport={{ once: true }}
                 >
-                  <div className="w-2 h-2 bg-gold-DEFAULT rounded-full mt-3 flex-shrink-0"></div>
+                  <div className="w-2 h-2 bg-gold rounded-full mt-3 flex-shrink-0"></div>
                   <p className="theme-text-secondary">{challenge}</p>
                 </motion.div>
               ))}
@@ -118,7 +118,7 @@ const CorporateApparel = () => {
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 viewport={{ once: true }}
               >
-                <Card className="h-full theme-surface theme-border hover:border-emerald-DEFAULT/50 transition-all duration-300">
+                <Card className="h-full theme-surface theme-border hover:border-gold/50 transition-all duration-300">
                   <CardHeader>
                     <div className="flex items-center gap-3 mb-2">
                       {solution.icon}
@@ -137,58 +137,175 @@ const CorporateApparel = () => {
         </div>
       </section>
 
-      {/* Features Section */}
+      {/* Industry-Specific Features Section */}
       <section className="py-16 theme-surface theme-border border-y">
         <div className="container mx-auto px-4">
           <h2 className="text-3xl font-bold mb-12 text-center">
-            Corporate Features & Controls
+            Corporate Apparel Specialization
           </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-            {features.map((feature, index) => (
-              <motion.div
-                key={index}
-                className="flex items-start gap-4"
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: index * 0.2 }}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto">
+            <motion.div
+              initial={{ opacity: 0, x: -20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.5 }}
+              viewport={{ once: true }}
+            >
+              <Card className="h-full theme-surface theme-border">
+                <CardHeader>
+                  <div className="flex items-center gap-3 mb-2">
+                    <Shield className="w-6 h-6 text-gold" />
+                    <CardTitle className="text-xl">Brand Consistency Controls</CardTitle>
+                  </div>
+                </CardHeader>
+                <CardContent>
+                  <CardDescription className="theme-text-secondary mb-4">
+                    Maintain strict brand standards across all corporate client orders with automated quality checks and compliance monitoring.
+                  </CardDescription>
+                  <ul className="space-y-2 theme-text-secondary">
+                    <li className="flex items-start gap-2">
+                      <div className="w-1.5 h-1.5 bg-emerald rounded-full mt-2 flex-shrink-0"></div>
+                      Automated brand standard checks
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <div className="w-1.5 h-1.5 bg-emerald rounded-full mt-2 flex-shrink-0"></div>
+                      Client-specific guidelines tracking
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <div className="w-1.5 h-1.5 bg-emerald rounded-full mt-2 flex-shrink-0"></div>
+                      Quality compliance reporting
+                    </li>
+                  </ul>
+                </CardContent>
+              </Card>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, x: 20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.5, delay: 0.1 }}
+              viewport={{ once: true }}
+            >
+              <Card className="h-full theme-surface theme-border">
+                <CardHeader>
+                  <div className="flex items-center gap-3 mb-2">
+                    <FileCheck className="w-6 h-6 text-emerald" />
+                    <CardTitle className="text-xl">Complex Order Management</CardTitle>
+                  </div>
+                </CardHeader>
+                <CardContent>
+                  <CardDescription className="theme-text-secondary mb-4">
+                    Handle intricate customized orders with detailed tracking for each corporate client and their unique requirements.
+                  </CardDescription>
+                  <ul className="space-y-2 theme-text-secondary">
+                    <li className="flex items-start gap-2">
+                      <div className="w-1.5 h-1.5 bg-gold rounded-full mt-2 flex-shrink-0"></div>
+                      Multi-client order coordination
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <div className="w-1.5 h-1.5 bg-gold rounded-full mt-2 flex-shrink-0"></div>
+                      Customization requirement tracking
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <div className="w-1.5 h-1.5 bg-gold rounded-full mt-2 flex-shrink-0"></div>
+                      Precision fulfillment monitoring
+                    </li>
+                  </ul>
+                </CardContent>
+              </Card>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
+      {/* Pain Points Deep Dive */}
+      <section className="py-16">
+        <div className="container mx-auto px-4">
+          <div className="max-w-4xl mx-auto">
+            <h2 className="text-3xl font-bold mb-8 text-center">
+              Solving Corporate Apparel Challenges
+            </h2>
+            <div className="space-y-8">
+              <motion.div 
+                className="border-l-4 border-gold pl-6"
+                initial={{ opacity: 0, x: -20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.5 }}
                 viewport={{ once: true }}
               >
-                <div className="flex-shrink-0">
-                  {feature.icon}
-                </div>
-                <div>
-                  <h3 className="text-xl font-semibold mb-2">{feature.title}</h3>
-                  <p className="theme-text-secondary">{feature.description}</p>
-                </div>
+                <h3 className="text-xl font-semibold mb-3">Multi-Client Complexity</h3>
+                <p className="theme-text-secondary mb-3">
+                  Managing customized orders for multiple corporate clients, each with unique brand guidelines, 
+                  specifications, and delivery requirements creates operational complexity and risk of errors.
+                </p>
+                <p className="theme-text-secondary">
+                  <strong className="text-emerald">Tracker Solution:</strong> Client-specific tracking systems and 
+                  automated brand compliance checks ensure every order meets exact corporate standards.
+                </p>
               </motion.div>
-            ))}
+
+              <motion.div 
+                className="border-l-4 border-emerald pl-6"
+                initial={{ opacity: 0, x: -20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.5, delay: 0.1 }}
+                viewport={{ once: true }}
+              >
+                <h3 className="text-xl font-semibold mb-3">Brand Consistency</h3>
+                <p className="theme-text-secondary mb-3">
+                  Corporate clients demand strict adherence to brand guidelines across all apparel items, 
+                  requiring continuous monitoring and quality control throughout the production process.
+                </p>
+                <p className="theme-text-secondary">
+                  <strong className="text-gold">Tracker Solution:</strong> Automated brand standard verification 
+                  and real-time quality monitoring ensure consistent results for every corporate client.
+                </p>
+              </motion.div>
+
+              <motion.div 
+                className="border-l-4 border-gold pl-6"
+                initial={{ opacity: 0, x: -20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.5, delay: 0.2 }}
+                viewport={{ once: true }}
+              >
+                <h3 className="text-xl font-semibold mb-3">Customization Precision</h3>
+                <p className="theme-text-secondary mb-3">
+                  Complex customization requirements for corporate apparel demand precise execution and 
+                  detailed tracking to ensure accurate fulfillment of each specification.
+                </p>
+                <p className="theme-text-secondary">
+                  <strong className="text-emerald">Tracker Solution:</strong> Detailed requirement tracking and 
+                  precision fulfillment monitoring ensure accurate completion of complex customizations.
+                </p>
+              </motion.div>
+            </div>
           </div>
         </div>
       </section>
 
       {/* Results Section */}
-      <section className="py-16">
+      <section className="py-16 theme-surface theme-border border-t">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
             <h2 className="text-3xl font-bold mb-8">
-              Corporate Performance Results
+              Results You Can Expect
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
               <div>
-                <div className="text-4xl font-bold text-emerald-DEFAULT mb-2">55%</div>
+                <div className="text-4xl font-bold text-gold mb-2">55%</div>
                 <p className="theme-text-secondary">Better Order Accuracy</p>
               </div>
               <div>
-                <div className="text-4xl font-bold text-emerald-DEFAULT mb-2">70%</div>
+                <div className="text-4xl font-bold text-emerald mb-2">70%</div>
                 <p className="theme-text-secondary">Improved Client Satisfaction</p>
               </div>
               <div>
-                <div className="text-4xl font-bold text-emerald-DEFAULT mb-2">40%</div>
+                <div className="text-4xl font-bold text-gold mb-2">40%</div>
                 <p className="theme-text-secondary">Faster Customization Process</p>
               </div>
             </div>
-            <Button asChild size="lg" variant="emerald">
-              <Link to="/get-started">Elevate Corporate Service</Link>
+            <Button asChild size="lg" variant="gold">
+              <Link to="/get-started">Elevate Corporate Service Today</Link>
             </Button>
           </div>
         </div>
