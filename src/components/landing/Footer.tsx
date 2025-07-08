@@ -15,7 +15,7 @@ const Footer = () => {
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
           <div>
-            <Link to="/" className="block">
+            <Link to="/" className="block" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
               <img src="https://nubosync.com/wp-content/uploads/2025/04/tracker_logo.png" alt="Tracker Logo" className="h-8 w-auto" />
             </Link>
             <p className="text-sm mt-4">Garment Decorators premier line of business software from proof &amp; logo management, to order tracking, advanced production scheduling, to logistics.</p>
@@ -23,25 +23,25 @@ const Footer = () => {
           <div>
             <h4 className="theme-text font-medium mb-4">Product</h4>
             <ul className="space-y-2 text-sm">
-              <li><Link to="/modules" className="hover:text-[#D4AF37] transition-colors">Modules</Link></li>
-              <li><Link to="/pricing" className="hover:text-[#D4AF37] transition-colors">Pricing</Link></li>
-              <li><Link to="/industries" className="hover:text-[#D4AF37] transition-colors">Industries</Link></li>
+              <li><Link to="/modules" className="hover:text-[#D4AF37] transition-colors" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>Modules</Link></li>
+              <li><Link to="/pricing" className="hover:text-[#D4AF37] transition-colors" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>Pricing</Link></li>
+              <li><Link to="/industries" className="hover:text-[#D4AF37] transition-colors" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>Industries</Link></li>
             </ul>
           </div>
           <div>
             <h4 className="theme-text font-medium mb-4">Resources</h4>
             <ul className="space-y-2 text-sm">
-              <li><Link to="/faq" className="hover:text-[#D4AF37] transition-colors">FAQ</Link></li>
-              <li><Link to="/support" className="hover:text-[#D4AF37] transition-colors">Support</Link></li>
-              <li><Link to="/blog" className="hover:text-[#D4AF37] transition-colors">Blog</Link></li>
+              <li><Link to="/faq" className="hover:text-[#D4AF37] transition-colors" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>FAQ</Link></li>
+              <li><Link to="/support" className="hover:text-[#D4AF37] transition-colors" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>Support</Link></li>
+              <li><Link to="/blog" className="hover:text-[#D4AF37] transition-colors" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>Blog</Link></li>
             </ul>
           </div>
           <div>
             <h4 className="theme-text font-medium mb-4">Company</h4>
             <ul className="space-y-2 text-sm">
-              <li><Link to="/about" className="hover:text-[#D4AF37] transition-colors">About</Link></li>
-              <li><Link to="/privacy" className="hover:text-[#D4AF37] transition-colors">Privacy</Link></li>
-              <li><Link to="/terms" className="hover:text-[#D4AF37] transition-colors">Terms</Link></li>
+              <li><Link to="/about" className="hover:text-[#D4AF37] transition-colors" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>About</Link></li>
+              <li><Link to="/privacy" className="hover:text-[#D4AF37] transition-colors" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>Privacy</Link></li>
+              <li><Link to="/terms" className="hover:text-[#D4AF37] transition-colors" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>Terms</Link></li>
             </ul>
           </div>
         </div>
