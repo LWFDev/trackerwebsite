@@ -31,6 +31,7 @@ const Footer = () => {
           <div>
             <h4 className="theme-text font-medium mb-4">Resources</h4>
             <ul className="space-y-2 text-sm">
+              <li><Link to="/contact" className="hover:text-[#D4AF37] transition-colors" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>Contact</Link></li>
               <li><Link to="/faq" className="hover:text-[#D4AF37] transition-colors" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>FAQ</Link></li>
               <li><Link to="/support" className="hover:text-[#D4AF37] transition-colors" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>Support</Link></li>
             </ul>
