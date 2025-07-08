@@ -124,6 +124,113 @@ const PrintOnDemand = () => {
         </div>
       </section>
 
+      {/* Features Section */}
+      <section className="py-16 theme-surface theme-border border-y">
+        <div className="container mx-auto px-4">
+          <h2 className="text-3xl font-bold mb-12 text-center">
+            Advanced Print-on-Demand Features
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+            <motion.div
+              className="flex items-start gap-4"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5 }}
+              viewport={{ once: true }}
+            >
+              <div className="flex-shrink-0">
+                <Users className="w-8 h-8 text-gold-DEFAULT" />
+              </div>
+              <div>
+                <h3 className="text-xl font-semibold mb-2">Customer Portal Integration</h3>
+                <p className="theme-text-secondary">Direct customer access to order status with real-time tracking and notifications.</p>
+              </div>
+            </motion.div>
+            <motion.div
+              className="flex items-start gap-4"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.2 }}
+              viewport={{ once: true }}
+            >
+              <div className="flex-shrink-0">
+                <CheckCircle className="w-8 h-8 text-emerald-DEFAULT" />
+              </div>
+              <div>
+                <h3 className="text-xl font-semibold mb-2">Quality Automation</h3>
+                <p className="theme-text-secondary">Automated quality checks and print verification for consistent output across all orders.</p>
+              </div>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
+      {/* Industry Pain Points */}
+      <section className="py-16">
+        <div className="container mx-auto px-4">
+          <div className="max-w-4xl mx-auto">
+            <h2 className="text-3xl font-bold mb-8 text-center">
+              Why Print-on-Demand Businesses Choose Tracker
+            </h2>
+            <div className="space-y-8">
+              <motion.div
+                className="border-l-4 border-gold-DEFAULT pl-6"
+                initial={{ opacity: 0, x: -20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.5 }}
+                viewport={{ once: true }}
+              >
+                <h3 className="text-xl font-semibold mb-3">Order Volume Overwhelm</h3>
+                <p className="theme-text-secondary mb-3">
+                  Print-on-demand businesses can receive hundreds of orders daily during peak periods. Manual tracking 
+                  becomes impossible, leading to lost orders and frustrated customers.
+                </p>
+                <p className="theme-text-secondary">
+                  <strong className="text-emerald-DEFAULT">Tracker Solution:</strong> Automated order processing with 
+                  intelligent batching and priority queuing handles any volume seamlessly.
+                </p>
+              </motion.div>
+
+              <motion.div
+                className="border-l-4 border-emerald-DEFAULT pl-6"
+                initial={{ opacity: 0, x: -20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.5, delay: 0.1 }}
+                viewport={{ once: true }}
+              >
+                <h3 className="text-xl font-semibold mb-3">Customer Communication Gap</h3>
+                <p className="theme-text-secondary mb-3">
+                  Customers expect transparency in their order status. Without real-time updates, you get flooded 
+                  with "where's my order?" inquiries that drain your support resources.
+                </p>
+                <p className="theme-text-secondary">
+                  <strong className="text-gold-DEFAULT">Tracker Solution:</strong> Automatic customer notifications 
+                  and self-service tracking portal eliminates 80% of support inquiries.
+                </p>
+              </motion.div>
+
+              <motion.div
+                className="border-l-4 border-gold-DEFAULT pl-6"
+                initial={{ opacity: 0, x: -20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.5, delay: 0.2 }}
+                viewport={{ once: true }}
+              >
+                <h3 className="text-xl font-semibold mb-3">Platform Integration Complexity</h3>
+                <p className="theme-text-secondary mb-3">
+                  Managing orders from multiple platforms (Shopify, Etsy, Amazon) creates data silos and 
+                  increases the risk of errors and missed orders.
+                </p>
+                <p className="theme-text-secondary">
+                  <strong className="text-emerald-DEFAULT">Tracker Solution:</strong> Universal API integration 
+                  consolidates all orders into one unified dashboard with automatic sync.
+                </p>
+              </motion.div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Results Section */}
       <section className="py-16 theme-surface theme-border border-t">
         <div className="container mx-auto px-4">

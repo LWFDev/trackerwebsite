@@ -15,17 +15,17 @@ const ApparelManufacturing = () => {
 
   const solutions = [
     {
-      icon: <BarChart3 className="w-6 h-6 text-gold" />,
+      icon: <BarChart3 className="w-6 h-6 text-gold-DEFAULT" />,
       title: "Real-Time Production Insights",
       description: "Get instant visibility into production status across all manufacturing lines"
     },
     {
-      icon: <Clock className="w-6 h-6 text-emerald" />,
+      icon: <Clock className="w-6 h-6 text-emerald-DEFAULT" />,
       title: "Bottleneck Identification",
       description: "Quickly identify and resolve production bottlenecks before they impact delivery"
     },
     {
-      icon: <TrendingUp className="w-6 h-6 text-gold" />,
+      icon: <TrendingUp className="w-6 h-6 text-gold-DEFAULT" />,
       title: "Quality Assurance",
       description: "Ensure consistent output quality with automated tracking and alerts"
     }
@@ -33,12 +33,12 @@ const ApparelManufacturing = () => {
 
   const features = [
     {
-      icon: <Layers className="w-8 h-8 text-gold" />,
+      icon: <Layers className="w-8 h-8 text-gold-DEFAULT" />,
       title: "Multi-Line Coordination",
       description: "Coordinate production across multiple manufacturing lines with centralized oversight."
     },
     {
-      icon: <AlertTriangle className="w-8 h-8 text-emerald" />,
+      icon: <AlertTriangle className="w-8 h-8 text-emerald-DEFAULT" />,
       title: "Early Warning System",
       description: "Receive alerts for potential issues before they become costly production problems."
     }
@@ -58,7 +58,7 @@ const ApparelManufacturing = () => {
           >
             <div className="flex items-center gap-4 mb-6">
               <Shirt className="w-12 h-12 text-emerald-DEFAULT" />
-              <h1 className="text-4xl md:text-6xl font-bold bg-gradient-to-r from-emerald-DEFAULT to-emerald-light bg-clip-text text-transparent">
+              <h1 className="text-4xl md:text-6xl font-bold bg-gradient-to-r from-gold-DEFAULT to-emerald-DEFAULT bg-clip-text text-transparent">
                 Apparel Manufacturing
               </h1>
             </div>
