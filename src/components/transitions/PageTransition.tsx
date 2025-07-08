@@ -1,5 +1,4 @@
 
-import { useState, useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 import { AnimatePresence, motion } from 'framer-motion';
 
@@ -9,44 +8,29 @@ interface PageTransitionProps {
 
 const PageTransition = ({ children }: PageTransitionProps) => {
   const location = useLocation();
-  const [displayLocation, setDisplayLocation] = useState(location);
-  const [isExiting, setIsExiting] = useState(false);
-  
-  useEffect(() => {
-    if (location !== displayLocation) {
-      setIsExiting(true);
-      // Wait for exit animation to complete before updating location
-      setTimeout(() => {
-        setDisplayLocation(location);
-        setIsExiting(false);
-      }, 300); // Match the exit animation duration
-    }
-  }, [location, displayLocation]);
 
   return (
     <AnimatePresence mode="wait">
       <motion.div
-        key={displayLocation.pathname}
+        key={location.pathname}
         initial={{ opacity: 0 }}
         animate={{ 
           opacity: 1,
           transition: {
             duration: 0.3,
-            ease: "easeInOut",
-            when: "beforeChildren" // Ensures parent fades in before children
+            ease: "easeInOut"
           }
         }}
         exit={{ 
           opacity: 0,
           transition: {
             duration: 0.3,
-            ease: "easeInOut",
-            when: "afterChildren" // Ensures children fade out before parent
+            ease: "easeInOut"
           }
         }}
         className="min-h-screen"
       >
-        {!isExiting && children}
+        {children}
       </motion.div>
     </AnimatePresence>
   );
