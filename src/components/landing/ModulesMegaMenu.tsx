@@ -34,7 +34,7 @@ const ModulesMegaMenu = () => {
           </TabsContent>
 
           <TabsContent value="categories" className="mt-0">
-            <CategoriesTab categories={modules.categories} />
+            <CategoriesTab />
           </TabsContent>
 
 
