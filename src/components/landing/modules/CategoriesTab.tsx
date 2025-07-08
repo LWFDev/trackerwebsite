@@ -10,7 +10,6 @@ const categories = [
   { name: "Support", color: "bg-orange-500/20 border-orange-500/30 hover:bg-orange-500/30" },
   { name: "Inventory", color: "bg-cyan-500/20 border-cyan-500/30 hover:bg-cyan-500/30" },
   { name: "Production", color: "bg-pink-500/20 border-pink-500/30 hover:bg-pink-500/30" },
-  { name: "Analytics", color: "bg-yellow-500/20 border-yellow-500/30 hover:bg-yellow-500/30" },
   { name: "Integrations", color: "bg-indigo-500/20 border-indigo-500/30 hover:bg-indigo-500/30" }
 ];
 

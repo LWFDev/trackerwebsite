@@ -102,17 +102,6 @@ const CategorySelector = ({
             Production
           </ToggleGroupItem>
           <ToggleGroupItem 
-            value="Analytics" 
-            className={cn(
-              "rounded-full px-6 py-2 text-sm font-medium transition-all",
-              selectedCategory === "Analytics" 
-                ? "bg-blue-600 text-white" 
-                : "bg-zinc-800 text-zinc-300 hover:bg-zinc-700"
-            )}
-          >
-            Analytics
-          </ToggleGroupItem>
-          <ToggleGroupItem 
             value="Integrations" 
             className={cn(
               "rounded-full px-6 py-2 text-sm font-medium transition-all",
