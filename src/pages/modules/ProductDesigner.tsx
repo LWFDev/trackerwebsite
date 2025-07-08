@@ -1,6 +1,6 @@
 
 import ModuleLayout from "@/components/modules/ModuleLayout";
-import { Paintbrush, Clock, Image, Layout, Share2, FileOutput, Star, File, CheckCircle, Users, Layers, Grid, Monitor, Palette, Settings, Sliders } from "lucide-react";
+import { Paintbrush, Clock, Image, Layout, Share2, FileOutput, Star, File, CheckCircle, Users, Layers, Grid, Monitor, Palette, Settings, Sliders, MousePointer2, Type } from "lucide-react";
 
 const ProductDesigner = () => {
   return (
@@ -9,6 +9,32 @@ const ProductDesigner = () => {
       description="Allow users to customize garments visually with drag-and-drop logos, text, and artwork placements."
       color="teal"
       heroImage="https://nubosync.com/wp-content/uploads/2025/04/Screenshot-2025-04-02-101424.png"
+      heroImageCallouts={[
+        {
+          text: "Drag-and-Drop Editor",
+          position: { top: "20%", left: "-20%" },
+          icon: <MousePointer2 className="h-4 w-4" />,
+          delay: "0.5s"
+        },
+        {
+          text: "Template Gallery",
+          position: { top: "40%", right: "-20%" },
+          icon: <Grid className="h-4 w-4" />,
+          delay: "0.7s"
+        },
+        {
+          text: "Text & Logo Tools",
+          position: { top: "65%", left: "-15%" },
+          icon: <Type className="h-4 w-4" />,
+          delay: "0.9s"
+        },
+        {
+          text: "Export Options",
+          position: { top: "80%", right: "-15%" },
+          icon: <FileOutput className="h-4 w-4" />,
+          delay: "1.1s"
+        }
+      ]}
       stats={[
         {
           value: "85%",
