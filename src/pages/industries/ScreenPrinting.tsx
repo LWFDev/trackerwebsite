@@ -28,7 +28,9 @@ const ScreenPrinting = () => {
     title: "Setup Time Optimization",
     description: "Minimize setup times between jobs with intelligent job sequencing and preparation."
   }];
-  return <div className="min-h-screen theme-background theme-text transition-colors duration-300">
+  
+  return (
+    <div className="min-h-screen theme-background theme-text transition-colors duration-300">
       {/* Hero Section */}
       <section className="relative pt-24 pb-16 overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-purple-500/5 via-transparent to-pink-500/5 py-0 my-0"></div>
