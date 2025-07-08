@@ -15,7 +15,7 @@ const CaseStudies = () => {
       challenge: 'Slow manual fulfillment processes limiting growth',
       solution: 'Complete Tracker automation platform',
       results: '233% productivity increase, 10x faster processing',
-      image: '/lovable-uploads/a7a106f9-9817-4302-a992-e1b4320c19cd.png',
+      image: '/lovable-uploads/4c72cfff-437a-4e17-93f7-0c5dff15b378.png',
       stats: [
         { icon: TrendingUp, value: '233%', label: 'Productivity Boost' },
         { icon: Clock, value: '10x', label: 'Faster Processing' },

@@ -32,8 +32,8 @@ const PureOptical = () => {
               </p>
               <div className="w-full max-w-2xl mx-auto h-64 overflow-hidden rounded-xl shadow-2xl">
                 <img 
-                  src="/lovable-uploads/a7a106f9-9817-4302-a992-e1b4320c19cd.png" 
-                  alt="Pure Optical facility"
+                  src="/lovable-uploads/4c72cfff-437a-4e17-93f7-0c5dff15b378.png" 
+                  alt="Pure Optical team"
                   className="w-full h-full object-cover"
                 />
               </div>
