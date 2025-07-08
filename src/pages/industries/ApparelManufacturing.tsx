@@ -20,7 +20,7 @@ const ApparelManufacturing = () => {
       description: "Get instant visibility into production status across all manufacturing lines"
     },
     {
-      icon: <Clock className="w-6 h-6 text-emerald-DEFAULT" />,
+      icon: <Clock className="w-6 h-6 text-gold-DEFAULT" />,
       title: "Bottleneck Identification",
       description: "Quickly identify and resolve production bottlenecks before they impact delivery"
     },
@@ -66,7 +66,7 @@ const ApparelManufacturing = () => {
               Provide apparel manufacturers real-time insight into production statuses, reducing bottlenecks and ensuring consistent output quality across all manufacturing lines.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
-              <Button asChild size="lg" variant="emerald">
+              <Button asChild size="lg" variant="gold">
                 <Link to="/get-started">Start Free Trial</Link>
               </Button>
               <Button asChild variant="emerald-outline" size="lg">
@@ -94,7 +94,7 @@ const ApparelManufacturing = () => {
                   transition={{ duration: 0.5, delay: index * 0.1 }}
                   viewport={{ once: true }}
                 >
-                  <div className="w-2 h-2 bg-emerald-DEFAULT rounded-full mt-3 flex-shrink-0"></div>
+                  <div className="w-2 h-2 bg-gold-DEFAULT rounded-full mt-3 flex-shrink-0"></div>
                   <p className="theme-text-secondary">{challenge}</p>
                 </motion.div>
               ))}
@@ -118,7 +118,7 @@ const ApparelManufacturing = () => {
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 viewport={{ once: true }}
               >
-                <Card className="h-full theme-surface theme-border hover:border-emerald-DEFAULT/50 transition-all duration-300">
+                <Card className="h-full theme-surface theme-border hover:border-gold-DEFAULT/50 transition-all duration-300">
                   <CardHeader>
                     <div className="flex items-center gap-3 mb-2">
                       {solution.icon}
