@@ -93,7 +93,7 @@ const Integration = () => {
             ))}
             
             {/* Learn More button positioned in bottom right of grid */}
-            <div className="flex items-center justify-center bg-gray-800/70 dark:bg-zinc-900/70 light:bg-gray-800/70 backdrop-blur-sm rounded-xl h-32 border border-gray-700 dark:border-zinc-800 light:border-gray-700 transform transition-all duration-300 hover:border-[#D4AF37]/50 hover:-translate-y-1 hover:shadow-lg animate-fade-in" style={{ animationDelay: '0.7s' }}>
+            <div className="flex items-center justify-center rounded-xl h-32 transform transition-all duration-300 hover:-translate-y-1 hover:shadow-lg animate-fade-in" style={{ animationDelay: '0.7s' }}>
               <Link to="/about">
                 <Button variant="gold" className="text-black">
                   Learn More
