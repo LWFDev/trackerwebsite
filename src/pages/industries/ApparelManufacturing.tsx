@@ -58,7 +58,7 @@ const ApparelManufacturing = () => {
           >
             <div className="flex items-center gap-4 mb-6">
               <Shirt className="w-12 h-12 text-emerald-DEFAULT" />
-              <h1 className="text-4xl md:text-6xl font-bold bg-gradient-to-r from-gold-DEFAULT to-emerald-DEFAULT bg-clip-text text-transparent">
+              <h1 className="text-4xl md:text-6xl font-bold text-white">
                 Apparel Manufacturing
               </h1>
             </div>
