@@ -28,6 +28,9 @@ const NewUserCard = () => {
       <Link to="/get-started">
         <Button variant="gold" className="w-full">Get Started</Button>
       </Link>
+      <Link to="/modules" className="block mt-3">
+        <Button className="w-full bg-emerald-600 hover:bg-emerald-700 text-white">Browse all modules</Button>
+      </Link>
     </div>
   );
 };
