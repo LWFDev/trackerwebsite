@@ -273,12 +273,12 @@ const FashionForward = () => {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link to="/get-started">
-                <Button size="lg" variant="outline" className="bg-white text-emerald-600 hover:bg-slate-50 border-0">
+                <Button size="lg" className="bg-white text-emerald-600 hover:bg-emerald-50 border-0 shadow-lg hover:shadow-xl transition-all duration-300">
                   Take Control Today
                 </Button>
               </Link>
               <Link to="/modules/inventory">
-                <Button size="lg" variant="outline" className="border-white text-white hover:bg-white/10">
+                <Button size="lg" className="bg-transparent border-2 border-white text-white hover:bg-white hover:text-emerald-600 transition-all duration-300">
                   Explore Inventory Module
                 </Button>
               </Link>
