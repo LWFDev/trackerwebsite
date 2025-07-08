@@ -8,6 +8,33 @@ const AnalyticsReporting = () => {
       title="Analytics & Reporting"
       description="Transform your data into actionable insights with our powerful analytics platform featuring real-time dashboards and customizable reports."
       color="teal"
+      heroImage="/lovable-uploads/32d8d791-11ef-418a-9131-8f947c40c8a4.png"
+      heroImageCallouts={[
+        {
+          text: "Analytics Dashboard",
+          position: { top: "15%", left: "-20%" },
+          icon: <BarChart2 className="h-4 w-4" />,
+          delay: "0.5s"
+        },
+        {
+          text: "Data Visualization",
+          position: { top: "35%", right: "-20%" },
+          icon: <PieChart className="h-4 w-4" />,
+          delay: "0.7s"
+        },
+        {
+          text: "Report Builder",
+          position: { top: "55%", left: "-15%" },
+          icon: <FileText className="h-4 w-4" />,
+          delay: "0.9s"
+        },
+        {
+          text: "Performance Metrics",
+          position: { top: "75%", right: "-15%" },
+          icon: <TrendingUp className="h-4 w-4" />,
+          delay: "1.1s"
+        }
+      ]}
       stats={[
         {
           value: "15,000+",

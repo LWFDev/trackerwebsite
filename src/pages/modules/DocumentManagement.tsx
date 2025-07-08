@@ -1,6 +1,6 @@
 
 import ModuleLayout from "@/components/modules/ModuleLayout";
-import { FileText, Search, Lock, Users, Share2, Clock, UploadCloud, Tags, CheckCircle, Shield, File, Database, History, Edit, Download, PenTool, Layers, Smartphone } from "lucide-react";
+import { FileText, Search, Lock, Users, Share2, Clock, UploadCloud, Tags, CheckCircle, Shield, File, Database, History, Edit, Download, PenTool, Layers, Smartphone, Folder } from "lucide-react";
 
 const DocumentManagement = () => {
   return (
@@ -8,6 +8,33 @@ const DocumentManagement = () => {
       title="Document Management"
       description="Store, organize, and share documents securely across your organization with our enterprise-grade document management system."
       color="orange"
+      heroImage="/lovable-uploads/32d8d791-11ef-418a-9131-8f947c40c8a4.png"
+      heroImageCallouts={[
+        {
+          text: "Document Repository",
+          position: { top: "15%", left: "-20%" },
+          icon: <UploadCloud className="h-4 w-4" />,
+          delay: "0.5s"
+        },
+        {
+          text: "File Organization",
+          position: { top: "35%", right: "-20%" },
+          icon: <Folder className="h-4 w-4" />,
+          delay: "0.7s"
+        },
+        {
+          text: "Version Control",
+          position: { top: "55%", left: "-15%" },
+          icon: <History className="h-4 w-4" />,
+          delay: "0.9s"
+        },
+        {
+          text: "Access Management",
+          position: { top: "75%", right: "-15%" },
+          icon: <Lock className="h-4 w-4" />,
+          delay: "1.1s"
+        }
+      ]}
       stats={[
         {
           value: "60%",

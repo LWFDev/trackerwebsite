@@ -8,6 +8,33 @@ const LogoHub = () => {
       title="Logo Hub"
       description="Centralize and manage all your brand assets in one secure platform with powerful organization, collaboration, and distribution features."
       color="purple"
+      heroImage="/lovable-uploads/9a36183f-4238-4b3a-b0e0-43a4488f0214.png"
+      heroImageCallouts={[
+        {
+          text: "Logo Browser",
+          position: { top: "15%", left: "-20%" },
+          icon: <Image className="h-4 w-4" />,
+          delay: "0.5s"
+        },
+        {
+          text: "Asset Organization",
+          position: { top: "35%", right: "-20%" },
+          icon: <Folder className="h-4 w-4" />,
+          delay: "0.7s"
+        },
+        {
+          text: "Approval Workflow",
+          position: { top: "55%", left: "-15%" },
+          icon: <CheckCircle className="h-4 w-4" />,
+          delay: "0.9s"
+        },
+        {
+          text: "Brand Management",
+          position: { top: "75%", right: "-15%" },
+          icon: <Shield className="h-4 w-4" />,
+          delay: "1.1s"
+        }
+      ]}
       stats={[
         {
           value: "65%",

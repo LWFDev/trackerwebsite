@@ -7,6 +7,33 @@ const FinanceAccounting = () => {
       title="Finance & Accounting"
       description="Manage financial transactions and accounting processes efficiently with our comprehensive finance solution."
       color="green"
+      heroImage="/lovable-uploads/f64e33f5-8eef-4836-9f10-b0fb9ae73279.png"
+      heroImageCallouts={[
+        {
+          text: "Financial Dashboard",
+          position: { top: "15%", left: "-20%" },
+          icon: <BarChart2 className="h-4 w-4" />,
+          delay: "0.5s"
+        },
+        {
+          text: "Payment Processing",
+          position: { top: "35%", right: "-20%" },
+          icon: <CreditCard className="h-4 w-4" />,
+          delay: "0.7s"
+        },
+        {
+          text: "Transaction Tracking",
+          position: { top: "55%", left: "-15%" },
+          icon: <Receipt className="h-4 w-4" />,
+          delay: "0.9s"
+        },
+        {
+          text: "Financial Reports",
+          position: { top: "75%", right: "-15%" },
+          icon: <FileText className="h-4 w-4" />,
+          delay: "1.1s"
+        }
+      ]}
       stats={[
         {
           value: "$2.5M+",

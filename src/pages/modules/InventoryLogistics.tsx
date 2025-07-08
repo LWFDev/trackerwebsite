@@ -8,6 +8,33 @@ const InventoryLogistics = () => {
       title="Inventory Management"
       description="Gain complete visibility and control over your inventory with real-time tracking, automated reordering, and powerful analytics."
       color="blue"
+      heroImage="/lovable-uploads/32d8d791-11ef-418a-9131-8f947c40c8a4.png"
+      heroImageCallouts={[
+        {
+          text: "Inventory Tracking",
+          position: { top: "15%", left: "-20%" },
+          icon: <Package className="h-4 w-4" />,
+          delay: "0.5s"
+        },
+        {
+          text: "Stock Levels",
+          position: { top: "35%", right: "-20%" },
+          icon: <BarChart2 className="h-4 w-4" />,
+          delay: "0.7s"
+        },
+        {
+          text: "Location Management",
+          position: { top: "55%", left: "-15%" },
+          icon: <Building className="h-4 w-4" />,
+          delay: "0.9s"
+        },
+        {
+          text: "Logistics Operations",
+          position: { top: "75%", right: "-15%" },
+          icon: <TruckIcon className="h-4 w-4" />,
+          delay: "1.1s"
+        }
+      ]}
       stats={[
         {
           value: "35%",

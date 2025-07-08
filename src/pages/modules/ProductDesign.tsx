@@ -8,7 +8,33 @@ const ProductDesign = () => {
       title="Product Designer"
       description="Allow users to customize garments visually with drag-and-drop logos, text, and artwork placements."
       color="teal"
-      heroImage="https://nubosync.com/wp-content/uploads/2025/04/Screenshot-2025-04-02-101424.png"
+      heroImage="/lovable-uploads/9ed005ea-9015-43b6-b721-149fd7e96dc3.png"
+      heroImageCallouts={[
+        {
+          text: "Product Customizer",
+          position: { top: "15%", left: "-20%" },
+          icon: <Palette className="h-4 w-4" />,
+          delay: "0.5s"
+        },
+        {
+          text: "Design Templates",
+          position: { top: "35%", right: "-20%" },
+          icon: <Grid className="h-4 w-4" />,
+          delay: "0.7s"
+        },
+        {
+          text: "Visual Editor",
+          position: { top: "55%", left: "-15%" },
+          icon: <Layout className="h-4 w-4" />,
+          delay: "0.9s"
+        },
+        {
+          text: "Export Options",
+          position: { top: "75%", right: "-15%" },
+          icon: <FileOutput className="h-4 w-4" />,
+          delay: "1.1s"
+        }
+      ]}
       stats={[
         {
           value: "85%",

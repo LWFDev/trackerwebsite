@@ -8,6 +8,33 @@ const PurchaseOrders = () => {
       title="Purchase Orders"
       description="Create, send, and track POs with direct links to incoming inventory and supplier fulfillment."
       color="rose"
+      heroImage="/lovable-uploads/f64e33f5-8eef-4836-9f10-b0fb9ae73279.png"
+      heroImageCallouts={[
+        {
+          text: "Supplier Selection",
+          position: { top: "20%", left: "-20%" },
+          icon: <Building className="h-4 w-4" />,
+          delay: "0.5s"
+        },
+        {
+          text: "Delivery Scheduling",
+          position: { top: "40%", right: "-20%" },
+          icon: <Calendar className="h-4 w-4" />,
+          delay: "0.7s"
+        },
+        {
+          text: "Tax & Pricing",
+          position: { top: "60%", left: "-15%" },
+          icon: <DollarSign className="h-4 w-4" />,
+          delay: "0.9s"
+        },
+        {
+          text: "PO Workflow",
+          position: { top: "80%", right: "-15%" },
+          icon: <FileText className="h-4 w-4" />,
+          delay: "1.1s"
+        }
+      ]}
       stats={[
         {
           value: "75%",
