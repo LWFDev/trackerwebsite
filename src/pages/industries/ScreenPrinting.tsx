@@ -7,24 +7,24 @@ import { Palette, CheckCircle, TrendingUp, Clock, Users, BarChart3, Target, Zap 
 const ScreenPrinting = () => {
   const challenges = ["Managing multiple simultaneous orders efficiently", "Optimizing workflow between setup and production", "Coordinating color matching and quality control", "Meeting tight delivery deadlines consistently"];
   const solutions = [{
-    icon: <BarChart3 className="w-6 h-6 text-gold" />,
+    icon: <BarChart3 className="w-6 h-6 text-gold-DEFAULT" />,
     title: "Multi-Order Management",
     description: "Track and coordinate multiple orders simultaneously without confusion or delays"
   }, {
-    icon: <Clock className="w-6 h-6 text-emerald" />,
+    icon: <Clock className="w-6 h-6 text-emerald-DEFAULT" />,
     title: "Workflow Optimization",
     description: "Streamline setup, printing, and finishing processes for maximum efficiency"
   }, {
-    icon: <TrendingUp className="w-6 h-6 text-gold" />,
+    icon: <TrendingUp className="w-6 h-6 text-gold-DEFAULT" />,
     title: "Delivery Time Improvement",
     description: "Reduce delivery times through better planning and resource allocation"
   }];
   const features = [{
-    icon: <Target className="w-8 h-8 text-gold" />,
+    icon: <Target className="w-8 h-8 text-gold-DEFAULT" />,
     title: "Color Matching System",
     description: "Advanced color tracking and matching system to ensure consistency across all print runs."
   }, {
-    icon: <Zap className="w-8 h-8 text-emerald" />,
+    icon: <Zap className="w-8 h-8 text-emerald-DEFAULT" />,
     title: "Setup Time Optimization",
     description: "Minimize setup times between jobs with intelligent job sequencing and preparation."
   }];
@@ -43,8 +43,8 @@ const ScreenPrinting = () => {
           duration: 0.6
         }}>
             <div className="flex items-center gap-4 mb-6">
-              <Palette className="w-12 h-12 text-gold" />
-              <h1 className="text-4xl md:text-6xl font-bold bg-gradient-to-r from-gold to-emerald bg-clip-text text-transparent">
+              <Palette className="w-12 h-12 text-gold-DEFAULT" />
+              <h1 className="text-4xl md:text-6xl font-bold bg-gradient-to-r from-gold-DEFAULT to-emerald-DEFAULT bg-clip-text text-transparent">
                 Screen Printing Facilities
               </h1>
             </div>
@@ -83,7 +83,7 @@ const ScreenPrinting = () => {
             }} viewport={{
               once: true
             }}>
-                  <div className="w-2 h-2 bg-gold rounded-full mt-3 flex-shrink-0"></div>
+                  <div className="w-2 h-2 bg-gold-DEFAULT rounded-full mt-3 flex-shrink-0"></div>
                   <p className="theme-text-secondary">{challenge}</p>
                 </motion.div>)}
             </div>
@@ -110,7 +110,7 @@ const ScreenPrinting = () => {
           }} viewport={{
             once: true
           }}>
-                <Card className="h-full theme-surface theme-border hover:border-gold/50 transition-all duration-300">
+                <Card className="h-full theme-surface theme-border hover:border-gold-DEFAULT/50 transition-all duration-300">
                   <CardHeader>
                     <div className="flex items-center gap-3 mb-2">
                       {solution.icon}
@@ -167,7 +167,7 @@ const ScreenPrinting = () => {
               Why Screen Printers Choose Tracker
             </h2>
             <div className="space-y-8">
-              <motion.div className="border-l-4 border-gold pl-6" initial={{
+              <motion.div className="border-l-4 border-gold-DEFAULT pl-6" initial={{
               opacity: 0,
               x: -20
             }} whileInView={{
@@ -184,12 +184,12 @@ const ScreenPrinting = () => {
                   the biggest productivity killer, especially for smaller run orders.
                 </p>
                 <p className="theme-text-secondary">
-                  <strong className="text-emerald">Tracker Solution:</strong> Intelligent job sequencing minimizes 
+                  <strong className="text-emerald-DEFAULT">Tracker Solution:</strong> Intelligent job sequencing minimizes 
                   setup changes by grouping similar colors and designs, reducing setup time by up to 40%.
                 </p>
               </motion.div>
 
-              <motion.div className="border-l-4 border-emerald pl-6" initial={{
+              <motion.div className="border-l-4 border-emerald-DEFAULT pl-6" initial={{
               opacity: 0,
               x: -20
             }} whileInView={{
@@ -207,12 +207,12 @@ const ScreenPrinting = () => {
                   leading to customer complaints and reprints.
                 </p>
                 <p className="theme-text-secondary">
-                  <strong className="text-gold">Tracker Solution:</strong> Digital color database with mixing formulas 
+                  <strong className="text-gold-DEFAULT">Tracker Solution:</strong> Digital color database with mixing formulas 
                   and photo documentation ensures perfect color matching every time.
                 </p>
               </motion.div>
 
-              <motion.div className="border-l-4 border-gold pl-6" initial={{
+              <motion.div className="border-l-4 border-gold-DEFAULT pl-6" initial={{
               opacity: 0,
               x: -20
             }} whileInView={{
@@ -230,7 +230,7 @@ const ScreenPrinting = () => {
                   and stressed production teams.
                 </p>
                 <p className="theme-text-secondary">
-                  <strong className="text-emerald">Tracker Solution:</strong> Dynamic scheduling algorithm can 
+                  <strong className="text-emerald-DEFAULT">Tracker Solution:</strong> Dynamic scheduling algorithm can 
                   instantly reorganize production to accommodate rush orders while minimizing overall disruption.
                 </p>
               </motion.div>
@@ -248,15 +248,15 @@ const ScreenPrinting = () => {
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
               <div>
-                <div className="text-4xl font-bold text-gold mb-2">40%</div>
+                <div className="text-4xl font-bold text-gold-DEFAULT mb-2">40%</div>
                 <p className="theme-text-secondary">Faster Setup Times</p>
               </div>
               <div>
-                <div className="text-4xl font-bold text-emerald mb-2">65%</div>
+                <div className="text-4xl font-bold text-emerald-DEFAULT mb-2">65%</div>
                 <p className="theme-text-secondary">Better Order Coordination</p>
               </div>
               <div>
-                <div className="text-4xl font-bold text-gold mb-2">30%</div>
+                <div className="text-4xl font-bold text-gold-DEFAULT mb-2">30%</div>
                 <p className="theme-text-secondary">Improved Delivery Times</p>
               </div>
             </div>
