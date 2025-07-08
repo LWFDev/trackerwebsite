@@ -8,33 +8,7 @@ const Suppliers = () => {
       title="Suppliers"
       description="Maintain supplier contacts, price lists, and product availability to streamline purchasing decisions."
       color="amber"
-      heroImage="/lovable-uploads/e7305916-46db-45fc-aa31-9c74a6cddaf5.png"
-      heroImageCallouts={[
-        {
-          text: "Supplier Database",
-          position: { top: "15%", left: "-20%" },
-          icon: <Building className="h-4 w-4" />,
-          delay: "0.5s"
-        },
-        {
-          text: "Contact Management",
-          position: { top: "35%", right: "-20%" },
-          icon: <Users className="h-4 w-4" />,
-          delay: "0.7s"
-        },
-        {
-          text: "Price Lists",
-          position: { top: "55%", left: "-15%" },
-          icon: <FileText className="h-4 w-4" />,
-          delay: "0.9s"
-        },
-        {
-          text: "Performance Tracking",
-          position: { top: "75%", right: "-15%" },
-          icon: <BarChart2 className="h-4 w-4" />,
-          delay: "1.1s"
-        }
-      ]}
+      heroImage="https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-4.0.3&auto=format&fit=crop&w=2340&q=80"
       stats={[
         {
           value: "35%",

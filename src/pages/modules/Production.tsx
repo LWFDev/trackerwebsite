@@ -1,6 +1,6 @@
 
 import ModuleLayout from "@/components/modules/ModuleLayout";
-import { Layers, Clock, Percent, Settings, BarChart2, Wrench, Clipboard, LineChart, CheckCircle, File, Users, Layout, Cpu, AlertTriangle, BookOpen, Database, Sliders, Calendar } from "lucide-react";
+import { Layers, Clock, Percent, Settings, BarChart2, Wrench, Clipboard, LineChart, CheckCircle, File, Users, Layout, Cpu, AlertTriangle, BookOpen, Database, Sliders } from "lucide-react";
 
 const Production = () => {
   return (
@@ -8,33 +8,6 @@ const Production = () => {
       title="Production"
       description="Schedule, assign, and track every job from setup through final output with visual production queues."
       color="blue"
-      heroImage="/lovable-uploads/ff724d99-20cb-4926-8ea8-b88f5f69ef43.png"
-      heroImageCallouts={[
-        {
-          text: "Job Status Filters",
-          position: { top: "15%", left: "-20%" },
-          icon: <Settings className="h-4 w-4" />,
-          delay: "0.5s"
-        },
-        {
-          text: "Production Timeline",
-          position: { top: "35%", right: "-20%" },
-          icon: <Clock className="h-4 w-4" />,
-          delay: "0.7s"
-        },
-        {
-          text: "Target Date Tracking",
-          position: { top: "55%", left: "-15%" },
-          icon: <Calendar className="h-4 w-4" />,
-          delay: "0.9s"
-        },
-        {
-          text: "Performance Metrics",
-          position: { top: "75%", right: "-15%" },
-          icon: <BarChart2 className="h-4 w-4" />,
-          delay: "1.1s"
-        }
-      ]}
       stats={[
         {
           value: "25%",

@@ -7,33 +7,6 @@ const ProductionManufacturing = () => {
       title="Production Management"
       description="Streamline your production processes, optimize resource allocation, and increase efficiency with our comprehensive manufacturing solution."
       color="blue"
-      heroImage="/lovable-uploads/f888f0f0-5dc9-4944-b5ed-64b239b1e58e.png"
-      heroImageCallouts={[
-        {
-          text: "Job Details View",
-          position: { top: "20%", left: "-20%" },
-          icon: <File className="h-4 w-4" />,
-          delay: "0.5s"
-        },
-        {
-          text: "Production Workflow",
-          position: { top: "40%", right: "-20%" },
-          icon: <Layers className="h-4 w-4" />,
-          delay: "0.7s"
-        },
-        {
-          text: "Resource Allocation",
-          position: { top: "60%", left: "-15%" },
-          icon: <Users className="h-4 w-4" />,
-          delay: "0.9s"
-        },
-        {
-          text: "Quality Control",
-          position: { top: "80%", right: "-15%" },
-          icon: <CheckCircle className="h-4 w-4" />,
-          delay: "1.1s"
-        }
-      ]}
       stats={[
         {
           value: "25%",

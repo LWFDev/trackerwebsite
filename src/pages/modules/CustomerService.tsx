@@ -1,6 +1,6 @@
 
 import ModuleLayout from "@/components/modules/ModuleLayout";
-import { MessageSquare, Users, Clock, CheckCircle, PhoneCall, Mail, Settings, Globe, BarChart2, HeadphonesIcon, File, Database, Zap, BookOpen, Bot, Shield, UserCheck, Search } from "lucide-react";
+import { MessageSquare, Users, Clock, CheckCircle, PhoneCall, Mail, Settings, Globe, BarChart2, HeadphonesIcon, File, Database, Zap, BookOpen, Bot, Shield, UserCheck } from "lucide-react";
 
 const CustomerService = () => {
   return (
@@ -8,33 +8,6 @@ const CustomerService = () => {
       title="Customer Service"
       description="Deliver exceptional support experiences across every channel with our comprehensive customer service platform."
       color="purple"
-      heroImage="/lovable-uploads/d746be04-9858-4d51-88d0-94c9e02b8a79.png"
-      heroImageCallouts={[
-        {
-          text: "Customer Search",
-          position: { top: "15%", left: "-20%" },
-          icon: <Search className="h-4 w-4" />,
-          delay: "0.5s"
-        },
-        {
-          text: "Ticket Management",
-          position: { top: "35%", right: "-20%" },
-          icon: <MessageSquare className="h-4 w-4" />,
-          delay: "0.7s"
-        },
-        {
-          text: "Support Analytics",
-          position: { top: "55%", left: "-15%" },
-          icon: <BarChart2 className="h-4 w-4" />,
-          delay: "0.9s"
-        },
-        {
-          text: "Communication Hub",
-          position: { top: "75%", right: "-15%" },
-          icon: <HeadphonesIcon className="h-4 w-4" />,
-          delay: "1.1s"
-        }
-      ]}
       stats={[
         {
           value: "45%",

@@ -7,33 +7,6 @@ const IntegrationPlatform = () => {
       title="Integrations Platform"
       description="Connect your entire technology ecosystem and automate cross-system workflows with our powerful enterprise integration platform."
       color="teal"
-      heroImage="/lovable-uploads/32d8d791-11ef-418a-9131-8f947c40c8a4.png"
-      heroImageCallouts={[
-        {
-          text: "Integration Dashboard",
-          position: { top: "15%", left: "-20%" },
-          icon: <Database className="h-4 w-4" />,
-          delay: "0.5s"
-        },
-        {
-          text: "Workflow Builder",
-          position: { top: "35%", right: "-20%" },
-          icon: <Layout className="h-4 w-4" />,
-          delay: "0.7s"
-        },
-        {
-          text: "API Management",
-          position: { top: "55%", left: "-15%" },
-          icon: <Code className="h-4 w-4" />,
-          delay: "0.9s"
-        },
-        {
-          text: "System Monitoring",
-          position: { top: "75%", right: "-15%" },
-          icon: <BarChart2 className="h-4 w-4" />,
-          delay: "1.1s"
-        }
-      ]}
       stats={[
         {
           value: "500+",

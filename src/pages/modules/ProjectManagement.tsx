@@ -8,33 +8,6 @@ const ProjectManagement = () => {
       title="Project Management"
       description="Plan, track, and deliver projects successfully with our comprehensive project management platform designed for teams of all sizes."
       color="purple"
-      heroImage="/lovable-uploads/ff724d99-20cb-4926-8ea8-b88f5f69ef43.png"
-      heroImageCallouts={[
-        {
-          text: "Project Dashboard",
-          position: { top: "15%", left: "-20%" },
-          icon: <BarChart2 className="h-4 w-4" />,
-          delay: "0.5s"
-        },
-        {
-          text: "Task Management",
-          position: { top: "35%", right: "-20%" },
-          icon: <CheckCircle className="h-4 w-4" />,
-          delay: "0.7s"
-        },
-        {
-          text: "Deadline Tracking",
-          position: { top: "55%", left: "-15%" },
-          icon: <Calendar className="h-4 w-4" />,
-          delay: "0.9s"
-        },
-        {
-          text: "Team Collaboration",
-          position: { top: "75%", right: "-15%" },
-          icon: <Users className="h-4 w-4" />,
-          delay: "1.1s"
-        }
-      ]}
       stats={[
         {
           value: "35%",
