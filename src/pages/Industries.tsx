@@ -88,7 +88,7 @@ const Industries = () => {
               Discover how Tracker transforms operations across diverse industries in the garment decoration and apparel manufacturing space.
             </p>
             <Button asChild size="lg" className="bg-gradient-to-r from-[#D4AF37] to-[#F2D675] text-black hover:opacity-90 font-semibold">
-              <Link to="/get-started">Get Started Today</Link>
+              <Link to="/get-started" onClick={() => window.scrollTo(0, 0)}>Get Started Today</Link>
             </Button>
           </motion.div>
         </div>
@@ -105,7 +105,7 @@ const Industries = () => {
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {industries.map((industry, index) => <ScrollReveal key={index} delay={index * 100}>
-                <Link to={industry.link} className="block h-full">
+                <Link to={industry.link} className="block h-full" onClick={() => window.scrollTo(0, 0)}>
                   <Card className={`h-full theme-surface theme-border hover:border-[#D4AF37]/50 transition-all duration-300 hover:-translate-y-1 overflow-hidden relative bg-gradient-to-br ${industry.gradient} cursor-pointer`}>
                     <CardHeader className="pb-4">
                       <div className="flex items-center gap-3 mb-2">
@@ -143,10 +143,10 @@ const Industries = () => {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button asChild size="lg" className="bg-gradient-to-r from-[#D4AF37] to-[#F2D675] text-black hover:opacity-90 font-semibold">
-                <Link to="/get-started">Start Your Free Trial</Link>
+                <Link to="/get-started" onClick={() => window.scrollTo(0, 0)}>Start Your Free Trial</Link>
               </Button>
               <Button asChild variant="outline" size="lg" className="border-[#D4AF37] text-[#D4AF37] hover:bg-[#D4AF37] hover:text-black">
-                <Link to="/contact">Contact Sales</Link>
+                <Link to="/contact" onClick={() => window.scrollTo(0, 0)}>Contact Sales</Link>
               </Button>
             </div>
           </ScrollReveal>

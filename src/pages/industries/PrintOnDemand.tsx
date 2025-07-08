@@ -54,10 +54,10 @@ const PrintOnDemand = () => {
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <Button asChild size="lg" variant="gold">
-                <Link to="/get-started">Start Free Trial</Link>
+                <Link to="/get-started" onClick={() => window.scrollTo(0, 0)}>Start Free Trial</Link>
               </Button>
               <Button asChild variant="emerald-outline" size="lg">
-                <Link to="/contact">Schedule Demo</Link>
+                <Link to="/contact" onClick={() => window.scrollTo(0, 0)}>Schedule Demo</Link>
               </Button>
             </div>
           </motion.div>
@@ -292,7 +292,7 @@ const PrintOnDemand = () => {
               </div>
             </div>
             <Button asChild size="lg" variant="gold">
-              <Link to="/get-started">Scale Your Business Today</Link>
+              <Link to="/get-started" onClick={() => window.scrollTo(0, 0)}>Scale Your Business Today</Link>
             </Button>
           </div>
         </div>

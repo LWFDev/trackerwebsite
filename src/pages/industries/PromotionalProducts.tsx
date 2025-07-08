@@ -67,10 +67,10 @@ const PromotionalProducts = () => {
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <Button asChild size="lg" variant="gold">
-                <Link to="/get-started">Start Free Trial</Link>
+                <Link to="/get-started" onClick={() => window.scrollTo(0, 0)}>Start Free Trial</Link>
               </Button>
               <Button asChild variant="emerald-outline" size="lg">
-                <Link to="/contact">Schedule Demo</Link>
+                <Link to="/contact" onClick={() => window.scrollTo(0, 0)}>Schedule Demo</Link>
               </Button>
             </div>
           </motion.div>
@@ -305,7 +305,7 @@ const PromotionalProducts = () => {
               </div>
             </div>
             <Button asChild size="lg" variant="gold">
-              <Link to="/get-started">Boost Your Promotions Today</Link>
+              <Link to="/get-started" onClick={() => window.scrollTo(0, 0)}>Boost Your Promotions Today</Link>
             </Button>
           </div>
         </div>
