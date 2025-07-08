@@ -70,12 +70,6 @@ const ModulesMegaMenu = () => {
             <AllModulesTab modules={modules.all} />
           </TabsContent>
 
-          {/* Green button - appears on all tabs */}
-          <div className="mt-6 flex justify-start">
-            <button className="bg-emerald-600 hover:bg-emerald-700 text-white px-6 py-2 rounded-lg font-medium transition-all duration-300 transform hover:-translate-y-0.5 hover:shadow-lg">
-              Get Started
-            </button>
-          </div>
         </Tabs>
       </div>
     </div>
