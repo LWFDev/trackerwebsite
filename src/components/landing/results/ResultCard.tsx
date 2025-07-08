@@ -32,7 +32,7 @@ const ResultCard = ({
   const getCleanVimeoUrl = (url: string, muted = false) => {
     const videoId = url.match(/video\/(\d+)/)?.[1];
     if (videoId) {
-      return `https://player.vimeo.com/video/${videoId}?autoplay=1&loop=1&title=0&byline=0&portrait=0&controls=1&background=0&muted=${muted ? 1 : 0}`;
+      return `https://player.vimeo.com/video/${videoId}?autoplay=1&loop=1&title=0&byline=0&portrait=0&controls=0&background=0&muted=${muted ? 1 : 0}`;
     }
     return url;
   };
