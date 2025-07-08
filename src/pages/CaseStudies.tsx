@@ -150,7 +150,7 @@ const CaseStudies = () => {
             <p className="text-xl text-emerald-100 mb-8 max-w-2xl mx-auto">
               Join hundreds of businesses that have transformed their operations with Tracker.
             </p>
-            <Link to="/get-started">
+            <Link to="/get-started" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
               <Button size="lg" className="bg-white text-emerald-600 hover:bg-emerald-50 border-0 shadow-lg hover:shadow-xl transition-all duration-300">
                 Get Started Today
               </Button>

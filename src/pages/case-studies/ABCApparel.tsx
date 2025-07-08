@@ -182,12 +182,12 @@ const ABCApparel = () => {
               Discover how Tracker can streamline your operations and boost your revenue.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link to="/get-started">
+              <Link to="/get-started" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
                 <Button size="lg" className="bg-white text-emerald-600 hover:bg-emerald-50 border-0 shadow-lg hover:shadow-xl transition-all duration-300">
                   Start Your Transformation
                 </Button>
               </Link>
-              <Link to="/contact">
+              <Link to="/contact" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
                 <Button size="lg" className="bg-transparent border-2 border-white text-white hover:bg-white hover:text-emerald-600 transition-all duration-300">
                   Contact Sales
                 </Button>
