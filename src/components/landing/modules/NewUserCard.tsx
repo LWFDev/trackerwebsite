@@ -1,5 +1,5 @@
 import React from "react";
-import { Check } from "lucide-react";
+import { Check, ChevronRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 const NewUserCard = () => {
@@ -20,9 +20,18 @@ const NewUserCard = () => {
            Minimize clutter - just the tools that matter to you
         </li>
       </ul>
-      <Link to="/modules" className="block mt-auto">
-        <Button className="w-full bg-emerald-600 hover:bg-emerald-700 text-white">Browse all modules</Button>
-      </Link>
+      <div className="mt-auto space-y-3">
+        <Link to="/modules" className="block">
+          <Button className="w-full bg-emerald-600 hover:bg-emerald-700 text-white flex items-center justify-center group">
+            Browse all modules
+            <ChevronRight size={16} className="ml-2 transition-transform group-hover:translate-x-1" />
+          </Button>
+        </Link>
+        <Link to="/modules" className="block text-center text-zinc-400 hover:text-white text-sm flex items-center justify-center group transition-colors">
+          Browse all categories
+          <ChevronRight size={14} className="ml-1 transition-transform group-hover:translate-x-1" />
+        </Link>
+      </div>
     </div>;
 };
 export default NewUserCard;
