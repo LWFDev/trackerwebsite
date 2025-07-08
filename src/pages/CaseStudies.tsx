@@ -29,7 +29,7 @@ const CaseStudies = () => {
       challenge: 'Complex spreadsheets and manual processes limiting growth',
       solution: 'Flexible Tracker platform with integrated automation',
       results: 'Complete system transformation, increased profits, freed resources',
-      image: '/lovable-uploads/b967fa34-27f3-4bde-8864-dd74e1e5fea9.png',
+      image: '/lovable-uploads/15708762-8e9c-4abe-a4ef-33787e8d761b.png',
       stats: [
         { icon: Clock, value: 'Minutes', label: 'vs Hours Reports' },
         { icon: TrendingUp, value: '8+', label: 'Years Growth' },

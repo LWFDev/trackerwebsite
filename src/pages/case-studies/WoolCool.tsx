@@ -32,7 +32,7 @@ const WoolCool = () => {
               </p>
               <div className="w-full max-w-2xl mx-auto h-64 overflow-hidden rounded-xl shadow-2xl">
                 <img 
-                  src="/lovable-uploads/b967fa34-27f3-4bde-8864-dd74e1e5fea9.png" 
+                  src="/lovable-uploads/15708762-8e9c-4abe-a4ef-33787e8d761b.png" 
                   alt="WoolCool facility"
                   className="w-full h-full object-cover"
                 />
