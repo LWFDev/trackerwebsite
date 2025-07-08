@@ -467,7 +467,12 @@ const ModuleLayout = ({
             
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               {relatedModules.map((module, index) => 
-                <Link key={index} to={module.link} className={`block p-6 rounded-lg shadow-md transition-all duration-300 hover:-translate-y-1 ${getModuleCardColor(module.title)} group cursor-pointer`}>
+                <Link 
+                  key={index} 
+                  to={module.link} 
+                  className={`block p-6 rounded-lg shadow-md transition-all duration-300 hover:-translate-y-1 ${getModuleCardColor(module.title)} group cursor-pointer`}
+                  onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+                >
                   <div className="mb-4">{getModuleIcon(module.title)}</div>
                   <h3 className="text-xl font-semibold mb-2 text-white group-hover:text-[#D4AF37] transition-colors">{module.title}</h3>
                   <p className="text-gray-400 mb-4 group-hover:text-gray-300 transition-colors">{module.description}</p>
