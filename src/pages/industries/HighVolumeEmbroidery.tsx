@@ -15,17 +15,17 @@ const HighVolumeEmbroidery = () => {
 
   const solutions = [
     {
-      icon: <BarChart3 className="w-6 h-6 text-gold-DEFAULT" />,
+      icon: <BarChart3 className="w-6 h-6 text-gold" />,
       title: "Real-Time Machine Monitoring",
       description: "Track the status and performance of all 150+ machines from a single dashboard"
     },
     {
-      icon: <Clock className="w-6 h-6 text-gold-DEFAULT" />,
+      icon: <Clock className="w-6 h-6 text-emerald" />,
       title: "Advanced Production Scheduling",
       description: "Optimize machine allocation and minimize downtime with intelligent scheduling"
     },
     {
-      icon: <TrendingUp className="w-6 h-6 text-gold-DEFAULT" />,
+      icon: <TrendingUp className="w-6 h-6 text-gold" />,
       title: "Operational Efficiency Analytics",
       description: "Identify bottlenecks and optimize workflows for maximum throughput"
     }
@@ -44,8 +44,8 @@ const HighVolumeEmbroidery = () => {
             transition={{ duration: 0.6 }}
           >
             <div className="flex items-center gap-4 mb-6">
-              <Factory className="w-12 h-12 text-gold-DEFAULT" />
-              <h1 className="text-4xl md:text-6xl font-bold bg-gradient-to-r from-gold-DEFAULT to-emerald-DEFAULT bg-clip-text text-transparent">
+              <Factory className="w-12 h-12 text-gold" />
+              <h1 className="text-4xl md:text-6xl font-bold bg-gradient-to-r from-gold to-emerald bg-clip-text text-transparent">
                 High-Volume Embroidery Operations
               </h1>
             </div>
@@ -81,7 +81,7 @@ const HighVolumeEmbroidery = () => {
                   transition={{ duration: 0.5, delay: index * 0.1 }}
                   viewport={{ once: true }}
                 >
-                  <div className="w-2 h-2 bg-gold-DEFAULT rounded-full mt-3 flex-shrink-0"></div>
+                  <div className="w-2 h-2 bg-gold rounded-full mt-3 flex-shrink-0"></div>
                   <p className="theme-text-secondary">{challenge}</p>
                 </motion.div>
               ))}
@@ -105,7 +105,7 @@ const HighVolumeEmbroidery = () => {
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 viewport={{ once: true }}
               >
-                <Card className="h-full theme-surface theme-border hover:border-gold-DEFAULT/50 transition-all duration-300">
+                <Card className="h-full theme-surface theme-border hover:border-gold/50 transition-all duration-300">
                   <CardHeader>
                     <div className="flex items-center gap-3 mb-2">
                       {solution.icon}
@@ -140,7 +140,7 @@ const HighVolumeEmbroidery = () => {
               <Card className="h-full theme-surface theme-border">
                 <CardHeader>
                   <div className="flex items-center gap-3 mb-2">
-                    <Factory className="w-6 h-6 text-gold-DEFAULT" />
+                    <Factory className="w-6 h-6 text-gold" />
                     <CardTitle className="text-xl">Multi-Machine Coordination</CardTitle>
                   </div>
                 </CardHeader>
@@ -150,15 +150,15 @@ const HighVolumeEmbroidery = () => {
                   </CardDescription>
                   <ul className="space-y-2 theme-text-secondary">
                     <li className="flex items-start gap-2">
-                      <div className="w-1.5 h-1.5 bg-emerald-DEFAULT rounded-full mt-2 flex-shrink-0"></div>
+                      <div className="w-1.5 h-1.5 bg-emerald rounded-full mt-2 flex-shrink-0"></div>
                       Real-time machine status dashboard
                     </li>
                     <li className="flex items-start gap-2">
-                      <div className="w-1.5 h-1.5 bg-emerald-DEFAULT rounded-full mt-2 flex-shrink-0"></div>
+                      <div className="w-1.5 h-1.5 bg-emerald rounded-full mt-2 flex-shrink-0"></div>
                       Automatic job queue optimization
                     </li>
                     <li className="flex items-start gap-2">
-                      <div className="w-1.5 h-1.5 bg-emerald-DEFAULT rounded-full mt-2 flex-shrink-0"></div>
+                      <div className="w-1.5 h-1.5 bg-emerald rounded-full mt-2 flex-shrink-0"></div>
                       Machine downtime alerts and tracking
                     </li>
                   </ul>
@@ -175,7 +175,7 @@ const HighVolumeEmbroidery = () => {
               <Card className="h-full theme-surface theme-border">
                 <CardHeader>
                   <div className="flex items-center gap-3 mb-2">
-                    <TrendingUp className="w-6 h-6 text-emerald-DEFAULT" />
+                    <TrendingUp className="w-6 h-6 text-emerald" />
                     <CardTitle className="text-xl">Production Analytics</CardTitle>
                   </div>
                 </CardHeader>
@@ -185,15 +185,15 @@ const HighVolumeEmbroidery = () => {
                   </CardDescription>
                   <ul className="space-y-2 theme-text-secondary">
                     <li className="flex items-start gap-2">
-                      <div className="w-1.5 h-1.5 bg-gold-DEFAULT rounded-full mt-2 flex-shrink-0"></div>
+                      <div className="w-1.5 h-1.5 bg-gold rounded-full mt-2 flex-shrink-0"></div>
                       Machine efficiency reporting
                     </li>
                     <li className="flex items-start gap-2">
-                      <div className="w-1.5 h-1.5 bg-gold-DEFAULT rounded-full mt-2 flex-shrink-0"></div>
+                      <div className="w-1.5 h-1.5 bg-gold rounded-full mt-2 flex-shrink-0"></div>
                       Throughput optimization insights
                     </li>
                     <li className="flex items-start gap-2">
-                      <div className="w-1.5 h-1.5 bg-gold-DEFAULT rounded-full mt-2 flex-shrink-0"></div>
+                      <div className="w-1.5 h-1.5 bg-gold rounded-full mt-2 flex-shrink-0"></div>
                       Predictive maintenance scheduling
                     </li>
                   </ul>
@@ -213,7 +213,7 @@ const HighVolumeEmbroidery = () => {
             </h2>
             <div className="space-y-8">
               <motion.div 
-                className="border-l-4 border-gold-DEFAULT pl-6"
+                className="border-l-4 border-gold pl-6"
                 initial={{ opacity: 0, x: -20 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.5 }}
@@ -225,13 +225,13 @@ const HighVolumeEmbroidery = () => {
                   of orders and cost thousands in lost productivity.
                 </p>
                 <p className="theme-text-secondary">
-                  <strong className="text-emerald-DEFAULT">Tracker Solution:</strong> Automatic job redistribution and real-time 
+                  <strong className="text-emerald">Tracker Solution:</strong> Automatic job redistribution and real-time 
                   machine monitoring prevent bottlenecks and minimize downtime impact.
                 </p>
               </motion.div>
 
               <motion.div 
-                className="border-l-4 border-emerald-DEFAULT pl-6"
+                className="border-l-4 border-emerald pl-6"
                 initial={{ opacity: 0, x: -20 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.5, delay: 0.1 }}
@@ -243,13 +243,13 @@ const HighVolumeEmbroidery = () => {
                   and design complexities is virtually impossible to optimize.
                 </p>
                 <p className="theme-text-secondary">
-                  <strong className="text-gold-DEFAULT">Tracker Solution:</strong> AI-powered scheduling algorithm considers machine 
+                  <strong className="text-gold">Tracker Solution:</strong> AI-powered scheduling algorithm considers machine 
                   capabilities, job requirements, and deadlines to optimize production flow.
                 </p>
               </motion.div>
 
               <motion.div 
-                className="border-l-4 border-gold-DEFAULT pl-6"
+                className="border-l-4 border-gold pl-6"
                 initial={{ opacity: 0, x: -20 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.5, delay: 0.2 }}
@@ -261,7 +261,7 @@ const HighVolumeEmbroidery = () => {
                   continuous monitoring and rapid response to quality issues.
                 </p>
                 <p className="theme-text-secondary">
-                  <strong className="text-emerald-DEFAULT">Tracker Solution:</strong> Automated quality checkpoints and real-time 
+                  <strong className="text-emerald">Tracker Solution:</strong> Automated quality checkpoints and real-time 
                   alerts ensure consistent output while maintaining production speed.
                 </p>
               </motion.div>
@@ -279,15 +279,15 @@ const HighVolumeEmbroidery = () => {
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
               <div>
-                <div className="text-4xl font-bold text-gold-DEFAULT mb-2">35%</div>
+                <div className="text-4xl font-bold text-gold mb-2">35%</div>
                 <p className="theme-text-secondary">Increase in Production Efficiency</p>
               </div>
               <div>
-                <div className="text-4xl font-bold text-emerald-DEFAULT mb-2">50%</div>
+                <div className="text-4xl font-bold text-emerald mb-2">50%</div>
                 <p className="theme-text-secondary">Reduction in Machine Downtime</p>
               </div>
               <div>
-                <div className="text-4xl font-bold text-gold-DEFAULT mb-2">25%</div>
+                <div className="text-4xl font-bold text-gold mb-2">25%</div>
                 <p className="theme-text-secondary">Faster Order Turnaround</p>
               </div>
             </div>

@@ -49,7 +49,7 @@ const ContractDecoration = () => {
       {/* Hero Section */}
       <section className="relative pt-24 pb-16 overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-indigo-500/5 via-transparent to-blue-500/5"></div>
-        <div className="container mx-auto px-4 relative z-10 py-[64px]">
+        <div className="container mx-auto px-4 relative z-10">
           <motion.div 
             className="max-w-4xl mx-auto"
             initial={{ opacity: 0, y: 20 }}

@@ -166,74 +166,8 @@ const PromotionalProducts = () => {
         </div>
       </section>
 
-      {/* Industry Pain Points */}
-      <section className="py-16">
-        <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto">
-            <h2 className="text-3xl font-bold mb-8 text-center">
-              Why Promotional Distributors Choose Tracker
-            </h2>
-            <div className="space-y-8">
-              <motion.div
-                className="border-l-4 border-gold-DEFAULT pl-6"
-                initial={{ opacity: 0, x: -20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.5 }}
-                viewport={{ once: true }}
-              >
-                <h3 className="text-xl font-semibold mb-3">Multi-Vendor Coordination</h3>
-                <p className="theme-text-secondary mb-3">
-                  Promotional orders often involve multiple vendors for different products and decoration methods. 
-                  Coordinating timelines and ensuring everything arrives together is a logistical nightmare.
-                </p>
-                <p className="theme-text-secondary">
-                  <strong className="text-emerald-DEFAULT">Tracker Solution:</strong> Centralized vendor coordination 
-                  with automated timeline synchronization ensures all components arrive on schedule.
-                </p>
-              </motion.div>
-
-              <motion.div
-                className="border-l-4 border-emerald-DEFAULT pl-6"
-                initial={{ opacity: 0, x: -20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.5, delay: 0.1 }}
-                viewport={{ once: true }}
-              >
-                <h3 className="text-xl font-semibold mb-3">Decoration Method Complexity</h3>
-                <p className="theme-text-secondary mb-3">
-                  Different promotional products require different decoration methods (embroidery, screen printing, 
-                  laser engraving). Managing these diverse processes creates confusion and delays.
-                </p>
-                <p className="theme-text-secondary">
-                  <strong className="text-gold-DEFAULT">Tracker Solution:</strong> Method-specific workflows with 
-                  automated routing ensure each product follows the optimal decoration process.
-                </p>
-              </motion.div>
-
-              <motion.div
-                className="border-l-4 border-gold-DEFAULT pl-6"
-                initial={{ opacity: 0, x: -20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.5, delay: 0.2 }}
-                viewport={{ once: true }}
-              >
-                <h3 className="text-xl font-semibold mb-3">Customer Communication Overload</h3>
-                <p className="theme-text-secondary mb-3">
-                  Promotional customers are often anxious about their event deadlines and constantly ask for updates. 
-                  This creates a constant stream of calls and emails that overwhelm your team.
-                </p>
-                <p className="theme-text-secondary">
-                  <strong className="text-emerald-DEFAULT">Tracker Solution:</strong> Proactive customer notifications 
-                  with detailed progress updates reduce support inquiries by 70%.
-                </p>
-              </motion.div>
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* Results Section */}
-      <section className="py-16 theme-surface theme-border border-t">
+      <section className="py-16">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
             <h2 className="text-3xl font-bold mb-8">

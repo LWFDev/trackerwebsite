@@ -15,17 +15,17 @@ const ApparelManufacturing = () => {
 
   const solutions = [
     {
-      icon: <BarChart3 className="w-6 h-6 text-gold-DEFAULT" />,
+      icon: <BarChart3 className="w-6 h-6 text-gold" />,
       title: "Real-Time Production Insights",
       description: "Get instant visibility into production status across all manufacturing lines"
     },
     {
-      icon: <Clock className="w-6 h-6 text-gold-DEFAULT" />,
+      icon: <Clock className="w-6 h-6 text-emerald" />,
       title: "Bottleneck Identification",
       description: "Quickly identify and resolve production bottlenecks before they impact delivery"
     },
     {
-      icon: <TrendingUp className="w-6 h-6 text-gold-DEFAULT" />,
+      icon: <TrendingUp className="w-6 h-6 text-gold" />,
       title: "Quality Assurance",
       description: "Ensure consistent output quality with automated tracking and alerts"
     }
@@ -33,12 +33,12 @@ const ApparelManufacturing = () => {
 
   const features = [
     {
-      icon: <Layers className="w-8 h-8 text-gold-DEFAULT" />,
+      icon: <Layers className="w-8 h-8 text-gold" />,
       title: "Multi-Line Coordination",
       description: "Coordinate production across multiple manufacturing lines with centralized oversight."
     },
     {
-      icon: <AlertTriangle className="w-8 h-8 text-emerald-DEFAULT" />,
+      icon: <AlertTriangle className="w-8 h-8 text-emerald" />,
       title: "Early Warning System",
       description: "Receive alerts for potential issues before they become costly production problems."
     }
@@ -58,7 +58,7 @@ const ApparelManufacturing = () => {
           >
             <div className="flex items-center gap-4 mb-6">
               <Shirt className="w-12 h-12 text-emerald-DEFAULT" />
-              <h1 className="text-4xl md:text-6xl font-bold text-white">
+              <h1 className="text-4xl md:text-6xl font-bold bg-gradient-to-r from-emerald-DEFAULT to-emerald-light bg-clip-text text-transparent">
                 Apparel Manufacturing
               </h1>
             </div>
@@ -66,7 +66,7 @@ const ApparelManufacturing = () => {
               Provide apparel manufacturers real-time insight into production statuses, reducing bottlenecks and ensuring consistent output quality across all manufacturing lines.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
-              <Button asChild size="lg" variant="gold">
+              <Button asChild size="lg" variant="emerald">
                 <Link to="/get-started">Start Free Trial</Link>
               </Button>
               <Button asChild variant="emerald-outline" size="lg">
@@ -94,7 +94,7 @@ const ApparelManufacturing = () => {
                   transition={{ duration: 0.5, delay: index * 0.1 }}
                   viewport={{ once: true }}
                 >
-                  <div className="w-2 h-2 bg-gold-DEFAULT rounded-full mt-3 flex-shrink-0"></div>
+                  <div className="w-2 h-2 bg-emerald-DEFAULT rounded-full mt-3 flex-shrink-0"></div>
                   <p className="theme-text-secondary">{challenge}</p>
                 </motion.div>
               ))}
@@ -118,7 +118,7 @@ const ApparelManufacturing = () => {
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 viewport={{ once: true }}
               >
-                <Card className="h-full theme-surface theme-border hover:border-gold-DEFAULT/50 transition-all duration-300">
+                <Card className="h-full theme-surface theme-border hover:border-emerald-DEFAULT/50 transition-all duration-300">
                   <CardHeader>
                     <div className="flex items-center gap-3 mb-2">
                       {solution.icon}
