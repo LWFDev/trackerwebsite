@@ -124,7 +124,10 @@ const CaseStudies = () => {
                     </div>
                     
                     <Link to={`/case-studies/${study.id}`} className="block">
-                      <Button className="w-full group bg-gradient-to-r from-emerald-600 to-green-500 hover:from-emerald-700 hover:to-green-600 text-white">
+                      <Button 
+                        className="w-full group bg-gradient-to-r from-emerald-600 to-green-500 hover:from-emerald-700 hover:to-green-600 text-white"
+                        onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+                      >
                         Read Full Story
                         <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
                       </Button>
