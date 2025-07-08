@@ -13,7 +13,7 @@ const NewUserCard = () => {
         </li>
         <li className="flex items-center text-sm text-zinc-300">
           <Check size={16} className="mr-2 text-gold-DEFAULT" />
-          ⚙️ Customize Tracker to fit your exact business operations 
+          Customized to fit your exact business operations 
         </li>
         <li className="flex items-center text-sm text-zinc-300">
           <Check size={16} className="mr-2 text-gold-DEFAULT" />
