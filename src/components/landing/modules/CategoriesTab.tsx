@@ -18,14 +18,14 @@ const CategoriesTab = () => {
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
       <div className="col-span-2">
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
           {categories.map((category, index) => (
             <Link
               key={index}
               to="/modules"
-              className={`${category.color} rounded-lg border p-4 text-center transition-colors duration-200`}
+              className={`${category.color} rounded-lg border p-6 text-center transition-colors duration-200`}
             >
-              <span className="text-white font-medium">{category.name}</span>
+              <span className="text-white font-medium text-sm">{category.name}</span>
             </Link>
           ))}
         </div>
