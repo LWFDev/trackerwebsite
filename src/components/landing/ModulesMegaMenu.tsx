@@ -5,7 +5,6 @@ import { Link, useNavigate } from "react-router-dom";
 import modules from "./modules/moduleData";
 import PopularModulesTab from "./modules/PopularModulesTab";
 import CategoriesTab from "./modules/CategoriesTab";
-import AllModulesTab from "./modules/AllModulesTab";
 
 const ModulesMegaMenu = () => {
   const [activeTab, setActiveTab] = useState("popular");
@@ -39,12 +38,6 @@ const ModulesMegaMenu = () => {
               >
                 Categories
               </TabsTrigger>
-              <TabsTrigger 
-                value="all"
-                className="data-[state=active]:bg-zinc-700 data-[state=active]:text-[#D4AF37] transition-all duration-300"
-              >
-                All Modules
-              </TabsTrigger>
             </TabsList>
             <Link 
               to="/modules" 
@@ -66,9 +59,6 @@ const ModulesMegaMenu = () => {
             <CategoriesTab categories={modules.categories} />
           </TabsContent>
 
-          <TabsContent value="all" className="mt-0">
-            <AllModulesTab modules={modules.all} />
-          </TabsContent>
 
         </Tabs>
       </div>
