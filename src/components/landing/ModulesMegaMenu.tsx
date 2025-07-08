@@ -1,24 +1,12 @@
 
 import { useState } from "react";
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
-import { Link, useNavigate } from "react-router-dom";
 import modules from "./modules/moduleData";
 import PopularModulesTab from "./modules/PopularModulesTab";
 import CategoriesTab from "./modules/CategoriesTab";
 
 const ModulesMegaMenu = () => {
   const [activeTab, setActiveTab] = useState("popular");
-  const navigate = useNavigate();
-  
-  const handleAllModulesClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
-    e.preventDefault();
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-    
-    // Use setTimeout to allow the scroll to start before navigation
-    setTimeout(() => {
-      navigate("/modules");
-    }, 100);
-  };
 
   return (
     <div className="fixed top-[60px] left-0 w-full bg-zinc-900 shadow-lg z-50 border-t border-zinc-800">
@@ -39,16 +27,6 @@ const ModulesMegaMenu = () => {
                 Categories
               </TabsTrigger>
             </TabsList>
-            <Link 
-              to="/modules" 
-              onClick={handleAllModulesClick}
-              className="text-gold-DEFAULT text-sm hover:underline flex items-center group"
-            >
-              View all modules
-              <svg className="w-4 h-4 ml-1 transform group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-              </svg>
-            </Link>
           </div>
 
           <TabsContent value="popular" className="mt-0">
