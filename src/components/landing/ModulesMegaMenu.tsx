@@ -25,7 +25,7 @@ const ModulesMegaMenu = () => {
     <div className="fixed top-[60px] left-0 w-full bg-zinc-900 shadow-lg z-50 border-t border-zinc-800">
       <div className="container mx-auto p-6">
         <Tabs defaultValue="popular" onValueChange={setActiveTab} className="w-full">
-          <div className="flex justify-between items-center mb-6">
+          <div className="flex justify-start items-center mb-6">
             <TabsList className="bg-zinc-800 hover:bg-zinc-700 transition-colors">
               <TabsTrigger 
                 value="popular"
@@ -46,16 +46,6 @@ const ModulesMegaMenu = () => {
                 All Modules
               </TabsTrigger>
             </TabsList>
-            <Link 
-              to="/modules" 
-              onClick={handleAllModulesClick}
-              className="text-gold-DEFAULT text-sm hover:underline flex items-center group"
-            >
-              View all modules
-              <svg className="w-4 h-4 ml-1 transform group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-              </svg>
-            </Link>
           </div>
 
           <TabsContent value="popular" className="mt-0">
@@ -69,6 +59,20 @@ const ModulesMegaMenu = () => {
           <TabsContent value="all" className="mt-0">
             <AllModulesTab modules={modules.all} />
           </TabsContent>
+
+          {/* View all modules link - appears on all tabs */}
+          <div className="mt-6 flex justify-start">
+            <Link 
+              to="/modules" 
+              onClick={handleAllModulesClick}
+              className="text-gold-DEFAULT text-sm hover:underline flex items-center group"
+            >
+              View all modules
+              <svg className="w-4 h-4 ml-1 transform group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+              </svg>
+            </Link>
+          </div>
         </Tabs>
       </div>
     </div>
