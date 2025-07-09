@@ -33,8 +33,8 @@ const AGAME = () => {
               </p>
               <div className="w-full max-w-2xl mx-auto h-64 overflow-hidden rounded-xl shadow-2xl">
                 <img 
-                  src="/lovable-uploads/c78cb5cd-6b30-4b76-ab3d-95defabc532a.png" 
-                  alt="AGAME embroidery facility"
+                  src="/lovable-uploads/51551d31-854c-4285-beee-e69d4f4cf3f5.png" 
+                  alt="AGAME team celebrating success"
                   className="w-full h-full object-cover"
                 />
               </div>
