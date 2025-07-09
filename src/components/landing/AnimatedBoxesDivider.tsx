@@ -20,11 +20,11 @@ interface ProductionMetrics {
 const AnimatedBoxesDivider: React.FC = () => {
   const containerRef = useRef<HTMLDivElement>(null);
   const animationRef = useRef<number>();
-  const itemsRef = useRef<WorkflowItem[]>([]);
   const lastTimeRef = useRef<number>(0);
   const isVisibleRef = useRef<boolean>(true);
   const reducedMotion = useReducedMotion();
 
+  const [items, setItems] = useState<WorkflowItem[]>([]);
   const [metrics, setMetrics] = useState<ProductionMetrics>({
     throughput: 1247,
     efficiency: 94,
@@ -53,30 +53,36 @@ const AnimatedBoxesDivider: React.FC = () => {
     const deltaTime = currentTime - lastTimeRef.current;
     lastTimeRef.current = currentTime;
 
-    // Add new items periodically
-    if (Math.random() < 0.02 && itemsRef.current.length < 8) {
-      itemsRef.current.push(createWorkflowItem());
-    }
+    setItems(prevItems => {
+      let updatedItems = [...prevItems];
 
-    // Update item positions
-    itemsRef.current = itemsRef.current.map(item => {
-      const speed = 0.8;
-      const newX = item.x + speed;
-      
-      // Determine current stage based on position
-      let newStage = 0;
-      if (newX > 15) newStage = 1;
-      if (newX > 40) newStage = 2;
-      if (newX > 65) newStage = 3;
-      if (newX > 85) newStage = 4;
+      // Add new items periodically (much slower)
+      if (Math.random() < 0.005 && updatedItems.length < 6) {
+        updatedItems.push(createWorkflowItem());
+      }
 
-      return {
-        ...item,
-        x: newX,
-        stage: newStage,
-        progress: Math.min(100, (newX + 50) / 1.35)
-      };
-    }).filter(item => item.x < 120); // Remove items that have moved off screen
+      // Update item positions with much slower speed
+      updatedItems = updatedItems.map(item => {
+        const speed = 0.15; // Much slower speed
+        const newX = item.x + speed;
+        
+        // Determine current stage based on position
+        let newStage = 0;
+        if (newX > 15) newStage = 1;
+        if (newX > 40) newStage = 2;
+        if (newX > 65) newStage = 3;
+        if (newX > 85) newStage = 4;
+
+        return {
+          ...item,
+          x: newX,
+          stage: newStage,
+          progress: Math.min(100, (newX + 50) / 1.35)
+        };
+      }).filter(item => item.x < 120); // Remove items that have moved off screen
+
+      return updatedItems;
+    });
 
     // Update metrics occasionally
     if (Math.random() < 0.01) {
@@ -179,7 +185,7 @@ const AnimatedBoxesDivider: React.FC = () => {
 
       {/* Workflow Items */}
       <div className="absolute inset-0 flex items-center">
-        {itemsRef.current.map((item) => {
+        {items.map((item) => {
           const IconComponent = getStageIcon(item.stage);
           const iconColor = getStageColor(item.stage);
           
