@@ -1,5 +1,6 @@
 
 import { useState, useEffect } from "react";
+import { preloadCriticalImages } from "./data/moduleIcons";
 import HeroSection from "./components/HeroSection";
 import CategorySelector from "./components/CategorySelector";
 import ModuleListSection from "./components/ModuleListSection";
@@ -20,6 +21,11 @@ const ModuleIndex = () => {
       );
     }
   }, [selectedCategory]);
+
+  // Preload critical images on mount
+  useEffect(() => {
+    preloadCriticalImages();
+  }, []);
 
   return (
     <div className="min-h-screen bg-black">

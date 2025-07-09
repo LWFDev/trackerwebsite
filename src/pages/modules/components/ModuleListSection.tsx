@@ -1,10 +1,12 @@
 
-import React from "react";
+import React, { Suspense } from "react";
 import ModuleCard from "./ModuleCard";
+import { ModuleCardSkeleton } from "@/components/common/LoadingSkeleton";
+import { Module } from "@/types/modules";
 
 interface ModuleListSectionProps {
   title: string;
-  modules: any[];
+  modules: Module[];
 }
 
 const ModuleListSection = ({ title, modules }: ModuleListSectionProps) => {
@@ -15,9 +17,17 @@ const ModuleListSection = ({ title, modules }: ModuleListSectionProps) => {
       </h2>
       
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        {modules.map((module, index) => (
-          <ModuleCard key={index} module={module} />
-        ))}
+        <Suspense fallback={
+          <>
+            {Array.from({ length: modules.length }).map((_, i) => (
+              <ModuleCardSkeleton key={i} />
+            ))}
+          </>
+        }>
+          {modules.map((module, index) => (
+            <ModuleCard key={index} module={module} />
+          ))}
+        </Suspense>
       </div>
     </div>
   );

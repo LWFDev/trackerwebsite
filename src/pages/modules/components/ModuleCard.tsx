@@ -3,28 +3,19 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { cn } from "@/lib/utils";
 import { ArrowUpRight } from "lucide-react";
+import { scrollToTop } from "@/utils/navigation";
+import { OptimizedImage } from "@/hooks/useImageOptimization";
+
+import { Module } from "@/types/modules";
 
 interface ModuleCardProps {
-  module: {
-    title: string;
-    description: string;
-    icon: React.ReactNode;
-    link: string;
-    color?: string;
-    category: string;
-  };
+  module: Module;
 }
 
 const ModuleCard = ({ module }: ModuleCardProps) => {
   // Function to handle smooth scrolling and navigation
   const handleModuleClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
-    e.preventDefault();
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-    
-    // Navigate after scroll starts
-    setTimeout(() => {
-      window.location.href = module.link;
-    }, 100);
+    scrollToTop();
   };
 
   return (
@@ -43,7 +34,11 @@ const ModuleCard = ({ module }: ModuleCardProps) => {
 
       <div className="bg-zinc-900 p-4 flex items-center space-x-4">
         <div className="bg-zinc-800 p-3 rounded-lg border border-zinc-700 group-hover:border-gold">
-          {module.icon}
+          <OptimizedImage 
+            src={module.icon.src} 
+            alt={module.icon.alt} 
+            className="h-8 w-8"
+          />
         </div>
         <h3 className="text-xl font-semibold text-white">{module.title}</h3>
       </div>
