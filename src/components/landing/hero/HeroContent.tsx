@@ -46,7 +46,7 @@ export const HeroContent = () => {
           </Button>
         </Link>
         <Link to="/contact" className="w-full sm:w-auto">
-          <Button size="lg" variant="outline" className="w-full sm:w-auto group border-2 border-yellow-400 dark:border-yellow-500 text-slate-700 dark:text-slate-300 hover:border-yellow-500 dark:hover:border-yellow-500 transition-all duration-300 hover:-translate-y-0.5 shadow-sm hover:shadow-md">
+          <Button size="lg" variant="outline" className="w-full sm:w-auto group border border-yellow-400 dark:border-yellow-500 text-slate-700 dark:text-slate-300 hover:border-yellow-500 dark:hover:border-yellow-500 transition-all duration-300 hover:-translate-y-0.5 shadow-sm hover:shadow-md">
             <span className="font-medium">{t("Contact Sales")}</span>
           </Button>
         </Link>
