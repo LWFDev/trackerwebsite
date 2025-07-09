@@ -77,7 +77,7 @@ const TrustIndicator = () => {
       </div>
       
       <p className="text-xs text-slate-500 dark:text-slate-500 leading-relaxed max-w-md">
-        {t("Trusted by leading garment decorators worldwide. Join thousands of businesses who have transformed their operations with our comprehensive production management platform.")}
+        {t("Empower your business to streamline and scale with our comprehensive production management platform.")}
       </p>
     </div>
   );
