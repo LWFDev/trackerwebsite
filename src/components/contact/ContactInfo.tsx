@@ -100,7 +100,9 @@ const ContactInfo = () => {
               </div>
               <div>
                 <h3 className="text-lg font-medium mb-1">{t("Distribution Partner")}</h3>
-                <p className="text-gray-400">MebuisWorks is the Exclusive US Distributor</p>
+                <p className="text-gray-400">
+                  <a href="https://mebuisworks.com/get-demo/?utm_source=tracker&utm_medium=website&utm_campaign=contact_sidebar" target="_blank" rel="noopener noreferrer" className="text-gold hover:text-gold-light transition-colors">MebuisWorks</a> is the Exclusive US Distributor
+                </p>
               </div>
             </div>
           )}
