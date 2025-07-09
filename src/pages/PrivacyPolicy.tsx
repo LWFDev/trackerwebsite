@@ -46,7 +46,7 @@ const PrivacyPolicy = () => {
             
             <h1 className="text-4xl md:text-6xl font-bold mb-6">
               <span className="text-white">{t('Privacy')}</span>{' '}
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-yellow-200 to-white">{t('Policy')}</span>
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-gold-light to-white">{t('Policy')}</span>
             </h1>
             <p className="text-xl text-emerald-100 max-w-2xl mx-auto leading-relaxed mb-4">
               {t('Learn how we collect, use, and protect your personal information and business data.')}

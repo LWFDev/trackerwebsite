@@ -22,7 +22,7 @@ const FloatingObjects = lazy(() => import("@/components/pricing/FloatingObjects"
 const LoadingFallback = () => (
   <div className="w-full py-12 flex justify-center">
     <motion.div
-      className="w-10 h-10 rounded-full border-2 border-transparent border-t-[#D4AF37] border-r-[#D4AF37]"
+      className="w-10 h-10 rounded-full border-2 border-transparent border-t-gold border-r-gold"
       animate={{ rotate: 360 }}
       transition={{ duration: 1, repeat: Infinity, ease: "linear" }}
     />
@@ -78,7 +78,7 @@ const PricingPage = () => {
       {isLoading ? (
         <div className="fixed inset-0 bg-black z-50 flex items-center justify-center">
           <motion.div
-            className="w-12 h-12 rounded-full border-2 border-transparent border-t-[#D4AF37] border-r-[#D4AF37]"
+            className="w-12 h-12 rounded-full border-2 border-transparent border-t-gold border-r-gold"
             animate={{ rotate: 360 }}
             transition={{ duration: 1, repeat: Infinity, ease: "linear" }}
           />
@@ -112,8 +112,8 @@ const PricingPage = () => {
           
           <div className="relative">
             {/* Decorative elements */}
-            <div className="absolute top-0 right-0 w-1/3 h-1/2 bg-[#D4AF37]/5 rounded-full blur-[150px] -z-10 animate-pulse-light"></div>
-            <div className="absolute bottom-0 left-0 w-1/2 h-1/3 bg-[#D4AF37]/5 rounded-full blur-[150px] -z-10 animate-pulse-light" style={{ animationDelay: '1s' }}></div>
+            <div className="absolute top-0 right-0 w-1/3 h-1/2 bg-gold-opacity-5 rounded-full blur-[150px] -z-10 animate-pulse-light"></div>
+            <div className="absolute bottom-0 left-0 w-1/2 h-1/3 bg-gold-opacity-5 rounded-full blur-[150px] -z-10 animate-pulse-light" style={{ animationDelay: '1s' }}></div>
             
             {/* Geometric objects */}
             {isClientRendered && (
@@ -133,14 +133,14 @@ const PricingPage = () => {
                 <motion.div 
                   className="flex flex-col md:flex-row items-center justify-center gap-8 max-w-5xl mx-auto bg-zinc-900/50 backdrop-blur-md border border-zinc-800 rounded-xl p-6 md:p-8 relative overflow-hidden"
                   whileHover={{ 
-                    boxShadow: '0 20px 80px -10px rgba(212, 175, 55, 0.15)',
+                    boxShadow: '0 20px 80px -10px hsl(var(--gold) / 0.15)',
                     y: -5
                   }}
                   transition={{ type: "spring", stiffness: 400, damping: 15 }}
                 >
                   {/* Decorative elements */}
                   <motion.div 
-                    className="absolute -top-20 -right-20 w-40 h-40 rounded-full bg-[#D4AF37]/5"
+                    className="absolute -top-20 -right-20 w-40 h-40 rounded-full bg-gold-opacity-5"
                     animate={{
                       scale: [1, 1.2, 1],
                       opacity: [0.5, 0.3, 0.5],
@@ -171,7 +171,7 @@ const PricingPage = () => {
                       whileTap={{ y: 0 }}
                     >
                       <motion.span 
-                        className="absolute inset-0 bg-gradient-to-r from-[#D4AF37]/0 via-[#D4AF37]/20 to-[#D4AF37]/0"
+                        className="absolute inset-0 bg-gradient-to-r from-gold-opacity-0 via-gold-opacity-20 to-gold-opacity-0"
                         animate={{
                           x: ['-100%', '100%'],
                         }}
@@ -197,7 +197,7 @@ const PricingPage = () => {
             
             {/* Visual separator with gradient line */}
             <div className="max-w-7xl mx-auto my-16">
-              <div className="h-px bg-gradient-to-r from-transparent via-[#D4AF37]/40 to-transparent"></div>
+              <div className="h-px bg-gradient-to-r from-transparent via-gold-opacity-40 to-transparent"></div>
             </div>
             
             {/* Floating objects - only rendered when section becomes visible */}

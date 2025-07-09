@@ -35,7 +35,7 @@ const FlagSelector = () => {
     <div className="relative" ref={dropdownRef}>
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="flex items-center space-x-2 px-3 py-2 rounded-md bg-gray-100/10 dark:bg-zinc-900/50 light:bg-gray-100/10 backdrop-blur-sm border border-gray-300/20 dark:border-zinc-800/50 light:border-gray-300/20 hover:border-[#D4AF37]/50 transition-all duration-200 text-white"
+        className="flex items-center space-x-2 px-3 py-2 rounded-md bg-gray-100/10 dark:bg-zinc-900/50 light:bg-gray-100/10 backdrop-blur-sm border border-gray-300/20 dark:border-zinc-800/50 light:border-gray-300/20 hover:border-gold-opacity-50 transition-all duration-200 text-white"
         aria-label={`Current language: ${locale}`}
       >
         <img 
@@ -70,7 +70,7 @@ const FlagSelector = () => {
                   onClick={() => handleLocaleChange(localeOption)}
                   className={`w-full flex items-center space-x-3 px-4 py-3 text-left hover:bg-gray-800/50 dark:hover:bg-zinc-800/50 light:hover:bg-gray-100 transition-colors duration-150 ${
                     locale === localeOption 
-                      ? 'bg-[#D4AF37]/10 text-[#D4AF37]' 
+                      ? 'bg-gold-opacity-10 text-gold' 
                       : 'text-white dark:text-white light:text-gray-900'
                   }`}
                 >
@@ -82,7 +82,7 @@ const FlagSelector = () => {
                   <span className="font-medium">{localeOption}</span>
                   {locale === localeOption && (
                     <div className="ml-auto">
-                      <svg className="w-4 h-4 text-[#D4AF37]" fill="currentColor" viewBox="0 0 20 20">
+                      <svg className="w-4 h-4 text-gold" fill="currentColor" viewBox="0 0 20 20">
                         <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                       </svg>
                     </div>

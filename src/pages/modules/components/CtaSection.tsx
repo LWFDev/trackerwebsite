@@ -7,7 +7,7 @@ const CtaSection = () => {
   return (
     <div className="bg-zinc-900 text-white py-16 relative overflow-hidden">
       <div className="absolute top-0 left-0 w-full h-full overflow-hidden z-0">
-        <div className="absolute w-[600px] h-[600px] rounded-full bg-[#D4AF37]/5 blur-[120px] top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"></div>
+        <div className="absolute w-[600px] h-[600px] rounded-full bg-gold-opacity-5 blur-[120px] top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"></div>
       </div>
       <div className="container mx-auto px-4 text-center relative z-10">
         <h2 className="text-3xl font-bold mb-4">Ready to Supercharge Your Business?</h2>
@@ -22,7 +22,7 @@ const CtaSection = () => {
           </Link>
           <Button 
             variant="outline" 
-            className="border-zinc-700 text-gray-300 hover:bg-zinc-800 hover:border-[#D4AF37]" 
+            className="border-zinc-700 text-gray-300 hover:bg-zinc-800 hover:border-gold" 
             size="lg"
           >
             Contact Sales

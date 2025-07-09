@@ -38,11 +38,11 @@ const PricingCard: React.FC<PricingPlanProps> = ({ plan }) => {
     >
       {/* Decorative elements */}
       <div 
-        className={`absolute -top-4 -right-4 w-16 h-16 rounded-full ${plan.highlighted ? 'bg-emerald-500/20' : 'bg-[#D4AF37]/5'} opacity-0 group-hover:opacity-100 transition-opacity duration-500`}
+        className={`absolute -top-4 -right-4 w-16 h-16 rounded-full ${plan.highlighted ? 'bg-emerald-500/20' : 'bg-gold-opacity-5'} opacity-0 group-hover:opacity-100 transition-opacity duration-500`}
         style={{ willChange: 'opacity' }}
       ></div>
       <div 
-        className={`absolute -bottom-6 -left-6 w-24 h-24 rounded-full ${plan.highlighted ? 'bg-emerald-500/20' : 'bg-[#D4AF37]/5'} opacity-0 group-hover:opacity-100 transition-opacity duration-500`}
+        className={`absolute -bottom-6 -left-6 w-24 h-24 rounded-full ${plan.highlighted ? 'bg-emerald-500/20' : 'bg-gold-opacity-5'} opacity-0 group-hover:opacity-100 transition-opacity duration-500`}
         style={{ willChange: 'opacity' }}
       ></div>
       

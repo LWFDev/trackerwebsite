@@ -50,7 +50,7 @@ const SupportFAQ = () => {
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold mb-6">
               Frequently Asked{' '}
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#D4AF37] to-[#F2D675]">
+              <span className="text-gold-gradient">
                 Questions
               </span>
             </h2>
@@ -69,7 +69,7 @@ const SupportFAQ = () => {
                   value={`item-${index}`}
                   className="bg-zinc-800/30 border border-zinc-700/50 rounded-lg px-6"
                 >
-                  <AccordionTrigger className="text-left text-white hover:text-[#D4AF37] transition-colors py-6">
+                  <AccordionTrigger className="text-left text-white hover:text-gold transition-colors py-6">
                     {faq.question}
                   </AccordionTrigger>
                   <AccordionContent className="text-gray-300 pb-6">

@@ -146,7 +146,7 @@ const PricingPlans = () => {
       {/* Dynamic background elements */}
       <div className="absolute top-0 left-0 w-full h-full overflow-hidden">
         <div className="absolute w-[600px] h-[600px] rounded-full bg-emerald-500/10 blur-[150px] -top-[200px] right-0 animate-pulse-light"></div>
-        <div className="absolute w-[800px] h-[800px] rounded-full bg-[#D4AF37]/8 blur-[150px] -bottom-[300px] left-0 animate-pulse-light" style={{ animationDelay: '1s' }}></div>
+        <div className="absolute w-[800px] h-[800px] rounded-full bg-gold-opacity-8 blur-[150px] -bottom-[300px] left-0 animate-pulse-light" style={{ animationDelay: '1s' }}></div>
       </div>
       
       <div className="container mx-auto px-4 relative z-10">

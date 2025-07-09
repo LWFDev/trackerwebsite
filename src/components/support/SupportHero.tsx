@@ -12,12 +12,12 @@ const SupportHero = () => {
         <ScrollReveal direction="up" distance="30px" duration={600}>
           <div className="text-center max-w-4xl mx-auto">
             <div className="inline-flex items-center px-4 py-2 bg-zinc-800/50 rounded-full border border-zinc-700/60 mb-8">
-              <Headphones className="w-4 h-4 text-[#D4AF37] mr-2" />
+              <Headphones className="w-4 h-4 text-gold mr-2" />
               <span className="text-sm font-medium text-gray-300">Expert Support Available</span>
             </div>
             
             <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight">
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#D4AF37] to-[#F2D675]">
+              <span className="text-gold-gradient">
                 Support
               </span>{' '}
               <span className="text-white">Center</span>
@@ -29,7 +29,7 @@ const SupportHero = () => {
             
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-16">
               <div className="text-center">
-                <div className="w-16 h-16 bg-gradient-to-r from-[#D4AF37] to-[#F2D675] rounded-full flex items-center justify-center mx-auto mb-4">
+                <div className="w-16 h-16 bg-gold-gradient rounded-full flex items-center justify-center mx-auto mb-4">
                   <Clock className="w-8 h-8 text-black" />
                 </div>
                 <h3 className="text-lg font-semibold mb-2">Fast Response</h3>
@@ -37,7 +37,7 @@ const SupportHero = () => {
               </div>
               
               <div className="text-center">
-                <div className="w-16 h-16 bg-gradient-to-r from-[#D4AF37] to-[#F2D675] rounded-full flex items-center justify-center mx-auto mb-4">
+                <div className="w-16 h-16 bg-gold-gradient rounded-full flex items-center justify-center mx-auto mb-4">
                   <MessageCircle className="w-8 h-8 text-black" />
                 </div>
                 <h3 className="text-lg font-semibold mb-2">Expert Help</h3>
@@ -45,7 +45,7 @@ const SupportHero = () => {
               </div>
               
               <div className="text-center">
-                <div className="w-16 h-16 bg-gradient-to-r from-[#D4AF37] to-[#F2D675] rounded-full flex items-center justify-center mx-auto mb-4">
+                <div className="w-16 h-16 bg-gold-gradient rounded-full flex items-center justify-center mx-auto mb-4">
                   <Headphones className="w-8 h-8 text-black" />
                 </div>
                 <h3 className="text-lg font-semibold mb-2">Business Hours</h3>

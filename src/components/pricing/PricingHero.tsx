@@ -65,7 +65,7 @@ const PricingHero = () => {
       {/* Interactive background elements */}
       <div className="absolute top-0 left-0 w-full h-full overflow-hidden z-0">
         {/* Animated gradient blob with optimized animation - green accent */}
-        <div ref={glowRef} className="absolute w-[800px] h-[800px] rounded-full bg-gradient-to-r from-emerald-500/15 to-[#D4AF37]/10 blur-[120px] top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 transition-transform duration-1000 ease-out" style={{
+        <div ref={glowRef} className="absolute w-[800px] h-[800px] rounded-full bg-gradient-to-r from-emerald-500/15 to-gold-opacity-10 blur-[120px] top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 transition-transform duration-1000 ease-out" style={{
         willChange: 'transform'
       }}></div>
         
@@ -80,7 +80,7 @@ const PricingHero = () => {
         }} style={{
           willChange: 'transform'
         }} />
-          <motion.div className="absolute bottom-40 right-[15%] w-24 h-24 border border-[#D4AF37]/20 rounded-full opacity-30" animate={{
+          <motion.div className="absolute bottom-40 right-[15%] w-24 h-24 border border-gold-opacity-20 rounded-full opacity-30" animate={{
           y: [0, -30, 0]
         }} transition={{
           duration: 8,
@@ -90,7 +90,7 @@ const PricingHero = () => {
         }} style={{
           willChange: 'transform'
         }} />
-          <motion.div className="absolute top-[30%] right-[10%] w-32 h-32 border-2 border-[#D4AF37]/10 rounded-xl rotate-45 opacity-20" animate={{
+          <motion.div className="absolute top-[30%] right-[10%] w-32 h-32 border-2 border-gold-opacity-10 rounded-xl rotate-45 opacity-20" animate={{
           rotate: [45, 90, 45]
         }} transition={{
           duration: 10,
@@ -106,7 +106,7 @@ const PricingHero = () => {
         <motion.div className="absolute top-[20%] left-[20%] opacity-10" animate={controls} style={{
         willChange: 'transform, opacity'
       }}>
-          <Circle size={120} className="text-[#D4AF37]" strokeWidth={1} />
+          <Circle size={120} className="text-gold" strokeWidth={1} />
         </motion.div>
         
         <motion.div className="absolute bottom-[30%] right-[25%] opacity-10" animate={{
@@ -121,7 +121,7 @@ const PricingHero = () => {
       }} style={{
         willChange: 'transform, opacity'
       }}>
-          <Circle size={200} className="text-[#D4AF37]" strokeWidth={1} />
+          <Circle size={200} className="text-gold" strokeWidth={1} />
         </motion.div>
         
         {/* Subtle background pattern */}
@@ -139,7 +139,7 @@ const PricingHero = () => {
         duration: 0.8
       }} className="text-center">
           <div className="inline-flex items-center gap-2 px-4 py-1.5 bg-zinc-800/80 backdrop-blur-sm rounded-full border border-zinc-700 mb-6 relative overflow-hidden group">
-            <div className="absolute inset-0 bg-gradient-to-r from-[#D4AF37]/0 via-[#D4AF37]/10 to-[#D4AF37]/0 animate-shimmer"></div>
+            <div className="absolute inset-0 bg-gradient-to-r from-gold-opacity-0 via-gold-opacity-10 to-gold-opacity-0 animate-shimmer"></div>
             <Sparkles size={16} className="text-emerald-400" />
             <span className="text-sm text-emerald-400 uppercase font-medium tracking-wider">Premium Solutions</span>
           </div>
@@ -154,9 +154,9 @@ const PricingHero = () => {
           delay: 0.2,
           duration: 0.5
         }}>
-            Simple, Transparent <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 via-emerald-300 to-[#D4AF37] relative">
+            Simple, Transparent <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 via-emerald-300 to-gold relative">
               Pricing
-              <motion.div className="absolute -bottom-1 left-0 w-full h-1 bg-gradient-to-r from-emerald-400 via-emerald-300 to-[#D4AF37]" initial={{
+              <motion.div className="absolute -bottom-1 left-0 w-full h-1 bg-gradient-to-r from-emerald-400 via-emerald-300 to-gold" initial={{
               width: 0
             }} animate={{
               width: "100%"

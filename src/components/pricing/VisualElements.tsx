@@ -82,7 +82,7 @@ const VisualElements: React.FC = () => {
           >
             <Droplet
               size={10 + Math.random() * 15}
-              className="text-[#D4AF37]/20 transform rotate-180"
+              className="text-gold/20 transform rotate-180"
               strokeWidth={1.5}
             />
           </motion.div>
@@ -113,7 +113,7 @@ const VisualElements: React.FC = () => {
           }}
         >
           <div 
-            className="rounded-full border border-[#D4AF37]/10"
+            className="rounded-full border border-gold/10"
             style={{ 
               width: `${30 + Math.random() * 50}px`,
               height: `${30 + Math.random() * 50}px`,
@@ -147,7 +147,7 @@ const VisualElements: React.FC = () => {
         >
           <Sparkle
             size={6 + Math.random() * 8}
-            className="text-[#D4AF37]"
+            className="text-gold"
             strokeWidth={1.5}
           />
         </motion.div>
@@ -161,7 +161,7 @@ const VisualElements: React.FC = () => {
           transition: { duration: 20, repeat: Infinity, ease: "easeInOut" }
         }}
       >
-        <Circle size={600} className="text-[#D4AF37]/10" strokeWidth={1} />
+        <Circle size={600} className="text-gold/10" strokeWidth={1} />
       </motion.div>
       
       <motion.div
@@ -171,7 +171,7 @@ const VisualElements: React.FC = () => {
           transition: { duration: 18, repeat: Infinity, ease: "easeInOut", delay: 2 }
         }}
       >
-        <Circle size={400} className="text-[#D4AF37]/10" strokeWidth={1} />
+        <Circle size={400} className="text-gold/10" strokeWidth={1} />
       </motion.div>
     </div>
   );

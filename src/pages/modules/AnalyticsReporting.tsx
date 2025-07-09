@@ -12,22 +12,22 @@ const AnalyticsReporting = () => {
         {
           value: "15,000+",
           label: "Active Users Making Data-Driven Decisions",
-          icon: <Users className="h-8 w-8 text-[#D4AF37]" />
+          icon: <Users className="h-8 w-8 text-gold" />
         },
         {
           value: "40%",
           label: "Time Saved on Report Creation",
-          icon: <Clock className="h-8 w-8 text-[#D4AF37]" />
+          icon: <Clock className="h-8 w-8 text-gold" />
         },
         {
           value: "200+",
           label: "Pre-built Report Templates",
-          icon: <FileText className="h-8 w-8 text-[#D4AF37]" />
+          icon: <FileText className="h-8 w-8 text-gold" />
         },
         {
           value: "25%",
           label: "Average Business Performance Improvement",
-          icon: <TrendingUp className="h-8 w-8 text-[#D4AF37]" />
+          icon: <TrendingUp className="h-8 w-8 text-gold" />
         }
       ]}
       mainSection={{

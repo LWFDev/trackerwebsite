@@ -91,6 +91,15 @@
   .bg-gold-light-opacity-60 {
     background-color: hsl(var(--gold-light) / 0.6);
   }
+
+  /* Additional opacity levels for completeness */
+  .bg-gold-opacity-40 {
+    background-color: hsl(var(--gold) / 0.4);
+  }
+  
+  .bg-gold-opacity-50 {
+    background-color: hsl(var(--gold) / 0.5);
+  }
   
   /* Border Colors */
   .border-gold {

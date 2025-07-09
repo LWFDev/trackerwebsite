@@ -13,7 +13,7 @@ const SplashEffect: React.FC<SplashEffectProps> = ({
   position = "left",
   topOffset = "20%",
   size = "medium",
-  color = "#D4AF37"
+  color = "hsl(45 93% 47%)" // Default to gold color from CSS variables
 }) => {
   // Size mapping
   const sizeMap = {
