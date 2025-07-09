@@ -8,6 +8,7 @@ import ResultMetric from "./results/ResultMetric";
 import StatsGrid from "./results/StatsGrid";
 import ResultsHeader from "./results/ResultsHeader";
 import { ScrollReveal } from "@/components/ui/scroll-reveal";
+import { scrollToTop } from "@/utils/navigation";
 
 const Results = () => {
   return (
@@ -73,7 +74,7 @@ const Results = () => {
           <Link to="/case-studies">
             <Button 
               className="bg-gradient-to-r from-emerald-500 to-green-400 hover:from-emerald-600 hover:to-green-500 text-white transform transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-emerald-500/20"
-              onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+              onClick={scrollToTop}
             >
               Read More Case Studies
             </Button>

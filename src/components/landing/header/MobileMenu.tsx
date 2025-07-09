@@ -5,6 +5,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { X, ChevronRight } from "lucide-react";
 import FlagSelector from "@/components/ui/FlagSelector";
+import { scrollToTop } from "@/utils/navigation";
 
 interface MobileMenuProps {
   isOpen: boolean;
@@ -78,7 +79,7 @@ const MobileMenu = ({ isOpen, setIsOpen }: MobileMenuProps) => {
                   <Link
                     to="/"
                     className="flex items-center justify-between w-full p-3 rounded-md hover:bg-zinc-800 text-white"
-                    onClick={() => setIsOpen(false)}
+                    onClick={() => { setIsOpen(false); scrollToTop(); }}
                   >
                     <span>Home</span>
                     <ChevronRight size={18} className="text-zinc-500" />
@@ -88,7 +89,7 @@ const MobileMenu = ({ isOpen, setIsOpen }: MobileMenuProps) => {
                   <Link
                     to="/modules"
                     className="flex items-center justify-between w-full p-3 rounded-md hover:bg-zinc-800 text-white"
-                    onClick={() => setIsOpen(false)}
+                    onClick={() => { setIsOpen(false); scrollToTop(); }}
                   >
                     <span>Modules</span>
                     <ChevronRight size={18} className="text-zinc-500" />
@@ -98,7 +99,7 @@ const MobileMenu = ({ isOpen, setIsOpen }: MobileMenuProps) => {
                   <Link
                     to="/pricing"
                     className="flex items-center justify-between w-full p-3 rounded-md hover:bg-zinc-800 text-white"
-                    onClick={() => setIsOpen(false)}
+                    onClick={() => { setIsOpen(false); scrollToTop(); }}
                   >
                     <span>Pricing</span>
                     <ChevronRight size={18} className="text-zinc-500" />
@@ -108,7 +109,7 @@ const MobileMenu = ({ isOpen, setIsOpen }: MobileMenuProps) => {
                   <Link
                     to="/documentation"
                     className="flex items-center justify-between w-full p-3 rounded-md hover:bg-zinc-800 text-white"
-                    onClick={() => setIsOpen(false)}
+                    onClick={() => { setIsOpen(false); scrollToTop(); }}
                   >
                     <span>Documentation</span>
                     <ChevronRight size={18} className="text-zinc-500" />
@@ -118,7 +119,7 @@ const MobileMenu = ({ isOpen, setIsOpen }: MobileMenuProps) => {
                   <Link
                     to="/about"
                     className="flex items-center justify-between w-full p-3 rounded-md hover:bg-zinc-800 text-white"
-                    onClick={() => setIsOpen(false)}
+                    onClick={() => { setIsOpen(false); scrollToTop(); }}
                   >
                     <span>About Us</span>
                     <ChevronRight size={18} className="text-zinc-500" />
@@ -128,7 +129,7 @@ const MobileMenu = ({ isOpen, setIsOpen }: MobileMenuProps) => {
                   <Link
                     to="/blog"
                     className="flex items-center justify-between w-full p-3 rounded-md hover:bg-zinc-800 text-white"
-                    onClick={() => setIsOpen(false)}
+                    onClick={() => { setIsOpen(false); scrollToTop(); }}
                   >
                     <span>Blog</span>
                     <ChevronRight size={18} className="text-zinc-500" />
@@ -138,7 +139,7 @@ const MobileMenu = ({ isOpen, setIsOpen }: MobileMenuProps) => {
                   <Link
                     to="/contact"
                     className="flex items-center justify-between w-full p-3 rounded-md hover:bg-zinc-800 text-white"
-                    onClick={() => setIsOpen(false)}
+                    onClick={() => { setIsOpen(false); scrollToTop(); }}
                   >
                     <span>Contact</span>
                     <ChevronRight size={18} className="text-zinc-500" />
@@ -152,7 +153,7 @@ const MobileMenu = ({ isOpen, setIsOpen }: MobileMenuProps) => {
                 <div className="flex justify-center">
                   <FlagSelector />
                 </div>
-                <Link to="/get-started" onClick={() => setIsOpen(false)}>
+                <Link to="/get-started" onClick={() => { setIsOpen(false); scrollToTop(); }}>
                   <Button variant="gold" className="w-full">
                     Get Started
                   </Button>

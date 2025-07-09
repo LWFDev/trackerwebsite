@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { ScrollReveal } from "@/components/ui/scroll-reveal";
 import { Factory, Palette, Shirt, Building2, Gift, Trophy, HardHat, Sparkles, Monitor, Settings } from "lucide-react";
+import { scrollToTop } from "@/utils/navigation";
 const Industries = () => {
   const industries = [{
     title: "High-Volume Embroidery Operations",
@@ -88,7 +89,7 @@ const Industries = () => {
               Discover how Tracker transforms operations across diverse industries in the garment decoration and apparel manufacturing space.
             </p>
             <Button asChild size="lg" variant="gold">
-              <Link to="/get-started" onClick={() => window.scrollTo(0, 0)}>Get Started Today</Link>
+              <Link to="/get-started" onClick={scrollToTop}>Get Started Today</Link>
             </Button>
           </motion.div>
         </div>
@@ -105,7 +106,7 @@ const Industries = () => {
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {industries.map((industry, index) => <ScrollReveal key={index} delay={index * 100}>
-                <Link to={industry.link} className="block h-full" onClick={() => window.scrollTo(0, 0)}>
+                <Link to={industry.link} className="block h-full" onClick={scrollToTop}>
                   <Card className={`h-full theme-surface theme-border hover:border-gold-opacity-50 transition-all duration-300 hover:-translate-y-1 overflow-hidden relative bg-gradient-to-br ${industry.gradient} cursor-pointer`}>
                     <CardHeader className="pb-4">
                       <div className="flex items-center gap-3 mb-2">
@@ -143,10 +144,10 @@ const Industries = () => {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button asChild size="lg" variant="gold">
-                <Link to="/get-started" onClick={() => window.scrollTo(0, 0)}>Start Your Free Trial</Link>
+                <Link to="/get-started" onClick={scrollToTop}>Start Your Free Trial</Link>
               </Button>
               <Button asChild variant="outline" size="lg" className="border-gold text-gold hover:bg-gold hover:text-gold-foreground">
-                <Link to="/contact" onClick={() => window.scrollTo(0, 0)}>Contact Sales</Link>
+                <Link to="/contact" onClick={scrollToTop}>Contact Sales</Link>
               </Button>
             </div>
           </ScrollReveal>

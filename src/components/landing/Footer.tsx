@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import { Switch } from '@/components/ui/switch';
 import { useTheme } from '@/contexts/ThemeContext';
 import { Sun, Moon } from 'lucide-react';
+import { scrollToTop } from '@/utils/navigation';
 
 const Footer = () => {
   const {
@@ -15,7 +16,7 @@ const Footer = () => {
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
           <div>
-            <Link to="/" className="block" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
+            <Link to="/" className="block" onClick={scrollToTop}>
               <img src="https://nubosync.com/wp-content/uploads/2025/04/tracker_logo.png" alt="Tracker Logo" className="h-8 w-auto" />
             </Link>
             <p className="text-sm mt-4">Garment Decorators premier line of business software from proof &amp; logo management, to order tracking, advanced production scheduling, to logistics.</p>
@@ -23,25 +24,25 @@ const Footer = () => {
           <div>
             <h4 className="theme-text font-medium mb-4">Product</h4>
             <ul className="space-y-2 text-sm">
-              <li><Link to="/modules" className="hover:text-gold transition-colors" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>Modules</Link></li>
-              <li><Link to="/pricing" className="hover:text-gold transition-colors" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>Pricing</Link></li>
-              <li><Link to="/industries" className="hover:text-gold transition-colors" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>Industries</Link></li>
+              <li><Link to="/modules" className="hover:text-gold transition-colors" onClick={scrollToTop}>Modules</Link></li>
+              <li><Link to="/pricing" className="hover:text-gold transition-colors" onClick={scrollToTop}>Pricing</Link></li>
+              <li><Link to="/industries" className="hover:text-gold transition-colors" onClick={scrollToTop}>Industries</Link></li>
             </ul>
           </div>
           <div>
             <h4 className="theme-text font-medium mb-4">Resources</h4>
             <ul className="space-y-2 text-sm">
-              <li><Link to="/contact" className="hover:text-gold transition-colors" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>Contact</Link></li>
-              <li><Link to="/faq" className="hover:text-gold transition-colors" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>FAQ</Link></li>
-              <li><Link to="/support" className="hover:text-gold transition-colors" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>Support</Link></li>
+              <li><Link to="/contact" className="hover:text-gold transition-colors" onClick={scrollToTop}>Contact</Link></li>
+              <li><Link to="/faq" className="hover:text-gold transition-colors" onClick={scrollToTop}>FAQ</Link></li>
+              <li><Link to="/support" className="hover:text-gold transition-colors" onClick={scrollToTop}>Support</Link></li>
             </ul>
           </div>
           <div>
             <h4 className="theme-text font-medium mb-4">Company</h4>
             <ul className="space-y-2 text-sm">
-              <li><Link to="/about" className="hover:text-gold transition-colors" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>About</Link></li>
-              <li><Link to="/privacy" className="hover:text-gold transition-colors" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>Privacy</Link></li>
-              <li><Link to="/terms" className="hover:text-gold transition-colors" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>Terms</Link></li>
+              <li><Link to="/about" className="hover:text-gold transition-colors" onClick={scrollToTop}>About</Link></li>
+              <li><Link to="/privacy" className="hover:text-gold transition-colors" onClick={scrollToTop}>Privacy</Link></li>
+              <li><Link to="/terms" className="hover:text-gold transition-colors" onClick={scrollToTop}>Terms</Link></li>
             </ul>
           </div>
         </div>

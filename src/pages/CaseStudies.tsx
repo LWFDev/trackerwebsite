@@ -5,6 +5,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
 import { ArrowRight, Users, TrendingUp, Clock } from 'lucide-react';
 import { ScrollReveal } from '@/components/ui/scroll-reveal';
 import { motion } from 'framer-motion';
+import { scrollToTop } from '@/utils/navigation';
 
 const CaseStudies = () => {
   const caseStudies = [
@@ -127,7 +128,7 @@ const CaseStudies = () => {
                       <Link to={`/case-studies/${study.id}`} className="block">
                         <Button 
                           className="w-full group bg-gradient-to-r from-emerald-600 to-green-500 hover:from-emerald-700 hover:to-green-600 text-white"
-                          onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+                          onClick={scrollToTop}
                         >
                           Read Full Story
                           <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
@@ -152,7 +153,7 @@ const CaseStudies = () => {
             <p className="text-xl text-emerald-100 mb-8 max-w-2xl mx-auto">
               Join hundreds of businesses that have transformed their operations with Tracker.
             </p>
-            <Link to="/get-started" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
+            <Link to="/get-started" onClick={scrollToTop}>
               <Button size="lg" className="bg-white text-emerald-600 hover:bg-emerald-50 border-0 shadow-lg hover:shadow-xl transition-all duration-300">
                 Get Started Today
               </Button>
