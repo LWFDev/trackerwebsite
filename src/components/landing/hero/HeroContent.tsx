@@ -66,12 +66,12 @@ const TrustIndicator = () => {
       <div className="flex items-center gap-4 text-sm text-slate-600 dark:text-slate-400 mb-4">
         <div className="flex items-center gap-2">
           <Shield className="w-4 h-4 text-emerald-600 dark:text-emerald-400" />
-          <span className="font-medium text-slate-50">{t("Enterprise Grade Security")}</span>
+          <span className="font-medium text-slate-50">{t("Enterprise Grade Production")}</span>
         </div>
         <div className="hidden sm:block w-px h-4 bg-slate-300 dark:bg-slate-600"></div>
         <div className="flex items-center gap-2">
           <CheckCircle className="w-4 h-4 text-emerald-600 dark:text-emerald-400" />
-          <span className="font-medium text-slate-50">{t("99.9% Uptime SLA")}</span>
+          <span className="font-medium text-slate-50">{t("Smart Machine Management")}</span>
         </div>
       </div>
       
