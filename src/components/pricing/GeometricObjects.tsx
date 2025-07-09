@@ -43,15 +43,15 @@ const GeometricObjects: React.FC<GeometricObjectProps> = ({
     
     const getColor = () => {
       if (colorScheme === "gold") {
-        const opacities = ["05", "10", "20"];
+        const opacities = [0.05, 0.1, 0.2];
         const opacity = opacities[Math.floor(Math.random() * opacities.length)];
-        return `#D4AF37${opacity}`;
+        return `hsl(var(--gold) / ${opacity})`;
       } else {
-        const colors = ["#D4AF37", "#FFF", "#A67C00"];
-        const opacities = ["05", "10", "15"];
+        const colors = ["hsl(var(--gold))", "#FFF", "hsl(var(--gold-dark))"];
+        const opacities = [0.05, 0.1, 0.15];
         const color = colors[Math.floor(Math.random() * colors.length)];
         const opacity = opacities[Math.floor(Math.random() * opacities.length)];
-        return `${color}${opacity}`;
+        return `${color === "#FFF" ? "#FFF" : color} / ${opacity}`;
       }
     };
     

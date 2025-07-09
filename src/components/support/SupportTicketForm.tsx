@@ -23,7 +23,7 @@ const SupportTicketForm = () => {
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold mb-6">
               Submit a{' '}
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#D4AF37] to-[#F2D675]">
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-gold to-gold-light">
                 Support Ticket
               </span>
             </h2>
@@ -172,7 +172,7 @@ const SupportTicketForm = () => {
                 <div className="pt-6">
                   <Button 
                     size="lg" 
-                    className="w-full group bg-gradient-to-r from-yellow-600 to-yellow-500 hover:from-yellow-700 hover:to-yellow-600 text-white px-8 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-0.5 border-0"
+                    className="w-full group bg-gradient-to-r from-gold to-gold-light hover:from-gold-dark hover:to-gold text-gold-foreground px-8 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-0.5 border-0"
                   >
                     <Send className="w-5 h-5 mr-2 group-hover:translate-x-1 transition-transform duration-300" />
                     Submit Support Ticket

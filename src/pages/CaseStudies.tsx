@@ -64,7 +64,7 @@ const CaseStudies = () => {
             transition={{ duration: 0.8 }}
           >
             <h1 className="text-4xl md:text-6xl font-bold mb-6">
-              Success <span className="text-transparent bg-clip-text bg-gradient-to-r from-yellow-600 to-emerald-600">Stories</span>
+              Success <span className="text-transparent bg-clip-text bg-gradient-to-r from-gold to-emerald-600">Stories</span>
             </h1>
             <p className="text-lg md:text-xl text-slate-600 dark:text-slate-300 mb-8 leading-relaxed">
               Discover how businesses like yours have transformed their operations with Tracker's powerful automation platform.

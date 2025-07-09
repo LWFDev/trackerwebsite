@@ -97,7 +97,7 @@ export const moduleCategories = [
         description: "Set up your core product catalog, including styles, sizes, colors, and default pricing.",
         icon: <img src="/lovable-uploads/9646681d-05d8-4c78-9601-8a8b99451f0e.png" alt="Base Garments" className="h-8 w-8" />,
         link: "/modules/base-garments",
-        color: "bg-amber-500/20",
+        color: "bg-gold-opacity-20",
         category: "Products"
       },
       {
@@ -105,7 +105,7 @@ export const moduleCategories = [
         description: "Maintain supplier contacts, price lists, and product availability to streamline purchasing decisions.",
         icon: <img src="/lovable-uploads/89eb9fd7-66d8-4124-b584-7895d0032ef3.png" alt="Suppliers" className="h-8 w-8" />,
         link: "/modules/suppliers",
-        color: "bg-amber-500/20",
+        color: "bg-gold-opacity-20",
         category: "Suppliers"
       },
       {

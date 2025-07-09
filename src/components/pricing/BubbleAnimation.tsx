@@ -98,7 +98,7 @@ const BubbleAnimation: React.FC<BubbleAnimationProps> = ({
           >
             <Component
               size={pos.size}
-              className="text-[#D4AF37]"
+              className="text-gold"
               style={{ transform: `rotate(${rotation}deg)` }}
               strokeWidth={1.5}
             />

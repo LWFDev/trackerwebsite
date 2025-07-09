@@ -32,22 +32,22 @@ const BaseGarments = () => {
         {
           value: "30,000+",
           label: "Pre-configured garment styles",
-          icon: <Shirt className="h-8 w-8 text-amber-500" />
+          icon: <Shirt className="h-8 w-8 text-gold" />
         },
         {
           value: "15 min",
           label: "Average setup time for new items",
-          icon: <Zap className="h-8 w-8 text-amber-500" />
+          icon: <Zap className="h-8 w-8 text-gold" />
         },
         {
           value: "99.8%",
           label: "Pricing accuracy across the platform",
-          icon: <Tag className="h-8 w-8 text-amber-500" />
+          icon: <Tag className="h-8 w-8 text-gold" />
         },
         {
           value: "45%",
           label: "Faster order creation with templates",
-          icon: <CheckCircle className="h-8 w-8 text-amber-500" />
+          icon: <CheckCircle className="h-8 w-8 text-gold" />
         }
       ]}
       mainSection={{

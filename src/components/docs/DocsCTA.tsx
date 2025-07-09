@@ -51,7 +51,7 @@ const DocsCTA = () => {
         </div>
         
         {/* Decorative elements */}
-        <div className="absolute top-0 right-0 -mt-10 -mr-10 w-40 h-40 blur-3xl rounded-full bg-gold-DEFAULT/20 z-0" />
+        <div className="absolute top-0 right-0 -mt-10 -mr-10 w-40 h-40 blur-3xl rounded-full bg-gold-opacity-20 z-0" />
         <div className="absolute bottom-0 left-0 -mb-20 -ml-20 w-60 h-60 blur-3xl rounded-full bg-blue-500/10 z-0" />
       </motion.div>
     </div>

@@ -12,7 +12,7 @@ interface InteractiveGlowBackgroundProps {
 
 const InteractiveGlowBackground: React.FC<InteractiveGlowBackgroundProps> = ({
   intensity = 0.1,
-  color = "#D4AF37",
+  color = "hsl(var(--gold))",
   size = 800,
   followSpeed = 0.1,
   pulseSpeed = 5

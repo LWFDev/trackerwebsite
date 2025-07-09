@@ -40,7 +40,7 @@ const Industries = () => {
     title: "Sportswear and Team Uniform Providers",
     description: "Streamlines production and delivery of team uniforms and customized sportswear, helping providers manage seasonal demand spikes smoothly.",
     icon: <Trophy className="w-8 h-8 text-gold" />,
-    gradient: "from-yellow-500/10 to-amber-500/10",
+    gradient: "from-gold-opacity-10 to-gold-light-opacity-10",
     link: "/industries/sports-and-uniforms"
   }, {
     title: "Workwear and Uniform Services",

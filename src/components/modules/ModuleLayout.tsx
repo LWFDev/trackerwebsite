@@ -135,11 +135,11 @@ const ModuleLayout = ({
         return 'bg-emerald-500/20 border-emerald-500/40 hover:border-emerald-500';
       case 'Base Garments':
       case 'Suppliers':
-        return 'bg-amber-500/20 border-amber-500/40 hover:border-amber-500';
+        return 'bg-gold-opacity-20 border-gold-opacity-40 hover:border-gold';
       case 'Purchase Orders':
         return 'bg-rose-500/20 border-rose-500/40 hover:border-rose-500';
       default:
-        return 'bg-zinc-800 border-zinc-700 hover:border-[#D4AF37]';
+        return 'bg-zinc-800 border-zinc-700 hover:border-gold';
     }
   };
   
@@ -170,7 +170,7 @@ const ModuleLayout = ({
       case 'Purchase Orders':
         return <img src="/lovable-uploads/9a36183f-4238-4b3a-b0e0-43a4488f0214.png" alt="Purchase Orders" className="h-8 w-8" />;
       default:
-        return <div className="h-8 w-8 bg-[#D4AF37] rounded"></div>;
+        return <div className="h-8 w-8 bg-gold rounded"></div>;
     }
   };
   
@@ -216,9 +216,9 @@ const ModuleLayout = ({
       case 'Finance & Accounting':
       case 'Integrations Platform':
       case 'Project Management':
-        return <div className="h-10 w-10 bg-[#D4AF37] rounded flex items-center justify-center text-black font-bold text-xs">{moduleTitle.charAt(0)}</div>;
+        return <div className="h-10 w-10 bg-gold rounded flex items-center justify-center text-gold-foreground font-bold text-xs">{moduleTitle.charAt(0)}</div>;
       default:
-        return <div className="h-10 w-10 bg-[#D4AF37] rounded"></div>;
+        return <div className="h-10 w-10 bg-gold rounded"></div>;
     }
   };
   
@@ -226,7 +226,7 @@ const ModuleLayout = ({
       {/* Hero Section */}
       <section className={`pt-24 pb-16 ${getBgColor()} text-white`}>
         <div className="container mx-auto px-4">
-          <Link to="/modules" className="inline-flex items-center text-white/80 hover:text-[#D4AF37] mb-6 transition">
+          <Link to="/modules" className="inline-flex items-center text-white/80 hover:text-gold mb-6 transition">
             <ArrowLeft size={16} className="mr-2" />
             Back to all modules
           </Link>
@@ -248,7 +248,7 @@ const ModuleLayout = ({
                   Learn More <ArrowRight className="ml-1 h-5 w-5" />
                 </Button>
                 <Link to="/get-started">
-                  <Button variant="outline" className="bg-zinc-800/50 text-white border-zinc-700 hover:bg-zinc-700 hover:border-[#D4AF37]">
+                  <Button variant="outline" className="bg-zinc-800/50 text-white border-zinc-700 hover:bg-zinc-700 hover:border-gold">
                     Request Demo
                   </Button>
                 </Link>
@@ -256,7 +256,7 @@ const ModuleLayout = ({
               
               {rating && <div className="flex items-center">
                   <div className="flex mr-2">
-                    {[...Array(5)].map((_, i) => <Star key={i} size={18} className={i < Math.floor(rating) ? "text-[#D4AF37] fill-[#D4AF37]" : "text-zinc-700"} />)}
+                    {[...Array(5)].map((_, i) => <Star key={i} size={18} className={i < Math.floor(rating) ? "text-gold fill-gold" : "text-zinc-700"} />)}
                   </div>
                   <span className="text-white font-medium">{rating}</span>
                   <span className="text-white/70 ml-1">({reviews} reviews)</span>
@@ -267,12 +267,12 @@ const ModuleLayout = ({
                 <div className="relative">
                   <Dialog open={isLightboxOpen} onOpenChange={setIsLightboxOpen}>
                     <DialogTrigger asChild>
-                      <div className="relative bg-zinc-800/50 p-4 rounded-lg shadow-lg border border-zinc-700 cursor-pointer group transition-all duration-300 hover:scale-105 hover:shadow-xl hover:border-[#D4AF37]/50">
+                      <div className="relative bg-zinc-800/50 p-4 rounded-lg shadow-lg border border-zinc-700 cursor-pointer group transition-all duration-300 hover:scale-105 hover:shadow-xl hover:border-gold/50">
                         <img src={heroImage} alt={title} className="w-full h-auto rounded max-h-[300px] object-contain transition-all duration-300 group-hover:brightness-110" />
                         
                         {/* Hover overlay with zoom icon */}
                         <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-all duration-300 rounded flex items-center justify-center opacity-0 group-hover:opacity-100">
-                          <div className="bg-[#D4AF37]/90 backdrop-blur-sm px-3 py-2 rounded-lg flex items-center gap-2 text-black font-medium transform scale-90 group-hover:scale-100 transition-transform duration-300">
+                          <div className="bg-gold/90 backdrop-blur-sm px-3 py-2 rounded-lg flex items-center gap-2 text-gold-foreground font-medium transform scale-90 group-hover:scale-100 transition-transform duration-300">
                             <ZoomIn className="h-4 w-4" />
                             <span className="text-sm">View Fullscreen</span>
                           </div>
@@ -293,7 +293,7 @@ const ModuleLayout = ({
                           onClick={() => setIsLightboxOpen(false)}
                           className="absolute top-4 right-4 p-2 bg-zinc-800/80 hover:bg-zinc-700/80 rounded-full transition-colors group"
                         >
-                          <X className="h-5 w-5 text-white group-hover:text-[#D4AF37]" />
+                          <X className="h-5 w-5 text-white group-hover:text-gold" />
                         </button>
                         
                         {/* Image title overlay */}
@@ -307,12 +307,12 @@ const ModuleLayout = ({
                   
                   {/* Floating Callout Boxes - RESTORED */}
                   {heroImageCallouts && heroImageCallouts.map((callout, index) => 
-                    <div key={index} className="absolute bg-zinc-900/90 backdrop-blur-sm px-3 py-2 rounded-lg text-xs font-medium shadow-lg z-30 animate-float border border-[#D4AF37]/30 text-white pointer-events-none" style={{
+                    <div key={index} className="absolute bg-zinc-900/90 backdrop-blur-sm px-3 py-2 rounded-lg text-xs font-medium shadow-lg z-30 animate-float border border-gold/30 text-white pointer-events-none" style={{
                       ...callout.position,
                       animationDelay: callout.delay || '0s'
                     }}>
                       <div className="flex items-center gap-2">
-                        {callout.icon && <span className="text-[#D4AF37]">{callout.icon}</span>}
+                        {callout.icon && <span className="text-gold">{callout.icon}</span>}
                         <span>{callout.text}</span>
                       </div>
                     </div>
@@ -327,9 +327,9 @@ const ModuleLayout = ({
       {stats && stats.length > 0 && <section className="py-16 bg-zinc-900">
           <div className="container mx-auto px-4">
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
-              {stats.map((stat, index) => <div key={index} className="flex flex-col items-center text-center p-6 bg-zinc-800/50 rounded-lg border border-zinc-700 hover:border-[#D4AF37] transition-all duration-300 hover:-translate-y-1">
+              {stats.map((stat, index) => <div key={index} className="flex flex-col items-center text-center p-6 bg-zinc-800/50 rounded-lg border border-zinc-700 hover:border-gold transition-all duration-300 hover:-translate-y-1">
                   {stat.icon && <div className="mb-4">{stat.icon}</div>}
-                  <div className="text-3xl font-bold mb-2 text-[#D4AF37]">{stat.value}</div>
+                  <div className="text-3xl font-bold mb-2 text-gold">{stat.value}</div>
                   <div className="text-gray-400">{stat.label}</div>
                 </div>)}
             </div>
@@ -340,7 +340,7 @@ const ModuleLayout = ({
       {mainSection && <section ref={mainRef} className="py-16 relative bg-gradient-to-br from-black via-zinc-950 to-black overflow-hidden">
           {/* Animated Background Elements */}
           <div className="absolute inset-0 opacity-30">
-            <div className="absolute top-20 left-10 w-72 h-72 bg-[#D4AF37]/5 rounded-full blur-3xl animate-pulse"></div>
+            <div className="absolute top-20 left-10 w-72 h-72 bg-gold-opacity-5 rounded-full blur-3xl animate-pulse"></div>
             <div className="absolute bottom-20 right-10 w-96 h-96 bg-blue-500/5 rounded-full blur-3xl animate-pulse delay-75"></div>
             <div className="absolute top-1/2 left-1/3 w-48 h-48 bg-purple-500/5 rounded-full blur-2xl animate-float"></div>
           </div>
@@ -352,7 +352,7 @@ const ModuleLayout = ({
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
               <div className="space-y-6">
                 <div className="inline-block">
-                  <span className="px-4 py-2 bg-[#D4AF37]/10 border border-[#D4AF37]/30 rounded-full text-[#D4AF37] text-sm font-semibold tracking-wide uppercase">
+                  <span className="px-4 py-2 bg-gold-opacity-10 border border-gold-opacity-30 rounded-full text-gold text-sm font-semibold tracking-wide uppercase">
                     Transform Your Business
                   </span>
                 </div>
@@ -364,7 +364,7 @@ const ModuleLayout = ({
                 </h2>
                 
                 <div className="relative">
-                  <div className="absolute -left-4 top-0 w-1 h-full bg-gradient-to-b from-[#D4AF37] to-transparent rounded-full"></div>
+                  <div className="absolute -left-4 top-0 w-1 h-full bg-gradient-to-b from-gold to-transparent rounded-full"></div>
                   <p className="text-gray-300 text-lg leading-relaxed pl-6">
                     {mainSection.description}
                   </p>
@@ -377,7 +377,7 @@ const ModuleLayout = ({
                     <span className="text-gray-300 text-sm">Real-time Updates</span>
                   </div>
                   <div className="flex items-center gap-2 px-4 py-2 bg-zinc-800/50 rounded-lg border border-zinc-700/50">
-                    <div className="w-2 h-2 bg-[#D4AF37] rounded-full animate-pulse delay-75"></div>
+                    <div className="w-2 h-2 bg-gold rounded-full animate-pulse delay-75"></div>
                     <span className="text-gray-300 text-sm">Advanced Analytics</span>
                   </div>
                 </div>
@@ -386,14 +386,14 @@ const ModuleLayout = ({
               <div className="flex justify-center">
                 <div className="relative group">
                   {/* Glowing border effect */}
-                  <div className="absolute -inset-1 bg-gradient-to-r from-[#D4AF37]/50 to-blue-500/50 rounded-lg blur opacity-25 group-hover:opacity-40 transition duration-300"></div>
+                  <div className="absolute -inset-1 bg-gradient-to-r from-gold/50 to-blue-500/50 rounded-lg blur opacity-25 group-hover:opacity-40 transition duration-300"></div>
                   
                   <div className="relative bg-zinc-800/50 p-4 rounded-lg shadow-2xl border border-zinc-700/50 backdrop-blur-sm">
                     <img src="/lovable-uploads/bd71cf26-6d3f-4aa3-a4e0-d2aa9db5670f.png" alt="Inventory tracking in action" className="w-full max-h-[525px] rounded-lg shadow-lg border border-zinc-800 object-contain transform transition-transform duration-300 group-hover:scale-105" />
                     
                     {/* Floating indicators */}
                     <div className="absolute -top-2 -right-2 w-4 h-4 bg-green-400 rounded-full animate-ping"></div>
-                    <div className="absolute -bottom-2 -left-2 w-3 h-3 bg-[#D4AF37] rounded-full animate-pulse delay-150"></div>
+                    <div className="absolute -bottom-2 -left-2 w-3 h-3 bg-gold rounded-full animate-pulse delay-150"></div>
                   </div>
                 </div>
               </div>
@@ -409,15 +409,15 @@ const ModuleLayout = ({
       {keyFeatures && <section className="py-16 bg-zinc-900">
           <div className="container mx-auto px-4">
             <div className="text-center max-w-3xl mx-auto mb-12">
-              <span className="inline-block text-sm font-semibold tracking-wider text-[#D4AF37] uppercase mb-2">Features</span>
+              <span className="inline-block text-sm font-semibold tracking-wider text-gold uppercase mb-2">Features</span>
               <h2 className="text-3xl font-bold mb-4 text-white">{keyFeatures.title}</h2>
               <p className="text-gray-400">{keyFeatures.description}</p>
             </div>
             
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {keyFeatures.features.map((feature, index) => <div key={index} className="bg-zinc-800 p-6 rounded-lg shadow-md border border-[#D4AF37] -translate-y-1">
+              {keyFeatures.features.map((feature, index) => <div key={index} className="bg-zinc-800 p-6 rounded-lg shadow-md border border-gold hover:-translate-y-1 transition-transform">
                   <div className="flex items-start">
-                    <div className="flex-shrink-0 mr-4 text-[#D4AF37]">
+                    <div className="flex-shrink-0 mr-4 text-gold">
                       {feature.icon}
                     </div>
                     <div>
@@ -434,7 +434,7 @@ const ModuleLayout = ({
       {specialSection && <section className="py-16 bg-black">
           <div className="container mx-auto px-4">
             <div className="text-center max-w-3xl mx-auto mb-12">
-              {specialSection.subtitle && <span className="inline-block text-sm font-semibold tracking-wider text-[#D4AF37] uppercase mb-2">
+              {specialSection.subtitle && <span className="inline-block text-sm font-semibold tracking-wider text-gold uppercase mb-2">
                   {specialSection.subtitle}
                 </span>}
               <h2 className="text-3xl font-bold mb-4 text-white">{specialSection.title}</h2>
@@ -448,7 +448,7 @@ const ModuleLayout = ({
             {specialSection.items && specialSection.items.length > 0 && <div className="max-w-3xl mx-auto">
                 <ul className="space-y-4">
                   {specialSection.items.map((item, index) => <li key={index} className="flex items-center bg-zinc-800/50 p-3 rounded-lg transition-transform hover:translate-x-1">
-                      {item.icon ? <span className="mr-3 text-[#D4AF37]">{item.icon}</span> : <svg className="w-5 h-5 mr-3 text-[#D4AF37]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      {item.icon ? <span className="mr-3 text-gold">{item.icon}</span> : <svg className="w-5 h-5 mr-3 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                         </svg>}
                       <span className="text-gray-300">{item.text}</span>
@@ -474,9 +474,9 @@ const ModuleLayout = ({
                   onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
                 >
                   <div className="mb-4">{getModuleIcon(module.title)}</div>
-                  <h3 className="text-xl font-semibold mb-2 text-white group-hover:text-[#D4AF37] transition-colors">{module.title}</h3>
+                  <h3 className="text-xl font-semibold mb-2 text-white group-hover:text-gold transition-colors">{module.title}</h3>
                   <p className="text-gray-400 mb-4 group-hover:text-gray-300 transition-colors">{module.description}</p>
-                  <div className="text-[#D4AF37] hover:underline inline-flex items-center">
+                  <div className="text-gold hover:underline inline-flex items-center">
                     Learn more <ArrowRight className="ml-1 h-4 w-4" />
                   </div>
                 </Link>
@@ -499,7 +499,7 @@ const ModuleLayout = ({
                 </Link>}
               
               {ctaSection.secondaryButtonText && <Link to={ctaSection.secondaryButtonLink || "/pricing"}>
-                  <Button variant="outline" className="bg-zinc-800/50 text-white border-zinc-700 hover:bg-zinc-700 hover:border-[#D4AF37]">
+                  <Button variant="outline" className="bg-zinc-800/50 text-white border-zinc-700 hover:bg-zinc-700 hover:border-gold">
                     {ctaSection.secondaryButtonText}
                   </Button>
                 </Link>}

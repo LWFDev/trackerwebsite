@@ -81,11 +81,11 @@ const FloatingObjects = () => {
   const objects = Array.from({ length: 15 }, (_, index) => {
     const types: FloatingObjectType[] = ["circle", "square", "hexagon", "triangle"];
     const colors = [
-      "text-[#D4AF37]/10", 
-      "text-[#D4AF37]/20", 
+      "text-gold/10", 
+      "text-gold/20", 
       "text-white/5", 
       "text-white/10",
-      "border-[#D4AF37]/10",
+      "border-gold/10",
       "border-white/10",
     ];
     

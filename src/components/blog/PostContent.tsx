@@ -18,7 +18,7 @@ const PostContent = ({ post }: PostContentProps) => {
           <div className="mt-12 flex flex-wrap gap-2">
             {post.tags.map((tag, index) => (
               <div key={index} className="flex items-center bg-zinc-800 px-3 py-1 rounded-full text-sm">
-                <Tag size={14} className="mr-1 text-gold-DEFAULT" />
+                <Tag size={14} className="mr-1 text-gold" />
                 {tag}
               </div>
             ))}

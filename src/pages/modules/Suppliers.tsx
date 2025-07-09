@@ -13,22 +13,22 @@ const Suppliers = () => {
         {
           value: "35%",
           label: "Faster supplier onboarding",
-          icon: <Clock className="h-8 w-8 text-amber-500" />
+          icon: <Clock className="h-8 w-8 text-gold" />
         },
         {
           value: "25%",
           label: "Reduction in procurement costs",
-          icon: <Percent className="h-8 w-8 text-amber-500" />
+          icon: <Percent className="h-8 w-8 text-gold" />
         },
         {
           value: "42%",
           label: "Improvement in supplier performance",
-          icon: <BarChart2 className="h-8 w-8 text-amber-500" />
+          icon: <BarChart2 className="h-8 w-8 text-gold" />
         },
         {
           value: "1,000+",
           label: "Integrated supplier catalogs",
-          icon: <Package className="h-8 w-8 text-amber-500" />
+          icon: <Package className="h-8 w-8 text-gold" />
         }
       ]}
       mainSection={{
