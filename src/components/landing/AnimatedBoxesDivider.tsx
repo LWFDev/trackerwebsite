@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef, useCallback, useMemo } from 'react';
-import { Package, Zap, CheckCircle, TrendingUp, Settings, Clock } from 'lucide-react';
+import { Shirt, Crown, Package, TrendingUp, Settings, Clock, CheckCircle, Zap } from 'lucide-react';
 import { useReducedMotion } from '@/hooks/useReducedMotion';
 
 interface WorkflowItem {
@@ -9,6 +9,7 @@ interface WorkflowItem {
   progress: number;
   x: number;
   stage: number;
+  clothingIndex: number;
 }
 
 interface ProductionMetrics {
@@ -38,39 +39,58 @@ const AnimatedBoxesDivider: React.FC = () => {
     { name: 'Fulfillment', icon: Package, color: '#F59E0B', gradient: 'from-amber-500 to-amber-600', x: '85%' }
   ], []);
 
-  const createWorkflowItem = useCallback((): WorkflowItem => ({
-    id: `item-${Date.now()}-${Math.random().toString(36).substr(2, 9)}`,
-    type: ['design', 'production', 'quality', 'fulfillment'][Math.floor(Math.random() * 4)] as WorkflowItem['type'],
-    status: 'processing',
-    progress: 0,
-    x: -50,
-    stage: 0
-  }), []);
+  // Clothing items for animation
+  const clothingItems = useMemo(() => [
+    { icon: Shirt, color: '#3B82F6' },
+    { icon: Crown, color: '#8B5CF6' }, // Hat representation
+    { icon: Shirt, color: '#10B981' }, // Sweater (using Shirt with different color)
+    { icon: Shirt, color: '#F59E0B' }  // Jersey (using Shirt with different color)
+  ], []);
+
+  const createWorkflowItem = useCallback((): WorkflowItem => {
+    const clothingIndex = Math.floor(Math.random() * clothingItems.length);
+    return {
+      id: `item-${Date.now()}-${Math.random().toString(36).substr(2, 9)}`,
+      type: ['design', 'production', 'quality', 'fulfillment'][Math.floor(Math.random() * 4)] as WorkflowItem['type'],
+      status: 'processing',
+      progress: 0,
+      x: -50,
+      stage: 0,
+      clothingIndex // Add clothing index to track which clothing item to show
+    };
+  }, [clothingItems]);
 
   const animate = useCallback((currentTime: number) => {
     if (!isVisibleRef.current || reducedMotion) return;
 
     const deltaTime = currentTime - lastTimeRef.current;
+    
+    // Only update every 50ms to reduce lag (20fps instead of 60fps)
+    if (deltaTime < 50) {
+      animationRef.current = requestAnimationFrame(animate);
+      return;
+    }
+    
     lastTimeRef.current = currentTime;
 
     setItems(prevItems => {
       let updatedItems = [...prevItems];
 
-      // Add new items periodically (much slower)
-      if (Math.random() < 0.005 && updatedItems.length < 6) {
+      // Add new items much less frequently
+      if (Math.random() < 0.003 && updatedItems.length < 4) {
         updatedItems.push(createWorkflowItem());
       }
 
-      // Update item positions with much slower speed
+      // Update item positions with slower speed
       updatedItems = updatedItems.map(item => {
-        const speed = 0.15; // Much slower speed
+        const speed = 0.08; // Even slower speed
         const newX = item.x + speed;
         
         // Determine current stage based on position
         let newStage = 0;
         if (newX > 15) newStage = 1;
-        if (newX > 40) newStage = 2;
-        if (newX > 65) newStage = 3;
+        if (newX > 38) newStage = 2;
+        if (newX > 62) newStage = 3;
         if (newX > 85) newStage = 4;
 
         return {
@@ -79,13 +99,13 @@ const AnimatedBoxesDivider: React.FC = () => {
           stage: newStage,
           progress: Math.min(100, (newX + 50) / 1.35)
         };
-      }).filter(item => item.x < 120); // Remove items that have moved off screen
+      }).filter(item => item.x < 120);
 
       return updatedItems;
     });
 
-    // Update metrics occasionally
-    if (Math.random() < 0.01) {
+    // Update metrics less frequently to reduce lag
+    if (Math.random() < 0.005) {
       setMetrics(prev => ({
         throughput: Math.max(1200, prev.throughput + (Math.random() - 0.5) * 10),
         efficiency: Math.max(85, Math.min(98, prev.efficiency + (Math.random() - 0.5) * 2)),
@@ -226,27 +246,27 @@ const AnimatedBoxesDivider: React.FC = () => {
         })}
       </div>
 
-      {/* Enhanced Workflow Items */}
+      {/* Enhanced Workflow Items - CLOTHING ITEMS */}
       <div className="absolute inset-0 flex items-center">
         {items.map((item) => {
-          const IconComponent = getStageIcon(item.stage);
-          const stage = stages[item.stage] || stages[0];
+          const clothingItem = clothingItems[item.clothingIndex];
+          const ClothingIcon = clothingItem.icon;
           
           return (
             <div
               key={item.id}
-              className="absolute w-10 h-10 flex items-center justify-center rounded-xl shadow-xl transition-all duration-300 will-change-transform animate-pulse-light"
+              className="absolute w-12 h-12 flex items-center justify-center rounded-xl shadow-xl transition-all duration-300 will-change-transform"
               style={{
                 left: `${item.x}%`,
                 top: '50%',
                 transform: 'translateY(-50%)',
-                background: `linear-gradient(135deg, ${stage.color}90, ${stage.color}70)`,
-                border: `2px solid ${stage.color}`,
-                boxShadow: `0 8px 25px -5px ${stage.color}40`
+                background: `linear-gradient(135deg, ${clothingItem.color}90, ${clothingItem.color}70)`,
+                border: `2px solid ${clothingItem.color}`,
+                boxShadow: `0 8px 25px -5px ${clothingItem.color}40`
               }}
             >
-              <IconComponent 
-                size={18} 
+              <ClothingIcon 
+                size={20} 
                 className="text-white drop-shadow-md"
               />
             </div>
