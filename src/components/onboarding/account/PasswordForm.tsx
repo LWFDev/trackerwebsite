@@ -76,7 +76,7 @@ export function PasswordForm({ formData, updateFormData }: PasswordFormProps) {
   const getStrengthColor = () => {
     if (passwordStrength <= 1) return "bg-red-500";
     if (passwordStrength === 2) return "bg-orange-500";
-    if (passwordStrength === 3) return "bg-yellow-500";
+    if (passwordStrength === 3) return "bg-gold-light";
     if (passwordStrength >= 4) return "bg-green-500";
     return "bg-gray-500";
   };
@@ -101,7 +101,7 @@ export function PasswordForm({ formData, updateFormData }: PasswordFormProps) {
               value={localFormData.password}
               onChange={handlePasswordChange}
               placeholder="••••••••"
-              className="bg-zinc-800 border-zinc-700 text-white focus-visible:ring-[#D4AF37] focus-visible:border-[#D4AF37] pr-10"
+              className="bg-zinc-800 border-zinc-700 text-white focus-visible:ring-gold focus-visible:border-gold pr-10"
             />
             <button 
               type="button"
@@ -119,7 +119,7 @@ export function PasswordForm({ formData, updateFormData }: PasswordFormProps) {
                 <span className={`
                   ${passwordStrength <= 1 ? 'text-red-500' : 
                     passwordStrength === 2 ? 'text-orange-500' : 
-                    passwordStrength === 3 ? 'text-yellow-500' : 
+                    passwordStrength === 3 ? 'text-gold-light' : 
                     'text-green-500'}
                 `}>
                   {passwordFeedback}
@@ -161,7 +161,7 @@ export function PasswordForm({ formData, updateFormData }: PasswordFormProps) {
               onChange={handleConfirmPasswordChange}
               placeholder="••••••••"
               className={`
-                bg-zinc-800 border-zinc-700 text-white focus-visible:ring-[#D4AF37] focus-visible:border-[#D4AF37] pr-10
+                bg-zinc-800 border-zinc-700 text-white focus-visible:ring-gold focus-visible:border-gold pr-10
                 ${localFormData.confirmPassword && localFormData.password !== localFormData.confirmPassword ? 'border-red-500' : ''}
               `}
             />

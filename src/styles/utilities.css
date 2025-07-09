@@ -82,8 +82,20 @@
     background-color: hsl(var(--gold) / 0);
   }
   
+  .bg-gold-light-opacity-30 {
+    background-color: hsl(var(--gold-light) / 0.3);
+  }
+  
+  .bg-gold-light-opacity-40 {
+    background-color: hsl(var(--gold-light) / 0.4);
+  }
+  
   .border-gold-opacity-50 {
     border-color: hsl(var(--gold) / 0.5);
+  }
+  
+  .border-gold-light-opacity-50 {
+    border-color: hsl(var(--gold-light) / 0.5);
   }
   
   /* Border Colors */

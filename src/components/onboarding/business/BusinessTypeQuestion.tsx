@@ -45,15 +45,15 @@ export const BusinessTypeQuestion = ({ formData, updateFormData }: BusinessTypeQ
               transition={{ duration: 0.2 }}
               className={`
                 flex items-center space-x-4 rounded-md p-4 cursor-pointer
-                ${isChecked ? 'bg-[#D4AF37]/10 border-[#D4AF37]/50' : 'border-zinc-800'}
-                border hover:border-[#D4AF37]/50 transition-colors
+                ${isChecked ? 'bg-gold-opacity-10 border-gold-opacity-50' : 'border-zinc-800'}
+                border hover:border-gold-opacity-50 transition-colors
               `}
               onClick={() => handleToggleType(type)}
             >
               <Checkbox
                 id={type}
                 checked={isChecked}
-                className="h-5 w-5 border-zinc-600 data-[state=checked]:bg-[#D4AF37] data-[state=checked]:text-black pointer-events-none"
+                className="h-5 w-5 border-zinc-600 data-[state=checked]:bg-gold data-[state=checked]:text-gold-foreground pointer-events-none"
               />
               <label htmlFor={type} className="font-medium cursor-pointer flex-1 text-gray-300 pointer-events-none">
                 {type}

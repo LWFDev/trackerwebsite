@@ -37,12 +37,12 @@ export const EmployeeCountQuestion = ({ formData, updateFormData }: EmployeeCoun
             <div
               className={`
                 flex items-center space-x-3 space-y-0 rounded-md p-4 cursor-pointer
-                ${formData.employeeCount === count ? 'bg-[#D4AF37]/10 border-[#D4AF37]/50' : 'border-zinc-800'}
-                border hover:border-[#D4AF37]/50 transition-colors
+                ${formData.employeeCount === count ? 'bg-gold-opacity-10 border-gold-opacity-50' : 'border-zinc-800'}
+                border hover:border-gold-opacity-50 transition-colors
               `}
               onClick={() => updateFormData({ employeeCount: count })}
             >
-              <RadioGroupItem value={count} id={count} className="border-zinc-600 text-[#D4AF37]" />
+              <RadioGroupItem value={count} id={count} className="border-zinc-600 text-gold" />
               <label htmlFor={count} className="font-medium cursor-pointer flex-1 text-gray-300">
                 {count}
               </label>

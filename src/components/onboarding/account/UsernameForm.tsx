@@ -27,7 +27,7 @@ export function UsernameForm({ formData, updateFormData }: UsernameFormProps) {
           value={formData.username || ""}
           onChange={(e) => updateFormData({ username: e.target.value })}
           placeholder="johndoe"
-          className="bg-zinc-800 border-zinc-700 text-white focus-visible:ring-[#D4AF37] focus-visible:border-[#D4AF37]"
+          className="bg-zinc-800 border-zinc-700 text-white focus-visible:ring-gold focus-visible:border-gold"
         />
         {formData.username && formData.username.length < 3 && (
           <p className="text-red-500 text-sm">Username must be at least 3 characters</p>

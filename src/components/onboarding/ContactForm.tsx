@@ -41,7 +41,7 @@ export function ContactForm({ formData, updateFormData, questionType }: ContactF
             updateFormData({ fullName: e.target.value });
           }}
           placeholder="John Doe"
-          className="bg-zinc-800 border-zinc-700 text-white focus-visible:ring-[#D4AF37] focus-visible:border-[#D4AF37]"
+          className="bg-zinc-800 border-zinc-700 text-white focus-visible:ring-gold focus-visible:border-gold"
         />
       </motion.div>
     </div>
@@ -64,7 +64,7 @@ export function ContactForm({ formData, updateFormData, questionType }: ContactF
           value={formData.companyName || ""}
           onChange={(e) => updateFormData({ companyName: e.target.value })}
           placeholder="Awesome Apparel Co."
-          className="bg-zinc-800 border-zinc-700 text-white focus-visible:ring-[#D4AF37] focus-visible:border-[#D4AF37]"
+          className="bg-zinc-800 border-zinc-700 text-white focus-visible:ring-gold focus-visible:border-gold"
         />
       </motion.div>
     </div>
@@ -93,7 +93,7 @@ export function ContactForm({ formData, updateFormData, questionType }: ContactF
           placeholder="john.doe@example.com"
           className={`
             bg-zinc-800 border-zinc-700 text-white 
-            focus-visible:ring-[#D4AF37] focus-visible:border-[#D4AF37]
+            focus-visible:ring-gold focus-visible:border-gold
             ${formData.email && !isValidEmail(formData.email) ? 'border-red-500' : ''}
           `}
         />
@@ -127,7 +127,7 @@ export function ContactForm({ formData, updateFormData, questionType }: ContactF
           placeholder="(123) 456-7890"
           className={`
             bg-zinc-800 border-zinc-700 text-white 
-            focus-visible:ring-[#D4AF37] focus-visible:border-[#D4AF37]
+            focus-visible:ring-gold focus-visible:border-gold
             ${formData.phone && !isValidPhone(formData.phone) ? 'border-red-500' : ''}
           `}
         />

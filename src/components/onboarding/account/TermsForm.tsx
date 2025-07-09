@@ -27,8 +27,8 @@ export function TermsForm({ formData, updateFormData }: TermsFormProps) {
         <div 
           className={`
             flex items-start space-x-3 space-y-0 rounded-md p-4 cursor-pointer
-            ${formData.agreeToTerms ? 'bg-[#D4AF37]/10 border-[#D4AF37]/50' : 'border-zinc-800'}
-            border hover:border-[#D4AF37]/50 transition-colors
+            ${formData.agreeToTerms ? 'bg-gold-opacity-10 border-gold-opacity-50' : 'border-zinc-800'}
+            border hover:border-gold-opacity-50 transition-colors
           `}
           onClick={() => updateFormData({ agreeToTerms: !formData.agreeToTerms })}
         >
@@ -36,14 +36,14 @@ export function TermsForm({ formData, updateFormData }: TermsFormProps) {
             id="agreeToTerms"
             checked={formData.agreeToTerms}
             onCheckedChange={(checked) => updateFormData({ agreeToTerms: checked as boolean })}
-            className="border-zinc-600 data-[state=checked]:bg-[#D4AF37] data-[state=checked]:text-black mt-1"
+            className="border-zinc-600 data-[state=checked]:bg-gold data-[state=checked]:text-gold-foreground mt-1"
           />
           <div className="space-y-1 leading-none">
             <Label htmlFor="agreeToTerms" className="text-gray-300 font-medium cursor-pointer">
               I agree to the 
-              <a href="/terms" target="_blank" rel="noopener noreferrer" className="text-[#D4AF37] hover:underline mx-1">Terms of Service</a>
+              <a href="/terms" target="_blank" rel="noopener noreferrer" className="text-gold hover:underline mx-1">Terms of Service</a>
               and
-              <a href="/privacy" target="_blank" rel="noopener noreferrer" className="text-[#D4AF37] hover:underline ml-1">Privacy Policy</a>
+              <a href="/privacy" target="_blank" rel="noopener noreferrer" className="text-gold hover:underline ml-1">Privacy Policy</a>
             </Label>
             <p className="text-gray-500 text-sm">
               By getting started with Tracker, you agree to our terms and conditions.
@@ -54,8 +54,8 @@ export function TermsForm({ formData, updateFormData }: TermsFormProps) {
         <div 
           className={`
             flex items-start space-x-3 space-y-0 rounded-md p-4 cursor-pointer
-            ${receiveUpdates ? 'bg-[#D4AF37]/10 border-[#D4AF37]/50' : 'border-zinc-800'}
-            border hover:border-[#D4AF37]/50 transition-colors
+            ${receiveUpdates ? 'bg-gold-opacity-10 border-gold-opacity-50' : 'border-zinc-800'}
+            border hover:border-gold-opacity-50 transition-colors
           `}
           onClick={() => updateFormData({ receiveUpdates: !receiveUpdates })}
         >
@@ -63,7 +63,7 @@ export function TermsForm({ formData, updateFormData }: TermsFormProps) {
             id="receiveUpdates"
             checked={receiveUpdates}
             onCheckedChange={(checked) => updateFormData({ receiveUpdates: checked as boolean })}
-            className="border-zinc-600 data-[state=checked]:bg-[#D4AF37] data-[state=checked]:text-black mt-1"
+            className="border-zinc-600 data-[state=checked]:bg-gold data-[state=checked]:text-gold-foreground mt-1"
           />
           <div className="space-y-1 leading-none">
             <Label htmlFor="receiveUpdates" className="text-gray-300 font-medium cursor-pointer">
