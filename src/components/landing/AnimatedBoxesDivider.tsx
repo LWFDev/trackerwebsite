@@ -122,7 +122,7 @@ const AnimatedBoxesDivider = ({ className = "" }: AnimatedBoxesDividerProps) => 
   return (
     <div className={`relative w-full ${height} my-4 sm:my-8 overflow-hidden ${className}`}>
       {/* Conveyor belt line */}
-      <div className="absolute top-1/2 left-0 w-full h-2 bg-gradient-to-r from-zinc-400 via-zinc-500 to-zinc-400 dark:from-zinc-600 dark:via-zinc-700 dark:to-zinc-600 transform -translate-y-1/2 rounded-full shadow-inner">
+      <div className="absolute top-1/2 left-0 transform -translate-y-1/2 rounded-full shadow-inner" style={{ width: 'calc(100% - 280px)', height: '8px', background: 'linear-gradient(to right, #a1a1aa, #71717a, #a1a1aa)' }}>
         <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent rounded-full animate-shimmer"></div>
       </div>
       
@@ -131,22 +131,22 @@ const AnimatedBoxesDivider = ({ className = "" }: AnimatedBoxesDividerProps) => 
         <img 
           src="/lovable-uploads/fc470382-aa94-4a9f-ad0f-fb5c9919f63d.png" 
           alt="Embroidery Machine" 
-          className="w-12 h-12 sm:w-16 sm:h-16 object-contain opacity-100"
+          className="w-18 h-18 sm:w-24 sm:h-24 object-contain opacity-100"
         />
         <img 
           src="/lovable-uploads/fc470382-aa94-4a9f-ad0f-fb5c9919f63d.png" 
           alt="Embroidery Machine" 
-          className="w-12 h-12 sm:w-16 sm:h-16 object-contain opacity-100"
+          className="w-18 h-18 sm:w-24 sm:h-24 object-contain opacity-100"
         />
         <img 
           src="/lovable-uploads/fc470382-aa94-4a9f-ad0f-fb5c9919f63d.png" 
           alt="Embroidery Machine" 
-          className="w-12 h-12 sm:w-16 sm:h-16 object-contain opacity-100"
+          className="w-18 h-18 sm:w-24 sm:h-24 object-contain opacity-100"
         />
         <img 
           src="/lovable-uploads/fc470382-aa94-4a9f-ad0f-fb5c9919f63d.png" 
           alt="Embroidery Machine" 
-          className="w-12 h-12 sm:w-16 sm:h-16 object-contain opacity-100"
+          className="w-18 h-18 sm:w-24 sm:h-24 object-contain opacity-100"
         />
       </div>
       
