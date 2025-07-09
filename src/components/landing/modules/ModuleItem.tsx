@@ -26,10 +26,10 @@ const ModuleItem = ({ title, description, icon, learnMoreLink }: ModuleItemProps
     <Link 
       to={learnMoreLink} 
       onClick={handleClick}
-      className="block bg-zinc-900 rounded-lg border border-zinc-800 p-5 transition-all duration-300 hover:shadow-lg hover:border-[#D4AF37] hover:-translate-y-1 group"
+      className="block bg-zinc-900 rounded-lg border border-zinc-800 p-5 transition-all duration-300 hover:shadow-lg hover:border-gold-DEFAULT hover:-translate-y-1 group"
     >
       <div className="flex">
-        <div className="flex-shrink-0 mr-4 bg-zinc-800 p-3 rounded-lg h-fit border border-zinc-700 group-hover:border-[#D4AF37] transition-all">
+        <div className="flex-shrink-0 mr-4 bg-zinc-800 p-3 rounded-lg h-fit border border-zinc-700 group-hover:border-gold-DEFAULT transition-all">
           {icon}
         </div>
         <div>

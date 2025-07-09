@@ -19,7 +19,7 @@ const CodeBlock = ({ code, language, title }: CodeBlockProps) => {
   };
 
   // Define syntax highlighting colors
-  const keywordColor = "text-yellow-400";
+  const keywordColor = "text-gold-light";
   const stringColor = "text-green-400";
   const commentColor = "text-zinc-500";
   const functionColor = "text-blue-400";

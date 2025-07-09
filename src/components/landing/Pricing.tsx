@@ -34,7 +34,7 @@ const PricingCard = ({
     <div className={`bg-zinc-900 rounded-lg border ${popular ? 'border-gold-DEFAULT ring-2 ring-gold-DEFAULT/20' : 'border-zinc-800'} shadow-sm p-6 relative transition-all duration-300 hover:-translate-y-1 hover:shadow-xl ${popular ? 'hover:shadow-gold-DEFAULT/30' : 'hover:shadow-zinc-800/30'}`}>
       {popular && (
         <div className="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
-          <span className="bg-gradient-to-r from-yellow-600 to-yellow-500 text-white text-xs font-semibold px-4 py-1 rounded-full">
+          <span className="bg-gradient-to-r from-gold-DEFAULT to-gold-light text-gold-foreground text-xs font-semibold px-4 py-1 rounded-full">
             Most popular
           </span>
         </div>
@@ -45,7 +45,7 @@ const PricingCard = ({
           <span className={`text-4xl font-bold ${popular ? 'text-gold-DEFAULT' : 'text-white'}`}>{convertPrice(price)}</span>
           <span className="text-gray-500 ml-1">/month</span>
         </div>
-        <Button className={`w-full mb-6 ${popular ? 'bg-gradient-to-r from-yellow-600 to-yellow-500 hover:from-yellow-700 hover:to-yellow-600 text-white' : 'bg-zinc-800 hover:bg-zinc-700'}`}>
+        <Button className={`w-full mb-6 ${popular ? 'bg-gradient-to-r from-gold-DEFAULT to-gold-light hover:from-gold-dark hover:to-gold-DEFAULT text-gold-foreground' : 'bg-zinc-800 hover:bg-zinc-700'}`}>
           {buttonText}
         </Button>
       </div>
