@@ -149,23 +149,23 @@ const AnimatedBoxesDivider: React.FC = () => {
   return (
     <div 
       ref={containerRef}
-      className="relative w-full h-64 bg-gradient-to-br from-background to-muted/30 overflow-hidden border-y border-border/20"
+      className="relative w-full h-64 bg-gradient-to-br from-white to-slate-50 overflow-hidden border-y border-slate-200/50"
       role="img"
       aria-label="Manufacturing workflow visualization"
     >
       {/* Clean Belt/Conveyor */}
       <div className="absolute inset-0 flex items-center">
         <div 
-          className="w-full h-2 bg-gradient-to-r from-muted/40 via-muted/60 to-muted/40 relative overflow-hidden rounded-full"
+          className="w-full h-2 bg-gradient-to-r from-slate-200/60 via-slate-300/80 to-slate-200/60 relative overflow-hidden rounded-full"
           style={{
             animation: reducedMotion ? 'none' : 'slideInfinite 6s linear infinite'
           }}
         >
           {/* Subtle moving pattern */}
           <div 
-            className="absolute inset-0 bg-gradient-to-r from-transparent via-foreground/5 to-transparent"
+            className="absolute inset-0 bg-gradient-to-r from-transparent via-slate-400/10 to-transparent"
             style={{
-              backgroundImage: 'repeating-linear-gradient(90deg, transparent 0px, hsl(var(--foreground) / 0.03) 8px, transparent 16px)',
+              backgroundImage: 'repeating-linear-gradient(90deg, transparent 0px, rgb(148 163 184 / 0.08) 8px, transparent 16px)',
               animation: reducedMotion ? 'none' : 'slideInfinite 3s linear infinite'
             }}
           />
@@ -177,7 +177,7 @@ const AnimatedBoxesDivider: React.FC = () => {
         {stages.slice(0, -1).map((stage, index) => (
           <div
             key={`line-${index}`}
-            className="absolute h-px bg-gradient-to-r from-border/50 to-transparent opacity-30"
+            className="absolute h-px bg-gradient-to-r from-slate-300/50 to-transparent opacity-40"
             style={{
               left: stage.x,
               width: `calc(${stages[index + 1].x} - ${stage.x})`,
@@ -191,6 +191,13 @@ const AnimatedBoxesDivider: React.FC = () => {
       <div className="absolute inset-0 flex items-center px-8">
         {stages.map((stage, index) => {
           const StageIcon = stage.icon;
+          const stageColors = [
+            { bg: 'from-blue-50 to-blue-100', icon: 'text-blue-600' },
+            { bg: 'from-emerald-50 to-emerald-100', icon: 'text-emerald-600' },
+            { bg: 'from-amber-50 to-amber-100', icon: 'text-amber-600' },
+            { bg: 'from-purple-50 to-purple-100', icon: 'text-purple-600' }
+          ];
+          
           return (
             <div
               key={stage.name}
@@ -200,25 +207,23 @@ const AnimatedBoxesDivider: React.FC = () => {
               {/* Stage Icon Container */}
               <div className="relative">
                 <div 
-                  className={`w-12 h-12 rounded-xl flex items-center justify-center shadow-sm border border-border/50 transition-all duration-300 group-hover:scale-105 bg-gradient-to-br ${stage.gradient} relative overflow-hidden`}
+                  className={`w-12 h-12 rounded-xl flex items-center justify-center shadow-sm border border-white/80 transition-all duration-300 group-hover:scale-105 bg-gradient-to-br ${stageColors[index].bg} relative overflow-hidden`}
                 >
                   <StageIcon 
                     size={20} 
-                    className="relative z-10"
-                    style={{ color: stage.color }}
+                    className={`relative z-10 ${stageColors[index].icon}`}
                   />
                 </div>
                 
                 {/* Stage indicator dot */}
                 <div 
-                  className="absolute -bottom-0.5 left-1/2 transform -translate-x-1/2 w-1.5 h-1.5 rounded-full"
-                  style={{ backgroundColor: stage.color }}
+                  className={`absolute -bottom-0.5 left-1/2 transform -translate-x-1/2 w-1.5 h-1.5 rounded-full ${stageColors[index].icon.replace('text-', 'bg-')}`}
                 />
               </div>
               
               {/* Stage Label */}
               <div className="text-center">
-                <span className="text-xs font-medium text-muted-foreground bg-background/80 px-2 py-1 rounded-md shadow-sm border border-border/50">
+                <span className="text-xs font-medium text-slate-600 bg-white/90 px-2 py-1 rounded-md shadow-sm border border-slate-200/50">
                   {stage.name}
                 </span>
               </div>
@@ -232,11 +237,17 @@ const AnimatedBoxesDivider: React.FC = () => {
         {items.map((item) => {
           const clothingItem = clothingItems[item.clothingIndex];
           const ClothingIcon = clothingItem.icon;
+          const itemColors = [
+            'text-blue-600',
+            'text-emerald-600', 
+            'text-amber-600',
+            'text-purple-600'
+          ];
           
           return (
             <div
               key={item.id}
-              className="absolute w-8 h-8 flex items-center justify-center rounded-lg shadow-sm transition-all duration-300 will-change-transform bg-background border border-border/50"
+              className="absolute w-8 h-8 flex items-center justify-center rounded-lg shadow-sm transition-all duration-300 will-change-transform bg-white border border-slate-200/50"
               style={{
                 left: `${item.x}%`,
                 top: '50%',
@@ -245,7 +256,7 @@ const AnimatedBoxesDivider: React.FC = () => {
             >
               <ClothingIcon 
                 size={16} 
-                style={{ color: clothingItem.color }}
+                className={itemColors[item.clothingIndex]}
               />
             </div>
           );
@@ -254,26 +265,26 @@ const AnimatedBoxesDivider: React.FC = () => {
 
       {/* Clean Production Metrics */}
       <div className="absolute top-4 right-4 flex space-x-2 z-30">
-        <div className="bg-background/90 border border-border/50 rounded-lg px-3 py-2 shadow-sm">
+        <div className="bg-white/95 border border-slate-200/50 rounded-lg px-3 py-2 shadow-sm">
           <div className="flex items-center space-x-2">
-            <div className="p-1 bg-primary/10 rounded">
-              <TrendingUp size={12} className="text-primary" />
+            <div className="p-1 bg-blue-50 rounded">
+              <TrendingUp size={12} className="text-blue-600" />
             </div>
             <div className="text-xs">
-              <div className="font-semibold text-foreground">{metrics.throughput.toLocaleString()}</div>
-              <div className="text-muted-foreground">Units/Day</div>
+              <div className="font-semibold text-slate-700">{metrics.throughput.toLocaleString()}</div>
+              <div className="text-slate-500">Units/Day</div>
             </div>
           </div>
         </div>
         
-        <div className="bg-background/90 border border-border/50 rounded-lg px-3 py-2 shadow-sm">
+        <div className="bg-white/95 border border-slate-200/50 rounded-lg px-3 py-2 shadow-sm">
           <div className="flex items-center space-x-2">
-            <div className="p-1 bg-gold/10 rounded">
-              <Clock size={12} className="text-gold" />
+            <div className="p-1 bg-amber-50 rounded">
+              <Clock size={12} className="text-amber-600" />
             </div>
             <div className="text-xs">
-              <div className="font-semibold text-foreground">{metrics.efficiency}%</div>
-              <div className="text-muted-foreground">Efficiency</div>
+              <div className="font-semibold text-slate-700">{metrics.efficiency}%</div>
+              <div className="text-slate-500">Efficiency</div>
             </div>
           </div>
         </div>
