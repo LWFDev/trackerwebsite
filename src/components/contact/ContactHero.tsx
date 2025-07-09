@@ -1,7 +1,10 @@
 
 import React from "react";
+import { useLocalization } from "@/contexts/LocalizationContext";
 
 const ContactHero = () => {
+  const { locale } = useLocalization();
+
   return (
     <div className="pt-24 pb-16 bg-zinc-900 text-white relative overflow-hidden flex items-center min-h-[30vh]">
       <div className="absolute top-0 left-0 w-full h-full overflow-hidden z-0">
@@ -14,9 +17,11 @@ const ContactHero = () => {
         <p className="text-xl text-gray-300 max-w-3xl mx-auto mb-4">
           We're here to help with any questions about our platform
         </p>
-        <p className="text-sm text-gray-400 max-w-3xl mx-auto mb-10">
-          Exclusive US implementation partner - <a href="https://www.mebuisworks.com" target="_blank" rel="noopener noreferrer" className="text-gold hover:text-gold-light transition-colors">MebuisWorks</a>
-        </p>
+        {locale === 'US' && (
+          <p className="text-sm text-gray-400 max-w-3xl mx-auto mb-10">
+            Exclusive US implementation partner - <a href="https://www.mebuisworks.com" target="_blank" rel="noopener noreferrer" className="text-gold hover:text-gold-light transition-colors">MebuisWorks</a>
+          </p>
+        )}
       </div>
     </div>
   );
