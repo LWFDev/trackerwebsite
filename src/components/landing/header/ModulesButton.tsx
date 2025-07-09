@@ -21,7 +21,7 @@ const ModulesButton = ({ isOpen, onHover, onClick }: ModulesButtonProps) => {
       onClick={onClick}
     >
       <button 
-        className={`flex items-center transition ${location.pathname.includes('/modules') || isOpen ? 'text-gold-DEFAULT' : 'text-gray-300 hover:text-gold-DEFAULT'}`}
+        className={`flex items-center transition ${location.pathname.includes('/modules') || isOpen ? 'text-gold' : 'text-gray-300 hover:text-gold'}`}
       >
         Modules <ChevronDown size={16} className={`ml-1 transition-transform duration-200 ${isOpen ? 'rotate-180' : ''}`} />
       </button>

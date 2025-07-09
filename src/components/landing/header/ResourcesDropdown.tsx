@@ -29,27 +29,27 @@ const ResourcesDropdown = ({ scrollToTop }: ResourcesDropdownProps) => {
     >
       <DropdownMenu open={isOpen} onOpenChange={setIsOpen} modal={false}>
         <DropdownMenuTrigger asChild>
-          <button className="flex items-center text-gray-300 hover:text-gold-DEFAULT transition">
+          <button className="flex items-center text-gray-300 hover:text-gold transition">
             Resources <ChevronDown size={16} className="ml-1" />
           </button>
         </DropdownMenuTrigger>
         <DropdownMenuContent className="bg-zinc-900 border-zinc-800 text-white">
-          <DropdownMenuItem className="hover:bg-zinc-800 hover:text-gold-DEFAULT focus:bg-zinc-800 focus:text-gold-DEFAULT cursor-pointer">
+          <DropdownMenuItem className="hover:bg-zinc-800 hover:text-gold focus:bg-zinc-800 focus:text-gold cursor-pointer">
             <Link to="/faq" className="w-full" onClick={scrollToTop}>
               FAQ
             </Link>
           </DropdownMenuItem>
-          <DropdownMenuItem className="hover:bg-zinc-800 hover:text-gold-DEFAULT focus:bg-zinc-800 focus:text-gold-DEFAULT cursor-pointer">
+          <DropdownMenuItem className="hover:bg-zinc-800 hover:text-gold focus:bg-zinc-800 focus:text-gold cursor-pointer">
             <Link to="/support" className="w-full" onClick={scrollToTop}>
               Support
             </Link>
           </DropdownMenuItem>
-          <DropdownMenuItem className="hover:bg-zinc-800 hover:text-gold-DEFAULT focus:bg-zinc-800 focus:text-gold-DEFAULT cursor-pointer">
+          <DropdownMenuItem className="hover:bg-zinc-800 hover:text-gold focus:bg-zinc-800 focus:text-gold cursor-pointer">
             <Link to="/about" className="w-full" onClick={scrollToTop}>
               About Us
             </Link>
           </DropdownMenuItem>
-          <DropdownMenuItem className="hover:bg-zinc-800 hover:text-gold-DEFAULT focus:bg-zinc-800 focus:text-gold-DEFAULT cursor-pointer">
+          <DropdownMenuItem className="hover:bg-zinc-800 hover:text-gold focus:bg-zinc-800 focus:text-gold cursor-pointer">
             <Link to="/contact" className="w-full" onClick={scrollToTop}>
               Contact
             </Link>

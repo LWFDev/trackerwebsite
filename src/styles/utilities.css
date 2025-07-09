@@ -82,6 +82,10 @@
     background-color: hsl(var(--gold) / 0);
   }
   
+  .bg-gold-opacity-2 {
+    background-color: hsl(var(--gold) / 0.02);
+  }
+  
   .bg-gold-light-opacity-30 {
     background-color: hsl(var(--gold-light) / 0.3);
   }

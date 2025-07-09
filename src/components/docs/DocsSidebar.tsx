@@ -42,8 +42,8 @@ const DocsSidebar = ({
             <AccordionTrigger 
               onClick={() => onCategoryChange(category.id)}
               className={cn(
-                "text-sm font-medium hover:text-gold-DEFAULT py-2",
-                selectedCategory === category.id ? "text-gold-DEFAULT" : "text-zinc-300"
+                "text-sm font-medium hover:text-gold py-2",
+                selectedCategory === category.id ? "text-gold" : "text-zinc-300"
               )}
             >
               {category.name}
@@ -60,7 +60,7 @@ const DocsSidebar = ({
                       className={cn(
                         "w-full text-left text-sm py-1.5 px-3 rounded-md transition-colors",
                         selectedDoc === doc.id && selectedCategory === category.id
-                          ? "bg-gold-DEFAULT/20 text-gold-light font-medium"
+                          ? "bg-gold-opacity-20 text-gold-light font-medium"
                           : "text-zinc-400 hover:text-zinc-100 hover:bg-zinc-700/50"
                       )}
                     >

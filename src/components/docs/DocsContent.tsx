@@ -62,7 +62,7 @@ const DocsContent = ({ doc }: DocsContentProps) => {
               <h3 className="text-lg font-medium mb-4">Related Documentation</h3>
               <div className="grid gap-4 sm:grid-cols-2">
                 {doc.relatedDocs.map((relatedDoc, index) => (
-                  <Card key={index} className="bg-zinc-800 border-zinc-700 hover:border-gold-DEFAULT/50 transition-colors">
+                  <Card key={index} className="bg-zinc-800 border-zinc-700 hover:border-gold-opacity-50 transition-colors">
                     <div className="p-4">
                       <h4 className="font-medium text-white">{relatedDoc.title}</h4>
                       <p className="text-sm text-zinc-400 mt-1">{relatedDoc.description}</p>

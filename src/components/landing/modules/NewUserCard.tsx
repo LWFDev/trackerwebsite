@@ -8,15 +8,15 @@ const NewUserCard = () => {
       <p className="text-zinc-400 text-sm mb-6">Modules are the building blocks of Tracker - each one designed to serve a specific function in your business. </p>
       <ul className="space-y-4 mb-8">
         <li className="flex items-center text-sm text-zinc-300">
-          <Check size={16} className="mr-3 text-gold-DEFAULT flex-shrink-0" />
+          <Check size={16} className="mr-3 text-gold flex-shrink-0" />
           Turn modules on or off based on your workflow
         </li>
         <li className="flex items-center text-sm text-zinc-300">
-          <Check size={16} className="mr-3 text-gold-DEFAULT flex-shrink-0" />
+          <Check size={16} className="mr-3 text-gold flex-shrink-0" />
           Customized to fit your exact business operations 
         </li>
         <li className="flex items-center text-sm text-zinc-300">
-          <Check size={16} className="mr-3 text-gold-DEFAULT flex-shrink-0" />
+          <Check size={16} className="mr-3 text-gold flex-shrink-0" />
            Minimize clutter - just the tools that matter to you
         </li>
       </ul>

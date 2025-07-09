@@ -12,22 +12,22 @@ const LogoHub = () => {
         {
           value: "65%",
           label: "Reduction in Logo Search Time",
-          icon: <Clock className="h-8 w-8 text-gold-DEFAULT" />
+          icon: <Clock className="h-8 w-8 text-gold" />
         },
         {
           value: "10k+",
           label: "Average Assets Managed Per Client",
-          icon: <Image className="h-8 w-8 text-gold-DEFAULT" />
+          icon: <Image className="h-8 w-8 text-gold" />
         },
         {
           value: "99.9%",
           label: "Platform Availability",
-          icon: <CheckCircle className="h-8 w-8 text-gold-DEFAULT" />
+          icon: <CheckCircle className="h-8 w-8 text-gold" />
         },
         {
           value: "42%",
           label: "Improvement in Brand Consistency",
-          icon: <Shield className="h-8 w-8 text-gold-DEFAULT" />
+          icon: <Shield className="h-8 w-8 text-gold" />
         }
       ]}
       mainSection={{

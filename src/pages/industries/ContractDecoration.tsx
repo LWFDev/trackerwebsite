@@ -33,7 +33,7 @@ const ContractDecoration = () => {
 
   const features = [
     {
-      icon: <Eye className="w-8 h-8 text-gold-DEFAULT" />,
+      icon: <Eye className="w-8 h-8 text-gold" />,
       title: "Complete Production Visibility",
       description: "Full transparency across all decoration stages for every client project and order."
     },

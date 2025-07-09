@@ -9,7 +9,7 @@ const RoiCalculator = () => {
     <ScrollReveal delay={200} className="bg-zinc-900/40 dark:bg-zinc-900/40 light:bg-white/60 backdrop-blur-sm rounded-xl p-8 border border-zinc-800 dark:border-zinc-800 light:border-gray-200 mb-12">
       <div className="max-w-3xl mx-auto">
         <div className="flex items-center mb-6">
-          <ChartBar size={28} className="mr-4 text-gold-DEFAULT" />
+          <ChartBar size={28} className="mr-4 text-gold" />
           <h3 className="text-2xl font-bold text-white dark:text-white light:text-gray-900">Calculate Your ROI</h3>
         </div>
         <p className="text-gray-300 dark:text-gray-300 light:text-gray-600 mb-6">
@@ -44,7 +44,7 @@ const RoiCalculator = () => {
               </select>
             </div>
           </div>
-          <Button className="bg-gold-DEFAULT hover:bg-gold-light text-gold-foreground w-full">Calculate Savings</Button>
+          <Button className="bg-gold hover:bg-gold-light text-gold-foreground w-full">Calculate Savings</Button>
         </div>
         <div className="text-center">
           <p className="text-sm text-gray-400 dark:text-gray-400 light:text-gray-600">

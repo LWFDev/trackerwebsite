@@ -56,7 +56,7 @@ const DocsSearchBar = () => {
             onFocus={() => setIsFocused(true)}
             onBlur={() => setTimeout(() => setIsFocused(false), 200)}
             className="w-full pl-10 pr-4 py-2.5 bg-zinc-800 border border-zinc-700 rounded-lg focus:ring-1 
-                       focus:ring-gold-DEFAULT focus:border-gold-DEFAULT text-sm text-white 
+                       focus:ring-gold focus:border-gold text-sm text-white 
                        placeholder:text-zinc-400 transition-all"
           />
         </div>
