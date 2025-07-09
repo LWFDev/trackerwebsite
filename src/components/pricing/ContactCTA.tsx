@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import { ScrollReveal } from "@/components/ui/scroll-reveal";
 import { MessageSquare, Trophy, HeadphonesIcon, Sparkles, ArrowRight } from "lucide-react";
 import { motion } from "framer-motion";
+import { scrollToTop } from "@/utils/navigation";
 const ContactCTA = () => {
   const glowRef = useRef<HTMLDivElement>(null);
 
@@ -229,7 +230,7 @@ const ContactCTA = () => {
           }} transition={{
             delay: 0.6
           }}>
-              <Link to="/contact">
+              <Link to="/contact" onClick={scrollToTop}>
                 <Button size="lg" className="font-medium px-8 py-6 text-base bg-gold-gradient text-gold-foreground hover:bg-gold-dark-gradient group relative overflow-hidden">
                   <span className="absolute inset-0 w-full h-full bg-white/20 transform -translate-x-full group-hover:translate-x-0 transition-transform duration-300"></span>
                   <span className="relative z-10 flex items-center">

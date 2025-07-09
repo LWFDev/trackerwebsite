@@ -2,6 +2,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
+import { scrollToTop } from "@/utils/navigation";
 
 const CtaSection = () => {
   return (
@@ -20,13 +21,15 @@ const CtaSection = () => {
               Get Started
             </Button>
           </Link>
-          <Button 
-            variant="outline" 
-            className="border-zinc-700 text-gray-300 hover:bg-zinc-800 hover:border-gold" 
-            size="lg"
-          >
-            Contact Sales
-          </Button>
+          <Link to="/contact" onClick={scrollToTop}>
+            <Button 
+              variant="outline" 
+              className="border-zinc-700 text-gray-300 hover:bg-zinc-800 hover:border-gold" 
+              size="lg"
+            >
+              Contact Sales
+            </Button>
+          </Link>
         </div>
       </div>
     </div>

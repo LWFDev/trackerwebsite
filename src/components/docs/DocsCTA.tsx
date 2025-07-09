@@ -2,6 +2,8 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
+import { Link } from "react-router-dom";
+import { scrollToTop } from "@/utils/navigation";
 
 const DocsCTA = () => {
   return (
@@ -24,12 +26,16 @@ const DocsCTA = () => {
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button variant="gold" size="lg">
-              Get API Keys
-            </Button>
-            <Button variant="outline" size="lg">
-              Join Developer Community
-            </Button>
+            <Link to="/get-started" onClick={scrollToTop}>
+              <Button variant="gold" size="lg">
+                Get API Keys
+              </Button>
+            </Link>
+            <Link to="/contact" onClick={scrollToTop}>
+              <Button variant="outline" size="lg">
+                Join Developer Community
+              </Button>
+            </Link>
           </div>
           
           <div className="mt-8 pt-8 border-t border-zinc-700">

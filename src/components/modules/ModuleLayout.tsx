@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { ArrowLeft, Star, ArrowRight, X, ZoomIn } from 'lucide-react';
 import { Dialog, DialogContent, DialogTrigger } from '@/components/ui/dialog';
+import { scrollToTop } from '@/utils/navigation';
 
 interface Stats {
   value: string;
@@ -247,7 +248,7 @@ const ModuleLayout = ({
                 <Button variant="gold" className="shadow-md" onClick={scrollToMain}>
                   Learn More <ArrowRight className="ml-1 h-5 w-5" />
                 </Button>
-                <Link to="/get-started">
+                <Link to="/get-started" onClick={scrollToTop}>
                   <Button variant="outline" className="bg-zinc-800/50 text-white border-zinc-700 hover:bg-zinc-700 hover:border-gold">
                     Request Demo
                   </Button>

@@ -1,8 +1,11 @@
 
 import React from "react";
+import { Link } from "react-router-dom";
+import { scrollToTop } from "@/utils/navigation";
+
 const WorkflowCTA = () => {
   return <div className="hidden md:flex justify-center mt-16">
-      <div className="relative group cursor-pointer">
+      <Link to="/get-started" onClick={scrollToTop} className="relative group">
         <div className="flex items-center space-x-2 px-6 py-3 bg-gradient-to-r from-zinc-800/50 to-zinc-700/30 border border-gold-opacity-20 backdrop-blur-sm hover:border-gold-opacity-40 transition-all duration-300 hover:shadow-lg hover:shadow-gold rounded">
           <span className="text-gold text-sm font-medium">Get Started</span>
           <div className="relative">
@@ -12,7 +15,7 @@ const WorkflowCTA = () => {
             <div className="absolute inset-0 bg-gold-opacity-20 rounded-full blur-md opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
           </div>
         </div>
-      </div>
+      </Link>
     </div>;
 };
 export default WorkflowCTA;
