@@ -7,7 +7,7 @@ import CTA from "@/components/landing/CTA";
 import Results from "@/components/landing/Results";
 import { Separator } from "@/components/ui/separator";
 import ScrollAnimationInit from "@/components/ui/scroll-animation-init";
-import AnimatedTruckDivider from "@/components/landing/AnimatedTruckDivider";
+import AnimatedBoxesDivider from "@/components/landing/AnimatedBoxesDivider";
 import { useIsMobile } from "@/hooks/use-mobile";
 import { useToast } from "@/hooks/use-toast";
 import { motion } from "framer-motion";
@@ -78,9 +78,9 @@ const Index = () => {
           <Hero />
         </div>
         
-        {/* Truck Divider */}
+        {/* Production Flow Divider */}
         <div className="relative bg-gradient-to-b from-slate-50/40 via-emerald-50/20 to-slate-100/30 dark:from-slate-950/20 dark:via-emerald-950/10 dark:to-slate-900/15">
-          <AnimatedTruckDivider />
+          <AnimatedBoxesDivider />
         </div>
         
         {/* Features Section */}
