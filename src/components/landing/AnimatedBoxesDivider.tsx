@@ -129,11 +129,10 @@ const AnimatedBoxesDivider = ({ className = "" }: AnimatedBoxesDividerProps) => 
       {/* Embroidery machine destination */}
       <div className="absolute top-1/2 right-2 sm:right-4 transform -translate-y-1/2 flex items-center gap-2 bg-blue-100 dark:bg-blue-900/30 px-3 py-1 rounded-lg border border-blue-200 dark:border-blue-800">
         <img 
-          src="/lovable-uploads/ff724d99-20cb-4926-8ea8-b88f5f69ef43.png" 
+          src="/lovable-uploads/fc470382-aa94-4a9f-ad0f-fb5c9919f63d.png" 
           alt="Embroidery Machine" 
-          className="w-4 h-4 sm:w-5 sm:h-5 object-contain"
+          className="w-6 h-6 sm:w-8 sm:h-8 object-contain"
         />
-        <span className="text-xs sm:text-sm font-medium text-blue-700 dark:text-blue-300">EMBROIDERY</span>
       </div>
       
       {/* Container for animated promotional products */}
