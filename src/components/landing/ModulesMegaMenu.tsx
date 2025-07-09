@@ -16,13 +16,13 @@ const ModulesMegaMenu = () => {
             <TabsList className="bg-zinc-800 hover:bg-zinc-700 transition-colors">
               <TabsTrigger 
                 value="popular"
-                className="data-[state=active]:bg-zinc-700 data-[state=active]:text-[#D4AF37] transition-all duration-300"
+                className="data-[state=active]:bg-zinc-700 data-[state=active]:text-gold-DEFAULT transition-all duration-300"
               >
                 Popular
               </TabsTrigger>
               <TabsTrigger 
                 value="categories"
-                className="data-[state=active]:bg-zinc-700 data-[state=active]:text-[#D4AF37] transition-all duration-300"
+                className="data-[state=active]:bg-zinc-700 data-[state=active]:text-gold-DEFAULT transition-all duration-300"
               >
                 Categories
               </TabsTrigger>

@@ -90,11 +90,11 @@ const LoginForm = () => {
               />
               <Label htmlFor="terms" className="text-sm leading-none">
                 I agree to the{" "}
-                <Link to="/terms" className="text-[#D4AF37] hover:underline">
+                <Link to="/terms" className="text-gold-DEFAULT hover:underline">
                   Terms
                 </Link>{" "}
                 and{" "}
-                <Link to="/privacy" className="text-[#D4AF37] hover:underline">
+                <Link to="/privacy" className="text-gold-DEFAULT hover:underline">
                   Privacy Policy
                 </Link>
               </Label>
@@ -116,7 +116,7 @@ const LoginForm = () => {
           {isSignUp ? "Already have an account?" : "Don't have an account?"}{" "}
           <button
             onClick={() => setIsSignUp(!isSignUp)}
-            className="text-[#D4AF37] hover:underline font-medium"
+            className="text-gold-DEFAULT hover:underline font-medium"
           >
             {isSignUp ? "Sign in" : "Create account"}
           </button>

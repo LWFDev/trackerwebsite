@@ -38,36 +38,36 @@ const Integration = () => {
       {/* Background gradient */}
       <div className="absolute top-0 left-0 w-full h-full overflow-hidden z-0">
         <div className="absolute w-[600px] h-[600px] rounded-full bg-gray-800/30 dark:bg-zinc-900/30 light:bg-gray-800/30 blur-[100px] bottom-0 right-0"></div>
-        <div className="absolute w-[500px] h-[500px] rounded-full bg-[#D4AF37]/5 blur-[120px] top-20 left-20"></div>
+        <div className="absolute w-[500px] h-[500px] rounded-full bg-gold-DEFAULT/5 blur-[120px] top-20 left-20"></div>
       </div>
       
       <div className="container mx-auto px-4 relative z-10">
         <div className="flex flex-col md:flex-row">
           <div className="md:w-1/2 md:pr-12 mb-10 md:mb-0">
             <div className="inline-block px-4 py-1.5 bg-gray-800/80 dark:bg-zinc-900/80 light:bg-gray-800/80 backdrop-blur-sm rounded-full border border-gray-700 dark:border-zinc-800 light:border-gray-700 mb-6">
-              <span className="text-sm text-[#D4AF37] uppercase font-medium tracking-wider">Integrations</span>
+              <span className="text-sm text-gold-DEFAULT uppercase font-medium tracking-wider">Integrations</span>
             </div>
             <h2 className="text-3xl md:text-4xl font-bold mb-6 animate-fade-in text-white">
-              Seamlessly integrate with <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#D4AF37] to-[#F2D675]">your existing tools</span>
+              Seamlessly integrate with <span className="text-transparent bg-clip-text bg-gradient-to-r from-gold-DEFAULT to-gold-light">your existing tools</span>
             </h2>
             <p className="text-gray-300 mb-8 animate-fade-in" style={{ animationDelay: '0.2s' }}>
               Tracker seamlessly links with tools you already use, creating a unified workflow that will increase ease and production efficiency.
             </p>
             
             <div className="space-y-5 mb-8">
-              <div className="flex items-center p-3 bg-gray-800/60 dark:bg-zinc-900/60 light:bg-gray-800/60 backdrop-blur-sm rounded-lg border border-gray-700 dark:border-zinc-800 light:border-gray-700 transform transition-all duration-300 hover:border-[#D4AF37]/50 hover:-translate-y-1 hover:shadow-lg animate-fade-in" style={{ animationDelay: '0.3s' }}>
+              <div className="flex items-center p-3 bg-gray-800/60 dark:bg-zinc-900/60 light:bg-gray-800/60 backdrop-blur-sm rounded-lg border border-gray-700 dark:border-zinc-800 light:border-gray-700 transform transition-all duration-300 hover:border-gold-DEFAULT/50 hover:-translate-y-1 hover:shadow-lg animate-fade-in" style={{ animationDelay: '0.3s' }}>
                 <CheckCircle className="w-5 h-5 text-green-500 mr-3" />
                 <span className="text-white">Connect with popular e-commerce platforms</span>
               </div>
-              <div className="flex items-center p-3 bg-gray-800/60 dark:bg-zinc-900/60 light:bg-gray-800/60 backdrop-blur-sm rounded-lg border border-gray-700 dark:border-zinc-800 light:border-gray-700 transform transition-all duration-300 hover:border-[#D4AF37]/50 hover:-translate-y-1 hover:shadow-lg animate-fade-in" style={{ animationDelay: '0.4s' }}>
+              <div className="flex items-center p-3 bg-gray-800/60 dark:bg-zinc-900/60 light:bg-gray-800/60 backdrop-blur-sm rounded-lg border border-gray-700 dark:border-zinc-800 light:border-gray-700 transform transition-all duration-300 hover:border-gold-DEFAULT/50 hover:-translate-y-1 hover:shadow-lg animate-fade-in" style={{ animationDelay: '0.4s' }}>
                 <CheckCircle className="w-5 h-5 text-green-500 mr-3" />
                 <span className="text-white">Sync with your accounting software</span>
               </div>
-              <div className="flex items-center p-3 bg-gray-800/60 dark:bg-zinc-900/60 light:bg-gray-800/60 backdrop-blur-sm rounded-lg border border-gray-700 dark:border-zinc-800 light:border-gray-700 transform transition-all duration-300 hover:border-[#D4AF37]/50 hover:-translate-y-1 hover:shadow-lg animate-fade-in" style={{ animationDelay: '0.5s' }}>
+              <div className="flex items-center p-3 bg-gray-800/60 dark:bg-zinc-900/60 light:bg-gray-800/60 backdrop-blur-sm rounded-lg border border-gray-700 dark:border-zinc-800 light:border-gray-700 transform transition-all duration-300 hover:border-gold-DEFAULT/50 hover:-translate-y-1 hover:shadow-lg animate-fade-in" style={{ animationDelay: '0.5s' }}>
                 <CheckCircle className="w-5 h-5 text-green-500 mr-3" />
                 <span className="text-white">Import designs from Adobe Creative Cloud</span>
               </div>
-              <div className="flex items-center p-3 bg-gray-800/60 dark:bg-zinc-900/60 light:bg-gray-800/60 backdrop-blur-sm rounded-lg border border-gray-700 dark:border-zinc-800 light:border-gray-700 transform transition-all duration-300 hover:border-[#D4AF37]/50 hover:-translate-y-1 hover:shadow-lg animate-fade-in" style={{ animationDelay: '0.6s' }}>
+              <div className="flex items-center p-3 bg-gray-800/60 dark:bg-zinc-900/60 light:bg-gray-800/60 backdrop-blur-sm rounded-lg border border-gray-700 dark:border-zinc-800 light:border-gray-700 transform transition-all duration-300 hover:border-gold-DEFAULT/50 hover:-translate-y-1 hover:shadow-lg animate-fade-in" style={{ animationDelay: '0.6s' }}>
                 <CheckCircle className="w-5 h-5 text-green-500 mr-3" />
                 <span className="text-white">Integrate with your production equipment</span>
               </div>
@@ -78,7 +78,7 @@ const Integration = () => {
             {integrationLogos.map((logo, index) => (
               <div 
                 key={index}
-                className={`${logo.bgColor} backdrop-blur-sm rounded-xl h-32 border border-gray-700 dark:border-zinc-800 light:border-gray-700 transform transition-all duration-300 hover:border-[#D4AF37]/50 hover:-translate-y-1 hover:shadow-lg group animate-fade-in`}
+                className={`${logo.bgColor} backdrop-blur-sm rounded-xl h-32 border border-gray-700 dark:border-zinc-800 light:border-gray-700 transform transition-all duration-300 hover:border-gold-DEFAULT/50 hover:-translate-y-1 hover:shadow-lg group animate-fade-in`}
                 style={{ animationDelay: `${0.3 + index * 0.1}s` }}
               >
                 <div className="w-full h-full flex items-center justify-center overflow-hidden relative">
