@@ -43,7 +43,7 @@ const AnimatedTruckDivider = ({ className = "" }: AnimatedTruckDividerProps) => 
           const animation = (element as HTMLElement).animate(
             [
               { transform: `translateX(${startPosition}px) translateY(-50%)` },
-              { transform: `translateX(calc(100vw + 50px)) translateY(-50%)` }
+              { transform: `translateX(100%) translateY(-50%)` }
             ],
             {
               duration,
@@ -78,7 +78,7 @@ const AnimatedTruckDivider = ({ className = "" }: AnimatedTruckDividerProps) => 
               const newAnimation = (element as HTMLElement).animate(
                 [
                   { transform: `translateX(${newStartPosition}px) translateY(-50%)` },
-                  { transform: `translateX(calc(100vw + 50px)) translateY(-50%)` }
+                  { transform: `translateX(100%) translateY(-50%)` }
                 ],
                 {
                   duration: newDuration,
@@ -117,12 +117,12 @@ const AnimatedTruckDivider = ({ className = "" }: AnimatedTruckDividerProps) => 
   const height = isMobile ? 'h-12' : 'h-16';
 
   return (
-    <div className={`relative w-full ${height} my-4 sm:my-8 ${className}`}>
+    <div className={`relative w-full ${height} my-4 sm:my-8 overflow-hidden ${className}`}>
       {/* Dotted line */}
       <div className="absolute top-1/2 left-0 w-full h-1 border-t-4 border-dotted border-zinc-700 transform -translate-y-1/2"></div>
       
       {/* Container for animated trucks */}
-      <div ref={truckContainerRef} className="relative w-full h-full">
+      <div ref={truckContainerRef} className="relative w-full h-full overflow-hidden">
         {/* Render all trucks */}
         {trucks.map((id) => (
           <div 
