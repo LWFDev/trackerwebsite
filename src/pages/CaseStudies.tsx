@@ -44,7 +44,7 @@ const CaseStudies = () => {
       challenge: 'Manual processes limiting business scaling',
       solution: 'Tracker ERP with Shopify integration',
       results: 'Saved 2 days per week, enabled single-person COVID operations',
-      image: '/lovable-uploads/c78cb5cd-6b30-4b76-ab3d-95defabc532a.png',
+      image: '/lovable-uploads/0021201f-5a7d-49ff-ac53-43f77b1ea513.png',
       stats: [
         { icon: Clock, value: '2 Days', label: 'Weekly Time Saved' },
         { icon: TrendingUp, value: '60%+', label: 'Processing Reduction' },
