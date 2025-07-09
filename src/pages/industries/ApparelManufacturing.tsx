@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Link } from "react-router-dom";
 import { Shirt, CheckCircle, TrendingUp, Clock, Users, BarChart3, Layers, AlertTriangle } from "lucide-react";
+import { scrollToTop } from "@/utils/navigation";
 
 const ApparelManufacturing = () => {
   const challenges = [
@@ -54,10 +55,10 @@ const ApparelManufacturing = () => {
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <Button asChild size="lg" variant="gold">
-                <Link to="/get-started" onClick={() => window.scrollTo(0, 0)}>Start Free Trial</Link>
+                <Link to="/get-started" onClick={scrollToTop}>Start Free Trial</Link>
               </Button>
               <Button asChild variant="emerald-outline" size="lg">
-                <Link to="/contact" onClick={() => window.scrollTo(0, 0)}>Schedule Demo</Link>
+                <Link to="/contact" onClick={scrollToTop}>Schedule Demo</Link>
               </Button>
             </div>
           </motion.div>
@@ -292,7 +293,7 @@ const ApparelManufacturing = () => {
               </div>
             </div>
             <Button asChild size="lg" variant="gold">
-              <Link to="/get-started" onClick={() => window.scrollTo(0, 0)}>Transform Your Manufacturing Today</Link>
+              <Link to="/get-started" onClick={scrollToTop}>Transform Your Manufacturing Today</Link>
             </Button>
           </div>
         </div>
