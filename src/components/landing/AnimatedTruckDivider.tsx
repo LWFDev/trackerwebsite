@@ -8,7 +8,8 @@ interface AnimatedTruckDividerProps {
 }
 
 const AnimatedTruckDivider = ({ className = "" }: AnimatedTruckDividerProps) => {
-  const [trucks, setTrucks] = useState<number[]>([0]);
+  const [trucksLeft, setTrucksLeft] = useState<number[]>([0]);
+  const [trucksRight, setTrucksRight] = useState<number[]>([0]);
   const truckContainerRef = useRef<HTMLDivElement>(null);
   const animationRefs = useRef<Animation[]>([]);
   const isMobile = useIsMobile();
@@ -24,26 +25,25 @@ const AnimatedTruckDivider = ({ className = "" }: AnimatedTruckDividerProps) => 
       
       animationRefs.current = [];
       
-      // Create animations for all trucks
-      const truckElements = truckContainerRef.current.querySelectorAll('.truck-element');
+      // Get all truck elements
+      const leftTruckElements = truckContainerRef.current.querySelectorAll('.truck-left');
+      const rightTruckElements = truckContainerRef.current.querySelectorAll('.truck-right');
       
-      truckElements.forEach((element, index) => {
-        // Ensure a minimum delay of 0.4 seconds between trucks
-        const minDelay = 400; // 0.4 seconds in milliseconds
-        const randomAdditionalDelay = Math.random() * 600; // Random additional delay up to 0.6 seconds
+      // Animate left-to-right trucks
+      leftTruckElements.forEach((element, index) => {
+        const minDelay = 400;
+        const randomAdditionalDelay = Math.random() * 600;
         const startDelay = index * minDelay + randomAdditionalDelay;
         
-        // Vary the starting positions and timing for a more natural look
-        // Use smaller values for mobile to fit smaller screens
-        const startPosition = isMobile ? -30 - (Math.random() * 50) : -50 - (Math.random() * 100);
-        const duration = isMobile ? 5000 + (Math.random() * 1500) : 7000 + (Math.random() * 2000); // Faster on mobile
+        const startPosition = isMobile ? -40 - (Math.random() * 60) : -60 - (Math.random() * 120);
+        const endPosition = isMobile ? window.innerWidth + 40 : window.innerWidth + 60;
+        const duration = isMobile ? 6000 + (Math.random() * 2000) : 8000 + (Math.random() * 3000);
         
-        // Use setTimeout to stagger the start of animations
         setTimeout(() => {
           const animation = (element as HTMLElement).animate(
             [
               { transform: `translateX(${startPosition}px) translateY(-50%)` },
-              { transform: `translateX(100%) translateY(-50%)` }
+              { transform: `translateX(${endPosition}px) translateY(-50%)` }
             ],
             {
               duration,
@@ -55,47 +55,53 @@ const AnimatedTruckDivider = ({ className = "" }: AnimatedTruckDividerProps) => 
           
           animationRefs.current.push(animation);
           
-          // Only the first truck adds a new truck when it finishes
           if (index === 0) {
             animation.onfinish = () => {
-              setTrucks(prevTrucks => {
-                // Limit trucks to fewer on mobile
-                const maxTrucks = isMobile ? 6 : 10;
+              setTrucksLeft(prevTrucks => {
+                const maxTrucks = isMobile ? 4 : 6;
                 if (prevTrucks.length >= maxTrucks) return prevTrucks;
                 return [...prevTrucks, prevTrucks.length];
               });
-              
-              // Restart animation
               animateTrucks();
             };
-          } else {
-            // For other trucks, just restart their own animation
+          }
+        }, startDelay);
+      });
+
+      // Animate right-to-left trucks
+      rightTruckElements.forEach((element, index) => {
+        const minDelay = 600; // Offset from left trucks
+        const randomAdditionalDelay = Math.random() * 800;
+        const startDelay = index * minDelay + randomAdditionalDelay;
+        
+        const startPosition = isMobile ? window.innerWidth + 40 + (Math.random() * 60) : window.innerWidth + 60 + (Math.random() * 120);
+        const endPosition = isMobile ? -40 : -60;
+        const duration = isMobile ? 6000 + (Math.random() * 2000) : 8000 + (Math.random() * 3000);
+        
+        setTimeout(() => {
+          const animation = (element as HTMLElement).animate(
+            [
+              { transform: `translateX(${startPosition}px) translateY(-50%) scaleX(-1)` },
+              { transform: `translateX(${endPosition}px) translateY(-50%) scaleX(-1)` }
+            ],
+            {
+              duration,
+              iterations: 1,
+              easing: 'linear',
+              fill: 'forwards'
+            }
+          );
+          
+          animationRefs.current.push(animation);
+          
+          if (index === 0) {
             animation.onfinish = () => {
-              // Just restart this specific truck's animation with new random values
-              const newStartPosition = isMobile ? -30 - (Math.random() * 50) : -50 - (Math.random() * 100);
-              const newDuration = isMobile ? 5000 + (Math.random() * 1500) : 7000 + (Math.random() * 2000);
-              
-              const newAnimation = (element as HTMLElement).animate(
-                [
-                  { transform: `translateX(${newStartPosition}px) translateY(-50%)` },
-                  { transform: `translateX(100%) translateY(-50%)` }
-                ],
-                {
-                  duration: newDuration,
-                  iterations: 1,
-                  easing: 'linear',
-                  fill: 'forwards'
-                }
-              );
-              
-              // Update the reference
-              const indexToReplace = animationRefs.current.indexOf(animation);
-              if (indexToReplace !== -1) {
-                animationRefs.current[indexToReplace] = newAnimation;
-              }
-              
-              // Set the same onfinish handler
-              newAnimation.onfinish = animation.onfinish;
+              setTrucksRight(prevTrucks => {
+                const maxTrucks = isMobile ? 3 : 5;
+                if (prevTrucks.length >= maxTrucks) return prevTrucks;
+                return [...prevTrucks, prevTrucks.length];
+              });
+              animateTrucks();
             };
           }
         }, startDelay);
@@ -105,12 +111,11 @@ const AnimatedTruckDivider = ({ className = "" }: AnimatedTruckDividerProps) => 
     animateTrucks();
     
     return () => {
-      // Cleanup animations
       animationRefs.current.forEach(animation => {
         if (animation) animation.cancel();
       });
     };
-  }, [trucks.length, isMobile]);
+  }, [trucksLeft.length, trucksRight.length, isMobile]);
 
   // Adjust truck size for mobile
   const truckSize = isMobile ? 24 : 36;
@@ -123,11 +128,27 @@ const AnimatedTruckDivider = ({ className = "" }: AnimatedTruckDividerProps) => 
       
       {/* Container for animated trucks */}
       <div ref={truckContainerRef} className="relative w-full h-full overflow-hidden">
-        {/* Render all trucks */}
-        {trucks.map((id) => (
+        {/* Left-to-right trucks */}
+        {trucksLeft.map((id) => (
           <div 
-            key={id}
-            className="absolute top-1/2 transform -translate-y-1/2 truck-element"
+            key={`left-${id}`}
+            className="absolute top-1/2 transform -translate-y-1/2 truck-left"
+            style={{
+              filter: 'drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3))'
+            }}
+          >
+            <Truck 
+              size={truckSize} 
+              className="text-gold-light" 
+            />
+          </div>
+        ))}
+        
+        {/* Right-to-left trucks */}
+        {trucksRight.map((id) => (
+          <div 
+            key={`right-${id}`}
+            className="absolute top-1/2 transform -translate-y-1/2 truck-right"
             style={{
               filter: 'drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3))'
             }}
