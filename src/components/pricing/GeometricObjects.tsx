@@ -47,11 +47,11 @@ const GeometricObjects: React.FC<GeometricObjectProps> = ({
         const opacity = opacities[Math.floor(Math.random() * opacities.length)];
         return `hsl(var(--gold) / ${opacity})`;
       } else {
-        const colors = ["hsl(var(--gold))", "#FFF", "hsl(var(--gold-dark))"];
+        const colors = ["hsl(var(--gold))", "hsl(var(--foreground))", "hsl(var(--gold-dark))"];
         const opacities = [0.05, 0.1, 0.15];
         const color = colors[Math.floor(Math.random() * colors.length)];
         const opacity = opacities[Math.floor(Math.random() * opacities.length)];
-        return `${color === "#FFF" ? "#FFF" : color} / ${opacity}`;
+        return `${color === "hsl(var(--foreground))" ? "hsl(var(--foreground))" : color} / ${opacity}`;
       }
     };
     

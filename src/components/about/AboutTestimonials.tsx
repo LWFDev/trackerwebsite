@@ -33,7 +33,7 @@ const AboutTestimonials = () => {
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
           <h3 className="text-lg text-gold mb-4">Testimonials</h3>
-          <h2 className="text-3xl font-bold mb-6 gold-gradient-text">What our customers say</h2>
+          <h2 className="text-3xl font-bold mb-6 text-gold-gradient">What our customers say</h2>
           <p className="text-gray-300 max-w-3xl mx-auto">
             Don't just take our word for it. Here's what our customers have to say about Tracker.
           </p>

@@ -39,7 +39,7 @@ export const BusinessTypeQuestion = ({ formData, updateFormData }: BusinessTypeQ
           return (
             <motion.div
               key={type}
-              whileHover={{ scale: 1.01, backgroundColor: "rgba(255, 255, 255, 0.05)" }}
+              whileHover={{ scale: 1.01, backgroundColor: "hsl(var(--muted) / 0.05)" }}
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.2 }}

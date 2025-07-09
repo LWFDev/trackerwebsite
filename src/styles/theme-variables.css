@@ -23,7 +23,7 @@
     --ring: 213 50% 95%;
     --radius: 0.5rem;
     
-    /* Standardized Gold Colors - Based on Header Button */
+    /* Centralized Gold Colors - Single source of truth for all gold variants */
     --gold: 45 93% 47%;          /* yellow-600 equivalent */
     --gold-light: 48 96% 53%;    /* yellow-500 equivalent */
     --gold-dark: 42 87% 41%;     /* yellow-700 equivalent */

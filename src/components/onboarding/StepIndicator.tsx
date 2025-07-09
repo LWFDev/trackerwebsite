@@ -58,7 +58,7 @@ export const StepIndicator = ({
               initial={{ scale: 0.9 }}
               animate={{ 
                 scale: currentStep === step.id ? 1.1 : 1,
-                backgroundColor: currentStep >= step.id ? 'hsl(var(--gold))' : '#27272a' 
+                backgroundColor: currentStep >= step.id ? 'hsl(var(--gold))' : 'hsl(217 32.6% 17.5%)' 
               }}
               transition={{ duration: 0.3 }}
             >
@@ -75,7 +75,7 @@ export const StepIndicator = ({
             <motion.p
               className={`mt-2 text-xs font-medium ${currentStep === step.id ? 'text-gold' : 'text-gray-400'}`}
               animate={{ 
-                color: currentStep === step.id ? 'hsl(var(--gold))' : '#9ca3af',
+                color: currentStep === step.id ? 'hsl(var(--gold))' : 'hsl(215 20.2% 65.1%)',
                 scale: currentStep === step.id ? 1.05 : 1
               }}
               transition={{ duration: 0.3 }}

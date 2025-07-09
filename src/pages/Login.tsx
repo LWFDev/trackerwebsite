@@ -9,7 +9,7 @@ const Login = () => {
       <div className="flex-1 flex flex-col items-center justify-center p-4 md:p-8">
         <div className="mb-8 text-center">
           <Link to="/" className="inline-block">
-            <h1 className="text-3xl font-bold gold-gradient-text">
+            <h1 className="text-3xl font-bold text-gold-gradient">
               Track My Business
             </h1>
           </Link>

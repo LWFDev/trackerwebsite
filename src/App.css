@@ -83,15 +83,6 @@ button:hover {
   border-color: hsl(var(--gold));
 }
 
-.gold-text {
-  color: hsl(var(--gold));
-}
-
-.gold-gradient {
-  background: linear-gradient(to right, hsl(var(--gold)), hsl(var(--gold-light)));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
 
 .dark-section {
   background-color: #18181b;

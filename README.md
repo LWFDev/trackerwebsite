@@ -113,7 +113,7 @@ src/
 Our design system is built on a carefully crafted color palette and typography:
 
 ### Colors
-- **Primary Gold**: `#D4AF37` - Professional gold for primary actions
+- **Primary Gold**: `hsl(var(--gold))` - Professional gold for primary actions
 - **Secondary**: Complementary blues and grays
 - **Success**: Green tones for positive actions
 - **Warning**: Amber tones for caution

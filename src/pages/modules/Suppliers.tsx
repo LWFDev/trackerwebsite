@@ -7,7 +7,7 @@ const Suppliers = () => {
     <ModuleLayout
       title="Suppliers"
       description="Maintain supplier contacts, price lists, and product availability to streamline purchasing decisions."
-      color="amber"
+      color="gold"
       heroImage="https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-4.0.3&auto=format&fit=crop&w=2340&q=80"
       stats={[
         {

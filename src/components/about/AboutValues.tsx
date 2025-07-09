@@ -48,7 +48,7 @@ const AboutValues = () => {
           <div className="inline-block px-4 py-2 bg-gold-opacity-10 rounded-full border border-gold-opacity-20 mb-6">
             <h3 className="text-lg text-gold font-semibold">Our Values</h3>
           </div>
-          <h2 className="text-4xl md:text-5xl font-bold mb-8 gold-gradient-text">
+          <h2 className="text-4xl md:text-5xl font-bold mb-8 text-gold-gradient">
             What drives us every day
           </h2>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
