@@ -19,7 +19,7 @@ const buttonVariants = cva(
           "bg-secondary text-secondary-foreground hover:bg-secondary/80",
         ghost: "hover:bg-accent hover:text-accent-foreground",
         link: "text-primary underline-offset-4 hover:underline",
-        gold: "bg-gradient-to-r from-yellow-600 to-yellow-500 text-white hover:from-yellow-700 hover:to-yellow-600 shadow-md hover:shadow-lg transform transition-all duration-300 hover:-translate-y-1",
+        gold: "bg-gold-gradient text-gold-foreground hover:bg-gold-dark-gradient shadow-md hover:shadow-lg transform transition-all duration-300 hover:-translate-y-1",
         emerald: "bg-gradient-to-r from-emerald-DEFAULT to-emerald-light text-white hover:from-emerald-light hover:to-emerald-DEFAULT shadow-md hover:shadow-lg transform transition-all duration-300 hover:-translate-y-1",
         "emerald-outline": "border-2 border-emerald-DEFAULT bg-transparent text-emerald-DEFAULT hover:bg-emerald-DEFAULT hover:text-white transition-all duration-300",
       },
