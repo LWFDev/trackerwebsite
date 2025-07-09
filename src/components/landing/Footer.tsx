@@ -1,16 +1,9 @@
 
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Switch } from '@/components/ui/switch';
-import { useTheme } from '@/contexts/ThemeContext';
-import { Sun, Moon } from 'lucide-react';
 import { scrollToTop } from '@/utils/navigation';
 
 const Footer = () => {
-  const {
-    isDarkMode,
-    toggleTheme
-  } = useTheme();
   return (
     <footer className="theme-surface theme-text-secondary py-12 theme-border border-t transition-colors duration-300">
       <div className="container mx-auto px-4">
@@ -48,16 +41,8 @@ const Footer = () => {
         </div>
         
         <div className="theme-border border-t pt-8">
-          <div className="flex flex-col md:flex-row justify-between items-center">
-            <p className="text-sm mb-4 md:mb-0">© 2025 Tracker US. All rights reserved.</p>
-            <div className="flex items-center space-x-3">
-              <Sun className="h-4 w-4 text-gray-500" />
-              <Switch checked={isDarkMode} onCheckedChange={toggleTheme} className="data-[state=checked]:bg-gold data-[state=unchecked]:bg-gray-300" />
-              <Moon className="h-4 w-4 text-gray-500" />
-              <span className="text-sm font-medium">
-                {isDarkMode ? 'Dark' : 'Light'} Mode
-              </span>
-            </div>
+          <div className="flex justify-center items-center">
+            <p className="text-sm">© 2025 Tracker US. All rights reserved.</p>
           </div>
         </div>
       </div>
