@@ -26,7 +26,7 @@ const AboutHero = () => {
         <div className="flex justify-center items-center gap-4 mb-8">
           <div className="w-12 h-0.5 bg-emerald-500/60 rounded-full"></div>
           <div className="w-2 h-2 bg-gold rounded-full"></div>
-          <div className="w-12 h-0.5 bg-gold/60 rounded-full"></div>
+          <div className="w-12 h-0.5 bg-gold-opacity-60 rounded-full"></div>
         </div>
 
         <p className="text-xl md:text-2xl max-w-4xl mx-auto mb-12 leading-relaxed text-gray-300">

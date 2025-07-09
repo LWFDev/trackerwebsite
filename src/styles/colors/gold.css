@@ -43,7 +43,11 @@
   .bg-gold-opacity-2 {
     background-color: hsl(var(--gold) / 0.02);
   }
-  
+
+  .bg-gold-opacity-4 {
+    background-color: hsl(var(--gold) / 0.04);
+  }
+
   .bg-gold-opacity-5 {
     background-color: hsl(var(--gold) / 0.05);
   }
@@ -101,6 +105,14 @@
     background-color: hsl(var(--gold) / 0.5);
   }
   
+  .bg-gold-opacity-60 {
+    background-color: hsl(var(--gold) / 0.6);
+  }
+  
+  .bg-gold-opacity-90 {
+    background-color: hsl(var(--gold) / 0.9);
+  }
+
   /* Border Colors */
   .border-gold {
     border-color: hsl(var(--gold));
@@ -138,6 +150,10 @@
     border-color: hsl(var(--gold-light) / 0.5);
   }
   
+  .border-gold-opacity-60 {
+    border-color: hsl(var(--gold) / 0.6);
+  }
+
   /* Ring/Outline Colors */
   .ring-gold {
     ring-color: hsl(var(--gold));
@@ -145,6 +161,10 @@
   
   .ring-gold-opacity-50 {
     ring-color: hsl(var(--gold) / 0.5);
+  }
+  
+  .ring-gold-opacity-20 {
+    ring-color: hsl(var(--gold) / 0.2);
   }
   
   /* Hover States */

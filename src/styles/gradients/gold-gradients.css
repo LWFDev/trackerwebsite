@@ -36,6 +36,23 @@
     animation: shimmer 3s ease-in-out infinite;
   }
   
+  /* Tailwind Gradient Utilities */
+  .from-gold-opacity-4 {
+    --tw-gradient-from: hsl(var(--gold) / 0.04);
+  }
+  
+  .from-gold-opacity-5 {
+    --tw-gradient-from: hsl(var(--gold) / 0.05);
+  }
+  
+  .to-gold-opacity-4 {
+    --tw-gradient-to: hsl(var(--gold) / 0.04);
+  }
+  
+  .to-gold-opacity-10 {
+    --tw-gradient-to: hsl(var(--gold) / 0.1);
+  }
+
   /* Legacy Support */
   .gold-gradient {
     background: linear-gradient(to right, hsl(var(--gold)), hsl(var(--gold-light)));
