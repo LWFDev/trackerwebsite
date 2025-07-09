@@ -19,7 +19,7 @@ const ContactHero = () => {
         </p>
         {locale === 'US' && (
           <p className="text-sm text-gray-400 max-w-3xl mx-auto mb-10">
-            Exclusive US implementation partner - <a href="https://www.mebuisworks.com" target="_blank" rel="noopener noreferrer" className="text-gold hover:text-gold-light transition-colors">MebuisWorks</a>
+            Exclusive US implementation partner - <a href="https://mebuisworks.com/get-demo/" target="_blank" rel="noopener noreferrer" className="text-gold hover:text-gold-light transition-colors">MebuisWorks</a>
           </p>
         )}
       </div>
