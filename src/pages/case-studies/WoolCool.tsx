@@ -146,11 +146,10 @@ const WoolCool = () => {
                   <div className="bg-emerald-50 dark:bg-emerald-950/30 p-6 rounded-lg border border-emerald-200 dark:border-emerald-800">
                     <h4 className="font-semibold text-emerald-800 dark:text-emerald-200 mb-3">"Made our systems simple - like they should be"</h4>
                     <p className="text-emerald-700 dark:text-emerald-300 italic text-lg leading-relaxed">
-                      "Tracker has transformed our internal systems completely, allowing us the freedom to concentrate on development and growth. 
-                      Allocating our freed-up human resources has helped us achieve that focus together."
+                      "Tracker has transformed our internal systems completely, allowing us the freedom to concentrate on development and growth."
                     </p>
                     <p className="text-emerald-600 dark:text-emerald-400 font-medium mt-4">
-                      - Adrian, AGAME
+                      - Josie Morris, Woolcool
                     </p>
                   </div>
                   
