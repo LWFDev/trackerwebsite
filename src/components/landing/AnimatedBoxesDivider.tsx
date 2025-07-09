@@ -122,7 +122,7 @@ const AnimatedBoxesDivider = ({ className = "" }: AnimatedBoxesDividerProps) => 
   return (
     <div className={`relative w-full ${height} my-4 sm:my-8 overflow-hidden ${className}`}>
       {/* Conveyor belt line */}
-      <div className="absolute top-1/2 left-0 transform -translate-y-1/2 rounded-full shadow-inner" style={{ width: 'calc(100% - 280px)', height: '8px', background: 'linear-gradient(to right, #a1a1aa, #71717a, #a1a1aa)' }}>
+      <div className="absolute top-1/2 left-0 transform -translate-y-1/2 rounded-full shadow-inner" style={{ width: 'calc(100% - 320px)', height: '8px', background: 'linear-gradient(to right, #a1a1aa, #71717a, #a1a1aa)' }}>
         <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent rounded-full animate-shimmer"></div>
       </div>
       
