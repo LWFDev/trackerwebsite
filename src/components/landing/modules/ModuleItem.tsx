@@ -33,7 +33,7 @@ const ModuleItem = ({ title, description, icon, learnMoreLink }: ModuleItemProps
           {icon}
         </div>
         <div>
-          <h3 className="font-medium text-white mb-1 group-hover:text-[#D4AF37] transition-colors duration-300">{title}</h3>
+          <h3 className="font-medium text-white mb-1 group-hover:text-gold-DEFAULT transition-colors duration-300">{title}</h3>
           <p className="text-zinc-400 text-sm mb-2 group-hover:text-zinc-300 transition-colors duration-300">{description}</p>
           <div className="text-gold-DEFAULT text-sm inline-flex items-center">
             Learn more
