@@ -17,22 +17,22 @@ const BlogCategories = ({ activeTab, setActiveTab }: BlogCategoriesProps) => {
           className="w-full"
         >
           <TabsList className="bg-transparent flex justify-start overflow-x-auto space-x-2 border-b border-zinc-800 w-full">
-            <TabsTrigger value="all-posts" className="data-[state=active]:border-gold-DEFAULT">
+            <TabsTrigger value="all-posts" className="data-[state=active]:border-gold">
               All Posts
             </TabsTrigger>
-            <TabsTrigger value="industry-insights" className="data-[state=active]:border-gold-DEFAULT">
+            <TabsTrigger value="industry-insights" className="data-[state=active]:border-gold">
               Industry Insights
             </TabsTrigger>
-            <TabsTrigger value="product-updates" className="data-[state=active]:border-gold-DEFAULT">
+            <TabsTrigger value="product-updates" className="data-[state=active]:border-gold">
               Product Updates
             </TabsTrigger>
-            <TabsTrigger value="case-studies" className="data-[state=active]:border-gold-DEFAULT">
+            <TabsTrigger value="case-studies" className="data-[state=active]:border-gold">
               Case Studies
             </TabsTrigger>
-            <TabsTrigger value="tutorials" className="data-[state=active]:border-gold-DEFAULT">
+            <TabsTrigger value="tutorials" className="data-[state=active]:border-gold">
               Tutorials
             </TabsTrigger>
-            <TabsTrigger value="company-news" className="data-[state=active]:border-gold-DEFAULT">
+            <TabsTrigger value="company-news" className="data-[state=active]:border-gold">
               Company News
             </TabsTrigger>
           </TabsList>

@@ -187,36 +187,37 @@
     ring-color: hsl(var(--gold) / 0.5);
   }
   
+  
   /* Button Gradient Hover States */
   .hover\\:bg-gold-dark-gradient:hover {
     background: linear-gradient(to right, hsl(var(--gold-dark)), hsl(var(--gold)));
   }
-  
+
   /* Hover States */
   .hover\\:text-gold:hover {
     color: hsl(var(--gold));
   }
-  
+
   .hover\\:bg-gold:hover {
     background-color: hsl(var(--gold));
   }
-  
+
   .hover\\:bg-gold-light:hover {
     background-color: hsl(var(--gold-light));
   }
-  
+
   .hover\\:bg-gold-dark:hover {
     background-color: hsl(var(--gold-dark));
   }
-  
+
   .hover\\:border-gold:hover {
     border-color: hsl(var(--gold));
   }
-  
+
   .hover\\:shadow-gold:hover {
     box-shadow: 0 10px 15px -3px hsl(var(--gold) / 0.1), 0 4px 6px -2px hsl(var(--gold) / 0.05);
   }
-  
+
   .hover\\:shadow-gold-glow:hover {
     box-shadow: 0 0 20px 5px hsl(var(--gold) / 0.3);
   }

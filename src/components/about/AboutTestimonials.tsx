@@ -32,7 +32,7 @@ const AboutTestimonials = () => {
     <div className="py-16 bg-black">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
-          <h3 className="text-lg text-gold-DEFAULT mb-4">Testimonials</h3>
+          <h3 className="text-lg text-gold mb-4">Testimonials</h3>
           <h2 className="text-3xl font-bold mb-6 gold-gradient-text">What our customers say</h2>
           <p className="text-gray-300 max-w-3xl mx-auto">
             Don't just take our word for it. Here's what our customers have to say about Tracker.
@@ -41,10 +41,10 @@ const AboutTestimonials = () => {
         
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {testimonials.map((testimonial) => (
-            <div key={testimonial.id} className="bg-zinc-900 p-6 rounded-lg border border-zinc-800 hover:border-gold-DEFAULT/40 transition-all">
+            <div key={testimonial.id} className="bg-zinc-900 p-6 rounded-lg border border-zinc-800 hover:border-gold-opacity-40 transition-all">
               <div className="flex mb-4">
                 {[...Array(testimonial.rating)].map((_, i) => (
-                  <Star key={i} className="h-5 w-5 text-gold-DEFAULT fill-gold-DEFAULT" />
+                  <Star key={i} className="h-5 w-5 text-gold fill-current" />
                 ))}
               </div>
               <p className="text-gray-300 mb-6">"{testimonial.text}"</p>

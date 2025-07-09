@@ -47,7 +47,7 @@ const ContactInfo = () => {
         <div className="space-y-6">
           <div className="flex items-start">
             <div className="bg-zinc-800 p-3 rounded-md mr-4">
-              <Mail className="h-5 w-5 text-gold-DEFAULT" />
+              <Mail className="h-5 w-5 text-gold" />
             </div>
             <div>
               <h3 className="text-lg font-medium mb-1">{t("Email")}</h3>
@@ -58,7 +58,7 @@ const ContactInfo = () => {
           {locale === 'US' && (
             <div className="flex items-start">
               <div className="bg-zinc-800 p-3 rounded-md mr-4">
-                <Phone className="h-5 w-5 text-gold-DEFAULT" />
+                <Phone className="h-5 w-5 text-gold" />
               </div>
               <div>
                 <h3 className="text-lg font-medium mb-1">{t("Phone")}</h3>
@@ -68,7 +68,7 @@ const ContactInfo = () => {
           )}
           <div className="flex items-start">
             <div className="bg-zinc-800 p-3 rounded-md mr-4">
-              <MapPin className="h-5 w-5 text-gold-DEFAULT" />
+              <MapPin className="h-5 w-5 text-gold" />
             </div>
             <div>
               <h3 className="text-lg font-medium mb-1">{t("Office")}</h3>
@@ -85,7 +85,7 @@ const ContactInfo = () => {
           </div>
           <div className="flex items-start">
             <div className="bg-zinc-800 p-3 rounded-md mr-4">
-              <Clock className="h-5 w-5 text-gold-DEFAULT" />
+              <Clock className="h-5 w-5 text-gold" />
             </div>
             <div>
               <h3 className="text-lg font-medium mb-1">{t("Business Hours")}</h3>
@@ -96,7 +96,7 @@ const ContactInfo = () => {
           {locale === 'US' && (
             <div className="flex items-start">
               <div className="bg-zinc-800 p-3 rounded-md mr-4">
-                <Award className="h-5 w-5 text-gold-DEFAULT" />
+                <Award className="h-5 w-5 text-gold" />
               </div>
               <div>
                 <h3 className="text-lg font-medium mb-1">{t("Distribution Partner")}</h3>
@@ -108,7 +108,7 @@ const ContactInfo = () => {
             <>
               <div className="flex items-start">
                 <div className="bg-zinc-800 p-3 rounded-md mr-4">
-                  <MapPin className="h-5 w-5 text-gold-DEFAULT" />
+                  <MapPin className="h-5 w-5 text-gold" />
                 </div>
                 <div>
                   <h3 className="text-lg font-medium mb-1">{t("Company Registration")}</h3>
@@ -117,7 +117,7 @@ const ContactInfo = () => {
               </div>
               <div className="flex items-start">
                 <div className="bg-zinc-800 p-3 rounded-md mr-4">
-                  <MapPin className="h-5 w-5 text-gold-DEFAULT" />
+                  <MapPin className="h-5 w-5 text-gold" />
                 </div>
                 <div>
                   <h3 className="text-lg font-medium mb-1">{t("VAT Number")}</h3>

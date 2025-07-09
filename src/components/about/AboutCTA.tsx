@@ -7,7 +7,7 @@ const AboutCTA = () => {
   return (
     <div className="py-16 bg-zinc-900">
       <div className="container mx-auto px-4 text-center">
-        <h2 className="text-3xl font-bold mb-6 bg-gradient-to-r from-gold-DEFAULT to-gold-light bg-clip-text text-transparent">Join the Tracker community</h2>
+        <h2 className="text-3xl font-bold mb-6 text-gold-gradient">Join the Tracker community</h2>
         <p className="text-xl mb-8 max-w-3xl mx-auto text-gray-300">
           Start your free 14-day trial today and see how Tracker can transform your workflow.
         </p>

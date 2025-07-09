@@ -24,7 +24,7 @@ const Header = () => {
 
   // Check if current route is active
   const isActive = (path: string) => {
-    return location.pathname === path ? "text-gold-DEFAULT" : "text-[rgb(209,213,219)]";
+    return location.pathname === path ? "text-gold" : "text-[rgb(209,213,219)]";
   };
 
   // Handle scroll effect for header
@@ -81,7 +81,7 @@ const Header = () => {
           />
           <Link 
             to="/industries" 
-            className={`font-normal text-base ${isActive("/industries")} hover:text-gold-DEFAULT transition-colors duration-200`}
+            className={`font-normal text-base ${isActive("/industries")} hover:text-gold transition-colors duration-200`}
             style={{ fontSize: '16px', fontWeight: 400 }}
             onClick={scrollToTop}
           >
@@ -89,7 +89,7 @@ const Header = () => {
           </Link>
           <Link 
             to="/pricing" 
-            className={`font-normal text-base ${isActive("/pricing")} hover:text-gold-DEFAULT transition-colors duration-200`}
+            className={`font-normal text-base ${isActive("/pricing")} hover:text-gold transition-colors duration-200`}
             style={{ fontSize: '16px', fontWeight: 400 }}
           >
             Pricing
@@ -101,7 +101,7 @@ const Header = () => {
         <div className="hidden md:flex items-center space-x-3">
           <FlagSelector />
           <Link to="/get-started">
-            <Button size="lg" className="w-full sm:w-auto group bg-gradient-to-r from-gold-DEFAULT to-gold-light hover:from-gold-dark hover:to-gold-DEFAULT text-gold-foreground px-8 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-0.5 border-0">Get Started</Button>
+            <Button size="lg" className="w-full sm:w-auto group bg-gold-gradient hover:bg-gold-dark-gradient text-gold-foreground px-8 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-0.5 border-0">Get Started</Button>
           </Link>
         </div>
 

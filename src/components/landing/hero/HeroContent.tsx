@@ -17,15 +17,15 @@ export const HeroContent = () => {
   }} transition={{
     duration: 0.8
   }}>
-      <div className="inline-block px-4 py-2 bg-gradient-to-r from-gold-DEFAULT/10 via-slate-50/60 to-emerald-50/40 dark:from-gold-DEFAULT/20 dark:via-slate-900/60 dark:to-emerald-900/20 backdrop-blur-sm rounded-full border border-gold-DEFAULT/50 dark:border-gold-DEFAULT/30 mb-6 shadow-sm">
+      <div className="inline-block px-4 py-2 bg-gradient-to-r from-gold-opacity-10 via-slate-50/60 to-emerald-50/40 dark:from-gold-opacity-20 dark:via-slate-900/60 dark:to-emerald-900/20 backdrop-blur-sm rounded-full border border-gold-opacity-50 dark:border-gold-opacity-30 mb-6 shadow-sm">
         <div className="text-sm text-gold-dark dark:text-gold-light uppercase font-medium tracking-wider flex items-center">
-          <span className="inline-block w-2 h-2 rounded-full bg-gold-DEFAULT mr-3 animate-pulse"></span>
+          <span className="inline-block w-2 h-2 rounded-full bg-gold mr-3 animate-pulse"></span>
           {t("AUTOMATE. ORGANIZE. SIMPLIFY.")}
         </div>
       </div>
       
       <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight animate-fade-in">
-        {t("Digitize production, ")} <span className="text-transparent bg-clip-text bg-gradient-to-r from-gold-DEFAULT via-gold-light to-emerald-600 dark:from-gold-light dark:via-gold-accent dark:to-emerald-400">
+        {t("Digitize production, ")} <span className="text-gold-gradient">
           {t("enable profit.")}
         </span>
       </h1>
@@ -40,14 +40,14 @@ export const HeroContent = () => {
       animationDelay: '0.3s'
     }}>
         <Link to="/get-started" className="w-full sm:w-auto">
-          <Button size="lg" className="w-full sm:w-auto group bg-gradient-to-r from-gold-DEFAULT to-gold-light hover:from-gold-dark hover:to-gold-DEFAULT text-gold-foreground px-8 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-0.5 border-0">
+          <Button size="lg" className="w-full sm:w-auto group bg-gold-gradient hover:bg-gold-dark-gradient text-gold-foreground px-8 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-0.5 border-0">
             <span className="flex items-center font-medium">
               {t("Get Started")} <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform duration-300" />
             </span>
           </Button>
         </Link>
         <Link to="/contact" className="w-full sm:w-auto">
-          <Button size="lg" variant="outline" className="w-full sm:w-auto group border border-gold-DEFAULT dark:border-gold-DEFAULT text-slate-700 dark:text-slate-300 hover:border-gold-accent dark:hover:border-gold-accent transition-all duration-300 hover:-translate-y-0.5 shadow-sm hover:shadow-md">
+          <Button size="lg" variant="outline" className="w-full sm:w-auto group border border-gold text-slate-700 dark:text-slate-300 hover:border-gold transition-all duration-300 hover:-translate-y-0.5 shadow-sm hover:shadow-md">
             <span className="font-medium">{t("Contact Sales")}</span>
           </Button>
         </Link>

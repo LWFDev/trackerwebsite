@@ -42,7 +42,7 @@ const CTA = () => {
               <Link to="/get-started" className="inline-block">
                 <Button 
                   size="lg" 
-                  className="group bg-gradient-to-r from-gold-DEFAULT to-gold-light hover:from-gold-dark hover:to-gold-DEFAULT text-gold-foreground px-12 py-4 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-0.5 border-0 font-medium text-xl"
+                  className="group bg-gold-gradient hover:bg-gold-dark-gradient text-gold-foreground px-12 py-4 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-0.5 border-0 font-medium text-xl"
                 >
                   <span className="flex items-center">
                     {t("Get Started")} 
