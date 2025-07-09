@@ -203,3 +203,13 @@
   opacity: 1;
   transform: translateY(0);
 }
+
+/* Enterprise-grade conveyor belt animation */
+@keyframes slideInfinite {
+  from {
+    transform: translateX(-50%);
+  }
+  to {
+    transform: translateX(0%);
+  }
+}
