@@ -1,19 +1,19 @@
 
 @layer utilities {
   .gold-text {
-    @apply text-[#D4AF37];
+    @apply text-gold-DEFAULT;
   }
 
   .gold-border {
-    @apply border-[#D4AF37];
+    @apply border-gold-DEFAULT;
   }
   
   .gold-gradient {
-    @apply bg-gradient-to-r from-[#D4AF37] to-[#F2D675];
+    @apply bg-gradient-to-r from-gold-DEFAULT to-gold-light;
   }
   
   .gold-gradient-text {
-    @apply text-transparent bg-clip-text bg-gradient-to-r from-[#D4AF37] to-[#F2D675];
+    @apply text-transparent bg-clip-text bg-gradient-to-r from-gold-DEFAULT to-gold-light;
   }
   
   .backdrop-blur {
@@ -27,17 +27,17 @@
   
   /* Golden glassmorphism effect */
   .gold-glass {
-    @apply backdrop-blur-md bg-[#D4AF37]/5 border border-[#D4AF37]/20 shadow-lg;
+    @apply backdrop-blur-md bg-gold-DEFAULT/5 border border-gold-DEFAULT/20 shadow-lg;
   }
   
   /* Enhanced button styles */
   .btn-glow:hover {
-    box-shadow: 0 0 20px 5px rgba(212, 175, 55, 0.3);
+    box-shadow: 0 0 20px 5px hsl(var(--gold) / 0.3);
   }
   
   /* Text underline animation */
   .hover-underline {
-    @apply relative after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 after:bg-[#D4AF37] hover:after:w-full after:transition-all after:duration-300;
+    @apply relative after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 after:bg-gold-DEFAULT hover:after:w-full after:transition-all after:duration-300;
   }
   
   /* Theme-specific utilities */

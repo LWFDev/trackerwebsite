@@ -80,15 +80,15 @@ button:hover {
 }
 
 .dark-card:hover {
-  border-color: #D4AF37;
+  border-color: hsl(var(--gold));
 }
 
 .gold-text {
-  color: #D4AF37;
+  color: hsl(var(--gold));
 }
 
 .gold-gradient {
-  background: linear-gradient(to right, #D4AF37, #F0D875);
+  background: linear-gradient(to right, hsl(var(--gold)), hsl(var(--gold-light)));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -105,7 +105,7 @@ button:hover {
 
 .dark-button:hover {
   background-color: #3f3f46;
-  border-color: #D4AF37;
+  border-color: hsl(var(--gold));
 }
 
 .dark-input {
@@ -115,6 +115,6 @@ button:hover {
 }
 
 .dark-input:focus {
-  border-color: #D4AF37;
+  border-color: hsl(var(--gold));
   outline: none;
 }

@@ -6,7 +6,7 @@ const BlogHero = () => {
     <section className="py-20 bg-zinc-900 text-white relative overflow-hidden flex items-center min-h-[30vh]">
       {/* Background gradient */}
       <div className="absolute top-0 left-0 w-full h-full overflow-hidden">
-        <div className="absolute w-[800px] h-[800px] rounded-full bg-[#D4AF37]/5 blur-[150px] top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"></div>
+        <div className="absolute w-[800px] h-[800px] rounded-full bg-gold-DEFAULT/5 blur-[150px] top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"></div>
       </div>
 
       <div className="container mx-auto px-4 relative z-10 text-center">

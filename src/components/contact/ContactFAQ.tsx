@@ -6,7 +6,7 @@ const ContactFAQ = () => {
     <div className="py-16 bg-zinc-900">
       <div className="container mx-auto px-4">
         <h2 className="text-3xl font-bold mb-12 text-center">
-          Frequently Asked <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#D4AF37] to-[#F2D675]">Questions</span>
+          Frequently Asked <span className="text-transparent bg-clip-text bg-gradient-to-r from-gold-DEFAULT to-gold-light">Questions</span>
         </h2>
         
         <div className="max-w-4xl mx-auto">

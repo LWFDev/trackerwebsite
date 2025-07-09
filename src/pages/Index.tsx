@@ -18,18 +18,18 @@ const FloatingIcons = () => {
   if (isMobile) {
     return (
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute top-[20%] left-[10%] w-10 h-10 rounded-lg border border-[#D4AF37]/30 opacity-50 rotate-12 shadow-lg shadow-[#D4AF37]/20"></div>
+        <div className="absolute top-[20%] left-[10%] w-10 h-10 rounded-lg border border-gold-DEFAULT/30 opacity-50 rotate-12 shadow-lg shadow-gold-DEFAULT/20"></div>
         <div className="absolute top-[60%] right-[10%] w-16 h-16 rounded-full border border-emerald-400/20 opacity-30 -rotate-12"></div>
-        <div className="absolute top-[40%] right-[5%] w-12 h-12 rounded-md border border-[#D4AF37]/20 opacity-40 rotate-45"></div>
+        <div className="absolute top-[40%] right-[5%] w-12 h-12 rounded-md border border-gold-DEFAULT/20 opacity-40 rotate-45"></div>
       </div>
     );
   }
   return (
     <div className="absolute inset-0 overflow-hidden pointer-events-none">
-      <div className="absolute top-[20%] left-[10%] w-16 h-16 rounded-lg border border-[#D4AF37]/40 opacity-60 rotate-12 shadow-xl shadow-[#D4AF37]/30"></div>
+      <div className="absolute top-[20%] left-[10%] w-16 h-16 rounded-lg border border-gold-DEFAULT/40 opacity-60 rotate-12 shadow-xl shadow-gold-DEFAULT/30"></div>
       <div className="absolute top-[60%] right-[5%] w-24 h-24 rounded-full border border-emerald-400/30 opacity-40 -rotate-12"></div>
-      <div className="absolute top-[40%] left-[80%] w-20 h-20 rounded-md border border-[#D4AF37]/35 opacity-50 rotate-45 shadow-lg shadow-[#D4AF37]/25"></div>
-      <div className="absolute top-[15%] right-[20%] w-14 h-14 rounded-full border-2 border-[#D4AF37]/25 opacity-45 animate-spin-slow"></div>
+      <div className="absolute top-[40%] left-[80%] w-20 h-20 rounded-md border border-gold-DEFAULT/35 opacity-50 rotate-45 shadow-lg shadow-gold-DEFAULT/25"></div>
+      <div className="absolute top-[15%] right-[20%] w-14 h-14 rounded-full border-2 border-gold-DEFAULT/25 opacity-45 animate-spin-slow"></div>
       <div className="absolute bottom-[20%] left-[15%] w-18 h-18 rounded-lg border border-emerald-500/25 opacity-35 rotate-12"></div>
     </div>
   );
