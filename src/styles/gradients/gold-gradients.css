@@ -1,0 +1,50 @@
+@layer utilities {
+  /* GOLD GRADIENTS */
+  
+  /* Background Gradients */
+  .bg-gold-gradient {
+    background: linear-gradient(to right, hsl(var(--gold)), hsl(var(--gold-light)));
+  }
+  
+  .bg-gold-gradient-vertical {
+    background: linear-gradient(to bottom, hsl(var(--gold)), hsl(var(--gold-light)));
+  }
+  
+  .bg-gold-gradient-radial {
+    background: radial-gradient(circle, hsl(var(--gold)), hsl(var(--gold-light)));
+  }
+  
+  /* Button Gradient Hover States */
+  .hover\:bg-gold-dark-gradient:hover {
+    background: linear-gradient(to right, hsl(var(--gold-dark)), hsl(var(--gold)));
+  }
+  
+  /* Text Gradients */
+  .text-gold-gradient {
+    background: linear-gradient(to right, hsl(var(--gold)), hsl(var(--gold-light)));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  
+  .text-gold-gradient-animated {
+    background: linear-gradient(to right, hsl(var(--gold)), hsl(var(--gold-light)), hsl(var(--gold)));
+    background-size: 200% 100%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: shimmer 3s ease-in-out infinite;
+  }
+  
+  /* Legacy Support */
+  .gold-gradient {
+    background: linear-gradient(to right, hsl(var(--gold)), hsl(var(--gold-light)));
+  }
+  
+  .gold-gradient-text {
+    background: linear-gradient(to right, hsl(var(--gold)), hsl(var(--gold-light)));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+}

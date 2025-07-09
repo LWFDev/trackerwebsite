@@ -1,0 +1,27 @@
+@layer utilities {
+  /* THEME-SPECIFIC UTILITIES */
+  
+  .theme-surface {
+    @apply bg-white dark:bg-zinc-900;
+  }
+  
+  .theme-card {
+    @apply bg-gray-50 dark:bg-zinc-900/50;
+  }
+  
+  .theme-border {
+    @apply border-gray-200 dark:border-zinc-800;
+  }
+  
+  .theme-text {
+    @apply text-gray-900 dark:text-white;
+  }
+  
+  .theme-text-secondary {
+    @apply text-gray-600 dark:text-gray-400;
+  }
+  
+  .theme-hover {
+    @apply hover:bg-gray-100 dark:hover:bg-zinc-800;
+  }
+}

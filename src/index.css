@@ -3,4 +3,12 @@
 @import './styles/theme-variables.css';
 @import './styles/scrollbar.css';
 @import './styles/animations.css';
-@import './styles/utilities.css';
+
+/* Organized CSS modules */
+@import './styles/colors/gold.css';
+@import './styles/gradients/gold-gradients.css';
+@import './styles/effects/shadows.css';
+@import './styles/effects/glass-effects.css';
+@import './styles/components/hover-effects.css';
+@import './styles/theme/theme-utilities.css';
+@import './styles/components/cards.css';

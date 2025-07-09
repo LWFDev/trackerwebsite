@@ -1,0 +1,178 @@
+@layer utilities {
+  /* CENTRALIZED GOLD COLOR SYSTEM */
+  
+  /* Text Colors */
+  .text-gold {
+    color: hsl(var(--gold));
+  }
+  
+  .text-gold-light {
+    color: hsl(var(--gold-light));
+  }
+  
+  .text-gold-dark {
+    color: hsl(var(--gold-dark));
+  }
+  
+  .text-gold-foreground {
+    color: hsl(var(--gold-foreground));
+  }
+  
+  /* Background Colors */
+  .bg-gold {
+    background-color: hsl(var(--gold));
+  }
+  
+  .bg-gold-light {
+    background-color: hsl(var(--gold-light));
+  }
+  
+  .bg-gold-dark {
+    background-color: hsl(var(--gold-dark));
+  }
+  
+  .bg-gold-foreground {
+    background-color: hsl(var(--gold-foreground));
+  }
+  
+  /* Background with Opacity */
+  .bg-gold-opacity-0 {
+    background-color: hsl(var(--gold) / 0);
+  }
+  
+  .bg-gold-opacity-2 {
+    background-color: hsl(var(--gold) / 0.02);
+  }
+  
+  .bg-gold-opacity-5 {
+    background-color: hsl(var(--gold) / 0.05);
+  }
+  
+  .bg-gold-opacity-6 {
+    background-color: hsl(var(--gold) / 0.06);
+  }
+  
+  .bg-gold-opacity-8 {
+    background-color: hsl(var(--gold) / 0.08);
+  }
+  
+  .bg-gold-opacity-10 {
+    background-color: hsl(var(--gold) / 0.1);
+  }
+  
+  .bg-gold-opacity-15 {
+    background-color: hsl(var(--gold) / 0.15);
+  }
+  
+  .bg-gold-opacity-20 {
+    background-color: hsl(var(--gold) / 0.2);
+  }
+  
+  .bg-gold-opacity-30 {
+    background-color: hsl(var(--gold) / 0.3);
+  }
+  
+  .bg-gold-light-opacity-5 {
+    background-color: hsl(var(--gold-light) / 0.05);
+  }
+  
+  .bg-gold-light-opacity-20 {
+    background-color: hsl(var(--gold-light) / 0.2);
+  }
+  
+  .bg-gold-light-opacity-30 {
+    background-color: hsl(var(--gold-light) / 0.3);
+  }
+  
+  .bg-gold-light-opacity-40 {
+    background-color: hsl(var(--gold-light) / 0.4);
+  }
+  
+  .bg-gold-light-opacity-60 {
+    background-color: hsl(var(--gold-light) / 0.6);
+  }
+  
+  /* Border Colors */
+  .border-gold {
+    border-color: hsl(var(--gold));
+  }
+  
+  .border-gold-light {
+    border-color: hsl(var(--gold-light));
+  }
+  
+  .border-gold-opacity-15 {
+    border-color: hsl(var(--gold) / 0.15);
+  }
+  
+  .border-gold-opacity-20 {
+    border-color: hsl(var(--gold) / 0.2);
+  }
+  
+  .border-gold-opacity-30 {
+    border-color: hsl(var(--gold) / 0.3);
+  }
+  
+  .border-gold-opacity-40 {
+    border-color: hsl(var(--gold) / 0.4);
+  }
+  
+  .border-gold-opacity-50 {
+    border-color: hsl(var(--gold) / 0.5);
+  }
+  
+  .border-gold-light-opacity-20 {
+    border-color: hsl(var(--gold-light) / 0.2);
+  }
+  
+  .border-gold-light-opacity-50 {
+    border-color: hsl(var(--gold-light) / 0.5);
+  }
+  
+  /* Ring/Outline Colors */
+  .ring-gold {
+    ring-color: hsl(var(--gold));
+  }
+  
+  .ring-gold-opacity-50 {
+    ring-color: hsl(var(--gold) / 0.5);
+  }
+  
+  /* Hover States */
+  .hover\:text-gold:hover {
+    color: hsl(var(--gold));
+  }
+
+  .hover\:bg-gold:hover {
+    background-color: hsl(var(--gold));
+  }
+
+  .hover\:bg-gold-light:hover {
+    background-color: hsl(var(--gold-light));
+  }
+
+  .hover\:bg-gold-dark:hover {
+    background-color: hsl(var(--gold-dark));
+  }
+
+  .hover\:border-gold:hover {
+    border-color: hsl(var(--gold));
+  }
+
+  .hover\:shadow-gold:hover {
+    box-shadow: 0 10px 15px -3px hsl(var(--gold) / 0.1), 0 4px 6px -2px hsl(var(--gold) / 0.05);
+  }
+
+  .hover\:shadow-gold-glow:hover {
+    box-shadow: 0 0 20px 5px hsl(var(--gold) / 0.3);
+  }
+  
+  /* Legacy Support Classes */
+  .gold-text {
+    color: hsl(var(--gold));
+  }
+
+  .gold-border {
+    border-color: hsl(var(--gold));
+  }
+}

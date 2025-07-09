@@ -1,0 +1,21 @@
+@layer utilities {
+  /* HOVER EFFECTS */
+  
+  /* Text underline animation */
+  .hover-underline {
+    position: relative;
+  }
+  .hover-underline::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 2px;
+    width: 0;
+    background: hsl(var(--gold));
+    transition: all 0.3s ease;
+  }
+  .hover-underline:hover::after {
+    width: 100%;
+  }
+}

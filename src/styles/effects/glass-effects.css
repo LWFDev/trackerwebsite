@@ -1,0 +1,25 @@
+@layer utilities {
+  /* GLASSMORPHISM EFFECTS */
+  
+  .backdrop-blur {
+    @apply backdrop-blur-sm bg-black/50;
+  }
+  
+  /* Glassmorphism effect */
+  .glass-morphism {
+    @apply backdrop-blur-md bg-white/5 border border-white/10 shadow-lg;
+  }
+  
+  /* Golden glassmorphism effect */
+  .gold-glass {
+    backdrop-filter: blur(12px);
+    background: hsl(var(--gold) / 0.05);
+    border: 1px solid hsl(var(--gold) / 0.2);
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  }
+  
+  /* Enhanced button styles */
+  .btn-glow:hover {
+    box-shadow: 0 0 20px 5px hsl(var(--gold) / 0.3);
+  }
+}
