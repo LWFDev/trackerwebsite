@@ -39,7 +39,7 @@ const TrackerProvides = () => {
             </div>
             
             <div className="space-y-4">
-              <Card className="border-gold/30 bg-gold/10 shadow-sm">
+              <Card className="border-gold-opacity-30 bg-gold-opacity-10 shadow-sm">
                 <CardContent className="p-6">
                   <p className="text-lg leading-relaxed text-gray-200">
                     Tracker provides confidence and clarity – for today's requirements as well as supporting the strategic needs and planning for tomorrow. In a fast-paced and changing world, Tracker also allows key people to have instant and secure access to business intelligence and data from anywhere there is an internet connection.

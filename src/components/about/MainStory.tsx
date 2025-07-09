@@ -27,7 +27,7 @@ const MainStory = () => {
                   </CardContent>
                 </Card>
                 
-                <div className="bg-gold/10 p-6 rounded-xl border-l-4 border-gold">
+                <div className="bg-gold-opacity-10 p-6 rounded-xl border-l-4 border-gold">
                   <p className="text-gray-200 font-medium">
                     While Tracker is able to support any physical product-based business, we believe in doing what we are best at and love doing. This led to us focusing on the <span className="text-emerald-400 font-semibold bg-emerald-900/30 px-2 py-1 rounded">garment and decoration industry</span> - where our roots were built.
                   </p>

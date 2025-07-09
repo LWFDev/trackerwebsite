@@ -56,6 +56,10 @@
     background-color: hsl(var(--gold) / 0.06);
   }
   
+  .bg-gold-opacity-6 {
+    background-color: hsl(var(--gold) / 0.06);
+  }
+  
   .bg-gold-opacity-8 {
     background-color: hsl(var(--gold) / 0.08);
   }
@@ -150,6 +154,10 @@
     border-color: hsl(var(--gold-light) / 0.5);
   }
   
+  .border-gold-opacity-50 {
+    border-color: hsl(var(--gold) / 0.5);
+  }
+  
   .border-gold-opacity-60 {
     border-color: hsl(var(--gold) / 0.6);
   }
@@ -165,6 +173,69 @@
   
   .ring-gold-opacity-20 {
     ring-color: hsl(var(--gold) / 0.2);
+  }
+  
+  /* Focus States */
+  .focus\:ring-gold:focus {
+    ring-color: hsl(var(--gold));
+  }
+  
+  .focus\:border-gold:focus {
+    border-color: hsl(var(--gold));
+  }
+  
+  .focus\:text-gold:focus {
+    color: hsl(var(--gold));
+  }
+  
+  .focus-visible\:ring-gold:focus-visible {
+    ring-color: hsl(var(--gold));
+  }
+  
+  .focus-visible\:border-gold:focus-visible {
+    border-color: hsl(var(--gold));
+  }
+  
+  /* Data State Classes */
+  .data-\[state\=active\]\:border-gold[data-state="active"] {
+    border-color: hsl(var(--gold));
+  }
+  
+  .data-\[state\=active\]\:text-gold[data-state="active"] {
+    color: hsl(var(--gold));
+  }
+  
+  .data-\[state\=active\]\:bg-zinc-700[data-state="active"] {
+    background-color: rgb(63 63 70);
+  }
+  
+  .data-\[state\=checked\]\:bg-gold[data-state="checked"] {
+    background-color: hsl(var(--gold));
+  }
+  
+  .data-\[state\=open\]\:text-gold[data-state="open"] {
+    color: hsl(var(--gold));
+  }
+  
+  .data-\[active\]\:text-gold[data-active] {
+    color: hsl(var(--gold));
+  }
+  
+  /* Text Colors with Opacity */
+  .text-gold-opacity-10 {
+    color: hsl(var(--gold) / 0.1);
+  }
+  
+  .text-gold-opacity-20 {
+    color: hsl(var(--gold) / 0.2);
+  }
+  
+  .text-gold-opacity-30 {
+    color: hsl(var(--gold) / 0.3);
+  }
+  
+  .text-gold-opacity-50 {
+    color: hsl(var(--gold) / 0.5);
   }
   
   /* Hover States */

@@ -70,7 +70,7 @@ const Industries = () => {
   return <div className="min-h-screen theme-background theme-text transition-colors duration-300">
       {/* Hero Section */}
       <section className="relative pt-24 pb-16 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-gold/5 via-transparent to-emerald-500/5"></div>
+        <div className="absolute inset-0 bg-gradient-to-br from-gold-opacity-5 via-transparent to-emerald-500/5"></div>
         <div className="container mx-auto px-4 relative z-10 py-[64px]">
           <motion.div className="text-center max-w-4xl mx-auto" initial={{
           opacity: 0,

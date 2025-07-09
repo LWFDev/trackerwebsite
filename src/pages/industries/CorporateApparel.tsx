@@ -118,7 +118,7 @@ const CorporateApparel = () => {
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 viewport={{ once: true }}
               >
-                <Card className="h-full theme-surface theme-border hover:border-gold/50 transition-all duration-300">
+                <Card className="h-full theme-surface theme-border hover:border-gold-opacity-50 transition-all duration-300">
                   <CardHeader>
                     <div className="flex items-center gap-3 mb-2">
                       {solution.icon}

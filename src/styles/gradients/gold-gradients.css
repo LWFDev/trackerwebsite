@@ -52,6 +52,14 @@
   .to-gold-opacity-10 {
     --tw-gradient-to: hsl(var(--gold) / 0.1);
   }
+  
+  .from-gold-light-opacity-10 {
+    --tw-gradient-from: hsl(var(--gold-light) / 0.1);
+  }
+  
+  .to-gold-light-opacity-10 {
+    --tw-gradient-to: hsl(var(--gold-light) / 0.1);
+  }
 
   /* Legacy Support */
   .gold-gradient {

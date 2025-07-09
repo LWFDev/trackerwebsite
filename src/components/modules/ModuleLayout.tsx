@@ -267,12 +267,12 @@ const ModuleLayout = ({
                 <div className="relative">
                   <Dialog open={isLightboxOpen} onOpenChange={setIsLightboxOpen}>
                     <DialogTrigger asChild>
-                      <div className="relative bg-zinc-800/50 p-4 rounded-lg shadow-lg border border-zinc-700 cursor-pointer group transition-all duration-300 hover:scale-105 hover:shadow-xl hover:border-gold/50">
+                      <div className="relative bg-zinc-800/50 p-4 rounded-lg shadow-lg border border-zinc-700 cursor-pointer group transition-all duration-300 hover:scale-105 hover:shadow-xl hover:border-gold-opacity-50">
                         <img src={heroImage} alt={title} className="w-full h-auto rounded max-h-[300px] object-contain transition-all duration-300 group-hover:brightness-110" />
                         
                         {/* Hover overlay with zoom icon */}
                         <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-all duration-300 rounded flex items-center justify-center opacity-0 group-hover:opacity-100">
-                          <div className="bg-gold/90 backdrop-blur-sm px-3 py-2 rounded-lg flex items-center gap-2 text-gold-foreground font-medium transform scale-90 group-hover:scale-100 transition-transform duration-300">
+                          <div className="bg-gold-opacity-90 backdrop-blur-sm px-3 py-2 rounded-lg flex items-center gap-2 text-gold-foreground font-medium transform scale-90 group-hover:scale-100 transition-transform duration-300">
                             <ZoomIn className="h-4 w-4" />
                             <span className="text-sm">View Fullscreen</span>
                           </div>
@@ -307,7 +307,7 @@ const ModuleLayout = ({
                   
                   {/* Floating Callout Boxes - RESTORED */}
                   {heroImageCallouts && heroImageCallouts.map((callout, index) => 
-                    <div key={index} className="absolute bg-zinc-900/90 backdrop-blur-sm px-3 py-2 rounded-lg text-xs font-medium shadow-lg z-30 animate-float border border-gold/30 text-white pointer-events-none" style={{
+                    <div key={index} className="absolute bg-zinc-900/90 backdrop-blur-sm px-3 py-2 rounded-lg text-xs font-medium shadow-lg z-30 animate-float border border-gold-opacity-30 text-white pointer-events-none" style={{
                       ...callout.position,
                       animationDelay: callout.delay || '0s'
                     }}>
@@ -386,7 +386,7 @@ const ModuleLayout = ({
               <div className="flex justify-center">
                 <div className="relative group">
                   {/* Glowing border effect */}
-                  <div className="absolute -inset-1 bg-gradient-to-r from-gold/50 to-blue-500/50 rounded-lg blur opacity-25 group-hover:opacity-40 transition duration-300"></div>
+                  <div className="absolute -inset-1 bg-gradient-to-r from-gold-opacity-50 to-blue-500/50 rounded-lg blur opacity-25 group-hover:opacity-40 transition duration-300"></div>
                   
                   <div className="relative bg-zinc-800/50 p-4 rounded-lg shadow-2xl border border-zinc-700/50 backdrop-blur-sm">
                     <img src="/lovable-uploads/bd71cf26-6d3f-4aa3-a4e0-d2aa9db5670f.png" alt="Inventory tracking in action" className="w-full max-h-[525px] rounded-lg shadow-lg border border-zinc-800 object-contain transform transition-transform duration-300 group-hover:scale-105" />

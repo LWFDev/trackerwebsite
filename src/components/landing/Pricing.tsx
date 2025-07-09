@@ -31,7 +31,7 @@ const PricingCard = ({
   };
 
   return (
-    <div className={`bg-zinc-900 rounded-lg border ${popular ? 'border-gold ring-2 ring-gold/20' : 'border-zinc-800'} shadow-sm p-6 relative transition-all duration-300 hover:-translate-y-1 hover:shadow-xl ${popular ? 'hover:shadow-gold/30' : 'hover:shadow-zinc-800/30'}`}>
+    <div className={`bg-zinc-900 rounded-lg border ${popular ? 'border-gold ring-2 ring-gold-opacity-20' : 'border-zinc-800'} shadow-sm p-6 relative transition-all duration-300 hover:-translate-y-1 hover:shadow-xl ${popular ? 'hover:shadow-gold-opacity-30' : 'hover:shadow-zinc-800/30'}`}>
       {popular && (
         <div className="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
           <span className="bg-gradient-to-r from-gold to-gold-light text-gold-foreground text-xs font-semibold px-4 py-1 rounded-full">
@@ -68,7 +68,7 @@ const Pricing = () => {
     <section id="pricing" className="py-20 bg-zinc-900 relative overflow-hidden">
       {/* Background elements */}
       <div className="absolute top-0 left-0 w-full h-full overflow-hidden z-0">
-        <div className="absolute w-[600px] h-[600px] rounded-full bg-gradient-to-r from-gold/5 to-gold-light/10 blur-[120px] top-1/2 -right-1/4 transform -translate-y-1/2"></div>
+        <div className="absolute w-[600px] h-[600px] rounded-full bg-gradient-to-r from-gold-opacity-5 to-gold-light-opacity-10 blur-[120px] top-1/2 -right-1/4 transform -translate-y-1/2"></div>
         <div className="absolute w-[600px] h-[600px] rounded-full bg-zinc-800/30 blur-[100px] bottom-0 -left-1/4"></div>
       </div>
       
