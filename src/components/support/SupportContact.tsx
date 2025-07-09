@@ -56,35 +56,6 @@ const SupportContact = () => {
           </div>
         </ScrollReveal>
 
-        <ScrollReveal direction="up" distance="30px" duration={600} delay={400}>
-          <div className="mt-16 max-w-4xl mx-auto">
-            <Card className="bg-zinc-800/30 border-zinc-700/50">
-              <CardContent className="p-8">
-                <h3 className="text-2xl font-bold text-white mb-4 text-center">Response Time Expectations</h3>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                  <div>
-                    <h4 className="text-lg font-semibold text-gold mb-3">Standard Support</h4>
-                    <ul className="space-y-2 text-gray-300">
-                      <li>• Low Priority: Within 24 hours</li>
-                      <li>• Medium Priority: Within 8 hours</li>
-                      <li>• High Priority: Within 4 hours</li>
-                      <li>• Urgent: Within 2 hours</li>
-                    </ul>
-                  </div>
-                  <div>
-                    <h4 className="text-lg font-semibold text-gold mb-3">Enterprise Support</h4>
-                    <ul className="space-y-2 text-gray-300">
-                      <li>• Low Priority: Within 12 hours</li>
-                      <li>• Medium Priority: Within 4 hours</li>
-                      <li>• High Priority: Within 2 hours</li>
-                      <li>• Urgent: Within 1 hour</li>
-                    </ul>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
-          </div>
-        </ScrollReveal>
       </div>
     </section>;
 };
