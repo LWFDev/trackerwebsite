@@ -62,7 +62,7 @@ const StatsGrid = () => {
   const { t } = useLocalization();
   
   return (
-    <div className={`mt-12 grid grid-cols-2 gap-4 sm:gap-8 animate-fade-in ${isMobile ? 'mx-auto max-w-md' : ''}`} style={{
+    <div className={`mt-12 flex gap-3 animate-fade-in ${isMobile ? 'flex-col max-w-xs' : 'flex-row'}`} style={{
       animationDelay: '0.4s'
     }}>
       <StatCard 
@@ -84,11 +84,9 @@ interface StatCardProps {
 
 const StatCard = ({ number, label }: StatCardProps) => {
   return (
-    <div className="relative group">
-      <div className="bg-white/30 dark:bg-slate-900/30 backdrop-blur-sm p-4 rounded-lg border border-yellow-400/50 dark:border-yellow-500/50 transition-all duration-300 shadow-sm">
-        <div className="text-2xl md:text-3xl font-bold mb-1 text-slate-800 dark:text-slate-200">{number}</div>
-        <div className="text-slate-600 dark:text-slate-400 text-xs sm:text-sm font-medium">{label}</div>
-      </div>
+    <div className="bg-white/30 dark:bg-slate-900/30 backdrop-blur-sm px-4 py-3 rounded-lg border border-yellow-400/50 dark:border-yellow-500/50 transition-all duration-300 shadow-sm min-w-fit">
+      <div className="text-xl md:text-2xl font-bold mb-1 text-slate-800 dark:text-slate-200 whitespace-nowrap">{number}</div>
+      <div className="text-slate-600 dark:text-slate-400 text-xs font-medium whitespace-nowrap">{label}</div>
     </div>
   );
 };
