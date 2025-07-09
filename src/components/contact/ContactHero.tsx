@@ -11,8 +11,11 @@ const ContactHero = () => {
         <h1 className="text-4xl md:text-5xl font-bold mb-4">
           Get in <span className="text-transparent bg-clip-text bg-gradient-to-r from-gold to-gold-light">Touch</span>
         </h1>
-        <p className="text-xl text-gray-300 max-w-3xl mx-auto mb-10">
+        <p className="text-xl text-gray-300 max-w-3xl mx-auto mb-4">
           We're here to help with any questions about our platform
+        </p>
+        <p className="text-sm text-gray-400 max-w-3xl mx-auto mb-10">
+          Exclusive US implementation partner - <a href="https://www.mebuisworks.com" target="_blank" rel="noopener noreferrer" className="text-gold hover:text-gold-light transition-colors">MebuisWorks</a>
         </p>
       </div>
     </div>
