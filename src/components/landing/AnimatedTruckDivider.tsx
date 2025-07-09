@@ -1,5 +1,5 @@
 
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useRef } from 'react';
 import { Truck } from 'lucide-react';
 import { useIsMobile } from '@/hooks/use-mobile';
 
@@ -8,114 +8,81 @@ interface AnimatedTruckDividerProps {
 }
 
 const AnimatedTruckDivider = ({ className = "" }: AnimatedTruckDividerProps) => {
-  const [trucksLeft, setTrucksLeft] = useState<number[]>([0]);
-  const [trucksRight, setTrucksRight] = useState<number[]>([0]);
   const truckContainerRef = useRef<HTMLDivElement>(null);
-  const animationRefs = useRef<Animation[]>([]);
+  const timeoutRefs = useRef<NodeJS.Timeout[]>([]);
   const isMobile = useIsMobile();
 
   useEffect(() => {
-    const animateTrucks = () => {
-      if (!truckContainerRef.current) return;
-      
-      // Clear previous animations
-      animationRefs.current.forEach(animation => {
-        if (animation) animation.cancel();
-      });
-      
-      animationRefs.current = [];
-      
-      // Get all truck elements
-      const leftTruckElements = truckContainerRef.current.querySelectorAll('.truck-left');
-      const rightTruckElements = truckContainerRef.current.querySelectorAll('.truck-right');
-      
-      // Animate left-to-right trucks
-      leftTruckElements.forEach((element, index) => {
-        const minDelay = 400;
-        const randomAdditionalDelay = Math.random() * 600;
-        const startDelay = index * minDelay + randomAdditionalDelay;
-        
-        const startPosition = isMobile ? -40 - (Math.random() * 60) : -60 - (Math.random() * 120);
-        const endPosition = isMobile ? window.innerWidth + 40 : window.innerWidth + 60;
-        const duration = isMobile ? 6000 + (Math.random() * 2000) : 8000 + (Math.random() * 3000);
-        
-        setTimeout(() => {
-          const animation = (element as HTMLElement).animate(
-            [
-              { transform: `translateX(${startPosition}px) translateY(-50%)` },
-              { transform: `translateX(${endPosition}px) translateY(-50%)` }
-            ],
-            {
-              duration,
-              iterations: 1,
-              easing: 'linear',
-              fill: 'forwards'
-            }
-          );
-          
-          animationRefs.current.push(animation);
-          
-          if (index === 0) {
-            animation.onfinish = () => {
-              setTrucksLeft(prevTrucks => {
-                const maxTrucks = isMobile ? 4 : 6;
-                if (prevTrucks.length >= maxTrucks) return prevTrucks;
-                return [...prevTrucks, prevTrucks.length];
-              });
-              animateTrucks();
-            };
-          }
-        }, startDelay);
-      });
+    if (!truckContainerRef.current) return;
 
-      // Animate right-to-left trucks
-      rightTruckElements.forEach((element, index) => {
-        const minDelay = 600; // Offset from left trucks
-        const randomAdditionalDelay = Math.random() * 800;
-        const startDelay = index * minDelay + randomAdditionalDelay;
-        
-        const startPosition = isMobile ? window.innerWidth + 40 + (Math.random() * 60) : window.innerWidth + 60 + (Math.random() * 120);
-        const endPosition = isMobile ? -40 : -60;
-        const duration = isMobile ? 6000 + (Math.random() * 2000) : 8000 + (Math.random() * 3000);
-        
-        setTimeout(() => {
-          const animation = (element as HTMLElement).animate(
-            [
-              { transform: `translateX(${startPosition}px) translateY(-50%) scaleX(-1)` },
-              { transform: `translateX(${endPosition}px) translateY(-50%) scaleX(-1)` }
-            ],
-            {
-              duration,
-              iterations: 1,
-              easing: 'linear',
-              fill: 'forwards'
-            }
-          );
-          
-          animationRefs.current.push(animation);
-          
-          if (index === 0) {
-            animation.onfinish = () => {
-              setTrucksRight(prevTrucks => {
-                const maxTrucks = isMobile ? 3 : 5;
-                if (prevTrucks.length >= maxTrucks) return prevTrucks;
-                return [...prevTrucks, prevTrucks.length];
-              });
-              animateTrucks();
-            };
-          }
-        }, startDelay);
-      });
+    const createTruck = (direction: 'left' | 'right') => {
+      const truckElement = document.createElement('div');
+      truckElement.className = `absolute top-1/2 transform -translate-y-1/2 truck-${direction}`;
+      truckElement.style.filter = 'drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3))';
+      
+      const truckIcon = document.createElement('div');
+      const truckSize = isMobile ? 24 : 36;
+      truckIcon.innerHTML = `<svg width="${truckSize}" height="${truckSize}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-gold-light"><path d="M14 18V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v11a1 1 0 0 0 1 1h2"/><path d="M15 18H9"/><path d="M19 18h2a1 1 0 0 0 1-1v-3.65a1 1 0 0 0-.22-.624l-3.48-4.35A1 1 0 0 0 17.52 8H14"/><circle cx="17" cy="18" r="2"/><circle cx="7" cy="18" r="2"/></svg>`;
+      
+      truckElement.appendChild(truckIcon);
+      truckContainerRef.current?.appendChild(truckElement);
+
+      const startPosition = direction === 'left' 
+        ? (isMobile ? -60 - (Math.random() * 40) : -80 - (Math.random() * 60))
+        : (isMobile ? window.innerWidth + 60 + (Math.random() * 40) : window.innerWidth + 80 + (Math.random() * 60));
+      
+      const endPosition = direction === 'left'
+        ? (isMobile ? window.innerWidth + 60 : window.innerWidth + 80)
+        : (isMobile ? -60 : -80);
+      
+      const duration = isMobile ? 6000 + (Math.random() * 3000) : 8000 + (Math.random() * 4000);
+      
+      const scaleX = direction === 'right' ? ' scaleX(-1)' : '';
+      
+      truckElement.style.transform = `translateX(${startPosition}px) translateY(-50%)${scaleX}`;
+      
+      const animation = truckElement.animate(
+        [
+          { transform: `translateX(${startPosition}px) translateY(-50%)${scaleX}` },
+          { transform: `translateX(${endPosition}px) translateY(-50%)${scaleX}` }
+        ],
+        {
+          duration,
+          iterations: 1,
+          easing: 'linear',
+          fill: 'forwards'
+        }
+      );
+      
+      animation.onfinish = () => {
+        truckElement.remove();
+      };
     };
 
-    animateTrucks();
+    const spawnTruck = (direction: 'left' | 'right', baseDelay: number, variance: number) => {
+      const delay = baseDelay + (Math.random() * variance);
+      const timeout = setTimeout(() => {
+        createTruck(direction);
+        spawnTruck(direction, baseDelay, variance);
+      }, delay);
+      
+      timeoutRefs.current.push(timeout);
+    };
+
+    // Start spawning trucks with different intervals
+    spawnTruck('left', 2000, 1500);  // Left-to-right trucks every 2-3.5 seconds
+    spawnTruck('right', 2500, 1800); // Right-to-left trucks every 2.5-4.3 seconds
+    
+    // Spawn initial trucks with slight delay
+    const initialTimeout1 = setTimeout(() => createTruck('left'), 500);
+    const initialTimeout2 = setTimeout(() => createTruck('right'), 1200);
+    timeoutRefs.current.push(initialTimeout1, initialTimeout2);
     
     return () => {
-      animationRefs.current.forEach(animation => {
-        if (animation) animation.cancel();
-      });
+      timeoutRefs.current.forEach(timeout => clearTimeout(timeout));
+      timeoutRefs.current = [];
     };
-  }, [trucksLeft.length, trucksRight.length, isMobile]);
+  }, [isMobile]);
 
   // Adjust truck size for mobile
   const truckSize = isMobile ? 24 : 36;
@@ -128,37 +95,7 @@ const AnimatedTruckDivider = ({ className = "" }: AnimatedTruckDividerProps) => 
       
       {/* Container for animated trucks */}
       <div ref={truckContainerRef} className="relative w-full h-full overflow-hidden">
-        {/* Left-to-right trucks */}
-        {trucksLeft.map((id) => (
-          <div 
-            key={`left-${id}`}
-            className="absolute top-1/2 transform -translate-y-1/2 truck-left"
-            style={{
-              filter: 'drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3))'
-            }}
-          >
-            <Truck 
-              size={truckSize} 
-              className="text-gold-light" 
-            />
-          </div>
-        ))}
-        
-        {/* Right-to-left trucks */}
-        {trucksRight.map((id) => (
-          <div 
-            key={`right-${id}`}
-            className="absolute top-1/2 transform -translate-y-1/2 truck-right"
-            style={{
-              filter: 'drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3))'
-            }}
-          >
-            <Truck 
-              size={truckSize} 
-              className="text-gold-light" 
-            />
-          </div>
-        ))}
+        {/* Trucks are dynamically created and managed via JavaScript */}
       </div>
     </div>
   );
