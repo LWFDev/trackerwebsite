@@ -1,41 +1,18 @@
 
 import React, { useState, useEffect } from "react";
-import PricingCard from "./PricingCard";
+import DetailedPricingCard from "./DetailedPricingCard";
 import { ScrollReveal } from "@/components/ui/scroll-reveal";
 import { Switch } from "@/components/ui/switch";
 import { Check, Sparkles } from "lucide-react";
 import { toast } from "@/components/ui/use-toast";
 import { motion } from "framer-motion";
 import { useLocalization } from "@/contexts/LocalizationContext";
-
-interface PricingPlan {
-  name: string;
-  price: {
-    monthly: string;
-    annually: string;
-  };
-  description: string;
-  features: string[];
-  buttonText: string;
-  highlighted: boolean;
-}
+import { pricingTiers } from "@/data/pricingData";
 
 const PricingPlans = () => {
   const { locale, t } = useLocalization();
   const [billingCycle, setBillingCycle] = useState<'monthly' | 'annually'>('annually');
   const [animateSwitch, setAnimateSwitch] = useState(false);
-  
-  // Currency conversion rate (USD to GBP)
-  const USD_TO_GBP_RATE = 0.79;
-  
-  const convertPrice = (usdPrice: string) => {
-    if (usdPrice === "Custom") return usdPrice;
-    
-    const numericPrice = parseInt(usdPrice.replace('$', '').replace(',', ''));
-    const gbpPrice = Math.round(numericPrice * USD_TO_GBP_RATE);
-    
-    return locale === 'UK' ? `£${gbpPrice.toLocaleString()}` : usdPrice;
-  };
   
   // Add pulse animation effect to pricing toggle periodically
   useEffect(() => {
@@ -57,65 +34,6 @@ const PricingPlans = () => {
     });
   };
 
-  const pricingPlans: PricingPlan[] = [{
-    name: t("Starter"),
-    price: {
-      monthly: "$1,099",
-      annually: "$899",
-    },
-    description: t("For small businesses getting started"),
-    features: [
-      t("Up to 10 users"), 
-      t("5GB storage"), 
-      t("Standard report generation"), 
-      t("Email support"), 
-      t("Basic analytics dashboard"), 
-      t("Standard API access"), 
-      t("Community support")
-    ],
-    buttonText: t("Get Started"),
-    highlighted: false
-  }, {
-    name: t("Professional"),
-    price: {
-      monthly: "$1,899",
-      annually: "$1,499",
-    },
-    description: t("For growing businesses that need more features"),
-    features: [
-      t("Up to 50 users"), 
-      t("50GB storage"), 
-      t("Advanced report generation"), 
-      t("Priority email & chat support"), 
-      t("Custom reporting dashboards"), 
-      t("White-label options"), 
-      t("Full integration capabilities"), 
-      t("Custom workflow automations"), 
-      t("Advanced API access")
-    ],
-    buttonText: t("Get Started"),
-    highlighted: true
-  }, {
-    name: t("Enterprise"),
-    price: {
-      monthly: "Custom",
-      annually: "Custom",
-    },
-    description: t("For large organizations with advanced needs"),
-    features: [
-      t("Unlimited users"), 
-      t("Unlimited storage"), 
-      t("Advanced report generation"), 
-      t("24/7 priority support"), 
-      t("Custom analytics dashboards"), 
-      t("Dedicated account manager"), 
-      t("SLA guarantees"), 
-      t("Advanced security features"), 
-      t("Custom API integrations")
-    ],
-    buttonText: t("Contact Sales"),
-    highlighted: false
-  }];
 
   // Staggered animation for cards
   const containerVariants = {
@@ -185,13 +103,11 @@ const PricingPlans = () => {
           whileInView="visible"
           viewport={{ once: true, amount: 0.2 }}
         >
-          {pricingPlans.map((plan, index) => (
+          {pricingTiers.map((tier, index) => (
             <motion.div key={index} variants={cardVariants}>
-              <PricingCard 
-                plan={{
-                  ...plan, 
-                  price: convertPrice(plan.price[billingCycle])
-                }} 
+              <DetailedPricingCard 
+                tier={tier}
+                billingCycle={billingCycle}
               />
             </motion.div>
           ))}

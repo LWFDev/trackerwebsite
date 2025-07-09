@@ -1,0 +1,223 @@
+import React, { useState } from "react";
+import { Button } from "@/components/ui/button";
+import { Badge } from "@/components/ui/badge";
+import { Card, CardContent, CardHeader } from "@/components/ui/card";
+import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@/components/ui/collapsible";
+import { Check, ChevronDown, Sparkles, Users, Database, Headphones } from "lucide-react";
+import { motion } from "framer-motion";
+import { PricingTier } from "@/data/pricingData";
+import { useLocalization } from "@/contexts/LocalizationContext";
+
+interface DetailedPricingCardProps {
+  tier: PricingTier;
+  billingCycle: 'monthly' | 'annually';
+}
+
+const DetailedPricingCard: React.FC<DetailedPricingCardProps> = ({ tier, billingCycle }) => {
+  const { locale } = useLocalization();
+  const [showDetails, setShowDetails] = useState(false);
+  
+  // Currency conversion
+  const USD_TO_GBP_RATE = 0.79;
+  
+  const formatPrice = (price: number) => {
+    if (price === 0) return "Custom";
+    const finalPrice = billingCycle === 'annually' ? price * 0.8 : price; // 20% discount for annual
+    const convertedPrice = locale === 'UK' ? Math.round(finalPrice * USD_TO_GBP_RATE) : finalPrice;
+    const currency = locale === 'UK' ? '£' : '$';
+    return `${currency}${convertedPrice.toLocaleString()}`;
+  };
+
+  const basePrice = formatPrice(tier.basePrice);
+  const tierPrice = formatPrice(tier.tierPrice);
+  const onboardingFee = formatPrice(tier.onboardingFee);
+
+  return (
+    <motion.div
+      className={`relative h-full ${tier.highlighted ? 'scale-105 z-10' : ''}`}
+      whileHover={{ y: -5 }}
+      transition={{ type: "spring", stiffness: 300, damping: 20 }}
+    >
+      <Card className={`bg-zinc-900 border ${
+        tier.highlighted 
+          ? 'border-yellow-400 ring-2 ring-yellow-400/30 shadow-2xl shadow-yellow-400/20' 
+          : 'border-zinc-800'
+      } h-full overflow-hidden`}>
+        
+        {/* Highlighted badge */}
+        {tier.highlighted && (
+          <div className="absolute -top-3 left-1/2 transform -translate-x-1/2 z-20">
+            <Badge className="bg-gradient-to-r from-yellow-400 to-yellow-500 text-black font-semibold px-4 py-1 shadow-lg">
+              <Sparkles className="w-3 h-3 mr-1" />
+              Most Popular
+            </Badge>
+          </div>
+        )}
+
+        {/* Savings badge */}
+        {tier.savings && (
+          <div className="absolute top-4 right-4 z-20">
+            <Badge className="bg-green-500/20 text-green-400 border border-green-500/30">
+              {tier.savings}
+            </Badge>
+          </div>
+        )}
+
+        <CardHeader className="text-center pb-4">
+          <h3 className="text-2xl font-bold text-white mb-2">{tier.name}</h3>
+          <p className="text-gray-400 text-sm mb-4">{tier.description}</p>
+          
+          {/* Pricing display */}
+          <div className="space-y-2">
+            {tier.basePrice > 0 ? (
+              <>
+                <div className="flex items-center justify-center gap-2 text-sm text-gray-400">
+                  <span>Base:</span>
+                  <span className={tier.highlighted ? 'text-yellow-400' : 'text-white'}>{basePrice}</span>
+                </div>
+                <div className="flex items-center justify-center gap-2">
+                  <span className={`text-4xl font-bold ${tier.highlighted ? 'text-yellow-400' : 'text-white'}`}>
+                    {tierPrice}
+                  </span>
+                  <span className="text-gray-500">/month</span>
+                </div>
+                <div className="text-xs text-gray-500">
+                  + {onboardingFee} setup fee
+                </div>
+                {billingCycle === 'annually' && (
+                  <div className="text-xs text-green-400">
+                    20% discount applied for annual billing
+                  </div>
+                )}
+              </>
+            ) : (
+              <div className="text-4xl font-bold text-white">Custom</div>
+            )}
+          </div>
+        </CardHeader>
+
+        <CardContent className="space-y-6">
+          {/* License overview */}
+          <div className="space-y-3">
+            <h4 className="font-semibold text-white flex items-center gap-2">
+              <Users className="w-4 h-4" />
+              Included Licenses
+            </h4>
+            <div className="grid grid-cols-1 gap-2 text-sm">
+              <div className="flex justify-between">
+                <span className="text-gray-300">Full Users:</span>
+                <span className="text-white">{tier.licenses.full.included}</span>
+              </div>
+              <div className="flex justify-between">
+                <span className="text-gray-300">Department:</span>
+                <span className="text-white">{tier.licenses.department.included}</span>
+              </div>
+              <div className="flex justify-between">
+                <span className="text-gray-300">Station:</span>
+                <span className="text-white">{tier.licenses.station.included}</span>
+              </div>
+            </div>
+          </div>
+
+          {/* Key features */}
+          <div className="space-y-3">
+            <h4 className="font-semibold text-white flex items-center gap-2">
+              <Database className="w-4 h-4" />
+              Key Features
+            </h4>
+            <div className="space-y-2">
+              <div className="flex items-start gap-2">
+                <Check className="w-4 h-4 text-green-400 mt-0.5 shrink-0" />
+                <span className="text-gray-300 text-sm">{tier.features.storage}</span>
+              </div>
+              <div className="flex items-start gap-2">
+                <Check className="w-4 h-4 text-green-400 mt-0.5 shrink-0" />
+                <span className="text-gray-300 text-sm">
+                  {tier.features.modules.length} modules included
+                </span>
+              </div>
+              <div className="flex items-start gap-2">
+                <Headphones className="w-4 h-4 text-blue-400 mt-0.5 shrink-0" />
+                <span className="text-gray-300 text-sm">{tier.features.support[0]}</span>
+              </div>
+            </div>
+          </div>
+
+          {/* Expandable details */}
+          <Collapsible open={showDetails} onOpenChange={setShowDetails}>
+            <CollapsibleTrigger asChild>
+              <Button 
+                variant="ghost" 
+                className="w-full text-gray-400 hover:text-white"
+                size="sm"
+              >
+                <span>View detailed breakdown</span>
+                <ChevronDown className={`w-4 h-4 ml-2 transition-transform ${showDetails ? 'rotate-180' : ''}`} />
+              </Button>
+            </CollapsibleTrigger>
+            
+            <CollapsibleContent className="space-y-4 mt-4">
+              {/* All modules */}
+              <div>
+                <h5 className="font-medium text-white mb-2">Included Modules</h5>
+                <div className="space-y-1">
+                  {tier.features.modules.map((module, idx) => (
+                    <div key={idx} className="flex items-start gap-2">
+                      <Check className="w-3 h-3 text-green-400 mt-1 shrink-0" />
+                      <span className="text-gray-300 text-xs">{module}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              {/* Support & Training */}
+              <div>
+                <h5 className="font-medium text-white mb-2">Support & Training</h5>
+                <div className="space-y-1">
+                  {tier.features.support.concat(tier.features.training).map((item, idx) => (
+                    <div key={idx} className="flex items-start gap-2">
+                      <Check className="w-3 h-3 text-blue-400 mt-1 shrink-0" />
+                      <span className="text-gray-300 text-xs">{item}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              {/* License pricing */}
+              <div>
+                <h5 className="font-medium text-white mb-2">Additional License Pricing</h5>
+                <div className="space-y-1 text-xs">
+                  <div className="flex justify-between">
+                    <span className="text-gray-400">Extra Full Users:</span>
+                    <span className="text-gray-300">{tier.licenses.full.additional}</span>
+                  </div>
+                  <div className="flex justify-between">
+                    <span className="text-gray-400">Extra Department:</span>
+                    <span className="text-gray-300">{tier.licenses.department.additional}</span>
+                  </div>
+                  <div className="flex justify-between">
+                    <span className="text-gray-400">Extra Station:</span>
+                    <span className="text-gray-300">{tier.licenses.station.additional}</span>
+                  </div>
+                </div>
+              </div>
+            </CollapsibleContent>
+          </Collapsible>
+
+          {/* CTA Button */}
+          <Button 
+            className={`w-full ${
+              tier.highlighted 
+                ? 'bg-gradient-to-r from-yellow-400 to-yellow-500 hover:from-yellow-500 hover:to-yellow-600 text-black font-semibold' 
+                : 'bg-zinc-800 hover:bg-zinc-700 text-white'
+            }`}
+          >
+            {tier.name === 'Enterprise' ? 'Contact Sales' : 'Get Started'}
+          </Button>
+        </CardContent>
+      </Card>
+    </motion.div>
+  );
+};
+
+export default DetailedPricingCard;
