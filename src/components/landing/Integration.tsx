@@ -2,6 +2,7 @@
 import { Button } from "@/components/ui/button";
 import { CheckCircle } from "lucide-react";
 import { Link } from "react-router-dom";
+import { scrollToTop } from "@/utils/navigation";
 
 const Integration = () => {
   // Define the integration logos with their names, paths, and background colors
@@ -94,7 +95,7 @@ const Integration = () => {
             
             {/* Learn More button positioned in bottom right of grid */}
             <div className="flex items-center justify-center rounded-xl h-32 transform transition-all duration-300 hover:-translate-y-1 hover:shadow-lg animate-fade-in" style={{ animationDelay: '0.7s' }}>
-              <Link to="/about">
+              <Link to="/about" onClick={scrollToTop}>
                 <Button variant="gold" className="text-black">
                   Learn More
                 </Button>

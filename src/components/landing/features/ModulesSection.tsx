@@ -6,6 +6,7 @@ import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
 import { ScrollReveal } from "@/components/ui/scroll-reveal";
+import { scrollToTop } from "@/utils/navigation";
 
 const ModulesSection = () => {
   return (
@@ -83,7 +84,7 @@ const ModulesSection = () => {
       </div>
 
       <ScrollReveal delay={0.9} className="mt-12 text-center">
-        <Link to="/modules">
+        <Link to="/modules" onClick={scrollToTop}>
           <Button variant="outline" size="lg" className="border-emerald-500/40 hover:border-emerald-400 hover:bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 group">
             View all modules
             <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />

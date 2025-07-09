@@ -4,6 +4,7 @@ import { ArrowRight, Shield, CheckCircle } from "lucide-react";
 import { motion } from "framer-motion";
 import { useIsMobile } from "@/hooks/use-mobile";
 import { useLocalization } from "@/contexts/LocalizationContext";
+import { scrollToTop } from "@/utils/navigation";
 export const HeroContent = () => {
   const {
     t
@@ -39,14 +40,14 @@ export const HeroContent = () => {
       <div className="flex flex-col sm:flex-row gap-4 animate-fade-in" style={{
       animationDelay: '0.3s'
     }}>
-        <Link to="/get-started" className="w-full sm:w-auto">
+        <Link to="/get-started" onClick={scrollToTop} className="w-full sm:w-auto">
           <Button size="lg" className="w-full sm:w-auto group bg-gold-gradient hover:bg-gold-dark-gradient text-gold-foreground px-8 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-0.5 border-0">
             <span className="flex items-center font-medium">
               {t("Get Started")} <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform duration-300" />
             </span>
           </Button>
         </Link>
-        <Link to="/contact" className="w-full sm:w-auto">
+        <Link to="/contact" onClick={scrollToTop} className="w-full sm:w-auto">
           <Button size="lg" variant="outline" className="w-full sm:w-auto group border border-gold text-slate-700 dark:text-slate-300 hover:border-gold transition-all duration-300 hover:-translate-y-0.5 shadow-sm hover:shadow-md">
             <span className="font-medium">{t("Contact Sales")}</span>
           </Button>

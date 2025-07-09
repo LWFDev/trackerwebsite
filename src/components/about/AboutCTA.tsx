@@ -2,6 +2,7 @@
 import React from "react";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
+import { scrollToTop } from "@/utils/navigation";
 
 const AboutCTA = () => {
   return (
@@ -11,7 +12,7 @@ const AboutCTA = () => {
         <p className="text-xl mb-8 max-w-3xl mx-auto text-gray-300">
           Start your free 14-day trial today and see how Tracker can transform your workflow.
         </p>
-        <Link to="/get-started">
+        <Link to="/get-started" onClick={scrollToTop}>
           <Button variant="gold">Get Started Free</Button>
         </Link>
       </div>

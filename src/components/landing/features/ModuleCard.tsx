@@ -3,6 +3,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { ScrollReveal } from "@/components/ui/scroll-reveal";
 import { ArrowUpRight } from "lucide-react";
+import { scrollToTop } from "@/utils/navigation";
 
 interface ModuleCardProps {
   icon: React.ReactNode;
@@ -15,7 +16,7 @@ interface ModuleCardProps {
 const ModuleCard = ({ icon, title, description, link, delay = 0 }: ModuleCardProps) => {
   return (
     <ScrollReveal delay={delay} direction="up" className="group">
-      <Link to={link} className="block h-full">
+      <Link to={link} onClick={scrollToTop} className="block h-full">
         <div className="h-full p-6 bg-gray-50 dark:bg-zinc-900/80 light:bg-white backdrop-blur-sm rounded-xl border border-gray-200 dark:border-zinc-800 light:border-gray-200 transition-all duration-300 hover:border-gold-opacity-40 hover:shadow-lg hover:shadow-gold-opacity-5 relative overflow-hidden">
           {/* Subtle gradient overlay that appears on hover */}
           <div className="absolute inset-0 bg-gradient-to-tr from-gold-opacity-0 to-gold-opacity-0 group-hover:from-gold-opacity-0 group-hover:to-gold-opacity-10 transition-all duration-500"></div>

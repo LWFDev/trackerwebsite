@@ -3,6 +3,7 @@ import { Switch } from "@/components/ui/switch";
 import { Label } from "@/components/ui/label";
 import { OnboardingData } from "@/types/onboarding";
 import { motion } from "framer-motion";
+import { scrollToTop } from "@/utils/navigation";
 
 interface TermsFormProps {
   formData: Partial<OnboardingData>;
@@ -41,9 +42,9 @@ export function TermsForm({ formData, updateFormData }: TermsFormProps) {
           <div className="space-y-1 leading-none">
             <Label htmlFor="agreeToTerms" className="text-gray-300 font-medium cursor-pointer">
               I agree to the 
-              <a href="/terms" target="_blank" rel="noopener noreferrer" className="text-gold hover:underline mx-1">Terms of Service</a>
+              <a href="/terms" onClick={scrollToTop} target="_blank" rel="noopener noreferrer" className="text-gold hover:underline mx-1">Terms of Service</a>
               and
-              <a href="/privacy" target="_blank" rel="noopener noreferrer" className="text-gold hover:underline ml-1">Privacy Policy</a>
+              <a href="/privacy" onClick={scrollToTop} target="_blank" rel="noopener noreferrer" className="text-gold hover:underline ml-1">Privacy Policy</a>
             </Label>
             <p className="text-gray-500 text-sm">
               By getting started with Tracker, you agree to our terms and conditions.

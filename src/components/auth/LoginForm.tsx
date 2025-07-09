@@ -7,6 +7,7 @@ import { Checkbox } from "@/components/ui/checkbox";
 import { Label } from "@/components/ui/label";
 import { Card, CardContent, CardHeader, CardFooter } from "@/components/ui/card";
 import { Link } from "react-router-dom";
+import { scrollToTop } from "@/utils/navigation";
 
 const LoginForm = () => {
   const [email, setEmail] = useState("");
@@ -90,11 +91,11 @@ const LoginForm = () => {
               />
               <Label htmlFor="terms" className="text-sm leading-none">
                 I agree to the{" "}
-                <Link to="/terms" className="text-gold hover:underline">
+                <Link to="/terms" onClick={scrollToTop} className="text-gold hover:underline">
                   Terms
                 </Link>{" "}
                 and{" "}
-                <Link to="/privacy" className="text-gold hover:underline">
+                <Link to="/privacy" onClick={scrollToTop} className="text-gold hover:underline">
                   Privacy Policy
                 </Link>
               </Label>

@@ -2,6 +2,7 @@
 import { Link } from "react-router-dom";
 import { ArrowLeft, Calendar, User } from "lucide-react";
 import { BlogPost } from "@/data/blogPosts";
+import { scrollToTop } from "@/utils/navigation";
 
 interface PostHeaderProps {
   post: BlogPost;
@@ -16,7 +17,7 @@ const PostHeader = ({ post }: PostHeaderProps) => {
       
       <div className="container mx-auto px-4 relative z-10">
         <div className="max-w-3xl mx-auto">
-          <Link to="/blog" className="inline-flex items-center text-gray-400 hover:text-gold mb-6">
+          <Link to="/blog" onClick={scrollToTop} className="inline-flex items-center text-gray-400 hover:text-gold mb-6">
             <ArrowLeft size={16} className="mr-2" />
             Back to Blog
           </Link>

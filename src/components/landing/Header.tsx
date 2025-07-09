@@ -91,6 +91,7 @@ const Header = () => {
             to="/pricing" 
             className={`font-normal text-base ${isActive("/pricing")} hover:text-gold transition-colors duration-200`}
             style={{ fontSize: '16px', fontWeight: 400 }}
+            onClick={scrollToTop}
           >
             Pricing
           </Link>

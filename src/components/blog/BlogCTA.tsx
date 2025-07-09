@@ -2,6 +2,7 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
+import { scrollToTop } from "@/utils/navigation";
 
 const BlogCTA = () => {
   return (
@@ -21,7 +22,7 @@ const BlogCTA = () => {
             Start your free 14-day trial today.
           </p>
           
-          <Link to="/get-started">
+          <Link to="/get-started" onClick={scrollToTop}>
             <Button size="lg" className="px-8 shadow-xl bg-gold-gradient hover:bg-gold-dark-gradient text-gold-foreground transform transition-all duration-300 hover:-translate-y-1 animate-fade-in">
               Get Started Free <ArrowRight className="ml-1 h-5 w-5" />
             </Button>

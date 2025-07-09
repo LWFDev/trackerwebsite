@@ -2,6 +2,7 @@
 import { Link } from "react-router-dom";
 import { Card, CardContent } from "@/components/ui/card";
 import { BlogPost } from "@/data/blogPosts";
+import { scrollToTop } from "@/utils/navigation";
 
 interface BlogPostCardProps {
   post: BlogPost;
@@ -26,6 +27,7 @@ const BlogPostCard = ({ post }: BlogPostCardProps) => {
         <p className="text-gray-300 mb-4 line-clamp-3">{post.excerpt}</p>
         <Link 
           to={`/blog/${post.slug}`}
+          onClick={scrollToTop}
           className="text-gold hover:text-gold-light inline-flex items-center"
         >
           Read More
