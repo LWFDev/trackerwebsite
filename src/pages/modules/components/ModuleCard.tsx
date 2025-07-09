@@ -10,9 +10,10 @@ import { Module } from "@/types/modules";
 
 interface ModuleCardProps {
   module: Module;
+  prefersReducedMotion?: boolean;
 }
 
-const ModuleCard = ({ module }: ModuleCardProps) => {
+const ModuleCard = ({ module, prefersReducedMotion = false }: ModuleCardProps) => {
   // Function to handle smooth scrolling and navigation
   const handleModuleClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
     scrollToTop();
@@ -23,12 +24,20 @@ const ModuleCard = ({ module }: ModuleCardProps) => {
       to={module.link} 
       onClick={handleModuleClick}
       className={cn(
-        "group block h-full rounded-lg overflow-hidden shadow-lg transition-all duration-300 hover:-translate-y-1 hover:shadow-xl border border-zinc-800 hover:border-gold flex flex-col relative",
+        "group block h-full rounded-lg overflow-hidden shadow-lg border border-zinc-800 hover:border-gold flex flex-col relative",
+        prefersReducedMotion 
+          ? "transition-colors duration-300" 
+          : "transition-all duration-300 hover:-translate-y-1 hover:shadow-xl",
         module.color || "bg-zinc-900"
       )}
     >
       {/* Top-right hover icon */}
-      <div className="absolute top-4 right-4 w-6 h-6 rounded-full bg-zinc-800 border border-zinc-700 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300 transform group-hover:translate-x-0 translate-x-4 z-10">
+      <div className={cn(
+        "absolute top-4 right-4 w-6 h-6 rounded-full bg-zinc-800 border border-zinc-700 flex items-center justify-center opacity-0 group-hover:opacity-100 z-10",
+        prefersReducedMotion 
+          ? "transition-opacity duration-300" 
+          : "transition-all duration-300 transform group-hover:translate-x-0 translate-x-4"
+      )}>
         <ArrowUpRight className="w-3 h-3 text-gold" />
       </div>
 
