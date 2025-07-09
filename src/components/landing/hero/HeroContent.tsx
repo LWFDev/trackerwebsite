@@ -34,7 +34,7 @@ export const HeroContent = () => {
       <p className="text-base md:text-lg text-slate-600 dark:text-slate-300 mb-8 max-w-lg animate-fade-in leading-relaxed" style={{
       animationDelay: '0.2s'
     }}>
-        {t("The end-to-end platform that ")} <span className="text-gold-dark dark:text-gold-light font-medium">{t("automates order handling")}</span>, <span className="text-gold-dark dark:text-gold-light font-medium">{t("manages inventory")}</span>, {t("and ")} <span className="text-gold-dark dark:text-gold-light font-medium">{t("optimizes production instantly")}</span> {t("- simpler, clearer and more effectively")}.
+        {t("The end-to-end platform that ")} <span className="text-gold-dark dark:text-gold-light font-medium">{t("automates order handling")}</span>, <span className="text-gold-dark dark:text-gold-light font-medium">{t("manages inventory")}</span>, {t("and ")} <span className="text-gold-dark dark:text-gold-light font-medium">{t("optimizes production instantly")}</span> {t("- simple, clear and more effective")}.
       </p>
       
       <div className="flex flex-col sm:flex-row gap-4 animate-fade-in" style={{
