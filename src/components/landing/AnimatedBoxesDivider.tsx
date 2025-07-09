@@ -32,10 +32,10 @@ const AnimatedBoxesDivider: React.FC = () => {
   });
 
   const stages = useMemo(() => [
-    { name: 'Design', icon: Settings, color: 'hsl(var(--primary))', x: '15%' },
-    { name: 'Production', icon: Zap, color: 'hsl(var(--secondary))', x: '40%' },
-    { name: 'Quality', icon: CheckCircle, color: 'hsl(var(--accent))', x: '65%' },
-    { name: 'Fulfillment', icon: Package, color: 'hsl(var(--gold))', x: '85%' }
+    { name: 'Design', icon: Settings, color: '#3B82F6', gradient: 'from-blue-500 to-blue-600', x: '15%' },
+    { name: 'Production', icon: Zap, color: '#8B5CF6', gradient: 'from-purple-500 to-purple-600', x: '38%' },
+    { name: 'Quality', icon: CheckCircle, color: '#10B981', gradient: 'from-emerald-500 to-emerald-600', x: '62%' },
+    { name: 'Fulfillment', icon: Package, color: '#F59E0B', gradient: 'from-amber-500 to-amber-600', x: '85%' }
   ], []);
 
   const createWorkflowItem = useCallback((): WorkflowItem => ({
@@ -137,98 +137,145 @@ const AnimatedBoxesDivider: React.FC = () => {
   return (
     <div 
       ref={containerRef}
-      className="relative w-full h-48 bg-gradient-to-r from-background via-muted/10 to-background overflow-hidden"
+      className="relative w-full h-64 bg-gradient-to-br from-slate-50 via-blue-50/30 to-purple-50/20 dark:from-slate-950 dark:via-slate-900 dark:to-slate-800 overflow-hidden border-y border-border/50"
       role="img"
       aria-label="Manufacturing workflow visualization"
     >
-      {/* Belt Background */}
-      <div className="absolute inset-0 opacity-20">
+      {/* Elegant Belt/Conveyor */}
+      <div className="absolute inset-0 flex items-center">
         <div 
-          className="h-12 bg-gradient-to-r from-muted/30 via-muted/50 to-muted/30 top-1/2 transform -translate-y-1/2 relative"
+          className="w-full h-3 bg-gradient-to-r from-slate-200/50 via-slate-300/50 to-slate-200/50 dark:from-slate-700/50 dark:via-slate-600/50 dark:to-slate-700/50 relative overflow-hidden rounded-full shadow-inner"
           style={{
-            backgroundImage: 'repeating-linear-gradient(90deg, transparent 0px, hsl(var(--muted-foreground) / 0.1) 20px, transparent 40px)',
-            animation: reducedMotion ? 'none' : 'slideInfinite 3s linear infinite'
+            animation: reducedMotion ? 'none' : 'slideInfinite 8s linear infinite'
           }}
-        />
+        >
+          {/* Moving belt pattern */}
+          <div 
+            className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent dark:via-white/10"
+            style={{
+              backgroundImage: 'repeating-linear-gradient(90deg, transparent 0px, rgba(255,255,255,0.1) 10px, transparent 20px)',
+              animation: reducedMotion ? 'none' : 'slideInfinite 4s linear infinite'
+            }}
+          />
+        </div>
       </div>
 
-      {/* Production Stages */}
-      <div className="absolute inset-0 flex items-center justify-between px-8">
+      {/* Connection Lines */}
+      <div className="absolute inset-0 flex items-center px-8">
+        {stages.slice(0, -1).map((stage, index) => (
+          <div
+            key={`line-${index}`}
+            className="absolute h-px bg-gradient-to-r from-slate-300 to-transparent dark:from-slate-600 opacity-40"
+            style={{
+              left: stage.x,
+              width: `calc(${stages[index + 1].x} - ${stage.x})`,
+              transform: 'translateX(2rem)'
+            }}
+          />
+        ))}
+      </div>
+
+      {/* Enhanced Production Stages */}
+      <div className="absolute inset-0 flex items-center px-8">
         {stages.map((stage, index) => {
           const StageIcon = stage.icon;
           return (
             <div
               key={stage.name}
-              className="flex flex-col items-center space-y-2 z-10"
+              className="flex flex-col items-center space-y-3 z-20 group"
               style={{ position: 'absolute', left: stage.x, transform: 'translateX(-50%)' }}
             >
-              <div 
-                className="w-12 h-12 rounded-xl flex items-center justify-center shadow-lg backdrop-blur-sm border border-white/20 transition-transform duration-300 hover:scale-110"
-                style={{ 
-                  backgroundColor: `${stage.color}15`,
-                  borderColor: `${stage.color}30`
-                }}
-              >
-                <StageIcon 
-                  size={24} 
-                  style={{ color: stage.color }}
-                  className="drop-shadow-sm"
+              {/* Stage Icon Container */}
+              <div className="relative">
+                <div 
+                  className={`w-16 h-16 rounded-2xl flex items-center justify-center shadow-2xl backdrop-blur-md border border-white/30 dark:border-white/10 transition-all duration-500 group-hover:scale-110 group-hover:shadow-3xl bg-gradient-to-br ${stage.gradient} relative overflow-hidden`}
+                >
+                  {/* Glow effect */}
+                  <div 
+                    className="absolute inset-0 bg-gradient-to-br opacity-20 rounded-2xl"
+                    style={{ background: `linear-gradient(135deg, ${stage.color}40, transparent)` }}
+                  />
+                  
+                  <StageIcon 
+                    size={28} 
+                    className="text-white drop-shadow-lg relative z-10"
+                  />
+                  
+                  {/* Animated border */}
+                  <div 
+                    className="absolute inset-0 rounded-2xl border-2 opacity-50 group-hover:opacity-100 transition-opacity duration-300"
+                    style={{ borderColor: stage.color }}
+                  />
+                </div>
+                
+                {/* Stage indicator dot */}
+                <div 
+                  className="absolute -bottom-1 left-1/2 transform -translate-x-1/2 w-2 h-2 rounded-full"
+                  style={{ backgroundColor: stage.color }}
                 />
               </div>
-              <span className="text-xs font-medium text-muted-foreground bg-background/80 px-2 py-1 rounded-md">
-                {stage.name}
-              </span>
+              
+              {/* Stage Label */}
+              <div className="text-center">
+                <span className="text-sm font-semibold text-slate-700 dark:text-slate-300 bg-white/80 dark:bg-slate-800/80 px-3 py-1.5 rounded-full shadow-sm backdrop-blur-sm border border-white/50 dark:border-slate-700/50">
+                  {stage.name}
+                </span>
+              </div>
             </div>
           );
         })}
       </div>
 
-      {/* Workflow Items */}
+      {/* Enhanced Workflow Items */}
       <div className="absolute inset-0 flex items-center">
         {items.map((item) => {
           const IconComponent = getStageIcon(item.stage);
-          const iconColor = getStageColor(item.stage);
+          const stage = stages[item.stage] || stages[0];
           
           return (
             <div
               key={item.id}
-              className="absolute w-8 h-8 flex items-center justify-center rounded-lg shadow-md transition-all duration-300 will-change-transform"
+              className="absolute w-10 h-10 flex items-center justify-center rounded-xl shadow-xl transition-all duration-300 will-change-transform animate-pulse-light"
               style={{
                 left: `${item.x}%`,
                 top: '50%',
                 transform: 'translateY(-50%)',
-                backgroundColor: `${iconColor}20`,
-                border: `1px solid ${iconColor}40`
+                background: `linear-gradient(135deg, ${stage.color}90, ${stage.color}70)`,
+                border: `2px solid ${stage.color}`,
+                boxShadow: `0 8px 25px -5px ${stage.color}40`
               }}
             >
               <IconComponent 
-                size={16} 
-                style={{ color: iconColor }}
-                className="drop-shadow-sm"
+                size={18} 
+                className="text-white drop-shadow-md"
               />
             </div>
           );
         })}
       </div>
 
-      {/* Production Metrics */}
-      <div className="absolute top-4 right-4 flex space-x-4 z-20">
-        <div className="bg-background/90 backdrop-blur-sm border border-border/50 rounded-lg px-3 py-2 shadow-sm">
-          <div className="flex items-center space-x-2">
-            <TrendingUp size={14} className="text-primary" />
-            <div className="text-xs">
-              <div className="font-medium text-foreground">{metrics.throughput}</div>
-              <div className="text-muted-foreground">Units/Day</div>
+      {/* Enhanced Production Metrics */}
+      <div className="absolute top-6 right-6 flex space-x-3 z-30">
+        <div className="bg-white/90 dark:bg-slate-800/90 backdrop-blur-md border border-white/50 dark:border-slate-700/50 rounded-2xl px-4 py-3 shadow-xl hover:shadow-2xl transition-all duration-300">
+          <div className="flex items-center space-x-3">
+            <div className="p-2 bg-gradient-to-br from-blue-500 to-blue-600 rounded-xl">
+              <TrendingUp size={16} className="text-white" />
+            </div>
+            <div className="text-sm">
+              <div className="font-bold text-slate-800 dark:text-slate-200">{metrics.throughput.toLocaleString()}</div>
+              <div className="text-slate-500 dark:text-slate-400 text-xs">Units/Day</div>
             </div>
           </div>
         </div>
         
-        <div className="bg-background/90 backdrop-blur-sm border border-border/50 rounded-lg px-3 py-2 shadow-sm">
-          <div className="flex items-center space-x-2">
-            <Clock size={14} className="text-secondary" />
-            <div className="text-xs">
-              <div className="font-medium text-foreground">{metrics.efficiency}%</div>
-              <div className="text-muted-foreground">Efficiency</div>
+        <div className="bg-white/90 dark:bg-slate-800/90 backdrop-blur-md border border-white/50 dark:border-slate-700/50 rounded-2xl px-4 py-3 shadow-xl hover:shadow-2xl transition-all duration-300">
+          <div className="flex items-center space-x-3">
+            <div className="p-2 bg-gradient-to-br from-emerald-500 to-emerald-600 rounded-xl">
+              <Clock size={16} className="text-white" />
+            </div>
+            <div className="text-sm">
+              <div className="font-bold text-slate-800 dark:text-slate-200">{metrics.efficiency}%</div>
+              <div className="text-slate-500 dark:text-slate-400 text-xs">Efficiency</div>
             </div>
           </div>
         </div>
