@@ -127,11 +127,26 @@ const AnimatedBoxesDivider = ({ className = "" }: AnimatedBoxesDividerProps) => 
       </div>
       
       {/* Embroidery machine destination */}
-      <div className="absolute top-1/2 right-2 sm:right-4 transform -translate-y-1/2 flex items-center gap-2 bg-blue-100 dark:bg-blue-900/30 px-3 py-1 rounded-lg border border-blue-200 dark:border-blue-800">
+      <div className="absolute top-1/2 right-2 sm:right-4 transform -translate-y-1/2 flex items-center gap-3">
         <img 
           src="/lovable-uploads/fc470382-aa94-4a9f-ad0f-fb5c9919f63d.png" 
           alt="Embroidery Machine" 
-          className="w-6 h-6 sm:w-8 sm:h-8 object-contain"
+          className="w-12 h-12 sm:w-16 sm:h-16 object-contain opacity-100"
+        />
+        <img 
+          src="/lovable-uploads/fc470382-aa94-4a9f-ad0f-fb5c9919f63d.png" 
+          alt="Embroidery Machine" 
+          className="w-12 h-12 sm:w-16 sm:h-16 object-contain opacity-100"
+        />
+        <img 
+          src="/lovable-uploads/fc470382-aa94-4a9f-ad0f-fb5c9919f63d.png" 
+          alt="Embroidery Machine" 
+          className="w-12 h-12 sm:w-16 sm:h-16 object-contain opacity-100"
+        />
+        <img 
+          src="/lovable-uploads/fc470382-aa94-4a9f-ad0f-fb5c9919f63d.png" 
+          alt="Embroidery Machine" 
+          className="w-12 h-12 sm:w-16 sm:h-16 object-contain opacity-100"
         />
       </div>
       
