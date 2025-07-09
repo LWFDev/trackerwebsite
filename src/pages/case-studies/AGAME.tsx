@@ -5,6 +5,7 @@ import { Card, CardContent } from '@/components/ui/card';
 import { ArrowLeft, Clock, TrendingUp, Users, CheckCircle, BarChart3, ShoppingCart, Smartphone } from 'lucide-react';
 import { ScrollReveal } from '@/components/ui/scroll-reveal';
 import { motion } from 'framer-motion';
+import { scrollToTop } from '@/utils/navigation';
 
 const AGAME = () => {
   return (
@@ -212,12 +213,12 @@ const AGAME = () => {
               Discover how Tracker can revolutionize your operations and eliminate time-wasting manual processes.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link to="/get-started" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
+              <Link to="/get-started" onClick={scrollToTop}>
                 <Button size="lg" className="bg-white text-emerald-600 hover:bg-emerald-50 border-0 shadow-lg hover:shadow-xl transition-all duration-300">
                   Start Your Transformation
                 </Button>
               </Link>
-              <Link to="/contact" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
+              <Link to="/contact" onClick={scrollToTop}>
                 <Button size="lg" className="bg-transparent border-2 border-white text-white hover:bg-white hover:text-emerald-600 transition-all duration-300">
                   Contact Sales
                 </Button>
