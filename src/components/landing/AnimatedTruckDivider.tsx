@@ -30,8 +30,8 @@ const AnimatedTruckDivider = ({ className = "" }: AnimatedTruckDividerProps) => 
           <defs>
             <linearGradient id="${gradientId}" x1="0%" y1="0%" x2="100%" y2="100%">
               ${isEmerald 
-                ? '<stop offset="0%" style="stop-color:#10b981;stop-opacity:1" /><stop offset="100%" style="stop-color:#065f46;stop-opacity:1" />'
-                : '<stop offset="0%" style="stop-color:#f59e0b;stop-opacity:1" /><stop offset="100%" style="stop-color:#92400e;stop-opacity:1" />'
+                ? '<stop offset="0%" style="stop-color:#10b981;stop-opacity:1" /><stop offset="100%" style="stop-color:#047857;stop-opacity:1" />'
+                : '<stop offset="0%" style="stop-color:hsl(45, 93%, 47%);stop-opacity:1" /><stop offset="100%" style="stop-color:hsl(42, 87%, 41%);stop-opacity:1" />'
               }
             </linearGradient>
           </defs>
