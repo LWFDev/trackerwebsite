@@ -64,14 +64,14 @@ const PricingFAQ = () => {
     <div className="py-20 bg-black relative">
       {/* Background elements */}
       <div className="absolute top-0 left-0 w-full h-full overflow-hidden z-0">
-        <div className="absolute w-[600px] h-[600px] rounded-full bg-[#D4AF37]/5 blur-[120px] bottom-0 right-0"></div>
+        <div className="absolute w-[600px] h-[600px] rounded-full bg-gold-opacity-5 blur-[120px] bottom-0 right-0"></div>
         
         {/* Floating particles */}
         <div className="absolute inset-0 pointer-events-none">
           {[...Array(6)].map((_, i) => (
             <motion.div
               key={i}
-              className="absolute bg-[#D4AF37]/30 rounded-full w-2 h-2"
+              className="absolute bg-gold-opacity-30 rounded-full w-2 h-2"
               initial={{
                 x: Math.random() * window.innerWidth,
                 y: Math.random() * window.innerHeight,
@@ -106,12 +106,12 @@ const PricingFAQ = () => {
             transition={{ duration: 0.6 }}
           >
             <div className="inline-flex items-center gap-2 px-4 py-1.5 bg-zinc-800/80 backdrop-blur-sm rounded-full border border-zinc-700 mb-6">
-              <Sparkles size={16} className="text-[#D4AF37]" />
-              <span className="text-sm text-[#D4AF37] uppercase font-medium tracking-wider">Common Questions</span>
+              <Sparkles size={16} className="text-gold" />
+              <span className="text-sm text-gold uppercase font-medium tracking-wider">Common Questions</span>
             </div>
             
             <h2 className="text-3xl md:text-4xl font-bold text-center">
-              Frequently Asked <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#D4AF37] to-[#F2D675]">Questions</span>
+              Frequently Asked <span className="text-gold-gradient">Questions</span>
             </h2>
           </motion.div>
         </ScrollReveal>
@@ -133,7 +133,7 @@ const PricingFAQ = () => {
               >
                 <AccordionItem 
                   value={`faq-${index}`} 
-                  className={`border border-zinc-800 rounded-lg overflow-hidden bg-zinc-900/80 backdrop-blur-sm transition-all duration-300 ${hoveredItem === index ? 'border-[#D4AF37]/50 shadow-lg shadow-[#D4AF37]/10' : ''}`}
+                  className={`border border-zinc-800 rounded-lg overflow-hidden bg-zinc-900/80 backdrop-blur-sm transition-all duration-300 ${hoveredItem === index ? 'border-gold-opacity-50 shadow-lg shadow-gold' : ''}`}
                 >
                   <AccordionTrigger className="px-6 py-4 hover:bg-zinc-800 transition-colors text-left">
                     <span className="text-left">{faq.question}</span>

@@ -35,7 +35,7 @@ export const StepIndicator = ({
           transition={{ duration: 0.3 }}
           className="mb-6 text-center"
         >
-          <h2 className="text-2xl font-bold text-[#D4AF37]">{questionTitle}</h2>
+          <h2 className="text-2xl font-bold text-gold">{questionTitle}</h2>
         </motion.div>
       </AnimatePresence>
 
@@ -48,9 +48,9 @@ export const StepIndicator = ({
               className={`
                 flex items-center justify-center w-10 h-10 rounded-full
                 ${currentStep > step.id 
-                  ? 'bg-[#D4AF37] border-[#D4AF37]' 
+                  ? 'bg-gold border-gold' 
                   : currentStep === step.id 
-                    ? 'bg-[#D4AF37] border-[#D4AF37]' 
+                    ? 'bg-gold border-gold' 
                     : 'bg-zinc-700 border-zinc-700'
                 }
                 border-2 transition-all duration-300
@@ -58,7 +58,7 @@ export const StepIndicator = ({
               initial={{ scale: 0.9 }}
               animate={{ 
                 scale: currentStep === step.id ? 1.1 : 1,
-                backgroundColor: currentStep >= step.id ? '#D4AF37' : '#27272a' 
+                backgroundColor: currentStep >= step.id ? 'hsl(var(--gold))' : '#27272a' 
               }}
               transition={{ duration: 0.3 }}
             >
@@ -73,9 +73,9 @@ export const StepIndicator = ({
             
             {/* Step name */}
             <motion.p
-              className={`mt-2 text-xs font-medium ${currentStep === step.id ? 'text-[#D4AF37]' : 'text-gray-400'}`}
+              className={`mt-2 text-xs font-medium ${currentStep === step.id ? 'text-gold' : 'text-gray-400'}`}
               animate={{ 
-                color: currentStep === step.id ? '#D4AF37' : '#9ca3af',
+                color: currentStep === step.id ? 'hsl(var(--gold))' : '#9ca3af',
                 scale: currentStep === step.id ? 1.05 : 1
               }}
               transition={{ duration: 0.3 }}

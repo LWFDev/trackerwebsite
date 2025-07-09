@@ -22,13 +22,13 @@ const FAQ = () => {
   const faqSections: FAQSection[] = [
     {
       title: "General Questions",
-      icon: <HelpCircle size={20} className="text-[#D4AF37]" />,
+      icon: <HelpCircle size={20} className="text-gold" />,
       faqs: [
         {
           question: "How do I know if Tracker is right for us?",
           answer: (
             <>
-              Tracker is designed for <a href="/about" className="text-[#D4AF37] hover:text-yellow-400 underline font-medium">garment decoration businesses</a> of all sizes, from small startups to large enterprises. If you're managing orders, inventory, production, or customer relationships in the custom apparel industry, Tracker can streamline your operations. We offer <a href="/contact" className="text-[#D4AF37] hover:text-yellow-400 underline font-medium">demos and consultations</a> to help you evaluate if our platform fits your specific needs.
+              Tracker is designed for <a href="/about" className="text-gold hover:text-gold-light underline font-medium">garment decoration businesses</a> of all sizes, from small startups to large enterprises. If you're managing orders, inventory, production, or customer relationships in the custom apparel industry, Tracker can streamline your operations. We offer <a href="/contact" className="text-gold hover:text-gold-light underline font-medium">demos and consultations</a> to help you evaluate if our platform fits your specific needs.
             </>
           )
         },
@@ -36,7 +36,7 @@ const FAQ = () => {
           question: "Can I have a demo to see Tracker in action?",
           answer: (
             <>
-              Absolutely! We provide personalized demos tailored to your business needs. During the demo, we'll show you how Tracker's <a href="/modules" className="text-[#D4AF37] hover:text-yellow-400 underline font-medium">modules</a> work together to manage your entire workflow, from order intake to production and delivery. <a href="/contact" className="text-[#D4AF37] hover:text-yellow-400 underline font-medium">Contact our sales team</a> to schedule a demo at your convenience.
+              Absolutely! We provide personalized demos tailored to your business needs. During the demo, we'll show you how Tracker's <a href="/modules" className="text-gold hover:text-gold-light underline font-medium">modules</a> work together to manage your entire workflow, from order intake to production and delivery. <a href="/contact" className="text-gold hover:text-gold-light underline font-medium">Contact our sales team</a> to schedule a demo at your convenience.
             </>
           )
         },
@@ -44,7 +44,7 @@ const FAQ = () => {
           question: "Is Tracker only for garment decoration businesses?",
           answer: (
             <>
-              Yes, Tracker is specifically designed for the garment decoration industry, including screen printing, embroidery, promotional products, and custom apparel businesses. Our specialized <a href="/modules" className="text-[#D4AF37] hover:text-yellow-400 underline font-medium">modules and workflows</a> are built to handle the unique challenges of this industry, from <a href="/modules/logos" className="text-[#D4AF37] hover:text-yellow-400 underline font-medium">artwork management</a> to <a href="/modules/production" className="text-[#D4AF37] hover:text-yellow-400 underline font-medium">production scheduling</a>.
+              Yes, Tracker is specifically designed for the garment decoration industry, including screen printing, embroidery, promotional products, and custom apparel businesses. Our specialized <a href="/modules" className="text-gold hover:text-gold-light underline font-medium">modules and workflows</a> are built to handle the unique challenges of this industry, from <a href="/modules/logos" className="text-gold hover:text-gold-light underline font-medium">artwork management</a> to <a href="/modules/production" className="text-gold hover:text-gold-light underline font-medium">production scheduling</a>.
             </>
           )
         },
@@ -52,7 +52,7 @@ const FAQ = () => {
           question: "What size / type of businesses use Tracker?",
           answer: (
             <>
-              Tracker serves businesses ranging from small family-owned shops to large commercial operations. Our customers include screen printers, embroiderers, promotional product companies, corporate apparel suppliers, and multi-location enterprises. Our scalable platform grows with your business needs. Learn more <a href="/about" className="text-[#D4AF37] hover:text-yellow-400 underline font-medium">about our story</a> and the businesses we serve.
+              Tracker serves businesses ranging from small family-owned shops to large commercial operations. Our customers include screen printers, embroiderers, promotional product companies, corporate apparel suppliers, and multi-location enterprises. Our scalable platform grows with your business needs. Learn more <a href="/about" className="text-gold hover:text-gold-light underline font-medium">about our story</a> and the businesses we serve.
             </>
           )
         }
@@ -60,13 +60,13 @@ const FAQ = () => {
     },
     {
       title: "Pricing & Costs",
-      icon: <DollarSign size={20} className="text-[#D4AF37]" />,
+      icon: <DollarSign size={20} className="text-gold" />,
       faqs: [
         {
           question: "How much is Tracker?",
           answer: (
             <>
-              Tracker offers flexible <a href="/pricing" className="text-[#D4AF37] hover:text-yellow-400 underline font-medium">pricing plans</a> to suit different business sizes and needs. Our pricing is based on the <a href="/modules" className="text-[#D4AF37] hover:text-yellow-400 underline font-medium">modules</a> you need and the number of users. We offer Starter, Professional, and Enterprise tiers, with the option to customize your package. <a href="/contact" className="text-[#D4AF37] hover:text-yellow-400 underline font-medium">Contact us</a> for detailed pricing information and to discuss which plan works best for your business.
+              Tracker offers flexible <a href="/pricing" className="text-gold hover:text-gold-light underline font-medium">pricing plans</a> to suit different business sizes and needs. Our pricing is based on the <a href="/modules" className="text-gold hover:text-gold-light underline font-medium">modules</a> you need and the number of users. We offer Starter, Professional, and Enterprise tiers, with the option to customize your package. <a href="/contact" className="text-gold hover:text-gold-light underline font-medium">Contact us</a> for detailed pricing information and to discuss which plan works best for your business.
             </>
           )
         },
@@ -74,7 +74,7 @@ const FAQ = () => {
           question: "Do I have to pay for scoping?",
           answer: (
             <>
-              Initial <a href="/contact" className="text-[#D4AF37] hover:text-yellow-400 underline font-medium">consultations</a> and basic scoping are provided at no cost to help us understand your requirements. For complex implementations requiring extensive customization or integration work, detailed scoping may be part of the implementation project cost. We'll always be transparent about any costs involved upfront.
+              Initial <a href="/contact" className="text-gold hover:text-gold-light underline font-medium">consultations</a> and basic scoping are provided at no cost to help us understand your requirements. For complex implementations requiring extensive customization or integration work, detailed scoping may be part of the implementation project cost. We'll always be transparent about any costs involved upfront.
             </>
           )
         },
@@ -82,7 +82,7 @@ const FAQ = () => {
           question: "Are there hidden costs once I have Tracker?",
           answer: (
             <>
-              All costs will be clear on your project agreement and licensing agreement. Nobody likes those sorts of surprises! Our <a href="/pricing" className="text-[#D4AF37] hover:text-yellow-400 underline font-medium">pricing</a> includes hosting, <a href="/support" className="text-[#D4AF37] hover:text-yellow-400 underline font-medium">support</a>, and regular updates. Any additional costs for extra <a href="/modules" className="text-[#D4AF37] hover:text-yellow-400 underline font-medium">modules</a>, integrations, or customizations will be discussed and agreed upon before implementation.
+              All costs will be clear on your project agreement and licensing agreement. Nobody likes those sorts of surprises! Our <a href="/pricing" className="text-gold hover:text-gold-light underline font-medium">pricing</a> includes hosting, <a href="/support" className="text-gold hover:text-gold-light underline font-medium">support</a>, and regular updates. Any additional costs for extra <a href="/modules" className="text-gold hover:text-gold-light underline font-medium">modules</a>, integrations, or customizations will be discussed and agreed upon before implementation.
             </>
           )
         }
@@ -90,7 +90,7 @@ const FAQ = () => {
     },
     {
       title: "Implementation & Setup",
-      icon: <Settings size={20} className="text-[#D4AF37]" />,
+      icon: <Settings size={20} className="text-gold" />,
       faqs: [
         {
           question: "How long does it take to implement Tracker?",
@@ -142,7 +142,7 @@ const FAQ = () => {
     },
     {
       title: "Account Management",
-      icon: <Sparkles size={20} className="text-[#D4AF37]" />,
+      icon: <Sparkles size={20} className="text-gold" />,
       faqs: [
         {
           question: "Can I switch plans later?",
@@ -233,9 +233,9 @@ const FAQ = () => {
       <div className="bg-gradient-to-r from-zinc-900 via-black to-emerald-950 relative overflow-hidden">
         {/* Background pattern */}
         <div className="absolute inset-0 opacity-20">
-          <div className="absolute w-96 h-96 rounded-full bg-[#D4AF37]/10 -top-48 -right-48"></div>
+          <div className="absolute w-96 h-96 rounded-full bg-gold-opacity-10 -top-48 -right-48"></div>
           <div className="absolute w-64 h-64 rounded-full bg-emerald-500/10 top-32 right-1/4"></div>
-          <div className="absolute w-32 h-32 rounded-full bg-[#D4AF37]/15 bottom-16 right-16"></div>
+          <div className="absolute w-32 h-32 rounded-full bg-gold-opacity-15 bottom-16 right-16"></div>
         </div>
 
         <div className="container mx-auto px-6 py-20 relative z-10">
@@ -245,9 +245,9 @@ const FAQ = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
           >
-            <div className="inline-flex items-center gap-2 px-4 py-2 bg-[#D4AF37]/20 backdrop-blur-sm rounded-full border border-[#D4AF37]/40 mb-8">
-              <HelpCircle size={16} className="text-[#D4AF37]" />
-              <span className="text-sm text-[#D4AF37] font-medium tracking-wide">SUPPORT CENTER</span>
+            <div className="inline-flex items-center gap-2 px-4 py-2 bg-gold-opacity-20 backdrop-blur-sm rounded-full border border-gold-opacity-40 mb-8">
+              <HelpCircle size={16} className="text-gold" />
+              <span className="text-sm text-gold font-medium tracking-wide">SUPPORT CENTER</span>
             </div>
             
             <h1 className="text-5xl md:text-6xl font-light text-white mb-6 leading-tight">
@@ -274,10 +274,10 @@ const FAQ = () => {
             >
               {/* Section Header */}
               <div className="flex items-center gap-3 mb-8 pb-4 border-b-2 border-zinc-800">
-                <div className={`w-10 h-10 ${section.title === "Pricing & Costs" || section.title === "Account Management" ? "bg-[#D4AF37]/20 border-[#D4AF37]/40" : "bg-emerald-500/20 border-emerald-500/40"} rounded-lg flex items-center justify-center`}>
+                <div className={`w-10 h-10 ${section.title === "Pricing & Costs" || section.title === "Account Management" ? "bg-gold-opacity-20 border-gold-opacity-40" : "bg-emerald-500/20 border-emerald-500/40"} rounded-lg flex items-center justify-center`}>
                   {React.cloneElement(section.icon as React.ReactElement, { 
                     size: 20, 
-                    className: section.title === "Pricing & Costs" || section.title === "Account Management" ? "text-[#D4AF37]" : "text-emerald-400"
+                    className: section.title === "Pricing & Costs" || section.title === "Account Management" ? "text-gold" : "text-emerald-400"
                   })}
                 </div>
                 <h2 className="text-2xl font-medium text-white">{section.title}</h2>
@@ -294,7 +294,7 @@ const FAQ = () => {
                       onMouseEnter={() => setHoveredItem(itemId)}
                       onMouseLeave={() => setHoveredItem(null)}
                       className={`bg-zinc-900/50 border border-zinc-800 rounded-lg shadow-sm transition-all duration-200 ${
-                        hoveredItem === itemId ? 'shadow-lg border-[#D4AF37]/40 bg-zinc-900/70' : ''
+                        hoveredItem === itemId ? 'shadow-lg border-gold-opacity-40 bg-zinc-900/70' : ''
                       }`}
                     >
                       <Accordion type="single" collapsible>
@@ -302,7 +302,7 @@ const FAQ = () => {
                           value={`faq-${sectionIndex}-${index}`} 
                           className="border-none"
                         >
-                          <AccordionTrigger className="px-6 py-5 hover:no-underline text-left font-medium text-white hover:text-[#D4AF37] data-[state=open]:text-[#D4AF37] transition-colors">
+                          <AccordionTrigger className="px-6 py-5 hover:no-underline text-left font-medium text-white hover:text-gold data-[state=open]:text-gold transition-colors">
                             <span className="text-left">{faq.question}</span>
                           </AccordionTrigger>
                           <AccordionContent className="px-6 pb-5 text-gray-300 leading-relaxed">
@@ -326,9 +326,9 @@ const FAQ = () => {
 
         {/* Contact CTA - Salesforce style */}
         <div className="max-w-4xl mx-auto mt-20">
-          <div className="bg-gradient-to-r from-zinc-900/80 to-zinc-800/80 backdrop-blur-sm rounded-2xl p-12 text-center border border-[#D4AF37]/30">
-            <div className="w-16 h-16 bg-[#D4AF37]/20 border border-[#D4AF37]/40 rounded-full flex items-center justify-center mx-auto mb-6">
-              <HelpCircle className="w-8 h-8 text-[#D4AF37]" />
+          <div className="bg-gradient-to-r from-zinc-900/80 to-zinc-800/80 backdrop-blur-sm rounded-2xl p-12 text-center border border-gold-opacity-30">
+            <div className="w-16 h-16 bg-gold-opacity-20 border border-gold-opacity-40 rounded-full flex items-center justify-center mx-auto mb-6">
+              <HelpCircle className="w-8 h-8 text-gold" />
             </div>
             <h3 className="text-3xl font-light text-white mb-4">Still have questions?</h3>
             <p className="text-lg text-gray-300 mb-8 max-w-2xl mx-auto leading-relaxed">
@@ -337,13 +337,13 @@ const FAQ = () => {
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a 
                 href="/contact" 
-                className="bg-[#D4AF37] hover:bg-yellow-500 text-black px-8 py-3 rounded-lg font-medium transition-all duration-200 hover:shadow-lg transform hover:-translate-y-0.5"
+                className="bg-gold hover:bg-gold-light text-gold-foreground px-8 py-3 rounded-lg font-medium transition-all duration-200 hover:shadow-lg transform hover:-translate-y-0.5"
               >
                 Contact Support
               </a>
               <a 
                 href="/get-started" 
-                className="bg-zinc-800 hover:bg-zinc-700 text-[#D4AF37] px-8 py-3 rounded-lg font-medium border-2 border-[#D4AF37]/40 transition-all duration-200 hover:shadow-md hover:border-[#D4AF37]"
+                className="bg-zinc-800 hover:bg-zinc-700 text-gold px-8 py-3 rounded-lg font-medium border-2 border-gold-opacity-40 transition-all duration-200 hover:shadow-md hover:border-gold"
               >
                 Get Started
               </a>

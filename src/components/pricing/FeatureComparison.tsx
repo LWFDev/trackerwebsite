@@ -66,7 +66,7 @@ const FeatureComparison = () => {
         scale: 1.2,
         rotate: 10
       }} className="flex justify-center">
-          <Check className={`h-5 w-5 ${isPro ? 'text-[#F2D675]' : 'text-[#D4AF37]'}`} />
+          <Check className={`h-5 w-5 ${isPro ? 'text-gold-light' : 'text-gold'}`} />
         </motion.div> : <X className="h-5 w-5 text-gray-500 mx-auto" />;
     }
     return <span className="text-gray-300">{value}</span>;
@@ -116,7 +116,7 @@ const FeatureComparison = () => {
           type: "spring",
           stiffness: 300
         }}>
-            <motion.span className="text-transparent bg-clip-text bg-gradient-to-r from-[#D4AF37] to-[#F2D675] inline-block" animate={{
+            <motion.span className="text-gold-gradient inline-block" animate={{
             backgroundPosition: ['0% center', '100% center', '0% center']
           }} transition={{
             duration: 6,
@@ -148,8 +148,8 @@ const FeatureComparison = () => {
                   </th>
                   <th className="p-5 text-center bg-zinc-800/30 rounded-t-lg">
                     <div className="flex flex-col items-center">
-                      <motion.span className="text-[#F2D675] mb-1 relative" whileInView={{
-                      textShadow: ['0 0 0px rgba(242, 214, 117, 0)', '0 0 10px rgba(242, 214, 117, 0.5)', '0 0 0px rgba(242, 214, 117, 0)']
+                      <motion.span className="text-gold-light mb-1 relative" whileInView={{
+                      textShadow: ['0 0 0px hsl(var(--gold-light) / 0)', '0 0 10px hsl(var(--gold-light) / 0.5)', '0 0 0px hsl(var(--gold-light) / 0)']
                     }} transition={{
                       duration: 2,
                       repeat: Infinity,

@@ -58,15 +58,15 @@ const ContactCTA = () => {
   return <div className="py-24 bg-gradient-to-t from-zinc-900 to-black relative overflow-hidden">
       {/* Background elements */}
       <div className="absolute top-0 left-0 w-full h-full overflow-hidden z-0">
-        <div ref={glowRef} className="absolute w-[800px] h-[800px] rounded-full bg-[#D4AF37]/5 blur-[100px] top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2] pointer-events-none" style={{
-        background: 'radial-gradient(circle 400px at var(--x) var(--y), rgba(212, 175, 55, 0.1), transparent)',
+        <div ref={glowRef} className="absolute w-[800px] h-[800px] rounded-full bg-gold-opacity-5 blur-[100px] top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2] pointer-events-none" style={{
+        background: 'radial-gradient(circle 400px at var(--x) var(--y), hsl(var(--gold) / 0.1), transparent)',
         '--x': '50%',
         '--y': '50%'
       } as React.CSSProperties}></div>
         <div className="absolute inset-0 bg-dot-pattern opacity-5"></div>
         
         {/* Animated floating elements */}
-        {[...Array(10)].map((_, i) => <motion.div key={i} className="absolute rounded-full border border-[#D4AF37]/20" initial={{
+        {[...Array(10)].map((_, i) => <motion.div key={i} className="absolute rounded-full border border-gold-opacity-20" initial={{
         x: Math.random() * window.innerWidth,
         y: Math.random() * window.innerHeight,
         scale: Math.random() * 0.5 + 0.5,
@@ -116,8 +116,8 @@ const ContactCTA = () => {
               delay: 0.2
             }}>
                 <div className="inline-flex items-center gap-2 px-4 py-1.5 bg-zinc-800/80 backdrop-blur-sm rounded-full border border-zinc-700 mb-6">
-                  <Sparkles size={16} className="text-[#D4AF37]" />
-                  <span className="text-sm text-[#D4AF37] uppercase font-medium tracking-wider">Custom Solutions</span>
+                  <Sparkles size={16} className="text-gold" />
+                  <span className="text-sm text-gold uppercase font-medium tracking-wider">Custom Solutions</span>
                 </div>
               </motion.div>
               
@@ -132,9 +132,9 @@ const ContactCTA = () => {
             }} transition={{
               delay: 0.3
             }}>
-                Need a <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#D4AF37] to-[#F2D675] relative">
+                Need a <span className="text-gold-gradient relative">
                   Custom Solution
-                  <motion.div className="absolute -bottom-1 left-0 w-full h-0.5 bg-gradient-to-r from-[#D4AF37] to-[#F2D675]" initial={{
+                  <motion.div className="absolute -bottom-1 left-0 w-full h-0.5 bg-gold-gradient" initial={{
                   width: 0
                 }} whileInView={{
                   width: "100%"
@@ -167,15 +167,15 @@ const ContactCTA = () => {
               y: -5,
               boxShadow: '0 15px 30px -10px rgba(0, 0, 0, 0.3)'
             }}>
-                <div className="bg-[#D4AF37]/10 p-3 rounded-full w-12 h-12 flex items-center justify-center mx-auto mb-4 relative overflow-hidden group">
-                  <motion.div className="absolute inset-0 bg-gradient-to-r from-[#D4AF37]/0 via-[#D4AF37]/30 to-[#D4AF37]/0" animate={{
+                <div className="bg-gold-opacity-10 p-3 rounded-full w-12 h-12 flex items-center justify-center mx-auto mb-4 relative overflow-hidden group">
+                  <motion.div className="absolute inset-0 bg-gradient-to-r from-gold-opacity-0 via-gold-opacity-30 to-gold-opacity-0" animate={{
                   x: ['-100%', '100%']
                 }} transition={{
                   duration: 1.5,
                   repeat: Infinity,
                   repeatDelay: 3
                 }} />
-                  <MessageSquare className="text-[#D4AF37] h-6 w-6 relative z-10" />
+                  <MessageSquare className="text-gold h-6 w-6 relative z-10" />
                 </div>
                 <h3 className="font-medium mb-2">Priority Support</h3>
                 <p className="text-sm text-gray-400">Get help whenever you need it from our dedicated support team</p>
@@ -185,15 +185,15 @@ const ContactCTA = () => {
               y: -5,
               boxShadow: '0 15px 30px -10px rgba(0, 0, 0, 0.3)'
             }}>
-                <div className="bg-[#D4AF37]/10 p-3 rounded-full w-12 h-12 flex items-center justify-center mx-auto mb-4 relative overflow-hidden group">
-                  <motion.div className="absolute inset-0 bg-gradient-to-r from-[#D4AF37]/0 via-[#D4AF37]/30 to-[#D4AF37]/0" animate={{
+                <div className="bg-gold-opacity-10 p-3 rounded-full w-12 h-12 flex items-center justify-center mx-auto mb-4 relative overflow-hidden group">
+                  <motion.div className="absolute inset-0 bg-gradient-to-r from-gold-opacity-0 via-gold-opacity-30 to-gold-opacity-0" animate={{
                   x: ['-100%', '100%']
                 }} transition={{
                   duration: 1.5,
                   repeat: Infinity,
                   repeatDelay: 3.5
                 }} />
-                  <Trophy className="text-[#D4AF37] h-6 w-6 relative z-10" />
+                  <Trophy className="text-gold h-6 w-6 relative z-10" />
                 </div>
                 <h3 className="font-medium mb-2">Premium Features</h3>
                 <p className="text-sm text-gray-400">Access to exclusive features tailored to your business needs</p>
@@ -203,15 +203,15 @@ const ContactCTA = () => {
               y: -5,
               boxShadow: '0 15px 30px -10px rgba(0, 0, 0, 0.3)'
             }}>
-                <div className="bg-[#D4AF37]/10 p-3 rounded-full w-12 h-12 flex items-center justify-center mx-auto mb-4 relative overflow-hidden group">
-                  <motion.div className="absolute inset-0 bg-gradient-to-r from-[#D4AF37]/0 via-[#D4AF37]/30 to-[#D4AF37]/0" animate={{
+                <div className="bg-gold-opacity-10 p-3 rounded-full w-12 h-12 flex items-center justify-center mx-auto mb-4 relative overflow-hidden group">
+                  <motion.div className="absolute inset-0 bg-gradient-to-r from-gold-opacity-0 via-gold-opacity-30 to-gold-opacity-0" animate={{
                   x: ['-100%', '100%']
                 }} transition={{
                   duration: 1.5,
                   repeat: Infinity,
                   repeatDelay: 4
                 }} />
-                  <HeadphonesIcon className="text-[#D4AF37] h-6 w-6 relative z-10" />
+                  <HeadphonesIcon className="text-gold h-6 w-6 relative z-10" />
                 </div>
                 <h3 className="font-medium mb-2">Dedicated Manager</h3>
                 <p className="text-sm text-gray-400">Your personal account manager to ensure your success</p>
@@ -230,7 +230,7 @@ const ContactCTA = () => {
             delay: 0.6
           }}>
               <Link to="/contact">
-                <Button size="lg" className="font-medium px-8 py-6 text-base bg-gradient-to-r from-[#D4AF37] to-[#F2D675] text-black hover:from-[#F2D675] hover:to-[#D4AF37] group relative overflow-hidden">
+                <Button size="lg" className="font-medium px-8 py-6 text-base bg-gold-gradient text-gold-foreground hover:bg-gold-dark-gradient group relative overflow-hidden">
                   <span className="absolute inset-0 w-full h-full bg-white/20 transform -translate-x-full group-hover:translate-x-0 transition-transform duration-300"></span>
                   <span className="relative z-10 flex items-center">
                     Contact Sales <ArrowRight className="ml-2 h-5 w-5 transition-transform duration-300 group-hover:translate-x-1" />

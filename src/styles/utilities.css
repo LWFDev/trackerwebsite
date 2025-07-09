@@ -77,6 +77,15 @@
     background-color: hsl(var(--gold-light) / 0.6);
   }
   
+  /* Special Opacity Classes for Motion */
+  .bg-gold-opacity-0 {
+    background-color: hsl(var(--gold) / 0);
+  }
+  
+  .border-gold-opacity-50 {
+    border-color: hsl(var(--gold) / 0.5);
+  }
+  
   /* Border Colors */
   .border-gold {
     border-color: hsl(var(--gold));
