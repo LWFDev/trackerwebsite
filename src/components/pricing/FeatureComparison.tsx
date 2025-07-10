@@ -2,290 +2,230 @@ import React, { useState } from "react";
 import { Check, X, ChevronDown, ChevronUp } from "lucide-react";
 import { ScrollReveal } from "@/components/ui/scroll-reveal";
 import { motion, AnimatePresence } from "framer-motion";
+
 interface ComparisonFeature {
   feature: string;
-  starter: string | boolean;
-  professional: string | boolean;
-  enterprise: string | boolean;
+  tracker: string | boolean;
+  others: string | boolean;
+  category: string;
 }
+
 const FeatureComparison = () => {
   const [isExpanded, setIsExpanded] = useState(false);
   const [hoverRow, setHoverRow] = useState<number | null>(null);
+
   const comparisonFeatures: ComparisonFeature[] = [
+    // Industry Specialization
     {
-      feature: "Full User Licenses",
-      starter: "2 included",
-      professional: "5 included", 
-      enterprise: "Custom"
+      feature: "Built for Decoration Industry",
+      tracker: "100% decoration-focused workflows",
+      others: "Generic business management",
+      category: "Specialization"
     },
     {
-      feature: "Department Licenses",
-      starter: "2 included",
-      professional: "5 included",
-      enterprise: "Custom"
+      feature: "Decoration Method Support",
+      tracker: "Embroidery, screen printing, DTG, vinyl",
+      others: "Basic manufacturing only",
+      category: "Specialization"
     },
     {
-      feature: "Station Licenses", 
-      starter: "2 included",
-      professional: "5 included",
-      enterprise: "Custom"
+      feature: "Industry Templates",
+      tracker: "Pre-built decoration workflows",
+      others: "Generic templates require customization",
+      category: "Specialization"
     },
     {
-      feature: "Storage",
-      starter: "25GB included",
-      professional: "100GB included",
-      enterprise: "Unlimited"
+      feature: "Decoration Terminology",
+      tracker: "Native garment, color, size terminology",
+      others: "Generic product terminology",
+      category: "Specialization"
+    },
+
+    // Design & Artwork
+    {
+      feature: "Integrated Product Designer",
+      tracker: "Built-in decoration mockup tools",
+      others: "External design software required",
+      category: "Design Tools"
     },
     {
-      feature: "Base Garments Module",
-      starter: true,
-      professional: true,
-      enterprise: true
-    },
-    // Expanded detailed features
-    {
-      feature: "Customer Database Management",
-      starter: "Basic contact info & order history",
-      professional: "Advanced CRM with segmentation",
-      enterprise: "360° customer view with analytics"
+      feature: "Logo Hub with Version Control",
+      tracker: "Centralized artwork with brand compliance",
+      others: "Basic file storage without versioning",
+      category: "Design Tools"
     },
     {
-      feature: "Sales Order Management",
-      starter: "Basic order creation & tracking",
-      professional: "Advanced workflow automation",
-      enterprise: "Multi-location order orchestration"
+      feature: "Decoration Preview Generator",
+      tracker: "Real-time garment visualization",
+      others: "Static images or no previews",
+      category: "Design Tools"
     },
     {
-      feature: "Production Tracking",
-      starter: "Basic job status updates",
-      professional: "Real-time production monitoring",
-      enterprise: "AI-powered production optimization"
+      feature: "Brand Guidelines Enforcement",
+      tracker: "Automated brand compliance checks",
+      others: "Manual brand management",
+      category: "Design Tools"
+    },
+
+    // Production Management
+    {
+      feature: "Decoration Production Tracking",
+      tracker: "Step-by-step decoration workflows",
+      others: "Generic manufacturing steps",
+      category: "Production"
     },
     {
-      feature: "Product Designer Tool",
-      starter: false,
-      professional: "Built-in design editor with templates",
-      enterprise: "Advanced 3D design with mockups"
+      feature: "Equipment Integration",
+      tracker: "Native embroidery/printing machine sync",
+      others: "Limited or no equipment integration",
+      category: "Production"
     },
     {
-      feature: "Artwork & Logo Management",
-      starter: false,
-      professional: "Centralized artwork library",
-      enterprise: "Version control & brand compliance"
+      feature: "Color Management System",
+      tracker: "Thread/ink color matching & inventory",
+      others: "Basic color fields without matching",
+      category: "Production"
     },
     {
-      feature: "Inventory Management",
-      starter: false,
-      professional: "Stock tracking & reorder alerts",
-      enterprise: "Multi-warehouse with forecasting"
+      feature: "Setup Time Calculations",
+      tracker: "Decoration-specific setup cost tracking",
+      others: "Generic labor time tracking",
+      category: "Production"
+    },
+
+    // Customer Experience
+    {
+      feature: "Self-Service Ordering Portal",
+      tracker: "Decoration-specific ordering with previews",
+      others: "Basic order forms without previews",
+      category: "Customer Portal"
     },
     {
-      feature: "Customer Portal Access",
-      starter: false,
-      professional: "Self-service order placement",
-      enterprise: "White-label portal with branding"
+      feature: "Real-Time Decoration Quotes",
+      tracker: "Instant pricing with decoration variables",
+      others: "Manual quote generation required",
+      category: "Customer Portal"
     },
     {
-      feature: "Analytics & Reporting",
-      starter: "Basic sales reports",
-      professional: "Advanced KPI dashboards",
-      enterprise: "Custom reports & data export"
+      feature: "Approval Workflow for Artwork",
+      tracker: "Built-in artwork approval process",
+      others: "Email-based or manual approvals",
+      category: "Customer Portal"
     },
     {
-      feature: "Purchase Order Management",
-      starter: false,
-      professional: "Supplier management & PO tracking",
-      enterprise: "Automated procurement workflows"
+      feature: "Customer Design Library",
+      tracker: "Personal logo/design storage per customer",
+      others: "No customer-specific design storage",
+      category: "Customer Portal"
+    },
+
+    // Pricing Intelligence
+    {
+      feature: "Decoration Cost Calculator",
+      tracker: "Smart pricing based on decoration complexity",
+      others: "Basic markup pricing only",
+      category: "Pricing"
     },
     {
-      feature: "Warehouse Management",
-      starter: false,
-      professional: "Basic warehouse operations",
-      enterprise: "Advanced WMS with barcode scanning"
+      feature: "Multi-Method Pricing",
+      tracker: "Different rates per decoration method",
+      others: "Single pricing model",
+      category: "Pricing"
     },
     {
-      feature: "Project Management Tools",
-      starter: false,
-      professional: "Task tracking & deadlines",
-      enterprise: "Advanced project workflows"
+      feature: "Volume Discount Automation",
+      tracker: "Decoration quantity break pricing",
+      others: "Manual discount application",
+      category: "Pricing"
     },
     {
-      feature: "Finance & Accounting Integration",
-      starter: false,
-      professional: "Basic invoicing & payments",
-      enterprise: "Full ERP integration"
+      feature: "Margin Optimization Tools",
+      tracker: "Decoration profitability analysis",
+      others: "Basic profit reporting",
+      category: "Pricing"
+    },
+
+    // Industry Integrations
+    {
+      feature: "Supplier Network Integration",
+      tracker: "Direct connection to decoration suppliers",
+      others: "Generic supplier management",
+      category: "Integrations"
     },
     {
-      feature: "Document Management",
-      starter: "Basic file storage",
-      professional: "Organized document library",
-      enterprise: "Advanced document workflows"
+      feature: "Shipping Provider Optimization",
+      tracker: "Garment-specific shipping calculations",
+      others: "Basic shipping rate tables",
+      category: "Integrations"
     },
     {
-      feature: "Supplier Management",
-      starter: false,
-      professional: "Supplier database & communications",
-      enterprise: "Supplier performance analytics"
+      feature: "Accounting System Sync",
+      tracker: "Decoration-specific chart of accounts",
+      others: "Generic accounting integration",
+      category: "Integrations"
     },
     {
-      feature: "Quality Control Features",
-      starter: false,
-      professional: "Basic quality checkpoints",
-      enterprise: "Advanced QC workflows & reporting"
+      feature: "E-commerce Platform Sync",
+      tracker: "Decoration product sync with variants",
+      others: "Basic product sync without decoration options",
+      category: "Integrations"
+    },
+
+    // Mobile & Field Operations
+    {
+      feature: "Shop Floor Production App",
+      tracker: "Mobile tracking for decoration stations",
+      others: "Basic mobile web interface",
+      category: "Mobile"
     },
     {
-      feature: "Multi-Location Support",
-      starter: false,
-      professional: false,
-      enterprise: "Unlimited locations with consolidation"
+      feature: "Delivery Route Optimization",
+      tracker: "Garment delivery route planning",
+      others: "Generic delivery tracking",
+      category: "Mobile"
     },
     {
-      feature: "Advanced User Permissions",
-      starter: "Basic role-based access",
-      professional: "Department-based permissions",
-      enterprise: "Granular permission controls"
+      feature: "Quality Control Checkpoints",
+      tracker: "Decoration-specific QC workflows",
+      others: "Generic quality control",
+      category: "Mobile"
     },
     {
-      feature: "API Access & Integrations",
-      starter: "1 basic integration",
-      professional: "5 integrations + webhook support",
-      enterprise: "Unlimited + custom API development"
-    },
-    {
-      feature: "Data Import/Export Tools",
-      starter: "CSV import/export",
-      professional: "Advanced data mapping",
-      enterprise: "Real-time data synchronization"
-    },
-    {
-      feature: "Automated Workflows",
-      starter: false,
-      professional: "Basic automation rules",
-      enterprise: "Advanced workflow designer"
-    },
-    {
-      feature: "Mobile App Access",
-      starter: "Basic mobile view",
-      professional: "Native mobile app",
-      enterprise: "Custom mobile solutions"
-    },
-    {
-      feature: "Backup & Data Recovery",
-      starter: "Weekly backups",
-      professional: "Daily backups with 30-day retention",
-      enterprise: "Real-time backup with unlimited retention"
-    },
-    {
-      feature: "Security Features",
-      starter: "Basic SSL encryption",
-      professional: "Advanced security protocols",
-      enterprise: "Enterprise-grade security & compliance"
-    },
-    {
-      feature: "Customer Support",
-      starter: "Email & community forum",
-      professional: "Priority chat, phone & email",
-      enterprise: "24/7 dedicated account manager"
-    },
-    {
-      feature: "Training & Onboarding",
-      starter: "Self-service video tutorials",
-      professional: "Live guided training sessions",
-      enterprise: "On-site training & custom programs"
-    },
-    {
-      feature: "Implementation Support",
-      starter: "Self-guided setup",
-      professional: "Assisted implementation",
-      enterprise: "Full white-glove implementation"
-    },
-    {
-      feature: "Custom Branding Options",
-      starter: false,
-      professional: false,
-      enterprise: "Full white-label customization"
-    },
-    {
-      feature: "Advanced Analytics",
-      starter: false,
-      professional: "Standard business intelligence",
-      enterprise: "AI-powered predictive analytics"
-    },
-    {
-      feature: "Compliance & Audit Tools",
-      starter: false,
-      professional: "Basic compliance reporting",
-      enterprise: "Full audit trails & compliance suite"
-    },
-    {
-      feature: "Service Level Agreement",
-      starter: false,
-      professional: "99.5% uptime guarantee",
-      enterprise: "99.9% uptime with penalties"
-    },
-    {
-      feature: "Dedicated Infrastructure",
-      starter: false,
-      professional: false,
-      enterprise: "Private cloud deployment options"
-    },
-    {
-      feature: "Custom Module Development",
-      starter: false,
-      professional: false,
-      enterprise: "Bespoke feature development"
-    },
-    {
-      feature: "Enterprise SSO Integration",
-      starter: false,
-      professional: false,
-      enterprise: "SAML, LDAP, Active Directory"
-    },
-    {
-      feature: "Advanced Reporting Suite",
-      starter: false,
-      professional: "Standard business reports",
-      enterprise: "Custom report builder & scheduling"
-    },
-    {
-      feature: "Data Migration Services",
-      starter: "Basic CSV import assistance",
-      professional: "Guided data migration support",
-      enterprise: "Full data migration & validation"
+      feature: "Customer Site Installation",
+      tracker: "On-site uniform fitting & delivery tracking",
+      others: "Basic delivery confirmation",
+      category: "Mobile"
     }
   ];
 
   // Initial visible features - show more by default
   const visibleFeatures = isExpanded ? comparisonFeatures : comparisonFeatures.slice(0, 8);
-  const renderCell = (value: string | boolean, isPro: boolean = false) => {
+  
+  const renderCell = (value: string | boolean, isTracker: boolean = false) => {
     if (typeof value === 'boolean') {
-      return value ? <motion.div whileHover={{
-        scale: 1.2,
-        rotate: 10
-      }} className="flex justify-center">
-          <Check className={`h-5 w-5 ${isPro ? 'text-gold-light' : 'text-gold'}`} />
-        </motion.div> : <X className="h-5 w-5 text-gray-500 mx-auto" />;
+      return value ? 
+        <motion.div 
+          whileHover={{ scale: 1.2, rotate: 10 }} 
+          className="flex justify-center"
+        >
+          <Check className={`h-5 w-5 ${isTracker ? 'text-gold-light' : 'text-green-500'}`} />
+        </motion.div> : 
+        <X className="h-5 w-5 text-gray-500 mx-auto" />;
     }
     return <span className="text-gray-300">{value}</span>;
   };
 
   // Animation variants
   const tableVariants = {
-    hidden: {
-      opacity: 0
-    },
+    hidden: { opacity: 0 },
     visible: {
       opacity: 1,
-      transition: {
-        staggerChildren: 0.1
-      }
+      transition: { staggerChildren: 0.1 }
     }
   };
+
   const rowVariants = {
-    hidden: {
-      opacity: 0,
-      y: 20
-    },
+    hidden: { opacity: 0, y: 20 },
     visible: {
       opacity: 1,
       y: 0,
@@ -296,116 +236,136 @@ const FeatureComparison = () => {
       }
     }
   };
-  return <div className="py-20 bg-gradient-to-b from-black to-zinc-900 relative">
+
+  return (
+    <div className="py-20 bg-gradient-to-b from-black to-zinc-900 relative">
       <div className="absolute inset-0 bg-grid-pattern opacity-5"></div>
       
       <div className="container mx-auto px-4 relative z-10">
         <ScrollReveal threshold={0.1} delay={100}>
-          <motion.h2 className="text-3xl md:text-4xl font-bold mb-12 text-center" initial={{
-          opacity: 0,
-          y: -20
-        }} whileInView={{
-          opacity: 1,
-          y: 0
-        }} viewport={{
-          once: true
-        }} transition={{
-          type: "spring",
-          stiffness: 300
-        }}>
-            <motion.span className="text-gold-gradient inline-block" animate={{
-            backgroundPosition: ['0% center', '100% center', '0% center']
-          }} transition={{
-            duration: 6,
-            ease: "easeInOut",
-            repeat: Infinity,
-            repeatType: "reverse"
-          }} style={{
-            backgroundSize: '200% auto'
-          }}>
-              Compare
-            </motion.span> Plan Features
+          <motion.h2 
+            className="text-3xl md:text-4xl font-bold mb-12 text-center"
+            initial={{ opacity: 0, y: -20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ type: "spring", stiffness: 300 }}
+          >
+            <motion.span 
+              className="text-gold-gradient inline-block"
+              animate={{ backgroundPosition: ['0% center', '100% center', '0% center'] }}
+              transition={{
+                duration: 6,
+                ease: "easeInOut",
+                repeat: Infinity,
+                repeatType: "reverse"
+              }}
+              style={{ backgroundSize: '200% auto' }}
+            >
+              Why Tracker
+            </motion.span>{" "}
+            Outperforms Other Software
           </motion.h2>
         </ScrollReveal>
         
         <ScrollReveal threshold={0.1} delay={200} className="overflow-x-auto max-w-6xl mx-auto">
           <div className="min-w-[768px]">
-            <motion.table className="w-full border-collapse" variants={tableVariants} initial="hidden" whileInView="visible" viewport={{
-            once: true,
-            amount: 0.1
-          }}>
+            <motion.table 
+              className="w-full border-collapse" 
+              variants={tableVariants} 
+              initial="hidden" 
+              whileInView="visible" 
+              viewport={{ once: true, amount: 0.1 }}
+            >
               <thead>
                 <motion.tr className="border-b border-zinc-800" variants={rowVariants}>
-                  <th className="p-5 text-left text-gray-400 font-medium">Features</th>
-                  <th className="p-5 text-center">
-                    <div className="flex flex-col items-center">
-                      <span className="text-white mb-1">Starter</span>
-                      
-                    </div>
-                  </th>
+                  <th className="p-5 text-left text-gray-400 font-medium">Capability</th>
                   <th className="p-5 text-center bg-zinc-800/30 rounded-t-lg">
                     <div className="flex flex-col items-center">
-                      <motion.span className="text-gold-light mb-1 relative" whileInView={{
-                      textShadow: ['0 0 0px hsl(var(--gold-light) / 0)', '0 0 10px hsl(var(--gold-light) / 0.5)', '0 0 0px hsl(var(--gold-light) / 0)']
-                    }} transition={{
-                      duration: 2,
-                      repeat: Infinity,
-                      repeatType: "loop"
-                    }}>
-                        Decorator
+                      <motion.span 
+                        className="text-gold-light mb-1 relative"
+                        whileInView={{
+                          textShadow: [
+                            '0 0 0px hsl(var(--gold-light) / 0)', 
+                            '0 0 10px hsl(var(--gold-light) / 0.5)', 
+                            '0 0 0px hsl(var(--gold-light) / 0)'
+                          ]
+                        }}
+                        transition={{
+                          duration: 2,
+                          repeat: Infinity,
+                          repeatType: "loop"
+                        }}
+                      >
+                        Tracker
                       </motion.span>
-                      
+                      <span className="text-sm text-gray-400">Decoration-focused</span>
                     </div>
                   </th>
                   <th className="p-5 text-center">
                     <div className="flex flex-col items-center">
-                      <span className="text-white mb-1">Enterprise</span>
-                      <span className="text-sm text-gray-400">Custom pricing</span>
+                      <span className="text-white mb-1">Other Software</span>
+                      <span className="text-sm text-gray-400">Generic solutions</span>
                     </div>
                   </th>
                 </motion.tr>
               </thead>
               <tbody>
-                {visibleFeatures.map((item, index) => <motion.tr key={index} className={`border-b border-zinc-800 ${index % 2 === 0 ? 'bg-zinc-900/30' : ''}`} variants={rowVariants} onMouseEnter={() => setHoverRow(index)} onMouseLeave={() => setHoverRow(null)} animate={{
-                backgroundColor: hoverRow === index ? 'rgba(30, 30, 30, 0.6)' : index % 2 === 0 ? 'rgba(24, 24, 27, 0.3)' : 'transparent'
-              }}>
+                {visibleFeatures.map((item, index) => (
+                  <motion.tr 
+                    key={index}
+                    className={`border-b border-zinc-800 ${index % 2 === 0 ? 'bg-zinc-900/30' : ''}`}
+                    variants={rowVariants}
+                    onMouseEnter={() => setHoverRow(index)}
+                    onMouseLeave={() => setHoverRow(null)}
+                    animate={{
+                      backgroundColor: hoverRow === index 
+                        ? 'rgba(30, 30, 30, 0.6)' 
+                        : index % 2 === 0 
+                          ? 'rgba(24, 24, 27, 0.3)' 
+                          : 'transparent'
+                    }}
+                  >
                     <td className="p-5 text-left font-medium">{item.feature}</td>
-                    <td className="p-5 text-center">
-                      {renderCell(item.starter)}
-                    </td>
                     <td className="p-5 text-center bg-zinc-800/30">
-                      {renderCell(item.professional, true)}
+                      {renderCell(item.tracker, true)}
                     </td>
                     <td className="p-5 text-center">
-                      {renderCell(item.enterprise)}
+                      {renderCell(item.others)}
                     </td>
-                  </motion.tr>)}
+                  </motion.tr>
+                ))}
               </tbody>
             </motion.table>
             
             {/* Expand/collapse button */}
-            <motion.div className="mt-6 text-center" initial={{
-            opacity: 0
-          }} animate={{
-            opacity: 1
-          }} transition={{
-            delay: 0.5
-          }}>
-              <motion.button className="inline-flex items-center px-4 py-2 rounded-lg bg-zinc-800 hover:bg-zinc-700 text-sm font-medium gap-2 transition-colors" onClick={() => setIsExpanded(!isExpanded)} whileHover={{
-              y: -2
-            }} whileTap={{
-              y: 0
-            }}>
-                {isExpanded ? <>
+            <motion.div 
+              className="mt-6 text-center"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0.5 }}
+            >
+              <motion.button 
+                className="inline-flex items-center px-4 py-2 rounded-lg bg-zinc-800 hover:bg-zinc-700 text-sm font-medium gap-2 transition-colors"
+                onClick={() => setIsExpanded(!isExpanded)}
+                whileHover={{ y: -2 }}
+                whileTap={{ y: 0 }}
+              >
+                {isExpanded ? (
+                  <>
                     Show Less <ChevronUp className="h-4 w-4" />
-                  </> : <>
-                    Show All Features <ChevronDown className="h-4 w-4" />
-                  </>}
+                  </>
+                ) : (
+                  <>
+                    Show All Capabilities <ChevronDown className="h-4 w-4" />
+                  </>
+                )}
               </motion.button>
             </motion.div>
           </div>
         </ScrollReveal>
       </div>
-    </div>;
+    </div>
+  );
 };
+
 export default FeatureComparison;
