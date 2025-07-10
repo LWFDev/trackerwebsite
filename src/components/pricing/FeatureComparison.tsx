@@ -11,52 +11,80 @@ interface ComparisonFeature {
 const FeatureComparison = () => {
   const [isExpanded, setIsExpanded] = useState(false);
   const [hoverRow, setHoverRow] = useState<number | null>(null);
-  const comparisonFeatures: ComparisonFeature[] = [{
-    feature: "Users",
-    starter: "Up to 10",
-    professional: "Up to 50",
-    enterprise: "Unlimited"
-  }, {
-    feature: "Storage",
-    starter: "5GB",
-    professional: "50GB",
-    enterprise: "Unlimited"
-  }, {
-    feature: "Report Generation",
-    starter: "Basic",
-    professional: "Advanced",
-    enterprise: "Advanced"
-  }, {
-    feature: "API Access",
-    starter: "Limited",
-    professional: "Full Access",
-    enterprise: "Custom"
-  }, {
-    feature: "Support",
-    starter: "Email only",
-    professional: "Email, Chat & Phone",
-    enterprise: "24/7 Priority"
-  }, {
-    feature: "Analytics",
-    starter: "Basic",
-    professional: "Advanced",
-    enterprise: "Advanced"
-  }, {
-    feature: "Custom Branding",
-    starter: false,
-    professional: true,
-    enterprise: true
-  }, {
-    feature: "Dedicated Account Manager",
-    starter: false,
-    professional: false,
-    enterprise: true
-  }, {
-    feature: "SLA Guarantees",
-    starter: false,
-    professional: false,
-    enterprise: true
-  }];
+  const comparisonFeatures: ComparisonFeature[] = [
+    {
+      feature: "Full User Licenses",
+      starter: "2 included",
+      professional: "5 included", 
+      enterprise: "Custom"
+    },
+    {
+      feature: "Department Licenses",
+      starter: "2 included",
+      professional: "5 included",
+      enterprise: "Custom"
+    },
+    {
+      feature: "Station Licenses", 
+      starter: "2 included",
+      professional: "5 included",
+      enterprise: "Custom"
+    },
+    {
+      feature: "Storage",
+      starter: "25GB included",
+      professional: "100GB included",
+      enterprise: "Unlimited"
+    },
+    {
+      feature: "Modules",
+      starter: "4 core modules",
+      professional: "7 modules + analytics",
+      enterprise: "All modules + custom"
+    },
+    {
+      feature: "Support",
+      starter: "Email & community",
+      professional: "Priority chat & phone",
+      enterprise: "24/7 dedicated manager"
+    },
+    {
+      feature: "API Access",
+      starter: "Basic API",
+      professional: "Advanced API + webhooks", 
+      enterprise: "Custom API development"
+    },
+    {
+      feature: "Integrations",
+      starter: "1 integration",
+      professional: "5 integrations",
+      enterprise: "Unlimited"
+    },
+    {
+      feature: "Training",
+      starter: "Self-service",
+      professional: "Live sessions",
+      enterprise: "On-site + custom program"
+    },
+    {
+      feature: "Custom Branding",
+      starter: false,
+      professional: false,
+      enterprise: true
+    },
+    {
+      feature: "Multi-location Support",
+      starter: false,
+      professional: false,
+      enterprise: true
+    },
+    {
+      feature: "SLA Guarantees",
+      starter: false,
+      professional: false,
+      enterprise: true
+    }
+  ];
 
   // Initial visible features
   const visibleFeatures = isExpanded ? comparisonFeatures : comparisonFeatures.slice(0, 5);
@@ -146,17 +174,9 @@ const FeatureComparison = () => {
                       
                     </div>
                   </th>
-                  <th className="p-5 text-center bg-zinc-800/30 rounded-t-lg">
+                  <th className="p-5 text-center">
                     <div className="flex flex-col items-center">
-                      <motion.span className="text-gold-light mb-1 relative" whileInView={{
-                      textShadow: ['0 0 0px hsl(var(--gold-light) / 0)', '0 0 10px hsl(var(--gold-light) / 0.5)', '0 0 0px hsl(var(--gold-light) / 0)']
-                    }} transition={{
-                      duration: 2,
-                      repeat: Infinity,
-                      repeatType: "loop"
-                    }}>
-                        Professional
-                      </motion.span>
+                      <span className="text-white mb-1">Decorator</span>
                       
                     </div>
                   </th>
@@ -176,8 +196,8 @@ const FeatureComparison = () => {
                     <td className="p-5 text-center">
                       {renderCell(item.starter)}
                     </td>
-                    <td className="p-5 text-center bg-zinc-800/30">
-                      {renderCell(item.professional, true)}
+                    <td className="p-5 text-center">
+                      {renderCell(item.professional)}
                     </td>
                     <td className="p-5 text-center">
                       {renderCell(item.enterprise)}
