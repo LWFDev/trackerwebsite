@@ -255,8 +255,8 @@ const FeatureComparison = () => {
     }
   ];
 
-  // Initial visible features
-  const visibleFeatures = isExpanded ? comparisonFeatures : comparisonFeatures.slice(0, 5);
+  // Initial visible features - show more by default
+  const visibleFeatures = isExpanded ? comparisonFeatures : comparisonFeatures.slice(0, 8);
   const renderCell = (value: string | boolean, isPro: boolean = false) => {
     if (typeof value === 'boolean') {
       return value ? <motion.div whileHover={{
