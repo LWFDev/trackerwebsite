@@ -62,12 +62,12 @@ const PricingPlans = () => {
   return (
     <div className="py-12 sm:py-16 lg:py-20 bg-black relative z-10">
       {/* Dynamic background elements */}
-      <div className="absolute top-0 left-0 w-full h-full overflow-hidden">
-        <div className="absolute w-[600px] h-[600px] rounded-full bg-emerald-500/10 blur-[150px] -top-[200px] right-0 animate-pulse-light"></div>
-        <div className="absolute w-[800px] h-[800px] rounded-full bg-gold-opacity-8 blur-[150px] -bottom-[300px] left-0 animate-pulse-light" style={{ animationDelay: '1s' }}></div>
+      <div className="absolute top-0 left-0 w-full h-full overflow-hidden z-0">
+        <div className="absolute w-[600px] h-[600px] rounded-full bg-emerald-500/10 blur-[150px] -top-[200px] right-0 animate-pulse-light z-1"></div>
+        <div className="absolute w-[800px] h-[800px] rounded-full bg-gold-opacity-8 blur-[150px] -bottom-[300px] left-0 animate-pulse-light z-1" style={{ animationDelay: '1s' }}></div>
       </div>
       
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-20">
         <ScrollReveal className="text-center mb-12" threshold={0.1} delay={100}>
           <div className={`flex items-center justify-center gap-4 mb-8 ${animateSwitch ? 'animate-bounce-light' : ''}`}>
             <span className={`text-sm ${billingCycle === 'monthly' ? 'text-white' : 'text-gray-400'}`}>{t("Monthly")}</span>

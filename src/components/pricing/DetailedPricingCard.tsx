@@ -34,19 +34,23 @@ const DetailedPricingCard: React.FC<DetailedPricingCardProps> = ({ tier, billing
 
   return (
     <motion.div
-      className={`relative h-full ${tier.highlighted ? 'scale-105 z-10' : ''}`}
-      whileHover={{ y: -5 }}
+      className={`relative h-full ${tier.highlighted ? 'z-30' : 'z-20'} isolate`}
+      whileHover={{ y: -5, scale: tier.highlighted ? 1.05 : 1.02 }}
       transition={{ type: "spring", stiffness: 300, damping: 20 }}
+      style={{ 
+        transformStyle: 'preserve-3d',
+        backfaceVisibility: 'hidden',
+      }}
     >
       <Card className={`bg-zinc-900 border ${
         tier.highlighted 
           ? 'border-yellow-400 ring-2 ring-yellow-400/30 shadow-2xl shadow-yellow-400/20' 
           : 'border-zinc-800'
-      } h-full overflow-hidden`}>
+      } h-full overflow-hidden relative z-10`}>
         
         {/* Highlighted badge */}
         {tier.highlighted && (
-          <div className="absolute -top-3 left-1/2 transform -translate-x-1/2 z-20">
+          <div className="absolute -top-3 left-1/2 transform -translate-x-1/2 z-40">
             <Badge className="bg-gradient-to-r from-yellow-400 to-yellow-500 text-black font-semibold px-4 py-1 shadow-lg">
               <Sparkles className="w-3 h-3 mr-1" />
               Most Popular
@@ -56,7 +60,7 @@ const DetailedPricingCard: React.FC<DetailedPricingCardProps> = ({ tier, billing
 
         {/* Savings badge */}
         {tier.savings && (
-          <div className="absolute top-4 right-4 z-20">
+          <div className="absolute top-4 right-4 z-40">
             <Badge className="bg-green-500/20 text-green-400 border border-green-500/30">
               {tier.savings}
             </Badge>

@@ -65,13 +65,13 @@ const PricingHero = () => {
       {/* Interactive background elements */}
       <div className="absolute top-0 left-0 w-full h-full overflow-hidden z-0">
         {/* Animated gradient blob with optimized animation - green accent */}
-        <div ref={glowRef} className="absolute w-[800px] h-[800px] rounded-full bg-gradient-to-r from-emerald-500/15 to-gold-opacity-10 blur-[120px] top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 transition-transform duration-1000 ease-out" style={{
+        <div ref={glowRef} className="absolute w-[800px] h-[800px] rounded-full bg-gradient-to-r from-emerald-500/15 to-gold-opacity-10 blur-[120px] top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 transition-transform duration-1000 ease-out z-1" style={{
         willChange: 'transform'
       }}></div>
         
         {/* Floating elements - using transform instead of position for better performance */}
-        <div className="absolute inset-0 pointer-events-none">
-          <motion.div className="absolute top-20 left-[10%] w-16 h-16 border border-emerald-400/30 rounded-full opacity-40" animate={{
+        <div className="absolute inset-0 pointer-events-none z-2">
+          <motion.div className="absolute top-20 left-[10%] w-16 h-16 border border-emerald-400/30 rounded-full opacity-40 z-2" animate={{
           y: [0, -20, 0]
         }} transition={{
           duration: 6,
@@ -80,7 +80,7 @@ const PricingHero = () => {
         }} style={{
           willChange: 'transform'
         }} />
-          <motion.div className="absolute bottom-40 right-[15%] w-24 h-24 border border-gold-opacity-20 rounded-full opacity-30" animate={{
+          <motion.div className="absolute bottom-40 right-[15%] w-24 h-24 border border-gold-opacity-20 rounded-full opacity-30 z-2" animate={{
           y: [0, -30, 0]
         }} transition={{
           duration: 8,
@@ -90,7 +90,7 @@ const PricingHero = () => {
         }} style={{
           willChange: 'transform'
         }} />
-          <motion.div className="absolute top-[30%] right-[10%] w-32 h-32 border-2 border-gold-opacity-10 rounded-xl rotate-45 opacity-20" animate={{
+          <motion.div className="absolute top-[30%] right-[10%] w-32 h-32 border-2 border-gold-opacity-10 rounded-xl rotate-45 opacity-20 z-2" animate={{
           rotate: [45, 90, 45]
         }} transition={{
           duration: 10,
@@ -103,13 +103,13 @@ const PricingHero = () => {
         </div>
         
         {/* Decorative circles that pulse randomly */}
-        <motion.div className="absolute top-[20%] left-[20%] opacity-10" animate={controls} style={{
+        <motion.div className="absolute top-[20%] left-[20%] opacity-10 z-3" animate={controls} style={{
         willChange: 'transform, opacity'
       }}>
           <Circle size={120} className="text-gold" strokeWidth={1} />
         </motion.div>
         
-        <motion.div className="absolute bottom-[30%] right-[25%] opacity-10" animate={{
+        <motion.div className="absolute bottom-[30%] right-[25%] opacity-10 z-3" animate={{
         scale: [1, 1.2, 1],
         opacity: [0.1, 0.2, 0.1],
         transition: {
@@ -125,10 +125,10 @@ const PricingHero = () => {
         </motion.div>
         
         {/* Subtle background pattern */}
-        <div className="absolute inset-0 bg-dot-pattern opacity-10"></div>
+        <div className="absolute inset-0 bg-dot-pattern opacity-10 z-1"></div>
       </div>
       
-      <div className="container mx-auto px-4 relative z-10">
+      <div className="container mx-auto px-4 relative z-20">
         <motion.div initial={{
         opacity: 0,
         y: 20
