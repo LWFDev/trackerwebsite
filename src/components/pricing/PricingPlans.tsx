@@ -116,7 +116,7 @@ const PricingPlans = () => {
         <ScrollReveal className="text-center text-gray-400 mt-8 text-sm max-w-2xl mx-auto" threshold={0.1} delay={400}>
           <div className="flex items-center justify-center gap-2 mt-8">
             <Check className="h-4 w-4 text-emerald-400" />
-            <p>{t("All plans include a 14-day free trial with no credit card required")}</p>
+            <p>{t("Guaranteed results with every plan.")}</p>
           </div>
         </ScrollReveal>
       </div>
