@@ -37,10 +37,58 @@ const FeatureComparison = () => {
       enterprise: "Unlimited"
     },
     {
-      feature: "Modules",
-      starter: "4 core modules",
-      professional: "7 modules + analytics",
-      enterprise: "All modules + custom"
+      feature: "Base Garments Module",
+      starter: true,
+      professional: true,
+      enterprise: true
+    },
+    {
+      feature: "Customer Database",
+      starter: true,
+      professional: true,
+      enterprise: true
+    },
+    {
+      feature: "Sales Order Management",
+      starter: true,
+      professional: true,
+      enterprise: true
+    },
+    {
+      feature: "Production Tracking",
+      starter: "Basic",
+      professional: "Advanced",
+      enterprise: "Advanced + Automation"
+    },
+    {
+      feature: "Product Designer",
+      starter: false,
+      professional: true,
+      enterprise: true
+    },
+    {
+      feature: "Artwork Management",
+      starter: false,
+      professional: true,
+      enterprise: true
+    },
+    {
+      feature: "Inventory Management",
+      starter: false,
+      professional: true,
+      enterprise: true
+    },
+    {
+      feature: "Customer Portal",
+      starter: false,
+      professional: true,
+      enterprise: true
+    },
+    {
+      feature: "Analytics & Reporting",
+      starter: false,
+      professional: true,
+      enterprise: "Advanced + Custom"
     },
     {
       feature: "Support",
@@ -62,15 +110,9 @@ const FeatureComparison = () => {
     },
     {
       feature: "Training",
-      starter: "Self-service",
-      professional: "Live sessions",
+      starter: "Self-service videos",
+      professional: "Live guided sessions",
       enterprise: "On-site + custom program"
-    },
-    {
-      feature: "Custom Branding",
-      starter: false,
-      professional: false,
-      enterprise: true
     },
     {
       feature: "Multi-location Support",
@@ -79,7 +121,37 @@ const FeatureComparison = () => {
       enterprise: true
     },
     {
+      feature: "White-label Options",
+      starter: false,
+      professional: false,
+      enterprise: true
+    },
+    {
+      feature: "Custom Module Development",
+      starter: false,
+      professional: false,
+      enterprise: true
+    },
+    {
+      feature: "Advanced Security Features",
+      starter: false,
+      professional: false,
+      enterprise: true
+    },
+    {
+      feature: "Enterprise SSO",
+      starter: false,
+      professional: false,
+      enterprise: true
+    },
+    {
       feature: "SLA Guarantees",
+      starter: false,
+      professional: false,
+      enterprise: true
+    },
+    {
+      feature: "Dedicated Infrastructure",
       starter: false,
       professional: false,
       enterprise: true
@@ -174,9 +246,17 @@ const FeatureComparison = () => {
                       
                     </div>
                   </th>
-                  <th className="p-5 text-center">
+                  <th className="p-5 text-center bg-zinc-800/30 rounded-t-lg">
                     <div className="flex flex-col items-center">
-                      <span className="text-white mb-1">Decorator</span>
+                      <motion.span className="text-gold-light mb-1 relative" whileInView={{
+                      textShadow: ['0 0 0px hsl(var(--gold-light) / 0)', '0 0 10px hsl(var(--gold-light) / 0.5)', '0 0 0px hsl(var(--gold-light) / 0)']
+                    }} transition={{
+                      duration: 2,
+                      repeat: Infinity,
+                      repeatType: "loop"
+                    }}>
+                        Decorator
+                      </motion.span>
                       
                     </div>
                   </th>
@@ -196,8 +276,8 @@ const FeatureComparison = () => {
                     <td className="p-5 text-center">
                       {renderCell(item.starter)}
                     </td>
-                    <td className="p-5 text-center">
-                      {renderCell(item.professional)}
+                    <td className="p-5 text-center bg-zinc-800/30">
+                      {renderCell(item.professional, true)}
                     </td>
                     <td className="p-5 text-center">
                       {renderCell(item.enterprise)}

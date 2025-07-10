@@ -90,7 +90,7 @@ export const pricingTiers: PricingTier[] = [
     tierPrice: 4500,
     onboardingFee: 1000,
     description: "Ideal for growing decoration businesses with advanced needs",
-    highlighted: false,
+    highlighted: true,
     licenses: {
       full: {
         name: "Full User Licenses",
