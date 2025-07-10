@@ -113,11 +113,11 @@ const DetailedPricingCard: React.FC<DetailedPricingCardProps> = ({
                 <div className="flex items-center justify-between">
                   <span className="text-gray-300">Full Users:</span>
                   <div className="flex items-center gap-2">
-                    <Button size="icon" variant="outline" className="h-8 w-8 bg-zinc-800 border-zinc-700 hover:bg-zinc-700" onClick={() => updateLicense('fullUsers', false)}>
+                    <Button size="icon" variant="outline" onClick={() => updateLicense('fullUsers', false)} className="h-8 w-8 bg-zinc-800">
                       <Minus className="w-3 h-3" />
                     </Button>
                     <span className="text-white min-w-8 text-center">{customLicenses.fullUsers}</span>
-                    <Button size="icon" variant="outline" className="h-8 w-8 bg-zinc-800 border-zinc-700 hover:bg-zinc-700" onClick={() => updateLicense('fullUsers', true)}>
+                    <Button size="icon" variant="outline" onClick={() => updateLicense('fullUsers', true)} className="h-8 w-8 bg-zinc-800">
                       <Plus className="w-3 h-3" />
                     </Button>
                   </div>
@@ -125,11 +125,11 @@ const DetailedPricingCard: React.FC<DetailedPricingCardProps> = ({
                 <div className="flex items-center justify-between">
                   <span className="text-gray-300">Departments:</span>
                   <div className="flex items-center gap-2">
-                    <Button size="icon" variant="outline" className="h-8 w-8 bg-zinc-800 border-zinc-700 hover:bg-zinc-700" onClick={() => updateLicense('departments', false)}>
+                    <Button size="icon" variant="outline" onClick={() => updateLicense('departments', false)} className="h-8 w-8 bg-zinc-800 ">
                       <Minus className="w-3 h-3" />
                     </Button>
                     <span className="text-white min-w-8 text-center">{customLicenses.departments}</span>
-                    <Button size="icon" variant="outline" className="h-8 w-8 bg-zinc-800 border-zinc-700 hover:bg-zinc-700" onClick={() => updateLicense('departments', true)}>
+                    <Button size="icon" variant="outline" onClick={() => updateLicense('departments', true)} className="h-8 w-8 bg-zinc-800">
                       <Plus className="w-3 h-3" />
                     </Button>
                   </div>
@@ -141,7 +141,7 @@ const DetailedPricingCard: React.FC<DetailedPricingCardProps> = ({
                       <Minus className="w-3 h-3" />
                     </Button>
                     <span className="text-white min-w-8 text-center">{customLicenses.stations}</span>
-                    <Button size="icon" variant="outline" className="h-8 w-8 bg-zinc-800 border-zinc-700 hover:bg-zinc-700" onClick={() => updateLicense('stations', true)}>
+                    <Button size="icon" variant="outline" onClick={() => updateLicense('stations', true)} className="h-8 w-8 bg-zinc-800">
                       <Plus className="w-3 h-3" />
                     </Button>
                   </div>
