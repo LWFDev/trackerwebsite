@@ -61,23 +61,23 @@ const DetailedPricingCard: React.FC<DetailedPricingCardProps> = ({
       <Card className={`bg-zinc-900 border ${tier.highlighted ? 'border-yellow-400 ring-2 ring-yellow-400/30 shadow-2xl shadow-yellow-400/20' : 'border-zinc-800'} h-full overflow-hidden relative z-10`}>
         
         {/* Highlighted badge */}
-        {tier.highlighted && <div className="absolute -top-6 left-1/2 transform -translate-x-1/2 z-40 my-0 mx-0">
-            <Badge className="bg-gradient-to-r from-yellow-400 to-yellow-500 text-black font-semibold shadow-lg whitespace-nowrap my-[93px] py-[5px] mx-0 px-0">
+        {tier.highlighted && <div className="absolute -top-3 left-1/2 transform -translate-x-1/2 z-40">
+            <Badge className="bg-gradient-to-r from-yellow-400 to-yellow-500 text-black font-semibold shadow-lg whitespace-nowrap px-3 py-1">
               <Sparkles className="w-3 h-3 mr-1" />
               Most Popular
             </Badge>
           </div>}
 
         {/* Savings badge */}
-        {tier.savings && <div className="absolute -top-3 right-4 z-40 py-0 my-[130px]">
-            <Badge className="bg-green-500/20 text-green-400 border border-green-500/30 text-xs whitespace-nowrap mx-[66px] my-[10px]">
+        {tier.savings && <div className="absolute -top-3 right-4 z-40">
+            <Badge className="bg-green-500/20 text-green-400 border border-green-500/30 text-xs whitespace-nowrap px-2 py-1">
               {tier.savings}
             </Badge>
           </div>}
 
-        <CardHeader className="text-center pb-4 pt-8 py-0 my-0">
-          <h3 className="text-2xl font-bold text-white mb-2 my-0">{tier.name}</h3>
-          <p className="text-gray-400 text-sm mb-4 my-[100px]">{tier.description}</p>
+        <CardHeader className={`text-center pb-4 ${tier.highlighted || tier.savings ? 'pt-12' : 'pt-6'}`}>
+          <h3 className="text-2xl font-bold text-white mb-2">{tier.name}</h3>
+          <p className="text-gray-400 text-sm mb-6">{tier.description}</p>
           
           {/* Pricing display */}
           <div className="space-y-2">
