@@ -109,39 +109,69 @@ const DetailedPricingCard: React.FC<DetailedPricingCardProps> = ({
               <Users className="w-4 h-4" />
               {tier.name === 'Enterprise' ? 'License Configuration' : 'Included Licenses'}
             </h4>
-            {tier.name === 'Enterprise' ? <div className="grid grid-cols-1 gap-3 text-sm">
-                <div className="flex items-center justify-between">
-                  <span className="text-gray-300">Full Users:</span>
-                  <div className="flex items-center gap-2">
-                    <Button size="icon" variant="outline" onClick={() => updateLicense('fullUsers', false)} className="h-8 w-8 bg-transparent border-transparent ">
+            {tier.name === 'Enterprise' ? <div className="grid grid-cols-1 gap-4 text-sm">
+                <div className="flex items-center justify-between py-2">
+                  <span className="text-gray-300 font-medium">Full Users:</span>
+                  <div className="flex items-center gap-3">
+                    <Button 
+                      size="icon" 
+                      variant="outline" 
+                      onClick={() => updateLicense('fullUsers', false)} 
+                      className="h-8 w-8 bg-zinc-800 border-zinc-700 hover:bg-zinc-700 hover:border-zinc-600 text-gray-300 hover:text-white"
+                    >
                       <Minus className="w-3 h-3" />
                     </Button>
-                    <span className="text-white min-w-8 text-center">{customLicenses.fullUsers}</span>
-                    <Button size="icon" variant="outline" onClick={() => updateLicense('fullUsers', true)} className="h-8 w-8 bg-transparent border-transparent ">
+                    <span className="text-white font-semibold min-w-[2rem] text-center">{customLicenses.fullUsers}</span>
+                    <Button 
+                      size="icon" 
+                      variant="outline" 
+                      onClick={() => updateLicense('fullUsers', true)} 
+                      className="h-8 w-8 bg-zinc-800 border-zinc-700 hover:bg-zinc-700 hover:border-zinc-600 text-gray-300 hover:text-white"
+                    >
                       <Plus className="w-3 h-3" />
                     </Button>
                   </div>
                 </div>
-                <div className="flex items-center justify-between">
-                  <span className="text-gray-300">Departments:</span>
-                  <div className="flex items-center gap-2">
-                    <Button size="icon" variant="outline" onClick={() => updateLicense('departments', false)} className="h-8 w-8 bg-transparent border-transparent ">
+                <div className="flex items-center justify-between py-2">
+                  <span className="text-gray-300 font-medium">Departments:</span>
+                  <div className="flex items-center gap-3">
+                    <Button 
+                      size="icon" 
+                      variant="outline" 
+                      onClick={() => updateLicense('departments', false)} 
+                      className="h-8 w-8 bg-zinc-800 border-zinc-700 hover:bg-zinc-700 hover:border-zinc-600 text-gray-300 hover:text-white"
+                    >
                       <Minus className="w-3 h-3" />
                     </Button>
-                    <span className="text-white min-w-8 text-center">{customLicenses.departments}</span>
-                    <Button size="icon" variant="outline" onClick={() => updateLicense('departments', true)} className="h-8 w-8 bg-transparent border-transparent ">
+                    <span className="text-white font-semibold min-w-[2rem] text-center">{customLicenses.departments}</span>
+                    <Button 
+                      size="icon" 
+                      variant="outline" 
+                      onClick={() => updateLicense('departments', true)} 
+                      className="h-8 w-8 bg-zinc-800 border-zinc-700 hover:bg-zinc-700 hover:border-zinc-600 text-gray-300 hover:text-white"
+                    >
                       <Plus className="w-3 h-3" />
                     </Button>
                   </div>
                 </div>
-                <div className="flex items-center justify-between">
-                  <span className="text-gray-300">Stations:</span>
-                  <div className="flex items-center gap-2">
-                    <Button size="icon" variant="outline" onClick={() => updateLicense('stations', false)} className="h-8 w-8 bg-transparent border-transparent ">
+                <div className="flex items-center justify-between py-2">
+                  <span className="text-gray-300 font-medium">Stations:</span>
+                  <div className="flex items-center gap-3">
+                    <Button 
+                      size="icon" 
+                      variant="outline" 
+                      onClick={() => updateLicense('stations', false)} 
+                      className="h-8 w-8 bg-zinc-800 border-zinc-700 hover:bg-zinc-700 hover:border-zinc-600 text-gray-300 hover:text-white"
+                    >
                       <Minus className="w-3 h-3" />
                     </Button>
-                    <span className="text-white min-w-8 text-center">{customLicenses.stations}</span>
-                    <Button size="icon" variant="outline" onClick={() => updateLicense('stations', true)} className="h-8 w-8 bg-transparent border-transparent ">
+                    <span className="text-white font-semibold min-w-[2rem] text-center">{customLicenses.stations}</span>
+                    <Button 
+                      size="icon" 
+                      variant="outline" 
+                      onClick={() => updateLicense('stations', true)} 
+                      className="h-8 w-8 bg-zinc-800 border-zinc-700 hover:bg-zinc-700 hover:border-zinc-600 text-gray-300 hover:text-white"
+                    >
                       <Plus className="w-3 h-3" />
                     </Button>
                   </div>
