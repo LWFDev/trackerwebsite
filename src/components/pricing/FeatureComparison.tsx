@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Check, X, ChevronDown, ChevronUp } from "lucide-react";
 import { ScrollReveal } from "@/components/ui/scroll-reveal";
 import { motion, AnimatePresence } from "framer-motion";
+import { Link } from "react-router-dom";
 
 interface ComparisonFeature {
   feature: string;
@@ -200,6 +201,104 @@ const FeatureComparison = () => {
 
   // Always show all features, but control visibility with animation
   const initialFeatureCount = 8;
+
+  // Key terms mapping for highlighting and linking
+  const keyTermsMap = {
+    // Module-related terms (green highlighting)
+    'Product Designer': { link: '/modules/product-designer', color: 'green' },
+    'Logo Hub': { link: '/modules/logos', color: 'green' },
+    'Customer Portal': { link: '/modules/customer-portal', color: 'green' },
+    'Sales Orders': { link: '/modules/sales-orders', color: 'green' },
+    'Inventory': { link: '/modules/inventory', color: 'green' },
+    'Production': { link: '/modules/production', color: 'green' },
+    'Suppliers': { link: '/modules/suppliers', color: 'green' },
+    'Purchase Orders': { link: '/modules/purchase-orders', color: 'green' },
+    'Warehouse': { link: '/modules/warehouse', color: 'green' },
+    'Product Design': { link: '/modules/product-design', color: 'green' },
+    
+    // Industry-related terms (orange highlighting)
+    'Embroidery': { link: '/industries/high-volume-embroidery', color: 'orange' },
+    'Screen Printing': { link: '/industries/screen-printing', color: 'orange' },
+    'Decoration Industry': { link: '/industries', color: 'orange' },
+    'Corporate Apparel': { link: '/industries/corporate-apparel', color: 'orange' },
+    'Promotional Products': { link: '/industries/promotional-products', color: 'orange' },
+    'DTG': { link: '/industries/screen-printing', color: 'orange' },
+    'Vinyl': { link: '/industries/screen-printing', color: 'orange' },
+    
+    // General page links (green highlighting)
+    'Documentation': { link: '/documentation', color: 'green' },
+    'Support': { link: '/support', color: 'green' },
+    'Case Studies': { link: '/case-studies', color: 'green' }
+  };
+
+  // Function to enhance text with highlights and links
+  const enhanceText = (text: string) => {
+    if (typeof text !== 'string') return text;
+    
+    let enhancedText = text;
+    const replacements: Array<{ original: string; replacement: JSX.Element; index: number }> = [];
+    
+    Object.entries(keyTermsMap).forEach(([term, config]) => {
+      const regex = new RegExp(`\\b${term}\\b`, 'gi');
+      const matches = [...text.matchAll(regex)];
+      
+      matches.forEach((match) => {
+        if (match.index !== undefined) {
+          const key = `${term}-${match.index}`;
+          const replacement = (
+            <Link
+              key={key}
+              to={config.link}
+              className={`
+                inline-block px-1 rounded transition-all duration-200 hover:scale-105
+                ${config.color === 'green' 
+                  ? 'bg-green-500/20 text-green-400 hover:bg-green-500/30 border-b border-green-500/50' 
+                  : 'bg-orange-500/20 text-orange-400 hover:bg-orange-500/30 border-b border-orange-500/50'
+                }
+                hover:shadow-lg hover:shadow-${config.color}-500/20
+              `}
+              aria-label={`Learn more about ${term}`}
+            >
+              {match[0]}
+            </Link>
+          );
+          
+          replacements.push({
+            original: match[0],
+            replacement,
+            index: match.index
+          });
+        }
+      });
+    });
+    
+    if (replacements.length === 0) {
+      return <span className="text-gray-300">{text}</span>;
+    }
+    
+    // Sort by index to process from right to left
+    replacements.sort((a, b) => b.index - a.index);
+    
+    // Build the enhanced JSX
+    const parts: Array<string | JSX.Element> = [text];
+    
+    replacements.forEach(({ original, replacement, index }) => {
+      const currentText = parts[0] as string;
+      const before = currentText.slice(0, index);
+      const after = currentText.slice(index + original.length);
+      
+      parts[0] = before;
+      parts.splice(1, 0, replacement, after);
+    });
+    
+    return (
+      <span className="text-gray-300">
+        {parts.map((part, index) => 
+          typeof part === 'string' ? part : React.cloneElement(part as JSX.Element, { key: index })
+        )}
+      </span>
+    );
+  };
   
   const renderCell = (value: string | boolean, isTracker: boolean = false) => {
     if (typeof value === 'boolean') {
@@ -212,7 +311,7 @@ const FeatureComparison = () => {
         </motion.div> : 
         <X className="h-5 w-5 text-gray-500 mx-auto" />;
     }
-    return <span className="text-gray-300">{value}</span>;
+    return enhanceText(value);
   };
 
   // Animation variants
@@ -340,7 +439,7 @@ const FeatureComparison = () => {
                         display: (isExpanded || index < initialFeatureCount) ? 'table-row' : 'none'
                       }}
                     >
-                      <td className="p-5 text-left font-medium">{item.feature}</td>
+                      <td className="p-5 text-left font-medium">{enhanceText(item.feature)}</td>
                       <td className="p-5 text-center bg-zinc-800/30">
                         {renderCell(item.tracker, true)}
                       </td>
