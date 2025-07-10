@@ -311,7 +311,7 @@ const FeatureComparison = () => {
         </motion.div> : 
         <X className="h-5 w-5 text-gray-500 mx-auto" />;
     }
-    return enhanceText(value);
+    return <span className="text-gray-300">{value}</span>;
   };
 
   // Animation variants
