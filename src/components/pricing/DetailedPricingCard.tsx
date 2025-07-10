@@ -224,7 +224,7 @@ const DetailedPricingCard: React.FC<DetailedPricingCardProps> = ({ tier, billing
               <div className="flex items-start gap-2">
                 <Check className="w-4 h-4 text-green-400 mt-0.5 shrink-0" />
                 <span className="text-gray-300 text-sm">
-                  {tier.features.modules.length} modules included
+                  All modules included
                 </span>
               </div>
               <div className="flex items-start gap-2">
