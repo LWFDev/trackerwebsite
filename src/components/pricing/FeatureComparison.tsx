@@ -198,8 +198,8 @@ const FeatureComparison = () => {
     }
   ];
 
-  // Initial visible features - show more by default
-  const visibleFeatures = isExpanded ? comparisonFeatures : comparisonFeatures.slice(0, 8);
+  // Always show all features, but control visibility with animation
+  const initialFeatureCount = 8;
   
   const renderCell = (value: string | boolean, isTracker: boolean = false) => {
     if (typeof value === 'boolean') {
@@ -310,30 +310,46 @@ const FeatureComparison = () => {
                 </motion.tr>
               </thead>
               <tbody>
-                {visibleFeatures.map((item, index) => (
-                  <motion.tr 
-                    key={index}
-                    className={`border-b border-zinc-800 ${index % 2 === 0 ? 'bg-zinc-900/30' : ''}`}
-                    variants={rowVariants}
-                    onMouseEnter={() => setHoverRow(index)}
-                    onMouseLeave={() => setHoverRow(null)}
-                    animate={{
-                      backgroundColor: hoverRow === index 
-                        ? 'rgba(30, 30, 30, 0.6)' 
-                        : index % 2 === 0 
-                          ? 'rgba(24, 24, 27, 0.3)' 
-                          : 'transparent'
-                    }}
-                  >
-                    <td className="p-5 text-left font-medium">{item.feature}</td>
-                    <td className="p-5 text-center bg-zinc-800/30">
-                      {renderCell(item.tracker, true)}
-                    </td>
-                    <td className="p-5 text-center">
-                      {renderCell(item.others)}
-                    </td>
-                  </motion.tr>
-                ))}
+                <AnimatePresence mode="wait">
+                  {comparisonFeatures.map((item, index) => (
+                    <motion.tr 
+                      key={`feature-${index}`}
+                      className={`border-b border-zinc-800 ${index % 2 === 0 ? 'bg-zinc-900/30' : ''}`}
+                      initial={index >= initialFeatureCount ? { opacity: 0, height: 0 } : { opacity: 1, height: "auto" }}
+                      animate={{ 
+                        opacity: isExpanded || index < initialFeatureCount ? 1 : 0,
+                        height: isExpanded || index < initialFeatureCount ? "auto" : 0,
+                        backgroundColor: hoverRow === index 
+                          ? 'rgba(30, 30, 30, 0.6)' 
+                          : index % 2 === 0 
+                            ? 'rgba(24, 24, 27, 0.3)' 
+                            : 'transparent'
+                      }}
+                      exit={{ opacity: 0, height: 0 }}
+                      transition={{
+                        duration: 0.3,
+                        delay: index >= initialFeatureCount ? (index - initialFeatureCount) * 0.05 : 0,
+                        type: "spring",
+                        stiffness: 300,
+                        damping: 25
+                      }}
+                      onMouseEnter={() => setHoverRow(index)}
+                      onMouseLeave={() => setHoverRow(null)}
+                      style={{ 
+                        overflow: 'hidden',
+                        display: (isExpanded || index < initialFeatureCount) ? 'table-row' : 'none'
+                      }}
+                    >
+                      <td className="p-5 text-left font-medium">{item.feature}</td>
+                      <td className="p-5 text-center bg-zinc-800/30">
+                        {renderCell(item.tracker, true)}
+                      </td>
+                      <td className="p-5 text-center">
+                        {renderCell(item.others)}
+                      </td>
+                    </motion.tr>
+                  ))}
+                </AnimatePresence>
               </tbody>
             </motion.table>
             
