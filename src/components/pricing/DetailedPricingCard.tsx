@@ -3,10 +3,11 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@/components/ui/collapsible";
-import { Check, ChevronDown, Sparkles, Users, Database, Headphones } from "lucide-react";
+import { Check, ChevronDown, Sparkles, Users, Database, Headphones, Plus, Minus } from "lucide-react";
 import { motion } from "framer-motion";
 import { PricingTier } from "@/data/pricingData";
 import { useLocalization } from "@/contexts/LocalizationContext";
+import CustomQuoteModal from "./CustomQuoteModal";
 
 interface DetailedPricingCardProps {
   tier: PricingTier;
@@ -16,6 +17,21 @@ interface DetailedPricingCardProps {
 const DetailedPricingCard: React.FC<DetailedPricingCardProps> = ({ tier, billingCycle }) => {
   const { locale } = useLocalization();
   const [showDetails, setShowDetails] = useState(false);
+  const [showQuoteModal, setShowQuoteModal] = useState(false);
+  
+  // Enterprise plan custom license counts
+  const [customLicenses, setCustomLicenses] = useState({
+    fullUsers: 10,
+    departments: 5,
+    stations: 15
+  });
+
+  const updateLicense = (type: keyof typeof customLicenses, increment: boolean) => {
+    setCustomLicenses(prev => ({
+      ...prev,
+      [type]: Math.max(1, prev[type] + (increment ? 1 : -1))
+    }));
+  };
   
   // Currency conversion
   const USD_TO_GBP_RATE = 0.79;
@@ -50,8 +66,8 @@ const DetailedPricingCard: React.FC<DetailedPricingCardProps> = ({ tier, billing
         
         {/* Highlighted badge */}
         {tier.highlighted && (
-          <div className="absolute -top-3 left-1/2 transform -translate-x-1/2 z-40">
-            <Badge className="bg-gradient-to-r from-yellow-400 to-yellow-500 text-black font-semibold px-4 py-1 shadow-lg">
+          <div className="absolute -top-6 left-1/2 transform -translate-x-1/2 z-40">
+            <Badge className="bg-gradient-to-r from-yellow-400 to-yellow-500 text-black font-semibold px-4 py-2 shadow-lg whitespace-nowrap">
               <Sparkles className="w-3 h-3 mr-1" />
               Most Popular
             </Badge>
@@ -60,14 +76,14 @@ const DetailedPricingCard: React.FC<DetailedPricingCardProps> = ({ tier, billing
 
         {/* Savings badge */}
         {tier.savings && (
-          <div className="absolute top-4 right-4 z-40">
-            <Badge className="bg-green-500/20 text-green-400 border border-green-500/30">
+          <div className="absolute -top-3 right-4 z-40">
+            <Badge className="bg-green-500/20 text-green-400 border border-green-500/30 text-xs whitespace-nowrap">
               {tier.savings}
             </Badge>
           </div>
         )}
 
-        <CardHeader className="text-center pb-4">
+        <CardHeader className="text-center pb-4 pt-8">
           <h3 className="text-2xl font-bold text-white mb-2">{tier.name}</h3>
           <p className="text-gray-400 text-sm mb-4">{tier.description}</p>
           
@@ -105,22 +121,93 @@ const DetailedPricingCard: React.FC<DetailedPricingCardProps> = ({ tier, billing
           <div className="space-y-3">
             <h4 className="font-semibold text-white flex items-center gap-2">
               <Users className="w-4 h-4" />
-              Included Licenses
+              {tier.name === 'Enterprise' ? 'License Configuration' : 'Included Licenses'}
             </h4>
-            <div className="grid grid-cols-1 gap-2 text-sm">
-              <div className="flex justify-between">
-                <span className="text-gray-300">Full Users:</span>
-                <span className="text-white">{tier.licenses.full.included}</span>
+            {tier.name === 'Enterprise' ? (
+              <div className="grid grid-cols-1 gap-3 text-sm">
+                <div className="flex items-center justify-between">
+                  <span className="text-gray-300">Full Users:</span>
+                  <div className="flex items-center gap-2">
+                    <Button
+                      size="icon"
+                      variant="outline"
+                      className="h-8 w-8 bg-zinc-800 border-zinc-700 hover:bg-zinc-700"
+                      onClick={() => updateLicense('fullUsers', false)}
+                    >
+                      <Minus className="w-3 h-3" />
+                    </Button>
+                    <span className="text-white min-w-8 text-center">{customLicenses.fullUsers}</span>
+                    <Button
+                      size="icon"
+                      variant="outline"
+                      className="h-8 w-8 bg-zinc-800 border-zinc-700 hover:bg-zinc-700"
+                      onClick={() => updateLicense('fullUsers', true)}
+                    >
+                      <Plus className="w-3 h-3" />
+                    </Button>
+                  </div>
+                </div>
+                <div className="flex items-center justify-between">
+                  <span className="text-gray-300">Departments:</span>
+                  <div className="flex items-center gap-2">
+                    <Button
+                      size="icon"
+                      variant="outline"
+                      className="h-8 w-8 bg-zinc-800 border-zinc-700 hover:bg-zinc-700"
+                      onClick={() => updateLicense('departments', false)}
+                    >
+                      <Minus className="w-3 h-3" />
+                    </Button>
+                    <span className="text-white min-w-8 text-center">{customLicenses.departments}</span>
+                    <Button
+                      size="icon"
+                      variant="outline"
+                      className="h-8 w-8 bg-zinc-800 border-zinc-700 hover:bg-zinc-700"
+                      onClick={() => updateLicense('departments', true)}
+                    >
+                      <Plus className="w-3 h-3" />
+                    </Button>
+                  </div>
+                </div>
+                <div className="flex items-center justify-between">
+                  <span className="text-gray-300">Stations:</span>
+                  <div className="flex items-center gap-2">
+                    <Button
+                      size="icon"
+                      variant="outline"
+                      className="h-8 w-8 bg-zinc-800 border-zinc-700 hover:bg-zinc-700"
+                      onClick={() => updateLicense('stations', false)}
+                    >
+                      <Minus className="w-3 h-3" />
+                    </Button>
+                    <span className="text-white min-w-8 text-center">{customLicenses.stations}</span>
+                    <Button
+                      size="icon"
+                      variant="outline"
+                      className="h-8 w-8 bg-zinc-800 border-zinc-700 hover:bg-zinc-700"
+                      onClick={() => updateLicense('stations', true)}
+                    >
+                      <Plus className="w-3 h-3" />
+                    </Button>
+                  </div>
+                </div>
               </div>
-              <div className="flex justify-between">
-                <span className="text-gray-300">Department:</span>
-                <span className="text-white">{tier.licenses.department.included}</span>
+            ) : (
+              <div className="grid grid-cols-1 gap-2 text-sm">
+                <div className="flex justify-between">
+                  <span className="text-gray-300">Full Users:</span>
+                  <span className="text-white">{tier.licenses.full.included}</span>
+                </div>
+                <div className="flex justify-between">
+                  <span className="text-gray-300">Department:</span>
+                  <span className="text-white">{tier.licenses.department.included}</span>
+                </div>
+                <div className="flex justify-between">
+                  <span className="text-gray-300">Station:</span>
+                  <span className="text-white">{tier.licenses.station.included}</span>
+                </div>
               </div>
-              <div className="flex justify-between">
-                <span className="text-gray-300">Station:</span>
-                <span className="text-white">{tier.licenses.station.included}</span>
-              </div>
-            </div>
+            )}
           </div>
 
           {/* Key features */}
@@ -215,11 +302,19 @@ const DetailedPricingCard: React.FC<DetailedPricingCardProps> = ({ tier, billing
                 ? 'bg-gradient-to-r from-yellow-400 to-yellow-500 hover:from-yellow-500 hover:to-yellow-600 text-black font-semibold' 
                 : 'bg-zinc-800 hover:bg-zinc-700 text-white'
             }`}
+            onClick={() => tier.name === 'Enterprise' ? setShowQuoteModal(true) : undefined}
           >
-            {tier.name === 'Enterprise' ? 'Contact Sales' : 'Get Started'}
+            {tier.name === 'Enterprise' ? 'Get Custom Quote' : 'Get Started'}
           </Button>
         </CardContent>
       </Card>
+
+      {/* Custom Quote Modal */}
+      <CustomQuoteModal
+        isOpen={showQuoteModal}
+        onClose={() => setShowQuoteModal(false)}
+        selectedLicenses={customLicenses}
+      />
     </motion.div>
   );
 };

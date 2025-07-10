@@ -68,7 +68,7 @@ const PricingPlans = () => {
       </div>
       
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-20">
-        <ScrollReveal className="text-center mb-12" threshold={0.1} delay={100}>
+        <ScrollReveal className="text-center mb-16" threshold={0.1} delay={100}>
           <div className={`flex items-center justify-center gap-4 mb-8 ${animateSwitch ? 'animate-bounce-light' : ''}`}>
             <span className={`text-sm ${billingCycle === 'monthly' ? 'text-white' : 'text-gray-400'}`}>{t("Monthly")}</span>
             <Switch 
