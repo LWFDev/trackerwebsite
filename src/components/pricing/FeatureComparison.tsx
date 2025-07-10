@@ -42,119 +42,216 @@ const FeatureComparison = () => {
       professional: true,
       enterprise: true
     },
+    // Expanded detailed features
     {
-      feature: "Customer Database",
-      starter: true,
-      professional: true,
-      enterprise: true
+      feature: "Customer Database Management",
+      starter: "Basic contact info & order history",
+      professional: "Advanced CRM with segmentation",
+      enterprise: "360° customer view with analytics"
     },
     {
       feature: "Sales Order Management",
-      starter: true,
-      professional: true,
-      enterprise: true
+      starter: "Basic order creation & tracking",
+      professional: "Advanced workflow automation",
+      enterprise: "Multi-location order orchestration"
     },
     {
       feature: "Production Tracking",
-      starter: "Basic",
-      professional: "Advanced",
-      enterprise: "Advanced + Automation"
+      starter: "Basic job status updates",
+      professional: "Real-time production monitoring",
+      enterprise: "AI-powered production optimization"
     },
     {
-      feature: "Product Designer",
+      feature: "Product Designer Tool",
       starter: false,
-      professional: true,
-      enterprise: true
+      professional: "Built-in design editor with templates",
+      enterprise: "Advanced 3D design with mockups"
     },
     {
-      feature: "Artwork Management",
+      feature: "Artwork & Logo Management",
       starter: false,
-      professional: true,
-      enterprise: true
+      professional: "Centralized artwork library",
+      enterprise: "Version control & brand compliance"
     },
     {
       feature: "Inventory Management",
       starter: false,
-      professional: true,
-      enterprise: true
+      professional: "Stock tracking & reorder alerts",
+      enterprise: "Multi-warehouse with forecasting"
     },
     {
-      feature: "Customer Portal",
+      feature: "Customer Portal Access",
       starter: false,
-      professional: true,
-      enterprise: true
+      professional: "Self-service order placement",
+      enterprise: "White-label portal with branding"
     },
     {
       feature: "Analytics & Reporting",
+      starter: "Basic sales reports",
+      professional: "Advanced KPI dashboards",
+      enterprise: "Custom reports & data export"
+    },
+    {
+      feature: "Purchase Order Management",
       starter: false,
-      professional: true,
-      enterprise: "Advanced + Custom"
+      professional: "Supplier management & PO tracking",
+      enterprise: "Automated procurement workflows"
     },
     {
-      feature: "Support",
-      starter: "Email & community",
-      professional: "Priority chat & phone",
-      enterprise: "24/7 dedicated manager"
-    },
-    {
-      feature: "API Access",
-      starter: "Basic API",
-      professional: "Advanced API + webhooks", 
-      enterprise: "Custom API development"
-    },
-    {
-      feature: "Integrations",
-      starter: "1 integration",
-      professional: "5 integrations",
-      enterprise: "Unlimited"
-    },
-    {
-      feature: "Training",
-      starter: "Self-service videos",
-      professional: "Live guided sessions",
-      enterprise: "On-site + custom program"
-    },
-    {
-      feature: "Multi-location Support",
+      feature: "Warehouse Management",
       starter: false,
-      professional: false,
-      enterprise: true
+      professional: "Basic warehouse operations",
+      enterprise: "Advanced WMS with barcode scanning"
     },
     {
-      feature: "White-label Options",
+      feature: "Project Management Tools",
       starter: false,
-      professional: false,
-      enterprise: true
+      professional: "Task tracking & deadlines",
+      enterprise: "Advanced project workflows"
     },
     {
-      feature: "Custom Module Development",
+      feature: "Finance & Accounting Integration",
       starter: false,
-      professional: false,
-      enterprise: true
+      professional: "Basic invoicing & payments",
+      enterprise: "Full ERP integration"
     },
     {
-      feature: "Advanced Security Features",
+      feature: "Document Management",
+      starter: "Basic file storage",
+      professional: "Organized document library",
+      enterprise: "Advanced document workflows"
+    },
+    {
+      feature: "Supplier Management",
       starter: false,
-      professional: false,
-      enterprise: true
+      professional: "Supplier database & communications",
+      enterprise: "Supplier performance analytics"
     },
     {
-      feature: "Enterprise SSO",
+      feature: "Quality Control Features",
+      starter: false,
+      professional: "Basic quality checkpoints",
+      enterprise: "Advanced QC workflows & reporting"
+    },
+    {
+      feature: "Multi-Location Support",
       starter: false,
       professional: false,
-      enterprise: true
+      enterprise: "Unlimited locations with consolidation"
     },
     {
-      feature: "SLA Guarantees",
+      feature: "Advanced User Permissions",
+      starter: "Basic role-based access",
+      professional: "Department-based permissions",
+      enterprise: "Granular permission controls"
+    },
+    {
+      feature: "API Access & Integrations",
+      starter: "1 basic integration",
+      professional: "5 integrations + webhook support",
+      enterprise: "Unlimited + custom API development"
+    },
+    {
+      feature: "Data Import/Export Tools",
+      starter: "CSV import/export",
+      professional: "Advanced data mapping",
+      enterprise: "Real-time data synchronization"
+    },
+    {
+      feature: "Automated Workflows",
+      starter: false,
+      professional: "Basic automation rules",
+      enterprise: "Advanced workflow designer"
+    },
+    {
+      feature: "Mobile App Access",
+      starter: "Basic mobile view",
+      professional: "Native mobile app",
+      enterprise: "Custom mobile solutions"
+    },
+    {
+      feature: "Backup & Data Recovery",
+      starter: "Weekly backups",
+      professional: "Daily backups with 30-day retention",
+      enterprise: "Real-time backup with unlimited retention"
+    },
+    {
+      feature: "Security Features",
+      starter: "Basic SSL encryption",
+      professional: "Advanced security protocols",
+      enterprise: "Enterprise-grade security & compliance"
+    },
+    {
+      feature: "Customer Support",
+      starter: "Email & community forum",
+      professional: "Priority chat, phone & email",
+      enterprise: "24/7 dedicated account manager"
+    },
+    {
+      feature: "Training & Onboarding",
+      starter: "Self-service video tutorials",
+      professional: "Live guided training sessions",
+      enterprise: "On-site training & custom programs"
+    },
+    {
+      feature: "Implementation Support",
+      starter: "Self-guided setup",
+      professional: "Assisted implementation",
+      enterprise: "Full white-glove implementation"
+    },
+    {
+      feature: "Custom Branding Options",
       starter: false,
       professional: false,
-      enterprise: true
+      enterprise: "Full white-label customization"
+    },
+    {
+      feature: "Advanced Analytics",
+      starter: false,
+      professional: "Standard business intelligence",
+      enterprise: "AI-powered predictive analytics"
+    },
+    {
+      feature: "Compliance & Audit Tools",
+      starter: false,
+      professional: "Basic compliance reporting",
+      enterprise: "Full audit trails & compliance suite"
+    },
+    {
+      feature: "Service Level Agreement",
+      starter: false,
+      professional: "99.5% uptime guarantee",
+      enterprise: "99.9% uptime with penalties"
     },
     {
       feature: "Dedicated Infrastructure",
       starter: false,
       professional: false,
-      enterprise: true
+      enterprise: "Private cloud deployment options"
+    },
+    {
+      feature: "Custom Module Development",
+      starter: false,
+      professional: false,
+      enterprise: "Bespoke feature development"
+    },
+    {
+      feature: "Enterprise SSO Integration",
+      starter: false,
+      professional: false,
+      enterprise: "SAML, LDAP, Active Directory"
+    },
+    {
+      feature: "Advanced Reporting Suite",
+      starter: false,
+      professional: "Standard business reports",
+      enterprise: "Custom report builder & scheduling"
+    },
+    {
+      feature: "Data Migration Services",
+      starter: "Basic CSV import assistance",
+      professional: "Guided data migration support",
+      enterprise: "Full data migration & validation"
     }
   ];
 
