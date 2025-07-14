@@ -77,29 +77,52 @@ const DetailedPricingCard: React.FC<DetailedPricingCardProps> = ({
   };
 
   // Currency conversion with custom UK pricing
-  const formatPrice = (price: number) => {
-    if (price === 0) return "Custom";
+  const formatPricing = (price: number, isOnboarding: boolean = false) => {
+    if (price === 0) return { current: "Custom", original: null };
     
     if (locale === 'UK') {
       // Custom UK pricing as specified
       if (tier.name === 'Starter') {
-        const monthly = billingCycle === 'annually' ? Math.round(649 * 0.8) : 649;
-        const onboarding = billingCycle === 'annually' ? Math.round(1999 * 0.8) : 1999;
-        return price === tier.basePrice ? `£${monthly.toLocaleString()}` : `£${onboarding.toLocaleString()}`;
+        if (isOnboarding) {
+          // Onboarding fee stays constant
+          return { current: `£${(1999).toLocaleString()}`, original: null };
+        } else {
+          // Monthly price with potential discount
+          const monthly = 649;
+          const discounted = Math.round(monthly * 0.8);
+          return billingCycle === 'annually' 
+            ? { current: `£${discounted.toLocaleString()}`, original: `£${monthly.toLocaleString()}` }
+            : { current: `£${monthly.toLocaleString()}`, original: null };
+        }
       } else if (tier.name === 'Decorator') {
-        const monthly = billingCycle === 'annually' ? Math.round(1599 * 0.8) : 1599;
-        const onboarding = billingCycle === 'annually' ? Math.round(3599 * 0.8) : 3599;
-        return price === tier.basePrice ? `£${monthly.toLocaleString()}` : `£${onboarding.toLocaleString()}`;
+        if (isOnboarding) {
+          // Onboarding fee stays constant
+          return { current: `£${(3599).toLocaleString()}`, original: null };
+        } else {
+          // Monthly price with potential discount
+          const monthly = 1599;
+          const discounted = Math.round(monthly * 0.8);
+          return billingCycle === 'annually' 
+            ? { current: `£${discounted.toLocaleString()}`, original: `£${monthly.toLocaleString()}` }
+            : { current: `£${monthly.toLocaleString()}`, original: null };
+        }
       }
     }
     
     // USD pricing
-    const finalPrice = billingCycle === 'annually' ? price * 0.8 : price; // 20% discount for annual
-    return `$${finalPrice.toLocaleString()}`;
+    if (isOnboarding) {
+      // Onboarding fee stays constant
+      return { current: `$${price.toLocaleString()}`, original: null };
+    } else {
+      // Monthly price with potential discount
+      const discounted = Math.round(price * 0.8);
+      return billingCycle === 'annually' 
+        ? { current: `$${discounted.toLocaleString()}`, original: `$${price.toLocaleString()}` }
+        : { current: `$${price.toLocaleString()}`, original: null };
+    }
   };
-  const basePrice = formatPrice(tier.basePrice);
-  const tierPrice = formatPrice(tier.tierPrice);
-  const onboardingFee = formatPrice(tier.onboardingFee);
+  const monthlyPricing = formatPricing(tier.basePrice, false);
+  const onboardingPricing = formatPricing(tier.onboardingFee, true);
   return <motion.div className={`relative h-full ${tier.highlighted ? 'z-30' : 'z-20'} isolate`} whileHover={{
     y: -5,
     scale: tier.highlighted ? 1.05 : 1.02
@@ -137,16 +160,21 @@ const DetailedPricingCard: React.FC<DetailedPricingCardProps> = ({
             {tier.basePrice > 0 ? <>
                 <div className="flex items-center justify-center gap-2 text-sm text-gray-400">
                   <span>Monthly:</span>
-                  <span className={tier.highlighted ? 'text-yellow-400' : 'text-white'}>{basePrice}</span>
+                  <div className="flex items-center gap-2">
+                    {monthlyPricing.original && (
+                      <span className="line-through text-gray-500 text-xs">{monthlyPricing.original}</span>
+                    )}
+                    <span className={tier.highlighted ? 'text-yellow-400' : 'text-white'}>{monthlyPricing.current}</span>
+                  </div>
                 </div>
                 <div className="flex items-center justify-center gap-2">
                   <span className={`text-4xl font-bold ${tier.highlighted ? 'text-yellow-400' : 'text-white'}`}>
-                    {tierPrice}
+                    {onboardingPricing.current}
                   </span>
                   <span className="text-gray-500">On-Boarding Fee</span>
                 </div>
                 
-                {billingCycle === 'annually' && <div className="text-xs text-green-400">
+                {billingCycle === 'annually' && monthlyPricing.original && <div className="text-xs text-green-400">
                     20% discount applied for annual billing
                   </div>}
               </> : <div className="text-4xl font-bold text-white">Custom</div>}
