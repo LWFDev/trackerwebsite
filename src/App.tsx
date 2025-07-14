@@ -18,6 +18,7 @@ import NotFound from "./pages/NotFound";
 // Lazy load non-critical pages
 const GetStarted = React.lazy(() => import("@/pages/GetStarted"));
 const Pricing = React.lazy(() => import("@/pages/Pricing"));
+const PaymentSuccess = React.lazy(() => import("@/pages/PaymentSuccess"));
 const Contact = React.lazy(() => import("@/pages/Contact"));
 const AboutUs = React.lazy(() => import("@/pages/AboutUs"));
 const Blog = React.lazy(() => import("@/pages/Blog"));
@@ -90,6 +91,7 @@ const App = () => {
                     {/* Main Routes */}
                     <Route path="/" element={<Layout><Index /></Layout>} />
                     <Route path="/pricing" element={<Layout><Pricing /></Layout>} />
+                    <Route path="/payment-success" element={<Layout><PaymentSuccess /></Layout>} />
                     <Route path="/contact" element={<Layout><Contact /></Layout>} />
                     <Route path="/about" element={<Layout><AboutUs /></Layout>} />
                     <Route path="/blog" element={<Layout><Blog /></Layout>} />

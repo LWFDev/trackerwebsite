@@ -35,7 +35,7 @@ export const pricingTiers: PricingTier[] = [
     name: "Starter",
     basePrice: 799,
     tierPrice: 2500,
-    onboardingFee: 500,
+    onboardingFee: 2500,
     description: "Perfect for small businesses getting started with decoration tracking",
     highlighted: false,
     licenses: {
@@ -88,7 +88,7 @@ export const pricingTiers: PricingTier[] = [
     name: "Decorator",
     basePrice: 1999,
     tierPrice: 4500,
-    onboardingFee: 1000,
+    onboardingFee: 4500,
     description: "Ideal for growing decoration businesses with advanced needs",
     highlighted: true,
     licenses: {

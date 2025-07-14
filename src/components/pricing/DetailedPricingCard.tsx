@@ -7,6 +7,8 @@ import { Check, ChevronDown, Sparkles, Users, Database, Headphones, Plus, Minus 
 import { motion } from "framer-motion";
 import { PricingTier } from "@/data/pricingData";
 import { useLocalization } from "@/contexts/LocalizationContext";
+import { useToast } from "@/hooks/use-toast";
+import { supabase } from "@/integrations/supabase/client";
 import CustomQuoteModal from "./CustomQuoteModal";
 interface DetailedPricingCardProps {
   tier: PricingTier;
@@ -35,14 +37,70 @@ const DetailedPricingCard: React.FC<DetailedPricingCardProps> = ({
     }));
   };
 
-  // Currency conversion
-  const USD_TO_GBP_RATE = 0.79;
+  const { toast } = useToast();
+  const [isLoading, setIsLoading] = useState(false);
+
+  const handleSubscribe = async () => {
+    if (tier.name === 'Enterprise') {
+      setShowQuoteModal(true);
+      return;
+    }
+
+    // Get customer email
+    const email = prompt('Please enter your email address to proceed with payment:');
+    if (!email) return;
+
+    setIsLoading(true);
+    
+    try {
+      const { data, error } = await supabase.functions.invoke('create-payment', {
+        body: {
+          planName: tier.name,
+          billingCycle: billingCycle,
+          customerEmail: email
+        }
+      });
+
+      if (error) throw error;
+
+      if (data?.url) {
+        // Open Stripe checkout in a new tab
+        window.open(data.url, '_blank');
+      } else {
+        throw new Error('No checkout URL received');
+      }
+    } catch (error) {
+      console.error('Payment error:', error);
+      toast({
+        title: "Payment Error",
+        description: "Failed to create payment session. Please try again.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsLoading(false);
+    }
+  };
+
+  // Currency conversion with custom UK pricing
   const formatPrice = (price: number) => {
     if (price === 0) return "Custom";
+    
+    if (locale === 'UK') {
+      // Custom UK pricing as specified
+      if (tier.name === 'Starter') {
+        const monthly = billingCycle === 'annually' ? Math.round(649 * 0.8) : 649;
+        const onboarding = billingCycle === 'annually' ? Math.round(1999 * 0.8) : 1999;
+        return price === tier.basePrice ? `£${monthly.toLocaleString()}` : `£${onboarding.toLocaleString()}`;
+      } else if (tier.name === 'Decorator') {
+        const monthly = billingCycle === 'annually' ? Math.round(1599 * 0.8) : 1599;
+        const onboarding = billingCycle === 'annually' ? Math.round(3599 * 0.8) : 3599;
+        return price === tier.basePrice ? `£${monthly.toLocaleString()}` : `£${onboarding.toLocaleString()}`;
+      }
+    }
+    
+    // USD pricing
     const finalPrice = billingCycle === 'annually' ? price * 0.8 : price; // 20% discount for annual
-    const convertedPrice = locale === 'UK' ? Math.round(finalPrice * USD_TO_GBP_RATE) : finalPrice;
-    const currency = locale === 'UK' ? '£' : '$';
-    return `${currency}${convertedPrice.toLocaleString()}`;
+    return `$${finalPrice.toLocaleString()}`;
   };
   const basePrice = formatPrice(tier.basePrice);
   const tierPrice = formatPrice(tier.tierPrice);
@@ -242,8 +300,12 @@ const DetailedPricingCard: React.FC<DetailedPricingCardProps> = ({
           </Collapsible>
 
           {/* CTA Button */}
-          <Button className={`w-full ${tier.highlighted ? 'bg-gradient-to-r from-yellow-400 to-yellow-500 hover:from-yellow-500 hover:to-yellow-600 text-black font-semibold' : 'bg-zinc-800 hover:bg-zinc-700 text-white'}`} onClick={() => tier.name === 'Enterprise' ? setShowQuoteModal(true) : undefined}>
-            {tier.name === 'Enterprise' ? 'Get Custom Quote' : 'Get Started'}
+          <Button 
+            className={`w-full ${tier.highlighted ? 'bg-gradient-to-r from-yellow-400 to-yellow-500 hover:from-yellow-500 hover:to-yellow-600 text-black font-semibold' : 'bg-zinc-800 hover:bg-zinc-700 text-white'}`} 
+            onClick={handleSubscribe}
+            disabled={isLoading}
+          >
+            {isLoading ? 'Processing...' : (tier.name === 'Enterprise' ? 'Get Custom Quote' : 'Subscribe Now')}
           </Button>
         </CardContent>
       </Card>
