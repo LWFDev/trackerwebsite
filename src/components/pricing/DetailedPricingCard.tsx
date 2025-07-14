@@ -181,7 +181,9 @@ const DetailedPricingCard: React.FC<DetailedPricingCardProps> = ({
               </div>
               <div className="flex items-start gap-2">
                 <Headphones className="w-4 h-4 text-blue-400 mt-0.5 shrink-0" />
-                <span className="text-gray-300 text-sm">{tier.features.support[0]}</span>
+                <span className="text-gray-300 text-sm">
+                  {tier.features.support[0] === '24/7 priority support' ? 'Premium Priority Support' : tier.features.support[0]}
+                </span>
               </div>
             </div>
           </div>
