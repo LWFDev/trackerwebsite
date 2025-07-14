@@ -83,18 +83,16 @@ const DetailedPricingCard: React.FC<DetailedPricingCardProps> = ({
           <div className="space-y-2">
             {tier.basePrice > 0 ? <>
                 <div className="flex items-center justify-center gap-2 text-sm text-gray-400">
-                  <span>Base:</span>
+                  <span>Monthly:</span>
                   <span className={tier.highlighted ? 'text-yellow-400' : 'text-white'}>{basePrice}</span>
                 </div>
                 <div className="flex items-center justify-center gap-2">
                   <span className={`text-4xl font-bold ${tier.highlighted ? 'text-yellow-400' : 'text-white'}`}>
                     {tierPrice}
                   </span>
-                  <span className="text-gray-500">/month</span>
+                  <span className="text-gray-500">On-Boarding Fee</span>
                 </div>
-                <div className="text-xs text-gray-500">
-                  + {onboardingFee} setup fee
-                </div>
+                
                 {billingCycle === 'annually' && <div className="text-xs text-green-400">
                     20% discount applied for annual billing
                   </div>}
@@ -113,21 +111,11 @@ const DetailedPricingCard: React.FC<DetailedPricingCardProps> = ({
                 <div className="flex items-center justify-between py-2">
                   <span className="text-gray-300 font-medium">Full Users:</span>
                   <div className="flex items-center gap-3">
-                    <Button 
-                      size="icon" 
-                      variant="outline" 
-                      onClick={() => updateLicense('fullUsers', false)} 
-                      className="h-8 w-8 bg-zinc-800 border-zinc-700 hover:bg-zinc-700 hover:border-zinc-600 text-gray-300 hover:text-white"
-                    >
+                    <Button size="icon" variant="outline" onClick={() => updateLicense('fullUsers', false)} className="h-8 w-8 bg-zinc-800 border-zinc-700 hover:bg-zinc-700 hover:border-zinc-600 text-gray-300 hover:text-white">
                       <Minus className="w-3 h-3" />
                     </Button>
                     <span className="text-white font-semibold min-w-[2rem] text-center">{customLicenses.fullUsers}</span>
-                    <Button 
-                      size="icon" 
-                      variant="outline" 
-                      onClick={() => updateLicense('fullUsers', true)} 
-                      className="h-8 w-8 bg-zinc-800 border-zinc-700 hover:bg-zinc-700 hover:border-zinc-600 text-gray-300 hover:text-white"
-                    >
+                    <Button size="icon" variant="outline" onClick={() => updateLicense('fullUsers', true)} className="h-8 w-8 bg-zinc-800 border-zinc-700 hover:bg-zinc-700 hover:border-zinc-600 text-gray-300 hover:text-white">
                       <Plus className="w-3 h-3" />
                     </Button>
                   </div>
@@ -135,21 +123,11 @@ const DetailedPricingCard: React.FC<DetailedPricingCardProps> = ({
                 <div className="flex items-center justify-between py-2">
                   <span className="text-gray-300 font-medium">Departments:</span>
                   <div className="flex items-center gap-3">
-                    <Button 
-                      size="icon" 
-                      variant="outline" 
-                      onClick={() => updateLicense('departments', false)} 
-                      className="h-8 w-8 bg-zinc-800 border-zinc-700 hover:bg-zinc-700 hover:border-zinc-600 text-gray-300 hover:text-white"
-                    >
+                    <Button size="icon" variant="outline" onClick={() => updateLicense('departments', false)} className="h-8 w-8 bg-zinc-800 border-zinc-700 hover:bg-zinc-700 hover:border-zinc-600 text-gray-300 hover:text-white">
                       <Minus className="w-3 h-3" />
                     </Button>
                     <span className="text-white font-semibold min-w-[2rem] text-center">{customLicenses.departments}</span>
-                    <Button 
-                      size="icon" 
-                      variant="outline" 
-                      onClick={() => updateLicense('departments', true)} 
-                      className="h-8 w-8 bg-zinc-800 border-zinc-700 hover:bg-zinc-700 hover:border-zinc-600 text-gray-300 hover:text-white"
-                    >
+                    <Button size="icon" variant="outline" onClick={() => updateLicense('departments', true)} className="h-8 w-8 bg-zinc-800 border-zinc-700 hover:bg-zinc-700 hover:border-zinc-600 text-gray-300 hover:text-white">
                       <Plus className="w-3 h-3" />
                     </Button>
                   </div>
@@ -157,21 +135,11 @@ const DetailedPricingCard: React.FC<DetailedPricingCardProps> = ({
                 <div className="flex items-center justify-between py-2">
                   <span className="text-gray-300 font-medium">Stations:</span>
                   <div className="flex items-center gap-3">
-                    <Button 
-                      size="icon" 
-                      variant="outline" 
-                      onClick={() => updateLicense('stations', false)} 
-                      className="h-8 w-8 bg-zinc-800 border-zinc-700 hover:bg-zinc-700 hover:border-zinc-600 text-gray-300 hover:text-white"
-                    >
+                    <Button size="icon" variant="outline" onClick={() => updateLicense('stations', false)} className="h-8 w-8 bg-zinc-800 border-zinc-700 hover:bg-zinc-700 hover:border-zinc-600 text-gray-300 hover:text-white">
                       <Minus className="w-3 h-3" />
                     </Button>
                     <span className="text-white font-semibold min-w-[2rem] text-center">{customLicenses.stations}</span>
-                    <Button 
-                      size="icon" 
-                      variant="outline" 
-                      onClick={() => updateLicense('stations', true)} 
-                      className="h-8 w-8 bg-zinc-800 border-zinc-700 hover:bg-zinc-700 hover:border-zinc-600 text-gray-300 hover:text-white"
-                    >
+                    <Button size="icon" variant="outline" onClick={() => updateLicense('stations', true)} className="h-8 w-8 bg-zinc-800 border-zinc-700 hover:bg-zinc-700 hover:border-zinc-600 text-gray-300 hover:text-white">
                       <Plus className="w-3 h-3" />
                     </Button>
                   </div>
