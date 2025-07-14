@@ -174,8 +174,8 @@ const DetailedPricingCard: React.FC<DetailedPricingCardProps> = ({
               <div className="flex items-start gap-2">
                 <Check className="w-4 h-4 text-green-400 mt-0.5 shrink-0" />
                 <span className="text-gray-300 text-sm">
-                  {tier.name === 'Starter' ? '4 modules included' : 
-                   tier.name === 'Decorator' ? '7 modules included' : 
+                  {tier.name === 'Starter' ? '7 modules included' : 
+                   tier.name === 'Decorator' ? '10 modules included' : 
                    'All modules included'}
                 </span>
               </div>
