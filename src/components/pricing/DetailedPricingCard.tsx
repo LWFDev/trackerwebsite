@@ -46,18 +46,13 @@ const DetailedPricingCard: React.FC<DetailedPricingCardProps> = ({
       return;
     }
 
-    // Get customer email
-    const email = prompt('Please enter your email address to proceed with payment:');
-    if (!email) return;
-
     setIsLoading(true);
     
     try {
       const { data, error } = await supabase.functions.invoke('create-payment', {
         body: {
           planName: tier.name,
-          billingCycle: billingCycle,
-          customerEmail: email
+          billingCycle: billingCycle
         }
       });
 

@@ -12,10 +12,10 @@ serve(async (req) => {
   }
 
   try {
-    const { planName, billingCycle, customerEmail } = await req.json();
+    const { planName, billingCycle } = await req.json();
     
-    if (!planName || !billingCycle || !customerEmail) {
-      throw new Error("Missing required parameters: planName, billingCycle, or customerEmail");
+    if (!planName || !billingCycle) {
+      throw new Error("Missing required parameters: planName or billingCycle");
     }
 
     const stripe = new Stripe(Deno.env.get("STRIPE_SECRET_KEY") || "", {
@@ -53,7 +53,7 @@ serve(async (req) => {
     }
 
     const session = await stripe.checkout.sessions.create({
-      customer_email: customerEmail,
+      customer_creation: 'always',
       line_items: [
         {
           price_data: {
@@ -72,7 +72,6 @@ serve(async (req) => {
       metadata: {
         plan_name: planName,
         billing_cycle: billingCycle,
-        customer_email: customerEmail,
       },
     });
 
