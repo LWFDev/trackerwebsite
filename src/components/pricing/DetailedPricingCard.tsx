@@ -66,9 +66,18 @@ const DetailedPricingCard: React.FC<DetailedPricingCardProps> = ({
       }
     } catch (error) {
       console.error('Payment error:', error);
+      
+      // Extract detailed error message
+      let errorMessage = "Failed to create payment session. Please try again.";
+      if (error?.message) {
+        errorMessage = error.message;
+      } else if (error?.error) {
+        errorMessage = error.error;
+      }
+      
       toast({
         title: "Payment Error",
-        description: "Failed to create payment session. Please try again.",
+        description: errorMessage,
         variant: "destructive",
       });
     } finally {
