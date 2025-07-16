@@ -89,7 +89,7 @@ const PricingPlans = () => {
               </span>
               {billingCycle === 'annually' && (
               <span className="text-xs text-emerald-400 flex items-center gap-1">
-                <Sparkles className="h-3 w-3" /> {t("Save 20%")}
+                <Sparkles className="h-3 w-3" /> 2 months included
               </span>
               )}
             </div>
