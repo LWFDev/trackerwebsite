@@ -38,16 +38,8 @@ const CustomQuoteModal: React.FC<CustomQuoteModalProps> = ({
     <Dialog open={isOpen} onOpenChange={onClose}>
       <DialogContent className="sm:max-w-md bg-zinc-900 border-zinc-800">
         <DialogHeader>
-          <DialogTitle className="text-white flex items-center justify-between">
+          <DialogTitle className="text-white">
             Custom Enterprise Quote
-            <Button
-              variant="ghost"
-              size="icon"
-              onClick={onClose}
-              className="text-gray-400 hover:text-white"
-            >
-              <X className="w-4 h-4" />
-            </Button>
           </DialogTitle>
         </DialogHeader>
 
