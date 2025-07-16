@@ -1,15 +1,32 @@
 
-import React from "react";
+import React, { useState } from "react";
 import { useForm } from "react-hook-form";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { z } from "zod";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
 import { toast } from "@/hooks/use-toast";
 import { supabase } from "@/integrations/supabase/client";
+import { Loader2 } from "lucide-react";
+
+const contactFormSchema = z.object({
+  name: z.string().min(1, "Name is required").min(2, "Name must be at least 2 characters"),
+  email: z.string().min(1, "Email is required").email("Please enter a valid email address"),
+  subject: z.string().min(1, "Subject is required").min(3, "Subject must be at least 3 characters"),
+  message: z.string().min(1, "Message is required").min(10, "Message must be at least 10 characters")
+});
+
+type ContactFormData = z.infer<typeof contactFormSchema>;
 
 const ContactForm = () => {
-  const form = useForm({
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [lastSubmissionTime, setLastSubmissionTime] = useState<number>(0);
+  const [cooldownRemaining, setCooldownRemaining] = useState(0);
+
+  const form = useForm<ContactFormData>({
+    resolver: zodResolver(contactFormSchema),
     defaultValues: {
       name: "",
       email: "",
@@ -18,7 +35,37 @@ const ContactForm = () => {
     }
   });
 
-  const onSubmit = async (data) => {
+  const onSubmit = async (data: ContactFormData) => {
+    // Check rate limiting
+    const now = Date.now();
+    const timeSinceLastSubmission = now - lastSubmissionTime;
+    const cooldownPeriod = 10000; // 10 seconds
+
+    if (timeSinceLastSubmission < cooldownPeriod) {
+      const remaining = Math.ceil((cooldownPeriod - timeSinceLastSubmission) / 1000);
+      setCooldownRemaining(remaining);
+      toast({
+        title: "Please wait",
+        description: `You can submit another message in ${remaining} seconds.`,
+        variant: "destructive",
+      });
+      
+      // Start countdown
+      const countdown = setInterval(() => {
+        setCooldownRemaining(prev => {
+          if (prev <= 1) {
+            clearInterval(countdown);
+            return 0;
+          }
+          return prev - 1;
+        });
+      }, 1000);
+      
+      return;
+    }
+
+    setIsSubmitting(true);
+    
     try {
       console.log('Contact form submission:', data);
       
@@ -42,8 +89,9 @@ const ContactForm = () => {
         });
       } else {
         console.log('Email sent successfully:', emailData);
+        setLastSubmissionTime(now);
         toast({
-          title: "Message sent",
+          title: "Message sent successfully!",
           description: "We'll get back to you as soon as possible."
         });
         form.reset();
@@ -55,6 +103,8 @@ const ContactForm = () => {
         description: "There was an issue sending your message. Please try again.",
         variant: "destructive",
       });
+    } finally {
+      setIsSubmitting(false);
     }
   };
 
@@ -101,8 +151,22 @@ const ContactForm = () => {
                 </FormControl>
                 <FormMessage />
               </FormItem>} />
-          <Button type="submit" variant="gold" className="w-full md:w-auto">
-            Send Message
+          <Button 
+            type="submit" 
+            variant="gold" 
+            className="w-full md:w-auto" 
+            disabled={isSubmitting || cooldownRemaining > 0}
+          >
+            {isSubmitting ? (
+              <>
+                <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+                Sending...
+              </>
+            ) : cooldownRemaining > 0 ? (
+              `Wait ${cooldownRemaining}s`
+            ) : (
+              "Send Message"
+            )}
           </Button>
         </form>
       </Form>
