@@ -4,6 +4,7 @@ import { motion } from 'framer-motion';
 import { ScrollReveal } from '@/components/ui/scroll-reveal';
 import { Scale, FileText, Shield } from 'lucide-react';
 import { useLocalization } from '@/contexts/LocalizationContext';
+import ContactInfo from '@/components/contact/ContactInfo';
 
 const TermsOfService = () => {
   const { t } = useLocalization();
@@ -224,9 +225,7 @@ const TermsOfService = () => {
                       {t('If you have any questions about these Terms of Service, please contact us:')}
                     </p>
                     <div className="bg-emerald-50 dark:bg-emerald-950/30 p-6 rounded-lg border border-emerald-200 dark:border-emerald-800">
-                      <p className="text-slate-700 dark:text-slate-300 mb-2"><strong>{t('Email:')}</strong> legal@tracker.com</p>
-                      <p className="text-slate-700 dark:text-slate-300 mb-2"><strong>{t('Phone:')}</strong> +1 (555) 123-4567</p>
-                      <p className="text-slate-700 dark:text-slate-300"><strong>{t('Address:')}</strong> 123 Business Ave, Suite 100, City, State 12345</p>
+                      <ContactInfo />
                     </div>
                   </section>
                 </ScrollReveal>
