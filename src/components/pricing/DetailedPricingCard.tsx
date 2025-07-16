@@ -250,23 +250,26 @@ const DetailedPricingCard: React.FC<DetailedPricingCardProps> = ({
                       <Minus className="w-3 h-3" />
                     </Button>
                     {editingField === 'fullUsers' ? (
-                      <input
+                      <motion.input
                         ref={inputRef}
+                        initial={{ scale: 0.95, opacity: 0.8 }}
+                        animate={{ scale: 1, opacity: 1 }}
                         type="number"
                         min="1"
                         value={tempValue}
                         onChange={(e) => handleNumberChange(e.target.value)}
                         onBlur={handleNumberBlur}
                         onKeyDown={handleNumberKeyDown}
-                        className="text-white font-semibold min-w-[2rem] text-center bg-zinc-700 border border-zinc-600 rounded px-1 py-0.5 focus:outline-none focus:ring-2 focus:ring-yellow-400 focus:border-yellow-400 transition-all duration-200"
+                        className="text-white font-semibold min-w-[3rem] text-center bg-transparent border-b-2 border-gold/60 focus:border-gold outline-none transition-all duration-300 hover:border-gold/80"
+                        style={{ background: 'none', boxShadow: 'none' }}
                       />
                     ) : (
                       <span 
-                        className="text-white font-semibold min-w-[2rem] text-center cursor-pointer hover:bg-zinc-700/50 rounded px-1 py-0.5 transition-all duration-200 flex items-center gap-1 group"
+                        className="text-white font-semibold min-w-[3rem] text-center cursor-pointer hover:text-gold/90 transition-all duration-200 flex items-center gap-1 group border-b border-transparent hover:border-gold/30 pb-0.5"
                         onClick={() => handleNumberClick('fullUsers')}
                       >
                         {customLicenses.fullUsers}
-                        <Edit3 className="w-3 h-3 opacity-0 group-hover:opacity-50 transition-opacity duration-200" />
+                        <Edit3 className="w-3 h-3 opacity-0 group-hover:opacity-70 transition-opacity duration-200 text-gold/70" />
                       </span>
                     )}
                     <Button size="icon" variant="outline" onClick={() => updateLicense('fullUsers', true)} className="h-8 w-8 bg-zinc-800 border-zinc-700 hover:bg-zinc-700 hover:border-zinc-600 text-gray-300 hover:text-white">
@@ -281,23 +284,26 @@ const DetailedPricingCard: React.FC<DetailedPricingCardProps> = ({
                       <Minus className="w-3 h-3" />
                     </Button>
                     {editingField === 'departments' ? (
-                      <input
+                      <motion.input
                         ref={inputRef}
+                        initial={{ scale: 0.95, opacity: 0.8 }}
+                        animate={{ scale: 1, opacity: 1 }}
                         type="number"
                         min="1"
                         value={tempValue}
                         onChange={(e) => handleNumberChange(e.target.value)}
                         onBlur={handleNumberBlur}
                         onKeyDown={handleNumberKeyDown}
-                        className="text-white font-semibold min-w-[2rem] text-center bg-zinc-700 border border-zinc-600 rounded px-1 py-0.5 focus:outline-none focus:ring-2 focus:ring-yellow-400 focus:border-yellow-400 transition-all duration-200"
+                        className="text-white font-semibold min-w-[3rem] text-center bg-transparent border-b-2 border-gold/60 focus:border-gold outline-none transition-all duration-300 hover:border-gold/80"
+                        style={{ background: 'none', boxShadow: 'none' }}
                       />
                     ) : (
                       <span 
-                        className="text-white font-semibold min-w-[2rem] text-center cursor-pointer hover:bg-zinc-700/50 rounded px-1 py-0.5 transition-all duration-200 flex items-center gap-1 group"
+                        className="text-white font-semibold min-w-[3rem] text-center cursor-pointer hover:text-gold/90 transition-all duration-200 flex items-center gap-1 group border-b border-transparent hover:border-gold/30 pb-0.5"
                         onClick={() => handleNumberClick('departments')}
                       >
                         {customLicenses.departments}
-                        <Edit3 className="w-3 h-3 opacity-0 group-hover:opacity-50 transition-opacity duration-200" />
+                        <Edit3 className="w-3 h-3 opacity-0 group-hover:opacity-70 transition-opacity duration-200 text-gold/70" />
                       </span>
                     )}
                     <Button size="icon" variant="outline" onClick={() => updateLicense('departments', true)} className="h-8 w-8 bg-zinc-800 border-zinc-700 hover:bg-zinc-700 hover:border-zinc-600 text-gray-300 hover:text-white">
@@ -312,23 +318,26 @@ const DetailedPricingCard: React.FC<DetailedPricingCardProps> = ({
                       <Minus className="w-3 h-3" />
                     </Button>
                     {editingField === 'stations' ? (
-                      <input
+                      <motion.input
                         ref={inputRef}
+                        initial={{ scale: 0.95, opacity: 0.8 }}
+                        animate={{ scale: 1, opacity: 1 }}
                         type="number"
                         min="1"
                         value={tempValue}
                         onChange={(e) => handleNumberChange(e.target.value)}
                         onBlur={handleNumberBlur}
                         onKeyDown={handleNumberKeyDown}
-                        className="text-white font-semibold min-w-[2rem] text-center bg-zinc-700 border border-zinc-600 rounded px-1 py-0.5 focus:outline-none focus:ring-2 focus:ring-yellow-400 focus:border-yellow-400 transition-all duration-200"
+                        className="text-white font-semibold min-w-[3rem] text-center bg-transparent border-b-2 border-gold/60 focus:border-gold outline-none transition-all duration-300 hover:border-gold/80"
+                        style={{ background: 'none', boxShadow: 'none' }}
                       />
                     ) : (
                       <span 
-                        className="text-white font-semibold min-w-[2rem] text-center cursor-pointer hover:bg-zinc-700/50 rounded px-1 py-0.5 transition-all duration-200 flex items-center gap-1 group"
+                        className="text-white font-semibold min-w-[3rem] text-center cursor-pointer hover:text-gold/90 transition-all duration-200 flex items-center gap-1 group border-b border-transparent hover:border-gold/30 pb-0.5"
                         onClick={() => handleNumberClick('stations')}
                       >
                         {customLicenses.stations}
-                        <Edit3 className="w-3 h-3 opacity-0 group-hover:opacity-50 transition-opacity duration-200" />
+                        <Edit3 className="w-3 h-3 opacity-0 group-hover:opacity-70 transition-opacity duration-200 text-gold/70" />
                       </span>
                     )}
                     <Button size="icon" variant="outline" onClick={() => updateLicense('stations', true)} className="h-8 w-8 bg-zinc-800 border-zinc-700 hover:bg-zinc-700 hover:border-zinc-600 text-gray-300 hover:text-white">
