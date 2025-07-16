@@ -249,12 +249,12 @@ const DetailedPricingCard: React.FC<DetailedPricingCardProps> = ({
                     <Button size="icon" variant="outline" onClick={() => updateLicense('fullUsers', false)} className="h-8 w-8 bg-zinc-800 border-zinc-700 hover:bg-zinc-700 hover:border-zinc-600 text-gray-300 hover:text-white">
                       <Minus className="w-3 h-3" />
                     </Button>
-                    <div className="relative min-w-[3rem] flex items-center justify-center">
+                    <div className="relative w-16 flex items-center justify-center">
                       {editingField === 'fullUsers' ? (
                         <motion.span
                           initial={{ opacity: 0 }}
                           animate={{ opacity: 1 }}
-                          className="relative inline-block"
+                          className="relative inline-block w-full"
                         >
                           <input
                             ref={inputRef}
@@ -264,13 +264,13 @@ const DetailedPricingCard: React.FC<DetailedPricingCardProps> = ({
                             onChange={(e) => handleNumberChange(e.target.value)}
                             onBlur={handleNumberBlur}
                             onKeyDown={handleNumberKeyDown}
-                            className="w-12 text-center text-white font-semibold bg-transparent border-none outline-none border-b border-primary/50 focus:border-primary transition-colors"
+                            className="w-full text-center text-white font-semibold bg-transparent border-none outline-none border-b border-primary/50 focus:border-primary transition-colors [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none"
                             style={{ fontSize: 'inherit', lineHeight: 'inherit' }}
                           />
                         </motion.span>
                       ) : (
                         <span 
-                          className="text-white font-semibold cursor-pointer hover:text-primary/90 transition-colors duration-200 flex items-center gap-1 group px-2 py-1 rounded hover:bg-primary/10"
+                          className="text-white font-semibold cursor-pointer hover:text-primary/90 transition-colors duration-200 flex items-center justify-center gap-1 group px-2 py-1 rounded hover:bg-primary/10 w-full"
                           onClick={() => handleNumberClick('fullUsers')}
                         >
                           {customLicenses.fullUsers}
@@ -289,12 +289,12 @@ const DetailedPricingCard: React.FC<DetailedPricingCardProps> = ({
                     <Button size="icon" variant="outline" onClick={() => updateLicense('departments', false)} className="h-8 w-8 bg-zinc-800 border-zinc-700 hover:bg-zinc-700 hover:border-zinc-600 text-gray-300 hover:text-white">
                       <Minus className="w-3 h-3" />
                     </Button>
-                    <div className="relative min-w-[3rem] flex items-center justify-center">
+                    <div className="relative w-16 flex items-center justify-center">
                       {editingField === 'departments' ? (
                         <motion.span
                           initial={{ opacity: 0 }}
                           animate={{ opacity: 1 }}
-                          className="relative inline-block"
+                          className="relative inline-block w-full"
                         >
                           <input
                             ref={inputRef}
@@ -304,13 +304,13 @@ const DetailedPricingCard: React.FC<DetailedPricingCardProps> = ({
                             onChange={(e) => handleNumberChange(e.target.value)}
                             onBlur={handleNumberBlur}
                             onKeyDown={handleNumberKeyDown}
-                            className="w-12 text-center text-white font-semibold bg-transparent border-none outline-none border-b border-primary/50 focus:border-primary transition-colors"
+                            className="w-full text-center text-white font-semibold bg-transparent border-none outline-none border-b border-primary/50 focus:border-primary transition-colors [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none"
                             style={{ fontSize: 'inherit', lineHeight: 'inherit' }}
                           />
                         </motion.span>
                       ) : (
                         <span 
-                          className="text-white font-semibold cursor-pointer hover:text-primary/90 transition-colors duration-200 flex items-center gap-1 group px-2 py-1 rounded hover:bg-primary/10"
+                          className="text-white font-semibold cursor-pointer hover:text-primary/90 transition-colors duration-200 flex items-center justify-center gap-1 group px-2 py-1 rounded hover:bg-primary/10 w-full"
                           onClick={() => handleNumberClick('departments')}
                         >
                           {customLicenses.departments}
@@ -329,12 +329,12 @@ const DetailedPricingCard: React.FC<DetailedPricingCardProps> = ({
                     <Button size="icon" variant="outline" onClick={() => updateLicense('stations', false)} className="h-8 w-8 bg-zinc-800 border-zinc-700 hover:bg-zinc-700 hover:border-zinc-600 text-gray-300 hover:text-white">
                       <Minus className="w-3 h-3" />
                     </Button>
-                    <div className="relative min-w-[3rem] flex items-center justify-center">
+                    <div className="relative w-16 flex items-center justify-center">
                       {editingField === 'stations' ? (
                         <motion.span
                           initial={{ opacity: 0 }}
                           animate={{ opacity: 1 }}
-                          className="relative inline-block"
+                          className="relative inline-block w-full"
                         >
                           <input
                             ref={inputRef}
@@ -344,13 +344,13 @@ const DetailedPricingCard: React.FC<DetailedPricingCardProps> = ({
                             onChange={(e) => handleNumberChange(e.target.value)}
                             onBlur={handleNumberBlur}
                             onKeyDown={handleNumberKeyDown}
-                            className="w-12 text-center text-white font-semibold bg-transparent border-none outline-none border-b border-primary/50 focus:border-primary transition-colors"
+                            className="w-full text-center text-white font-semibold bg-transparent border-none outline-none border-b border-primary/50 focus:border-primary transition-colors [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none"
                             style={{ fontSize: 'inherit', lineHeight: 'inherit' }}
                           />
                         </motion.span>
                       ) : (
                         <span 
-                          className="text-white font-semibold cursor-pointer hover:text-primary/90 transition-colors duration-200 flex items-center gap-1 group px-2 py-1 rounded hover:bg-primary/10"
+                          className="text-white font-semibold cursor-pointer hover:text-primary/90 transition-colors duration-200 flex items-center justify-center gap-1 group px-2 py-1 rounded hover:bg-primary/10 w-full"
                           onClick={() => handleNumberClick('stations')}
                         >
                           {customLicenses.stations}
