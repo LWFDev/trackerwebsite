@@ -49,14 +49,16 @@ serve(async (req) => {
     });
     logStep("Stripe client initialized");
 
-    // Pricing configuration
+    // Pricing configuration (in cents)
     const pricing = {
       Starter: {
-        monthly: 799,
+        monthly: 3299,
+        annual: 6499,
         onboarding: 2500
       },
       Decorator: {
-        monthly: 1999,
+        monthly: 10490,
+        annual: 24490,
         onboarding: 4500
       }
     };
@@ -78,13 +80,13 @@ serve(async (req) => {
 
     // Calculate pricing based on billing cycle
     if (billingCycle === "monthly") {
-      // Monthly payment includes first month + onboarding fee
-      totalAmount = (plan.monthly + plan.onboarding) * 100; // Convert to cents
+      // Monthly payment includes first month + onboarding fee (already in cents)
+      totalAmount = plan.monthly + plan.onboarding;
       description = `${normalizedPlanName} Plan - Onboarding Fee + First Month`;
     } else if (billingCycle === "annually") {
-      // Annual payment includes 12 months + onboarding fee
-      totalAmount = (plan.monthly * 12 + plan.onboarding) * 100; // Convert to cents
-      description = `${normalizedPlanName} Plan - Onboarding Fee + Annual (12 months)`;
+      // Annual payment includes 10 months + onboarding fee (already in cents)
+      totalAmount = plan.annual + plan.onboarding;
+      description = `${normalizedPlanName} Plan - Onboarding Fee + Annual (10 months + 2 free)`;
     } else {
       logStep("ERROR: Invalid billing cycle", { billingCycle });
       throw new Error(`Invalid billing cycle: ${billingCycle}. Must be 'monthly' or 'annually'`);

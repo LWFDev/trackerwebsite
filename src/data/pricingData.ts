@@ -33,8 +33,8 @@ export interface PricingTier {
 export const pricingTiers: PricingTier[] = [
   {
     name: "Starter",
-    basePrice: 799,
-    tierPrice: 2500,
+    basePrice: 3299,
+    tierPrice: 6499,
     onboardingFee: 2500,
     description: "Perfect for small businesses getting started with decoration tracking",
     highlighted: false,
@@ -86,8 +86,8 @@ export const pricingTiers: PricingTier[] = [
   },
   {
     name: "Decorator",
-    basePrice: 1999,
-    tierPrice: 4500,
+    basePrice: 10490,
+    tierPrice: 24490,
     onboardingFee: 4500,
     description: "Ideal for growing decoration businesses with advanced needs",
     highlighted: true,
