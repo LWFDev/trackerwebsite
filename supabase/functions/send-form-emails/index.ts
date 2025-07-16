@@ -65,7 +65,7 @@ const handler = async (req: Request): Promise<Response> => {
     if (formData.type === "contact") {
       // Handle contact form submission
       emailResponse = await resend.emails.send({
-        from: "TrackerZone Contact <onboarding@resend.dev>",
+        from: "TrackerZone Contact <info@trackmybusiness.us>",
         to: ["info@mebuis.com"],
         subject: `New Contact Form Submission: ${formData.subject}`,
         html: `
@@ -86,7 +86,7 @@ const handler = async (req: Request): Promise<Response> => {
     } else if (formData.type === "onboarding") {
       // Handle onboarding form submission
       emailResponse = await resend.emails.send({
-        from: "TrackerZone Onboarding <onboarding@resend.dev>",
+        from: "TrackerZone Onboarding <info@trackmybusiness.us>",
         to: ["info@mebuis.com"],
         subject: `New User Registration: ${formData.fullName} - ${formData.companyName}`,
         html: `
