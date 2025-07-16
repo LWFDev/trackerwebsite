@@ -42,7 +42,7 @@ const Footer = () => {
         
         <div className="theme-border border-t pt-8">
           <div className="flex justify-center items-center">
-            <p className="text-sm">© 2025 Tracker US. All rights reserved.</p>
+            <p className="text-sm">© 2025 Little White Feather LTD & MebuisWorks. All Rights Reserved. WebApp and Website by <a href="https://MebuisWorks.com" target="_blank" rel="noopener noreferrer" className="hover:text-gold transition-colors">MebuisWorks.com</a></p>
           </div>
         </div>
       </div>
