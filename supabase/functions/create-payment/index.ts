@@ -1,3 +1,4 @@
+
 import { serve } from "https://deno.land/std@0.190.0/http/server.ts";
 import Stripe from "https://esm.sh/stripe@14.21.0";
 
@@ -75,7 +76,7 @@ serve(async (req) => {
     let totalAmount: number;
     let description: string;
 
-    // Fix billing cycle logic - "annually" should be 12 months, not 10
+    // Calculate pricing based on billing cycle
     if (billingCycle === "monthly") {
       // Monthly payment includes first month + onboarding fee
       totalAmount = (plan.monthly + plan.onboarding) * 100; // Convert to cents
@@ -113,7 +114,7 @@ serve(async (req) => {
           },
         ],
         mode: "payment",
-        success_url: `${req.headers.get("origin")}/payment-success?session_id={CHECKOUT_SESSION_ID}`,
+        success_url: `${req.headers.get("origin")}/`,
         cancel_url: `${req.headers.get("origin")}/pricing`,
         metadata: {
           plan_name: normalizedPlanName,
