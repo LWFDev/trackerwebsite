@@ -2,8 +2,9 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { ScrollReveal } from '@/components/ui/scroll-reveal';
-import { Shield, Lock, Eye } from 'lucide-react';
+import { Shield, Eye, Lock } from 'lucide-react';
 import { useLocalization } from '@/contexts/LocalizationContext';
+import ContactInfo from '@/components/contact/ContactInfo';
 
 const PrivacyPolicy = () => {
   const { t } = useLocalization();
@@ -256,10 +257,7 @@ const PrivacyPolicy = () => {
                       {t('If you have any questions about this Privacy Policy or our data practices, please contact us:')}
                     </p>
                     <div className="bg-emerald-50 dark:bg-emerald-950/30 p-6 rounded-lg border border-emerald-200 dark:border-emerald-800">
-                      <p className="text-slate-700 dark:text-slate-300 mb-2"><strong>{t('Privacy Officer:')}</strong> privacy@tracker.com</p>
-                      <p className="text-slate-700 dark:text-slate-300 mb-2"><strong>{t('Phone:')}</strong> +1 (555) 123-4567</p>
-                      <p className="text-slate-700 dark:text-slate-300 mb-2"><strong>{t('Address:')}</strong> 123 Business Ave, Suite 100, City, State 12345</p>
-                      <p className="text-slate-700 dark:text-slate-300"><strong>{t('Data Protection Representative (EU):')}</strong> eu-privacy@tracker.com</p>
+                      <ContactInfo />
                     </div>
                   </section>
                 </ScrollReveal>
