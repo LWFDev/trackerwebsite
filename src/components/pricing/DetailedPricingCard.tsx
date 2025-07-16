@@ -269,13 +269,15 @@ const DetailedPricingCard: React.FC<DetailedPricingCardProps> = ({
                           />
                         </motion.span>
                       ) : (
-                        <span 
-                          className="text-white font-semibold cursor-pointer hover:text-primary/90 transition-colors duration-200 flex items-center justify-center gap-1 group px-2 py-1 rounded hover:bg-primary/10 w-full"
-                          onClick={() => handleNumberClick('fullUsers')}
-                        >
-                          {customLicenses.fullUsers}
-                          <Edit3 className="w-3 h-3 opacity-0 group-hover:opacity-50 transition-opacity" />
-                        </span>
+                        <div className="relative w-full flex items-center justify-center">
+                          <span 
+                            className="text-white font-semibold cursor-pointer hover:text-primary/90 transition-colors duration-200 px-2 py-1 rounded hover:bg-primary/10"
+                            onClick={() => handleNumberClick('fullUsers')}
+                          >
+                            {customLicenses.fullUsers}
+                          </span>
+                          <Edit3 className="absolute right-0 w-3 h-3 opacity-0 group-hover:opacity-50 transition-opacity pointer-events-none" />
+                        </div>
                       )}
                     </div>
                     <Button size="icon" variant="outline" onClick={() => updateLicense('fullUsers', true)} className="h-8 w-8 bg-zinc-800 border-zinc-700 hover:bg-zinc-700 hover:border-zinc-600 text-gray-300 hover:text-white">
@@ -309,13 +311,15 @@ const DetailedPricingCard: React.FC<DetailedPricingCardProps> = ({
                           />
                         </motion.span>
                       ) : (
-                        <span 
-                          className="text-white font-semibold cursor-pointer hover:text-primary/90 transition-colors duration-200 flex items-center justify-center gap-1 group px-2 py-1 rounded hover:bg-primary/10 w-full"
-                          onClick={() => handleNumberClick('departments')}
-                        >
-                          {customLicenses.departments}
-                          <Edit3 className="w-3 h-3 opacity-0 group-hover:opacity-50 transition-opacity" />
-                        </span>
+                        <div className="relative w-full flex items-center justify-center group">
+                          <span 
+                            className="text-white font-semibold cursor-pointer hover:text-primary/90 transition-colors duration-200 px-2 py-1 rounded hover:bg-primary/10"
+                            onClick={() => handleNumberClick('departments')}
+                          >
+                            {customLicenses.departments}
+                          </span>
+                          <Edit3 className="absolute right-0 w-3 h-3 opacity-0 group-hover:opacity-50 transition-opacity pointer-events-none" />
+                        </div>
                       )}
                     </div>
                     <Button size="icon" variant="outline" onClick={() => updateLicense('departments', true)} className="h-8 w-8 bg-zinc-800 border-zinc-700 hover:bg-zinc-700 hover:border-zinc-600 text-gray-300 hover:text-white">
@@ -349,13 +353,15 @@ const DetailedPricingCard: React.FC<DetailedPricingCardProps> = ({
                           />
                         </motion.span>
                       ) : (
-                        <span 
-                          className="text-white font-semibold cursor-pointer hover:text-primary/90 transition-colors duration-200 flex items-center justify-center gap-1 group px-2 py-1 rounded hover:bg-primary/10 w-full"
-                          onClick={() => handleNumberClick('stations')}
-                        >
-                          {customLicenses.stations}
-                          <Edit3 className="w-3 h-3 opacity-0 group-hover:opacity-50 transition-opacity" />
-                        </span>
+                        <div className="relative w-full flex items-center justify-center group">
+                          <span 
+                            className="text-white font-semibold cursor-pointer hover:text-primary/90 transition-colors duration-200 px-2 py-1 rounded hover:bg-primary/10"
+                            onClick={() => handleNumberClick('stations')}
+                          >
+                            {customLicenses.stations}
+                          </span>
+                          <Edit3 className="absolute right-0 w-3 h-3 opacity-0 group-hover:opacity-50 transition-opacity pointer-events-none" />
+                        </div>
                       )}
                     </div>
                     <Button size="icon" variant="outline" onClick={() => updateLicense('stations', true)} className="h-8 w-8 bg-zinc-800 border-zinc-700 hover:bg-zinc-700 hover:border-zinc-600 text-gray-300 hover:text-white">
