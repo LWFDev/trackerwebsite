@@ -1,9 +1,9 @@
-import React, { useState } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@/components/ui/collapsible";
-import { Check, ChevronDown, Sparkles, Users, Database, Headphones, Plus, Minus } from "lucide-react";
+import { Check, ChevronDown, Sparkles, Users, Database, Headphones, Plus, Minus, Edit3 } from "lucide-react";
 import { motion } from "framer-motion";
 import { PricingTier } from "@/data/pricingData";
 import { useLocalization } from "@/contexts/LocalizationContext";
@@ -30,11 +30,56 @@ const DetailedPricingCard: React.FC<DetailedPricingCardProps> = ({
     departments: 5,
     stations: 15
   });
+  
+  // Editable number states
+  const [editingField, setEditingField] = useState<string | null>(null);
+  const [tempValue, setTempValue] = useState<string>('');
+  const inputRef = useRef<HTMLInputElement>(null);
+
+  useEffect(() => {
+    if (editingField && inputRef.current) {
+      inputRef.current.focus();
+      inputRef.current.select();
+    }
+  }, [editingField]);
+
   const updateLicense = (type: keyof typeof customLicenses, increment: boolean) => {
     setCustomLicenses(prev => ({
       ...prev,
       [type]: Math.max(1, prev[type] + (increment ? 1 : -1))
     }));
+  };
+
+  const handleNumberClick = (field: keyof typeof customLicenses) => {
+    setEditingField(field);
+    setTempValue(customLicenses[field].toString());
+  };
+
+  const handleNumberChange = (value: string) => {
+    setTempValue(value);
+  };
+
+  const handleNumberBlur = () => {
+    if (editingField) {
+      const numValue = parseInt(tempValue);
+      if (!isNaN(numValue) && numValue >= 1) {
+        setCustomLicenses(prev => ({
+          ...prev,
+          [editingField]: numValue
+        }));
+      }
+      setEditingField(null);
+      setTempValue('');
+    }
+  };
+
+  const handleNumberKeyDown = (e: React.KeyboardEvent) => {
+    if (e.key === 'Enter') {
+      handleNumberBlur();
+    } else if (e.key === 'Escape') {
+      setEditingField(null);
+      setTempValue('');
+    }
   };
 
   const { toast } = useToast();
@@ -204,7 +249,26 @@ const DetailedPricingCard: React.FC<DetailedPricingCardProps> = ({
                     <Button size="icon" variant="outline" onClick={() => updateLicense('fullUsers', false)} className="h-8 w-8 bg-zinc-800 border-zinc-700 hover:bg-zinc-700 hover:border-zinc-600 text-gray-300 hover:text-white">
                       <Minus className="w-3 h-3" />
                     </Button>
-                    <span className="text-white font-semibold min-w-[2rem] text-center">{customLicenses.fullUsers}</span>
+                    {editingField === 'fullUsers' ? (
+                      <input
+                        ref={inputRef}
+                        type="number"
+                        min="1"
+                        value={tempValue}
+                        onChange={(e) => handleNumberChange(e.target.value)}
+                        onBlur={handleNumberBlur}
+                        onKeyDown={handleNumberKeyDown}
+                        className="text-white font-semibold min-w-[2rem] text-center bg-zinc-700 border border-zinc-600 rounded px-1 py-0.5 focus:outline-none focus:ring-2 focus:ring-yellow-400 focus:border-yellow-400 transition-all duration-200"
+                      />
+                    ) : (
+                      <span 
+                        className="text-white font-semibold min-w-[2rem] text-center cursor-pointer hover:bg-zinc-700/50 rounded px-1 py-0.5 transition-all duration-200 flex items-center gap-1 group"
+                        onClick={() => handleNumberClick('fullUsers')}
+                      >
+                        {customLicenses.fullUsers}
+                        <Edit3 className="w-3 h-3 opacity-0 group-hover:opacity-50 transition-opacity duration-200" />
+                      </span>
+                    )}
                     <Button size="icon" variant="outline" onClick={() => updateLicense('fullUsers', true)} className="h-8 w-8 bg-zinc-800 border-zinc-700 hover:bg-zinc-700 hover:border-zinc-600 text-gray-300 hover:text-white">
                       <Plus className="w-3 h-3" />
                     </Button>
@@ -216,7 +280,26 @@ const DetailedPricingCard: React.FC<DetailedPricingCardProps> = ({
                     <Button size="icon" variant="outline" onClick={() => updateLicense('departments', false)} className="h-8 w-8 bg-zinc-800 border-zinc-700 hover:bg-zinc-700 hover:border-zinc-600 text-gray-300 hover:text-white">
                       <Minus className="w-3 h-3" />
                     </Button>
-                    <span className="text-white font-semibold min-w-[2rem] text-center">{customLicenses.departments}</span>
+                    {editingField === 'departments' ? (
+                      <input
+                        ref={inputRef}
+                        type="number"
+                        min="1"
+                        value={tempValue}
+                        onChange={(e) => handleNumberChange(e.target.value)}
+                        onBlur={handleNumberBlur}
+                        onKeyDown={handleNumberKeyDown}
+                        className="text-white font-semibold min-w-[2rem] text-center bg-zinc-700 border border-zinc-600 rounded px-1 py-0.5 focus:outline-none focus:ring-2 focus:ring-yellow-400 focus:border-yellow-400 transition-all duration-200"
+                      />
+                    ) : (
+                      <span 
+                        className="text-white font-semibold min-w-[2rem] text-center cursor-pointer hover:bg-zinc-700/50 rounded px-1 py-0.5 transition-all duration-200 flex items-center gap-1 group"
+                        onClick={() => handleNumberClick('departments')}
+                      >
+                        {customLicenses.departments}
+                        <Edit3 className="w-3 h-3 opacity-0 group-hover:opacity-50 transition-opacity duration-200" />
+                      </span>
+                    )}
                     <Button size="icon" variant="outline" onClick={() => updateLicense('departments', true)} className="h-8 w-8 bg-zinc-800 border-zinc-700 hover:bg-zinc-700 hover:border-zinc-600 text-gray-300 hover:text-white">
                       <Plus className="w-3 h-3" />
                     </Button>
@@ -228,7 +311,26 @@ const DetailedPricingCard: React.FC<DetailedPricingCardProps> = ({
                     <Button size="icon" variant="outline" onClick={() => updateLicense('stations', false)} className="h-8 w-8 bg-zinc-800 border-zinc-700 hover:bg-zinc-700 hover:border-zinc-600 text-gray-300 hover:text-white">
                       <Minus className="w-3 h-3" />
                     </Button>
-                    <span className="text-white font-semibold min-w-[2rem] text-center">{customLicenses.stations}</span>
+                    {editingField === 'stations' ? (
+                      <input
+                        ref={inputRef}
+                        type="number"
+                        min="1"
+                        value={tempValue}
+                        onChange={(e) => handleNumberChange(e.target.value)}
+                        onBlur={handleNumberBlur}
+                        onKeyDown={handleNumberKeyDown}
+                        className="text-white font-semibold min-w-[2rem] text-center bg-zinc-700 border border-zinc-600 rounded px-1 py-0.5 focus:outline-none focus:ring-2 focus:ring-yellow-400 focus:border-yellow-400 transition-all duration-200"
+                      />
+                    ) : (
+                      <span 
+                        className="text-white font-semibold min-w-[2rem] text-center cursor-pointer hover:bg-zinc-700/50 rounded px-1 py-0.5 transition-all duration-200 flex items-center gap-1 group"
+                        onClick={() => handleNumberClick('stations')}
+                      >
+                        {customLicenses.stations}
+                        <Edit3 className="w-3 h-3 opacity-0 group-hover:opacity-50 transition-opacity duration-200" />
+                      </span>
+                    )}
                     <Button size="icon" variant="outline" onClick={() => updateLicense('stations', true)} className="h-8 w-8 bg-zinc-800 border-zinc-700 hover:bg-zinc-700 hover:border-zinc-600 text-gray-300 hover:text-white">
                       <Plus className="w-3 h-3" />
                     </Button>
