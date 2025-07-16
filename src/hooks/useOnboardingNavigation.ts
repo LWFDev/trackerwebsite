@@ -1,6 +1,8 @@
 
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+import { toast } from "@/hooks/use-toast";
+import { supabase } from "@/integrations/supabase/client";
 import { onboardingSteps } from "@/constants/onboarding";
 import { Question, OnboardingData } from "@/types/onboarding";
 
@@ -49,9 +51,40 @@ export const useOnboardingNavigation = (formData: OnboardingData) => {
     window.scrollTo(0, 0);
   };
 
-  const handleComplete = () => {
-    // You would typically submit all the data to your backend here
-    console.log("Form submitted with data:", formData);
+  const handleComplete = async () => {
+    try {
+      console.log("Form submitted with data:", formData);
+      
+      // Send email with form data
+      const { data, error } = await supabase.functions.invoke('send-form-emails', {
+        body: {
+          type: 'onboarding',
+          ...formData
+        }
+      });
+
+      if (error) {
+        console.error('Error sending email:', error);
+        toast({
+          title: "Registration Complete!",
+          description: "Your account has been created. However, there was an issue sending the notification email.",
+          variant: "destructive",
+        });
+      } else {
+        toast({
+          title: "Registration Complete!",
+          description: "Welcome to TrackerZone. Your account has been created successfully and we've been notified.",
+        });
+      }
+    } catch (error) {
+      console.error('Error in handleComplete:', error);
+      toast({
+        title: "Registration Complete!",
+        description: "Your account has been created. However, there was an issue sending the notification email.",
+        variant: "destructive",
+      });
+    }
+    
     navigate("/");
   };
 

@@ -6,6 +6,7 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
 import { toast } from "@/hooks/use-toast";
+import { supabase } from "@/integrations/supabase/client";
 
 const ContactForm = () => {
   const form = useForm({
@@ -17,13 +18,40 @@ const ContactForm = () => {
     }
   });
 
-  const onSubmit = data => {
-    console.log(data);
-    toast({
-      title: "Message sent",
-      description: "We'll get back to you as soon as possible."
-    });
-    form.reset();
+  const onSubmit = async (data) => {
+    try {
+      console.log(data);
+      
+      // Send email with form data
+      const { data: emailData, error } = await supabase.functions.invoke('send-form-emails', {
+        body: {
+          type: 'contact',
+          ...data
+        }
+      });
+
+      if (error) {
+        console.error('Error sending email:', error);
+        toast({
+          title: "Error sending message",
+          description: "There was an issue sending your message. Please try again.",
+          variant: "destructive",
+        });
+      } else {
+        toast({
+          title: "Message sent",
+          description: "We'll get back to you as soon as possible."
+        });
+        form.reset();
+      }
+    } catch (error) {
+      console.error('Error in onSubmit:', error);
+      toast({
+        title: "Error sending message",
+        description: "There was an issue sending your message. Please try again.",
+        variant: "destructive",
+      });
+    }
   };
 
   return (
