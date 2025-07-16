@@ -34,13 +34,31 @@ interface OnboardingFormRequest {
 type FormRequest = ContactFormRequest | OnboardingFormRequest;
 
 const handler = async (req: Request): Promise<Response> => {
+  console.log('Send-form-emails function called:', req.method);
+  
   // Handle CORS preflight requests
   if (req.method === "OPTIONS") {
+    console.log('Handling CORS preflight request');
     return new Response(null, { headers: corsHeaders });
   }
 
   try {
+    console.log('Processing form submission...');
     const formData: FormRequest = await req.json();
+    console.log('Received form data:', JSON.stringify(formData, null, 2));
+
+    // Check if RESEND_API_KEY is available
+    const resendKey = Deno.env.get('RESEND_API_KEY');
+    if (!resendKey) {
+      console.error('RESEND_API_KEY is not configured');
+      return new Response(
+        JSON.stringify({ error: 'Email service not configured' }),
+        { 
+          status: 500, 
+          headers: { 'Content-Type': 'application/json', ...corsHeaders } 
+        }
+      );
+    }
 
     let emailResponse;
 
@@ -98,6 +116,7 @@ const handler = async (req: Request): Promise<Response> => {
       });
     }
 
+    console.log("Preparing to send email...");
     console.log("Email sent successfully:", emailResponse);
 
     return new Response(JSON.stringify({ success: true, id: emailResponse?.data?.id }), {
@@ -109,8 +128,12 @@ const handler = async (req: Request): Promise<Response> => {
     });
   } catch (error: any) {
     console.error("Error in send-form-emails function:", error);
+    console.error("Error stack:", error.stack);
     return new Response(
-      JSON.stringify({ error: error.message }),
+      JSON.stringify({ 
+        error: error.message,
+        details: error.toString()
+      }),
       {
         status: 500,
         headers: { "Content-Type": "application/json", ...corsHeaders },

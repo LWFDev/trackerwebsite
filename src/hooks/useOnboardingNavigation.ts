@@ -53,9 +53,10 @@ export const useOnboardingNavigation = (formData: OnboardingData) => {
 
   const handleComplete = async () => {
     try {
-      console.log("Form submitted with data:", formData);
+      console.log('Onboarding completion started:', formData);
       
-      // Send email with form data
+      // Send email with onboarding data
+      console.log('Calling send-form-emails function for onboarding...');
       const { data, error } = await supabase.functions.invoke('send-form-emails', {
         body: {
           type: 'onboarding',
@@ -63,29 +64,31 @@ export const useOnboardingNavigation = (formData: OnboardingData) => {
         }
       });
 
+      console.log('Onboarding function response:', { data, error });
+
       if (error) {
-        console.error('Error sending email:', error);
+        console.error('Error sending onboarding email:', error);
         toast({
-          title: "Registration Complete!",
-          description: "Your account has been created. However, there was an issue sending the notification email.",
+          title: "Error completing onboarding",
+          description: `There was an issue processing your information: ${error.message}`,
           variant: "destructive",
         });
       } else {
+        console.log('Onboarding email sent successfully:', data);
         toast({
-          title: "Registration Complete!",
-          description: "Welcome to TrackerZone. Your account has been created successfully and we've been notified.",
+          title: "Welcome aboard!",
+          description: "Your onboarding is complete. We'll be in touch soon!"
         });
+        navigate('/');
       }
     } catch (error) {
       console.error('Error in handleComplete:', error);
       toast({
-        title: "Registration Complete!",
-        description: "Your account has been created. However, there was an issue sending the notification email.",
+        title: "Error completing onboarding",
+        description: "There was an issue processing your information. Please try again.",
         variant: "destructive",
       });
     }
-    
-    navigate("/");
   };
 
   // Reset validity when question changes

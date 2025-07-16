@@ -20,9 +20,10 @@ const ContactForm = () => {
 
   const onSubmit = async (data) => {
     try {
-      console.log(data);
+      console.log('Contact form submission:', data);
       
       // Send email with form data
+      console.log('Calling send-form-emails function...');
       const { data: emailData, error } = await supabase.functions.invoke('send-form-emails', {
         body: {
           type: 'contact',
@@ -30,14 +31,17 @@ const ContactForm = () => {
         }
       });
 
+      console.log('Function response:', { emailData, error });
+
       if (error) {
         console.error('Error sending email:', error);
         toast({
           title: "Error sending message",
-          description: "There was an issue sending your message. Please try again.",
+          description: `There was an issue sending your message: ${error.message}`,
           variant: "destructive",
         });
       } else {
+        console.log('Email sent successfully:', emailData);
         toast({
           title: "Message sent",
           description: "We'll get back to you as soon as possible."
