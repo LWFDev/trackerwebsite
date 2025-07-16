@@ -52,14 +52,14 @@ serve(async (req) => {
     // Pricing configuration (in cents)
     const pricing = {
       Starter: {
-        monthly: 3299,
-        annual: 6499,
-        onboarding: 2500
+        monthly: 79900,     // $799 monthly fee
+        annual: 799000,     // $7,990 annual fee
+        onboarding: 250000  // $2,500 onboarding
       },
       Decorator: {
-        monthly: 10490,
-        annual: 24490,
-        onboarding: 4500
+        monthly: 199900,    // $1,999 monthly fee
+        annual: 1999000,    // $19,990 annual fee
+        onboarding: 450000  // $4,500 onboarding
       }
     };
     logStep("Pricing configuration loaded", pricing);
