@@ -249,29 +249,35 @@ const DetailedPricingCard: React.FC<DetailedPricingCardProps> = ({
                     <Button size="icon" variant="outline" onClick={() => updateLicense('fullUsers', false)} className="h-8 w-8 bg-zinc-800 border-zinc-700 hover:bg-zinc-700 hover:border-zinc-600 text-gray-300 hover:text-white">
                       <Minus className="w-3 h-3" />
                     </Button>
-                    {editingField === 'fullUsers' ? (
-                      <motion.input
-                        ref={inputRef}
-                        initial={{ scale: 0.95, opacity: 0.8 }}
-                        animate={{ scale: 1, opacity: 1 }}
-                        type="number"
-                        min="1"
-                        value={tempValue}
-                        onChange={(e) => handleNumberChange(e.target.value)}
-                        onBlur={handleNumberBlur}
-                        onKeyDown={handleNumberKeyDown}
-                        className="text-white font-semibold min-w-[3rem] text-center bg-transparent border-b-2 border-gold/60 focus:border-gold outline-none transition-all duration-300 hover:border-gold/80"
-                        style={{ background: 'none', boxShadow: 'none' }}
-                      />
-                    ) : (
-                      <span 
-                        className="text-white font-semibold min-w-[3rem] text-center cursor-pointer hover:text-gold/90 transition-all duration-200 flex items-center gap-1 group border-b border-transparent hover:border-gold/30 pb-0.5"
-                        onClick={() => handleNumberClick('fullUsers')}
-                      >
-                        {customLicenses.fullUsers}
-                        <Edit3 className="w-3 h-3 opacity-0 group-hover:opacity-70 transition-opacity duration-200 text-gold/70" />
-                      </span>
-                    )}
+                    <div className="relative min-w-[3rem] flex items-center justify-center">
+                      {editingField === 'fullUsers' ? (
+                        <motion.span
+                          initial={{ opacity: 0 }}
+                          animate={{ opacity: 1 }}
+                          className="relative inline-block"
+                        >
+                          <input
+                            ref={inputRef}
+                            type="number"
+                            min="1"
+                            value={tempValue}
+                            onChange={(e) => handleNumberChange(e.target.value)}
+                            onBlur={handleNumberBlur}
+                            onKeyDown={handleNumberKeyDown}
+                            className="w-12 text-center text-white font-semibold bg-transparent border-none outline-none border-b border-primary/50 focus:border-primary transition-colors"
+                            style={{ fontSize: 'inherit', lineHeight: 'inherit' }}
+                          />
+                        </motion.span>
+                      ) : (
+                        <span 
+                          className="text-white font-semibold cursor-pointer hover:text-primary/90 transition-colors duration-200 flex items-center gap-1 group px-2 py-1 rounded hover:bg-primary/10"
+                          onClick={() => handleNumberClick('fullUsers')}
+                        >
+                          {customLicenses.fullUsers}
+                          <Edit3 className="w-3 h-3 opacity-0 group-hover:opacity-50 transition-opacity" />
+                        </span>
+                      )}
+                    </div>
                     <Button size="icon" variant="outline" onClick={() => updateLicense('fullUsers', true)} className="h-8 w-8 bg-zinc-800 border-zinc-700 hover:bg-zinc-700 hover:border-zinc-600 text-gray-300 hover:text-white">
                       <Plus className="w-3 h-3" />
                     </Button>
@@ -283,29 +289,35 @@ const DetailedPricingCard: React.FC<DetailedPricingCardProps> = ({
                     <Button size="icon" variant="outline" onClick={() => updateLicense('departments', false)} className="h-8 w-8 bg-zinc-800 border-zinc-700 hover:bg-zinc-700 hover:border-zinc-600 text-gray-300 hover:text-white">
                       <Minus className="w-3 h-3" />
                     </Button>
-                    {editingField === 'departments' ? (
-                      <motion.input
-                        ref={inputRef}
-                        initial={{ scale: 0.95, opacity: 0.8 }}
-                        animate={{ scale: 1, opacity: 1 }}
-                        type="number"
-                        min="1"
-                        value={tempValue}
-                        onChange={(e) => handleNumberChange(e.target.value)}
-                        onBlur={handleNumberBlur}
-                        onKeyDown={handleNumberKeyDown}
-                        className="text-white font-semibold min-w-[3rem] text-center bg-transparent border-b-2 border-gold/60 focus:border-gold outline-none transition-all duration-300 hover:border-gold/80"
-                        style={{ background: 'none', boxShadow: 'none' }}
-                      />
-                    ) : (
-                      <span 
-                        className="text-white font-semibold min-w-[3rem] text-center cursor-pointer hover:text-gold/90 transition-all duration-200 flex items-center gap-1 group border-b border-transparent hover:border-gold/30 pb-0.5"
-                        onClick={() => handleNumberClick('departments')}
-                      >
-                        {customLicenses.departments}
-                        <Edit3 className="w-3 h-3 opacity-0 group-hover:opacity-70 transition-opacity duration-200 text-gold/70" />
-                      </span>
-                    )}
+                    <div className="relative min-w-[3rem] flex items-center justify-center">
+                      {editingField === 'departments' ? (
+                        <motion.span
+                          initial={{ opacity: 0 }}
+                          animate={{ opacity: 1 }}
+                          className="relative inline-block"
+                        >
+                          <input
+                            ref={inputRef}
+                            type="number"
+                            min="1"
+                            value={tempValue}
+                            onChange={(e) => handleNumberChange(e.target.value)}
+                            onBlur={handleNumberBlur}
+                            onKeyDown={handleNumberKeyDown}
+                            className="w-12 text-center text-white font-semibold bg-transparent border-none outline-none border-b border-primary/50 focus:border-primary transition-colors"
+                            style={{ fontSize: 'inherit', lineHeight: 'inherit' }}
+                          />
+                        </motion.span>
+                      ) : (
+                        <span 
+                          className="text-white font-semibold cursor-pointer hover:text-primary/90 transition-colors duration-200 flex items-center gap-1 group px-2 py-1 rounded hover:bg-primary/10"
+                          onClick={() => handleNumberClick('departments')}
+                        >
+                          {customLicenses.departments}
+                          <Edit3 className="w-3 h-3 opacity-0 group-hover:opacity-50 transition-opacity" />
+                        </span>
+                      )}
+                    </div>
                     <Button size="icon" variant="outline" onClick={() => updateLicense('departments', true)} className="h-8 w-8 bg-zinc-800 border-zinc-700 hover:bg-zinc-700 hover:border-zinc-600 text-gray-300 hover:text-white">
                       <Plus className="w-3 h-3" />
                     </Button>
@@ -317,29 +329,35 @@ const DetailedPricingCard: React.FC<DetailedPricingCardProps> = ({
                     <Button size="icon" variant="outline" onClick={() => updateLicense('stations', false)} className="h-8 w-8 bg-zinc-800 border-zinc-700 hover:bg-zinc-700 hover:border-zinc-600 text-gray-300 hover:text-white">
                       <Minus className="w-3 h-3" />
                     </Button>
-                    {editingField === 'stations' ? (
-                      <motion.input
-                        ref={inputRef}
-                        initial={{ scale: 0.95, opacity: 0.8 }}
-                        animate={{ scale: 1, opacity: 1 }}
-                        type="number"
-                        min="1"
-                        value={tempValue}
-                        onChange={(e) => handleNumberChange(e.target.value)}
-                        onBlur={handleNumberBlur}
-                        onKeyDown={handleNumberKeyDown}
-                        className="text-white font-semibold min-w-[3rem] text-center bg-transparent border-b-2 border-gold/60 focus:border-gold outline-none transition-all duration-300 hover:border-gold/80"
-                        style={{ background: 'none', boxShadow: 'none' }}
-                      />
-                    ) : (
-                      <span 
-                        className="text-white font-semibold min-w-[3rem] text-center cursor-pointer hover:text-gold/90 transition-all duration-200 flex items-center gap-1 group border-b border-transparent hover:border-gold/30 pb-0.5"
-                        onClick={() => handleNumberClick('stations')}
-                      >
-                        {customLicenses.stations}
-                        <Edit3 className="w-3 h-3 opacity-0 group-hover:opacity-70 transition-opacity duration-200 text-gold/70" />
-                      </span>
-                    )}
+                    <div className="relative min-w-[3rem] flex items-center justify-center">
+                      {editingField === 'stations' ? (
+                        <motion.span
+                          initial={{ opacity: 0 }}
+                          animate={{ opacity: 1 }}
+                          className="relative inline-block"
+                        >
+                          <input
+                            ref={inputRef}
+                            type="number"
+                            min="1"
+                            value={tempValue}
+                            onChange={(e) => handleNumberChange(e.target.value)}
+                            onBlur={handleNumberBlur}
+                            onKeyDown={handleNumberKeyDown}
+                            className="w-12 text-center text-white font-semibold bg-transparent border-none outline-none border-b border-primary/50 focus:border-primary transition-colors"
+                            style={{ fontSize: 'inherit', lineHeight: 'inherit' }}
+                          />
+                        </motion.span>
+                      ) : (
+                        <span 
+                          className="text-white font-semibold cursor-pointer hover:text-primary/90 transition-colors duration-200 flex items-center gap-1 group px-2 py-1 rounded hover:bg-primary/10"
+                          onClick={() => handleNumberClick('stations')}
+                        >
+                          {customLicenses.stations}
+                          <Edit3 className="w-3 h-3 opacity-0 group-hover:opacity-50 transition-opacity" />
+                        </span>
+                      )}
+                    </div>
                     <Button size="icon" variant="outline" onClick={() => updateLicense('stations', true)} className="h-8 w-8 bg-zinc-800 border-zinc-700 hover:bg-zinc-700 hover:border-zinc-600 text-gray-300 hover:text-white">
                       <Plus className="w-3 h-3" />
                     </Button>
