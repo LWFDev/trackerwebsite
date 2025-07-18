@@ -266,12 +266,11 @@ const DetailedPricingCard: React.FC<DetailedPricingCardProps> = ({
                       ) : (
                         <div className="relative w-full flex items-center justify-center">
                           <span 
-                            className="text-white font-semibold cursor-pointer hover:text-primary/90 transition-colors duration-200 px-2 py-1 rounded hover:bg-primary/10"
+                            className="text-white font-semibold cursor-pointer hover:text-primary/90 transition-colors duration-200 px-2 py-1 rounded bg-primary/10 border border-primary/20"
                             onClick={() => handleNumberClick('fullUsers')}
                           >
                             {customLicenses.fullUsers}
                           </span>
-                          <Edit3 className="absolute right-0 w-3 h-3 opacity-0 group-hover:opacity-50 transition-opacity pointer-events-none" />
                         </div>
                       )}
                     </div>
@@ -306,14 +305,13 @@ const DetailedPricingCard: React.FC<DetailedPricingCardProps> = ({
                           />
                         </motion.span>
                       ) : (
-                        <div className="relative w-full flex items-center justify-center group">
+                        <div className="relative w-full flex items-center justify-center">
                           <span 
-                            className="text-white font-semibold cursor-pointer hover:text-primary/90 transition-colors duration-200 px-2 py-1 rounded hover:bg-primary/10"
+                            className="text-white font-semibold cursor-pointer hover:text-primary/90 transition-colors duration-200 px-2 py-1 rounded bg-primary/10 border border-primary/20"
                             onClick={() => handleNumberClick('departments')}
                           >
                             {customLicenses.departments}
                           </span>
-                          <Edit3 className="absolute right-0 w-3 h-3 opacity-0 group-hover:opacity-50 transition-opacity pointer-events-none" />
                         </div>
                       )}
                     </div>
@@ -348,14 +346,13 @@ const DetailedPricingCard: React.FC<DetailedPricingCardProps> = ({
                           />
                         </motion.span>
                       ) : (
-                        <div className="relative w-full flex items-center justify-center group">
+                        <div className="relative w-full flex items-center justify-center">
                           <span 
-                            className="text-white font-semibold cursor-pointer hover:text-primary/90 transition-colors duration-200 px-2 py-1 rounded hover:bg-primary/10"
+                            className="text-white font-semibold cursor-pointer hover:text-primary/90 transition-colors duration-200 px-2 py-1 rounded bg-primary/10 border border-primary/20"
                             onClick={() => handleNumberClick('stations')}
                           >
                             {customLicenses.stations}
                           </span>
-                          <Edit3 className="absolute right-0 w-3 h-3 opacity-0 group-hover:opacity-50 transition-opacity pointer-events-none" />
                         </div>
                       )}
                     </div>
