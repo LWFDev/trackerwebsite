@@ -30,27 +30,31 @@ const IntegrationPartners = () => {
       </ScrollReveal>
       
       <ScrollReveal preset="confident" delay={300}>
-        <Card className="border-gray-700 bg-gray-800 shadow-lg">
-          <CardContent className="p-12">
-            <ScrollReveal preset="enterprise" stagger delay={200}>
-              <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-7 gap-6">
-                {integrationPartners.map((partner, index) => (
-                  <Card 
+        <div className="relative w-3/4 mx-auto">
+          <div className="relative overflow-hidden rounded-lg border border-gray-700 bg-gray-800 shadow-lg">
+            <ScrollReveal preset="enterprise" delay={200}>
+              <div className="flex animate-scroll whitespace-nowrap py-8">
+                {[...integrationPartners, ...integrationPartners].map((partner, index) => (
+                  <div 
                     key={index}
-                    className="h-24 flex items-center justify-center border-emerald-600 bg-gray-700 shadow-md cursor-pointer hover:shadow-lg transition-all duration-300"
+                    className="inline-flex items-center justify-center mx-8 min-w-[120px]"
                   >
-                    <CardContent className="p-4 text-center">
-                      <Zap className="h-4 w-4 text-emerald-500 mx-auto mb-2" />
-                      <span className="text-emerald-400 text-sm font-semibold">
+                    <div className="flex flex-col items-center">
+                      <Zap className="h-5 w-5 text-emerald-500 mb-2" />
+                      <span className="text-emerald-400 text-sm font-semibold whitespace-nowrap">
                         {partner}
                       </span>
-                    </CardContent>
-                  </Card>
+                    </div>
+                  </div>
                 ))}
               </div>
             </ScrollReveal>
-          </CardContent>
-        </Card>
+          </div>
+          
+          {/* Fade effects */}
+          <div className="absolute left-0 top-0 bottom-0 w-16 bg-gradient-to-r from-black to-transparent pointer-events-none z-10" />
+          <div className="absolute right-0 top-0 bottom-0 w-16 bg-gradient-to-l from-black to-transparent pointer-events-none z-10" />
+        </div>
       </ScrollReveal>
     </section>
   );
