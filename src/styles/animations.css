@@ -1,121 +1,96 @@
 
-/* Performance optimized animation classes */
+/* Enterprise-grade animation classes with optimized performance */
+
+/* Fade animations with enterprise easing */
 .animate-fade-in {
-  animation: fadeIn 0.5s ease-out forwards;
+  animation: enterpriseFadeIn 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
   will-change: opacity, transform;
 }
 
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(10px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-.animate-slide-in {
-  animation: slideIn 0.5s ease-out forwards;
-  will-change: transform, opacity;
-}
-
-@keyframes slideIn {
-  from {
-    transform: translateX(-20px);
-    opacity: 0;
-  }
-  to {
-    transform: translateX(0);
-    opacity: 1;
-  }
-}
-
-/* Optimized pulsing animation */
-.animate-pulse-light {
-  animation: pulseLight 3s ease-in-out;
-}
-
-@keyframes pulseLight {
-  0%, 100% { 
-    opacity: 1; 
-  }
-  50% { 
-    opacity: 0.7; 
-  }
-}
-
-/* Reduced floating animation */
-.animate-float {
-  animation: float 6s ease-in-out;
-}
-
-@keyframes float {
-  0%, 100% { 
-    transform: translateY(0); 
-  }
-  50% { 
-    transform: translateY(-8px); 
-  }
-}
-
-/* Slower spinning animation */
-.animate-spin-slow {
-  animation: spin 18s linear;
-}
-
-@keyframes spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-/* Less intensive morph animation */
-@keyframes morph {
-  0%, 100% {
-    border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
-  }
-  50% {
-    border-radius: 30% 60% 70% 40% / 50% 60% 30% 60%;
-  }
-}
-
-.animate-morph {
-  animation: morph 12s ease-in-out;
-  animation-iteration-count: 1;
-}
-
-/* Optimized shimmer effect */
-@keyframes shimmer {
-  0% {
-    background-position: 100% 0;
-  }
-  100% {
-    background-position: -100% 0;
-  }
-}
-
-.animate-shimmer {
-  animation: shimmer 4s;
-  animation-iteration-count: 2;
-  background-size: 200% 100%;
-}
-
-/* Reveal animation - optimized */
-.animate-reveal {
-  animation: reveal 0.8s ease-out forwards;
+.animate-fade-in-delayed {
+  animation: enterpriseFadeIn 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+  animation-delay: 0.2s;
   opacity: 0;
   will-change: opacity, transform;
 }
 
-@keyframes reveal {
+.animate-slide-up {
+  animation: enterpriseSlideUp 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+  will-change: opacity, transform;
+}
+
+.animate-slide-left {
+  animation: enterpriseSlideLeft 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+  will-change: opacity, transform;
+}
+
+.animate-slide-right {
+  animation: enterpriseSlideRight 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+  will-change: opacity, transform;
+}
+
+.animate-scale-in {
+  animation: enterpriseScaleIn 0.7s cubic-bezier(0.25, 0.1, 0.25, 1) forwards;
+  will-change: opacity, transform;
+}
+
+/* Staggered animations */
+.animate-stagger-1 { animation-delay: 0.1s; }
+.animate-stagger-2 { animation-delay: 0.2s; }
+.animate-stagger-3 { animation-delay: 0.3s; }
+.animate-stagger-4 { animation-delay: 0.4s; }
+.animate-stagger-5 { animation-delay: 0.5s; }
+.animate-stagger-6 { animation-delay: 0.6s; }
+
+/* Keyframes */
+@keyframes enterpriseFadeIn {
   from {
     opacity: 0;
-    transform: scale(0.95);
+    transform: translateY(24px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes enterpriseSlideUp {
+  from {
+    opacity: 0;
+    transform: translateY(32px) scale(0.96);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes enterpriseSlideLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-32px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0) scale(1);
+  }
+}
+
+@keyframes enterpriseSlideRight {
+  from {
+    opacity: 0;
+    transform: translateX(32px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0) scale(1);
+  }
+}
+
+@keyframes enterpriseScaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
   }
   to {
     opacity: 1;
@@ -123,83 +98,74 @@
   }
 }
 
-/* Reduced wave animation */
-.animate-wave {
-  animation: wave 4s ease-in-out;
-}
-
-@keyframes wave {
-  0%, 100% {
+/* Typography animation for headlines */
+@keyframes typewriterReveal {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
     transform: translateY(0);
   }
-  50% {
-    transform: translateY(-10px);
-  }
 }
 
-/* Optimized bounce animation */
-.animate-bounce-light {
-  animation: bounce 3s ease-in-out;
-}
-
-@keyframes bounce {
-  0%, 100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-10px);
-  }
-}
-
-/* Staggered animations - optimized for performance */
-.stagger-parent {
-  overflow: hidden;
-}
-
-.stagger-item {
+.animate-typewriter-word {
   opacity: 0;
-  transform: translateY(20px);
-  transition: opacity 0.5s ease, transform 0.5s ease;
+  animation: typewriterReveal 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
 }
 
-.stagger-item.stagger-revealed {
-  opacity: 1;
-  transform: translateY(0);
+/* Decorative line drawing */
+@keyframes drawLine {
+  from {
+    width: 0;
+    opacity: 0;
+  }
+  to {
+    width: 100%;
+    opacity: 1;
+  }
 }
 
-/* Simplified parallax effect styles */
-.parallax-element {
-  transition: transform 0.5s ease-out;
+.animate-draw-line {
+  animation: drawLine 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
 }
 
-/* Consistent card styling */
-.card-hover {
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+/* Subtle parallax for background elements */
+.parallax-subtle {
+  transform: translateY(var(--scroll-y, 0) * 0.1px);
+  transition: transform 0.1s ease-out;
 }
 
-.card-hover:hover {
-  transform: translateY(-5px);
+/* Performance optimizations */
+.will-change-transform {
+  will-change: transform;
 }
 
-/* Reduced glowing effect */
-.glow-on-hover:hover {
-  box-shadow: 0 0 15px 2px hsl(var(--gold) / 0.3);
+.will-change-opacity {
+  will-change: opacity;
 }
 
-/* Smooth transitions - optimized */
-.transition-all {
-  transition: all 0.3s ease;
+.animation-paused {
+  animation-play-state: paused;
 }
 
-/* Optimized reveal animations when scrolling */
-.reveal-on-scroll {
-  opacity: 0;
-  transform: translateY(20px);
-  transition: opacity 0.8s ease, transform 0.8s ease;
-  will-change: opacity, transform;
-}
-
-.reveal-on-scroll.revealed {
-  opacity: 1;
-  transform: translateY(0);
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  .animate-fade-in,
+  .animate-fade-in-delayed,
+  .animate-slide-up,
+  .animate-slide-left,
+  .animate-slide-right,
+  .animate-scale-in,
+  .animate-typewriter-word,
+  .animate-draw-line {
+    animation: none;
+    opacity: 1;
+    transform: none;
+  }
+  
+  .parallax-subtle {
+    transform: none;
+  }
 }

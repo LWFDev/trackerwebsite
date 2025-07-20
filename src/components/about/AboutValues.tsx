@@ -1,9 +1,9 @@
 
 import React from "react";
 import { Users, Award, RefreshCw, Target } from "lucide-react";
+import ScrollReveal from "@/components/ui/scroll-reveal";
 
 const AboutValues = () => {
-  // Values data
   const values = [
     {
       icon: <Users className="h-10 w-10 text-gold" />,
@@ -40,64 +40,67 @@ const AboutValues = () => {
         <div className="absolute w-60 h-60 bg-purple-500/5 rounded-full blur-3xl top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 animate-pulse-light"></div>
       </div>
       
-      {/* Subtle grid pattern overlay */}
       <div className="absolute inset-0 bg-dot-pattern opacity-30"></div>
       
       <div className="container mx-auto px-4 relative z-10">
-        <div className="text-center mb-16">
-          <div className="inline-block px-4 py-2 bg-gold-opacity-10 rounded-full border border-gold-opacity-20 mb-6">
-            <h3 className="text-lg text-gold font-semibold">Our Values</h3>
-          </div>
-          <h2 className="text-4xl md:text-5xl font-bold mb-8 text-gold-gradient">
-            What drives us every day
-          </h2>
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
-            Our core values guide everything we do. Every product detail and feature is created to embody these values.
-          </p>
-        </div>
-        
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-          {values.map((value, index) => (
-            <div 
-              key={index} 
-              className="relative overflow-hidden"
-              style={{ animationDelay: `${index * 0.1}s` }}
-            >
-              {/* Card background with gradient - always visible */}
-              <div className={`absolute inset-0 bg-gradient-to-br ${value.bgColor} rounded-xl`}></div>
-              
-              {/* Main card */}
-              <div className="relative bg-zinc-900/80 backdrop-blur-sm p-8 rounded-xl border border-gold-opacity-40 transform scale-105 shadow-2xl shadow-gold h-full">
-                {/* Icon container with glow effect - always visible */}
-                <div className="mb-6 relative">
-                  <div className="absolute inset-0 bg-gold-opacity-20 rounded-full blur-xl"></div>
-                  <div className="relative w-16 h-16 bg-gold-opacity-10 rounded-full flex items-center justify-center">
-                    {value.icon}
-                  </div>
-                </div>
-                
-                <h3 className="text-2xl font-bold mb-4 text-gold">
-                  {value.title}
-                </h3>
-                <p className="text-gray-300 leading-relaxed">
-                  {value.description}
-                </p>
-                
-                {/* Bottom accent - always visible */}
-                <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-gold-opacity-50 to-transparent"></div>
-              </div>
+        <ScrollReveal preset="enterprise" delay={100}>
+          <div className="text-center mb-16">
+            <div className="inline-block px-4 py-2 bg-gold-opacity-10 rounded-full border border-gold-opacity-20 mb-6">
+              <h3 className="text-lg text-gold font-semibold">Our Values</h3>
             </div>
-          ))}
-        </div>
-        
-        {/* Bottom decorative element */}
-        <div className="mt-16 text-center">
-          <div className="inline-flex items-center space-x-2 text-gray-500">
-            <div className="w-8 h-px bg-gradient-to-r from-transparent to-gold-opacity-50"></div>
-            <span className="text-sm font-medium">Building the future together</span>
-            <div className="w-8 h-px bg-gradient-to-l from-transparent to-gold-opacity-50"></div>
+            <h2 className="text-4xl md:text-5xl font-bold mb-8 text-gold-gradient">
+              What drives us every day
+            </h2>
+            <p className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
+              Our core values guide everything we do. Every product detail and feature is created to embody these values.
+            </p>
           </div>
-        </div>
+        </ScrollReveal>
+        
+        <ScrollReveal preset="enterprise" stagger delay={300}>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {values.map((value, index) => (
+              <div 
+                key={index} 
+                className="relative overflow-hidden"
+              >
+                {/* Card background with gradient */}
+                <div className={`absolute inset-0 bg-gradient-to-br ${value.bgColor} rounded-xl`}></div>
+                
+                {/* Main card */}
+                <div className="relative bg-zinc-900/80 backdrop-blur-sm p-8 rounded-xl border border-gold-opacity-40 transform scale-105 shadow-2xl shadow-gold h-full">
+                  {/* Icon container with glow effect */}
+                  <div className="mb-6 relative">
+                    <div className="absolute inset-0 bg-gold-opacity-20 rounded-full blur-xl"></div>
+                    <div className="relative w-16 h-16 bg-gold-opacity-10 rounded-full flex items-center justify-center">
+                      {value.icon}
+                    </div>
+                  </div>
+                  
+                  <h3 className="text-2xl font-bold mb-4 text-gold">
+                    {value.title}
+                  </h3>
+                  <p className="text-gray-300 leading-relaxed">
+                    {value.description}
+                  </p>
+                  
+                  {/* Bottom accent */}
+                  <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-gold-opacity-50 to-transparent"></div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </ScrollReveal>
+        
+        <ScrollReveal preset="gentle" delay={800}>
+          <div className="mt-16 text-center">
+            <div className="inline-flex items-center space-x-2 text-gray-500">
+              <div className="w-8 h-px bg-gradient-to-r from-transparent to-gold-opacity-50"></div>
+              <span className="text-sm font-medium">Building the future together</span>
+              <div className="w-8 h-px bg-gradient-to-l from-transparent to-gold-opacity-50"></div>
+            </div>
+          </div>
+        </ScrollReveal>
       </div>
     </div>
   );
