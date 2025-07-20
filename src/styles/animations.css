@@ -141,8 +141,21 @@
   }
 }
 
+@keyframes scroll-seamless {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-33.33%);
+  }
+}
+
 .animate-scroll {
   animation: scroll 30s linear infinite;
+}
+
+.animate-scroll-seamless {
+  animation: scroll-seamless 45s linear infinite;
 }
 
 /* Subtle parallax for background elements */

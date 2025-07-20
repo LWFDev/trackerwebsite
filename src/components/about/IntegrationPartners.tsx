@@ -31,13 +31,13 @@ const IntegrationPartners = () => {
       
       <ScrollReveal preset="confident" delay={300}>
         <div className="relative w-3/4 mx-auto">
-          <div className="relative overflow-hidden rounded-lg border border-gray-700 bg-gray-800 shadow-lg">
+          <div className="relative overflow-hidden">
             <ScrollReveal preset="enterprise" delay={200}>
-              <div className="flex animate-scroll whitespace-nowrap py-8">
-                {[...integrationPartners, ...integrationPartners].map((partner, index) => (
+              <div className="flex animate-scroll-seamless whitespace-nowrap py-8">
+                {[...integrationPartners, ...integrationPartners, ...integrationPartners].map((partner, index) => (
                   <div 
                     key={index}
-                    className="inline-flex items-center justify-center mx-8 min-w-[120px]"
+                    className="inline-flex items-center justify-center mx-8 min-w-[120px] flex-shrink-0"
                   >
                     <div className="flex flex-col items-center">
                       <Zap className="h-5 w-5 text-emerald-500 mb-2" />
