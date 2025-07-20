@@ -38,7 +38,8 @@ const AboutHero = () => {
             <img 
               src="/lovable-uploads/f68df86e-078b-403c-abca-ab6bbd62ece5.png" 
               alt="Our innovative team driving business transformation" 
-              className="w-full h-auto rounded-xl shadow-2xl"
+              className="w-full h-auto rounded-xl shadow-2xl animate-fade-in opacity-0 animate-delay-500"
+              style={{ animationFillMode: 'forwards' }}
             />
           </div>
         </div>
