@@ -14,6 +14,19 @@ const IntegrationPartners = () => {
     "Barudan", "DPD", "Fedex", "Hubspot", "PENCARRIE", "Intuit QuickBooks", "Ralawise.com", "Royal Mail", "Shopify", "Tajima", "UPS", "Wilcom", "Wordpress", "Xero"
   ];
 
+  const partnerLogos: { [key: string]: string } = {
+    "Barudan": "/lovable-uploads/5104b57e-c8e1-4f5a-81c7-e2d705f154b5.png",
+    "DPD": "/lovable-uploads/3cba64f2-6bfa-44ff-8f5e-8516494488a3.png",
+    "Fedex": "/lovable-uploads/6e41e956-7dc7-4977-b71f-6e95c488d7ac.png",
+    "Hubspot": "/lovable-uploads/cda3209a-ee6e-4ed1-abe2-967689393771.png",
+    "PENCARRIE": "/lovable-uploads/c5bc6394-8878-40cf-b727-46518c77cef4.png",
+    "Intuit QuickBooks": "/lovable-uploads/55ebbf90-7d8e-4b14-9d0c-c3789d9c0e14.png",
+    "Ralawise.com": "/lovable-uploads/c07f111b-fabd-474c-b091-b282314a4fc4.png",
+    "Royal Mail": "/lovable-uploads/ae2372c1-9dbc-4a78-9cdb-756f06a75ba7.png",
+    "Shopify": "/lovable-uploads/e26f2549-0a6d-4799-9ca8-8a33eddc1600.png",
+    "Tajima": "/lovable-uploads/aadccf67-7e7b-486f-a53b-f6e0a8bb36ae.png"
+  };
+
   return (
     <section>
       <ScrollReveal preset="enterprise" delay={100}>
@@ -45,7 +58,15 @@ const IntegrationPartners = () => {
                   className="inline-flex items-center justify-center mx-6 min-w-[160px] flex-shrink-0"
                 >
                   <div className="flex flex-col items-center">
-                    <Zap className="h-5 w-5 text-emerald-500 mb-2" />
+                    {partnerLogos[partner] ? (
+                      <img 
+                        src={partnerLogos[partner]} 
+                        alt={partner} 
+                        className="h-8 w-auto mb-2 filter brightness-0 invert opacity-80 hover:opacity-100 transition-opacity"
+                      />
+                    ) : (
+                      <Zap className="h-5 w-5 text-emerald-500 mb-2" />
+                    )}
                     <span className="text-emerald-400 text-sm font-semibold whitespace-nowrap">
                       {partner}
                     </span>
