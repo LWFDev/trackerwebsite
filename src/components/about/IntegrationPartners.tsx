@@ -7,22 +7,11 @@ import ScrollReveal from "@/components/ui/scroll-reveal";
 
 const IntegrationPartners = () => {
   const integrationPartners = [
-    "Shopify", "WooCommerce", "BigCommerce", "Magento", "Squarespace", "Wix", "PrestaShop", "OpenCart",
-    "QuickBooks", "Xero", "Sage", "FreshBooks", "Wave", "Zoho Books", "NetSuite", "SAP",
-    "HubSpot", "Salesforce", "Pipedrive", "Zoho CRM", "Monday.com", "Asana", "Trello", "Notion",
-    "Mailchimp", "Constant Contact", "ConvertKit", "ActiveCampaign", "Campaign Monitor", "Klaviyo", "SendGrid", "Mailgun",
-    "Stripe", "PayPal", "Square", "Braintree", "Authorize.Net", "2Checkout", "Adyen", "Worldpay",
-    "AWS", "Google Cloud", "Microsoft Azure", "DigitalOcean", "Heroku", "Vercel", "Netlify", "Cloudflare",
-    "Slack", "Microsoft Teams", "Discord", "Zoom", "WebEx", "GoToMeeting", "Skype", "Google Meet",
-    "WordPress", "Drupal", "Joomla", "Ghost", "Webflow", "Contentful", "Strapi", "Sanity",
-    "FedEx", "UPS", "DHL", "USPS", "Royal Mail", "DPD", "TNT", "Canada Post",
-    "Google Analytics", "Adobe Analytics", "Mixpanel", "Hotjar", "Crazy Egg", "Kissmetrics", "Segment", "Amplitude",
-    "Barudan", "Tajima", "Wilcom", "Brother", "SWF", "Melco", "ZSK", "Ricoma",
-    "Pencarrie", "Ralawise", "Gildan", "Fruit of the Loom", "Bella Canvas", "Next Level", "American Apparel", "Hanes",
-    "Adobe Creative Suite", "Canva", "Figma", "Sketch", "InVision", "Marvel", "Principle", "Framer",
-    "GitHub", "GitLab", "Bitbucket", "Azure DevOps", "Jenkins", "CircleCI", "Travis CI", "Docker",
-    "Twilio", "SendBird", "Pusher", "Socket.IO", "Firebase", "PubNub", "Ably", "Stream",
-    "Zendesk", "Intercom", "Freshdesk", "Help Scout", "Crisp", "LiveChat", "Drift", "Olark"
+    "Barudan", "DPD", "Fedex", "Hubspot", "PENCARRIE", "Intuit QuickBooks", "Ralawise.com", "Royal Mail", "Shopify", "Tajima", "UPS", "Wilcom", "Wordpress", "Xero",
+    "Barudan", "DPD", "Fedex", "Hubspot", "PENCARRIE", "Intuit QuickBooks", "Ralawise.com", "Royal Mail", "Shopify", "Tajima", "UPS", "Wilcom", "Wordpress", "Xero",
+    "Barudan", "DPD", "Fedex", "Hubspot", "PENCARRIE", "Intuit QuickBooks", "Ralawise.com", "Royal Mail", "Shopify", "Tajima", "UPS", "Wilcom", "Wordpress", "Xero",
+    "Barudan", "DPD", "Fedex", "Hubspot", "PENCARRIE", "Intuit QuickBooks", "Ralawise.com", "Royal Mail", "Shopify", "Tajima", "UPS", "Wilcom", "Wordpress", "Xero",
+    "Barudan", "DPD", "Fedex", "Hubspot", "PENCARRIE", "Intuit QuickBooks", "Ralawise.com", "Royal Mail", "Shopify", "Tajima", "UPS", "Wilcom", "Wordpress", "Xero"
   ];
 
   return (
