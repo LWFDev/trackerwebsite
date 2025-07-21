@@ -168,6 +168,15 @@
   }
 }
 
+@keyframes scroll-ultra-fast {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+
 .animate-scroll {
   animation: scroll 30s linear infinite;
 }
@@ -182,6 +191,10 @@
 
 .animate-scroll-fast {
   animation: scroll-fast 15s linear infinite;
+}
+
+.animate-scroll-ultra-fast {
+  animation: scroll-ultra-fast 25s linear infinite;
 }
 
 /* Subtle parallax for background elements */

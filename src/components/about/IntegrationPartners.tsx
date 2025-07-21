@@ -7,13 +7,23 @@ import ScrollReveal from "@/components/ui/scroll-reveal";
 
 const IntegrationPartners = () => {
   const integrationPartners = [
-    "Barudan", "DPD", "FedEx", "HubSpot", "Pencarrie", "QuickBooks", 
-    "Ralawise", "Royal Mail", "Shopify", "Tajima", "UPS", "Wilcom", 
-    "WordPress", "Xero"
+    "Shopify", "WooCommerce", "BigCommerce", "Magento", "Squarespace", "Wix", "PrestaShop", "OpenCart",
+    "QuickBooks", "Xero", "Sage", "FreshBooks", "Wave", "Zoho Books", "NetSuite", "SAP",
+    "HubSpot", "Salesforce", "Pipedrive", "Zoho CRM", "Monday.com", "Asana", "Trello", "Notion",
+    "Mailchimp", "Constant Contact", "ConvertKit", "ActiveCampaign", "Campaign Monitor", "Klaviyo", "SendGrid", "Mailgun",
+    "Stripe", "PayPal", "Square", "Braintree", "Authorize.Net", "2Checkout", "Adyen", "Worldpay",
+    "AWS", "Google Cloud", "Microsoft Azure", "DigitalOcean", "Heroku", "Vercel", "Netlify", "Cloudflare",
+    "Slack", "Microsoft Teams", "Discord", "Zoom", "WebEx", "GoToMeeting", "Skype", "Google Meet",
+    "WordPress", "Drupal", "Joomla", "Ghost", "Webflow", "Contentful", "Strapi", "Sanity",
+    "FedEx", "UPS", "DHL", "USPS", "Royal Mail", "DPD", "TNT", "Canada Post",
+    "Google Analytics", "Adobe Analytics", "Mixpanel", "Hotjar", "Crazy Egg", "Kissmetrics", "Segment", "Amplitude",
+    "Barudan", "Tajima", "Wilcom", "Brother", "SWF", "Melco", "ZSK", "Ricoma",
+    "Pencarrie", "Ralawise", "Gildan", "Fruit of the Loom", "Bella Canvas", "Next Level", "American Apparel", "Hanes",
+    "Adobe Creative Suite", "Canva", "Figma", "Sketch", "InVision", "Marvel", "Principle", "Framer",
+    "GitHub", "GitLab", "Bitbucket", "Azure DevOps", "Jenkins", "CircleCI", "Travis CI", "Docker",
+    "Twilio", "SendBird", "Pusher", "Socket.IO", "Firebase", "PubNub", "Ably", "Stream",
+    "Zendesk", "Intercom", "Freshdesk", "Help Scout", "Crisp", "LiveChat", "Drift", "Olark"
   ];
-
-  // Create 10 copies for 140 total logos (14 × 10)
-  const logoArray = Array(10).fill(integrationPartners).flat();
 
   return (
     <section>
@@ -39,8 +49,8 @@ const IntegrationPartners = () => {
             <div className="absolute left-0 top-0 bottom-0 w-48 bg-gradient-to-r from-black via-black/80 to-transparent z-10 pointer-events-none"></div>
             <div className="absolute right-0 top-0 bottom-0 w-48 bg-gradient-to-l from-black via-black/80 to-transparent z-10 pointer-events-none"></div>
             
-            <div className="flex animate-scroll-fast whitespace-nowrap py-8">
-              {logoArray.map((partner, index) => (
+            <div className="flex animate-scroll-ultra-fast whitespace-nowrap py-8">
+              {integrationPartners.map((partner, index) => (
                 <div 
                   key={index}
                   className="inline-flex items-center justify-center mx-6 min-w-[160px] flex-shrink-0"
