@@ -155,7 +155,7 @@
 }
 
 .animate-scroll-seamless {
-  animation: scroll-seamless 20s linear infinite;
+  animation: scroll-seamless 12s linear infinite;
 }
 
 /* Subtle parallax for background elements */
