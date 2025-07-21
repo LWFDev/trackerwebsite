@@ -12,6 +12,9 @@ const IntegrationPartners = () => {
     "WordPress", "Xero"
   ];
 
+  // Create 10 copies for 140 total logos (14 × 10)
+  const logoArray = Array(10).fill(integrationPartners).flat();
+
   return (
     <section>
       <ScrollReveal preset="enterprise" delay={100}>
@@ -31,12 +34,16 @@ const IntegrationPartners = () => {
       
       <ScrollReveal preset="confident" delay={300}>
         <div className="w-full mx-auto">
-          <div className="overflow-hidden">
-            <div className="flex animate-scroll-infinite whitespace-nowrap py-8">
-              {[...integrationPartners, ...integrationPartners, ...integrationPartners, ...integrationPartners].map((partner, index) => (
+          <div className="overflow-hidden relative">
+            {/* Fade gradients on left and right */}
+            <div className="absolute left-0 top-0 bottom-0 w-48 bg-gradient-to-r from-black via-black/80 to-transparent z-10 pointer-events-none"></div>
+            <div className="absolute right-0 top-0 bottom-0 w-48 bg-gradient-to-l from-black via-black/80 to-transparent z-10 pointer-events-none"></div>
+            
+            <div className="flex animate-scroll-fast whitespace-nowrap py-8">
+              {logoArray.map((partner, index) => (
                 <div 
                   key={index}
-                  className="inline-flex items-center justify-center mx-12 min-w-[140px] flex-shrink-0"
+                  className="inline-flex items-center justify-center mx-6 min-w-[160px] flex-shrink-0"
                 >
                   <div className="flex flex-col items-center">
                     <Zap className="h-5 w-5 text-emerald-500 mb-2" />

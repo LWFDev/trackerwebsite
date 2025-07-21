@@ -155,7 +155,16 @@
     transform: translateX(0);
   }
   to {
-    transform: translateX(-25%);
+    transform: translateX(-10%);
+  }
+}
+
+@keyframes scroll-fast {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-10%);
   }
 }
 
@@ -169,6 +178,10 @@
 
 .animate-scroll-infinite {
   animation: scroll-infinite 20s linear infinite;
+}
+
+.animate-scroll-fast {
+  animation: scroll-fast 15s linear infinite;
 }
 
 /* Subtle parallax for background elements */
