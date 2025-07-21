@@ -24,7 +24,11 @@ const IntegrationPartners = () => {
     "Ralawise.com": "/lovable-uploads/c07f111b-fabd-474c-b091-b282314a4fc4.png",
     "Royal Mail": "/lovable-uploads/ae2372c1-9dbc-4a78-9cdb-756f06a75ba7.png",
     "Shopify": "/lovable-uploads/e26f2549-0a6d-4799-9ca8-8a33eddc1600.png",
-    "Tajima": "/lovable-uploads/aadccf67-7e7b-486f-a53b-f6e0a8bb36ae.png"
+    "Tajima": "/lovable-uploads/aadccf67-7e7b-486f-a53b-f6e0a8bb36ae.png",
+    "UPS": "/lovable-uploads/d7e2c947-cd8e-44d9-bb92-872a7935f17b.png",
+    "Wilcom": "/lovable-uploads/049dda9c-7e52-4984-97da-e310719790f0.png",
+    "Wordpress": "/lovable-uploads/c2f57b8f-7498-43e4-9ef0-cf99d50f16ec.png",
+    "Xero": "/lovable-uploads/e65dad35-88a5-4575-a2d3-f36c4cef5ab8.png"
   };
 
   return (
