@@ -33,7 +33,7 @@ const IntegrationPartners = () => {
         <div className="w-full mx-auto">
           <div className="overflow-hidden">
             <div className="flex animate-scroll-infinite whitespace-nowrap py-8">
-              {[...integrationPartners, ...integrationPartners, ...integrationPartners].map((partner, index) => (
+              {[...integrationPartners, ...integrationPartners, ...integrationPartners, ...integrationPartners].map((partner, index) => (
                 <div 
                   key={index}
                   className="inline-flex items-center justify-center mx-12 min-w-[140px] flex-shrink-0"
