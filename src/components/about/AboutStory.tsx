@@ -4,7 +4,7 @@ import StoryHero from "./StoryHero";
 import MainStory from "./MainStory";
 import TrackerProvides from "./TrackerProvides";
 import ClientTypes from "./ClientTypes";
-
+import IntegrationPartners from "./IntegrationPartners";
 
 const AboutStory = () => {
   return (
@@ -14,7 +14,7 @@ const AboutStory = () => {
         <MainStory />
         <TrackerProvides />
         <ClientTypes />
-        
+        <IntegrationPartners />
       </div>
     </div>
   );
