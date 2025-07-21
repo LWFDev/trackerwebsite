@@ -66,14 +66,11 @@ const IntegrationPartners = () => {
                       <img 
                         src={partnerLogos[partner]} 
                         alt={partner} 
-                        className="h-8 w-auto mb-2 filter brightness-0 invert opacity-80 hover:opacity-100 transition-opacity"
+                        className="h-10 w-auto filter brightness-0 invert opacity-80 hover:opacity-100 transition-opacity"
                       />
                     ) : (
-                      <Zap className="h-5 w-5 text-emerald-500 mb-2" />
+                      <Zap className="h-6 w-6 text-emerald-500" />
                     )}
-                    <span className="text-emerald-400 text-sm font-semibold whitespace-nowrap">
-                      {partner}
-                    </span>
                   </div>
                 </div>
               ))}
