@@ -34,7 +34,7 @@ const IntegrationPartners = () => {
           <div className="relative overflow-hidden">
             <ScrollReveal preset="enterprise" delay={200}>
               <div className="flex animate-scroll-seamless whitespace-nowrap py-8">
-                {Array(4).fill(integrationPartners).flat().map((partner, index) => (
+                {[...integrationPartners, ...integrationPartners].map((partner, index) => (
                   <div 
                     key={index}
                     className="inline-flex items-center justify-center mx-8 min-w-[120px] flex-shrink-0"
