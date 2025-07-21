@@ -30,30 +30,24 @@ const IntegrationPartners = () => {
       </ScrollReveal>
       
       <ScrollReveal preset="confident" delay={300}>
-        <div className="relative w-3/4 mx-auto">
-          <div className="relative overflow-hidden">
-            <ScrollReveal preset="enterprise" delay={200}>
-              <div className="flex animate-scroll-seamless whitespace-nowrap py-8">
-                {[...integrationPartners, ...integrationPartners].map((partner, index) => (
-                  <div 
-                    key={index}
-                    className="inline-flex items-center justify-center mx-8 min-w-[120px] flex-shrink-0"
-                  >
-                    <div className="flex flex-col items-center">
-                      <Zap className="h-5 w-5 text-emerald-500 mb-2" />
-                      <span className="text-emerald-400 text-sm font-semibold whitespace-nowrap">
-                        {partner}
-                      </span>
-                    </div>
+        <div className="w-full mx-auto">
+          <div className="overflow-hidden">
+            <div className="flex animate-scroll-seamless whitespace-nowrap py-8">
+              {[...integrationPartners, ...integrationPartners].map((partner, index) => (
+                <div 
+                  key={index}
+                  className="inline-flex items-center justify-center mx-12 min-w-[140px] flex-shrink-0"
+                >
+                  <div className="flex flex-col items-center">
+                    <Zap className="h-5 w-5 text-emerald-500 mb-2" />
+                    <span className="text-emerald-400 text-sm font-semibold whitespace-nowrap">
+                      {partner}
+                    </span>
                   </div>
-                ))}
-              </div>
-            </ScrollReveal>
+                </div>
+              ))}
+            </div>
           </div>
-          
-          {/* Fade effects */}
-          <div className="absolute left-0 top-0 bottom-0 w-16 bg-gradient-to-r from-black to-transparent pointer-events-none z-10" />
-          <div className="absolute right-0 top-0 bottom-0 w-16 bg-gradient-to-l from-black to-transparent pointer-events-none z-10" />
         </div>
       </ScrollReveal>
     </section>
