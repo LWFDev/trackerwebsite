@@ -213,14 +213,14 @@ const DetailedPricingCard: React.FC<DetailedPricingCardProps> = ({
           <div className="space-y-4">
             {tier.basePrice > 0 ? <>
                 <div className="text-center">
-                  <div className={`text-xl font-bold ${tier.highlighted ? 'text-yellow-400' : 'text-white'}`}>
+                  <div className={`text-4xl font-bold ${tier.highlighted ? 'text-yellow-400' : 'text-white'}`}>
                     {monthlyPricing.current}
                   </div>
-                  <div className="text-gray-500 mt-1">{billingCycle === 'annually' ? 'Per Year' : 'Per Month'}</div>
+                  <div className="text-gray-500 mt-1">{billingCycle === 'annually' ? 'Annually' : 'Monthly'}</div>
                 </div>
                 
                 <div className="text-center">
-                  <div className={`text-4xl font-bold ${tier.highlighted ? 'text-yellow-400' : 'text-white'}`}>
+                  <div className={`text-2xl font-bold ${tier.highlighted ? 'text-yellow-400' : 'text-white'}`}>
                     {onboardingPricing.current}
                   </div>
                   <div className="text-gray-500 mt-1">On-Boarding</div>
