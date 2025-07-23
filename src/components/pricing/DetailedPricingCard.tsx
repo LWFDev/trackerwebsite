@@ -217,6 +217,9 @@ const DetailedPricingCard: React.FC<DetailedPricingCardProps> = ({
                     {monthlyPricing.current}
                   </div>
                   <div className="text-gray-500 mt-1">{billingCycle === 'annually' ? 'Annually' : 'Monthly'}</div>
+                  {billingCycle === 'annually' && <div className="text-xs text-green-400 text-center mt-1">
+                      2 months included with annual billing
+                    </div>}
                 </div>
                 
                 <div className="text-center">
@@ -225,10 +228,6 @@ const DetailedPricingCard: React.FC<DetailedPricingCardProps> = ({
                   </div>
                   <div className="text-gray-500 mt-1">On-Boarding</div>
                 </div>
-                
-                {billingCycle === 'annually' && <div className="text-xs text-green-400 text-center">
-                    2 months included with annual billing
-                  </div>}
               </> : <div className="text-4xl font-bold text-white">Custom</div>}
           </div>
         </CardHeader>
