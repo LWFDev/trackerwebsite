@@ -220,7 +220,7 @@ const DetailedPricingCard: React.FC<DetailedPricingCardProps> = ({
                 </div>
                 
                 <div className="text-center">
-                  <div className={`text-2xl font-bold ${tier.highlighted ? 'text-yellow-400' : 'text-white'}`}>
+                  <div className={`text-4xl font-bold ${tier.highlighted ? 'text-yellow-400' : 'text-white'}`}>
                     {onboardingPricing.current}
                   </div>
                   <div className="text-gray-500 mt-1">On-Boarding</div>
