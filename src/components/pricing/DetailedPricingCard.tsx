@@ -212,9 +212,11 @@ const DetailedPricingCard: React.FC<DetailedPricingCardProps> = ({
           {/* Pricing display */}
           <div className="space-y-2">
             {tier.basePrice > 0 ? <>
-                <div className="flex items-center justify-center gap-2 text-sm text-gray-400">
-                  <span>{billingCycle === 'annually' ? 'Annual:' : 'Monthly:'}</span>
-                  <span className={tier.highlighted ? 'text-yellow-400' : 'text-white'}>{monthlyPricing.current}</span>
+                <div className="flex items-center justify-center gap-2">
+                  <span className={`text-4xl font-bold ${tier.highlighted ? 'text-yellow-400' : 'text-white'}`}>
+                    {monthlyPricing.current}
+                  </span>
+                  <span className="text-gray-500">{billingCycle === 'annually' ? 'Annual' : 'Monthly'}</span>
                 </div>
                 <div className="flex items-center justify-center gap-2">
                   <span className={`text-4xl font-bold ${tier.highlighted ? 'text-yellow-400' : 'text-white'}`}>
