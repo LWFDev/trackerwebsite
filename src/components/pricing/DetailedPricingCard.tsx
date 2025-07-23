@@ -146,8 +146,8 @@ const DetailedPricingCard: React.FC<DetailedPricingCardProps> = ({
         } else {
           // Show yearly total for annual, monthly for monthly
           return billingCycle === 'annually' 
-            ? { current: `£${(649 * 10 / 100).toLocaleString()}/year`, original: null }
-            : { current: `£${(649 / 100).toLocaleString()}/month`, original: null };
+            ? { current: `£${(649 * 10 / 100).toLocaleString()}`, original: null }
+            : { current: `£${(649 / 100).toLocaleString()}`, original: null };
         }
       } else if (tier.name === 'Decorator') {
         if (isOnboarding) {
@@ -156,8 +156,8 @@ const DetailedPricingCard: React.FC<DetailedPricingCardProps> = ({
         } else {
           // Show yearly total for annual, monthly for monthly
           return billingCycle === 'annually' 
-            ? { current: `£${(1599 * 10 / 100).toLocaleString()}/year`, original: null }
-            : { current: `£${(1599 / 100).toLocaleString()}/month`, original: null };
+            ? { current: `£${(1599 * 10 / 100).toLocaleString()}`, original: null }
+            : { current: `£${(1599 / 100).toLocaleString()}`, original: null };
         }
       }
     }
@@ -169,9 +169,9 @@ const DetailedPricingCard: React.FC<DetailedPricingCardProps> = ({
     } else {
       // Show yearly total for annual, monthly for monthly
       if (billingCycle === 'annually') {
-        return { current: `$${(tier.tierPrice / 100).toLocaleString()}/year`, original: null };
+        return { current: `$${(tier.tierPrice / 100).toLocaleString()}`, original: null };
       } else {
-        return { current: `$${dollarAmount.toLocaleString()}/month`, original: null };
+        return { current: `$${dollarAmount.toLocaleString()}`, original: null };
       }
     }
   };
