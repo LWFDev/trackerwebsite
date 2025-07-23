@@ -210,22 +210,23 @@ const DetailedPricingCard: React.FC<DetailedPricingCardProps> = ({
           <p className="text-gray-400 text-sm mb-6">{tier.description}</p>
           
           {/* Pricing display */}
-          <div className="space-y-2">
+          <div className="space-y-4">
             {tier.basePrice > 0 ? <>
-                <div className="flex items-center justify-center gap-2">
-                  <span className={`text-4xl font-bold ${tier.highlighted ? 'text-yellow-400' : 'text-white'}`}>
+                <div className="text-center">
+                  <div className={`text-4xl font-bold ${tier.highlighted ? 'text-yellow-400' : 'text-white'}`}>
                     {monthlyPricing.current}
-                  </span>
-                  <span className="text-gray-500">{billingCycle === 'annually' ? 'Annual' : 'Monthly'}</span>
-                </div>
-                <div className="flex items-center justify-center gap-2">
-                  <span className={`text-4xl font-bold ${tier.highlighted ? 'text-yellow-400' : 'text-white'}`}>
-                    {onboardingPricing.current}
-                  </span>
-                  <span className="text-gray-500">On-Boarding Fee</span>
+                  </div>
+                  <div className="text-gray-500 mt-1">{billingCycle === 'annually' ? 'Annually' : 'Monthly'}</div>
                 </div>
                 
-                {billingCycle === 'annually' && <div className="text-xs text-green-400">
+                <div className="text-center">
+                  <div className={`text-2xl font-bold ${tier.highlighted ? 'text-yellow-400' : 'text-white'}`}>
+                    {onboardingPricing.current}
+                  </div>
+                  <div className="text-gray-500 mt-1">On-Boarding</div>
+                </div>
+                
+                {billingCycle === 'annually' && <div className="text-xs text-green-400 text-center">
                     2 months included with annual billing
                   </div>}
               </> : <div className="text-4xl font-bold text-white">Custom</div>}
