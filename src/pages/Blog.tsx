@@ -8,7 +8,7 @@ import BlogPosts from "@/components/blog/BlogPosts";
 import NewsletterSignup from "@/components/blog/NewsletterSignup";
 import BlogCTA from "@/components/blog/BlogCTA";
 import PageSEO from "@/components/seo/PageSEO";
-import { blogSEO } from "@/data/seoData";
+import { blogSEO, blogBreadcrumb } from "@/data/seoData";
 
 const BlogPage = () => {
   const [searchQuery, setSearchQuery] = useState("");
@@ -23,7 +23,7 @@ const BlogPage = () => {
   return (
     <div className="min-h-screen bg-black text-white">
       <main className="pt-16">
-        <PageSEO seo={blogSEO} />
+        <PageSEO seo={blogSEO} breadcrumbs={blogBreadcrumb} />
         <BlogHero />
         <BlogSearch searchQuery={searchQuery} setSearchQuery={setSearchQuery} />
         <BlogCategories activeTab={activeTab} setActiveTab={setActiveTab} />

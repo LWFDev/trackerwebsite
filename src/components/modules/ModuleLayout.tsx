@@ -4,6 +4,8 @@ import { Button } from '@/components/ui/button';
 import { ArrowLeft, Star, ArrowRight, X, ZoomIn } from 'lucide-react';
 import { Dialog, DialogContent, DialogTrigger } from '@/components/ui/dialog';
 import { scrollToTop } from '@/utils/navigation';
+import PageSEO from '@/components/seo/PageSEO';
+import { generateModuleSEO, modulesBreadcrumb } from '@/data/seoData';
 
 interface Stats {
   value: string;
@@ -71,6 +73,7 @@ interface ModuleLayoutProps {
     description: string;
     link: string;
   }[];
+  seoKeywords?: string;
 }
 const ModuleLayout = ({
   title,
@@ -85,7 +88,8 @@ const ModuleLayout = ({
   ctaSection,
   rating = 4.8,
   reviews = 92,
-  relatedModules
+  relatedModules,
+  seoKeywords
 }: ModuleLayoutProps) => {
   const mainRef = useRef<HTMLDivElement>(null);
   const [isLightboxOpen, setIsLightboxOpen] = useState(false);
@@ -224,6 +228,14 @@ const ModuleLayout = ({
   };
   
   return <div className="min-h-screen flex flex-col bg-black">
+      <PageSEO 
+        seo={generateModuleSEO(
+          title,
+          description,
+          seoKeywords || `${title.toLowerCase()}, production management, garment decoration software`
+        )}
+        breadcrumbs={modulesBreadcrumb}
+      />
       {/* Hero Section */}
       <section className={`pt-24 pb-16 ${getBgColor()} text-white`}>
         <div className="container mx-auto px-4">

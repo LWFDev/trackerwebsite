@@ -13,6 +13,7 @@ import { useToast } from "@/hooks/use-toast";
 import { motion } from "framer-motion";
 import PageSEO from "@/components/seo/PageSEO";
 import { homeSEO, homeBreadcrumb } from "@/data/seoData";
+import { organizationSchema } from "@/utils/seo";
 
 // Enhanced floating icons with gold and green harmony
 const FloatingIcons = () => {
@@ -66,7 +67,7 @@ const Index = () => {
       animate="visible" 
       variants={fadeInVariants}
     >
-      <PageSEO seo={homeSEO} breadcrumbs={homeBreadcrumb} />
+      <PageSEO seo={homeSEO} breadcrumbs={homeBreadcrumb} extraSchema={organizationSchema} />
       
       {/* Professional background with gold and green gradients */}
       <div className="fixed inset-0 pointer-events-none">

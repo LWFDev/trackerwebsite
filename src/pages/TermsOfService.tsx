@@ -5,6 +5,8 @@ import { ScrollReveal } from '@/components/ui/scroll-reveal';
 import { Scale, FileText, Shield } from 'lucide-react';
 import { useLocalization } from '@/contexts/LocalizationContext';
 import ContactInfo from '@/components/contact/ContactInfo';
+import PageSEO from "@/components/seo/PageSEO";
+import { termsSEO, termsBreadcrumb } from "@/data/seoData";
 
 const TermsOfService = () => {
   const { t } = useLocalization();
@@ -26,6 +28,7 @@ const TermsOfService = () => {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-white via-slate-50/30 to-emerald-50/20 dark:from-black dark:via-slate-950/30 dark:to-emerald-950/20">
+      <PageSEO seo={termsSEO} breadcrumbs={termsBreadcrumb} />
       {/* Hero Section */}
       <div className="bg-gradient-to-r from-emerald-600 to-green-500 relative overflow-hidden">
         <div className="absolute inset-0 opacity-10">

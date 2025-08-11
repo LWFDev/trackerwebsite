@@ -5,6 +5,8 @@ import { ScrollReveal } from '@/components/ui/scroll-reveal';
 import { Shield, Eye, Lock } from 'lucide-react';
 import { useLocalization } from '@/contexts/LocalizationContext';
 import ContactInfo from '@/components/contact/ContactInfo';
+import PageSEO from "@/components/seo/PageSEO";
+import { privacySEO, privacyBreadcrumb } from "@/data/seoData";
 
 const PrivacyPolicy = () => {
   const { t } = useLocalization();
@@ -25,6 +27,7 @@ const PrivacyPolicy = () => {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-white via-slate-50/30 to-emerald-50/20 dark:from-black dark:via-slate-950/30 dark:to-emerald-950/20">
+      <PageSEO seo={privacySEO} breadcrumbs={privacyBreadcrumb} />
       {/* Hero Section */}
       <div className="bg-gradient-to-r from-emerald-600 to-green-500 relative overflow-hidden">
         <div className="absolute inset-0 opacity-10">

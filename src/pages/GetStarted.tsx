@@ -5,6 +5,8 @@ import { useOnboardingNavigation } from "@/hooks/useOnboardingNavigation";
 import { OnboardingLayout } from "@/components/onboarding/OnboardingLayout";
 import { CurrentQuestion } from "@/components/onboarding/CurrentQuestion";
 import { CompleteStep } from "@/components/onboarding/CompleteStep";
+import PageSEO from "@/components/seo/PageSEO";
+import { getStartedSEO, getStartedBreadcrumb } from "@/data/seoData";
 
 const GetStarted = () => {
   const { formData, updateFormData } = useOnboardingForm();
@@ -21,14 +23,16 @@ const GetStarted = () => {
   } = useOnboardingNavigation(formData);
 
   return (
-    <OnboardingLayout
-      currentStep={currentStep}
-      totalSteps={totalSteps}
-      currentQuestionIndex={currentQuestionIndex}
-      totalQuestions={totalQuestions}
-      questionTitle={questionTitle}
-      onBack={handleBack}
-    >
+    <>
+      <PageSEO seo={getStartedSEO} breadcrumbs={getStartedBreadcrumb} />
+      <OnboardingLayout
+        currentStep={currentStep}
+        totalSteps={totalSteps}
+        currentQuestionIndex={currentQuestionIndex}
+        totalQuestions={totalQuestions}
+        questionTitle={questionTitle}
+        onBack={handleBack}
+      >
       <AnimatePresence mode="wait">
         {currentStep === 3 ? (
           <CompleteStep 
@@ -47,8 +51,8 @@ const GetStarted = () => {
           )
         )}
       </AnimatePresence>
-    </OnboardingLayout>
-  );
+      </OnboardingLayout>
+    </>
 };
 
 export default GetStarted;

@@ -5,6 +5,8 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/
 import { ScrollReveal } from "@/components/ui/scroll-reveal";
 import { Sparkles, HelpCircle, DollarSign, Settings, Globe } from "lucide-react";
 import { scrollToTop } from "@/utils/navigation";
+import PageSEO from "@/components/seo/PageSEO";
+import { faqSEO, faqBreadcrumb } from "@/data/seoData";
 
 interface FAQItem {
   question: string;
@@ -230,6 +232,7 @@ const FAQ = () => {
 
   return (
     <div className="min-h-screen bg-black">
+      <PageSEO seo={faqSEO} breadcrumbs={faqBreadcrumb} />
       {/* Dark theme header gradient */}
       <div className="bg-gradient-to-r from-zinc-900 via-black to-emerald-950 relative overflow-hidden">
         {/* Background pattern */}

@@ -5,12 +5,12 @@ import ContactFormSection from "@/components/contact/ContactFormSection";
 import ContactFAQ from "@/components/contact/ContactFAQ";
 import ContactCTA from "@/components/contact/ContactCTA";
 import PageSEO from "@/components/seo/PageSEO";
-import { contactSEO } from "@/data/seoData";
+import { contactSEO, contactBreadcrumb } from "@/data/seoData";
 
 const ContactPage = () => {
   return (
     <div className="min-h-screen bg-black">
-      <PageSEO seo={contactSEO} />
+      <PageSEO seo={contactSEO} breadcrumbs={contactBreadcrumb} />
       <ContactHero />
       <ContactFormSection />
       <ContactFAQ />
