@@ -11,6 +11,8 @@ import AnimatedBoxesDivider from "@/components/landing/AnimatedBoxesDivider";
 import { useIsMobile } from "@/hooks/use-mobile";
 import { useToast } from "@/hooks/use-toast";
 import { motion } from "framer-motion";
+import PageSEO from "@/components/seo/PageSEO";
+import { homeSEO, homeBreadcrumb } from "@/data/seoData";
 
 // Enhanced floating icons with gold and green harmony
 const FloatingIcons = () => {
@@ -64,7 +66,7 @@ const Index = () => {
       animate="visible" 
       variants={fadeInVariants}
     >
-      <ScrollAnimationInit />
+      <PageSEO seo={homeSEO} breadcrumbs={homeBreadcrumb} />
       
       {/* Professional background with gold and green gradients */}
       <div className="fixed inset-0 pointer-events-none">

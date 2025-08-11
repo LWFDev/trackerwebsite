@@ -114,3 +114,26 @@ export const generateFAQSchema = (faqs: Array<{question: string, answer: string}
     }))
   };
 };
+
+export const generateArticleSchema = (article: {
+  title: string;
+  description: string;
+  author: string;
+  datePublished: string;
+  image?: string;
+  url: string;
+  tags?: string[];
+}) => ({
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": article.title,
+  "description": article.description,
+  "image": article.image,
+  "author": {
+    "@type": "Person",
+    "name": article.author
+  },
+  "datePublished": article.datePublished,
+  "mainEntityOfPage": article.url,
+  "keywords": article.tags?.join(', ')
+});

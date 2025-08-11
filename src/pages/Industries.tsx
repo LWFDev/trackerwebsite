@@ -6,6 +6,8 @@ import { Link } from "react-router-dom";
 import { ScrollReveal } from "@/components/ui/scroll-reveal";
 import { Factory, Palette, Shirt, Building2, Gift, Trophy, HardHat, Sparkles, Monitor, Settings } from "lucide-react";
 import { scrollToTop } from "@/utils/navigation";
+import PageSEO from "@/components/seo/PageSEO";
+import { industriesSEO, industriesBreadcrumb } from "@/data/seoData";
 const Industries = () => {
   const industries = [{
     title: "High-Volume Embroidery Operations",
@@ -69,6 +71,7 @@ const Industries = () => {
     link: "/industries/contract-decoration"
   }];
   return <div className="min-h-screen theme-background theme-text transition-colors duration-300">
+      <PageSEO seo={industriesSEO} breadcrumbs={industriesBreadcrumb} />
       {/* Hero Section */}
       <section className="relative pt-24 pb-16 overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-gold-opacity-5 via-transparent to-emerald-500/5"></div>

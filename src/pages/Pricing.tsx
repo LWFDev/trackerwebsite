@@ -1,6 +1,8 @@
 
 import React, { useEffect, useState, Suspense, lazy } from "react";
 import { motion } from "framer-motion";
+import PageSEO from "@/components/seo/PageSEO";
+import { pricingSEO, pricingBreadcrumb } from "@/data/seoData";
 
 // Eagerly load critical components
 import PricingHero from "@/components/pricing/PricingHero";
@@ -75,6 +77,7 @@ const PricingPage = () => {
 
   return (
     <div className="min-h-screen bg-black overflow-hidden">
+      <PageSEO seo={pricingSEO} breadcrumbs={pricingBreadcrumb} />
       {isLoading ? (
         <div className="fixed inset-0 bg-black z-50 flex items-center justify-center">
           <motion.div

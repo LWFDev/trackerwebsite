@@ -17,6 +17,8 @@ import DocsContent from "@/components/docs/DocsContent";
 import DocsFeedback from "@/components/docs/DocsFeedback";
 import DocsCTA from "@/components/docs/DocsCTA";
 import { docsCategories } from "@/data/docsData";
+import PageSEO from "@/components/seo/PageSEO";
+import { docsSEO } from "@/data/seoData";
 
 const Documentation = () => {
   const navigate = useNavigate();
@@ -67,6 +69,7 @@ const Documentation = () => {
 
   return (
     <div className="min-h-screen bg-zinc-900 text-white">
+      <PageSEO seo={docsSEO} />
       <div className="py-8 px-4 md:px-8 lg:px-12 max-w-screen-2xl mx-auto">
         {/* Breadcrumb */}
         <Breadcrumb className="mb-8">

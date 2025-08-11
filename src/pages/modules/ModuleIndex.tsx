@@ -7,6 +7,8 @@ import HeroSection from "./components/HeroSection";
 import CategorySelector from "./components/CategorySelector";
 import ModuleListSection from "./components/ModuleListSection";
 import CtaSection from "./components/CtaSection";
+import PageSEO from "@/components/seo/PageSEO";
+import { modulesSEO, modulesBreadcrumb } from "@/data/seoData";
 
 const ModuleIndex = () => {
   const [selectedCategory, setSelectedCategory] = useState("All");
@@ -22,6 +24,7 @@ const ModuleIndex = () => {
 
   return (
     <div className="min-h-screen bg-black">
+      <PageSEO seo={modulesSEO} breadcrumbs={modulesBreadcrumb} />
       <HeroSection />
       <CategorySelector 
         selectedCategory={selectedCategory}

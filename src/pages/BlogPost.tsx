@@ -8,6 +8,8 @@ import RelatedPosts from "@/components/blog/RelatedPosts";
 import NewsletterSignup from "@/components/blog/NewsletterSignup";
 import BlogCTA from "@/components/blog/BlogCTA";
 import NotFound from "./NotFound";
+import PageSEO from "@/components/seo/PageSEO";
+import { generateArticleSchema } from "@/utils/seo";
 
 const BlogPost = () => {
   const { slug } = useParams();
@@ -26,6 +28,24 @@ const BlogPost = () => {
   return (
     <div className="min-h-screen bg-black text-white">
       <main className="pt-16">
+        <PageSEO
+          seo={{
+            title: post.title,
+            description: post.excerpt,
+            keywords: post.tags.join(', '),
+            ogImage: post.coverImage,
+            canonical: `https://tracker-systems.com/blog/${post.slug}`
+          }}
+          extraSchema={generateArticleSchema({
+            title: post.title,
+            description: post.excerpt,
+            author: post.author,
+            datePublished: new Date(post.date).toISOString(),
+            image: post.coverImage,
+            url: `https://tracker-systems.com/blog/${post.slug}`,
+            tags: post.tags
+          })}
+        />
         <PostHeader post={post} />
         <PostImage post={post} />
         <PostContent post={post} />
