@@ -53,6 +53,7 @@ const GetStarted = () => {
       </AnimatePresence>
       </OnboardingLayout>
     </>
+  );
 };
 
 export default GetStarted;

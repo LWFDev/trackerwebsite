@@ -164,6 +164,26 @@ export const aboutBreadcrumb = generateBreadcrumbSchema([
   { name: "About", url: "https://tracker-systems.com/about" }
 ]);
 
+export const contactBreadcrumb = generateBreadcrumbSchema([
+  { name: "Home", url: "https://tracker-systems.com/" },
+  { name: "Contact", url: "https://tracker-systems.com/contact" }
+]);
+
+export const blogBreadcrumb = generateBreadcrumbSchema([
+  { name: "Home", url: "https://tracker-systems.com/" },
+  { name: "Blog", url: "https://tracker-systems.com/blog" }
+]);
+
+export const docsBreadcrumb = generateBreadcrumbSchema([
+  { name: "Home", url: "https://tracker-systems.com/" },
+  { name: "Documentation", url: "https://tracker-systems.com/documentation" }
+]);
+
+export const supportBreadcrumb = generateBreadcrumbSchema([
+  { name: "Home", url: "https://tracker-systems.com/" },
+  { name: "Support", url: "https://tracker-systems.com/support" }
+]);
+
 export const industriesBreadcrumb = generateBreadcrumbSchema([
   { name: "Home", url: "https://tracker-systems.com/" },
   { name: "Industries", url: "https://tracker-systems.com/industries" }
@@ -173,3 +193,64 @@ export const modulesBreadcrumb = generateBreadcrumbSchema([
   { name: "Home", url: "https://tracker-systems.com/" },
   { name: "Modules", url: "https://tracker-systems.com/modules" }
 ]);
+
+export const caseStudiesBreadcrumb = generateBreadcrumbSchema([
+  { name: "Home", url: "https://tracker-systems.com/" },
+  { name: "Case Studies", url: "https://tracker-systems.com/case-studies" }
+]);
+
+export const faqBreadcrumb = generateBreadcrumbSchema([
+  { name: "Home", url: "https://tracker-systems.com/" },
+  { name: "FAQ", url: "https://tracker-systems.com/faq" }
+]);
+
+export const getStartedBreadcrumb = generateBreadcrumbSchema([
+  { name: "Home", url: "https://tracker-systems.com/" },
+  { name: "Get Started", url: "https://tracker-systems.com/get-started" }
+]);
+
+export const termsBreadcrumb = generateBreadcrumbSchema([
+  { name: "Home", url: "https://tracker-systems.com/" },
+  { name: "Terms of Service", url: "https://tracker-systems.com/terms" }
+]);
+
+export const privacyBreadcrumb = generateBreadcrumbSchema([
+  { name: "Home", url: "https://tracker-systems.com/" },
+  { name: "Privacy Policy", url: "https://tracker-systems.com/privacy" }
+]);
+
+// Additional page SEO
+export const caseStudiesSEO: SEOData = {
+  title: "Case Studies - Real Results with Tracker Systems",
+  description: "See how businesses transformed operations with Tracker's production management platform across embroidery, screen printing, and apparel manufacturing.",
+  keywords: "tracker case studies, production management results, embroidery software success, screen printing ROI",
+  canonical: "https://tracker-systems.com/case-studies"
+};
+
+export const faqSEO: SEOData = {
+  title: "FAQ - Answers About Tracker Systems",
+  description: "Find answers to common questions about Tracker pricing, implementation, integrations, and support.",
+  keywords: "tracker faq, production management faq, garment decoration software questions",
+  canonical: "https://tracker-systems.com/faq"
+};
+
+export const getStartedSEO: SEOData = {
+  title: "Get Started - Onboarding with Tracker Systems",
+  description: "Kick off your Tracker onboarding. Answer a few questions and our team will tailor your implementation.",
+  keywords: "tracker onboarding, get started, implementation questionnaire",
+  canonical: "https://tracker-systems.com/get-started"
+};
+
+export const termsSEO: SEOData = {
+  title: "Terms of Service - Tracker Systems",
+  description: "Read the legal terms governing the use of Tracker production management software and services.",
+  keywords: "tracker terms of service, software terms, legal terms",
+  canonical: "https://tracker-systems.com/terms"
+};
+
+export const privacySEO: SEOData = {
+  title: "Privacy Policy - Tracker Systems",
+  description: "Learn how Tracker collects, uses, and protects your data in compliance with privacy regulations.",
+  keywords: "tracker privacy policy, data protection, GDPR",
+  canonical: "https://tracker-systems.com/privacy"
+};
