@@ -4,6 +4,8 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Link } from "react-router-dom";
 import { Building2, CheckCircle, TrendingUp, Clock, Users, BarChart3, Shield, FileCheck } from "lucide-react";
+import PageSEO from "@/components/seo/PageSEO";
+
 
 const CorporateApparel = () => {
   const challenges = [
@@ -46,6 +48,12 @@ const CorporateApparel = () => {
 
   return (
     <div className="min-h-screen theme-background theme-text transition-colors duration-300">
+      <PageSEO seo={{
+        title: "Corporate Apparel Suppliers Software",
+        description: "Manage complex customized orders and maintain brand consistency for corporate clients.",
+        keywords: "corporate apparel software, order management",
+        canonical: "https://tracker-systems.com/industries/corporate-apparel"
+      }} />
       {/* Hero Section */}
       <section className="relative pt-24 pb-16 overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-gray-500/5 via-transparent to-slate-500/5"></div>

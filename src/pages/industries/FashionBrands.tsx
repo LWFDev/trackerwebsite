@@ -4,6 +4,8 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Link } from "react-router-dom";
 import { Sparkles, CheckCircle, TrendingUp, Clock, Users, BarChart3 } from "lucide-react";
+import PageSEO from "@/components/seo/PageSEO";
+
 
 const FashionBrands = () => {
   const challenges = [
@@ -33,6 +35,12 @@ const FashionBrands = () => {
 
   return (
     <div className="min-h-screen theme-background theme-text transition-colors duration-300">
+      <PageSEO seo={{
+        title: "Fashion Brands & Private Label Software",
+        description: "Monitor quality, timelines, and customization compliance across production.",
+        keywords: "fashion brand software, private label production",
+        canonical: "https://tracker-systems.com/industries/fashion-brands"
+      }} />
       {/* Hero Section */}
       <section className="relative pt-24 pb-16 overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-violet-500/5 via-transparent to-purple-500/5"></div>

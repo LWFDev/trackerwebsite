@@ -4,6 +4,8 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Link } from "react-router-dom";
 import { Monitor, CheckCircle, TrendingUp, Clock, Users, BarChart3 } from "lucide-react";
+import PageSEO from "@/components/seo/PageSEO";
+
 
 const PrintOnDemand = () => {
   const challenges = [
@@ -33,6 +35,12 @@ const PrintOnDemand = () => {
 
   return (
     <div className="min-h-screen theme-background theme-text transition-colors duration-300">
+      <PageSEO seo={{
+        title: "Print-on-Demand Fulfillment Software",
+        description: "Integrate online stores, automate order processing, and provide transparent tracking.",
+        keywords: "print-on-demand software, ecommerce integration",
+        canonical: "https://tracker-systems.com/industries/print-on-demand"
+      }} />
       {/* Hero Section */}
       <section className="relative pt-24 pb-16 overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-blue-500/5 via-transparent to-cyan-500/5"></div>

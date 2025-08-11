@@ -2,10 +2,20 @@ import React from 'react';
 import { CheckCircle } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import PageSEO from "@/components/seo/PageSEO";
 
 const PaymentSuccess = () => {
   return (
     <div className="min-h-screen bg-gradient-to-br from-zinc-900 to-black flex items-center justify-center p-4">
+      <PageSEO
+        seo={{
+          title: "Payment Success - Tracker Systems",
+          description: "Your payment was successful. We'll be in touch shortly.",
+          keywords: "payment success",
+          canonical: "https://tracker-systems.com/payment-success",
+          robots: "noindex, nofollow"
+        }}
+      />
       <Card className="w-full max-w-md text-center bg-zinc-900 border-zinc-800">
         <CardHeader>
           <div className="mx-auto w-16 h-16 bg-green-500 rounded-full flex items-center justify-center mb-4">

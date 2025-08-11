@@ -4,6 +4,8 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Link } from "react-router-dom";
 import { HardHat, CheckCircle, TrendingUp, Clock, Users, BarChart3, RefreshCw, Truck } from "lucide-react";
+import PageSEO from "@/components/seo/PageSEO";
+
 
 const WorkwearUniforms = () => {
   const challenges = [
@@ -46,6 +48,12 @@ const WorkwearUniforms = () => {
 
   return (
     <div className="min-h-screen theme-background theme-text transition-colors duration-300">
+      <PageSEO seo={{
+        title: "Workwear & Uniform Services Software",
+        description: "Automate high-volume order processing with priority scheduling and inventory control.",
+        keywords: "workwear software, uniform services management",
+        canonical: "https://tracker-systems.com/industries/workwear-uniforms"
+      }} />
       {/* Hero Section */}
       <section className="relative pt-24 pb-16 overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/5 via-transparent to-teal-500/5"></div>

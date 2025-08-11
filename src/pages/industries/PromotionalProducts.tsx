@@ -4,6 +4,8 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Link } from "react-router-dom";
 import { Gift, CheckCircle, TrendingUp, Clock, Users, BarChart3, Package, Star } from "lucide-react";
+import PageSEO from "@/components/seo/PageSEO";
+
 
 const PromotionalProducts = () => {
   const challenges = [
@@ -46,6 +48,12 @@ const PromotionalProducts = () => {
 
   return (
     <div className="min-h-screen theme-background theme-text transition-colors duration-300">
+      <PageSEO seo={{
+        title: "Promotional Products Distributors Software",
+        description: "End-to-end tracking from order to shipment across diverse products and methods.",
+        keywords: "promotional products software, decoration tracking",
+        canonical: "https://tracker-systems.com/industries/promotional-products"
+      }} />
       {/* Hero Section */}
       <section className="relative pt-24 pb-16 overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-orange-500/5 via-transparent to-red-500/5"></div>

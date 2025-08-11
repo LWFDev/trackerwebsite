@@ -1,5 +1,6 @@
 import { useLocation } from "react-router-dom";
 import { useEffect } from "react";
+import PageSEO from "@/components/seo/PageSEO";
 
 const NotFound = () => {
   const location = useLocation();
@@ -13,6 +14,14 @@ const NotFound = () => {
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-gray-100">
+      <PageSEO
+        seo={{
+          title: "404 Not Found - Tracker Systems",
+          description: "Page not found.",
+          keywords: "404",
+          robots: "noindex, nofollow"
+        }}
+      />
       <div className="text-center">
         <h1 className="text-4xl font-bold mb-4">404</h1>
         <p className="text-xl text-gray-600 mb-4">Oops! Page not found</p>

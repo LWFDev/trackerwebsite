@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Link } from "react-router-dom";
 import { Settings, CheckCircle, TrendingUp, Clock, Users, BarChart3, Eye, Calendar } from "lucide-react";
+import PageSEO from "@/components/seo/PageSEO";
 
 const ContractDecoration = () => {
   const challenges = [
@@ -46,6 +47,12 @@ const ContractDecoration = () => {
 
   return (
     <div className="min-h-screen theme-background theme-text transition-colors duration-300">
+      <PageSEO seo={{
+        title: "Contract Decoration Software",
+        description: "Coordinate complex workflows, visibility, and deadlines across client projects.",
+        keywords: "contract decoration software, shop management",
+        canonical: "https://tracker-systems.com/industries/contract-decoration"
+      }} />
       {/* Hero Section */}
       <section className="relative pt-24 pb-16 overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-indigo-500/5 via-transparent to-blue-500/5"></div>

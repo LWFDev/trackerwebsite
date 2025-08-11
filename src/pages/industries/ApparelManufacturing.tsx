@@ -5,6 +5,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Link } from "react-router-dom";
 import { Shirt, CheckCircle, TrendingUp, Clock, Users, BarChart3, Layers, AlertTriangle } from "lucide-react";
 import { scrollToTop } from "@/utils/navigation";
+import PageSEO from "@/components/seo/PageSEO";
 
 const ApparelManufacturing = () => {
   const challenges = [
@@ -32,8 +33,14 @@ const ApparelManufacturing = () => {
     }
   ];
 
-  return (
-    <div className="min-h-screen theme-background theme-text transition-colors duration-300">
+      return (
+        <div className="min-h-screen theme-background theme-text transition-colors duration-300">
+          <PageSEO seo={{
+            title: "Apparel Manufacturing Software Solutions",
+            description: "Real-time production insight, bottleneck identification, and quality assurance for apparel manufacturers.",
+            keywords: "apparel manufacturing software, production management",
+            canonical: "https://tracker-systems.com/industries/apparel-manufacturing"
+          }} />
       {/* Hero Section */}
       <section className="relative pt-24 pb-16 overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-green-500/5 via-transparent to-emerald-500/5"></div>

@@ -4,6 +4,8 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Link } from "react-router-dom";
 import { Factory, CheckCircle, TrendingUp, Clock, Users, BarChart3 } from "lucide-react";
+import PageSEO from "@/components/seo/PageSEO";
+
 
 const HighVolumeEmbroidery = () => {
   const challenges = [
@@ -33,6 +35,12 @@ const HighVolumeEmbroidery = () => {
 
   return (
     <div className="min-h-screen theme-background theme-text transition-colors duration-300">
+      <PageSEO seo={{
+        title: "High-Volume Embroidery Operations Software",
+        description: "Monitor 150+ machines, optimize scheduling, and boost efficiency with real-time analytics.",
+        keywords: "embroidery operations software, production analytics",
+        canonical: "https://tracker-systems.com/industries/high-volume-embroidery"
+      }} />
       {/* Hero Section */}
       <section className="relative pt-24 pb-16 overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-blue-500/5 via-transparent to-indigo-500/5"></div>

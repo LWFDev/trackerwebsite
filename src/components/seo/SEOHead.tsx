@@ -34,10 +34,42 @@ export const SEOHead = ({ seoData }: SEOHeadProps) => {
     // Meta description and keywords
     ensureMeta('name', 'description', seoData.description);
     ensureMeta('name', 'keywords', seoData.keywords);
-
+    ensureMeta('name', 'robots', seoData.robots || 'index,follow');
     // Canonical URL
     if (seoData.canonical) {
       ensureLink('canonical', seoData.canonical);
+    }
+
+    // Hreflang alternates
+    document.querySelectorAll('link[rel="alternate"][data-page-hreflang]').forEach((n) => n.parentNode?.removeChild(n));
+    if (seoData.alternates && seoData.alternates.length) {
+      seoData.alternates.forEach((alt) => {
+        const link = document.createElement('link');
+        link.setAttribute('rel', 'alternate');
+        link.setAttribute('hreflang', alt.hrefLang);
+        link.setAttribute('href', alt.href);
+        link.setAttribute('data-page-hreflang', 'true');
+        document.head.appendChild(link);
+      });
+    }
+
+    // Pagination links
+    document.querySelectorAll('link[data-page-pagination]').forEach((n) => n.parentNode?.removeChild(n));
+    if (seoData.pagination) {
+      if (seoData.pagination.prev) {
+        const prev = document.createElement('link');
+        prev.setAttribute('rel', 'prev');
+        prev.setAttribute('href', seoData.pagination.prev);
+        prev.setAttribute('data-page-pagination', 'true');
+        document.head.appendChild(prev);
+      }
+      if (seoData.pagination.next) {
+        const next = document.createElement('link');
+        next.setAttribute('rel', 'next');
+        next.setAttribute('href', seoData.pagination.next);
+        next.setAttribute('data-page-pagination', 'true');
+        document.head.appendChild(next);
+      }
     }
 
     // Open Graph meta tags
@@ -46,7 +78,7 @@ export const SEOHead = ({ seoData }: SEOHeadProps) => {
     if (seoData.ogImage) {
       ensureMeta('property', 'og:image', seoData.ogImage);
     }
-    ensureMeta('property', 'og:type', 'website');
+    ensureMeta('property', 'og:type', seoData.ogType || 'website');
     ensureMeta('property', 'og:url', seoData.canonical || window.location.href);
     ensureMeta('property', 'og:site_name', 'Tracker Systems');
 
@@ -72,12 +104,14 @@ export const SEOHead = ({ seoData }: SEOHeadProps) => {
       document.head.appendChild(script);
     }
 
-    // Cleanup function to remove page-specific schema when component unmounts
+    // Cleanup function to remove page-specific schema and link tags when component unmounts
     return () => {
       const pageSchema = document.querySelector('script[type="application/ld+json"][data-page-schema]');
       if (pageSchema) {
         pageSchema.remove();
       }
+      document.querySelectorAll('link[rel="alternate"][data-page-hreflang]').forEach((n) => n.remove());
+      document.querySelectorAll('link[data-page-pagination]').forEach((n) => n.remove());
     };
   }, [seoData]);
 

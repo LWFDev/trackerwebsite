@@ -4,6 +4,8 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Link } from "react-router-dom";
 import { Palette, CheckCircle, TrendingUp, Clock, Users, BarChart3, Target, Zap } from "lucide-react";
+import PageSEO from "@/components/seo/PageSEO";
+
 const ScreenPrinting = () => {
   const challenges = ["Managing multiple simultaneous orders efficiently", "Optimizing workflow between setup and production", "Coordinating color matching and quality control", "Meeting tight delivery deadlines consistently"];
   const solutions = [{
@@ -31,6 +33,12 @@ const ScreenPrinting = () => {
   
   return (
     <div className="min-h-screen theme-background theme-text transition-colors duration-300">
+      <PageSEO seo={{
+        title: "Screen Printing Facilities Software",
+        description: "Optimize workflow, improve delivery times, and manage multiple orders efficiently.",
+        keywords: "screen printing software, shop management",
+        canonical: "https://tracker-systems.com/industries/screen-printing"
+      }} />
       {/* Hero Section */}
       <section className="relative pt-24 pb-16 overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-purple-500/5 via-transparent to-pink-500/5 py-0 my-0"></div>

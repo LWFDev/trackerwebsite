@@ -4,6 +4,8 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Link } from "react-router-dom";
 import { Trophy, CheckCircle, TrendingUp, Clock, Users, BarChart3 } from "lucide-react";
+import PageSEO from "@/components/seo/PageSEO";
+
 
 const SportsAndUniforms = () => {
   const challenges = [
@@ -33,6 +35,12 @@ const SportsAndUniforms = () => {
 
   return (
     <div className="min-h-screen theme-background theme-text transition-colors duration-300">
+      <PageSEO seo={{
+        title: "Sportswear & Team Uniforms Software",
+        description: "Streamline custom team uniforms with seasonal planning and event deadline control.",
+        keywords: "team uniforms software, sportswear production",
+        canonical: "https://tracker-systems.com/industries/sports-and-uniforms"
+      }} />
       {/* Hero Section */}
       <section className="relative pt-24 pb-16 overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-gold-opacity-5 via-transparent to-gold-light-opacity-5"></div>
