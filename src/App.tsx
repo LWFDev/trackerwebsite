@@ -10,6 +10,8 @@ import Layout from "./components/layout/Layout";
 import { ThemeProvider } from "./contexts/ThemeContext";
 import { LocalizationProvider } from "./contexts/LocalizationContext";
 import ScrollAnimationInit from "./components/ui/scroll-animation-init";
+import SiteVerification from "@/components/seo/SiteVerification";
+import Analytics from "@/components/seo/Analytics";
 
 // Critical pages - load immediately
 import Index from "@/pages/Index";
@@ -85,6 +87,8 @@ const App = () => {
           <TooltipProvider>
             <BrowserRouter>
               <ScrollAnimationInit />
+              <SiteVerification />
+              <Analytics />
               <PageTransition>
                 <Suspense fallback={<PageLoader />}>
                   <Routes>

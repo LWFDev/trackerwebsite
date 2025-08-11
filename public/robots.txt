@@ -30,6 +30,10 @@ Disallow: /*.json$
 Disallow: /*?*utm_*
 Disallow: /*?*ref=*
 Disallow: /search?*
+# Utility pages (noindex)
+Disallow: /login
+Disallow: /payment-success
+Disallow: /404
 
 # Allow important pages
 Allow: /pricing
