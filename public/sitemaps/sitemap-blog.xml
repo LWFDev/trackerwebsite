@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+  <!-- Blog posts with images -->
+  <url>
+    <loc>https://tracker-systems.com/blog/streamline-garment-decoration-workflow</loc>
+    <lastmod>2023-06-15T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+    <image:image>
+      <image:loc>https://tracker-systems.com/lovable-uploads/aac2ed3d-4e1b-4185-8286-ae53c53daa19.png</image:loc>
+      <image:title>5 Ways to Streamline Your Garment Decoration Workflow</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://tracker-systems.com/blog/screen-printing-vs-dtg</loc>
+    <lastmod>2023-05-28T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+    <image:image>
+      <image:loc>https://tracker-systems.com/lovable-uploads/aac2ed3d-4e1b-4185-8286-ae53c53daa19.png</image:loc>
+      <image:title>Understanding Screen Printing vs. DTG</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://tracker-systems.com/blog/new-integration-platform-features</loc>
+    <lastmod>2023-04-10T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+    <image:image>
+      <image:loc>https://tracker-systems.com/lovable-uploads/aac2ed3d-4e1b-4185-8286-ae53c53daa19.png</image:loc>
+      <image:title>New Integration Platform Features</image:title>
+    </image:image>
+  </url>
+</urlset>
