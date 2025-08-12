@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tracker Systems Blog</title>
+    <link>https://tracker-systems.com/blog</link>
+    <description>Production management insights, product updates, and best practices for garment decoration businesses.</description>
+    <language>en-gb</language>
+    <atom:link href="https://tracker-systems.com/feed.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 15 Jun 2023 00:00:00 GMT</lastBuildDate>
+
+    <item>
+      <title>5 Ways to Streamline Your Garment Decoration Workflow</title>
+      <link>https://tracker-systems.com/blog/streamline-garment-decoration-workflow</link>
+      <guid isPermaLink="true">https://tracker-systems.com/blog/streamline-garment-decoration-workflow</guid>
+      <pubDate>Sat, 15 Jun 2023 00:00:00 GMT</pubDate>
+      <description><![CDATA[Discover practical strategies to optimize your garment decoration processes and increase production efficiency without sacrificing quality.]]></description>
+    </item>
+
+    <item>
+      <title>Understanding Screen Printing vs. DTG: Which is Right for Your Business?</title>
+      <link>https://tracker-systems.com/blog/screen-printing-vs-dtg</link>
+      <guid isPermaLink="true">https://tracker-systems.com/blog/screen-printing-vs-dtg</guid>
+      <pubDate>Sun, 28 May 2023 00:00:00 GMT</pubDate>
+      <description><![CDATA[A comprehensive comparison of screen printing and direct-to-garment (DTG) printing to help you choose the right technology for your specific business needs.]]></description>
+    </item>
+
+    <item>
+      <title>New Integration Platform Features: Connect with Your Favorite E-commerce Platforms</title>
+      <link>https://tracker-systems.com/blog/new-integration-platform-features</link>
+      <guid isPermaLink="true">https://tracker-systems.com/blog/new-integration-platform-features</guid>
+      <pubDate>Mon, 10 Apr 2023 00:00:00 GMT</pubDate>
+      <description><![CDATA[We're excited to announce new integration capabilities that connect Tracker directly with popular e-commerce platforms like Shopify and WooCommerce.]]></description>
+    </item>
+
+  </channel>
+</rss>
