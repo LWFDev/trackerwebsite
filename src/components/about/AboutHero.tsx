@@ -46,8 +46,8 @@ const AboutHero = () => {
           <div className="mt-16 max-w-5xl mx-auto">
             <div className="bg-white/5 p-4 rounded-2xl border border-white/10">
               <img 
-                src="/lovable-uploads/f68df86e-078b-403c-abca-ab6bbd62ece5.png" 
-                alt="Our innovative team driving business transformation" 
+                src="/lovable-uploads/56daa2f1-f8ba-4588-be32-d3f64715e1cd.png" 
+                alt="Our state-of-the-art manufacturing and production facility" 
                 className="w-full h-auto rounded-xl shadow-2xl"
               />
             </div>
