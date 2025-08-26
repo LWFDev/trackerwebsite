@@ -1,13 +1,14 @@
 import { useState, useMemo } from 'react';
 import { Link } from 'react-router-dom';
-import { Search, Download, Calendar, Star, ExternalLink, Copy, Check } from 'lucide-react';
+import { Search, Download, Calendar, Star, ExternalLink, Copy, Check, Zap, Filter } from 'lucide-react';
 import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { useToast } from '@/hooks/use-toast';
-import SEOHead from '@/components/seo/SEOHead';
+import PageSEO from '@/components/seo/PageSEO';
 import { parseSitemapData, getSitemapStats, SitemapSection, SitemapUrl } from '@/utils/sitemapParser';
+import { sitemapSEO, sitemapBreadcrumb, sitemapFAQSchema } from '@/data/sitemapSEO';
 
 const SitemapPage = () => {
   const [searchQuery, setSearchQuery] = useState('');
@@ -130,38 +131,49 @@ const SitemapPage = () => {
   const sectionTabs = ['All', ...sitemapData.map(section => section.title)];
 
   return (
-    <div className="min-h-screen bg-background">
-      <SEOHead 
-        seoData={{
-          title: 'Sitemap - TrackMyBusiness',
-          description: 'Complete sitemap of TrackMyBusiness website including all pages, modules, industries, and resources.',
-          keywords: 'sitemap, trackmybusiness, pages, navigation, modules, industries',
-          canonical: 'https://www.trackmybusiness.us/sitemap'
-        }}
-      />
+    <div className="min-h-screen bg-gradient-to-br from-background via-muted/20 to-background">
+      <PageSEO seo={sitemapSEO} breadcrumbs={sitemapBreadcrumb} extraSchema={sitemapFAQSchema} />
       
-      <div className="container mx-auto px-4 py-8">
-        {/* Header */}
+      <div className="container mx-auto px-4 py-8 max-w-6xl">
+        {/* Enhanced Header Section */}
         <div className="text-center mb-12">
-          <h1 className="text-4xl font-bold text-foreground mb-4">Website Sitemap</h1>
-          <p className="text-xl text-muted-foreground mb-6">
-            Complete overview of all pages and sections on TrackMyBusiness
+          <div className="inline-flex items-center gap-2 mb-4 px-4 py-2 rounded-full bg-primary/10 text-primary">
+            <Zap className="w-4 h-4" />
+            <span className="text-sm font-medium">Enterprise Website Navigation</span>
+          </div>
+          <h1 className="text-4xl font-bold mb-4 bg-gradient-to-r from-primary to-primary-foreground bg-clip-text text-transparent">
+            TrackMyBusiness Complete Sitemap
+          </h1>
+          <p className="text-xl text-muted-foreground mb-6 max-w-3xl mx-auto">
+            Navigate our comprehensive production management platform with 60+ pages of enterprise solutions for garment decoration, embroidery, and apparel manufacturing businesses.
           </p>
           
-          {/* Stats */}
-          <div className="flex flex-wrap justify-center gap-6 mb-8">
-            <div className="text-center">
-              <div className="text-3xl font-bold text-gold">{stats.totalPages}</div>
-              <div className="text-sm text-muted-foreground">Total Pages</div>
-            </div>
-            <div className="text-center">
-              <div className="text-3xl font-bold text-gold">{stats.totalSections}</div>
-              <div className="text-sm text-muted-foreground">Sections</div>
-            </div>
-            <div className="text-center">
-              <div className="text-3xl font-bold text-gold">{stats.lastUpdated}</div>
-              <div className="text-sm text-muted-foreground">Last Updated</div>
-            </div>
+          {/* Statistics Cards */}
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
+            <Card className="bg-gradient-to-br from-blue-50 to-blue-100 dark:from-blue-950 dark:to-blue-900 border-blue-200 dark:border-blue-800">
+              <CardContent className="p-4 text-center">
+                <div className="text-2xl font-bold text-blue-600 dark:text-blue-400">{stats.totalPages}</div>
+                <div className="text-sm text-blue-700 dark:text-blue-300">Total Pages</div>
+              </CardContent>
+            </Card>
+            <Card className="bg-gradient-to-br from-green-50 to-green-100 dark:from-green-950 dark:to-green-900 border-green-200 dark:border-green-800">
+              <CardContent className="p-4 text-center">
+                <div className="text-2xl font-bold text-green-600 dark:text-green-400">{stats.totalSections}</div>
+                <div className="text-sm text-green-700 dark:text-green-300">Sections</div>
+              </CardContent>
+            </Card>
+            <Card className="bg-gradient-to-br from-purple-50 to-purple-100 dark:from-purple-950 dark:to-purple-900 border-purple-200 dark:border-purple-800">
+              <CardContent className="p-4 text-center">
+                <div className="text-2xl font-bold text-purple-600 dark:text-purple-400">15+</div>
+                <div className="text-sm text-purple-700 dark:text-purple-300">Software Modules</div>
+              </CardContent>
+            </Card>
+            <Card className="bg-gradient-to-br from-orange-50 to-orange-100 dark:from-orange-950 dark:to-orange-900 border-orange-200 dark:border-orange-800">
+              <CardContent className="p-4 text-center">
+                <div className="text-2xl font-bold text-orange-600 dark:text-orange-400">10+</div>
+                <div className="text-sm text-orange-700 dark:text-orange-300">Industries Served</div>
+              </CardContent>
+            </Card>
           </div>
         </div>
 
@@ -316,13 +328,14 @@ const SitemapPage = () => {
 
         {/* Footer Info */}
         <div className="mt-12 p-6 bg-muted rounded-lg">
-          <h3 className="font-semibold text-foreground mb-2">About This Sitemap</h3>
+          <h3 className="font-semibold text-foreground mb-2">About This Enterprise Sitemap</h3>
           <p className="text-sm text-muted-foreground mb-4">
-            This human-readable sitemap provides an organized view of all pages on the TrackMyBusiness website. 
-            For search engines, you can access the XML sitemap format using the download button above.
+            This comprehensive sitemap showcases TrackMyBusiness enterprise production management platform with detailed page organization for garment decoration, embroidery, and apparel manufacturing businesses. 
+            For SEO optimization, download the XML sitemap format above to submit to Google Search Console and other search engines.
           </p>
           <div className="text-xs text-muted-foreground">
-            <p>Priority levels: High (0.8+), Medium (0.6-0.7), Low (&lt;0.6)</p>
+            <p>Priority levels: High (0.8+) - Core features, Medium (0.6-0.7) - Industry pages, Low (&lt;0.6) - Support content</p>
+            <p>Enterprise features: Advanced search, bulk URL management, structured data optimization</p>
             <p>Last generated: {new Date().toLocaleDateString()} at {new Date().toLocaleTimeString()}</p>
           </div>
         </div>

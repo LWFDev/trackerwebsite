@@ -15,34 +15,46 @@ export interface SEOData {
 }
 
 export const defaultSEO: SEOData = {
-  title: "Tracker - Production Management Software | Garment Decoration Platform",
+  title: "TrackMyBusiness - Enterprise Production Management Software | Garment Decoration Platform",
   description: "The leading end-to-end production management software for garment decoration, apparel manufacturing, and custom embroidery businesses. Automate order handling, manage inventory, and optimize production workflow instantly.",
-  keywords: "production management software, garment decoration software, apparel manufacturing system, embroidery business software, screen printing management, custom apparel production, automated production scheduling",
-  ogImage: "https://tracker-systems.com/assets/og-image.png",
-  canonical: "https://tracker-systems.com/",
+  keywords: "production management software, garment decoration software, apparel manufacturing system, embroidery business software, screen printing management, custom apparel production, automated production scheduling, enterprise software",
+  ogImage: "https://www.trackmybusiness.us/assets/og-image.png",
+  canonical: "https://www.trackmybusiness.us/",
   robots: "index,follow",
   ogType: "website"
 };
 
 export const organizationSchema = {
   "@context": "https://schema.org",
-  "@type": "Organization",
-  "name": "Tracker Systems",
-  "description": "Leading production management software for garment decoration and apparel manufacturing",
-  "url": "https://tracker-systems.com",
-  "logo": "https://tracker-systems.com/assets/logo.png",
+  "@type": ["Organization", "SoftwareApplication"],
+  "name": "TrackMyBusiness",
+  "alternateName": "TrackMyBusiness Production Management",
+  "description": "Enterprise production management software for garment decoration, apparel manufacturing, and custom embroidery businesses",
+  "url": "https://www.trackmybusiness.us",
+  "logo": "https://www.trackmybusiness.us/assets/logo.png",
+  "foundingDate": "2020",
+  "numberOfEmployees": "50-100",
+  "industry": "Software Development",
+  "keywords": "production management, garment decoration, apparel manufacturing, embroidery software, screen printing",
   "contactPoint": {
     "@type": "ContactPoint",
     "telephone": "+1-800-TRACKER",
     "contactType": "Customer Service",
     "areaServed": "US",
-    "availableLanguage": "en"
+    "availableLanguage": ["en"],
+    "email": "info@trackmybusiness.us"
+  },
+  "address": {
+    "@type": "PostalAddress",
+    "addressCountry": "US"
   },
   "sameAs": [
-    "https://twitter.com/tracker_systems",
-    "https://linkedin.com/company/tracker-systems",
-    "https://facebook.com/tracker-systems"
-  ]
+    "https://twitter.com/trackmybusiness",
+    "https://linkedin.com/company/trackmybusiness",
+    "https://facebook.com/trackmybusiness"
+  ],
+  "applicationCategory": "BusinessApplication",
+  "operatingSystem": "Web Browser"
 };
 
 export const businessHours = {
@@ -64,7 +76,7 @@ export const generatePageSEO = (pageSEO: Partial<SEOData>): SEOData => {
   return {
     ...defaultSEO,
     ...pageSEO,
-    title: pageSEO.title ? `${pageSEO.title} | Tracker Systems` : defaultSEO.title,
+    title: pageSEO.title ? `${pageSEO.title} | TrackMyBusiness` : defaultSEO.title,
     robots: pageSEO.robots ?? defaultSEO.robots,
     ogType: pageSEO.ogType ?? defaultSEO.ogType
   };
@@ -97,11 +109,11 @@ export const generateProductSchema = (product: {
     "image": product.image,
     "brand": {
       "@type": "Brand",
-      "name": "Tracker Systems"
+      "name": "TrackMyBusiness"
     },
     "manufacturer": {
       "@type": "Organization",
-      "name": "Tracker Systems"
+      "name": "TrackMyBusiness"
     },
     "offers": product.offers || {
       "@type": "Offer",
