@@ -19,4 +19,20 @@ export default defineConfig(({ mode }) => ({
       "@": path.resolve(__dirname, "./src"),
     },
   },
+  build: {
+    rollupOptions: {
+      output: {
+        // Ensure static files are properly handled
+        assetFileNames: (assetInfo) => {
+          if (assetInfo.name && (assetInfo.name.endsWith('.xml') || assetInfo.name.endsWith('.txt'))) {
+            return '[name][extname]';
+          }
+          return 'assets/[name]-[hash][extname]';
+        }
+      }
+    }
+  },
+  publicDir: 'public',
+  // Ensure XML and TXT files are treated as static assets
+  assetsInclude: ['**/*.xml', '**/*.txt'],
 }));

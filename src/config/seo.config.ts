@@ -1,10 +1,10 @@
 export const SEO_CONFIG = {
   // Analytics
-  ga4MeasurementId: "", // e.g., "G-XXXXXXXXXX". Leave empty to disable.
+  ga4MeasurementId: "G-XXXXXXXXXX", // Replace with your actual GA4 ID
 
   // Search engine verification tokens
-  googleSiteVerification: "", // e.g., Google Search Console token
-  bingSiteVerification: "",   // msvalidate.01
+  googleSiteVerification: "your-google-verification-token", // Replace with actual token
+  bingSiteVerification: "your-bing-verification-token",     // Replace with actual token
   yandexSiteVerification: "",
   pinterestSiteVerification: "",
 };

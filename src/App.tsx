@@ -34,6 +34,9 @@ const Support = React.lazy(() => import("@/pages/Support"));
 const Industries = React.lazy(() => import("@/pages/Industries"));
 const CaseStudies = React.lazy(() => import("@/pages/CaseStudies"));
 
+// SEO Routes
+const SitemapRoute = React.lazy(() => import("@/components/seo/SitemapRoute"));
+
 // Module pages - lazy loaded
 const ModuleIndex = React.lazy(() => import("@/pages/modules/ModuleIndex"));
 const SalesOrders = React.lazy(() => import("@/pages/modules/SalesOrders"));
@@ -154,6 +157,10 @@ const App = () => {
                     
                     {/* Auth Routes */}
                     <Route path="/login" element={<Suspense fallback={<PageLoader />}><Login /></Suspense>} />
+                    
+                    {/* SEO Routes */}
+                    <Route path="/sitemap.xml" element={<Suspense fallback={<PageLoader />}><SitemapRoute type="sitemap" /></Suspense>} />
+                    <Route path="/robots.txt" element={<Suspense fallback={<PageLoader />}><SitemapRoute type="robots" /></Suspense>} />
                     
                     {/* 404 Route */}
                     <Route path="*" element={<Layout><NotFound /></Layout>} />
