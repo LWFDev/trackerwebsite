@@ -8,6 +8,9 @@ export default defineConfig(({ mode }) => ({
   server: {
     host: "::",
     port: 8080,
+    fs: {
+      strict: false
+    }
   },
   plugins: [
     react(),
@@ -20,4 +23,12 @@ export default defineConfig(({ mode }) => ({
     },
   },
   publicDir: 'public',
+  assetsInclude: ['**/*.xml'],
+  build: {
+    rollupOptions: {
+      input: {
+        main: path.resolve(__dirname, 'index.html'),
+      }
+    }
+  }
 }));
