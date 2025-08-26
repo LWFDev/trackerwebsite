@@ -1,16 +1,19 @@
 import { useState, useMemo } from 'react';
 import { Link } from 'react-router-dom';
-import { Search, Download, Calendar, Star, ExternalLink } from 'lucide-react';
+import { Search, Download, Calendar, Star, ExternalLink, Copy, Check } from 'lucide-react';
 import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
+import { useToast } from '@/hooks/use-toast';
 import SEOHead from '@/components/seo/SEOHead';
 import { parseSitemapData, getSitemapStats, SitemapSection, SitemapUrl } from '@/utils/sitemapParser';
 
 const SitemapPage = () => {
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedSection, setSelectedSection] = useState<string>('All');
+  const [copiedUrls, setCopiedUrls] = useState<Set<string>>(new Set());
+  const { toast } = useToast();
   
   const sitemapData = useMemo(() => parseSitemapData(), []);
   const stats = useMemo(() => getSitemapStats(), []);
@@ -52,8 +55,76 @@ const SitemapPage = () => {
     });
   };
 
-  const downloadXMLSitemap = () => {
-    window.open('/sitemap.xml', '_blank');
+  const downloadXMLSitemap = async () => {
+    try {
+      const response = await fetch('/sitemap.xml');
+      if (!response.ok) throw new Error('Failed to fetch sitemap');
+      
+      const xmlContent = await response.text();
+      const blob = new Blob([xmlContent], { type: 'application/xml' });
+      const url = URL.createObjectURL(blob);
+      
+      const link = document.createElement('a');
+      link.href = url;
+      link.download = 'sitemap.xml';
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+      URL.revokeObjectURL(url);
+      
+      toast({
+        title: "Download started",
+        description: "The XML sitemap file is being downloaded.",
+      });
+    } catch (error) {
+      toast({
+        title: "Download failed",
+        description: "Failed to download the XML sitemap. Please try again.",
+        variant: "destructive",
+      });
+    }
+  };
+
+  const copyToClipboard = async (url: string) => {
+    try {
+      await navigator.clipboard.writeText(url);
+      setCopiedUrls(prev => new Set([...prev, url]));
+      setTimeout(() => {
+        setCopiedUrls(prev => {
+          const newSet = new Set(prev);
+          newSet.delete(url);
+          return newSet;
+        });
+      }, 2000);
+      
+      toast({
+        title: "URL copied!",
+        description: "The URL has been copied to your clipboard.",
+      });
+    } catch (error) {
+      toast({
+        title: "Copy failed",
+        description: "Failed to copy URL to clipboard.",
+        variant: "destructive",
+      });
+    }
+  };
+
+  const copyAllUrls = async () => {
+    const allUrls = filteredData.flatMap(section => section.urls.map(url => url.loc));
+    try {
+      await navigator.clipboard.writeText(allUrls.join('\n'));
+      toast({
+        title: "All URLs copied!",
+        description: `Copied ${allUrls.length} URLs to your clipboard.`,
+      });
+    } catch (error) {
+      toast({
+        title: "Copy failed",
+        description: "Failed to copy URLs to clipboard.",
+        variant: "destructive",
+      });
+    }
   };
 
   const sectionTabs = ['All', ...sitemapData.map(section => section.title)];
@@ -62,10 +133,10 @@ const SitemapPage = () => {
     <div className="min-h-screen bg-background">
       <SEOHead 
         seoData={{
-          title: 'Sitemap - Tracker Systems',
-          description: 'Complete sitemap of Tracker Systems website including all pages, modules, industries, and resources.',
-          keywords: 'sitemap, tracker systems, pages, navigation, modules, industries',
-          canonical: 'https://tracker-systems.com/sitemap'
+          title: 'Sitemap - TrackMyBusiness',
+          description: 'Complete sitemap of TrackMyBusiness website including all pages, modules, industries, and resources.',
+          keywords: 'sitemap, trackmybusiness, pages, navigation, modules, industries',
+          canonical: 'https://www.trackmybusiness.us/sitemap'
         }}
       />
       
@@ -74,7 +145,7 @@ const SitemapPage = () => {
         <div className="text-center mb-12">
           <h1 className="text-4xl font-bold text-foreground mb-4">Website Sitemap</h1>
           <p className="text-xl text-muted-foreground mb-6">
-            Complete overview of all pages and sections on Tracker Systems
+            Complete overview of all pages and sections on TrackMyBusiness
           </p>
           
           {/* Stats */}
@@ -105,10 +176,16 @@ const SitemapPage = () => {
               className="pl-10"
             />
           </div>
-          <Button onClick={downloadXMLSitemap} variant="outline" className="flex items-center gap-2">
-            <Download className="h-4 w-4" />
-            Download XML
-          </Button>
+          <div className="flex gap-2">
+            <Button onClick={copyAllUrls} variant="outline" className="flex items-center gap-2">
+              <Copy className="h-4 w-4" />
+              Copy All URLs
+            </Button>
+            <Button onClick={downloadXMLSitemap} variant="outline" className="flex items-center gap-2">
+              <Download className="h-4 w-4" />
+              Download XML
+            </Button>
+          </div>
         </div>
 
         {/* Section Tabs */}
@@ -146,7 +223,8 @@ const SitemapPage = () => {
                 <div className="grid gap-4">
                   {section.urls.map((url: SitemapUrl) => {
                     const isExternal = url.loc.startsWith('http');
-                    const linkPath = isExternal ? url.loc : url.loc.replace('https://tracker-systems.com', '') || '/';
+                    const linkPath = isExternal ? url.loc : url.loc.replace('https://www.trackmybusiness.us', '') || '/';
+                    const isCopied = copiedUrls.has(url.loc);
                     
                     return (
                       <div key={url.loc} className="flex items-center justify-between p-4 rounded-lg border border-border hover:bg-muted/50 transition-colors">
@@ -188,6 +266,24 @@ const SitemapPage = () => {
                             </span>
                           </div>
                         </div>
+                        <Button
+                          size="sm"
+                          variant="ghost"
+                          onClick={() => copyToClipboard(url.loc)}
+                          className="ml-4 flex items-center gap-2"
+                        >
+                          {isCopied ? (
+                            <>
+                              <Check className="h-3 w-3 text-emerald" />
+                              <span className="text-emerald">Copied</span>
+                            </>
+                          ) : (
+                            <>
+                              <Copy className="h-3 w-3" />
+                              <span>Copy</span>
+                            </>
+                          )}
+                        </Button>
                       </div>
                     );
                   })}
@@ -222,7 +318,7 @@ const SitemapPage = () => {
         <div className="mt-12 p-6 bg-muted rounded-lg">
           <h3 className="font-semibold text-foreground mb-2">About This Sitemap</h3>
           <p className="text-sm text-muted-foreground mb-4">
-            This human-readable sitemap provides an organized view of all pages on the Tracker Systems website. 
+            This human-readable sitemap provides an organized view of all pages on the TrackMyBusiness website. 
             For search engines, you can access the XML sitemap format using the download button above.
           </p>
           <div className="text-xs text-muted-foreground">

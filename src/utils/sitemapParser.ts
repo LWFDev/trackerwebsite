@@ -15,16 +15,16 @@ export interface SitemapSection {
 }
 
 const urlTitles: { [key: string]: { title: string; description: string } } = {
-  '/': { title: 'Home', description: 'Welcome to Tracker Systems - Garment decoration business management software' },
+  '/': { title: 'Home', description: 'Welcome to TrackMyBusiness - Garment decoration business management software' },
   '/pricing': { title: 'Pricing', description: 'Choose the right plan for your garment decoration business' },
-  '/about': { title: 'About Us', description: 'Learn about Tracker Systems and our mission' },
+  '/about': { title: 'About Us', description: 'Learn about TrackMyBusiness and our mission' },
   '/contact': { title: 'Contact', description: 'Get in touch with our team' },
   '/industries': { title: 'Industries', description: 'Discover solutions for your specific industry' },
   '/modules': { title: 'Modules', description: 'Explore all available business modules' },
   '/blog': { title: 'Blog', description: 'Latest insights and industry updates' },
   '/support': { title: 'Support', description: 'Get help and technical support' },
   '/documentation': { title: 'Documentation', description: 'Technical documentation and guides' },
-  '/get-started': { title: 'Get Started', description: 'Begin your journey with Tracker Systems' },
+  '/get-started': { title: 'Get Started', description: 'Begin your journey with TrackMyBusiness' },
   '/case-studies': { title: 'Case Studies', description: 'Success stories from our customers' },
   '/faq': { title: 'FAQ', description: 'Frequently asked questions' },
   '/terms': { title: 'Terms of Service', description: 'Legal terms and conditions' },
@@ -58,7 +58,7 @@ const urlTitles: { [key: string]: { title: string; description: string } } = {
   
   // Case Studies
   '/case-studies/pure-optical': { title: 'Pure Optical Case Study', description: 'How Pure Optical streamlined their operations' },
-  '/case-studies/woolcool': { title: 'WoolCool Case Study', description: 'WoolCool\'s success with Tracker Systems' },
+  '/case-studies/woolcool': { title: 'WoolCool Case Study', description: 'WoolCool\'s success with TrackMyBusiness' },
   '/case-studies/agame': { title: 'AGAME Case Study', description: 'AGAME\'s digital transformation journey' },
   
   // Blog Posts
@@ -75,11 +75,11 @@ export const parseSitemapData = (): SitemapSection[] => {
       description: 'Core pages and primary navigation',
       icon: '🏠',
       urls: [
-        { loc: 'https://tracker-systems.com/', lastmod: '2025-08-26T00:00:00+00:00', changefreq: 'weekly', priority: '1.0' },
-        { loc: 'https://tracker-systems.com/pricing', lastmod: '2025-08-26T00:00:00+00:00', changefreq: 'monthly', priority: '0.9' },
-        { loc: 'https://tracker-systems.com/about', lastmod: '2025-08-26T00:00:00+00:00', changefreq: 'monthly', priority: '0.8' },
-        { loc: 'https://tracker-systems.com/contact', lastmod: '2025-08-26T00:00:00+00:00', changefreq: 'monthly', priority: '0.8' },
-        { loc: 'https://tracker-systems.com/get-started', lastmod: '2025-08-26T00:00:00+00:00', changefreq: 'monthly', priority: '0.9' },
+        { loc: 'https://www.trackmybusiness.us/', lastmod: '2025-08-26T00:00:00+00:00', changefreq: 'weekly', priority: '1.0' },
+        { loc: 'https://www.trackmybusiness.us/pricing', lastmod: '2025-08-26T00:00:00+00:00', changefreq: 'monthly', priority: '0.9' },
+        { loc: 'https://www.trackmybusiness.us/about', lastmod: '2025-08-26T00:00:00+00:00', changefreq: 'monthly', priority: '0.8' },
+        { loc: 'https://www.trackmybusiness.us/contact', lastmod: '2025-08-26T00:00:00+00:00', changefreq: 'monthly', priority: '0.8' },
+        { loc: 'https://www.trackmybusiness.us/get-started', lastmod: '2025-08-26T00:00:00+00:00', changefreq: 'monthly', priority: '0.9' },
       ]
     },
     
@@ -89,17 +89,17 @@ export const parseSitemapData = (): SitemapSection[] => {
       description: 'Industry-specific solutions and use cases',
       icon: '🏭',
       urls: [
-        { loc: 'https://tracker-systems.com/industries', lastmod: '2025-08-26T00:00:00+00:00', changefreq: 'monthly', priority: '0.8' },
-        { loc: 'https://tracker-systems.com/industries/high-volume-embroidery', lastmod: '2025-08-26T00:00:00+00:00', changefreq: 'monthly', priority: '0.7' },
-        { loc: 'https://tracker-systems.com/industries/screen-printing', lastmod: '2025-08-26T00:00:00+00:00', changefreq: 'monthly', priority: '0.7' },
-        { loc: 'https://tracker-systems.com/industries/apparel-manufacturing', lastmod: '2025-08-26T00:00:00+00:00', changefreq: 'monthly', priority: '0.7' },
-        { loc: 'https://tracker-systems.com/industries/corporate-apparel', lastmod: '2025-08-26T00:00:00+00:00', changefreq: 'monthly', priority: '0.7' },
-        { loc: 'https://tracker-systems.com/industries/promotional-products', lastmod: '2025-08-26T00:00:00+00:00', changefreq: 'monthly', priority: '0.7' },
-        { loc: 'https://tracker-systems.com/industries/sports-and-uniforms', lastmod: '2025-08-26T00:00:00+00:00', changefreq: 'monthly', priority: '0.7' },
-        { loc: 'https://tracker-systems.com/industries/workwear-uniforms', lastmod: '2025-08-26T00:00:00+00:00', changefreq: 'monthly', priority: '0.7' },
-        { loc: 'https://tracker-systems.com/industries/fashion-brands', lastmod: '2025-08-26T00:00:00+00:00', changefreq: 'monthly', priority: '0.7' },
-        { loc: 'https://tracker-systems.com/industries/print-on-demand', lastmod: '2025-08-26T00:00:00+00:00', changefreq: 'monthly', priority: '0.7' },
-        { loc: 'https://tracker-systems.com/industries/contract-decoration', lastmod: '2025-08-26T00:00:00+00:00', changefreq: 'monthly', priority: '0.7' },
+        { loc: 'https://www.trackmybusiness.us/industries', lastmod: '2025-08-26T00:00:00+00:00', changefreq: 'monthly', priority: '0.8' },
+        { loc: 'https://www.trackmybusiness.us/industries/high-volume-embroidery', lastmod: '2025-08-26T00:00:00+00:00', changefreq: 'monthly', priority: '0.7' },
+        { loc: 'https://www.trackmybusiness.us/industries/screen-printing', lastmod: '2025-08-26T00:00:00+00:00', changefreq: 'monthly', priority: '0.7' },
+        { loc: 'https://www.trackmybusiness.us/industries/apparel-manufacturing', lastmod: '2025-08-26T00:00:00+00:00', changefreq: 'monthly', priority: '0.7' },
+        { loc: 'https://www.trackmybusiness.us/industries/corporate-apparel', lastmod: '2025-08-26T00:00:00+00:00', changefreq: 'monthly', priority: '0.7' },
+        { loc: 'https://www.trackmybusiness.us/industries/promotional-products', lastmod: '2025-08-26T00:00:00+00:00', changefreq: 'monthly', priority: '0.7' },
+        { loc: 'https://www.trackmybusiness.us/industries/sports-and-uniforms', lastmod: '2025-08-26T00:00:00+00:00', changefreq: 'monthly', priority: '0.7' },
+        { loc: 'https://www.trackmybusiness.us/industries/workwear-uniforms', lastmod: '2025-08-26T00:00:00+00:00', changefreq: 'monthly', priority: '0.7' },
+        { loc: 'https://www.trackmybusiness.us/industries/fashion-brands', lastmod: '2025-08-26T00:00:00+00:00', changefreq: 'monthly', priority: '0.7' },
+        { loc: 'https://www.trackmybusiness.us/industries/print-on-demand', lastmod: '2025-08-26T00:00:00+00:00', changefreq: 'monthly', priority: '0.7' },
+        { loc: 'https://www.trackmybusiness.us/industries/contract-decoration', lastmod: '2025-08-26T00:00:00+00:00', changefreq: 'monthly', priority: '0.7' },
       ]
     },
     
@@ -109,19 +109,19 @@ export const parseSitemapData = (): SitemapSection[] => {
       description: 'Business management modules and features',
       icon: '⚙️',
       urls: [
-        { loc: 'https://tracker-systems.com/modules', lastmod: '2025-08-26T00:00:00+00:00', changefreq: 'monthly', priority: '0.8' },
-        { loc: 'https://tracker-systems.com/modules/sales-orders', lastmod: '2025-08-26T00:00:00+00:00', changefreq: 'monthly', priority: '0.8' },
-        { loc: 'https://tracker-systems.com/modules/warehouse', lastmod: '2025-08-26T00:00:00+00:00', changefreq: 'monthly', priority: '0.8' },
-        { loc: 'https://tracker-systems.com/modules/customer-database', lastmod: '2025-08-26T00:00:00+00:00', changefreq: 'monthly', priority: '0.8' },
-        { loc: 'https://tracker-systems.com/modules/base-garments', lastmod: '2025-08-26T00:00:00+00:00', changefreq: 'monthly', priority: '0.8' },
-        { loc: 'https://tracker-systems.com/modules/logos', lastmod: '2025-08-26T00:00:00+00:00', changefreq: 'monthly', priority: '0.8' },
-        { loc: 'https://tracker-systems.com/modules/product-designer', lastmod: '2025-08-26T00:00:00+00:00', changefreq: 'monthly', priority: '0.8' },
-        { loc: 'https://tracker-systems.com/modules/inventory', lastmod: '2025-08-26T00:00:00+00:00', changefreq: 'monthly', priority: '0.8' },
-        { loc: 'https://tracker-systems.com/modules/production', lastmod: '2025-08-26T00:00:00+00:00', changefreq: 'monthly', priority: '0.8' },
-        { loc: 'https://tracker-systems.com/modules/suppliers', lastmod: '2025-08-26T00:00:00+00:00', changefreq: 'monthly', priority: '0.8' },
-        { loc: 'https://tracker-systems.com/modules/purchase-orders', lastmod: '2025-08-26T00:00:00+00:00', changefreq: 'monthly', priority: '0.8' },
-        { loc: 'https://tracker-systems.com/modules/artworkers', lastmod: '2025-08-26T00:00:00+00:00', changefreq: 'monthly', priority: '0.8' },
-        { loc: 'https://tracker-systems.com/modules/customer-portal', lastmod: '2025-08-26T00:00:00+00:00', changefreq: 'monthly', priority: '0.8' },
+        { loc: 'https://www.trackmybusiness.us/modules', lastmod: '2025-08-26T00:00:00+00:00', changefreq: 'monthly', priority: '0.8' },
+        { loc: 'https://www.trackmybusiness.us/modules/sales-orders', lastmod: '2025-08-26T00:00:00+00:00', changefreq: 'monthly', priority: '0.8' },
+        { loc: 'https://www.trackmybusiness.us/modules/warehouse', lastmod: '2025-08-26T00:00:00+00:00', changefreq: 'monthly', priority: '0.8' },
+        { loc: 'https://www.trackmybusiness.us/modules/customer-database', lastmod: '2025-08-26T00:00:00+00:00', changefreq: 'monthly', priority: '0.8' },
+        { loc: 'https://www.trackmybusiness.us/modules/base-garments', lastmod: '2025-08-26T00:00:00+00:00', changefreq: 'monthly', priority: '0.8' },
+        { loc: 'https://www.trackmybusiness.us/modules/logos', lastmod: '2025-08-26T00:00:00+00:00', changefreq: 'monthly', priority: '0.8' },
+        { loc: 'https://www.trackmybusiness.us/modules/product-designer', lastmod: '2025-08-26T00:00:00+00:00', changefreq: 'monthly', priority: '0.8' },
+        { loc: 'https://www.trackmybusiness.us/modules/inventory', lastmod: '2025-08-26T00:00:00+00:00', changefreq: 'monthly', priority: '0.8' },
+        { loc: 'https://www.trackmybusiness.us/modules/production', lastmod: '2025-08-26T00:00:00+00:00', changefreq: 'monthly', priority: '0.8' },
+        { loc: 'https://www.trackmybusiness.us/modules/suppliers', lastmod: '2025-08-26T00:00:00+00:00', changefreq: 'monthly', priority: '0.8' },
+        { loc: 'https://www.trackmybusiness.us/modules/purchase-orders', lastmod: '2025-08-26T00:00:00+00:00', changefreq: 'monthly', priority: '0.8' },
+        { loc: 'https://www.trackmybusiness.us/modules/artworkers', lastmod: '2025-08-26T00:00:00+00:00', changefreq: 'monthly', priority: '0.8' },
+        { loc: 'https://www.trackmybusiness.us/modules/customer-portal', lastmod: '2025-08-26T00:00:00+00:00', changefreq: 'monthly', priority: '0.8' },
       ]
     },
     
@@ -131,10 +131,10 @@ export const parseSitemapData = (): SitemapSection[] => {
       description: 'Documentation, blog, and support resources',
       icon: '📚',
       urls: [
-        { loc: 'https://tracker-systems.com/blog', lastmod: '2025-08-26T00:00:00+00:00', changefreq: 'weekly', priority: '0.7' },
-        { loc: 'https://tracker-systems.com/documentation', lastmod: '2025-08-26T00:00:00+00:00', changefreq: 'monthly', priority: '0.7' },
-        { loc: 'https://tracker-systems.com/support', lastmod: '2025-08-26T00:00:00+00:00', changefreq: 'monthly', priority: '0.7' },
-        { loc: 'https://tracker-systems.com/faq', lastmod: '2025-08-26T00:00:00+00:00', changefreq: 'monthly', priority: '0.6' },
+        { loc: 'https://www.trackmybusiness.us/blog', lastmod: '2025-08-26T00:00:00+00:00', changefreq: 'weekly', priority: '0.7' },
+        { loc: 'https://www.trackmybusiness.us/documentation', lastmod: '2025-08-26T00:00:00+00:00', changefreq: 'monthly', priority: '0.7' },
+        { loc: 'https://www.trackmybusiness.us/support', lastmod: '2025-08-26T00:00:00+00:00', changefreq: 'monthly', priority: '0.7' },
+        { loc: 'https://www.trackmybusiness.us/faq', lastmod: '2025-08-26T00:00:00+00:00', changefreq: 'monthly', priority: '0.6' },
       ]
     },
     
@@ -144,10 +144,10 @@ export const parseSitemapData = (): SitemapSection[] => {
       description: 'Real customer success stories and implementations',
       icon: '📊',
       urls: [
-        { loc: 'https://tracker-systems.com/case-studies', lastmod: '2025-08-26T00:00:00+00:00', changefreq: 'monthly', priority: '0.6' },
-        { loc: 'https://tracker-systems.com/case-studies/pure-optical', lastmod: '2025-08-26T00:00:00+00:00', changefreq: 'monthly', priority: '0.5' },
-        { loc: 'https://tracker-systems.com/case-studies/woolcool', lastmod: '2025-08-26T00:00:00+00:00', changefreq: 'monthly', priority: '0.5' },
-        { loc: 'https://tracker-systems.com/case-studies/agame', lastmod: '2025-08-26T00:00:00+00:00', changefreq: 'monthly', priority: '0.5' },
+        { loc: 'https://www.trackmybusiness.us/case-studies', lastmod: '2025-08-26T00:00:00+00:00', changefreq: 'monthly', priority: '0.6' },
+        { loc: 'https://www.trackmybusiness.us/case-studies/pure-optical', lastmod: '2025-08-26T00:00:00+00:00', changefreq: 'monthly', priority: '0.5' },
+        { loc: 'https://www.trackmybusiness.us/case-studies/woolcool', lastmod: '2025-08-26T00:00:00+00:00', changefreq: 'monthly', priority: '0.5' },
+        { loc: 'https://www.trackmybusiness.us/case-studies/agame', lastmod: '2025-08-26T00:00:00+00:00', changefreq: 'monthly', priority: '0.5' },
       ]
     },
     
@@ -157,9 +157,9 @@ export const parseSitemapData = (): SitemapSection[] => {
       description: 'Latest articles and industry insights',
       icon: '📝',
       urls: [
-        { loc: 'https://tracker-systems.com/blog/streamline-garment-decoration-workflow', lastmod: '2023-06-15T00:00:00+00:00', changefreq: 'monthly', priority: '0.5' },
-        { loc: 'https://tracker-systems.com/blog/screen-printing-vs-dtg', lastmod: '2023-05-28T00:00:00+00:00', changefreq: 'monthly', priority: '0.5' },
-        { loc: 'https://tracker-systems.com/blog/new-integration-platform-features', lastmod: '2023-04-10T00:00:00+00:00', changefreq: 'monthly', priority: '0.5' },
+        { loc: 'https://www.trackmybusiness.us/blog/streamline-garment-decoration-workflow', lastmod: '2023-06-15T00:00:00+00:00', changefreq: 'monthly', priority: '0.5' },
+        { loc: 'https://www.trackmybusiness.us/blog/screen-printing-vs-dtg', lastmod: '2023-05-28T00:00:00+00:00', changefreq: 'monthly', priority: '0.5' },
+        { loc: 'https://www.trackmybusiness.us/blog/new-integration-platform-features', lastmod: '2023-04-10T00:00:00+00:00', changefreq: 'monthly', priority: '0.5' },
       ]
     },
     
@@ -169,8 +169,8 @@ export const parseSitemapData = (): SitemapSection[] => {
       description: 'Terms, privacy policy, and legal information',
       icon: '⚖️',
       urls: [
-        { loc: 'https://tracker-systems.com/terms', lastmod: '2025-08-26T00:00:00+00:00', changefreq: 'yearly', priority: '0.3' },
-        { loc: 'https://tracker-systems.com/privacy', lastmod: '2025-08-26T00:00:00+00:00', changefreq: 'yearly', priority: '0.3' },
+        { loc: 'https://www.trackmybusiness.us/terms', lastmod: '2025-08-26T00:00:00+00:00', changefreq: 'yearly', priority: '0.3' },
+        { loc: 'https://www.trackmybusiness.us/privacy', lastmod: '2025-08-26T00:00:00+00:00', changefreq: 'yearly', priority: '0.3' },
       ]
     }
   ];
@@ -179,7 +179,7 @@ export const parseSitemapData = (): SitemapSection[] => {
   return sitemapData.map(section => ({
     ...section,
     urls: section.urls.map(url => {
-      const path = url.loc.replace('https://tracker-systems.com', '') || '/';
+      const path = url.loc.replace('https://www.trackmybusiness.us', '') || '/';
       const meta = urlTitles[path] || { title: path, description: '' };
       return {
         ...url,
