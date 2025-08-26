@@ -16,6 +16,7 @@ import Analytics from "@/components/seo/Analytics";
 // Critical pages - load immediately
 import Index from "@/pages/Index";
 import NotFound from "./pages/NotFound";
+import SitemapRoute from "@/components/seo/SitemapRoute";
 
 // Lazy load non-critical pages
 const GetStarted = React.lazy(() => import("@/pages/GetStarted"));
@@ -155,6 +156,9 @@ const App = () => {
                     
                     {/* Auth Routes */}
                     <Route path="/login" element={<Suspense fallback={<PageLoader />}><Login /></Suspense>} />
+                    
+                    {/* Static file fallback routes */}
+                    <Route path="/sitemap.xml" element={<SitemapRoute />} />
                     
                     {/* 404 Route */}
                     <Route path="*" element={<Layout><NotFound /></Layout>} />

@@ -1,0 +1,8 @@
+# Netlify redirects and rules for static files
+/sitemap.xml /sitemap.xml 200!
+/robots.txt /robots.txt 200!
+/sitemap-*.xml /sitemap-*.xml 200!
+/*.xml /*.xml 200!
+
+# SPA fallback - this should come last
+/* /index.html 200
