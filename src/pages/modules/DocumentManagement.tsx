@@ -86,7 +86,7 @@ const DocumentManagement = () => {
       ctaSection={{
         title: "Ready to Transform Your Document Management?",
         description: "Join thousands of organizations that manage their documents securely and efficiently with our platform.",
-        primaryButtonText: "Start Free Trial",
+        primaryButtonText: "Get Started",
         primaryButtonLink: "/get-started",
         secondaryButtonText: "Request Demo",
         secondaryButtonLink: "/pricing"

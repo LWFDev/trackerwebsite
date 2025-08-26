@@ -86,7 +86,7 @@ const ProjectManagement = () => {
       ctaSection={{
         title: "Ready to Transform Your Project Management?",
         description: "Join thousands of teams that deliver projects successfully with our comprehensive platform.",
-        primaryButtonText: "Start Free Trial",
+        primaryButtonText: "Get Started",
         primaryButtonLink: "/get-started",
         secondaryButtonText: "Schedule Demo",
         secondaryButtonLink: "/pricing"

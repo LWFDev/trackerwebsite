@@ -86,7 +86,7 @@ const AnalyticsReporting = () => {
       ctaSection={{
         title: "Ready to unlock the power of your data?",
         description: "Join thousands of businesses already using our Analytics platform to make better decisions and drive growth.",
-        primaryButtonText: "Start Free Trial",
+        primaryButtonText: "Get Started",
         primaryButtonLink: "/get-started",
         secondaryButtonText: "Schedule Demo",
         secondaryButtonLink: "/pricing"

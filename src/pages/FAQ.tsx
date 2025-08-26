@@ -156,10 +156,10 @@ const FAQ = () => {
           )
         },
         {
-          question: "What happens after my free trial?",
+          question: "What happens after my evaluation period?",
           answer: (
             <>
-              After your trial period, you'll have the opportunity to choose the <a href="/pricing" className="text-gold hover:text-gold-light underline font-medium" onClick={scrollToTop}>plan</a> that best fits your needs. We'll work with you to ensure you're selecting the right <a href="/modules" className="text-gold hover:text-gold-light underline font-medium" onClick={scrollToTop}>modules</a> and user count for your business. There's no automatic billing - we'll discuss your options and help you make an informed decision.
+              After your evaluation period, you'll have the opportunity to choose the <a href="/pricing" className="text-gold hover:text-gold-light underline font-medium" onClick={scrollToTop}>plan</a> that best fits your needs. We'll work with you to ensure you're selecting the right <a href="/modules" className="text-gold hover:text-gold-light underline font-medium" onClick={scrollToTop}>modules</a> and user count for your business. There's no automatic billing - we'll discuss your options and help you make an informed decision.
             </>
           )
         },

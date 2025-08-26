@@ -23,7 +23,7 @@ export const homeSEO: SEOData = {
 // Pricing page SEO
 export const pricingSEO: SEOData = {
   title: "Pricing Plans - Affordable Production Management Software",
-  description: "Choose the perfect Tracker Systems plan for your garment decoration business. Flexible pricing for small shops to enterprise manufacturers. Start your free trial today.",
+  description: "Choose the perfect Tracker Systems plan for your garment decoration business. Flexible pricing for small shops to enterprise manufacturers. Get started today.",
   keywords: "production management software pricing, garment decoration software cost, apparel manufacturing software plans, embroidery business software pricing",
   canonical: "https://tracker-systems.com/pricing",
   schema: generateProductSchema({
@@ -99,7 +99,7 @@ export const supportSEO: SEOData = {
 export const supportFAQSchema = generateFAQSchema([
   {
     question: "How do I get started with Tracker Systems?",
-    answer: "You can start with our free trial by signing up on our website. Our onboarding team will help you set up your account and import your existing data."
+    answer: "You can start with our evaluation period by signing up on our website. Our onboarding team will help you set up your account and import your existing data."
   },
   {
     question: "What types of businesses can use Tracker Systems?",

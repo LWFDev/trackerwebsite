@@ -17,8 +17,8 @@ const PricingFAQ = () => {
     question: "Can I switch plans later?",
     answer: "Yes, you can upgrade or downgrade your plan at any time. When upgrading, your new features will be available immediately. If downgrading, the changes will apply at the start of your next billing cycle."
   }, {
-    question: "What happens after my free trial?",
-    answer: "After your free trial ends, your account will automatically convert to the plan you selected during signup. You'll only be charged once the trial is over, and we'll send you a reminder before this happens."
+    question: "What happens after my evaluation period?",
+    answer: "After your evaluation period ends, you'll have the option to select the plan that best fits your needs. We'll work with you to ensure a smooth transition and provide guidance on the best plan for your business."
   }, {
     question: "Do you offer discounts for annual billing?",
     answer: "Yes, you save up to 20% by choosing annual billing over monthly billing, which is automatically calculated and applied to the displayed prices."

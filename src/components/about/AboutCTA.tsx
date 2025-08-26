@@ -19,7 +19,7 @@ const AboutCTA = () => {
         
         <ScrollReveal preset="confident" delay={500}>
           <Link to="/get-started" onClick={scrollToTop}>
-            <Button variant="gold">Get Started Free</Button>
+            <Button variant="gold">Get Started</Button>
           </Link>
         </ScrollReveal>
       </div>

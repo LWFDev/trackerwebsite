@@ -147,7 +147,7 @@ const Industries = () => {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button asChild size="lg" variant="gold">
-                <Link to="/get-started" onClick={scrollToTop}>Start Your Free Trial</Link>
+                <Link to="/get-started" onClick={scrollToTop}>Get Started</Link>
               </Button>
               <Button asChild variant="outline" size="lg" className="border-gold text-gold hover:bg-gold hover:text-gold-foreground">
                 <Link to="/contact" onClick={scrollToTop}>Contact Sales</Link>

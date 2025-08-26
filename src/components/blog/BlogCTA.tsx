@@ -19,12 +19,12 @@ const BlogCTA = () => {
           </h2>
           
           <p className="text-xl text-gray-300 mb-8 animate-fade-in">
-            Start your free 14-day trial today.
+            Start your evaluation today.
           </p>
           
           <Link to="/get-started" onClick={scrollToTop}>
             <Button size="lg" className="px-8 shadow-xl bg-gold-gradient hover:bg-gold-dark-gradient text-gold-foreground transform transition-all duration-300 hover:-translate-y-1 animate-fade-in">
-              Get Started Free <ArrowRight className="ml-1 h-5 w-5" />
+              Get Started <ArrowRight className="ml-1 h-5 w-5" />
             </Button>
           </Link>
         </div>

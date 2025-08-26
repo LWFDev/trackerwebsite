@@ -85,7 +85,7 @@ const FinanceAccounting = () => {
       ctaSection={{
         title: "Ready to transform your financial operations?",
         description: "Join thousands of businesses already using our Finance & Accounting module to optimize financial processes and drive growth.",
-        primaryButtonText: "Start Free Trial",
+        primaryButtonText: "Get Started",
         primaryButtonLink: "/get-started",
         secondaryButtonText: "View Pricing",
         secondaryButtonLink: "/pricing"

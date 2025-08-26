@@ -106,7 +106,7 @@ const CustomerPortal = () => {
       ctaSection={{
         title: "Ready to Elevate Your Client Experience?",
         description: "Join thousands of businesses that have transformed their client relationships with our comprehensive portal solution.",
-        primaryButtonText: "Start Free Trial",
+        primaryButtonText: "Get Started",
         primaryButtonLink: "/get-started",
         secondaryButtonText: "Schedule Demo",
         secondaryButtonLink: "/pricing"

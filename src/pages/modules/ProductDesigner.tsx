@@ -113,7 +113,7 @@ const ProductDesigner = () => {
       ctaSection={{
         title: "Ready to revolutionize your design process?",
         description: "Join thousands of businesses already using our Product Designer to streamline their workflow and impress clients.",
-        primaryButtonText: "Start Free Trial",
+        primaryButtonText: "Get Started",
         primaryButtonLink: "/get-started",
         secondaryButtonText: "Schedule Demo",
         secondaryButtonLink: "/pricing"

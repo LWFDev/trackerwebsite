@@ -107,7 +107,7 @@ const Logos = () => {
       ctaSection={{
         title: "Ready to Transform Your Logo Management?",
         description: "Join thousands of businesses that manage their customer logos effectively with our Logo module.",
-        primaryButtonText: "Start Free Trial",
+        primaryButtonText: "Get Started",
         primaryButtonLink: "/get-started",
         secondaryButtonText: "Request Demo",
         secondaryButtonLink: "/pricing"

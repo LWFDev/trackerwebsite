@@ -86,7 +86,7 @@ const LogoHub = () => {
       ctaSection={{
         title: "Ready to Transform Your Brand Asset Management?",
         description: "Join thousands of businesses that manage their brand identity effectively with Logo Hub.",
-        primaryButtonText: "Start Free Trial",
+        primaryButtonText: "Get Started",
         primaryButtonLink: "/get-started",
         secondaryButtonText: "Request Demo",
         secondaryButtonLink: "/pricing"

@@ -86,7 +86,7 @@ const CustomerService = () => {
       ctaSection={{
         title: "Ready to Transform Your Customer Support?",
         description: "Join thousands of businesses that deliver exceptional customer service with our comprehensive platform.",
-        primaryButtonText: "Start Your Free Trial",
+        primaryButtonText: "Get Started",
         primaryButtonLink: "/get-started",
         secondaryButtonText: "Schedule a Demo",
         secondaryButtonLink: "/pricing"
