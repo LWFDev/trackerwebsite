@@ -28,6 +28,7 @@ const Footer = () => {
               <li><Link to="/contact" className="hover:text-gold transition-colors" onClick={scrollToTop}>Contact</Link></li>
               <li><Link to="/faq" className="hover:text-gold transition-colors" onClick={scrollToTop}>FAQ</Link></li>
               <li><Link to="/support" className="hover:text-gold transition-colors" onClick={scrollToTop}>Support</Link></li>
+              <li><Link to="/sitemap" className="hover:text-gold transition-colors" onClick={scrollToTop}>Sitemap</Link></li>
             </ul>
           </div>
           <div>

@@ -157,8 +157,9 @@ const App = () => {
                     {/* Auth Routes */}
                     <Route path="/login" element={<Suspense fallback={<PageLoader />}><Login /></Suspense>} />
                     
-                    {/* Static file fallback routes */}
+                    {/* Sitemap routes - both XML and HTML versions */}
                     <Route path="/sitemap.xml" element={<SitemapRoute />} />
+                    <Route path="/sitemap" element={<SitemapRoute />} />
                     
                     {/* 404 Route */}
                     <Route path="*" element={<Layout><NotFound /></Layout>} />
