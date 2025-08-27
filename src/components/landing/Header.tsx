@@ -10,12 +10,14 @@ import ModulesButton from "@/components/landing/header/ModulesButton";
 import ResourcesDropdown from "@/components/landing/header/ResourcesDropdown";
 import ModulesMegaMenu from "@/components/landing/ModulesMegaMenu";
 import FlagSelector from "@/components/ui/FlagSelector";
+import { useLocalization } from "@/contexts/LocalizationContext";
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
   const [isModulesMenuOpen, setIsModulesMenuOpen] = useState(false);
   const location = useLocation();
+  const { t } = useLocalization();
 
   // Function to scroll to top of page
   const scrollToTop = () => {
@@ -85,7 +87,7 @@ const Header = () => {
             style={{ fontSize: '16px', fontWeight: 400 }}
             onClick={scrollToTop}
           >
-            Industries
+            {t("Industries")}
           </Link>
           <Link 
             to="/pricing" 
@@ -93,7 +95,7 @@ const Header = () => {
             style={{ fontSize: '16px', fontWeight: 400 }}
             onClick={scrollToTop}
           >
-            Pricing
+            {t("Pricing")}
           </Link>
           <ResourcesDropdown scrollToTop={scrollToTop} />
         </nav>
@@ -102,7 +104,7 @@ const Header = () => {
         <div className="hidden md:flex items-center space-x-3">
           <FlagSelector />
           <Link to="/get-started">
-            <Button size="lg" className="w-full sm:w-auto group bg-gold-gradient hover:bg-gold-dark-gradient text-gold-foreground px-8 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-0.5 border-0">Get Started</Button>
+            <Button size="lg" className="w-full sm:w-auto group bg-gold-gradient hover:bg-gold-dark-gradient text-gold-foreground px-8 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-0.5 border-0">{t("Get Started")}</Button>
           </Link>
         </div>
 
@@ -110,7 +112,7 @@ const Header = () => {
         <button
           className="md:hidden text-white p-2"
           onClick={() => setIsOpen(true)}
-          aria-label="Open menu"
+          aria-label={t("Open menu")}
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"

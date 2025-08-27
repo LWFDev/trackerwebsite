@@ -1,5 +1,6 @@
 
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { useLocalization } from "@/contexts/LocalizationContext";
 
 interface BlogCategoriesProps {
   activeTab: string;
@@ -7,6 +8,7 @@ interface BlogCategoriesProps {
 }
 
 const BlogCategories = ({ activeTab, setActiveTab }: BlogCategoriesProps) => {
+  const { t } = useLocalization();
   return (
     <div className="bg-zinc-900 border-b border-zinc-800 pb-0">
       <div className="container mx-auto px-4">
@@ -18,22 +20,22 @@ const BlogCategories = ({ activeTab, setActiveTab }: BlogCategoriesProps) => {
         >
           <TabsList className="bg-transparent flex justify-start overflow-x-auto space-x-2 border-b border-zinc-800 w-full">
             <TabsTrigger value="all-posts" className="data-[state=active]:border-gold">
-              All Posts
+              {t("All Posts")}
             </TabsTrigger>
             <TabsTrigger value="industry-insights" className="data-[state=active]:border-gold">
-              Industry Insights
+              {t("Industry Insights")}
             </TabsTrigger>
             <TabsTrigger value="product-updates" className="data-[state=active]:border-gold">
-              Product Updates
+              {t("Product Updates")}
             </TabsTrigger>
             <TabsTrigger value="case-studies" className="data-[state=active]:border-gold">
-              Case Studies
+              {t("Case Studies")}
             </TabsTrigger>
             <TabsTrigger value="tutorials" className="data-[state=active]:border-gold">
-              Tutorials
+              {t("Tutorials")}
             </TabsTrigger>
             <TabsTrigger value="company-news" className="data-[state=active]:border-gold">
-              Company News
+              {t("Company News")}
             </TabsTrigger>
           </TabsList>
         </Tabs>

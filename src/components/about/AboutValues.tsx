@@ -2,31 +2,34 @@
 import React from "react";
 import { Users, Award, RefreshCw, Target } from "lucide-react";
 import ScrollReveal from "@/components/ui/scroll-reveal";
+import { useLocalization } from "@/contexts/LocalizationContext";
 
 const AboutValues = () => {
+  const { t } = useLocalization();
+  
   const values = [
     {
       icon: <Users className="h-10 w-10 text-gold" />,
-      title: "Customer First",
-      description: "We always view our customer interactions through the lens of how to solve real problems.",
+      title: t("Customer First"),
+      description: t("We always view our customer interactions through the lens of how to solve real problems."),
       bgColor: "from-blue-500/20 to-purple-500/20"
     },
     {
       icon: <Award className="h-10 w-10 text-gold" />,
-      title: "Excellence",
-      description: "We strive for excellence in everything we do, from product quality to customer service.",
+      title: t("Excellence"),
+      description: t("We strive for excellence in everything we do, from product quality to customer service."),
       bgColor: "from-green-500/20 to-emerald-500/20"
     },
     {
       icon: <RefreshCw className="h-10 w-10 text-gold" />,
-      title: "Innovation",
-      description: "We're constantly innovating and improving our software to make it as powerful as possible.",
+      title: t("Innovation"),
+      description: t("We're constantly innovating and improving our software to make it as powerful as possible."),
       bgColor: "from-orange-500/20 to-red-500/20"
     },
     {
       icon: <Target className="h-10 w-10 text-gold" />,
-      title: "Integrity",
-      description: "We act with integrity and transparency in all our interactions.",
+      title: t("Integrity"),
+      description: t("We act with integrity and transparency in all our interactions."),
       bgColor: "from-purple-500/20 to-pink-500/20"
     }
   ];
@@ -46,13 +49,13 @@ const AboutValues = () => {
         <ScrollReveal preset="enterprise" delay={100}>
           <div className="text-center mb-16">
             <div className="inline-block px-4 py-2 bg-gold-opacity-10 rounded-full border border-gold-opacity-20 mb-6">
-              <h3 className="text-lg text-gold font-semibold">Our Values</h3>
+              <h3 className="text-lg text-gold font-semibold">{t("Our Values")}</h3>
             </div>
             <h2 className="text-4xl md:text-5xl font-bold mb-8 text-gold-gradient">
-              What drives us every day
+              {t("What drives us every day")}
             </h2>
             <p className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
-              Our core values guide everything we do. Every product detail and feature is created to embody these values.
+              {t("Our core values guide everything we do. Every product detail and feature is created to embody these values.")}
             </p>
           </div>
         </ScrollReveal>
@@ -96,7 +99,7 @@ const AboutValues = () => {
           <div className="mt-16 text-center">
             <div className="inline-flex items-center space-x-2 text-gray-500">
               <div className="w-8 h-px bg-gradient-to-r from-transparent to-gold-opacity-50"></div>
-              <span className="text-sm font-medium">Building the future together</span>
+              <span className="text-sm font-medium">{t("Building the future together")}</span>
               <div className="w-8 h-px bg-gradient-to-l from-transparent to-gold-opacity-50"></div>
             </div>
           </div>

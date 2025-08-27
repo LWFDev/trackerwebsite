@@ -1,7 +1,9 @@
 
 import React from "react";
+import { useLocalization } from "@/contexts/LocalizationContext";
 
 const BlogHero = () => {
+  const { t } = useLocalization();
   return (
     <section className="py-20 bg-zinc-900 text-white relative overflow-hidden flex items-center min-h-[30vh]">
       {/* Background gradient */}
@@ -10,9 +12,9 @@ const BlogHero = () => {
       </div>
 
       <div className="container mx-auto px-4 relative z-10 text-center">
-        <h1 className="text-4xl md:text-5xl font-bold mb-6">Tracker Blog</h1>
+        <h1 className="text-4xl md:text-5xl font-bold mb-6">{t("Tracker Blog")}</h1>
         <p className="text-xl text-gray-300 max-w-2xl mx-auto mb-8">
-          Insights, tips, and industry news to help you streamline your workflow
+          {t("Insights, tips, and industry news to help you streamline your workflow")}
         </p>
       </div>
     </section>

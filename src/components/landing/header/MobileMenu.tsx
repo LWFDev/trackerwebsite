@@ -6,6 +6,7 @@ import { Button } from "@/components/ui/button";
 import { X, ChevronRight } from "lucide-react";
 import FlagSelector from "@/components/ui/FlagSelector";
 import { scrollToTop } from "@/utils/navigation";
+import { useLocalization } from "@/contexts/LocalizationContext";
 
 interface MobileMenuProps {
   isOpen: boolean;
@@ -13,6 +14,7 @@ interface MobileMenuProps {
 }
 
 const MobileMenu = ({ isOpen, setIsOpen }: MobileMenuProps) => {
+  const { t } = useLocalization();
   // Close menu on route change
   useEffect(() => {
     return () => {
@@ -63,10 +65,10 @@ const MobileMenu = ({ isOpen, setIsOpen }: MobileMenuProps) => {
             className="mobile-menu-content w-4/5 max-w-sm bg-zinc-900 h-full flex flex-col overflow-y-auto"
           >
             <div className="p-4 flex justify-between items-center border-b border-zinc-800">
-              <h2 className="text-xl font-bold text-white">Menu</h2>
+              <h2 className="text-xl font-bold text-white">{t("Menu")}</h2>
               <button
                 onClick={() => setIsOpen(false)}
-                aria-label="Close menu"
+                aria-label={t("Close menu")}
                 className="text-zinc-400 hover:text-white transition-colors"
               >
                 <X size={24} />
@@ -81,7 +83,7 @@ const MobileMenu = ({ isOpen, setIsOpen }: MobileMenuProps) => {
                     className="flex items-center justify-between w-full p-3 rounded-md hover:bg-zinc-800 text-white"
                     onClick={() => { setIsOpen(false); scrollToTop(); }}
                   >
-                    <span>Home</span>
+                    <span>{t("Home")}</span>
                     <ChevronRight size={18} className="text-zinc-500" />
                   </Link>
                 </li>
@@ -91,7 +93,7 @@ const MobileMenu = ({ isOpen, setIsOpen }: MobileMenuProps) => {
                     className="flex items-center justify-between w-full p-3 rounded-md hover:bg-zinc-800 text-white"
                     onClick={() => { setIsOpen(false); scrollToTop(); }}
                   >
-                    <span>Modules</span>
+                    <span>{t("Modules")}</span>
                     <ChevronRight size={18} className="text-zinc-500" />
                   </Link>
                 </li>
@@ -101,7 +103,7 @@ const MobileMenu = ({ isOpen, setIsOpen }: MobileMenuProps) => {
                     className="flex items-center justify-between w-full p-3 rounded-md hover:bg-zinc-800 text-white"
                     onClick={() => { setIsOpen(false); scrollToTop(); }}
                   >
-                    <span>Pricing</span>
+                    <span>{t("Pricing")}</span>
                     <ChevronRight size={18} className="text-zinc-500" />
                   </Link>
                 </li>
@@ -111,7 +113,7 @@ const MobileMenu = ({ isOpen, setIsOpen }: MobileMenuProps) => {
                     className="flex items-center justify-between w-full p-3 rounded-md hover:bg-zinc-800 text-white"
                     onClick={() => { setIsOpen(false); scrollToTop(); }}
                   >
-                    <span>Documentation</span>
+                    <span>{t("Documentation")}</span>
                     <ChevronRight size={18} className="text-zinc-500" />
                   </Link>
                 </li>
@@ -121,7 +123,7 @@ const MobileMenu = ({ isOpen, setIsOpen }: MobileMenuProps) => {
                     className="flex items-center justify-between w-full p-3 rounded-md hover:bg-zinc-800 text-white"
                     onClick={() => { setIsOpen(false); scrollToTop(); }}
                   >
-                    <span>About Us</span>
+                    <span>{t("About Us")}</span>
                     <ChevronRight size={18} className="text-zinc-500" />
                   </Link>
                 </li>
@@ -131,7 +133,7 @@ const MobileMenu = ({ isOpen, setIsOpen }: MobileMenuProps) => {
                     className="flex items-center justify-between w-full p-3 rounded-md hover:bg-zinc-800 text-white"
                     onClick={() => { setIsOpen(false); scrollToTop(); }}
                   >
-                    <span>Blog</span>
+                    <span>{t("Blog")}</span>
                     <ChevronRight size={18} className="text-zinc-500" />
                   </Link>
                 </li>
@@ -141,7 +143,7 @@ const MobileMenu = ({ isOpen, setIsOpen }: MobileMenuProps) => {
                     className="flex items-center justify-between w-full p-3 rounded-md hover:bg-zinc-800 text-white"
                     onClick={() => { setIsOpen(false); scrollToTop(); }}
                   >
-                    <span>Contact</span>
+                    <span>{t("Contact")}</span>
                     <ChevronRight size={18} className="text-zinc-500" />
                   </Link>
                 </li>
@@ -155,7 +157,7 @@ const MobileMenu = ({ isOpen, setIsOpen }: MobileMenuProps) => {
                 </div>
                 <Link to="/get-started" onClick={() => { setIsOpen(false); scrollToTop(); }}>
                   <Button variant="gold" className="w-full">
-                    Get Started
+                    {t("Get Started")}
                   </Button>
                 </Link>
               </div>

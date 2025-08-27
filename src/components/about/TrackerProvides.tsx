@@ -4,23 +4,26 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { CheckCircle, Zap, ArrowRight, Target } from "lucide-react";
 import ScrollReveal from "@/components/ui/scroll-reveal";
+import { useLocalization } from "@/contexts/LocalizationContext";
 
 const TrackerProvides = () => {
+  const { t } = useLocalization();
+  
   const keyFeatures = [
     {
-      text: "End-to-end process tracking",
+      text: t("End-to-end process tracking"),
       icon: <Target className="h-5 w-5" />
     },
     {
-      text: "Real-time business intelligence",
+      text: t("Real-time business intelligence"),
       icon: <Zap className="h-5 w-5" />
     },
     {
-      text: "Secure cloud access",
+      text: t("Secure cloud access"),
       icon: <CheckCircle className="h-5 w-5" />
     },
     {
-      text: "Multi-site operations support",
+      text: t("Multi-site operations support"),
       icon: <ArrowRight className="h-5 w-5" />
     }
   ];
@@ -31,10 +34,10 @@ const TrackerProvides = () => {
         <div className="text-center mb-16">
           <Badge variant="outline" className="mb-6 px-6 py-3 text-gray-300 border-gray-600 bg-gray-800 font-medium">
             <Zap className="h-4 w-4 mr-2 text-emerald-600" />
-            Our Solution
+            {t("Our Solution")}
           </Badge>
           <h2 className="text-3xl md:text-4xl font-bold mb-8 text-white">
-            Tracker Provides...
+            {t("Tracker Provides...")}
           </h2>
         </div>
       </ScrollReveal>
@@ -47,7 +50,7 @@ const TrackerProvides = () => {
                 <div className="space-y-8">
                   <Card className="border-emerald-700 bg-emerald-900/20 shadow-sm">
                     <CardContent className="p-6">
-                      <img src="/lovable-uploads/74104891-c670-4c0b-95bd-58f41eb753f3.png" alt="Warehouse worker packing orders with Tracker system" className="w-full h-auto rounded-lg shadow-sm" />
+                      <img src="/lovable-uploads/74104891-c670-4c0b-95bd-58f41eb753f3.png" alt={t("Warehouse worker packing orders with Tracker system")} className="w-full h-auto rounded-lg shadow-sm" />
                     </CardContent>
                   </Card>
                 </div>
@@ -59,7 +62,7 @@ const TrackerProvides = () => {
                     <Card className="border-gold-opacity-30 bg-gold-opacity-10 shadow-sm">
                       <CardContent className="p-6">
                         <p className="text-lg leading-relaxed text-gray-200">
-                          Tracker provides confidence and clarity – for today's requirements as well as supporting the strategic needs and planning for tomorrow. In a fast-paced and changing world, Tracker also allows key people to have instant and secure access to business intelligence and data from anywhere there is an internet connection.
+                          {t("Tracker provides confidence and clarity – for today's requirements as well as supporting the strategic needs and planning for tomorrow. In a fast-paced and changing world, Tracker also allows key people to have instant and secure access to business intelligence and data from anywhere there is an internet connection.")}
                         </p>
                       </CardContent>
                     </Card>

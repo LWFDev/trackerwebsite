@@ -128,6 +128,111 @@ const usToUkTransformations: Record<string, string> = {
   'eggplant': 'aubergine',
   'arugula': 'rocket',
   'cilantro': 'coriander',
+  
+  // Business & Manufacturing Terms
+  'streamline': 'streamline', // Same in both
+  'utilize': 'utilise',
+  'utilizes': 'utilises',
+  'utilizing': 'utilising',
+  'utilization': 'utilisation',
+  'analyze data': 'analyse data',
+  'analyze performance': 'analyse performance',
+  'customize workflows': 'customise workflows',
+  'standardize': 'standardise',
+  'standardized': 'standardised',
+  'standardizing': 'standardising',
+  'standardization': 'standardisation',
+  'modernize': 'modernise',
+  'modernized': 'modernised',
+  'modernizing': 'modernising',
+  'modernization': 'modernisation',
+  
+  // Software & Technology Terms
+  'prioritize': 'prioritise',
+  'prioritized': 'prioritised',
+  'prioritizing': 'prioritising',
+  'prioritization': 'prioritisation',
+  'synchronize': 'synchronise',
+  'synchronized': 'synchronised',
+  'synchronizing': 'synchronising',
+  'synchronization': 'synchronisation',
+  'maximize': 'maximise',
+  'maximized': 'maximised',
+  'maximizing': 'maximising',
+  'maximization': 'maximisation',
+  'minimize': 'minimise',
+  'minimized': 'minimised',
+  'minimizing': 'minimising',
+  'minimization': 'minimisation',
+  
+  // Customer Service & Business Terms
+  'recognize': 'recognise',
+  'recognized': 'recognised',
+  'recognizing': 'recognising',
+  'recognition': 'recognition', // Same in both
+  'authorize': 'authorise',
+  'authorized': 'authorised',
+  'authorizing': 'authorising',
+  'authorization': 'authorisation',
+  'enterprise': 'enterprise', // Same in both
+  'center of excellence': 'centre of excellence',
+  'fulfillment center': 'fulfilment centre',
+  'fulfillment': 'fulfilment',
+  'enrollment': 'enrolment',
+  'enroll': 'enrol',
+  'enrolled': 'enrolled', // Same in both
+  'enrolling': 'enrolling', // Same in both
+  
+  // Manufacturing & Production Terms
+  'labor': 'labour',
+  'labors': 'labours',
+  'labored': 'laboured',
+  'laboring': 'labouring',
+  'manufacturing center': 'manufacturing centre',
+  'distribution center': 'distribution centre',
+  'service center': 'service centre',
+  'catalog': 'catalogue',
+  'catalogs': 'catalogues',
+  'catalog management': 'catalogue management',
+  'modeling': 'modelling',
+  'model': 'model', // Same in both
+  'modeled': 'modelled',
+  'traveled': 'travelled',
+  'traveling': 'travelling',
+  'traveler': 'traveller',
+  'travelers': 'travellers',
+  
+  // Quality & Process Terms
+  'meter': 'metre',
+  'meters': 'metres',
+  'liter': 'litre',
+  'liters': 'litres',
+  'kilometer': 'kilometre',
+  'kilometers': 'kilometres',
+  'aluminum': 'aluminium',
+  'gray': 'grey',
+  'grays': 'greys',
+  'grayish': 'greyish',
+  'sulfur': 'sulphur',
+  
+  // Finance & Business Terms
+  'canceled': 'cancelled',
+  'canceling': 'cancelling',
+  'counselor': 'counsellor',
+  'counselors': 'counsellors',
+  'counseling': 'counselling',
+  'skeptical': 'sceptical',
+  'skeptic': 'sceptic',
+  'skeptics': 'sceptics',
+  
+  // Common Business Phrases
+  'focused on': 'focussed on', // Alternative UK spelling
+  'license key': 'licence key', // license as noun becomes licence
+  'license agreement': 'licence agreement',
+  'user license': 'user licence',
+  'software license': 'software licence',
+  'mom and pop': 'mum and dad', // Small business reference
+  'gotten': 'got', // Past participle difference
 };
 
 const transformText = (text: string, locale: Locale): string => {
