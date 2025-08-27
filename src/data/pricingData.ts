@@ -9,6 +9,11 @@ export interface PricingTier {
   basePrice: number;
   tierPrice: number;
   onboardingFee: number;
+  ukPricing?: {
+    basePrice: number;
+    tierPrice: number;
+    onboardingFee: number;
+  };
   description: string;
   highlighted: boolean;
   savings?: string;
@@ -36,6 +41,11 @@ export const pricingTiers: PricingTier[] = [
     basePrice: 79900,
     tierPrice: 799000,
     onboardingFee: 250000,
+    ukPricing: {
+      basePrice: 59900, // £599
+      tierPrice: 599000, // £5990
+      onboardingFee: 200000, // £2000
+    },
     description: "Perfect for small businesses getting started with decoration tracking",
     highlighted: false,
     licenses: {
@@ -89,6 +99,11 @@ export const pricingTiers: PricingTier[] = [
     basePrice: 199900,
     tierPrice: 1999000,
     onboardingFee: 450000,
+    ukPricing: {
+      basePrice: 149900, // £1499
+      tierPrice: 1499000, // £14990
+      onboardingFee: 350000, // £3500
+    },
     description: "Ideal for growing decoration businesses with advanced needs",
     highlighted: true,
     licenses: {

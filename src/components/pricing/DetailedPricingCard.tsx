@@ -33,7 +33,7 @@ const DetailedPricingCard: React.FC<DetailedPricingCardProps> = ({
     if (!match) return pricingString;
 
     const usdPrice = parseInt(match[1]);
-    const convertedPrice = locale === 'UK' ? Math.round(usdPrice * 0.79) : usdPrice;
+    const convertedPrice = locale === 'UK' ? Math.round(usdPrice * 0.75) : usdPrice;
     const currencySymbol = locale === 'UK' ? '£' : '$';
     
     return pricingString.replace(/\$\d+/, `${currencySymbol}${convertedPrice}`);
@@ -150,37 +150,32 @@ const DetailedPricingCard: React.FC<DetailedPricingCardProps> = ({
   // Currency conversion rate (USD to GBP)
   const USD_TO_GBP_RATE = 0.79;
   
-  // Currency conversion with proper USD to GBP conversion
+  // Currency formatting with UK-specific pricing
   const formatPricing = (price: number, isOnboarding: boolean = false) => {
     if (price === 0) return { current: "Custom", original: null };
     
-    // Convert cents to dollars
-    const dollarAmount = price / 100;
-    
-    if (locale === 'UK') {
-      // Convert USD to GBP using exchange rate
-      const gbpAmount = Math.round(dollarAmount * USD_TO_GBP_RATE);
-      
+    if (locale === 'UK' && tier.ukPricing) {
+      // Use hardcoded UK pricing
       if (isOnboarding) {
-        // Onboarding fee stays constant
+        const gbpAmount = tier.ukPricing.onboardingFee / 100;
         return { current: `£${gbpAmount.toLocaleString()}`, original: null };
       } else {
-        // Show yearly total for annual, monthly for monthly
         if (billingCycle === 'annually') {
-          const gbpTierPrice = Math.round((tier.tierPrice / 100) * USD_TO_GBP_RATE);
+          const gbpTierPrice = tier.ukPricing.tierPrice / 100;
           return { current: `£${gbpTierPrice.toLocaleString()}`, original: null };
         } else {
-          return { current: `£${gbpAmount.toLocaleString()}`, original: null };
+          const gbpBasePrice = tier.ukPricing.basePrice / 100;
+          return { current: `£${gbpBasePrice.toLocaleString()}`, original: null };
         }
       }
     }
     
-    // USD pricing
+    // USD pricing (original logic)
+    const dollarAmount = price / 100;
+    
     if (isOnboarding) {
-      // Onboarding fee stays constant
-      return { current: `$${(price / 100).toLocaleString()}`, original: null };
+      return { current: `$${dollarAmount.toLocaleString()}`, original: null };
     } else {
-      // Show yearly total for annual, monthly for monthly
       if (billingCycle === 'annually') {
         return { current: `$${(tier.tierPrice / 100).toLocaleString()}`, original: null };
       } else {
