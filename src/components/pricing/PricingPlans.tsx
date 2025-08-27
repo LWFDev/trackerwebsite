@@ -29,7 +29,7 @@ const PricingPlans = () => {
     setBillingCycle(newCycle);
     toast({
       title: `Switched to ${newCycle} billing`,
-      description: newCycle === 'annually' ? "You'll save 20% with annual billing!" : "Monthly billing selected",
+      description: newCycle === 'annually' ? "2 months free with annual billing!" : "Monthly billing selected",
       duration: 3000,
     });
   };
