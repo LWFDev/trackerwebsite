@@ -2,7 +2,10 @@ import React, { useEffect, useRef } from "react";
 import { ScrollReveal } from "@/components/ui/scroll-reveal";
 import { Star, Award, ShieldCheck, Sparkles, Circle } from "lucide-react";
 import { motion, useAnimation } from "framer-motion";
+import { useLocalization } from "@/contexts/LocalizationContext";
+
 const PricingHero = () => {
+  const { t } = useLocalization();
   const glowRef = useRef<HTMLDivElement>(null);
   const mouseRef = useRef({
     x: 0,
@@ -141,7 +144,7 @@ const PricingHero = () => {
           <div className="inline-flex items-center gap-2 px-4 py-1.5 bg-zinc-800/80 backdrop-blur-sm rounded-full border border-zinc-700 mb-6 relative overflow-hidden group">
             <div className="absolute inset-0 bg-gradient-to-r from-gold-opacity-0 via-gold-opacity-10 to-gold-opacity-0 animate-shimmer"></div>
             <Sparkles size={16} className="text-emerald-400" />
-            <span className="text-sm text-emerald-400 uppercase font-medium tracking-wider">Premium Solutions</span>
+            <span className="text-sm text-emerald-400 uppercase font-medium tracking-wider">{t("Premium Solutions")}</span>
           </div>
           
           <motion.h1 className="text-4xl md:text-6xl font-bold mb-6 leading-tight" initial={{
@@ -154,8 +157,8 @@ const PricingHero = () => {
           delay: 0.2,
           duration: 0.5
         }}>
-            Simple, Transparent <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 via-emerald-300 to-gold relative">
-              Pricing
+            {t("Simple, Transparent")} <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 via-emerald-300 to-gold relative">
+              {t("Pricing")}
               <motion.div className="absolute -bottom-1 left-0 w-full h-1 bg-gradient-to-r from-emerald-400 via-emerald-300 to-gold" initial={{
               width: 0
             }} animate={{
@@ -175,7 +178,7 @@ const PricingHero = () => {
           delay: 0.3,
           duration: 0.5
         }}>
-            Choose the plan that's right for your business without hidden fees or complicated terms
+            {t("Choose the plan that's right for your business without hidden fees or complicated terms")}
           </motion.p>
           
           

@@ -5,30 +5,32 @@ import WorkflowHeader from "./workflow/WorkflowHeader";
 import WorkflowLine from "./workflow/WorkflowLine";
 import WorkflowStep from "./workflow/WorkflowStep";
 import WorkflowCTA from "./workflow/WorkflowCTA";
+import { useLocalization } from "@/contexts/LocalizationContext";
 
 const Workflow = () => {
+  const { t } = useLocalization();
   const [activeStep, setActiveStep] = useState(0);
 
   const workflowSteps = [
     {
       number: "01",
-      title: "Upload & Organize",
-      description: "Store all your logos and designs in one secure, searchable location for instant access."
+      title: t("Upload & Organize"),
+      description: t("Store all your logos and designs in one secure, searchable location for instant access.")
     },
     {
       number: "02", 
-      title: "Create Proofs",
-      description: "Generate stunning professional mockups that wow your customers every time."
+      title: t("Create Proofs"),
+      description: t("Generate stunning professional mockups that wow your customers every time.")
     },
     {
       number: "03",
-      title: "Get Approvals", 
-      description: "Streamline client feedback with automated approval workflows and notifications."
+      title: t("Get Approvals"), 
+      description: t("Streamline client feedback with automated approval workflows and notifications.")
     },
     {
       number: "04",
-      title: "Track Production",
-      description: "Monitor every aspect of your production pipeline from order to final delivery."
+      title: t("Track Production"),
+      description: t("Monitor every aspect of your production pipeline from order to final delivery.")
     }
   ];
 

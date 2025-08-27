@@ -10,6 +10,7 @@ import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "
 import { toast } from "@/hooks/use-toast";
 import { supabase } from "@/integrations/supabase/client";
 import { Loader2 } from "lucide-react";
+import { useLocalization } from "@/contexts/LocalizationContext";
 
 const contactFormSchema = z.object({
   name: z.string().min(1, "Name is required").min(2, "Name must be at least 2 characters"),
@@ -21,6 +22,7 @@ const contactFormSchema = z.object({
 type ContactFormData = z.infer<typeof contactFormSchema>;
 
 const ContactForm = () => {
+  const { t } = useLocalization();
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [lastSubmissionTime, setLastSubmissionTime] = useState<number>(0);
   const [cooldownRemaining, setCooldownRemaining] = useState(0);
@@ -45,8 +47,8 @@ const ContactForm = () => {
       const remaining = Math.ceil((cooldownPeriod - timeSinceLastSubmission) / 1000);
       setCooldownRemaining(remaining);
       toast({
-        title: "Please wait",
-        description: `You can submit another message in ${remaining} seconds.`,
+        title: t("Please wait"),
+        description: `${t("You can submit another message")} in ${remaining} seconds.`,
         variant: "destructive",
       });
       
@@ -83,24 +85,24 @@ const ContactForm = () => {
       if (error) {
         console.error('Error sending email:', error);
         toast({
-          title: "Error sending message",
-          description: `There was an issue sending your message: ${error.message}`,
+          title: t("Error sending message"),
+          description: `${t("There was an issue sending your message")}: ${error.message}`,
           variant: "destructive",
         });
       } else {
         console.log('Email sent successfully:', emailData);
         setLastSubmissionTime(now);
         toast({
-          title: "Message sent successfully!",
-          description: "We'll get back to you as soon as possible."
+          title: t("Message sent successfully!"),
+          description: t("We'll get back to you as soon as possible.")
         });
         form.reset();
       }
     } catch (error) {
       console.error('Error in onSubmit:', error);
       toast({
-        title: "Error sending message",
-        description: "There was an issue sending your message. Please try again.",
+        title: t("Error sending message"),
+        description: t("There was an issue sending your message. Please try again."),
         variant: "destructive",
       });
     } finally {
@@ -110,7 +112,7 @@ const ContactForm = () => {
 
   return (
     <div className="bg-zinc-900 p-8 rounded-lg border border-zinc-800 shadow-md">
-      <h2 className="text-2xl font-bold mb-6">Send us a message</h2>
+      <h2 className="text-2xl font-bold mb-6">{t("Send us a message")}</h2>
       <Form {...form}>
         <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">

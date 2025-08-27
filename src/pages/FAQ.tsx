@@ -7,6 +7,7 @@ import { Sparkles, HelpCircle, DollarSign, Settings, Globe } from "lucide-react"
 import { scrollToTop } from "@/utils/navigation";
 import PageSEO from "@/components/seo/PageSEO";
 import { faqSEO, faqBreadcrumb } from "@/data/seoData";
+import { useLocalization } from "@/contexts/LocalizationContext";
 
 interface FAQItem {
   question: string;
@@ -20,11 +21,12 @@ interface FAQSection {
 }
 
 const FAQ = () => {
+  const { t } = useLocalization();
   const [hoveredItem, setHoveredItem] = useState<string | null>(null);
 
   const faqSections: FAQSection[] = [
     {
-      title: "General Questions",
+      title: t("General Questions"),
       icon: <HelpCircle size={20} className="text-gold" />,
       faqs: [
         {
@@ -255,10 +257,10 @@ const FAQ = () => {
             </div>
             
             <h1 className="text-5xl md:text-6xl font-light text-white mb-6 leading-tight">
-              Frequently Asked Questions
+              {t("Frequently Asked Questions")}
             </h1>
             <p className="text-xl text-gray-300 max-w-2xl mx-auto font-light leading-relaxed">
-              Find answers to common questions about Tracker, our pricing, implementation, and support.
+              {t("Find answers to common questions about Tracker, our pricing, implementation, and support.")}
             </p>
           </motion.div>
         </div>

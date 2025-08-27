@@ -9,8 +9,10 @@ import StatsGrid from "./results/StatsGrid";
 import ResultsHeader from "./results/ResultsHeader";
 import { ScrollReveal } from "@/components/ui/scroll-reveal";
 import { scrollToTop } from "@/utils/navigation";
+import { useLocalization } from "@/contexts/LocalizationContext";
 
 const Results = () => {
+  const { t } = useLocalization();
   return (
     <section className="py-20 bg-gradient-to-br from-emerald-900/95 via-green-800/90 to-emerald-950/95 dark:from-emerald-900/80 dark:via-green-800/75 dark:to-emerald-950/80 light:from-emerald-900/95 light:via-green-800/90 light:to-emerald-950/95 relative overflow-hidden transition-colors duration-300">
       {/* Enhanced background elements with green theme */}
@@ -76,7 +78,7 @@ const Results = () => {
               className="bg-gradient-to-r from-emerald-500 to-green-400 hover:from-emerald-600 hover:to-green-500 text-white transform transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-emerald-500/20"
               onClick={scrollToTop}
             >
-              Read More Case Studies
+              {t("Read More Case Studies")}
             </Button>
           </Link>
         </div>
