@@ -83,15 +83,15 @@ const PricingPlans = () => {
                 </span>
               )}
             </Switch>
-            <div className="flex flex-col items-start">
+            <div className="flex flex-col items-start min-h-[2.5rem]">
               <span className={`text-sm ${billingCycle === 'annually' ? 'text-white' : 'text-gray-400'}`}>
                 {t("Annually")}
               </span>
-              {billingCycle === 'annually' && (
-              <span className="text-xs text-emerald-400 flex items-center gap-1">
+              <span className={`text-xs flex items-center gap-1 transition-opacity duration-300 ${
+                billingCycle === 'annually' ? 'opacity-100 text-emerald-400' : 'opacity-0 text-emerald-400'
+              }`}>
                 <Sparkles className="h-3 w-3" /> 2 months included
               </span>
-              )}
             </div>
           </div>
         </ScrollReveal>
