@@ -21,6 +21,23 @@ const DetailedPricingCard: React.FC<DetailedPricingCardProps> = ({
   const {
     locale
   } = useLocalization();
+
+  // Helper function to convert license pricing strings
+  const convertLicensePricing = (pricingString: string): string => {
+    if (!pricingString || pricingString.toLowerCase().includes('custom')) {
+      return pricingString;
+    }
+
+    // Extract numeric value from strings like "$99/month each"
+    const match = pricingString.match(/\$(\d+)/);
+    if (!match) return pricingString;
+
+    const usdPrice = parseInt(match[1]);
+    const convertedPrice = locale === 'UK' ? Math.round(usdPrice * 0.79) : usdPrice;
+    const currencySymbol = locale === 'UK' ? '£' : '$';
+    
+    return pricingString.replace(/\$\d+/, `${currencySymbol}${convertedPrice}`);
+  };
   const [showDetails, setShowDetails] = useState(false);
   const [showQuoteModal, setShowQuoteModal] = useState(false);
 
@@ -441,15 +458,15 @@ const DetailedPricingCard: React.FC<DetailedPricingCardProps> = ({
                 <div className="space-y-1 text-xs">
                   <div className="flex justify-between">
                     <span className="text-gray-400">Extra Full Users:</span>
-                    <span className="text-gray-300">{tier.licenses.full.additional}</span>
+                    <span className="text-gray-300">{convertLicensePricing(tier.licenses.full.additional)}</span>
                   </div>
                   <div className="flex justify-between">
                     <span className="text-gray-400">Extra Department:</span>
-                    <span className="text-gray-300">{tier.licenses.department.additional}</span>
+                    <span className="text-gray-300">{convertLicensePricing(tier.licenses.department.additional)}</span>
                   </div>
                   <div className="flex justify-between">
                     <span className="text-gray-400">Extra Station:</span>
-                    <span className="text-gray-300">{tier.licenses.station.additional}</span>
+                    <span className="text-gray-300">{convertLicensePricing(tier.licenses.station.additional)}</span>
                   </div>
                 </div>
               </div>
