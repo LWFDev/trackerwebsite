@@ -88,25 +88,32 @@ const Pricing = () => {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
           <PricingCard
             title={t("Starter")}
-            price="$29"
+            price="$799"
             features={[
-              t("Up to 5 team members"),
-              t("10GB storage"),
-              t("Basic analytics"),
-              t("24/7 support")
+              t("2 Full User Licenses"),
+              t("2 Department Licenses"), 
+              t("2 Station Licenses"),
+              t("25GB storage"),
+              t("Base Garments Module"),
+              t("Customer Database"),
+              t("Sales Order Management"),
+              t("Email support")
             ]}
             buttonText={t("Get started")}
           />
           
           <PricingCard
-            title={t("Professional")}
-            price="$79"
+            title={t("Decorator")}
+            price="$1,999"
             features={[
-              t("Up to 20 team members"),
-              t("50GB storage"),
-              t("Advanced analytics"),
-              t("Priority support"),
-              t("Custom integrations")
+              t("5 Full User Licenses"),
+              t("5 Department Licenses"),
+              t("5 Station Licenses"), 
+              t("100GB storage"),
+              t("Product Designer"),
+              t("Artwork Management"),
+              t("Analytics & Reporting"),
+              t("Priority support")
             ]}
             buttonText={t("Get started")}
             popular={true}
@@ -114,14 +121,16 @@ const Pricing = () => {
           
           <PricingCard
             title={t("Enterprise")}
-            price="$149"
+            price="Custom"
             features={[
-              t("Unlimited team members"),
+              t("Unlimited licenses"),
               t("Unlimited storage"),
-              t("Custom reporting"),
-              t("Dedicated support"),
-              t("Advanced security"),
-              t("Custom branding")
+              t("Multi-location support"),
+              t("Custom module development"), 
+              t("White-label options"),
+              t("24/7 priority support"),
+              t("Dedicated success manager"),
+              t("Custom SLA")
             ]}
             buttonText={t("Contact sales")}
           />

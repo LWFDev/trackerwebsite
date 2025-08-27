@@ -130,7 +130,10 @@ const DetailedPricingCard: React.FC<DetailedPricingCardProps> = ({
     }
   };
 
-  // Currency conversion with updated pricing structure
+  // Currency conversion rate (USD to GBP)
+  const USD_TO_GBP_RATE = 0.79;
+  
+  // Currency conversion with proper USD to GBP conversion
   const formatPricing = (price: number, isOnboarding: boolean = false) => {
     if (price === 0) return { current: "Custom", original: null };
     
@@ -138,26 +141,19 @@ const DetailedPricingCard: React.FC<DetailedPricingCardProps> = ({
     const dollarAmount = price / 100;
     
     if (locale === 'UK') {
-      // Custom UK pricing as specified
-      if (tier.name === 'Starter') {
-        if (isOnboarding) {
-          // Onboarding fee stays constant
-          return { current: `£${(1999).toLocaleString()}`, original: null };
+      // Convert USD to GBP using exchange rate
+      const gbpAmount = Math.round(dollarAmount * USD_TO_GBP_RATE);
+      
+      if (isOnboarding) {
+        // Onboarding fee stays constant
+        return { current: `£${gbpAmount.toLocaleString()}`, original: null };
+      } else {
+        // Show yearly total for annual, monthly for monthly
+        if (billingCycle === 'annually') {
+          const gbpTierPrice = Math.round((tier.tierPrice / 100) * USD_TO_GBP_RATE);
+          return { current: `£${gbpTierPrice.toLocaleString()}`, original: null };
         } else {
-          // Show yearly total for annual, monthly for monthly
-          return billingCycle === 'annually' 
-            ? { current: `£${(649 * 10 / 100).toLocaleString()}`, original: null }
-            : { current: `£${(649 / 100).toLocaleString()}`, original: null };
-        }
-      } else if (tier.name === 'Decorator') {
-        if (isOnboarding) {
-          // Onboarding fee stays constant
-          return { current: `£${(3599).toLocaleString()}`, original: null };
-        } else {
-          // Show yearly total for annual, monthly for monthly
-          return billingCycle === 'annually' 
-            ? { current: `£${(1599 * 10 / 100).toLocaleString()}`, original: null }
-            : { current: `£${(1599 / 100).toLocaleString()}`, original: null };
+          return { current: `£${gbpAmount.toLocaleString()}`, original: null };
         }
       }
     }
