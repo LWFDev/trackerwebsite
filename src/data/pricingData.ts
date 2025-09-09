@@ -52,17 +52,17 @@ export const pricingTiers: PricingTier[] = [
       full: {
         name: "Full User Licenses",
         included: 2,
-        additional: "$159/month each"
+        additional: "$212/month each"
       },
       department: {
         name: "Department Licenses",
         included: 2,
-        additional: "$99/month each"
+        additional: "$132/month each"
       },
       station: {
         name: "Station Licenses",
         included: 2,
-        additional: "$39/month each"
+        additional: "$52/month each"
       }
     },
     features: {
@@ -110,17 +110,17 @@ export const pricingTiers: PricingTier[] = [
       full: {
         name: "Full User Licenses",
         included: 5,
-        additional: "$149/month each"
+        additional: "$199/month each"
       },
       department: {
         name: "Department Licenses",
         included: 5,
-        additional: "$75/month each"
+        additional: "$100/month each"
       },
       station: {
         name: "Station Licenses",
         included: 5,
-        additional: "$35/month each"
+        additional: "$47/month each"
       }
     },
     features: {
