@@ -1,6 +1,7 @@
 import React, { useEffect, useRef } from 'react';
 import { Box, Factory } from 'lucide-react';
 import { useIsMobile } from '@/hooks/use-mobile';
+import { useReducedMotion } from '@/hooks/useReducedMotion';
 
 interface AnimatedBoxesDividerProps {
   className?: string;
@@ -9,15 +10,40 @@ interface AnimatedBoxesDividerProps {
 const AnimatedBoxesDivider = ({ className = "" }: AnimatedBoxesDividerProps) => {
   const boxContainerRef = useRef<HTMLDivElement>(null);
   const timeoutRefs = useRef<NodeJS.Timeout[]>([]);
+  const animationRefs = useRef<Animation[]>([]);
+  const isVisibleRef = useRef<boolean>(false);
   const isMobile = useIsMobile();
+  const prefersReducedMotion = useReducedMotion();
 
   useEffect(() => {
-    if (!boxContainerRef.current) return;
+    if (!boxContainerRef.current || prefersReducedMotion) return;
+
+    // Intersection Observer to only animate when visible (desktop optimization)
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        isVisibleRef.current = entry.isIntersecting;
+      },
+      { threshold: 0.1 }
+    );
+
+    if (boxContainerRef.current) {
+      observer.observe(boxContainerRef.current);
+    }
 
     const createBox = () => {
+      if (!boxContainerRef.current || !isVisibleRef.current) return;
+
       const boxElement = document.createElement('div');
-      boxElement.className = 'absolute top-1/2 transform -translate-y-1/2 box-production';
-      boxElement.style.filter = 'drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3))';
+      
+      // Use CSS custom properties instead of conflicting transforms
+      boxElement.className = 'absolute box-production';
+      boxElement.style.cssText = `
+        --box-y: -50%;
+        top: 50%;
+        transform: translateY(var(--box-y));
+        filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
+        will-change: transform;
+      `;
       
       const boxIcon = document.createElement('div');
       const boxSize = isMobile ? 20 : 32;
@@ -54,54 +80,95 @@ const AnimatedBoxesDivider = ({ className = "" }: AnimatedBoxesDividerProps) => 
       boxElement.appendChild(boxIcon);
       boxContainerRef.current?.appendChild(boxElement);
 
-      // Boxes move from left to production (right side)
+      // Calculate positions
       const startPosition = isMobile ? -60 - (Math.random() * 40) : -80 - (Math.random() * 60);
       const endPosition = isMobile ? window.innerWidth - 40 : window.innerWidth - 60;
-      
       const duration = isMobile ? 5000 + (Math.random() * 2000) : 7000 + (Math.random() * 3000);
       
-      boxElement.style.transform = `translateX(${startPosition}px) translateY(-50%)`;
-      
-      const animation = boxElement.animate(
-        [
-          { transform: `translateX(${startPosition}px) translateY(-50%)` },
-          { transform: `translateX(${endPosition}px) translateY(-50%)` }
-        ],
-        {
-          duration,
-          iterations: 1,
-          easing: 'linear',
-          fill: 'forwards'
-        }
-      );
-      
-      animation.onfinish = () => {
-        boxElement.remove();
-      };
+      // Use requestAnimationFrame for smoother initial positioning (desktop optimization)
+      requestAnimationFrame(() => {
+        if (!boxElement.parentElement) return;
+        
+        // Set initial position using CSS custom property to avoid transform conflicts
+        boxElement.style.setProperty('--box-x', `${startPosition}px`);
+        boxElement.style.transform = 'translateX(var(--box-x)) translateY(var(--box-y))';
+        
+        // Use Web Animations API for smooth movement
+        const animation = boxElement.animate(
+          [
+            { transform: `translateX(${startPosition}px) translateY(-50%)` },
+            { transform: `translateX(${endPosition}px) translateY(-50%)` }
+          ],
+          {
+            duration,
+            iterations: 1,
+            easing: 'linear',
+            fill: 'forwards'
+          }
+        );
+        
+        // Track animation for cleanup
+        animationRefs.current.push(animation);
+        
+        animation.onfinish = () => {
+          // Remove from tracking array
+          const index = animationRefs.current.indexOf(animation);
+          if (index > -1) {
+            animationRefs.current.splice(index, 1);
+          }
+          // Clean removal
+          if (boxElement.parentElement) {
+            boxElement.remove();
+          }
+        };
+      });
     };
 
     const spawnBox = (baseDelay: number, variance: number) => {
       const delay = baseDelay + (Math.random() * variance);
       const timeout = setTimeout(() => {
-        createBox();
+        if (isVisibleRef.current) {
+          createBox();
+        }
         spawnBox(baseDelay, variance);
       }, delay);
       
       timeoutRefs.current.push(timeout);
     };
 
+    // Desktop-specific timing optimization - longer initial delay to prevent load conflicts
+    const initialDelay = isMobile ? 400 : 800;
+    const spawnDelay = isMobile ? 1800 : 2000; // Slightly longer on desktop
+    const spawnVariance = isMobile ? 1200 : 1500;
+
     // Start spawning boxes heading to production
-    spawnBox(1800, 1200);  // Boxes every 1.8-3 seconds
+    spawnBox(spawnDelay, spawnVariance);
     
-    // Spawn initial box with slight delay
-    const initialTimeout = setTimeout(() => createBox(), 400);
+    // Spawn initial box with optimized delay
+    const initialTimeout = setTimeout(() => {
+      if (isVisibleRef.current) {
+        createBox();
+      }
+    }, initialDelay);
     timeoutRefs.current.push(initialTimeout);
     
     return () => {
+      // Cleanup all timeouts
       timeoutRefs.current.forEach(timeout => clearTimeout(timeout));
       timeoutRefs.current = [];
+      
+      // Cleanup all animations
+      animationRefs.current.forEach(animation => {
+        if (animation.playState !== 'finished') {
+          animation.cancel();
+        }
+      });
+      animationRefs.current = [];
+      
+      // Disconnect observer
+      observer.disconnect();
     };
-  }, [isMobile]);
+  }, [isMobile, prefersReducedMotion]);
 
   const height = isMobile ? 'h-12' : 'h-16';
 
