@@ -18,7 +18,7 @@ const ModulesSection = () => {
             Modular Solutions for <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-500 via-green-400 to-emerald-600">Every Need</span>
           </>
         }
-        description="Tracker offers a comprehensive suite of modules that can be combined to create the perfect solution for your business."
+        description="Tracker offers a comprehensive suite of modules that can be combined to create the perfect solution for your garment & garment decoration business."
       />
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
