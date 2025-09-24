@@ -26,8 +26,8 @@ export const HeroContent = () => {
       </div>
       
       <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight animate-fade-in">
-        {t("Digitize production, ")} <span className="text-gold-gradient">
-          {t("enable profit.")}
+        {t("The #1 Software Platform for ")} <span className="text-gold-gradient">
+          {t("Garment Decorators & Orders.")}
         </span>
       </h1>
       
