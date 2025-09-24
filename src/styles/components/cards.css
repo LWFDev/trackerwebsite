@@ -1,5 +1,4 @@
-@layer utilities {
-  /* CARD STYLES */
+/* CARD STYLES */
   
   /* Dark theme card styles */
   .dark-card {
@@ -10,4 +9,3 @@
   .light-card {
     @apply bg-white border border-gray-200 shadow-md hover:shadow-lg transition-all;
   }
-}

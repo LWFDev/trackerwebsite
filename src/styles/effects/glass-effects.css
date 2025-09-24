@@ -1,5 +1,4 @@
-@layer utilities {
-  /* GLASSMORPHISM EFFECTS */
+/* GLASSMORPHISM EFFECTS */
   
   .backdrop-blur {
     @apply backdrop-blur-sm bg-black/50;
@@ -22,4 +21,3 @@
   .btn-glow:hover {
     box-shadow: 0 0 20px 5px hsl(var(--gold) / 0.3);
   }
-}

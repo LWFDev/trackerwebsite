@@ -1,6 +1,5 @@
 
-@layer base {
-  /* Dark mode variables (default) */
+/* Dark mode variables (default) */
   :root {
     --background: 0 0% 9%;
     --foreground: 210 40% 98%;
@@ -76,4 +75,3 @@
     --input: 217 32.6% 17.5%;
     --ring: 41 74% 52%;
   }
-}

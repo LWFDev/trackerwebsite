@@ -1,5 +1,4 @@
-@layer utilities {
-  /* CENTRALIZED GOLD COLOR SYSTEM */
+/* CENTRALIZED GOLD COLOR SYSTEM */
   
   /* Text Colors */
   .text-gold {
@@ -275,4 +274,3 @@
   .gold-border {
     border-color: hsl(var(--gold));
   }
-}

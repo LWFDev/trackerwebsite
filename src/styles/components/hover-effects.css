@@ -1,5 +1,4 @@
-@layer utilities {
-  /* HOVER EFFECTS */
+/* HOVER EFFECTS */
   
   /* Text underline animation */
   .hover-underline {
@@ -18,4 +17,3 @@
   .hover-underline:hover::after {
     width: 100%;
   }
-}

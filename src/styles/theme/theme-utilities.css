@@ -1,5 +1,4 @@
-@layer utilities {
-  /* THEME-SPECIFIC UTILITIES */
+/* THEME-SPECIFIC UTILITIES */
   
   .theme-surface {
     @apply bg-white dark:bg-zinc-900;
@@ -24,4 +23,3 @@
   .theme-hover {
     @apply hover:bg-gray-100 dark:hover:bg-zinc-800;
   }
-}

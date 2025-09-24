@@ -1,5 +1,4 @@
-@layer utilities {
-  /* SHADOW EFFECTS */
+/* SHADOW EFFECTS */
   
   /* Gold Shadow Effects */
   .shadow-gold {
@@ -21,4 +20,3 @@
   .shadow-gold-glow {
     box-shadow: 0 0 20px 5px hsl(var(--gold) / 0.3);
   }
-}

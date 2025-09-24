@@ -1,5 +1,4 @@
-@layer utilities {
-  /* GOLD GRADIENTS */
+/* GOLD GRADIENTS */
   
   /* Background Gradients */
   .bg-gold-gradient {
@@ -72,4 +71,3 @@
     -webkit-text-fill-color: transparent;
     background-clip: text;
   }
-}
