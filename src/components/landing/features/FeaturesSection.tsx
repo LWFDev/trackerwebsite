@@ -13,7 +13,7 @@ const FeaturesSection = () => {
   return <>
       <SectionTitle label={t("Features")} title={<>
             {t("Everything Garment Decorators Need in ")} <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-500 via-green-400 to-emerald-600">{t("One Platform")}</span>
-          </>} description={t("TRACKER covers all of your key needs in one business platform")} />
+          </>} description={t("Tracker offers a comprehensive suite of modules that can be combined to create the perfect solution for your garment & garment decoration business.")} />
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
         <FeatureCard title={t("Streamlined Workflow")} description={t("A common intuitive place and streamline your workflow from sales ordering to fulfillment.")} delay={0.1} />
