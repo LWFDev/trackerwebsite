@@ -36,7 +36,7 @@ const FeaturesSection = () => {
               </div>
               
               <div className="max-w-xl">
-                <h3 className="text-2xl font-bold mb-4 text-white">{t("Advanced ")} <span className="text-emerald-400">{t("Management")}</span></h3>
+                <h3 className="text-2xl font-bold mb-4 text-white">{t("Advanced ")} <span className="text-emerald-400">{t("Logo Management")}</span></h3>
                 <p className="text-emerald-100">{t("Our platform will deliver logos directly to embroidery machines (Barudan/Tajima) using bNET or Pulse.  Sending images to screen burners or tablets next to heat seal to get orientations correct.  From orders to logos to proofs to production and fulfillment its all cloud based - you can access it from anywhere.")}</p>
               </div>
               
