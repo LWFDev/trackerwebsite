@@ -285,9 +285,6 @@ const usToUkTransformations: Record<string, string> = {
   "entire workflow": "entire workflow",
   "From initial designs to final delivery, Tracker helps you manage every step of your production process with": "From initial designs to final delivery, Tracker helps you manage every step of your production process with",
   "Find answers to common questions about Tracker, our pricing, implementation, and support.": "Find answers to common questions about Tracker, our pricing, implementation, and support.",
-  
-  // Footer
-  "© 2025 Little White Feather LTD & MebuisWorks. All Rights Reserved. WebApp and Website by MebuisWorks.com": "© 2025 Little White Feather Ltd.",
 };
 
 const transformText = (text: string, locale: Locale): string => {

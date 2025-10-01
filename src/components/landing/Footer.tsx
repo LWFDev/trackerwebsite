@@ -45,7 +45,7 @@ const Footer = () => {
         
         <div className="theme-border border-t pt-8">
           <div className="flex justify-center items-center">
-            <p className="text-sm">{t("© 2025 Little White Feather LTD & MebuisWorks. All Rights Reserved. WebApp and Website by MebuisWorks.com")}</p>
+            <p className="text-sm">© 2025 Little White Feather Ltd.</p>
           </div>
         </div>
       </div>

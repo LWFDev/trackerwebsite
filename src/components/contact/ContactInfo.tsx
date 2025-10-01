@@ -1,6 +1,6 @@
 
 import React from "react";
-import { Mail, Phone, MapPin, Clock, Award } from "lucide-react";
+import { Mail, Phone, MapPin, Clock } from "lucide-react";
 import { useLocalization } from "@/contexts/LocalizationContext";
 
 const ContactInfo = () => {
@@ -93,19 +93,6 @@ const ContactInfo = () => {
               <p className="text-gray-400">{contactDetails.hours.weekend}</p>
             </div>
           </div>
-          {locale === 'US' && (
-            <div className="flex items-start">
-              <div className="bg-zinc-800 p-3 rounded-md mr-4">
-                <Award className="h-5 w-5 text-gold" />
-              </div>
-              <div>
-                <h3 className="text-lg font-medium mb-1">{t("Distribution Partner")}</h3>
-                <p className="text-gray-400">
-                  <a href="https://mebuisworks.com" target="_blank" rel="noopener noreferrer" className="text-gold hover:text-gold-light transition-colors">MebuisWorks</a> is the Exclusive US Distributor
-                </p>
-              </div>
-            </div>
-          )}
           {locale === 'UK' && (
             <>
               <div className="flex items-start">
