@@ -96,12 +96,12 @@ export const pricingTiers: PricingTier[] = [
   },
   {
     name: "Decorator",
-    basePrice: 199900,
-    tierPrice: 1999000,
+    basePrice: 299900,
+    tierPrice: 2999000,
     onboardingFee: 450000,
     ukPricing: {
-      basePrice: 149900, // £1499
-      tierPrice: 1499000, // £14990
+      basePrice: 250000, // £2500
+      tierPrice: 2500000, // £25000
       onboardingFee: 350000, // £3500
     },
     description: "Ideal for growing decoration businesses with advanced needs",
