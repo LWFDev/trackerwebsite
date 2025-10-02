@@ -1,14 +1,15 @@
 import { SEOData, generateBreadcrumbSchema, generateFAQSchema } from '@/utils/seo';
+import { getCurrentOrigin } from '@/utils/domain';
 
 // Enterprise-grade SEO for the sitemap page
 export const sitemapSEO: SEOData = {
   title: "Complete Website Sitemap | TrackMyBusiness - Production Management Software Navigation",
   description: "Navigate TrackMyBusiness comprehensive sitemap featuring 60+ pages of enterprise production management software solutions for garment decoration, embroidery, screen printing, and apparel manufacturing businesses. Find all features, modules, case studies, and resources.",
   keywords: "website sitemap, production management sitemap, garment decoration pages, embroidery software navigation, screen printing resources, apparel manufacturing modules, business software directory, enterprise software sitemap, trackmy business pages",
-  canonical: "https://www.trackmybusiness.us/sitemap",
+  canonical: `${getCurrentOrigin()}/sitemap`,
   robots: "index,follow",
   ogType: "website",
-  ogImage: "https://www.trackmybusiness.us/assets/sitemap-og.png",
+  ogImage: `${getCurrentOrigin()}/assets/sitemap-og.png`,
   schema: [
     // WebSite Schema with Site Search
     {
@@ -16,11 +17,11 @@ export const sitemapSEO: SEOData = {
       "@type": "WebSite",
       "name": "TrackMyBusiness",
       "alternateName": "TrackMyBusiness Production Management Software",
-      "url": "https://www.trackmybusiness.us",
+      "url": getCurrentOrigin(),
       "description": "Enterprise production management software for garment decoration, apparel manufacturing, and custom embroidery businesses",
       "potentialAction": {
         "@type": "SearchAction",
-        "target": "https://www.trackmybusiness.us/search?q={search_term_string}",
+        "target": `${getCurrentOrigin()}/search?q={search_term_string}`,
         "query-input": "required name=search_term_string"
       }
     },
@@ -30,7 +31,7 @@ export const sitemapSEO: SEOData = {
       "@type": "CollectionPage",
       "name": "TrackMyBusiness Complete Sitemap",
       "description": "Comprehensive directory of all TrackMyBusiness production management software pages, modules, features, and resources",
-      "url": "https://www.trackmybusiness.us/sitemap",
+      "url": `${getCurrentOrigin()}/sitemap`,
       "mainEntity": {
         "@type": "ItemList",
         "numberOfItems": "60",
@@ -38,19 +39,19 @@ export const sitemapSEO: SEOData = {
           {
             "@type": "SiteNavigationElement",
             "name": "Production Management Modules",
-            "url": "https://www.trackmybusiness.us/modules",
+            "url": `${getCurrentOrigin()}/modules`,
             "description": "Complete suite of production management modules for garment decoration businesses"
           },
           {
             "@type": "SiteNavigationElement", 
             "name": "Industry Solutions",
-            "url": "https://www.trackmybusiness.us/industries",
+            "url": `${getCurrentOrigin()}/industries`,
             "description": "Specialized solutions for embroidery, screen printing, apparel manufacturing, and more"
           },
           {
             "@type": "SiteNavigationElement",
             "name": "Case Studies & Results",
-            "url": "https://www.trackmybusiness.us/case-studies", 
+            "url": `${getCurrentOrigin()}/case-studies`, 
             "description": "Real customer success stories and ROI results from production management implementations"
           }
         ]
@@ -61,8 +62,8 @@ export const sitemapSEO: SEOData = {
 
 // Sitemap breadcrumb schema
 export const sitemapBreadcrumb = generateBreadcrumbSchema([
-  { name: "Home", url: "https://www.trackmybusiness.us/" },
-  { name: "Sitemap", url: "https://www.trackmybusiness.us/sitemap" }
+  { name: "Home", url: `${getCurrentOrigin()}/` },
+  { name: "Sitemap", url: `${getCurrentOrigin()}/sitemap` }
 ]);
 
 // Sitemap FAQ Schema for enterprise SEO

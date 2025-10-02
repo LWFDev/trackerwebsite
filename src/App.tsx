@@ -9,6 +9,7 @@ import PageTransition from "./components/transitions/PageTransition";
 import Layout from "./components/layout/Layout";
 import { ThemeProvider } from "./contexts/ThemeContext";
 import { LocalizationProvider } from "./contexts/LocalizationContext";
+import { DomainProvider } from "./contexts/DomainContext";
 import ScrollAnimationInit from "./components/ui/scroll-animation-init";
 import SiteVerification from "@/components/seo/SiteVerification";
 import Analytics from "@/components/seo/Analytics";
@@ -85,13 +86,14 @@ const App = () => {
   return (
     <QueryClientProvider client={queryClient}>
       <ThemeProvider>
-        <LocalizationProvider>
-          <TooltipProvider>
-            <BrowserRouter>
-              <ScrollAnimationInit />
-              <SiteVerification />
-              <Analytics />
-              <PageTransition>
+        <DomainProvider>
+          <LocalizationProvider>
+            <TooltipProvider>
+              <BrowserRouter>
+                <ScrollAnimationInit />
+                <SiteVerification />
+                <Analytics />
+                <PageTransition>
                 <Suspense fallback={<PageLoader />}>
                   <Routes>
                     {/* Main Routes */}
@@ -171,6 +173,7 @@ const App = () => {
             </BrowserRouter>
           </TooltipProvider>
         </LocalizationProvider>
+      </DomainProvider>
       </ThemeProvider>
     </QueryClientProvider>
   );

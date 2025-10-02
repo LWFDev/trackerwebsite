@@ -1,6 +1,8 @@
+import { getDomainUrl } from '@/utils/domain';
+
 export const SEO_CONFIG = {
   // Domain and Site Info
-  siteUrl: "https://www.trackmybusiness.us",
+  siteUrl: getDomainUrl(), // Dynamic domain based on current site
   siteName: "TrackMyBusiness",
   
   // Analytics

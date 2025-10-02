@@ -1,3 +1,5 @@
+import { getCurrentOrigin } from './domain';
+
 export interface HreflangAlternate { hrefLang: string; href: string; }
 export interface PaginationLinks { prev?: string; next?: string; }
 
@@ -18,8 +20,8 @@ export const defaultSEO: SEOData = {
   title: "TrackMyBusiness - Enterprise Production Management Software | Garment Decoration Platform",
   description: "The leading end-to-end production management software for garment decoration, apparel manufacturing, and custom embroidery businesses. Automate order handling, manage inventory, and optimize production workflow instantly.",
   keywords: "production management software, garment decoration software, apparel manufacturing system, embroidery business software, screen printing management, custom apparel production, automated production scheduling, enterprise software",
-  ogImage: "https://www.trackmybusiness.us/assets/og-image.png",
-  canonical: "https://www.trackmybusiness.us/",
+  ogImage: `${getCurrentOrigin()}/assets/og-image.png`,
+  canonical: `${getCurrentOrigin()}/`,
   robots: "index,follow",
   ogType: "website"
 };
@@ -30,8 +32,8 @@ export const organizationSchema = {
   "name": "TrackMyBusiness",
   "alternateName": "TrackMyBusiness Production Management",
   "description": "Enterprise production management software for garment decoration, apparel manufacturing, and custom embroidery businesses",
-  "url": "https://www.trackmybusiness.us",
-  "logo": "https://www.trackmybusiness.us/assets/logo.png",
+  "url": getCurrentOrigin(),
+  "logo": `${getCurrentOrigin()}/assets/logo.png`,
   "foundingDate": "2020",
   "numberOfEmployees": "50-100",
   "industry": "Software Development",

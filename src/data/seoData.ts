@@ -1,21 +1,22 @@
 import { SEOData, generateBreadcrumbSchema, generateProductSchema, generateFAQSchema } from '@/utils/seo';
+import { getCurrentOrigin } from '@/utils/domain';
 
 // Home page SEO
 export const homeSEO: SEOData = {
   title: "Production Management Software | TrackMyBusiness - Enterprise Garment Decoration Platform",
   description: "The leading end-to-end production management software for garment decoration, apparel manufacturing, and custom embroidery businesses. Automate order handling, manage inventory, and optimize production workflow instantly with enterprise-grade features.",
   keywords: "production management software, garment decoration software, apparel manufacturing system, embroidery business software, screen printing management, custom apparel production, automated production scheduling, enterprise software",
-  canonical: "https://www.trackmybusiness.us/",
+  canonical: `${getCurrentOrigin()}/`,
   schema: {
     "@context": "https://schema.org",
     "@type": "WebSite",
     "name": "TrackMyBusiness",
     "alternateName": "TrackMyBusiness Production Management Software",
     "description": "Enterprise production management software for garment decoration, apparel manufacturing, and custom embroidery businesses",
-    "url": "https://www.trackmybusiness.us",
+    "url": getCurrentOrigin(),
     "potentialAction": {
       "@type": "SearchAction",
-      "target": "https://www.trackmybusiness.us/search?q={search_term_string}",
+      "target": `${getCurrentOrigin()}/search?q={search_term_string}`,
       "query-input": "required name=search_term_string"
     }
   }
@@ -26,7 +27,7 @@ export const pricingSEO: SEOData = {
   title: "Pricing Plans - Affordable Production Management Software for Garment Decoration",
   description: "Choose the perfect TrackMyBusiness plan for your garment decoration business. Enterprise-grade features with flexible pricing for small shops to large manufacturers. Get started today with our comprehensive production management platform.",
   keywords: "production management software pricing, garment decoration software cost, apparel manufacturing software plans, embroidery business software pricing, enterprise production software, screen printing management pricing",
-  canonical: "https://www.trackmybusiness.us/pricing",
+  canonical: `${getCurrentOrigin()}/pricing`,
   schema: generateProductSchema({
     name: "TrackMyBusiness Production Management Software",
     description: "Complete enterprise production management solution for garment decoration businesses with integrated modules for sales, production, inventory, and customer management",
@@ -45,7 +46,7 @@ export const aboutSEO: SEOData = {
   title: "About Us - Leading Production Management Software Company",
   description: "Learn about TrackMyBusiness, the innovative company behind the leading production management software for garment decoration and apparel manufacturing industries.",
   keywords: "trackmybusiness company, production management software company, garment decoration software developers, apparel manufacturing technology, enterprise software provider",
-  canonical: "https://www.trackmybusiness.us/about"
+  canonical: `${getCurrentOrigin()}/about`
 };
 
 // Contact page SEO
@@ -53,7 +54,7 @@ export const contactSEO: SEOData = {
   title: "Contact Us - Get Support for Production Management Software",
   description: "Get in touch with TrackMyBusiness for sales, support, or questions about our production management software. Expert support for your garment decoration business.",
   keywords: "trackmybusiness contact, production management software support, garment decoration software help, customer service, enterprise support",
-  canonical: "https://www.trackmybusiness.us/contact"
+  canonical: `${getCurrentOrigin()}/contact`
 };
 
 // Industries SEO data
@@ -61,7 +62,7 @@ export const industriesSEO: SEOData = {
   title: "Industries We Serve - Production Management Software Solutions",
   description: "Discover how TrackMyBusiness serves various industries including apparel manufacturing, embroidery, screen printing, promotional products, and custom decoration businesses.",
   keywords: "apparel manufacturing software, embroidery business software, screen printing management, promotional products software, custom decoration software, enterprise solutions",
-  canonical: "https://www.trackmybusiness.us/industries"
+  canonical: `${getCurrentOrigin()}/industries`
 };
 
 // Modules SEO data
@@ -69,7 +70,7 @@ export const modulesSEO: SEOData = {
   title: "Software Modules - Complete Production Management Features",
   description: "Explore all modules of TrackMyBusiness including inventory management, order processing, production scheduling, customer management, and more.",
   keywords: "production management modules, inventory management software, order processing system, production scheduling software, customer management system, enterprise modules",
-  canonical: "https://www.trackmybusiness.us/modules"
+  canonical: `${getCurrentOrigin()}/modules`
 };
 
 // Blog SEO data
@@ -77,7 +78,7 @@ export const blogSEO: SEOData = {
   title: "Production Management Blog - Industry Insights & Best Practices",
   description: "Stay updated with the latest trends, tips, and best practices in production management, garment decoration, and apparel manufacturing industry.",
   keywords: "production management blog, garment decoration tips, apparel manufacturing insights, embroidery business advice, industry trends",
-  canonical: "https://www.trackmybusiness.us/blog"
+  canonical: `${getCurrentOrigin()}/blog`
 };
 
 // Documentation SEO data
@@ -85,7 +86,7 @@ export const docsSEO: SEOData = {
   title: "Documentation - TrackMyBusiness User Guide & API Reference",
   description: "Complete documentation for TrackMyBusiness production management software including user guides, API reference, and integration tutorials.",
   keywords: "trackmybusiness documentation, production management software guide, API documentation, user manual, enterprise documentation",
-  canonical: "https://www.trackmybusiness.us/documentation"
+  canonical: `${getCurrentOrigin()}/documentation`
 };
 
 // Support SEO data
@@ -93,7 +94,7 @@ export const supportSEO: SEOData = {
   title: "Support Center - Help & Resources for Production Management Software",
   description: "Get help with TrackMyBusiness production management software. Access FAQs, tutorials, and contact our support team for assistance.",
   keywords: "trackmybusiness support, production management software help, customer support, technical assistance, enterprise support",
-  canonical: "https://www.trackmybusiness.us/support"
+  canonical: `${getCurrentOrigin()}/support`
 };
 
 // FAQ Schema for support page
@@ -126,19 +127,19 @@ export const industryPagesSEO = {
     title: "Apparel Manufacturing Software - Production Management Solutions",
     description: "Streamline your apparel manufacturing operations with TrackMyBusiness. Manage orders, inventory, production schedules, and quality control in one platform.",
     keywords: "apparel manufacturing software, clothing production management, garment manufacturing system, textile production software",
-    canonical: "https://www.trackmybusiness.us/industries/apparel-manufacturing"
+    canonical: `${getCurrentOrigin()}/industries/apparel-manufacturing`
   },
   'embroidery': {
     title: "Embroidery Business Software - Complete Shop Management System",
     description: "Manage your embroidery business efficiently with TrackMyBusiness. Handle orders, designs, production scheduling, and customer management seamlessly.",
     keywords: "embroidery business software, embroidery shop management, custom embroidery software, digitizing business software",
-    canonical: "https://www.trackmybusiness.us/industries/embroidery"
+    canonical: `${getCurrentOrigin()}/industries/embroidery`
   },
   'screen-printing': {
     title: "Screen Printing Software - Shop Management & Production Control",
     description: "Optimize your screen printing operations with TrackMyBusiness. Manage orders, ink inventory, production schedules, and customer communications efficiently.",
     keywords: "screen printing software, screen print shop management, custom printing software, silk screen business software",
-    canonical: "https://www.trackmybusiness.us/industries/screen-printing"
+    canonical: `${getCurrentOrigin()}/industries/screen-printing`
   }
 };
 
@@ -147,77 +148,77 @@ export const generateModuleSEO = (moduleName: string, description: string, keywo
   title: `${moduleName} Module - Production Management Software Feature`,
   description: `${description} Part of TrackMyBusiness comprehensive production management platform for garment decoration businesses.`,
   keywords: `${keywords}, production management software, garment decoration software`,
-  canonical: `https://www.trackmybusiness.us/modules/${moduleName.toLowerCase().replace(/\s+/g, '-')}`
+  canonical: `${getCurrentOrigin()}/modules/${moduleName.toLowerCase().replace(/\s+/g, '-')}`
 });
 
 // Breadcrumb schemas for different page types
 export const homeBreadcrumb = generateBreadcrumbSchema([
-  { name: "Home", url: "https://www.trackmybusiness.us/" }
+  { name: "Home", url: `${getCurrentOrigin()}/` }
 ]);
 
 export const pricingBreadcrumb = generateBreadcrumbSchema([
-  { name: "Home", url: "https://www.trackmybusiness.us/" },
-  { name: "Pricing", url: "https://www.trackmybusiness.us/pricing" }
+  { name: "Home", url: `${getCurrentOrigin()}/` },
+  { name: "Pricing", url: `${getCurrentOrigin()}/pricing` }
 ]);
 
 export const aboutBreadcrumb = generateBreadcrumbSchema([
-  { name: "Home", url: "https://www.trackmybusiness.us/" },
-  { name: "About", url: "https://www.trackmybusiness.us/about" }
+  { name: "Home", url: `${getCurrentOrigin()}/` },
+  { name: "About", url: `${getCurrentOrigin()}/about` }
 ]);
 
 export const contactBreadcrumb = generateBreadcrumbSchema([
-  { name: "Home", url: "https://www.trackmybusiness.us/" },
-  { name: "Contact", url: "https://www.trackmybusiness.us/contact" }
+  { name: "Home", url: `${getCurrentOrigin()}/` },
+  { name: "Contact", url: `${getCurrentOrigin()}/contact` }
 ]);
 
 export const blogBreadcrumb = generateBreadcrumbSchema([
-  { name: "Home", url: "https://www.trackmybusiness.us/" },
-  { name: "Blog", url: "https://www.trackmybusiness.us/blog" }
+  { name: "Home", url: `${getCurrentOrigin()}/` },
+  { name: "Blog", url: `${getCurrentOrigin()}/blog` }
 ]);
 
 export const docsBreadcrumb = generateBreadcrumbSchema([
-  { name: "Home", url: "https://www.trackmybusiness.us/" },
-  { name: "Documentation", url: "https://www.trackmybusiness.us/documentation" }
+  { name: "Home", url: `${getCurrentOrigin()}/` },
+  { name: "Documentation", url: `${getCurrentOrigin()}/documentation` }
 ]);
 
 export const supportBreadcrumb = generateBreadcrumbSchema([
-  { name: "Home", url: "https://www.trackmybusiness.us/" },
-  { name: "Support", url: "https://www.trackmybusiness.us/support" }
+  { name: "Home", url: `${getCurrentOrigin()}/` },
+  { name: "Support", url: `${getCurrentOrigin()}/support` }
 ]);
 
 export const industriesBreadcrumb = generateBreadcrumbSchema([
-  { name: "Home", url: "https://www.trackmybusiness.us/" },
-  { name: "Industries", url: "https://www.trackmybusiness.us/industries" }
+  { name: "Home", url: `${getCurrentOrigin()}/` },
+  { name: "Industries", url: `${getCurrentOrigin()}/industries` }
 ]);
 
 export const modulesBreadcrumb = generateBreadcrumbSchema([
-  { name: "Home", url: "https://www.trackmybusiness.us/" },
-  { name: "Modules", url: "https://www.trackmybusiness.us/modules" }
+  { name: "Home", url: `${getCurrentOrigin()}/` },
+  { name: "Modules", url: `${getCurrentOrigin()}/modules` }
 ]);
 
 export const caseStudiesBreadcrumb = generateBreadcrumbSchema([
-  { name: "Home", url: "https://www.trackmybusiness.us/" },
-  { name: "Case Studies", url: "https://www.trackmybusiness.us/case-studies" }
+  { name: "Home", url: `${getCurrentOrigin()}/` },
+  { name: "Case Studies", url: `${getCurrentOrigin()}/case-studies` }
 ]);
 
 export const faqBreadcrumb = generateBreadcrumbSchema([
-  { name: "Home", url: "https://www.trackmybusiness.us/" },
-  { name: "FAQ", url: "https://www.trackmybusiness.us/faq" }
+  { name: "Home", url: `${getCurrentOrigin()}/` },
+  { name: "FAQ", url: `${getCurrentOrigin()}/faq` }
 ]);
 
 export const getStartedBreadcrumb = generateBreadcrumbSchema([
-  { name: "Home", url: "https://www.trackmybusiness.us/" },
-  { name: "Get Started", url: "https://www.trackmybusiness.us/get-started" }
+  { name: "Home", url: `${getCurrentOrigin()}/` },
+  { name: "Get Started", url: `${getCurrentOrigin()}/get-started` }
 ]);
 
 export const termsBreadcrumb = generateBreadcrumbSchema([
-  { name: "Home", url: "https://www.trackmybusiness.us/" },
-  { name: "Terms of Service", url: "https://www.trackmybusiness.us/terms" }
+  { name: "Home", url: `${getCurrentOrigin()}/` },
+  { name: "Terms of Service", url: `${getCurrentOrigin()}/terms` }
 ]);
 
 export const privacyBreadcrumb = generateBreadcrumbSchema([
-  { name: "Home", url: "https://www.trackmybusiness.us/" },
-  { name: "Privacy Policy", url: "https://www.trackmybusiness.us/privacy" }
+  { name: "Home", url: `${getCurrentOrigin()}/` },
+  { name: "Privacy Policy", url: `${getCurrentOrigin()}/privacy` }
 ]);
 
 // Additional page SEO
@@ -225,33 +226,33 @@ export const caseStudiesSEO: SEOData = {
   title: "Case Studies - Real Results with TrackMyBusiness Production Management",
   description: "See how businesses transformed operations with TrackMyBusiness production management platform across embroidery, screen printing, and apparel manufacturing industries.",
   keywords: "trackmybusiness case studies, production management results, embroidery software success, screen printing ROI, enterprise software results",
-  canonical: "https://www.trackmybusiness.us/case-studies"
+  canonical: `${getCurrentOrigin()}/case-studies`
 };
 
 export const faqSEO: SEOData = {
   title: "FAQ - Answers About TrackMyBusiness Production Management Software",
   description: "Find answers to common questions about TrackMyBusiness pricing, implementation, integrations, and enterprise support services.",
   keywords: "trackmybusiness faq, production management faq, garment decoration software questions, enterprise software support",
-  canonical: "https://www.trackmybusiness.us/faq"
+  canonical: `${getCurrentOrigin()}/faq`
 };
 
 export const getStartedSEO: SEOData = {
   title: "Get Started - Onboarding with TrackMyBusiness Production Management",
   description: "Kick off your TrackMyBusiness onboarding process. Answer a few questions and our team will tailor your implementation for maximum efficiency.",
   keywords: "trackmybusiness onboarding, get started, implementation questionnaire, production management setup",
-  canonical: "https://www.trackmybusiness.us/get-started"
+  canonical: `${getCurrentOrigin()}/get-started`
 };
 
 export const termsSEO: SEOData = {
   title: "Terms of Service - TrackMyBusiness Legal Terms",
   description: "Read the legal terms governing the use of TrackMyBusiness production management software and enterprise services.",
   keywords: "trackmybusiness terms of service, software terms, legal terms, enterprise agreement",
-  canonical: "https://www.trackmybusiness.us/terms"
+  canonical: `${getCurrentOrigin()}/terms`
 };
 
 export const privacySEO: SEOData = {
   title: "Privacy Policy - TrackMyBusiness Data Protection",
   description: "Learn how TrackMyBusiness collects, uses, and protects your business data in compliance with privacy regulations and enterprise security standards.",
   keywords: "trackmybusiness privacy policy, data protection, GDPR, enterprise security, business data privacy",
-  canonical: "https://www.trackmybusiness.us/privacy"
+  canonical: `${getCurrentOrigin()}/privacy`
 };
