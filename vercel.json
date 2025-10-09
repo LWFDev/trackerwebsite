@@ -1,41 +1,68 @@
 {
+  "version": 2,
+  "buildCommand": "npm run build",
+  "outputDirectory": "dist",
+  "framework": null,
+  "installCommand": "npm install",
   "cleanUrls": true,
   "trailingSlash": false,
-  "routes": [
+  "headers": [
     {
-      "src": "/sitemap\\.xml",
-      "dest": "/sitemap.xml",
-      "headers": {
-        "Content-Type": "application/xml; charset=utf-8",
-        "Cache-Control": "public, max-age=3600"
-      }
+      "source": "/sitemap*.xml",
+      "headers": [
+        {
+          "key": "Content-Type",
+          "value": "application/xml; charset=utf-8"
+        },
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=3600, s-maxage=3600"
+        }
+      ]
     },
     {
-      "src": "/robots\\.txt",
-      "dest": "/robots.txt",
-      "headers": {
-        "Content-Type": "text/plain; charset=utf-8"
-      }
+      "source": "/robots.txt",
+      "headers": [
+        {
+          "key": "Content-Type",
+          "value": "text/plain; charset=utf-8"
+        }
+      ]
     },
     {
-      "src": "/sitemap-([^/]+)\\.xml",
-      "dest": "/sitemap-$1.xml",
-      "headers": {
-        "Content-Type": "application/xml; charset=utf-8",
-        "Cache-Control": "public, max-age=3600"
-      }
+      "source": "/(.*)",
+      "headers": [
+        {
+          "key": "X-Content-Type-Options",
+          "value": "nosniff"
+        },
+        {
+          "key": "X-Frame-Options",
+          "value": "DENY"
+        },
+        {
+          "key": "X-XSS-Protection",
+          "value": "1; mode=block"
+        }
+      ]
+    }
+  ],
+  "rewrites": [
+    {
+      "source": "/sitemap.xml",
+      "destination": "/sitemap.xml"
     },
     {
-      "src": "/assets/(.*)",
-      "dest": "/assets/$1"
+      "source": "/robots.txt",
+      "destination": "/robots.txt"
     },
     {
-      "src": "/lovable-uploads/(.*)",
-      "dest": "/lovable-uploads/$1"
+      "source": "/sitemap-:segment.xml",
+      "destination": "/sitemap-:segment.xml"
     },
     {
-      "src": "/(.*)",
-      "dest": "/index.html"
+      "source": "/((?!api/).*)",
+      "destination": "/index.html"
     }
   ]
 }

@@ -6,6 +6,7 @@ import { staticFileServerPlugin } from "./vite-plugins/staticFileServer";
 
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => ({
+  base: '/',
   server: {
     host: "::",
     port: 8080,
@@ -27,9 +28,18 @@ export default defineConfig(({ mode }) => ({
   publicDir: 'public',
   assetsInclude: ['**/*.xml'],
   build: {
+    outDir: 'dist',
+    assetsDir: 'assets',
+    emptyOutDir: true,
+    sourcemap: false,
     rollupOptions: {
       input: {
         main: path.resolve(__dirname, 'index.html'),
+      },
+      output: {
+        manualChunks: {
+          'react-vendor': ['react', 'react-dom', 'react-router-dom'],
+        }
       }
     }
   }
