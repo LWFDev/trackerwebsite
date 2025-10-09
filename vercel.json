@@ -5,15 +5,15 @@
       "destination": "/sitemap.xml"
     },
     {
-      "source": "/robots.txt", 
+      "source": "/robots.txt",
       "destination": "/robots.txt"
     },
     {
-      "source": "/sitemap-*.xml",
-      "destination": "/sitemap-$1.xml"
+      "source": "/sitemap-:path*.xml",
+      "destination": "/sitemap-:path*.xml"
     },
     {
-      "source": "/(.*)",
+      "source": "/:path*",
       "destination": "/index.html"
     }
   ],
@@ -26,7 +26,7 @@
           "value": "application/xml; charset=utf-8"
         },
         {
-          "key": "Cache-Control", 
+          "key": "Cache-Control",
           "value": "public, max-age=3600"
         }
       ]
