@@ -1,4 +1,5 @@
 import React, { createContext, useContext, useState, useEffect, ReactNode } from 'react';
+import { getCurrentDomain } from '@/utils/domain';
 
 export type Locale = 'US' | 'UK';
 
@@ -326,16 +327,29 @@ interface LocalizationProviderProps {
 export const LocalizationProvider: React.FC<LocalizationProviderProps> = ({ children }) => {
   const [locale, setLocaleState] = useState<Locale>('US');
 
-  // Load locale from localStorage on mount
+  // Load locale from localStorage on mount, or detect from domain
   useEffect(() => {
+    // First priority: Check if user has explicitly saved a preference
     const savedLocale = localStorage.getItem('locale') as Locale;
+    
     if (savedLocale && (savedLocale === 'US' || savedLocale === 'UK')) {
+      // User has explicitly chosen - respect their choice
       setLocaleState(savedLocale);
     } else {
-      // Try to detect from browser locale
-      const browserLocale = navigator.language;
-      if (browserLocale.startsWith('en-GB') || browserLocale.startsWith('en-AU') || browserLocale.startsWith('en-NZ')) {
+      // Second priority: Detect from domain
+      const currentDomain = getCurrentDomain(); // 'us' or 'com'
+      
+      if (currentDomain === 'com') {
+        // .com domain defaults to UK locale
         setLocaleState('UK');
+      } else {
+        // .us domain - check browser locale as fallback
+        const browserLocale = navigator.language;
+        if (browserLocale.startsWith('en-GB') || browserLocale.startsWith('en-AU') || browserLocale.startsWith('en-NZ')) {
+          setLocaleState('UK');
+        } else {
+          setLocaleState('US');
+        }
       }
     }
   }, []);
