@@ -1,5 +1,5 @@
-
-import React from 'react';
+import React, { useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { ScrollReveal } from '@/components/ui/scroll-reveal';
 import { Scale, FileText } from 'lucide-react';
@@ -9,6 +9,21 @@ import { termsSEO, termsBreadcrumb } from "@/data/seoData";
 
 const TermsOfService = () => {
   const { t } = useLocalization();
+  const location = useLocation();
+
+  // Handle hash scrolling for anchor links
+  useEffect(() => {
+    if (location.hash) {
+      const timer = setTimeout(() => {
+        const elementId = location.hash.replace('#', '');
+        const element = document.getElementById(elementId);
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      }, 100);
+      return () => clearTimeout(timer);
+    }
+  }, [location.hash]);
 
   const sections = [
     { id: 'application', title: t('1. Application of Terms') },
