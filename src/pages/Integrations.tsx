@@ -9,7 +9,7 @@ const integrations = [
     id: "shopify",
     name: "Shopify",
     description: "Sync orders, inventory, and products with your Shopify store in real-time.",
-    image: "/lovable-uploads/a061c746-21cc-421c-8f26-239f553bcf06.png",
+    image: "/lovable-uploads/shopify-logo.png",
     bgColor: "bg-gradient-to-br from-green-500/20 to-green-600/30",
     category: "E-commerce"
   },
@@ -17,7 +17,7 @@ const integrations = [
     id: "woocommerce",
     name: "WooCommerce",
     description: "Connect your WooCommerce store for seamless order management.",
-    image: "/lovable-uploads/c25b44a2-426c-4f30-9e20-b4cf6ae40e2e.png",
+    image: "/lovable-uploads/woocommerce-logo.png",
     bgColor: "bg-gradient-to-br from-purple-500/20 to-purple-600/30",
     category: "E-commerce"
   },
@@ -25,7 +25,7 @@ const integrations = [
     id: "shipstation",
     name: "ShipStation",
     description: "Automate your shipping workflow with ShipStation integration.",
-    image: "/lovable-uploads/70e89c9a-2a2a-47bf-84af-d0d6cecca1e3.png",
+    image: "/lovable-uploads/shipstation-logo.png",
     bgColor: "bg-gradient-to-br from-blue-500/20 to-blue-600/30",
     category: "Shipping"
   },
@@ -33,7 +33,7 @@ const integrations = [
     id: "alphabroder",
     name: "Alphabroder",
     description: "Access real-time inventory and pricing from Alphabroder.",
-    image: "/lovable-uploads/43dfb005-d4c4-43ef-846a-545265bad44a.png",
+    image: "/lovable-uploads/alphabroder-logo.png",
     bgColor: "bg-gradient-to-br from-orange-500/20 to-orange-600/30",
     category: "Suppliers"
   },
@@ -41,7 +41,7 @@ const integrations = [
     id: "sanmar",
     name: "SanMar",
     description: "Sync inventory, pricing, and product data with SanMar.",
-    image: "/lovable-uploads/e4f4a469-9951-418c-b168-1634003acc41.png",
+    image: "/lovable-uploads/sanmar-logo.png",
     bgColor: "bg-gradient-to-br from-amber-500/20 to-amber-600/30",
     category: "Suppliers"
   }

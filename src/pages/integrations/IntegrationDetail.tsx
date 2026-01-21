@@ -19,7 +19,7 @@ const integrationData: Record<string, {
     name: "Shopify",
     tagline: "Sync your Shopify store with Tracker",
     description: "Connect your Shopify store to automatically sync orders, inventory, and customer data. Streamline your workflow and eliminate manual data entry.",
-    image: "/lovable-uploads/a061c746-21cc-421c-8f26-239f553bcf06.png",
+    image: "/lovable-uploads/shopify-logo.png",
     bgColor: "bg-gradient-to-br from-green-500/20 to-green-600/30",
     category: "E-commerce",
     features: [
@@ -41,7 +41,7 @@ const integrationData: Record<string, {
     name: "WooCommerce",
     tagline: "Connect your WooCommerce store",
     description: "Integrate your WordPress WooCommerce store with Tracker for seamless order management and inventory synchronization.",
-    image: "/lovable-uploads/c25b44a2-426c-4f30-9e20-b4cf6ae40e2e.png",
+    image: "/lovable-uploads/woocommerce-logo.png",
     bgColor: "bg-gradient-to-br from-purple-500/20 to-purple-600/30",
     category: "E-commerce",
     features: [
@@ -63,7 +63,7 @@ const integrationData: Record<string, {
     name: "ShipStation",
     tagline: "Automate your shipping workflow",
     description: "Connect ShipStation to streamline your shipping process. Import orders, print labels, and track shipments all from one place.",
-    image: "/lovable-uploads/70e89c9a-2a2a-47bf-84af-d0d6cecca1e3.png",
+    image: "/lovable-uploads/shipstation-logo.png",
     bgColor: "bg-gradient-to-br from-blue-500/20 to-blue-600/30",
     category: "Shipping",
     features: [
@@ -85,7 +85,7 @@ const integrationData: Record<string, {
     name: "Alphabroder",
     tagline: "Access real-time supplier data",
     description: "Connect with Alphabroder for live inventory checks, pricing, and seamless purchase order creation.",
-    image: "/lovable-uploads/43dfb005-d4c4-43ef-846a-545265bad44a.png",
+    image: "/lovable-uploads/alphabroder-logo.png",
     bgColor: "bg-gradient-to-br from-orange-500/20 to-orange-600/30",
     category: "Suppliers",
     features: [
@@ -107,7 +107,7 @@ const integrationData: Record<string, {
     name: "SanMar",
     tagline: "Connect with SanMar supplier network",
     description: "Integrate with SanMar for inventory availability, product data, and streamlined ordering.",
-    image: "/lovable-uploads/e4f4a469-9951-418c-b168-1634003acc41.png",
+    image: "/lovable-uploads/sanmar-logo.png",
     bgColor: "bg-gradient-to-br from-amber-500/20 to-amber-600/30",
     category: "Suppliers",
     features: [
