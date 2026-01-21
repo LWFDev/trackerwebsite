@@ -54,7 +54,7 @@ const StatsGrid = () => {
         </div>
         
         {/* Main stats - 4 column grid */}
-        <div className="max-w-5xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 px-4">
+        <div className="max-w-3xl mx-auto grid grid-cols-1 sm:grid-cols-2 gap-4 px-4">
           <FeaturedStat number="1.39M" label={t("Orders Processed")} bgColor="bg-gradient-to-r from-gold/75 to-gold-light/75 dark:from-gold-dark/75 dark:to-gold/75" />
           <FeaturedStat number="39.4M" label={t("Units Through Production")} bgColor="bg-gradient-to-r from-gold-light/75 to-amber-500/75 dark:from-gold/75 dark:to-amber-600/75" />
           <FeaturedStat number="$150M+" label={t("Tracked Order Value")} bgColor="bg-gradient-to-r from-amber-500/75 to-emerald-500/75 dark:from-amber-600/75 dark:to-emerald-600/75" />
