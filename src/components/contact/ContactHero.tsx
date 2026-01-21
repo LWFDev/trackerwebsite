@@ -6,7 +6,7 @@ const ContactHero = () => {
   const { locale } = useLocalization();
 
   return (
-    <div className="pt-24 pb-16 bg-zinc-900 text-white relative overflow-hidden flex items-center min-h-[30vh]">
+    <div className="pt-32 md:pt-36 pb-16 bg-zinc-900 text-white relative overflow-hidden flex items-center min-h-[30vh]">
       <div className="absolute top-0 left-0 w-full h-full overflow-hidden z-0">
         <div className="absolute w-[600px] h-[600px] rounded-full bg-gold-opacity-5 blur-[120px] top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"></div>
       </div>

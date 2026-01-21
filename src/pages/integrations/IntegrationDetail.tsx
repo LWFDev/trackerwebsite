@@ -148,7 +148,7 @@ const IntegrationDetail = () => {
       
       <main className="min-h-screen bg-background">
         {/* Hero Section */}
-        <section className="pt-32 pb-16 px-4">
+        <section className="pt-32 md:pt-36 pb-16 px-4">
           <div className="container mx-auto max-w-4xl">
             <Link 
               to="/integrations" 

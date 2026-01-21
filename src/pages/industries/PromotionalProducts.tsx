@@ -55,7 +55,7 @@ const PromotionalProducts = () => {
         canonical: "https://tracker-systems.com/industries/promotional-products"
       }} />
       {/* Hero Section */}
-      <section className="relative pt-24 pb-16 overflow-hidden">
+      <section className="relative pt-32 md:pt-36 pb-16 overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-orange-500/5 via-transparent to-red-500/5"></div>
         <div className="container mx-auto px-4 relative z-10 py-[64px]">
           <motion.div 

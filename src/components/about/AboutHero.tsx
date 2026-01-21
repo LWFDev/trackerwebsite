@@ -6,7 +6,7 @@ import { useLocalization } from "@/contexts/LocalizationContext";
 const AboutHero = () => {
   const { t } = useLocalization();
   return (
-    <div className="pt-24 pb-20 bg-zinc-900 text-white relative overflow-hidden">
+    <div className="pt-32 md:pt-36 pb-20 bg-zinc-900 text-white relative overflow-hidden">
       <div className="container mx-auto px-6 relative z-10 text-center">
         <ScrollReveal preset="gentle" delay={200}>
           <div className="mb-8">

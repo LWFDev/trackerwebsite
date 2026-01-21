@@ -237,7 +237,7 @@ const ModuleLayout = ({
         breadcrumbs={modulesBreadcrumb}
       />
       {/* Hero Section */}
-      <section className={`pt-24 pb-16 ${getBgColor()} text-white`}>
+      <section className={`pt-32 md:pt-36 pb-16 ${getBgColor()} text-white`}>
         <div className="container mx-auto px-4">
           <Link to="/modules" className="inline-flex items-center text-white/80 hover:text-gold mb-6 transition">
             <ArrowLeft size={16} className="mr-2" />

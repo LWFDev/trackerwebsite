@@ -3,7 +3,7 @@ import React from "react";
 
 const HeroSection = () => {
   return (
-    <div className="pt-24 pb-16 bg-gradient-to-br from-zinc-900 via-black to-emerald-950 text-white relative overflow-hidden flex items-center min-h-[25vh]">
+    <div className="pt-32 md:pt-36 pb-16 bg-gradient-to-br from-zinc-900 via-black to-emerald-950 text-white relative overflow-hidden flex items-center min-h-[25vh]">
       <div className="absolute top-0 left-0 w-full h-full overflow-hidden z-0">
         <div className="absolute w-[400px] h-[400px] rounded-full bg-gradient-to-br from-gold-opacity-8 via-emerald-500/5 to-transparent blur-[100px] top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"></div>
         <div className="absolute w-[300px] h-[300px] rounded-full bg-gradient-to-tl from-emerald-400/6 to-gold-opacity-4 blur-[80px] top-1/3 right-1/4"></div>

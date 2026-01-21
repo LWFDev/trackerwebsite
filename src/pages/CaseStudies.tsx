@@ -76,7 +76,7 @@ const CaseStudies = () => {
   return <div className="min-h-screen bg-gradient-to-br from-white via-slate-50/30 to-emerald-50/20 dark:from-black dark:via-slate-950/30 dark:to-emerald-950/20">
       <PageSEO seo={caseStudiesSEO} breadcrumbs={caseStudiesBreadcrumb} />
       {/* Hero Section */}
-      <section className="pt-24 pb-16">
+      <section className="pt-32 md:pt-36 pb-16">
         <div className="container mx-auto px-4">
           <motion.div className="text-center max-w-4xl mx-auto" initial={{
           opacity: 0,

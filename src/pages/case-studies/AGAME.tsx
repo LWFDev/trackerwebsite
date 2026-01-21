@@ -11,7 +11,7 @@ const AGAME = () => {
   return (
     <div className="min-h-screen bg-gradient-to-br from-white via-slate-50/30 to-emerald-50/20 dark:from-black dark:via-slate-950/30 dark:to-emerald-950/20">
       {/* Hero Section */}
-      <section className="pt-24 pb-16">
+      <section className="pt-32 md:pt-36 pb-16">
         <div className="container mx-auto px-4">
           <Link to="/case-studies" className="inline-flex items-center text-emerald-600 hover:text-emerald-700 mb-8">
             <ArrowLeft className="w-4 h-4 mr-2" />

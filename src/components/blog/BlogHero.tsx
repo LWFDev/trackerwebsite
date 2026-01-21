@@ -5,7 +5,7 @@ import { useLocalization } from "@/contexts/LocalizationContext";
 const BlogHero = () => {
   const { t } = useLocalization();
   return (
-    <section className="py-20 bg-zinc-900 text-white relative overflow-hidden flex items-center min-h-[30vh]">
+    <section className="pt-32 md:pt-36 pb-20 bg-zinc-900 text-white relative overflow-hidden flex items-center min-h-[30vh]">
       {/* Background gradient */}
       <div className="absolute top-0 left-0 w-full h-full overflow-hidden">
         <div className="absolute w-[800px] h-[800px] rounded-full bg-gold-opacity-5 blur-[150px] top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"></div>

@@ -27,7 +27,7 @@ const BlogPost = () => {
 
   return (
     <div className="min-h-screen bg-black text-white">
-      <main className="pt-16">
+      <main className="pt-32 md:pt-36">
         <PageSEO
           seo={{
             title: post.title,

@@ -5,7 +5,7 @@ import { Headphones, Clock, MessageCircle } from 'lucide-react';
 
 const SupportHero = () => {
   return (
-    <section className="relative pt-32 pb-16 bg-gradient-to-b from-black to-zinc-900">
+    <section className="relative pt-32 md:pt-36 pb-16 bg-gradient-to-b from-black to-zinc-900">
       <div className="absolute inset-0 bg-grid-pattern opacity-5"></div>
       
       <div className="container mx-auto px-6 relative z-10">
