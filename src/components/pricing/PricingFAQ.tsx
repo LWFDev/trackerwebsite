@@ -27,7 +27,7 @@ const PricingFAQ = () => {
     answer: "We accept all major credit cards (Visa, MasterCard, American Express, Discover), PayPal, and bank transfers for annual enterprise plans."
   }, {
     question: "Can I get a refund if I'm not satisfied?",
-    answer: "We offer a 30-day money-back guarantee for all new subscriptions. If you're not satisfied, contact our support team within 30 days of your purchase for a full refund."
+    answer: "We stand behind our product and want you to be completely satisfied. Refund requests are reviewed on a case-by-case basis in accordance with our Terms of Use, and we work hard to address any concerns. Our evaluation and demo process helps ensure a good fit before you commit."
   }, {
     question: "Do I need technical knowledge to use your platform?",
     answer: "No, our platform is designed to be user-friendly for both technical and non-technical users. We provide comprehensive documentation and support to help you get started."

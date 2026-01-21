@@ -185,7 +185,7 @@ const FAQ = () => {
           question: "Can I get a refund if I'm not satisfied?",
           answer: (
             <>
-              We stand behind our product and want you to be completely satisfied. While refund policies are determined on a case-by-case basis, we work hard to address any concerns and ensure you're getting value from Tracker. Our extensive trial and <a href="/contact" className="text-gold hover:text-gold-light underline font-medium" onClick={scrollToTop}>demo process</a> helps ensure a good fit before you commit.
+              We stand behind our product and want you to be completely satisfied. Refund requests are reviewed on a case-by-case basis in accordance with our <a href="/terms-of-service" className="text-gold hover:text-gold-light underline font-medium" onClick={scrollToTop}>Terms of Use</a>, and we work hard to address any concerns. Our evaluation and <a href="/contact" className="text-gold hover:text-gold-light underline font-medium" onClick={scrollToTop}>demo process</a> helps ensure a good fit before you commit.
             </>
           )
         },

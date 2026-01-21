@@ -244,12 +244,12 @@ const IntegrationDetail = () => {
               Ready to connect {integration.name}?
             </h2>
             <p className="text-muted-foreground mb-8">
-              Start your free trial and connect your {integration.name} account in minutes.
+              Get started and connect your {integration.name} account in minutes.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link to="/get-started" onClick={scrollToTop}>
                 <Button variant="gold" size="lg">
-                  Start Free Trial
+                  Get Started
                 </Button>
               </Link>
               <Link to="/contact" onClick={scrollToTop}>
