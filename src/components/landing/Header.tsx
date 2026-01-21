@@ -63,7 +63,7 @@ const Header = () => {
 
   return (
     <motion.header
-      className={`fixed top-0 inset-x-0 z-50 transition-all duration-300 modules-menu-container ${
+      className={`w-full transition-all duration-300 modules-menu-container ${
         isScrolled ? "bg-black/90 backdrop-blur-sm py-2" : "bg-transparent py-4"
       }`}
       initial={{ y: -100, opacity: 0 }}

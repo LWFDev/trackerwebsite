@@ -9,8 +9,10 @@ interface LayoutProps {
 const Layout = ({ children }: LayoutProps) => {
   return (
     <>
-      <ExpoBanner />
-      <Header />
+      <div className="fixed top-0 left-0 right-0 z-50 flex flex-col">
+        <ExpoBanner />
+        <Header />
+      </div>
       {children}
       <Footer />
     </>
