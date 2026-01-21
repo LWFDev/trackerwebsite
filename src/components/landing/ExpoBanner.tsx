@@ -13,15 +13,12 @@ const ExpoBanner = ({ className }: ExpoBannerProps) => {
   const isMobile = useIsMobile();
 
   useEffect(() => {
-    const dismissed = localStorage.getItem('expo-banner-dismissed-2025');
-    if (!dismissed) {
-      setIsVisible(true);
-      // Delay banner animation to start after header animation (0.5s header + 0.3s delay)
-      const timer = setTimeout(() => {
-        setIsAnimatedIn(true);
-      }, 800);
-      return () => clearTimeout(timer);
-    }
+    setIsVisible(true);
+    // Delay banner animation to start after header animation (0.5s header + 0.3s delay)
+    const timer = setTimeout(() => {
+      setIsAnimatedIn(true);
+    }, 800);
+    return () => clearTimeout(timer);
   }, []);
 
   const handleDismiss = () => {
@@ -29,7 +26,6 @@ const ExpoBanner = ({ className }: ExpoBannerProps) => {
     // Wait for exit animation before hiding
     setTimeout(() => {
       setIsVisible(false);
-      localStorage.setItem('expo-banner-dismissed-2025', 'true');
     }, 400);
   };
 
