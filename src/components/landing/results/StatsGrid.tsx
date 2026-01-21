@@ -43,29 +43,28 @@ const StatsGrid = () => {
       </h3>
       
       <div className="relative py-8">
-        {/* Floating stats - left side */}
-        <div className="absolute left-0 top-0 hidden lg:flex flex-col gap-6 items-start pl-4">
-          <FloatingStat number="39.4M" label="Units Produced" className="animate-fade-in" />
-          <FloatingStat number="4 sec" label="Peak Order Rate" className="animate-fade-in [animation-delay:100ms]" />
+        {/* Floating cloud stats - scattered on left */}
+        <div className="absolute left-0 top-1/2 -translate-y-1/2 hidden xl:flex flex-col gap-8 items-start pl-8">
+          <FloatingStat number="4 sec" label="Peak Order Rate" className="animate-fade-in -translate-x-2" />
         </div>
         
-        {/* Floating stats - right side */}
-        <div className="absolute right-0 top-0 hidden lg:flex flex-col gap-6 items-end pr-4">
-          <FloatingStat number="5" label="Currencies" className="animate-fade-in [animation-delay:200ms]" />
-          <FloatingStat number="30,476" label="Black Friday Orders" className="animate-fade-in [animation-delay:300ms]" />
+        {/* Floating cloud stats - scattered on right */}
+        <div className="absolute right-0 top-1/2 -translate-y-1/2 hidden xl:flex flex-col gap-8 items-end pr-8">
+          <FloatingStat number="30,476" label="Black Friday Orders" className="animate-fade-in translate-x-2" />
         </div>
         
-        {/* Main stats - 2 column center */}
-        <div className="max-w-2xl mx-auto grid grid-cols-1 sm:grid-cols-2 gap-4 px-4">
-          <FeaturedStat number="1.39M" label={t("Orders Processed")} bgColor="bg-gradient-to-r from-gold/75 to-amber-500/75 dark:from-gold-dark/75 dark:to-amber-600/75" />
+        {/* Main stats - 4 column grid */}
+        <div className="max-w-5xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 px-4">
+          <FeaturedStat number="1.39M" label={t("Orders Processed")} bgColor="bg-gradient-to-r from-gold/75 to-gold-light/75 dark:from-gold-dark/75 dark:to-gold/75" />
+          <FeaturedStat number="39.4M" label={t("Units Through Production")} bgColor="bg-gradient-to-r from-gold-light/75 to-amber-500/75 dark:from-gold/75 dark:to-amber-600/75" />
           <FeaturedStat number="$150M+" label={t("Tracked Order Value")} bgColor="bg-gradient-to-r from-amber-500/75 to-emerald-500/75 dark:from-amber-600/75 dark:to-emerald-600/75" />
+          <FeaturedStat number="5" label={t("Currencies Supported")} bgColor="bg-gradient-to-r from-emerald-500/75 to-emerald-600/75 dark:from-emerald-600/75 dark:to-emerald-700/75" />
         </div>
         
-        {/* Mobile floating stats - below main grid */}
-        <div className="flex lg:hidden justify-around mt-6 px-4">
-          <FloatingStat number="39.4M" label="Units Produced" />
-          <FloatingStat number="5" label="Currencies" />
-          <FloatingStat number="30,476" label="Black Friday" />
+        {/* Mobile cloud stats - below main grid */}
+        <div className="flex xl:hidden justify-center gap-8 mt-6 px-4">
+          <FloatingStat number="4 sec" label="Peak Order Rate" />
+          <FloatingStat number="30,476" label="Black Friday Orders" />
         </div>
       </div>
     </ScrollReveal>
