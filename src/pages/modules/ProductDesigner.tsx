@@ -1,6 +1,7 @@
 import ModuleLayout from "@/components/modules/ModuleLayout";
 import { Paintbrush, Clock, Image, Layout, Share2, FileOutput, Star, File, CheckCircle, Users, Layers, Grid, Monitor, Palette, Settings, Sliders, MousePointer2, Type } from "lucide-react";
 import productDesignerHero from "@/assets/modules/product-designer-hero.jpg";
+import productDesignerMain from "@/assets/modules/product-designer-main.jpg";
 
 const ProductDesigner = () => {
   return (
@@ -59,7 +60,8 @@ const ProductDesigner = () => {
       ]}
       mainSection={{
         title: "Design Stunning Products in Minutes",
-        description: "Whether you're creating custom garments, promotional items, or branded merchandise, our designer makes it fast and easy to produce professional results that impress."
+        description: "Whether you're creating custom garments, promotional items, or branded merchandise, our designer makes it fast and easy to produce professional results that impress.",
+        image: productDesignerMain
       }}
       keyFeatures={{
         title: "Powerful Design Tools",

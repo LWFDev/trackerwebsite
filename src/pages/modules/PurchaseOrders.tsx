@@ -1,6 +1,7 @@
 import ModuleLayout from "@/components/modules/ModuleLayout";
 import { FileText, DollarSign, Clock, CheckCircle, Truck, Calendar, BarChart2, Package, Building, Search, Globe, Zap, ShoppingCart, FileSpreadsheet, Receipt, AlertTriangle } from "lucide-react";
 import purchaseOrdersHero from "@/assets/modules/purchase-orders-hero.jpg";
+import purchaseOrdersMain from "@/assets/modules/purchase-orders-main.jpg";
 
 const PurchaseOrders = () => {
   return (
@@ -33,7 +34,8 @@ const PurchaseOrders = () => {
       ]}
       mainSection={{
         title: "Streamline Your Purchasing Process",
-        description: "Our Purchase Orders module gives you complete control over the procurement process, from requisition to receipt, with powerful automation and tracking capabilities."
+        description: "Our Purchase Orders module gives you complete control over the procurement process, from requisition to receipt, with powerful automation and tracking capabilities.",
+        image: purchaseOrdersMain
       }}
       keyFeatures={{
         title: "Comprehensive Procurement Management",
