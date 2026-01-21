@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useLocation, Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import Logo from "@/components/landing/header/Logo";
 import MobileMenu from "@/components/landing/header/MobileMenu";
 import ModulesButton from "@/components/landing/header/ModulesButton";
@@ -130,7 +130,11 @@ const Header = ({ hasBanner = false }: HeaderProps) => {
         <MobileMenu isOpen={isOpen} setIsOpen={setIsOpen} />
       </div>
 
-      {isModulesMenuOpen && <ModulesMegaMenu />}
+      {isModulesMenuOpen && (
+        <AnimatePresence>
+          <ModulesMegaMenu />
+        </AnimatePresence>
+      )}
     </motion.header>
   );
 };
