@@ -1,6 +1,7 @@
 import ModuleLayout from "@/components/modules/ModuleLayout";
 import { Image, Share2, Tags, Users, Search, Shield, Globe, UploadCloud, Folder, Clock, File, Download, Lock, Briefcase, Edit, History, Smartphone, CheckCircle, BarChart2, RefreshCw } from "lucide-react";
 import logosHero from "@/assets/modules/logos-hero.jpg";
+import logosMain from "@/assets/modules/logos-main.jpg";
 
 const Logos = () => {
   return (
@@ -53,7 +54,8 @@ const Logos = () => {
       ]}
       mainSection={{
         title: "The Ultimate Logo Management Solution",
-        description: "Logos provides a central repository for all your customer brand assets, ensuring everyone in your organization has access to the right files in the right formats, every time."
+        description: "Logos provides a central repository for all your customer brand assets, ensuring everyone in your organization has access to the right files in the right formats, every time.",
+        image: logosMain
       }}
       keyFeatures={{
         title: "Comprehensive Logo Management",

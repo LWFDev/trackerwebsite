@@ -1,6 +1,7 @@
 import ModuleLayout from "@/components/modules/ModuleLayout";
 import { Package, TruckIcon, Percent, Clock, BarChart2, MapPin, Zap, QrCode, LineChart, RefreshCw, Search, Building, Box, LayoutGrid, Smartphone, AlertTriangle, ShoppingCart, ShieldCheck } from "lucide-react";
 import inventoryHero from "@/assets/modules/inventory-hero.jpg";
+import inventoryMain from "@/assets/modules/inventory-main.jpg";
 
 const Inventory = () => {
   return (
@@ -53,7 +54,8 @@ const Inventory = () => {
       ]}
       mainSection={{
         title: "Transform Your Inventory Management",
-        description: "Our comprehensive inventory solution provides real-time visibility, intelligent forecasting, and automated workflows to optimize your entire supply chain from warehouse to customer."
+        description: "Our comprehensive inventory solution provides real-time visibility, intelligent forecasting, and automated workflows to optimize your entire supply chain from warehouse to customer.",
+        image: inventoryMain
       }}
       keyFeatures={{
         title: "Complete Inventory Control",

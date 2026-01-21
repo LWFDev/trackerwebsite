@@ -402,7 +402,7 @@ const ModuleLayout = ({
                   <div className="absolute -inset-1 bg-gradient-to-r from-gold-opacity-50 to-blue-500/50 rounded-lg blur opacity-25 group-hover:opacity-40 transition duration-300"></div>
                   
                   <div className="relative bg-zinc-800/50 p-4 rounded-lg shadow-2xl border border-zinc-700/50 backdrop-blur-sm">
-                    <img src="/lovable-uploads/bd71cf26-6d3f-4aa3-a4e0-d2aa9db5670f.png" alt="Inventory tracking in action" className="w-full max-h-[525px] rounded-lg shadow-lg border border-zinc-800 object-contain transform transition-transform duration-300 group-hover:scale-105" />
+                    <img src={mainSection.image || "/lovable-uploads/bd71cf26-6d3f-4aa3-a4e0-d2aa9db5670f.png"} alt={mainSection.title || "Module in action"} className="w-full max-h-[525px] rounded-lg shadow-lg border border-zinc-800 object-contain transform transition-transform duration-300 group-hover:scale-105" />
                     
                     {/* Floating indicators */}
                     <div className="absolute -top-2 -right-2 w-4 h-4 bg-green-400 rounded-full animate-ping"></div>

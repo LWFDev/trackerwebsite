@@ -1,6 +1,7 @@
 import ModuleLayout from "@/components/modules/ModuleLayout";
 import { ShoppingCart, Clock, DollarSign, LineChart, CheckCircle, Table, TruckIcon, BarChart2, MessageSquare, CreditCard, Users, Settings, Globe } from "lucide-react";
 import salesOrdersHero from "@/assets/modules/sales-orders-hero.jpg";
+import salesOrdersMain from "@/assets/modules/sales-orders-main.jpg";
 
 const SalesOrders = () => {
   return (
@@ -53,7 +54,8 @@ const SalesOrders = () => {
       ]}
       mainSection={{
         title: "Streamline Your Entire Order Process",
-        description: "From quote to fulfillment, our Sales & Order Management module provides all the tools you need to manage your order process efficiently, reduce errors, and increase customer satisfaction."
+        description: "From quote to fulfillment, our Sales & Order Management module provides all the tools you need to manage your order process efficiently, reduce errors, and increase customer satisfaction.",
+        image: salesOrdersMain
       }}
       keyFeatures={{
         title: "Comprehensive Order Management",

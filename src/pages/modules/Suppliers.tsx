@@ -1,6 +1,7 @@
 import ModuleLayout from "@/components/modules/ModuleLayout";
 import { Building, FileText, Globe, CheckCircle, BarChart2, Truck, ShoppingCart, Calendar, Bell, FileSpreadsheet, Clock, Percent, Users, Map, Package, Zap } from "lucide-react";
 import suppliersHero from "@/assets/modules/suppliers-hero.jpg";
+import suppliersMain from "@/assets/modules/suppliers-main.jpg";
 
 const Suppliers = () => {
   return (
@@ -33,7 +34,8 @@ const Suppliers = () => {
       ]}
       mainSection={{
         title: "Transform Your Supplier Management",
-        description: "Our Suppliers module gives you the tools to build stronger supplier relationships, make smarter purchasing decisions, and ensure consistent product availability."
+        description: "Our Suppliers module gives you the tools to build stronger supplier relationships, make smarter purchasing decisions, and ensure consistent product availability.",
+        image: suppliersMain
       }}
       keyFeatures={{
         title: "Comprehensive Supplier Management",

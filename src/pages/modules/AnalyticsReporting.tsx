@@ -1,6 +1,7 @@
 
 import ModuleLayout from "@/components/modules/ModuleLayout";
 import { BarChart2, PieChart, TrendingUp, Users, Clock, LineChart, BarChart, Calendar, FileText, RefreshCw, Database, Zap, Eye, Smartphone, Layers, Monitor, Sliders, Wifi, Lock, Shield } from "lucide-react";
+import analyticsReportingMain from "@/assets/modules/analytics-reporting-main.jpg";
 
 const AnalyticsReporting = () => {
   return (
@@ -32,7 +33,8 @@ const AnalyticsReporting = () => {
       ]}
       mainSection={{
         title: "Unlock the Power of Your Data",
-        description: "Our Analytics & Reporting platform provides comprehensive tools to collect, visualize, and analyze data from across your business, enabling informed decisions that drive growth and efficiency."
+        description: "Our Analytics & Reporting platform provides comprehensive tools to collect, visualize, and analyze data from across your business, enabling informed decisions that drive growth and efficiency.",
+        image: analyticsReportingMain
       }}
       keyFeatures={{
         title: "Comprehensive Analytics Suite",

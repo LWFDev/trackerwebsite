@@ -12,9 +12,11 @@ import {
   Zap, 
   LineChart,
   ShoppingCart,
-  FileSpreadsheet
+  FileSpreadsheet,
+  Clock
 } from "lucide-react";
 import warehouseHero from "@/assets/modules/warehouse-hero.jpg";
+import warehouseMain from "@/assets/modules/warehouse-main.jpg";
 
 const Warehouse = () => {
   return (
@@ -67,7 +69,8 @@ const Warehouse = () => {
       ]}
       mainSection={{
         title: "Complete Warehouse Visibility",
-        description: "Take control of your warehouse operations with real-time tracking of items, locations, and movement throughout your facility."
+        description: "Take control of your warehouse operations with real-time tracking of items, locations, and movement throughout your facility.",
+        image: warehouseMain
       }}
       keyFeatures={{
         title: "Advanced Warehouse Management",
@@ -149,13 +152,6 @@ const Warehouse = () => {
     />
   );
 };
-
-const Clock = ({ className }: { className?: string }) => (
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}>
-    <circle cx="12" cy="12" r="10"></circle>
-    <polyline points="12 6 12 12 16 14"></polyline>
-  </svg>
-);
 
 const QrCode = ({ className }: { className?: string }) => (
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}>
