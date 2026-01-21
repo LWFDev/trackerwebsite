@@ -30,7 +30,7 @@ const ExpoBanner = ({ className }: ExpoBannerProps) => {
   if (!isVisible) return null;
 
   return (
-    <div className={`w-full min-h-[44px] bg-black overflow-hidden ${className || ''}`}>
+    <div className={`w-full bg-black overflow-hidden ${className || ''}`}>
       <AnimatePresence>
         {isAnimatedIn && (
           <motion.div
@@ -41,13 +41,13 @@ const ExpoBanner = ({ className }: ExpoBannerProps) => {
               duration: 0.5, 
               ease: [0.25, 0.46, 0.45, 0.94] 
             }}
-            className="w-full min-h-[44px] bg-gradient-to-r from-emerald-600 via-emerald-700 to-emerald-800 text-white py-2 px-10 md:px-4 relative flex items-center justify-center"
+            className="w-full bg-gradient-to-r from-emerald-600 via-emerald-700 to-emerald-800 text-white py-2 px-10 md:px-4 relative flex items-center justify-center"
           >
             <div className="container mx-auto flex items-center justify-center text-center">
-              <span className="text-xs md:text-base leading-tight">
-                🎉 We're at the <strong>Impressions Expo!</strong>{' '}
-                Long Beach - January 21<sup>st</sup> - 24<sup>th</sup>, 2026!{' '}
-                Come see us at the <span className="font-black">Barudan</span> booth!
+              <span className="text-xs md:text-sm leading-tight flex flex-col items-center">
+                <span>🎉 We're at the <strong>Impressions Expo!</strong></span>
+                <span>Long Beach - January 21<sup>st</sup> - 24<sup>th</sup>, 2026!</span>
+                <span>Come see us at the <span className="font-black">Barudan</span> booth!</span>
               </span>
               <button 
                 onClick={handleDismiss} 
