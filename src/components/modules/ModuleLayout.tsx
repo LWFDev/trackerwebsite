@@ -293,21 +293,13 @@ const ModuleLayout = ({
                       </div>
                     </DialogTrigger>
                     
-                    <DialogContent className="max-w-6xl w-[95vw] h-[95vh] p-0 bg-black/95 border-zinc-800">
+                    <DialogContent className="max-w-6xl w-[95vw] h-[95vh] p-0 bg-black/95 border-zinc-800 [&>button]:top-6 [&>button]:right-6 [&>button]:p-2 [&>button]:bg-zinc-800/80 [&>button]:hover:bg-zinc-700/80 [&>button]:rounded-full [&>button]:opacity-100">
                       <div className="relative w-full h-full flex items-center justify-center p-4">
                         <img 
                           src={heroImage} 
                           alt={title} 
                           className="max-w-full max-h-full object-contain rounded-lg shadow-2xl"
                         />
-                        
-                        {/* Close button */}
-                        <button 
-                          onClick={() => setIsLightboxOpen(false)}
-                          className="absolute top-4 right-4 p-2 bg-zinc-800/80 hover:bg-zinc-700/80 rounded-full transition-colors group"
-                        >
-                          <X className="h-5 w-5 text-white group-hover:text-gold" />
-                        </button>
                         
                         {/* Image title overlay */}
                         <div className="absolute bottom-4 left-4 bg-zinc-900/90 backdrop-blur-sm px-4 py-2 rounded-lg">
