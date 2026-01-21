@@ -7,24 +7,24 @@ const TestimonialsGrid = () => {
 
   const testimonials = [
     {
-      quote: "Tracker has transformed how we manage our production workflow. The visibility we now have is incredible.",
-      author: "Sarah Johnson",
-      role: "Operations Director, PrintCo"
+      quote: "Tracker has transformed our internal systems completely, allowing us the freedom to concentrate on development and growth.",
+      author: "Josie Morris",
+      role: "Woolcool"
     },
     {
-      quote: "The integration with our existing systems was seamless. This has been a game changer for our business.",
-      author: "Michael Chen",
-      role: "CEO, Stitch Masters"
+      quote: "Without Tracker, we would simply be exhausted now. It revolutionised our operations, got rid of time-wasting spreadsheets and cut out manual entry jobs.",
+      author: "Adrian",
+      role: "AGAME"
     },
     {
-      quote: "Customer support is exceptional. Any questions we had were answered immediately and professionally.",
-      author: "Emma Williams",
-      role: "Production Manager, ThreadWorks"
+      quote: "It's a fast and accurate solution, ensuring brilliant customer service by preventing any errors in the dispatch process.",
+      author: "Richard",
+      role: "Founder, Pure Optical"
     },
     {
-      quote: "We've seen a significant improvement in order accuracy since implementing Tracker. Highly recommended!",
-      author: "David Brown",
-      role: "Founder, Embroidery Plus"
+      quote: "We used to spend 2.5 days a week on manual processing. Now we spend less than a day.",
+      author: "Adrian",
+      role: "AGAME"
     }
   ];
 
