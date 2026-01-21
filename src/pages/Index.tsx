@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import Hero from "@/components/landing/Hero";
 import Features from "@/components/landing/Features";
 import Integration from "@/components/landing/Integration";
@@ -6,11 +6,8 @@ import Workflow from "@/components/landing/Workflow";
 import CTA from "@/components/landing/CTA";
 import Results from "@/components/landing/Results";
 import StatsSection from "@/components/landing/StatsSection";
-import { Separator } from "@/components/ui/separator";
-import ScrollAnimationInit from "@/components/ui/scroll-animation-init";
 import AnimatedBoxesDivider from "@/components/landing/AnimatedBoxesDivider";
 import { useIsMobile } from "@/hooks/use-mobile";
-import { useToast } from "@/hooks/use-toast";
 import { motion } from "framer-motion";
 import PageSEO from "@/components/seo/PageSEO";
 import { homeSEO, homeBreadcrumb } from "@/data/seoData";
@@ -41,20 +38,6 @@ const FloatingIcons = () => {
 
 const Index = () => {
   const isMobile = useIsMobile();
-  const { toast } = useToast();
-
-  // Show welcome toast for mobile users
-  useEffect(() => {
-    if (isMobile) {
-      setTimeout(() => {
-        toast({
-          title: "Welcome to Tracker",
-          description: "Optimized for your mobile device",
-          duration: 3000
-        });
-      }, 1500);
-    }
-  }, [isMobile, toast]);
 
   const fadeInVariants = {
     hidden: { opacity: 0 },
