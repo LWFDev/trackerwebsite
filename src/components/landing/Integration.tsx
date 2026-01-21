@@ -96,8 +96,8 @@ const Integration = () => {
             {/* Learn More button positioned in bottom right of grid */}
             <div className="flex flex-col items-center justify-center rounded-xl h-32 transform transition-all duration-300 hover:-translate-y-1 hover:shadow-lg animate-fade-in" style={{ animationDelay: '0.7s' }}>
               <p className="text-white text-sm mb-2">Don't see your integration?</p>
-              <Link to="/about" onClick={scrollToTop}>
-                <Button variant="gold" className="text-black">
+              <Link to="/integrations" onClick={scrollToTop}>
+                <Button variant="gold" className="text-white [text-shadow:0_1px_2px_#474747]">
                   Learn More
                 </Button>
               </Link>
