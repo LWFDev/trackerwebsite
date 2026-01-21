@@ -5,6 +5,7 @@ import Integration from "@/components/landing/Integration";
 import Workflow from "@/components/landing/Workflow";
 import CTA from "@/components/landing/CTA";
 import Results from "@/components/landing/Results";
+import StatsSection from "@/components/landing/StatsSection";
 import { Separator } from "@/components/ui/separator";
 import ScrollAnimationInit from "@/components/ui/scroll-animation-init";
 import AnimatedBoxesDivider from "@/components/landing/AnimatedBoxesDivider";
@@ -85,6 +86,9 @@ const Index = () => {
         <div className="relative bg-gradient-to-b from-slate-50/40 via-emerald-50/20 to-slate-100/30 dark:from-slate-950/20 dark:via-emerald-950/10 dark:to-slate-900/15">
           <AnimatedBoxesDivider />
         </div>
+        
+        {/* Stats Section - Moved from Results */}
+        <StatsSection />
         
         {/* Features Section */}
         <div className="bg-gradient-to-b from-slate-100/30 via-emerald-50/25 to-gold-light-opacity-20 dark:from-slate-900/15 dark:via-emerald-950/10 dark:to-gold-opacity-10">
