@@ -5,7 +5,7 @@ import { ChartBar, ChartLine, TrendingUp, Users } from "lucide-react";
 import { Link } from "react-router-dom";
 import ResultCard from "./results/ResultCard";
 import ResultMetric from "./results/ResultMetric";
-import StatsGrid from "./results/StatsGrid";
+import TestimonialsGrid from "./results/TestimonialsGrid";
 import ResultsHeader from "./results/ResultsHeader";
 import { ScrollReveal } from "@/components/ui/scroll-reveal";
 import { scrollToTop } from "@/utils/navigation";
@@ -69,8 +69,8 @@ const Results = () => {
           </div>
         </div>
         
-        {/* Stats grid */}
-        <StatsGrid />
+        {/* Testimonials grid */}
+        <TestimonialsGrid />
 
         <div className="text-center">
           <Link to="/case-studies">
