@@ -14,6 +14,7 @@ import {
   ShoppingCart,
   FileSpreadsheet
 } from "lucide-react";
+import warehouseHero from "@/assets/modules/warehouse-hero.jpg";
 
 const Warehouse = () => {
   return (
@@ -21,7 +22,7 @@ const Warehouse = () => {
       title="Warehouse"
       description="Track item locations, transfers, and storage with real-time warehouse visibility and control."
       color="indigo"
-      heroImage="/lovable-uploads/b967fa34-27f3-4bde-8864-dd74e1e5fea9.png"
+      heroImage={warehouseHero}
       heroImageCallouts={[
         {
           text: "Real-time Inventory Tracking",

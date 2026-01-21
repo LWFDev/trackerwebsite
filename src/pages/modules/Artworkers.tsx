@@ -1,6 +1,6 @@
-
 import ModuleLayout from "@/components/modules/ModuleLayout";
 import { Paintbrush, Clock, CheckCircle, Image, Users, FileText, Calendar, MessageSquare, Search, Layout, Layers, AlertTriangle, Zap, Settings, Upload, Download } from "lucide-react";
+import artworkersHero from "@/assets/modules/artworkers-hero.jpg";
 
 const Artworkers = () => {
   return (
@@ -8,6 +8,7 @@ const Artworkers = () => {
       title="Artworkers"
       description="Assign artwork tasks, manage approvals, and ensure timely proof delivery for every order."
       color="emerald"
+      heroImage={artworkersHero}
       stats={[
         {
           value: "60%",

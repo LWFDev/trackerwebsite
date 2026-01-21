@@ -1,6 +1,6 @@
-
 import ModuleLayout from "@/components/modules/ModuleLayout";
 import { Building, FileText, Globe, CheckCircle, BarChart2, Truck, ShoppingCart, Calendar, Bell, FileSpreadsheet, Clock, Percent, Users, Map, Package, Zap } from "lucide-react";
+import suppliersHero from "@/assets/modules/suppliers-hero.jpg";
 
 const Suppliers = () => {
   return (
@@ -8,7 +8,7 @@ const Suppliers = () => {
       title="Suppliers"
       description="Maintain supplier contacts, price lists, and product availability to streamline purchasing decisions."
       color="gold"
-      heroImage="https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-4.0.3&auto=format&fit=crop&w=2340&q=80"
+      heroImage={suppliersHero}
       stats={[
         {
           value: "35%",

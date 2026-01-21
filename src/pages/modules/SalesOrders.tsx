@@ -1,5 +1,6 @@
 import ModuleLayout from "@/components/modules/ModuleLayout";
 import { ShoppingCart, Clock, DollarSign, LineChart, CheckCircle, Table, TruckIcon, BarChart2, MessageSquare, CreditCard, Users, Settings, Globe } from "lucide-react";
+import salesOrdersHero from "@/assets/modules/sales-orders-hero.jpg";
 
 const SalesOrders = () => {
   return (
@@ -7,7 +8,7 @@ const SalesOrders = () => {
       title="Sales & Orders"
       description="Manage incoming orders, quotes, and job details in one streamlined dashboard, keeping your sales pipeline moving."
       color="blue"
-      heroImage="https://nubosync.com/wp-content/uploads/2025/04/Screenshot-2025-04-02-100541.png"
+      heroImage={salesOrdersHero}
       heroImageCallouts={[
         {
           text: "Order Management Dashboard",
