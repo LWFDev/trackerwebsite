@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import { X } from 'lucide-react';
+import { X, MapPin } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { Link } from 'react-router-dom';
 
 interface ExpoBannerProps {
   className?: string;
@@ -43,14 +44,21 @@ const ExpoBanner = ({ className }: ExpoBannerProps) => {
             }}
             className="w-full bg-gradient-to-r from-emerald-600 via-emerald-700 to-emerald-800 text-white py-2 px-10 md:px-4 relative flex items-center justify-center"
           >
-            <div className="container mx-auto flex items-center justify-center text-center">
+          <div className="container mx-auto flex items-center justify-center text-center gap-4">
               <span className="text-xs md:text-sm leading-tight flex flex-col items-center">
                 <span>🎉 We're at the <strong>Impressions Expo!</strong></span>
                 <span>Long Beach - January 21<sup>st</sup> - 24<sup>th</sup>, 2026!</span>
                 <span>Come see us at the <span className="font-black">Barudan</span> booth!</span>
               </span>
+              <Link 
+                to="/expo"
+                className="hidden md:flex items-center gap-1 bg-white/20 hover:bg-white/30 px-3 py-1.5 rounded-full text-xs font-medium transition-colors"
+              >
+                <MapPin className="w-3 h-3" />
+                Find Us
+              </Link>
               <button 
-                onClick={handleDismiss} 
+                onClick={handleDismiss}
                 className="absolute right-2 md:right-4 top-1/2 -translate-y-1/2 p-1 hover:bg-white/20 rounded-full transition-colors"
                 aria-label="Dismiss banner"
               >
