@@ -1,7 +1,6 @@
 
 import ModuleLayout from "@/components/modules/ModuleLayout";
 import { ClipboardList, Clock, Calendar, CheckCircle, Users, BarChart2, MessageSquare, FileText, Flag, Layout, Target, Trello, Copy, BellRing, Briefcase, Globe } from "lucide-react";
-import projectManagementMain from "@/assets/modules/project-management-main.jpg";
 
 const ProjectManagement = () => {
   return (
@@ -33,8 +32,7 @@ const ProjectManagement = () => {
       ]}
       mainSection={{
         title: "Complete Project Management Solution",
-        description: "Our Project Management platform provides all the tools you need to plan, execute, and deliver successful projects while keeping your team aligned, informed, and productive.",
-        image: projectManagementMain
+        description: "Our Project Management platform provides all the tools you need to plan, execute, and deliver successful projects while keeping your team aligned, informed, and productive."
       }}
       keyFeatures={{
         title: "Comprehensive Project Toolkit",

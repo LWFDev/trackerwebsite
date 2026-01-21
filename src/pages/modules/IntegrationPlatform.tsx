@@ -1,6 +1,5 @@
 import ModuleLayout from "@/components/modules/ModuleLayout";
 import { Zap, Clock, Database, RefreshCw, Code, Bell, File, Layout, CheckCircle, Users, BarChart2, Globe, Link2, Shield, Server, Plug, Map, Puzzle } from "lucide-react";
-import integrationPlatformMain from "@/assets/modules/integration-platform-main.jpg";
 
 const IntegrationPlatform = () => {
   return (
@@ -32,8 +31,7 @@ const IntegrationPlatform = () => {
       ]}
       mainSection={{
         title: "Unify Your Business Technology",
-        description: "Our Integration Platform brings together all your systems, applications, and data sources to create a seamless, connected ecosystem that eliminates silos and automates critical business processes.",
-        image: integrationPlatformMain
+        description: "Our Integration Platform brings together all your systems, applications, and data sources to create a seamless, connected ecosystem that eliminates silos and automates critical business processes."
       }}
       keyFeatures={{
         title: "Enterprise-Grade Integration Tools",

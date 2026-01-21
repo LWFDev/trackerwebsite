@@ -1,7 +1,5 @@
 import ModuleLayout from "@/components/modules/ModuleLayout";
 import { Users, Search, Filter, FileText, MessageSquare, Clock, List, Calendar, Zap, BarChart2, ShoppingCart, UserCheck, Globe } from "lucide-react";
-import customerDatabaseHero from "@/assets/modules/customer-database-hero.jpg";
-import customerDatabaseMain from "@/assets/modules/customer-database-main.jpg";
 
 const CustomerDatabase = () => {
   return (
@@ -9,7 +7,7 @@ const CustomerDatabase = () => {
       title="Customer Database"
       description="Store all customer details, communication logs, and order history in one centralized, searchable profile."
       color="teal"
-      heroImage={customerDatabaseHero}
+      heroImage="/lovable-uploads/d746be04-9858-4d51-88d0-94c9e02b8a79.png"
       heroImageCallouts={[
         {
           text: "Customer Profile Details",
@@ -54,8 +52,7 @@ const CustomerDatabase = () => {
       ]}
       mainSection={{
         title: "Centralize Your Customer Information",
-        description: "Our Customer Database module creates a single source of truth for all customer data, making it easy to access complete information and provide exceptional service.",
-        image: customerDatabaseMain
+        description: "Our Customer Database module creates a single source of truth for all customer data, making it easy to access complete information and provide exceptional service."
       }}
       keyFeatures={{
         title: "Comprehensive Customer Management",

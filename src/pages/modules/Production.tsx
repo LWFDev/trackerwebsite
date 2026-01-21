@@ -1,7 +1,6 @@
+
 import ModuleLayout from "@/components/modules/ModuleLayout";
 import { Layers, Clock, Percent, Settings, BarChart2, Wrench, Clipboard, LineChart, CheckCircle, File, Users, Layout, Cpu, AlertTriangle, BookOpen, Database, Sliders } from "lucide-react";
-import productionHero from "@/assets/modules/production-hero.jpg";
-import productionMain from "@/assets/modules/production-main.jpg";
 
 const Production = () => {
   return (
@@ -9,7 +8,6 @@ const Production = () => {
       title="Production"
       description="Schedule, assign, and track every job from setup through final output with visual production queues."
       color="blue"
-      heroImage={productionHero}
       stats={[
         {
           value: "25%",
@@ -34,8 +32,7 @@ const Production = () => {
       ]}
       mainSection={{
         title: "Transform Your Production Operations",
-        description: "Our Production module provides the tools you need to optimize your entire manufacturing process from planning to quality control, increasing efficiency while reducing costs.",
-        image: productionMain
+        description: "Our Production module provides the tools you need to optimize your entire manufacturing process from planning to quality control, increasing efficiency while reducing costs."
       }}
       keyFeatures={{
         title: "Complete Production Control",

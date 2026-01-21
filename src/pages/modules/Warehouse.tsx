@@ -12,11 +12,8 @@ import {
   Zap, 
   LineChart,
   ShoppingCart,
-  FileSpreadsheet,
-  Clock
+  FileSpreadsheet
 } from "lucide-react";
-import warehouseHero from "@/assets/modules/warehouse-hero.jpg";
-import warehouseMain from "@/assets/modules/warehouse-main.jpg";
 
 const Warehouse = () => {
   return (
@@ -24,7 +21,7 @@ const Warehouse = () => {
       title="Warehouse"
       description="Track item locations, transfers, and storage with real-time warehouse visibility and control."
       color="indigo"
-      heroImage={warehouseHero}
+      heroImage="/lovable-uploads/b967fa34-27f3-4bde-8864-dd74e1e5fea9.png"
       heroImageCallouts={[
         {
           text: "Real-time Inventory Tracking",
@@ -69,8 +66,7 @@ const Warehouse = () => {
       ]}
       mainSection={{
         title: "Complete Warehouse Visibility",
-        description: "Take control of your warehouse operations with real-time tracking of items, locations, and movement throughout your facility.",
-        image: warehouseMain
+        description: "Take control of your warehouse operations with real-time tracking of items, locations, and movement throughout your facility."
       }}
       keyFeatures={{
         title: "Advanced Warehouse Management",
@@ -152,6 +148,13 @@ const Warehouse = () => {
     />
   );
 };
+
+const Clock = ({ className }: { className?: string }) => (
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}>
+    <circle cx="12" cy="12" r="10"></circle>
+    <polyline points="12 6 12 12 16 14"></polyline>
+  </svg>
+);
 
 const QrCode = ({ className }: { className?: string }) => (
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}>

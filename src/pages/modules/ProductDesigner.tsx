@@ -1,7 +1,6 @@
+
 import ModuleLayout from "@/components/modules/ModuleLayout";
 import { Paintbrush, Clock, Image, Layout, Share2, FileOutput, Star, File, CheckCircle, Users, Layers, Grid, Monitor, Palette, Settings, Sliders, MousePointer2, Type } from "lucide-react";
-import productDesignerHero from "@/assets/modules/product-designer-hero.jpg";
-import productDesignerMain from "@/assets/modules/product-designer-main.jpg";
 
 const ProductDesigner = () => {
   return (
@@ -9,7 +8,7 @@ const ProductDesigner = () => {
       title="Product Designer"
       description="Allow users to customize garments visually with drag-and-drop logos, text, and artwork placements."
       color="teal"
-      heroImage={productDesignerHero}
+      heroImage="https://nubosync.com/wp-content/uploads/2025/04/Screenshot-2025-04-02-101424.png"
       heroImageCallouts={[
         {
           text: "Drag-and-Drop Editor",
@@ -60,8 +59,7 @@ const ProductDesigner = () => {
       ]}
       mainSection={{
         title: "Design Stunning Products in Minutes",
-        description: "Whether you're creating custom garments, promotional items, or branded merchandise, our designer makes it fast and easy to produce professional results that impress.",
-        image: productDesignerMain
+        description: "Whether you're creating custom garments, promotional items, or branded merchandise, our designer makes it fast and easy to produce professional results that impress."
       }}
       keyFeatures={{
         title: "Powerful Design Tools",

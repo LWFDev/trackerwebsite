@@ -1,7 +1,6 @@
+
 import ModuleLayout from "@/components/modules/ModuleLayout";
 import { Paintbrush, Clock, CheckCircle, Image, Users, FileText, Calendar, MessageSquare, Search, Layout, Layers, AlertTriangle, Zap, Settings, Upload, Download } from "lucide-react";
-import artworkersHero from "@/assets/modules/artworkers-hero.jpg";
-import artworkersMain from "@/assets/modules/artworkers-main.jpg";
 
 const Artworkers = () => {
   return (
@@ -9,7 +8,6 @@ const Artworkers = () => {
       title="Artworkers"
       description="Assign artwork tasks, manage approvals, and ensure timely proof delivery for every order."
       color="emerald"
-      heroImage={artworkersHero}
       stats={[
         {
           value: "60%",
@@ -34,8 +32,7 @@ const Artworkers = () => {
       ]}
       mainSection={{
         title: "Streamline Your Artwork Workflow",
-        description: "Our Artworkers module provides the tools you need to manage artwork creation, revisions, and approvals with complete visibility and control.",
-        image: artworkersMain
+        description: "Our Artworkers module provides the tools you need to manage artwork creation, revisions, and approvals with complete visibility and control."
       }}
       keyFeatures={{
         title: "Comprehensive Artwork Management",

@@ -1,6 +1,5 @@
 import ModuleLayout from "@/components/modules/ModuleLayout";
 import { Receipt, BarChart2, CreditCard, DollarSign, FileText, PieChart, Zap, Lock, RefreshCw, Check, Clock, Users, Calculator, Calendar, Briefcase, TrendingUp, Shield, Globe } from "lucide-react";
-import financeAccountingMain from "@/assets/modules/finance-accounting-main.jpg";
 
 const FinanceAccounting = () => {
   return (
@@ -32,8 +31,7 @@ const FinanceAccounting = () => {
       ]}
       mainSection={{
         title: "Complete Financial Management",
-        description: "Our Finance & Accounting module provides a comprehensive solution for all your financial operations, from payment processing to advanced reporting and compliance.",
-        image: financeAccountingMain
+        description: "Our Finance & Accounting module provides a comprehensive solution for all your financial operations, from payment processing to advanced reporting and compliance."
       }}
       keyFeatures={{
         title: "Key Features",

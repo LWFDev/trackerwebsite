@@ -1,7 +1,6 @@
 
 import ModuleLayout from "@/components/modules/ModuleLayout";
 import { MessageSquare, Users, Clock, CheckCircle, PhoneCall, Mail, Settings, Globe, BarChart2, HeadphonesIcon, File, Database, Zap, BookOpen, Bot, Shield, UserCheck } from "lucide-react";
-import customerServiceMain from "@/assets/modules/customer-service-main.jpg";
 
 const CustomerService = () => {
   return (
@@ -33,8 +32,7 @@ const CustomerService = () => {
       ]}
       mainSection={{
         title: "Unify Your Customer Support Experience",
-        description: "Our Customer Service module brings together all your support channels, customer data, and team collaboration tools into one powerful platform designed to enhance customer satisfaction and agent productivity.",
-        image: customerServiceMain
+        description: "Our Customer Service module brings together all your support channels, customer data, and team collaboration tools into one powerful platform designed to enhance customer satisfaction and agent productivity."
       }}
       keyFeatures={{
         title: "Comprehensive Support Tools",

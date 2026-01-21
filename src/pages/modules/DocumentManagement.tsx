@@ -1,7 +1,6 @@
 
 import ModuleLayout from "@/components/modules/ModuleLayout";
 import { FileText, Search, Lock, Users, Share2, Clock, UploadCloud, Tags, CheckCircle, Shield, File, Database, History, Edit, Download, PenTool, Layers, Smartphone } from "lucide-react";
-import documentManagementMain from "@/assets/modules/document-management-main.jpg";
 
 const DocumentManagement = () => {
   return (
@@ -33,8 +32,7 @@ const DocumentManagement = () => {
       ]}
       mainSection={{
         title: "Enterprise Document Management Simplified",
-        description: "Our Document Management system provides a comprehensive solution for storing, organizing, and collaborating on all your important business documents with enterprise-grade security and powerful search capabilities.",
-        image: documentManagementMain
+        description: "Our Document Management system provides a comprehensive solution for storing, organizing, and collaborating on all your important business documents with enterprise-grade security and powerful search capabilities."
       }}
       keyFeatures={{
         title: "Comprehensive Document Control",

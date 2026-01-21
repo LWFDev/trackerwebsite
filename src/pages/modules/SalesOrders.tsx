@@ -1,7 +1,5 @@
 import ModuleLayout from "@/components/modules/ModuleLayout";
 import { ShoppingCart, Clock, DollarSign, LineChart, CheckCircle, Table, TruckIcon, BarChart2, MessageSquare, CreditCard, Users, Settings, Globe } from "lucide-react";
-import salesOrdersHero from "@/assets/modules/sales-orders-hero.jpg";
-import salesOrdersMain from "@/assets/modules/sales-orders-main.jpg";
 
 const SalesOrders = () => {
   return (
@@ -9,7 +7,7 @@ const SalesOrders = () => {
       title="Sales & Orders"
       description="Manage incoming orders, quotes, and job details in one streamlined dashboard, keeping your sales pipeline moving."
       color="blue"
-      heroImage={salesOrdersHero}
+      heroImage="https://nubosync.com/wp-content/uploads/2025/04/Screenshot-2025-04-02-100541.png"
       heroImageCallouts={[
         {
           text: "Order Management Dashboard",
@@ -54,8 +52,7 @@ const SalesOrders = () => {
       ]}
       mainSection={{
         title: "Streamline Your Entire Order Process",
-        description: "From quote to fulfillment, our Sales & Order Management module provides all the tools you need to manage your order process efficiently, reduce errors, and increase customer satisfaction.",
-        image: salesOrdersMain
+        description: "From quote to fulfillment, our Sales & Order Management module provides all the tools you need to manage your order process efficiently, reduce errors, and increase customer satisfaction."
       }}
       keyFeatures={{
         title: "Comprehensive Order Management",
