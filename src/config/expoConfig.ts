@@ -8,12 +8,12 @@ export const CONVENTION_CENTER = {
   name: 'Long Beach Convention Center',
 };
 
-// Barudan booth location (placeholder - update with actual coordinates from floor plan)
+// Barudan booth location
 export const BARUDAN_BOOTH = {
   lat: 33.7652,
   lng: -118.1890,
-  name: 'Barudan Booth',
-  boothNumber: 'TBD', // Update when known
+  name: 'Barudan America Inc',
+  boothNumber: '1429',
 };
 
 // Map configuration
