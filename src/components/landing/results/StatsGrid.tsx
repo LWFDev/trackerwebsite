@@ -24,9 +24,9 @@ const StatsGrid = () => {
   return (
     <ScrollReveal className="mb-12">
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-        <FeaturedStat number="1.5M+" label={t("Orders Processed")} bgColor="bg-gradient-to-r from-gold to-amber-500 dark:from-gold-dark dark:to-amber-600" />
-        <FeaturedStat number="2M+" label={t("Garments Designed")} bgColor="bg-gradient-to-r from-amber-500 to-emerald-400 dark:from-amber-600 dark:to-emerald-500" />
-        <FeaturedStat number="7.3%" label={t("Average profit increase")} bgColor="bg-gradient-to-r from-emerald-400 to-emerald-500 dark:from-emerald-500 dark:to-emerald-600" />
+        <FeaturedStat number="1.5M+" label={t("Orders Processed")} bgColor="bg-gradient-to-r from-gold to-gold-light dark:from-gold-dark dark:to-gold" />
+        <FeaturedStat number="2M+" label={t("Garments Designed")} bgColor="bg-gradient-to-r from-gold-light to-amber-500 dark:from-gold dark:to-amber-600" />
+        <FeaturedStat number="7.3%" label={t("Average profit increase")} bgColor="bg-gradient-to-r from-amber-500 to-emerald-500 dark:from-amber-600 dark:to-emerald-600" />
         <FeaturedStat number="32%" label={t("Average time saved")} bgColor="bg-gradient-to-r from-emerald-500 to-emerald-600 dark:from-emerald-600 dark:to-emerald-700" />
       </div>
     </ScrollReveal>
