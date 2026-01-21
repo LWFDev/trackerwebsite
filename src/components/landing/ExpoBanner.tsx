@@ -22,7 +22,7 @@ const ExpoBanner = () => {
   if (!isVisible) return null;
 
   return (
-    <div className="w-full bg-gradient-to-r from-emerald-600 via-emerald-700 to-emerald-800 text-white py-2.5 px-3 md:px-4 relative z-[60]">
+    <div className="w-full bg-gradient-to-r from-emerald-600 via-emerald-700 to-emerald-800 text-white py-2.5 px-3 md:px-4 relative">
       <div className="container mx-auto flex items-center justify-center text-center">
         <span className="text-sm md:text-base pr-6">
           {isMobile ? (
