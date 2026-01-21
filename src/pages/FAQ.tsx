@@ -244,7 +244,7 @@ const FAQ = () => {
           <div className="absolute w-32 h-32 rounded-full bg-gold-opacity-15 bottom-16 right-16"></div>
         </div>
 
-        <div className="container mx-auto px-6 py-20 relative z-10">
+        <div className="container mx-auto px-6 pt-32 md:pt-36 pb-20 relative z-10">
           <motion.div 
             className="text-center max-w-4xl mx-auto"
             initial={{ opacity: 0, y: 20 }}

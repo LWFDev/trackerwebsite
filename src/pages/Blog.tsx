@@ -22,7 +22,7 @@ const BlogPage = () => {
 
   return (
     <div className="min-h-screen bg-black text-white">
-      <main className="pt-16">
+      <main>
         <PageSEO seo={blogSEO} breadcrumbs={blogBreadcrumb} />
         <BlogHero />
         <BlogSearch searchQuery={searchQuery} setSearchQuery={setSearchQuery} />

@@ -21,7 +21,7 @@ export function OnboardingLayout({
   onBack
 }: OnboardingLayoutProps) {
   return <div className="min-h-screen bg-black pb-20">
-      <div className="container mx-auto pt-28 px-4">
+      <div className="container mx-auto pt-32 md:pt-36 px-4">
         {/* Logo and nav */}
         <div className="flex justify-center mb-8">
           

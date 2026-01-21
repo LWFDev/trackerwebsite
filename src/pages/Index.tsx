@@ -59,7 +59,7 @@ const Index = () => {
         <div className="absolute bottom-0 right-0 w-full max-w-[700px] h-[500px] rounded-full bg-gradient-to-tl from-emerald-100/25 via-slate-100/15 to-gold-light-opacity-20 dark:from-emerald-900/15 dark:via-slate-900/20 dark:to-gold-opacity-15 blur-[100px] opacity-50"></div>
       </div>
       
-      <main className="pt-16 relative">
+      <main className="relative">
         {/* Hero Section - Professional gold coloring */}
         <div className="bg-gradient-to-b from-white via-gold-light-opacity-30 to-slate-50/40 dark:from-black dark:via-gold-opacity-10 dark:to-slate-950/20">
           <Hero />

@@ -64,7 +64,7 @@ const PricingHero = () => {
     }, 5000);
     return () => clearInterval(interval);
   }, [controls]);
-  return <div className="pt-28 pb-20 bg-gradient-to-b from-zinc-900 to-black text-white relative overflow-hidden flex items-center min-h-[50vh]">
+  return <div className="pt-32 md:pt-36 pb-20 bg-gradient-to-b from-zinc-900 to-black text-white relative overflow-hidden flex items-center min-h-[50vh]">
       {/* Interactive background elements */}
       <div className="absolute top-0 left-0 w-full h-full overflow-hidden z-0">
         {/* Animated gradient blob with optimized animation - green accent */}

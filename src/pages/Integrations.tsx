@@ -62,7 +62,7 @@ const Integrations = () => {
       
       <main className="min-h-screen bg-background">
         {/* Hero Section */}
-        <section className="pt-32 pb-16 px-4">
+        <section className="pt-32 md:pt-36 pb-16 px-4">
           <div className="container mx-auto max-w-6xl">
             <div className="text-center max-w-3xl mx-auto">
               <div className="inline-block px-4 py-1.5 bg-gold/10 rounded-full border border-gold/20 mb-6">
