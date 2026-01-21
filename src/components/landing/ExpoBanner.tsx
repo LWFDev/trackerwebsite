@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import { X } from 'lucide-react';
-import { useIsMobile } from '@/hooks/use-mobile';
 import { motion, AnimatePresence } from 'framer-motion';
 
 interface ExpoBannerProps {
@@ -10,7 +9,6 @@ interface ExpoBannerProps {
 const ExpoBanner = ({ className }: ExpoBannerProps) => {
   const [isVisible, setIsVisible] = useState(false);
   const [isAnimatedIn, setIsAnimatedIn] = useState(false);
-  const isMobile = useIsMobile();
 
   useEffect(() => {
     setIsVisible(true);
@@ -47,17 +45,9 @@ const ExpoBanner = ({ className }: ExpoBannerProps) => {
           >
             <div className="container mx-auto flex items-center justify-center text-center">
               <span className="text-xs md:text-base leading-tight">
-                {isMobile ? (
-                  <>
-                    🎉 <strong>Impressions Expo</strong> - Long Beach January 21<sup>st</sup> - 24<sup>th</sup>, 2026!{' '}
-                    <span className="font-black">Barudan</span> booth
-                  </>
-                ) : (
-                  <>
-                    🎉 We're at the <strong>Impressions Expo</strong> in Long Beach, January 21<sup>st</sup> - 24<sup>th</sup>, 2026! Come see us at the{' '}
-                    <span className="font-black">Barudan</span> booth
-                  </>
-                )}
+                🎉 We're at the <strong>Impressions Expo!</strong>{' '}
+                Long Beach - January 21<sup>st</sup> - 24<sup>th</sup>, 2026!{' '}
+                Come see us at the <span className="font-black">Barudan</span> booth!
               </span>
               <button 
                 onClick={handleDismiss} 
