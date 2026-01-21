@@ -9,28 +9,33 @@ const Integration = () => {
   const integrationLogos = [
     {
       name: "Shopify",
-      image: "/lovable-uploads/a061c746-21cc-421c-8f26-239f553bcf06.png",
-      bgColor: "bg-gradient-to-br from-green-500/20 to-green-600/30"
+      image: "/lovable-uploads/shopify-logo.png",
+      bgColor: "bg-gradient-to-br from-green-500/20 to-green-600/30",
+      link: "/integrations/shopify"
     },
     {
       name: "WooCommerce",
-      image: "/lovable-uploads/c25b44a2-426c-4f30-9e20-b4cf6ae40e2e.png",
-      bgColor: "bg-gradient-to-br from-purple-500/20 to-purple-600/30"
+      image: "/lovable-uploads/woocommerce-logo.png",
+      bgColor: "bg-gradient-to-br from-purple-500/20 to-purple-600/30",
+      link: "/integrations/woocommerce"
     },
     {
       name: "ShipStation",
-      image: "/lovable-uploads/70e89c9a-2a2a-47bf-84af-d0d6cecca1e3.png",
-      bgColor: "bg-gradient-to-br from-blue-500/20 to-blue-600/30"
+      image: "/lovable-uploads/shipstation-logo.png",
+      bgColor: "bg-gradient-to-br from-blue-500/20 to-blue-600/30",
+      link: "/integrations/shipstation"
     },
     {
       name: "alphabroder",
-      image: "/lovable-uploads/43dfb005-d4c4-43ef-846a-545265bad44a.png",
-      bgColor: "bg-gradient-to-br from-orange-500/20 to-orange-600/30"
+      image: "/lovable-uploads/alphabroder-logo.png",
+      bgColor: "bg-gradient-to-br from-orange-500/20 to-orange-600/30",
+      link: "/integrations/alphabroder"
     },
     {
       name: "SanMar",
-      image: "/lovable-uploads/e4f4a469-9951-418c-b168-1634003acc41.png",
-      bgColor: "bg-gradient-to-br from-red-500/20 to-red-600/30"
+      image: "/lovable-uploads/sanmar-logo.png",
+      bgColor: "bg-gradient-to-br from-red-500/20 to-red-600/30",
+      link: "/integrations/sanmar"
     }
   ];
 
@@ -77,8 +82,10 @@ const Integration = () => {
           
           <div className="md:w-1/2 grid grid-cols-2 gap-6 relative">
             {integrationLogos.map((logo, index) => (
-              <div 
+              <Link 
                 key={index}
+                to={logo.link}
+                onClick={scrollToTop}
                 className={`${logo.bgColor} backdrop-blur-sm rounded-xl h-32 border border-gray-700 dark:border-zinc-800 light:border-gray-700 transform transition-all duration-300 hover:border-gold-opacity-50 hover:-translate-y-1 hover:shadow-lg group animate-fade-in`}
                 style={{ animationDelay: `${0.3 + index * 0.1}s` }}
               >
@@ -90,15 +97,15 @@ const Integration = () => {
                     className="h-12 w-auto max-w-[80%] object-contain opacity-90 group-hover:opacity-100 transition-all duration-300 group-hover:scale-110"
                   />
                 </div>
-              </div>
+              </Link>
             ))}
             
             {/* Learn More button positioned in bottom right of grid */}
             <div className="flex flex-col items-center justify-center rounded-xl h-32 transform transition-all duration-300 hover:-translate-y-1 hover:shadow-lg animate-fade-in" style={{ animationDelay: '0.7s' }}>
               <p className="text-white text-sm mb-2">Don't see your integration?</p>
               <Link to="/integrations" onClick={scrollToTop}>
-                <Button variant="gold" className="text-white [text-shadow:0_1px_2px_#474747]">
-                  Learn More
+                <Button variant="gold">
+                  View All
                 </Button>
               </Link>
             </div>
