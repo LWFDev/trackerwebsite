@@ -53,12 +53,12 @@ const ExpoBanner = ({ className }: ExpoBannerProps) => {
               <span className="text-xs md:text-base leading-tight">
                 {isMobile ? (
                   <>
-                    🎉 <strong>Impressions Expo</strong> - Long Beach Jan 21-24!{' '}
+                    🎉 <strong>Impressions Expo</strong> - Long Beach January 21<sup>st</sup> - 24<sup>th</sup>, 2026!{' '}
                     <span className="font-black">Barudan</span> booth
                   </>
                 ) : (
                   <>
-                    🎉 We're at the <strong>Impressions Expo</strong> in Long Beach, Jan 21-24! Come see us at the{' '}
+                    🎉 We're at the <strong>Impressions Expo</strong> in Long Beach, January 21<sup>st</sup> - 24<sup>th</sup>, 2026! Come see us at the{' '}
                     <span className="font-black">Barudan</span> booth
                   </>
                 )}
