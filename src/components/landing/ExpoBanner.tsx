@@ -36,7 +36,7 @@ const ExpoBanner = ({ className }: ExpoBannerProps) => {
   if (!isVisible) return null;
 
   return (
-    <div className={`w-full h-[44px] bg-black overflow-hidden ${className || ''}`}>
+    <div className={`w-full min-h-[44px] bg-black overflow-hidden ${className || ''}`}>
       <AnimatePresence>
         {isAnimatedIn && (
           <motion.div
@@ -47,13 +47,13 @@ const ExpoBanner = ({ className }: ExpoBannerProps) => {
               duration: 0.5, 
               ease: [0.25, 0.46, 0.45, 0.94] 
             }}
-            className="w-full h-full bg-gradient-to-r from-emerald-600 via-emerald-700 to-emerald-800 text-white py-2.5 px-3 md:px-4 relative"
+            className="w-full min-h-[44px] bg-gradient-to-r from-emerald-600 via-emerald-700 to-emerald-800 text-white py-2 px-10 md:px-4 relative flex items-center justify-center"
           >
             <div className="container mx-auto flex items-center justify-center text-center">
-              <span className="text-sm md:text-base pr-6">
+              <span className="text-xs md:text-base leading-tight">
                 {isMobile ? (
                   <>
-                    🎉 See us at <strong>Impressions Expo</strong>, Long Beach Jan 21-24! Visit the{' '}
+                    🎉 <strong>Impressions Expo</strong> - Long Beach Jan 21-24!{' '}
                     <span className="font-black">Barudan</span> booth
                   </>
                 ) : (
@@ -65,7 +65,7 @@ const ExpoBanner = ({ className }: ExpoBannerProps) => {
               </span>
               <button 
                 onClick={handleDismiss} 
-                className="absolute right-2 md:right-4 top-1/2 -translate-y-1/2 p-1.5 hover:bg-white/20 rounded-full transition-colors"
+                className="absolute right-2 md:right-4 top-1/2 -translate-y-1/2 p-1 hover:bg-white/20 rounded-full transition-colors"
                 aria-label="Dismiss banner"
               >
                 <X className="w-4 h-4" />
