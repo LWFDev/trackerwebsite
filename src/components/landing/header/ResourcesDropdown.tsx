@@ -1,4 +1,3 @@
-
 import { useState, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "@/components/ui/dropdown-menu";
@@ -29,28 +28,32 @@ const ResourcesDropdown = ({ scrollToTop }: ResourcesDropdownProps) => {
     >
       <DropdownMenu open={isOpen} onOpenChange={setIsOpen} modal={false}>
         <DropdownMenuTrigger asChild>
-          <button className="flex items-center text-gray-300 hover:text-gold transition">
+          <button className="flex items-center text-gray-300 hover:text-gold transition text-sm lg:text-base">
             Resources <ChevronDown size={16} className="ml-1" />
           </button>
         </DropdownMenuTrigger>
-        <DropdownMenuContent className="bg-zinc-900 border-zinc-800 text-white">
+        <DropdownMenuContent 
+          className="bg-zinc-900/95 backdrop-blur-md border-zinc-700 text-white min-w-[160px] z-[60] shadow-xl"
+          sideOffset={8}
+          align="start"
+        >
           <DropdownMenuItem className="hover:bg-zinc-800 hover:text-gold focus:bg-zinc-800 focus:text-gold cursor-pointer">
-            <Link to="/faq" className="w-full" onClick={scrollToTop}>
+            <Link to="/faq" className="w-full py-1" onClick={scrollToTop}>
               FAQ
             </Link>
           </DropdownMenuItem>
           <DropdownMenuItem className="hover:bg-zinc-800 hover:text-gold focus:bg-zinc-800 focus:text-gold cursor-pointer">
-            <Link to="/support" className="w-full" onClick={scrollToTop}>
+            <Link to="/support" className="w-full py-1" onClick={scrollToTop}>
               Support
             </Link>
           </DropdownMenuItem>
           <DropdownMenuItem className="hover:bg-zinc-800 hover:text-gold focus:bg-zinc-800 focus:text-gold cursor-pointer">
-            <Link to="/about" className="w-full" onClick={scrollToTop}>
+            <Link to="/about" className="w-full py-1" onClick={scrollToTop}>
               About Us
             </Link>
           </DropdownMenuItem>
           <DropdownMenuItem className="hover:bg-zinc-800 hover:text-gold focus:bg-zinc-800 focus:text-gold cursor-pointer">
-            <Link to="/contact" className="w-full" onClick={scrollToTop}>
+            <Link to="/contact" className="w-full py-1" onClick={scrollToTop}>
               Contact
             </Link>
           </DropdownMenuItem>

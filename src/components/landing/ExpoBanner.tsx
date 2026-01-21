@@ -1,9 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import { X } from 'lucide-react';
 import { useIsMobile } from '@/hooks/use-mobile';
-import barudanLogo from '@/assets/barudan-white.png';
 
-const ExpoBanner = () => {
+interface ExpoBannerProps {
+  className?: string;
+}
+
+const ExpoBanner = ({ className }: ExpoBannerProps) => {
   const [isVisible, setIsVisible] = useState(false);
   const isMobile = useIsMobile();
 
@@ -22,28 +25,18 @@ const ExpoBanner = () => {
   if (!isVisible) return null;
 
   return (
-    <div className="w-full bg-gradient-to-r from-emerald-600 via-emerald-700 to-emerald-800 text-white py-2.5 px-3 md:px-4 relative">
+    <div className={`w-full bg-gradient-to-r from-emerald-600 via-emerald-700 to-emerald-800 text-white py-2.5 px-3 md:px-4 relative ${className || ''}`}>
       <div className="container mx-auto flex items-center justify-center text-center">
         <span className="text-sm md:text-base pr-6">
           {isMobile ? (
             <>
               🎉 See us at <strong>Impressions Expo</strong>, Long Beach Jan 21-24! Visit the{' '}
-              <img 
-                src={barudanLogo} 
-                alt="Barudan" 
-                className="inline h-3.5 mx-1 align-middle" 
-              /> 
-              booth
+              <span className="font-black">Barudan</span> booth
             </>
           ) : (
             <>
               🎉 We're at the <strong>Impressions Expo</strong> in Long Beach, Jan 21-24! Come see us at the{' '}
-              <img 
-                src={barudanLogo} 
-                alt="Barudan" 
-                className="inline h-4 mx-1 align-middle" 
-              /> 
-              booth
+              <span className="font-black">Barudan</span> booth
             </>
           )}
         </span>
