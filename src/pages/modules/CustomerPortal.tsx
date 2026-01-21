@@ -1,5 +1,6 @@
 import ModuleLayout from "@/components/modules/ModuleLayout";
 import { UserCheck, CheckCircle, Clock, File, Cpu, MessageSquare, FileText, Settings, Calendar, CreditCard, Users, Smartphone, Globe, Layers, Zap, PenTool } from "lucide-react";
+import customerPortalHero from "@/assets/modules/customer-portal-hero.jpg";
 
 const CustomerPortal = () => {
   return (
@@ -7,7 +8,7 @@ const CustomerPortal = () => {
       title="Customer Portal"
       description="Give customers a branded login to review orders, approve proofs, and track job progress in real-time."
       color="green"
-      heroImage="/lovable-uploads/ef76fc5f-ac19-42c6-9b19-ebeae2578340.png"
+      heroImage={customerPortalHero}
       heroImageCallouts={[
         {
           text: "Customer Search Interface",

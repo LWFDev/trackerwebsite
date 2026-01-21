@@ -1,5 +1,6 @@
 import ModuleLayout from "@/components/modules/ModuleLayout";
 import { Shirt, Tag, PlusCircle, Search, ShieldCheck, Palette, Zap, Layers, Settings, CheckCircle, ShoppingCart, Paintbrush, Package } from "lucide-react";
+import baseGarmentsHero from "@/assets/modules/base-garments-hero.jpg";
 
 const BaseGarments = () => {
   return (
@@ -7,7 +8,7 @@ const BaseGarments = () => {
       title="Base Garments"
       description="Set up your core product catalog, including styles, sizes, colors, and default pricing."
       color="gold"
-      heroImage="/lovable-uploads/1c671d53-6777-41e1-9540-6a665533f0ae.png"
+      heroImage={baseGarmentsHero}
       heroImageCallouts={[
         {
           text: "Product Catalog Browser",

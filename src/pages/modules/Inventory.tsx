@@ -1,5 +1,6 @@
 import ModuleLayout from "@/components/modules/ModuleLayout";
 import { Package, TruckIcon, Percent, Clock, BarChart2, MapPin, Zap, QrCode, LineChart, RefreshCw, Search, Building, Box, LayoutGrid, Smartphone, AlertTriangle, ShoppingCart, ShieldCheck } from "lucide-react";
+import inventoryHero from "@/assets/modules/inventory-hero.jpg";
 
 const Inventory = () => {
   return (
@@ -7,7 +8,7 @@ const Inventory = () => {
       title="Inventory"
       description="Monitor stock levels, track item movement, and get automatic low-stock alerts across locations."
       color="blue"
-      heroImage="/lovable-uploads/da887be9-f204-4f42-8349-f1ee3a8bd239.png"
+      heroImage={inventoryHero}
       heroImageCallouts={[
         {
           text: "Real-time Stock Monitoring",

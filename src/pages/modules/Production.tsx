@@ -1,6 +1,6 @@
-
 import ModuleLayout from "@/components/modules/ModuleLayout";
 import { Layers, Clock, Percent, Settings, BarChart2, Wrench, Clipboard, LineChart, CheckCircle, File, Users, Layout, Cpu, AlertTriangle, BookOpen, Database, Sliders } from "lucide-react";
+import productionHero from "@/assets/modules/production-hero.jpg";
 
 const Production = () => {
   return (
@@ -8,6 +8,7 @@ const Production = () => {
       title="Production"
       description="Schedule, assign, and track every job from setup through final output with visual production queues."
       color="blue"
+      heroImage={productionHero}
       stats={[
         {
           value: "25%",

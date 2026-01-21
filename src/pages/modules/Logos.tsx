@@ -1,6 +1,6 @@
-
 import ModuleLayout from "@/components/modules/ModuleLayout";
 import { Image, Share2, Tags, Users, Search, Shield, Globe, UploadCloud, Folder, Clock, File, Download, Lock, Briefcase, Edit, History, Smartphone, CheckCircle, BarChart2, RefreshCw } from "lucide-react";
+import logosHero from "@/assets/modules/logos-hero.jpg";
 
 const Logos = () => {
   return (
@@ -8,7 +8,7 @@ const Logos = () => {
       title="Logos"
       description="Upload, categorize, and manage customer logos and artwork files with built-in version tracking."
       color="purple"
-      heroImage="/lovable-uploads/8286bf20-d222-4f89-8b71-0dcf23a14319.png"
+      heroImage={logosHero}
       heroImageCallouts={[
         {
           text: "Logo Library Browser",

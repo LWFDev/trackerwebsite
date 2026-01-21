@@ -1,6 +1,6 @@
-
 import ModuleLayout from "@/components/modules/ModuleLayout";
 import { FileText, DollarSign, Clock, CheckCircle, Truck, Calendar, BarChart2, Package, Building, Search, Globe, Zap, ShoppingCart, FileSpreadsheet, Receipt, AlertTriangle } from "lucide-react";
+import purchaseOrdersHero from "@/assets/modules/purchase-orders-hero.jpg";
 
 const PurchaseOrders = () => {
   return (
@@ -8,6 +8,7 @@ const PurchaseOrders = () => {
       title="Purchase Orders"
       description="Create, send, and track POs with direct links to incoming inventory and supplier fulfillment."
       color="rose"
+      heroImage={purchaseOrdersHero}
       stats={[
         {
           value: "75%",
