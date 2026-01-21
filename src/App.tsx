@@ -35,6 +35,8 @@ const Documentation = React.lazy(() => import("@/pages/Documentation"));
 const Support = React.lazy(() => import("@/pages/Support"));
 const Industries = React.lazy(() => import("@/pages/Industries"));
 const CaseStudies = React.lazy(() => import("@/pages/CaseStudies"));
+const Integrations = React.lazy(() => import("@/pages/Integrations"));
+const IntegrationDetail = React.lazy(() => import("@/pages/integrations/IntegrationDetail"));
 
 
 // Module pages - lazy loaded
@@ -120,6 +122,8 @@ const App = () => {
                     <Route path="/industries/print-on-demand" element={<Layout><PrintOnDemand /></Layout>} />
                     <Route path="/industries/contract-decoration" element={<Layout><ContractDecoration /></Layout>} />
                     <Route path="/get-started" element={<Layout><GetStarted /></Layout>} />
+                    <Route path="/integrations" element={<Layout><Integrations /></Layout>} />
+                    <Route path="/integrations/:integrationId" element={<Layout><IntegrationDetail /></Layout>} />
                     
                     {/* Case Studies Routes */}
                     <Route path="/case-studies" element={<Layout><CaseStudies /></Layout>} />
