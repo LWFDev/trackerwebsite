@@ -38,13 +38,16 @@ const ExpoFinder = () => {
     return () => cleanup();
   }, [cleanup]);
 
-  // Handle permission request
+  // Handle permission request - ALWAYS require explicit user tap
   const handleEnableLocation = () => {
     setHasRequestedPermission(true);
+    // Call requestPermission SYNCHRONOUSLY within the click handler
+    // This is critical for iOS Safari to show the permission prompt
     requestPermission();
   };
 
-  // Initial state - ALWAYS show prompt first if user hasn't clicked "Enable Location" yet
+  // ALWAYS show the prompt first - no auto-accepting, no checking cached permissions
+  // User MUST tap "Enable Location" button every time they visit this page
   if (!hasRequestedPermission) {
     return (
       <div className="min-h-screen bg-background flex flex-col">

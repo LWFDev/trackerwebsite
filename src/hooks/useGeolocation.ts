@@ -39,19 +39,9 @@ const isIOSChrome = (): boolean => {
   return /iPad|iPhone|iPod/.test(ua) && /CriOS/.test(ua);
 };
 
-// Check permission status using Permissions API
-const checkPermissionStatus = async (): Promise<'prompt' | 'granted' | 'denied'> => {
-  if ('permissions' in navigator) {
-    try {
-      const result = await navigator.permissions.query({ name: 'geolocation' });
-      return result.state as 'prompt' | 'granted' | 'denied';
-    } catch {
-      // Permissions API not fully supported (e.g., some Safari versions)
-      return 'prompt';
-    }
-  }
-  return 'prompt';
-};
+// NOTE: We intentionally do NOT check cached permission status
+// The permission prompt must ALWAYS be triggered by user action
+// This ensures iOS Safari and other mobile browsers show the prompt correctly
 
 export const useGeolocation = (options: UseGeolocationOptions = {}) => {
   const {
