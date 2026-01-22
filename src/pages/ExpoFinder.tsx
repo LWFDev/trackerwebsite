@@ -44,8 +44,8 @@ const ExpoFinder = () => {
     requestPermission();
   };
 
-  // Initial state - prompt user to enable location
-  if (!hasRequestedPermission && permissionStatus === 'prompt') {
+  // Initial state - ALWAYS show prompt first if user hasn't clicked "Enable Location" yet
+  if (!hasRequestedPermission) {
     return (
       <div className="min-h-screen bg-background flex flex-col">
         <Header />
@@ -86,8 +86,8 @@ const ExpoFinder = () => {
     );
   }
 
-  // Permission denied state
-  if (permissionStatus === 'denied') {
+  // Permission denied state - only show AFTER user has attempted to enable location
+  if (permissionStatus === 'denied' || permissionStatus === 'unavailable') {
     return (
       <div className="min-h-screen bg-background flex flex-col">
         <Header />
@@ -121,7 +121,9 @@ const ExpoFinder = () => {
 
             <button 
               className="mt-4 text-sm text-muted-foreground underline hover:text-foreground transition-colors"
-              onClick={() => setViewMode('map')}
+              onClick={() => {
+                setViewMode('map');
+              }}
             >
               View map instead
             </button>

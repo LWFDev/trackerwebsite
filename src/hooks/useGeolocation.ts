@@ -143,19 +143,8 @@ export const useGeolocation = (options: UseGeolocationOptions = {}) => {
     // Set loading state
     setState(prev => ({ ...prev, loading: true, error: null }));
 
-    // Check current permission status
-    const currentStatus = await checkPermissionStatus();
-    
-    // If already denied, update state and don't request again
-    if (currentStatus === 'denied') {
-      setState(prev => ({
-        ...prev,
-        error: 'Location permission was previously denied. Please enable it in your browser settings.',
-        loading: false,
-        permissionStatus: 'denied',
-      }));
-      return;
-    }
+    // Skip Permissions API pre-check - let the browser handle it directly
+    // This is more reliable across all devices, especially iOS Safari
 
     const geoOptions: PositionOptions = {
       enableHighAccuracy,
