@@ -8,39 +8,27 @@ export const CONVENTION_CENTER = {
   name: 'Long Beach Convention Center',
 };
 
-// Barudan booth location
+// Barudan booth location (center of booth #1429)
 export const BARUDAN_BOOTH = {
-  lat: 33.7648,
-  lng: -118.1882,
+  lat: 33.7656,
+  lng: -118.1887,
   name: 'Barudan America Inc',
   boothNumber: '1429',
 };
 
 // Map configuration
 export const MAP_CONFIG = {
-  defaultZoom: 17,
+  defaultZoom: 18,
   maxZoom: 21,
-  minZoom: 14,
-  // Bounds for the convention center area
+  minZoom: 15,
+  // Bounds for the convention center exhibit hall area
   bounds: {
-    north: 33.7680,
-    south: 33.7620,
-    east: -118.1850,
-    west: -118.1930,
+    north: 33.7660,
+    south: 33.7635,
+    east: -118.1865,
+    west: -118.1905,
   },
 };
-
-// Floor plan overlay configuration
-// These coordinates define the four corners of the floor plan image
-// Format: [top-left, top-right, bottom-right, bottom-left] as [lng, lat]
-export const FLOOR_PLAN_BOUNDS: [[number, number], [number, number], [number, number], [number, number]] = [
-  [-118.1905, 33.7658],  // Top-left (NW corner)
-  [-118.1865, 33.7658],  // Top-right (NE corner)
-  [-118.1865, 33.7635],  // Bottom-right (SE corner)
-  [-118.1905, 33.7635],  // Bottom-left (SW corner)
-];
-
-export const FLOOR_PLAN_IMAGE = '/expo-floorplan.jpg';
 
 // Expo event details
 export const EXPO_DETAILS = {
