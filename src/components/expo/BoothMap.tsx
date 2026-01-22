@@ -25,6 +25,7 @@ const BoothMap = ({ userLocation }: BoothMapProps) => {
   const userMarker = useRef<mapboxgl.Marker | null>(null);
   const [mapLoaded, setMapLoaded] = useState(false);
   const [floorPlanVisible, setFloorPlanVisible] = useState(true);
+  const [mapError, setMapError] = useState<string | null>(null);
 
   // Initialize map
   useEffect(() => {
@@ -43,6 +44,15 @@ const BoothMap = ({ userLocation }: BoothMapProps) => {
 
     // Add navigation controls
     map.current.addControl(new mapboxgl.NavigationControl(), 'top-right');
+
+    // Error handling for authorization issues
+    map.current.on('error', (e) => {
+      console.error('Mapbox error:', e);
+      const errorStatus = (e.error as { status?: number })?.status;
+      if (errorStatus === 403) {
+        setMapError('Map authorization failed. Please check token URL restrictions.');
+      }
+    });
 
     map.current.on('load', () => {
       if (!map.current) return;
@@ -225,11 +235,23 @@ const BoothMap = ({ userLocation }: BoothMapProps) => {
       </div>
 
       {/* Loading overlay */}
-      {!mapLoaded && (
+      {!mapLoaded && !mapError && (
         <div className="absolute inset-0 bg-background/80 flex items-center justify-center">
           <div className="flex flex-col items-center gap-2">
             <div className="w-8 h-8 border-2 border-primary border-t-transparent rounded-full animate-spin"></div>
             <span className="text-sm text-muted-foreground">Loading map...</span>
+          </div>
+        </div>
+      )}
+
+      {/* Error overlay */}
+      {mapError && (
+        <div className="absolute inset-0 bg-background/90 flex items-center justify-center p-4">
+          <div className="flex flex-col items-center gap-3 text-center max-w-xs">
+            <div className="w-12 h-12 rounded-full bg-destructive/10 flex items-center justify-center">
+              <span className="text-destructive text-xl">!</span>
+            </div>
+            <p className="text-sm text-muted-foreground">{mapError}</p>
           </div>
         </div>
       )}
