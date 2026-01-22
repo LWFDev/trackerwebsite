@@ -49,6 +49,7 @@ const ExpoFinder = () => {
     return (
       <div className="min-h-screen bg-background flex flex-col">
         <Header />
+        <BoothInfoCard />
         <div className="flex-1 flex items-center justify-center p-6">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -81,7 +82,6 @@ const ExpoFinder = () => {
             </button>
           </motion.div>
         </div>
-        <BoothInfoCard />
       </div>
     );
   }
@@ -91,6 +91,7 @@ const ExpoFinder = () => {
     return (
       <div className="min-h-screen bg-background flex flex-col">
         <Header />
+        <BoothInfoCard />
         <div className="flex-1 flex items-center justify-center p-6">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -129,7 +130,6 @@ const ExpoFinder = () => {
             </button>
           </motion.div>
         </div>
-        <BoothInfoCard />
       </div>
     );
   }
@@ -139,6 +139,7 @@ const ExpoFinder = () => {
     return (
       <div className="min-h-screen bg-background flex flex-col">
         <Header />
+        <BoothInfoCard />
         <div className="flex-1 flex items-center justify-center p-6">
           <motion.div
             initial={{ opacity: 0 }}
@@ -155,7 +156,6 @@ const ExpoFinder = () => {
             </p>
           </motion.div>
         </div>
-        <BoothInfoCard />
       </div>
     );
   }
@@ -165,6 +165,7 @@ const ExpoFinder = () => {
     return (
       <div className="min-h-screen bg-background flex flex-col">
         <Header />
+        <BoothInfoCard />
         <div className="flex-1 p-4">
           <div className="h-[60vh] md:h-[70vh]">
             <BoothMap userLocation={{ latitude: null, longitude: null, accuracy: null }} />
@@ -175,7 +176,6 @@ const ExpoFinder = () => {
             </div>
           )}
         </div>
-        <BoothInfoCard />
       </div>
     );
   }
@@ -183,6 +183,7 @@ const ExpoFinder = () => {
   return (
     <div className="min-h-screen bg-background flex flex-col">
       <Header />
+      <BoothInfoCard />
       
       {/* View toggle */}
       <div className="flex justify-center p-4">
@@ -259,8 +260,6 @@ const ExpoFinder = () => {
           )}
         </AnimatePresence>
       </div>
-
-      <BoothInfoCard />
 
       {/* Error toast */}
       {error && (
