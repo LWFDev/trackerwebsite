@@ -8,9 +8,9 @@ import {
   CONVENTION_CENTER, 
   BARUDAN_BOOTH, 
   MAP_CONFIG,
-  FLOOR_PLAN_BOUNDS,
-  FLOOR_PLAN_IMAGE
 } from '@/config/expoConfig';
+import { expoBooths, getBoothCenter } from '@/data/expoBooths';
+import { boothsToGeoJSON, createAislesGeoJSON } from '@/utils/boothsToGeoJSON';
 import { motion } from 'framer-motion';
 
 interface BoothMapProps {
@@ -54,7 +54,6 @@ const BoothMap = ({ userLocation }: BoothMapProps) => {
   const map = useRef<mapboxgl.Map | null>(null);
   const userMarker = useRef<mapboxgl.Marker | null>(null);
   const [mapLoaded, setMapLoaded] = useState(false);
-  const [floorPlanVisible, setFloorPlanVisible] = useState(true);
   const [mapError, setMapError] = useState<string | null>(null);
   const [isUserNearby, setIsUserNearby] = useState(false);
   const [edgeIndicator, setEdgeIndicator] = useState<{
@@ -141,46 +140,119 @@ const BoothMap = ({ userLocation }: BoothMapProps) => {
     map.current.on('load', () => {
       if (!map.current) return;
       
-      // Add floor plan image overlay
-      map.current.addSource('floor-plan', {
-        type: 'image',
-        url: FLOOR_PLAN_IMAGE,
-        coordinates: FLOOR_PLAN_BOUNDS,
+      // Add aisles as lines
+      const aislesGeoJSON = createAislesGeoJSON();
+      map.current.addSource('aisles', {
+        type: 'geojson',
+        data: aislesGeoJSON,
+      });
+      
+      map.current.addLayer({
+        id: 'aisles-layer',
+        type: 'line',
+        source: 'aisles',
+        paint: {
+          'line-color': '#e5e7eb',
+          'line-width': 2,
+          'line-dasharray': [2, 2],
+        },
+      });
+      
+      // Add booths as GeoJSON polygons
+      const boothsGeoJSON = boothsToGeoJSON(expoBooths);
+      map.current.addSource('booths', {
+        type: 'geojson',
+        data: boothsGeoJSON,
       });
 
+      // Fill layer for booth backgrounds
       map.current.addLayer({
-        id: 'floor-plan-layer',
-        type: 'raster',
-        source: 'floor-plan',
+        id: 'booth-fills',
+        type: 'fill',
+        source: 'booths',
         paint: {
-          'raster-opacity': 0.85,
-          'raster-fade-duration': 0,
+          'fill-color': ['get', 'color'],
+          'fill-opacity': 0.8,
         },
       });
 
-      // Add Barudan booth marker on top of floor plan
-      const boothEl = document.createElement('div');
-      boothEl.className = 'booth-marker';
-      boothEl.innerHTML = `
-        <div class="relative">
-          <div class="absolute -inset-2 bg-emerald-500/30 rounded-full animate-ping"></div>
-          <div class="relative w-10 h-10 bg-gradient-to-br from-emerald-500 to-emerald-700 rounded-full flex items-center justify-center shadow-lg border-2 border-white">
-            <span class="text-white font-bold text-xs">B</span>
-          </div>
-        </div>
-      `;
+      // Outline layer for booth borders
+      map.current.addLayer({
+        id: 'booth-outlines',
+        type: 'line',
+        source: 'booths',
+        paint: {
+          'line-color': '#1f2937',
+          'line-width': 1,
+        },
+      });
 
-      new mapboxgl.Marker({ element: boothEl })
-        .setLngLat([BARUDAN_BOOTH.lng, BARUDAN_BOOTH.lat])
-        .setPopup(
-          new mapboxgl.Popup({ offset: 25 }).setHTML(`
+      // Labels layer for booth numbers
+      map.current.addLayer({
+        id: 'booth-labels',
+        type: 'symbol',
+        source: 'booths',
+        layout: {
+          'text-field': ['get', 'boothNumber'],
+          'text-size': 10,
+          'text-font': ['DIN Pro Medium', 'Arial Unicode MS Regular'],
+          'text-anchor': 'center',
+        },
+        paint: {
+          'text-color': '#1f2937',
+          'text-halo-color': '#ffffff',
+          'text-halo-width': 1,
+        },
+      });
+
+      // Add click handler for booth popups
+      map.current.on('click', 'booth-fills', (e) => {
+        if (!e.features || !e.features[0] || !map.current) return;
+        
+        const props = e.features[0].properties;
+        const coordinates = e.lngLat;
+        
+        new mapboxgl.Popup({ offset: 15 })
+          .setLngLat(coordinates)
+          .setHTML(`
             <div class="p-2">
-              <h3 class="font-bold text-emerald-700">${BARUDAN_BOOTH.name}</h3>
-              <p class="text-sm text-gray-600">Booth #${BARUDAN_BOOTH.boothNumber}</p>
+              <h3 class="font-bold ${props.isHighlighted ? 'text-emerald-700' : 'text-gray-900'}">${props.company}</h3>
+              <p class="text-sm text-gray-600">Booth #${props.boothNumber}</p>
+              <p class="text-xs text-gray-400 capitalize">${props.category}</p>
             </div>
           `)
-        )
-        .addTo(map.current);
+          .addTo(map.current);
+      });
+
+      // Change cursor on hover
+      map.current.on('mouseenter', 'booth-fills', () => {
+        if (map.current) map.current.getCanvas().style.cursor = 'pointer';
+      });
+      
+      map.current.on('mouseleave', 'booth-fills', () => {
+        if (map.current) map.current.getCanvas().style.cursor = '';
+      });
+
+      // Add Barudan booth marker with pulsing animation
+      const barudanBooth = expoBooths.find(b => b.isHighlighted);
+      if (barudanBooth) {
+        const center = getBoothCenter(barudanBooth);
+        
+        const boothEl = document.createElement('div');
+        boothEl.className = 'booth-marker';
+        boothEl.innerHTML = `
+          <div class="relative">
+            <div class="absolute -inset-2 bg-emerald-500/30 rounded-full animate-ping"></div>
+            <div class="relative w-8 h-8 bg-gradient-to-br from-emerald-500 to-emerald-700 rounded-full flex items-center justify-center shadow-lg border-2 border-white">
+              <span class="text-white font-bold text-xs">B</span>
+            </div>
+          </div>
+        `;
+
+        new mapboxgl.Marker({ element: boothEl })
+          .setLngLat(center)
+          .addTo(map.current);
+      }
 
       setMapLoaded(true);
     });
@@ -190,18 +262,6 @@ const BoothMap = ({ userLocation }: BoothMapProps) => {
       map.current = null;
     };
   }, []);
-
-  // Toggle floor plan visibility
-  const toggleFloorPlan = () => {
-    if (!map.current || !mapLoaded) return;
-    const newVisibility = !floorPlanVisible;
-    setFloorPlanVisible(newVisibility);
-    map.current.setLayoutProperty(
-      'floor-plan-layer',
-      'visibility',
-      newVisibility ? 'visible' : 'none'
-    );
-  };
 
   // Update user location marker
   useEffect(() => {
@@ -291,15 +351,6 @@ const BoothMap = ({ userLocation }: BoothMapProps) => {
       className="relative w-full h-full rounded-2xl overflow-hidden shadow-xl"
     >
       <div ref={mapContainer} className="w-full h-full" />
-      
-      {/* Floor plan toggle */}
-      <button
-        onClick={toggleFloorPlan}
-        className="absolute top-4 left-4 bg-background/90 backdrop-blur-sm rounded-lg px-3 py-2 shadow-lg text-xs font-medium flex items-center gap-2 hover:bg-background transition-colors"
-      >
-        <div className={`w-3 h-3 rounded border ${floorPlanVisible ? 'bg-primary border-primary' : 'bg-transparent border-muted-foreground'}`} />
-        Floor Plan
-      </button>
 
       {/* Edge proximity indicator when user is far away */}
       {edgeIndicator && (
@@ -314,14 +365,24 @@ const BoothMap = ({ userLocation }: BoothMapProps) => {
 
       {/* Map overlay legend */}
       <div className="absolute bottom-4 left-4 bg-background/90 backdrop-blur-sm rounded-lg p-3 shadow-lg">
+        <p className="text-xs font-medium mb-2">Legend</p>
         <div className="flex items-center gap-2 text-xs">
           <div className="w-3 h-3 rounded-full border border-white" style={{ backgroundColor: 'rgb(59, 130, 246)' }}></div>
           <span className="text-muted-foreground">Your location</span>
         </div>
         <div className="flex items-center gap-2 text-xs mt-1">
-          <div className="w-3 h-3 rounded-full border border-white" style={{ backgroundColor: 'rgb(16, 185, 129)' }}></div>
-          <span className="text-muted-foreground">Barudan booth #1429</span>
+          <div className="w-3 h-3 rounded border border-gray-800" style={{ backgroundColor: 'rgb(16, 185, 129)' }}></div>
+          <span className="text-muted-foreground">Barudan #1429</span>
         </div>
+        <div className="flex items-center gap-2 text-xs mt-1">
+          <div className="w-3 h-3 rounded border border-gray-800" style={{ backgroundColor: '#fbbf24' }}></div>
+          <span className="text-muted-foreground">Equipment</span>
+        </div>
+        <div className="flex items-center gap-2 text-xs mt-1">
+          <div className="w-3 h-3 rounded border border-gray-800" style={{ backgroundColor: '#60a5fa' }}></div>
+          <span className="text-muted-foreground">Apparel</span>
+        </div>
+        <p className="text-xs text-muted-foreground mt-2 italic">Tap booths for info</p>
       </div>
 
       {/* Loading overlay */}
