@@ -114,8 +114,8 @@ export const useGeolocation = (options: UseGeolocationOptions = {}) => {
     }
   }, []);
 
-  const requestPermission = useCallback(async () => {
-    // Check for secure context first
+  const requestPermission = useCallback(() => {
+    // Check for secure context first - synchronous check
     if (!isSecureContext()) {
       setState(prev => ({
         ...prev,
@@ -126,7 +126,7 @@ export const useGeolocation = (options: UseGeolocationOptions = {}) => {
       return;
     }
 
-    // Check for geolocation support
+    // Check for geolocation support - synchronous check
     if (!navigator.geolocation) {
       setState(prev => ({
         ...prev,
@@ -143,15 +143,16 @@ export const useGeolocation = (options: UseGeolocationOptions = {}) => {
     // Set loading state
     setState(prev => ({ ...prev, loading: true, error: null }));
 
-    // Skip Permissions API pre-check - let the browser handle it directly
-    // This is more reliable across all devices, especially iOS Safari
-
     const geoOptions: PositionOptions = {
       enableHighAccuracy,
       timeout,
       maximumAge,
     };
 
+    // IMMEDIATELY call geolocation - no async/await - this is critical for iOS Safari
+    // The geolocation call MUST happen synchronously in the user gesture chain
+    console.log('Requesting geolocation permission...');
+    
     if (watchPosition) {
       watchIdRef.current = navigator.geolocation.watchPosition(
         handleSuccess,
