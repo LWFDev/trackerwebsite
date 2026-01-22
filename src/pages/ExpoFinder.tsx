@@ -106,12 +106,25 @@ const ExpoFinder = () => {
               To help you find the Barudan booth, we need access to your location. 
               Please enable location services in your browser settings.
             </p>
-            <Button onClick={requestPermission} className="bg-emerald-600 hover:bg-emerald-700 mb-4">
+            <Button 
+              onClick={() => {
+                setHasRequestedPermission(false);
+              }} 
+              className="bg-emerald-600 hover:bg-emerald-700 mb-4"
+            >
               Try Again
             </Button>
             
+            {/* iOS-specific instructions */}
+            <div className="text-xs text-muted-foreground bg-muted/50 rounded-lg p-3 mb-4">
+              <p className="font-medium mb-1">📱 On iOS Safari:</p>
+              <p>Settings → Safari → Location → Allow</p>
+              <p className="mt-1 font-medium">📱 On iOS Chrome:</p>
+              <p>Settings → Chrome → Location → Allow</p>
+            </div>
+            
             {/* Manual directions fallback */}
-            <div className="mt-4 p-4 bg-muted rounded-lg text-left">
+            <div className="p-4 bg-muted rounded-lg text-left">
               <p className="font-semibold mb-2 text-sm">📍 Manual Directions:</p>
               <ol className="text-sm text-muted-foreground space-y-1 list-decimal list-inside">
                 <li>Enter Long Beach Convention Center</li>

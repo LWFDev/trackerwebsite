@@ -27,6 +27,18 @@ const isSecureContext = (): boolean => {
   );
 };
 
+// Detect iOS Safari for specific error messaging
+const isIOSSafari = (): boolean => {
+  const ua = navigator.userAgent;
+  return /iPad|iPhone|iPod/.test(ua) && /Safari/.test(ua) && !/CriOS/.test(ua) && !/FxiOS/.test(ua);
+};
+
+// Detect iOS Chrome
+const isIOSChrome = (): boolean => {
+  const ua = navigator.userAgent;
+  return /iPad|iPhone|iPod/.test(ua) && /CriOS/.test(ua);
+};
+
 // Check permission status using Permissions API
 const checkPermissionStatus = async (): Promise<'prompt' | 'granted' | 'denied'> => {
   if ('permissions' in navigator) {
@@ -77,12 +89,19 @@ export const useGeolocation = (options: UseGeolocationOptions = {}) => {
   }, []);
 
   const handleError = useCallback((error: GeolocationPositionError) => {
+    console.log('Geolocation error:', error.code, error.message);
     let errorMessage = 'Unknown error occurred';
     let permissionStatus: GeolocationState['permissionStatus'] = 'unavailable';
 
     switch (error.code) {
       case error.PERMISSION_DENIED:
-        errorMessage = 'Location permission denied. Please enable location access in your browser settings.';
+        if (isIOSSafari()) {
+          errorMessage = 'Location denied. Go to Settings → Safari → Location to enable.';
+        } else if (isIOSChrome()) {
+          errorMessage = 'Location denied. Go to Settings → Chrome → Location to enable.';
+        } else {
+          errorMessage = 'Location permission denied. Please enable location access in your browser settings.';
+        }
         permissionStatus = 'denied';
         break;
       case error.POSITION_UNAVAILABLE:
@@ -152,15 +171,36 @@ export const useGeolocation = (options: UseGeolocationOptions = {}) => {
     // IMMEDIATELY call geolocation - no async/await - this is critical for iOS Safari
     // The geolocation call MUST happen synchronously in the user gesture chain
     console.log('Requesting geolocation permission...');
+    console.log('isSecureContext:', isSecureContext());
+    console.log('navigator.geolocation available:', !!navigator.geolocation);
+    console.log('watchPosition mode:', watchPosition);
     
     if (watchPosition) {
       watchIdRef.current = navigator.geolocation.watchPosition(
-        handleSuccess,
-        handleError,
+        (pos) => {
+          console.log('Geolocation success:', pos.coords.latitude, pos.coords.longitude);
+          handleSuccess(pos);
+        },
+        (err) => {
+          console.log('Geolocation error callback:', err.code, err.message);
+          handleError(err);
+        },
         geoOptions
       );
+      console.log('watchPosition started, watchId:', watchIdRef.current);
     } else {
-      navigator.geolocation.getCurrentPosition(handleSuccess, handleError, geoOptions);
+      navigator.geolocation.getCurrentPosition(
+        (pos) => {
+          console.log('Geolocation success:', pos.coords.latitude, pos.coords.longitude);
+          handleSuccess(pos);
+        },
+        (err) => {
+          console.log('Geolocation error callback:', err.code, err.message);
+          handleError(err);
+        },
+        geoOptions
+      );
+      console.log('getCurrentPosition called');
     }
   }, [enableHighAccuracy, timeout, maximumAge, watchPosition, handleSuccess, handleError, clearWatch]);
 
