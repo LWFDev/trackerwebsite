@@ -18,17 +18,29 @@ export const BARUDAN_BOOTH = {
 
 // Map configuration
 export const MAP_CONFIG = {
-  defaultZoom: 18,
+  defaultZoom: 17,
   maxZoom: 21,
-  minZoom: 15,
+  minZoom: 14,
   // Bounds for the convention center area
   bounds: {
-    north: 33.7670,
-    south: 33.7630,
-    east: -118.1870,
-    west: -118.1920,
+    north: 33.7680,
+    south: 33.7620,
+    east: -118.1850,
+    west: -118.1930,
   },
 };
+
+// Floor plan overlay configuration
+// These coordinates define the four corners of the floor plan image
+// Format: [top-left, top-right, bottom-right, bottom-left] as [lng, lat]
+export const FLOOR_PLAN_BOUNDS: [[number, number], [number, number], [number, number], [number, number]] = [
+  [-118.1918, 33.7672],  // Top-left (NW corner)
+  [-118.1862, 33.7672],  // Top-right (NE corner)
+  [-118.1862, 33.7628],  // Bottom-right (SE corner)
+  [-118.1918, 33.7628],  // Bottom-left (SW corner)
+];
+
+export const FLOOR_PLAN_IMAGE = '/expo-floorplan.jpg';
 
 // Expo event details
 export const EXPO_DETAILS = {
