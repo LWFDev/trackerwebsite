@@ -1,7 +1,7 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useRef, useState, useCallback } from 'react';
 import mapboxgl from 'mapbox-gl';
 import 'mapbox-gl/dist/mapbox-gl.css';
-import { AlertCircle, RefreshCw } from 'lucide-react';
+import { AlertCircle, RefreshCw, Navigation } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { 
   MAPBOX_ACCESS_TOKEN, 
@@ -21,6 +21,34 @@ interface BoothMapProps {
   };
 }
 
+type EdgeSide = 'top' | 'bottom' | 'left' | 'right' | 'top-left' | 'top-right' | 'bottom-left' | 'bottom-right';
+
+// Calculate distance between two coordinates in feet
+const calculateDistance = (lat1: number, lng1: number, lat2: number, lng2: number): number => {
+  const R = 20902231; // Earth's radius in feet
+  const dLat = (lat2 - lat1) * Math.PI / 180;
+  const dLng = (lng2 - lng1) * Math.PI / 180;
+  const a = 
+    Math.sin(dLat / 2) * Math.sin(dLat / 2) +
+    Math.cos(lat1 * Math.PI / 180) * Math.cos(lat2 * Math.PI / 180) *
+    Math.sin(dLng / 2) * Math.sin(dLng / 2);
+  const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+  return R * c;
+};
+
+// Format distance for display
+const formatDistance = (feet: number): string => {
+  if (feet < 500) {
+    return `${Math.round(feet)} ft`;
+  } else if (feet < 5280) {
+    const yards = Math.round(feet / 3);
+    return `${yards} yds`;
+  } else {
+    const miles = (feet / 5280).toFixed(1);
+    return `${miles} mi`;
+  }
+};
+
 const BoothMap = ({ userLocation }: BoothMapProps) => {
   const mapContainer = useRef<HTMLDivElement>(null);
   const map = useRef<mapboxgl.Map | null>(null);
@@ -28,6 +56,56 @@ const BoothMap = ({ userLocation }: BoothMapProps) => {
   const [mapLoaded, setMapLoaded] = useState(false);
   const [floorPlanVisible, setFloorPlanVisible] = useState(true);
   const [mapError, setMapError] = useState<string | null>(null);
+  const [isUserNearby, setIsUserNearby] = useState(false);
+  const [edgeIndicator, setEdgeIndicator] = useState<{
+    side: EdgeSide;
+    distance: string;
+  } | null>(null);
+
+  // Check if user is within map bounds
+  const isWithinBounds = useCallback((lat: number, lng: number): boolean => {
+    return (
+      lat >= MAP_CONFIG.bounds.south &&
+      lat <= MAP_CONFIG.bounds.north &&
+      lng >= MAP_CONFIG.bounds.west &&
+      lng <= MAP_CONFIG.bounds.east
+    );
+  }, []);
+
+  // Get edge side based on user position relative to map bounds
+  const getEdgeSide = useCallback((lat: number, lng: number): EdgeSide => {
+    const { north, south, east, west } = MAP_CONFIG.bounds;
+    
+    const isNorth = lat > north;
+    const isSouth = lat < south;
+    const isEast = lng > east;
+    const isWest = lng < west;
+    
+    if (isNorth && isWest) return 'top-left';
+    if (isNorth && isEast) return 'top-right';
+    if (isSouth && isWest) return 'bottom-left';
+    if (isSouth && isEast) return 'bottom-right';
+    if (isNorth) return 'top';
+    if (isSouth) return 'bottom';
+    if (isWest) return 'left';
+    if (isEast) return 'right';
+    return 'top';
+  }, []);
+
+  // Get arrow rotation based on edge side
+  const getArrowRotation = (side: EdgeSide): string => {
+    switch (side) {
+      case 'top': return 'rotate-180';
+      case 'bottom': return 'rotate-0';
+      case 'left': return 'rotate-90';
+      case 'right': return '-rotate-90';
+      case 'top-left': return 'rotate-[135deg]';
+      case 'top-right': return 'rotate-[-135deg]';
+      case 'bottom-left': return 'rotate-45';
+      case 'bottom-right': return '-rotate-45';
+      default: return 'rotate-0';
+    }
+  };
 
   // Initialize map
   useEffect(() => {
@@ -42,6 +120,10 @@ const BoothMap = ({ userLocation }: BoothMapProps) => {
       zoom: MAP_CONFIG.defaultZoom,
       maxZoom: MAP_CONFIG.maxZoom,
       minZoom: MAP_CONFIG.minZoom,
+      maxBounds: [
+        [MAP_CONFIG.bounds.west - 0.005, MAP_CONFIG.bounds.south - 0.005],
+        [MAP_CONFIG.bounds.east + 0.005, MAP_CONFIG.bounds.north + 0.005],
+      ],
     });
 
     // Add navigation controls
@@ -126,85 +208,80 @@ const BoothMap = ({ userLocation }: BoothMapProps) => {
     if (!map.current || !mapLoaded) return;
     if (userLocation.latitude === null || userLocation.longitude === null) return;
 
-    if (!userMarker.current) {
-      // Create user marker
-      const userEl = document.createElement('div');
-      userEl.className = 'user-marker';
-      userEl.innerHTML = `
-        <div class="relative">
-          <div class="absolute -inset-3 bg-blue-500/20 rounded-full animate-pulse"></div>
-          <div class="relative w-4 h-4 bg-blue-500 rounded-full border-2 border-white shadow-lg"></div>
-        </div>
-      `;
+    const nearby = isWithinBounds(userLocation.latitude, userLocation.longitude);
+    setIsUserNearby(nearby);
 
-      userMarker.current = new mapboxgl.Marker({ element: userEl })
-        .setLngLat([userLocation.longitude, userLocation.latitude])
-        .addTo(map.current);
+    // Calculate distance to booth
+    const distanceInFeet = calculateDistance(
+      userLocation.latitude,
+      userLocation.longitude,
+      BARUDAN_BOOTH.lat,
+      BARUDAN_BOOTH.lng
+    );
+    const isAtBooth = distanceInFeet < 50;
 
-      // Add accuracy circle
-      if (userLocation.accuracy) {
-        const accuracyCircle = {
-          type: 'Feature' as const,
-          geometry: {
-            type: 'Point' as const,
-            coordinates: [userLocation.longitude, userLocation.latitude],
-          },
-          properties: {},
-        };
+    if (nearby) {
+      // User is within map bounds - show their marker
+      setEdgeIndicator(null);
 
-        if (!map.current.getSource('user-accuracy')) {
-          map.current.addSource('user-accuracy', {
-            type: 'geojson',
-            data: accuracyCircle,
-          });
+      if (!userMarker.current) {
+        // Create user marker
+        const userEl = document.createElement('div');
+        userEl.className = 'user-marker';
+        userEl.innerHTML = `
+          <div class="relative">
+            <div class="absolute -inset-3 bg-blue-500/20 rounded-full animate-pulse"></div>
+            <div class="relative w-4 h-4 bg-blue-500 rounded-full border-2 border-white shadow-lg"></div>
+            ${isAtBooth ? '<div class="absolute -bottom-6 left-1/2 -translate-x-1/2 whitespace-nowrap bg-blue-500 text-white text-xs px-2 py-0.5 rounded-full font-medium">You\'re here!</div>' : ''}
+          </div>
+        `;
 
-          map.current.addLayer({
-            id: 'user-accuracy-circle',
-            type: 'circle',
-            source: 'user-accuracy',
-            paint: {
-              'circle-radius': {
-                stops: [
-                  [0, 0],
-                  [20, userLocation.accuracy],
-                ],
-                base: 2,
-              },
-              'circle-color': 'rgba(59, 130, 246, 0.15)',
-              'circle-stroke-width': 1,
-              'circle-stroke-color': 'rgba(59, 130, 246, 0.3)',
-            },
-          });
+        userMarker.current = new mapboxgl.Marker({ element: userEl })
+          .setLngLat([userLocation.longitude, userLocation.latitude])
+          .addTo(map.current);
+      } else {
+        // Update marker position
+        userMarker.current.setLngLat([userLocation.longitude, userLocation.latitude]);
+        
+        // Update marker content if needed
+        const el = userMarker.current.getElement();
+        if (el) {
+          el.innerHTML = `
+            <div class="relative">
+              <div class="absolute -inset-3 bg-blue-500/20 rounded-full animate-pulse"></div>
+              <div class="relative w-4 h-4 bg-blue-500 rounded-full border-2 border-white shadow-lg"></div>
+              ${isAtBooth ? '<div class="absolute -bottom-6 left-1/2 -translate-x-1/2 whitespace-nowrap bg-blue-500 text-white text-xs px-2 py-0.5 rounded-full font-medium">You\'re here!</div>' : ''}
+            </div>
+          `;
         }
       }
-
-      // Fit bounds to show both user and booth
-      const bounds = new mapboxgl.LngLatBounds()
-        .extend([userLocation.longitude, userLocation.latitude])
-        .extend([BARUDAN_BOOTH.lng, BARUDAN_BOOTH.lat]);
-
-      map.current.fitBounds(bounds, {
-        padding: 80,
-        maxZoom: 19,
-      });
     } else {
-      // Update existing marker position
-      userMarker.current.setLngLat([userLocation.longitude, userLocation.latitude]);
-
-      // Update accuracy circle
-      const source = map.current.getSource('user-accuracy') as mapboxgl.GeoJSONSource;
-      if (source) {
-        source.setData({
-          type: 'Feature',
-          geometry: {
-            type: 'Point',
-            coordinates: [userLocation.longitude, userLocation.latitude],
-          },
-          properties: {},
-        });
+      // User is outside bounds - remove marker, show edge indicator
+      if (userMarker.current) {
+        userMarker.current.remove();
+        userMarker.current = null;
       }
+
+      const distance = formatDistance(distanceInFeet);
+      const side = getEdgeSide(userLocation.latitude, userLocation.longitude);
+      setEdgeIndicator({ side, distance });
     }
-  }, [userLocation.latitude, userLocation.longitude, userLocation.accuracy, mapLoaded]);
+  }, [userLocation.latitude, userLocation.longitude, userLocation.accuracy, mapLoaded, isWithinBounds, getEdgeSide]);
+
+  // Get edge indicator position classes
+  const getEdgePositionClasses = (side: EdgeSide): string => {
+    switch (side) {
+      case 'top': return 'top-16 left-1/2 -translate-x-1/2';
+      case 'bottom': return 'bottom-16 left-1/2 -translate-x-1/2';
+      case 'left': return 'left-4 top-1/2 -translate-y-1/2';
+      case 'right': return 'right-4 top-1/2 -translate-y-1/2';
+      case 'top-left': return 'top-16 left-4';
+      case 'top-right': return 'top-16 right-4';
+      case 'bottom-left': return 'bottom-16 left-4';
+      case 'bottom-right': return 'bottom-16 right-4';
+      default: return 'top-16 left-1/2 -translate-x-1/2';
+    }
+  };
 
   return (
     <motion.div
@@ -223,6 +300,17 @@ const BoothMap = ({ userLocation }: BoothMapProps) => {
         <div className={`w-3 h-3 rounded border ${floorPlanVisible ? 'bg-primary border-primary' : 'bg-transparent border-muted-foreground'}`} />
         Floor Plan
       </button>
+
+      {/* Edge proximity indicator when user is far away */}
+      {edgeIndicator && (
+        <div 
+          className={`absolute flex items-center gap-2 bg-blue-500 text-white px-3 py-2 rounded-lg shadow-lg text-sm font-medium z-10 ${getEdgePositionClasses(edgeIndicator.side)}`}
+        >
+          <div className="w-3 h-3 bg-white rounded-full animate-pulse" />
+          <span>You: {edgeIndicator.distance}</span>
+          <Navigation className={`w-4 h-4 ${getArrowRotation(edgeIndicator.side)}`} />
+        </div>
+      )}
 
       {/* Map overlay legend */}
       <div className="absolute bottom-4 left-4 bg-background/90 backdrop-blur-sm rounded-lg p-3 shadow-lg">
