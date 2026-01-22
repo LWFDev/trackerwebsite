@@ -1,7 +1,14 @@
 import React, { useEffect, useRef, useState } from 'react';
 import mapboxgl from 'mapbox-gl';
 import 'mapbox-gl/dist/mapbox-gl.css';
-import { MAPBOX_ACCESS_TOKEN, CONVENTION_CENTER, BARUDAN_BOOTH, MAP_CONFIG } from '@/config/expoConfig';
+import { 
+  MAPBOX_ACCESS_TOKEN, 
+  CONVENTION_CENTER, 
+  BARUDAN_BOOTH, 
+  MAP_CONFIG,
+  FLOOR_PLAN_BOUNDS,
+  FLOOR_PLAN_IMAGE
+} from '@/config/expoConfig';
 import { motion } from 'framer-motion';
 
 interface BoothMapProps {
@@ -17,6 +24,7 @@ const BoothMap = ({ userLocation }: BoothMapProps) => {
   const map = useRef<mapboxgl.Map | null>(null);
   const userMarker = useRef<mapboxgl.Marker | null>(null);
   const [mapLoaded, setMapLoaded] = useState(false);
+  const [floorPlanVisible, setFloorPlanVisible] = useState(true);
 
   // Initialize map
   useEffect(() => {
@@ -36,31 +44,50 @@ const BoothMap = ({ userLocation }: BoothMapProps) => {
     // Add navigation controls
     map.current.addControl(new mapboxgl.NavigationControl(), 'top-right');
 
-    // Add Barudan booth marker
-    const boothEl = document.createElement('div');
-    boothEl.className = 'booth-marker';
-    boothEl.innerHTML = `
-      <div class="relative">
-        <div class="absolute -inset-2 bg-emerald-500/30 rounded-full animate-ping"></div>
-        <div class="relative w-10 h-10 bg-gradient-to-br from-emerald-500 to-emerald-700 rounded-full flex items-center justify-center shadow-lg border-2 border-white">
-          <span class="text-white font-bold text-xs">B</span>
-        </div>
-      </div>
-    `;
-
-    new mapboxgl.Marker({ element: boothEl })
-      .setLngLat([BARUDAN_BOOTH.lng, BARUDAN_BOOTH.lat])
-      .setPopup(
-        new mapboxgl.Popup({ offset: 25 }).setHTML(`
-          <div class="p-2">
-            <h3 class="font-bold text-emerald-700">Barudan</h3>
-            <p class="text-sm text-gray-600">Visit us at booth ${BARUDAN_BOOTH.boothNumber}</p>
-          </div>
-        `)
-      )
-      .addTo(map.current);
-
     map.current.on('load', () => {
+      if (!map.current) return;
+      
+      // Add floor plan image overlay
+      map.current.addSource('floor-plan', {
+        type: 'image',
+        url: FLOOR_PLAN_IMAGE,
+        coordinates: FLOOR_PLAN_BOUNDS,
+      });
+
+      map.current.addLayer({
+        id: 'floor-plan-layer',
+        type: 'raster',
+        source: 'floor-plan',
+        paint: {
+          'raster-opacity': 0.85,
+          'raster-fade-duration': 0,
+        },
+      });
+
+      // Add Barudan booth marker on top of floor plan
+      const boothEl = document.createElement('div');
+      boothEl.className = 'booth-marker';
+      boothEl.innerHTML = `
+        <div class="relative">
+          <div class="absolute -inset-2 bg-emerald-500/30 rounded-full animate-ping"></div>
+          <div class="relative w-10 h-10 bg-gradient-to-br from-emerald-500 to-emerald-700 rounded-full flex items-center justify-center shadow-lg border-2 border-white">
+            <span class="text-white font-bold text-xs">B</span>
+          </div>
+        </div>
+      `;
+
+      new mapboxgl.Marker({ element: boothEl })
+        .setLngLat([BARUDAN_BOOTH.lng, BARUDAN_BOOTH.lat])
+        .setPopup(
+          new mapboxgl.Popup({ offset: 25 }).setHTML(`
+            <div class="p-2">
+              <h3 class="font-bold text-emerald-700">${BARUDAN_BOOTH.name}</h3>
+              <p class="text-sm text-gray-600">Booth #${BARUDAN_BOOTH.boothNumber}</p>
+            </div>
+          `)
+        )
+        .addTo(map.current);
+
       setMapLoaded(true);
     });
 
@@ -69,6 +96,18 @@ const BoothMap = ({ userLocation }: BoothMapProps) => {
       map.current = null;
     };
   }, []);
+
+  // Toggle floor plan visibility
+  const toggleFloorPlan = () => {
+    if (!map.current || !mapLoaded) return;
+    const newVisibility = !floorPlanVisible;
+    setFloorPlanVisible(newVisibility);
+    map.current.setLayoutProperty(
+      'floor-plan-layer',
+      'visibility',
+      newVisibility ? 'visible' : 'none'
+    );
+  };
 
   // Update user location marker
   useEffect(() => {
@@ -164,15 +203,24 @@ const BoothMap = ({ userLocation }: BoothMapProps) => {
     >
       <div ref={mapContainer} className="w-full h-full" />
       
+      {/* Floor plan toggle */}
+      <button
+        onClick={toggleFloorPlan}
+        className="absolute top-4 left-4 bg-background/90 backdrop-blur-sm rounded-lg px-3 py-2 shadow-lg text-xs font-medium flex items-center gap-2 hover:bg-background transition-colors"
+      >
+        <div className={`w-3 h-3 rounded border ${floorPlanVisible ? 'bg-primary border-primary' : 'bg-transparent border-muted-foreground'}`} />
+        Floor Plan
+      </button>
+
       {/* Map overlay legend */}
       <div className="absolute bottom-4 left-4 bg-background/90 backdrop-blur-sm rounded-lg p-3 shadow-lg">
         <div className="flex items-center gap-2 text-xs">
-          <div className="w-3 h-3 bg-blue-500 rounded-full border border-white"></div>
+          <div className="w-3 h-3 rounded-full border border-white" style={{ backgroundColor: 'rgb(59, 130, 246)' }}></div>
           <span className="text-muted-foreground">Your location</span>
         </div>
         <div className="flex items-center gap-2 text-xs mt-1">
-          <div className="w-3 h-3 bg-emerald-500 rounded-full border border-white"></div>
-          <span className="text-muted-foreground">Barudan booth</span>
+          <div className="w-3 h-3 rounded-full border border-white" style={{ backgroundColor: 'rgb(16, 185, 129)' }}></div>
+          <span className="text-muted-foreground">Barudan booth #1429</span>
         </div>
       </div>
 
@@ -180,7 +228,7 @@ const BoothMap = ({ userLocation }: BoothMapProps) => {
       {!mapLoaded && (
         <div className="absolute inset-0 bg-background/80 flex items-center justify-center">
           <div className="flex flex-col items-center gap-2">
-            <div className="w-8 h-8 border-2 border-emerald-500 border-t-transparent rounded-full animate-spin"></div>
+            <div className="w-8 h-8 border-2 border-primary border-t-transparent rounded-full animate-spin"></div>
             <span className="text-sm text-muted-foreground">Loading map...</span>
           </div>
         </div>
