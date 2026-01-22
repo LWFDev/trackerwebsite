@@ -1,6 +1,8 @@
 import React, { useEffect, useRef, useState } from 'react';
 import mapboxgl from 'mapbox-gl';
 import 'mapbox-gl/dist/mapbox-gl.css';
+import { AlertCircle, RefreshCw } from 'lucide-react';
+import { Button } from '@/components/ui/button';
 import { 
   MAPBOX_ACCESS_TOKEN, 
   CONVENTION_CENTER, 
@@ -249,9 +251,18 @@ const BoothMap = ({ userLocation }: BoothMapProps) => {
         <div className="absolute inset-0 bg-background/90 flex items-center justify-center p-4">
           <div className="flex flex-col items-center gap-3 text-center max-w-xs">
             <div className="w-12 h-12 rounded-full bg-destructive/10 flex items-center justify-center">
-              <span className="text-destructive text-xl">!</span>
+              <AlertCircle className="w-6 h-6 text-destructive" />
             </div>
             <p className="text-sm text-muted-foreground">{mapError}</p>
+            <Button 
+              variant="outline" 
+              size="sm"
+              onClick={() => window.location.reload()}
+              className="mt-2"
+            >
+              <RefreshCw className="w-4 h-4 mr-2" />
+              Retry
+            </Button>
           </div>
         </div>
       )}

@@ -1,5 +1,5 @@
 // Mapbox configuration for Impressions Expo booth finder
-export const MAPBOX_ACCESS_TOKEN = 'pk.eyJ1Ijoiam9yZGFucGF0dGVyc29uIiwiYSI6ImNta29uNHA0czA3eGszZXB2aXdoNWNwY3EifQ.QvQYmJ9e9LiF6BxAh_aN9A';
+export const MAPBOX_ACCESS_TOKEN = 'sk.eyJ1Ijoiam9yZGFucGF0dGVyc29uIiwiYSI6ImNta29yb2NvcjA5Z2EzZ3B4emkwOW94eDYifQ.DCd0j919e2IK9aZCdNejPA';
 
 // Long Beach Convention Center coordinates
 export const CONVENTION_CENTER = {

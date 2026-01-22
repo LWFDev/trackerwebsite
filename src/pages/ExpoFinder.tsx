@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ArrowLeft, Map, Navigation, MapPin, AlertCircle, Loader2 } from 'lucide-react';
 import { Link } from 'react-router-dom';
@@ -14,12 +14,77 @@ type ViewMode = 'direction' | 'map';
 
 const ExpoFinder = () => {
   const [viewMode, setViewMode] = useState<ViewMode>('direction');
-  const { latitude, longitude, accuracy, heading, error, loading, permissionStatus, requestPermission } = useGeolocation();
+  const [hasRequestedPermission, setHasRequestedPermission] = useState(false);
+  
+  const { 
+    latitude, 
+    longitude, 
+    accuracy, 
+    heading, 
+    error, 
+    loading, 
+    permissionStatus, 
+    requestPermission,
+    cleanup 
+  } = useGeolocation();
   
   const bearing = useBearing(
     { latitude, longitude },
     BARUDAN_BOOTH
   );
+
+  // Cleanup on unmount
+  useEffect(() => {
+    return () => cleanup();
+  }, [cleanup]);
+
+  // Handle permission request
+  const handleEnableLocation = () => {
+    setHasRequestedPermission(true);
+    requestPermission();
+  };
+
+  // Initial state - prompt user to enable location
+  if (!hasRequestedPermission && permissionStatus === 'prompt') {
+    return (
+      <div className="min-h-screen bg-background flex flex-col">
+        <Header />
+        <div className="flex-1 flex items-center justify-center p-6">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            className="text-center max-w-sm"
+          >
+            <div className="w-20 h-20 bg-emerald-500/10 rounded-full flex items-center justify-center mx-auto mb-6">
+              <MapPin className="w-10 h-10 text-emerald-500" />
+            </div>
+            <h2 className="text-2xl font-bold mb-3">Find Our Booth</h2>
+            <p className="text-muted-foreground mb-6">
+              We'll use your location to point you directly to the Barudan booth #{BARUDAN_BOOTH.boothNumber}
+            </p>
+            <Button 
+              onClick={handleEnableLocation}
+              className="bg-emerald-600 hover:bg-emerald-700 w-full mb-3"
+              size="lg"
+            >
+              <Navigation className="w-4 h-4 mr-2" />
+              Enable Location
+            </Button>
+            <button 
+              className="text-sm text-muted-foreground underline hover:text-foreground transition-colors"
+              onClick={() => {
+                setHasRequestedPermission(true);
+                setViewMode('map');
+              }}
+            >
+              Skip and view map only
+            </button>
+          </motion.div>
+        </div>
+        <BoothInfoCard />
+      </div>
+    );
+  }
 
   // Permission denied state
   if (permissionStatus === 'denied') {
@@ -40,16 +105,29 @@ const ExpoFinder = () => {
               To help you find the Barudan booth, we need access to your location. 
               Please enable location services in your browser settings.
             </p>
-            <Button onClick={requestPermission} className="bg-emerald-600 hover:bg-emerald-700">
+            <Button onClick={requestPermission} className="bg-emerald-600 hover:bg-emerald-700 mb-4">
               Try Again
             </Button>
-            <div className="mt-8 p-4 bg-muted rounded-lg">
-              <p className="text-sm text-muted-foreground mb-2">Or visit us at:</p>
-              <p className="font-semibold">{CONVENTION_CENTER.name}</p>
-              <p className="text-sm text-muted-foreground">Booth {BARUDAN_BOOTH.boothNumber}</p>
+            
+            {/* Manual directions fallback */}
+            <div className="mt-4 p-4 bg-muted rounded-lg text-left">
+              <p className="font-semibold mb-2 text-sm">📍 Manual Directions:</p>
+              <ol className="text-sm text-muted-foreground space-y-1 list-decimal list-inside">
+                <li>Enter Long Beach Convention Center</li>
+                <li>Head to Exhibit Hall C</li>
+                <li>Look for booth #{BARUDAN_BOOTH.boothNumber}</li>
+              </ol>
             </div>
+
+            <button 
+              className="mt-4 text-sm text-muted-foreground underline hover:text-foreground transition-colors"
+              onClick={() => setViewMode('map')}
+            >
+              View map instead
+            </button>
           </motion.div>
         </div>
+        <BoothInfoCard />
       </div>
     );
   }
@@ -70,8 +148,32 @@ const ExpoFinder = () => {
             <p className="text-muted-foreground">
               Please allow location access when prompted...
             </p>
+            <p className="text-xs text-muted-foreground/60 mt-4">
+              This may take up to 30 seconds on mobile devices
+            </p>
           </motion.div>
         </div>
+        <BoothInfoCard />
+      </div>
+    );
+  }
+
+  // No location but user skipped - show map only
+  if (!latitude && hasRequestedPermission && !loading) {
+    return (
+      <div className="min-h-screen bg-background flex flex-col">
+        <Header />
+        <div className="flex-1 p-4">
+          <div className="h-[60vh] md:h-[70vh]">
+            <BoothMap userLocation={{ latitude: null, longitude: null, accuracy: null }} />
+          </div>
+          {error && (
+            <div className="mt-4 p-3 bg-amber-500/10 border border-amber-500/20 rounded-lg">
+              <p className="text-sm text-amber-600 dark:text-amber-400">{error}</p>
+            </div>
+          )}
+        </div>
+        <BoothInfoCard />
       </div>
     );
   }
@@ -156,29 +258,7 @@ const ExpoFinder = () => {
         </AnimatePresence>
       </div>
 
-      {/* Bottom info card */}
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 0.3 }}
-        className="p-4"
-      >
-        <div className="bg-gradient-to-r from-emerald-600 to-emerald-700 rounded-2xl p-4 text-white">
-          <div className="flex items-center gap-4">
-            <img src={barudanLogo} alt="Barudan" className="h-8 object-contain" />
-            <div className="flex-1">
-              <h3 className="font-bold">Visit Barudan</h3>
-              <p className="text-sm text-emerald-100">
-                {EXPO_DETAILS.name} • {EXPO_DETAILS.dates}
-              </p>
-            </div>
-            <div className="text-right">
-              <span className="text-xs text-emerald-200">Booth</span>
-              <p className="font-bold text-lg">{BARUDAN_BOOTH.boothNumber}</p>
-            </div>
-          </div>
-        </div>
-      </motion.div>
+      <BoothInfoCard />
 
       {/* Error toast */}
       {error && (
@@ -188,7 +268,7 @@ const ExpoFinder = () => {
           className="fixed bottom-20 left-4 right-4 bg-destructive text-destructive-foreground p-4 rounded-lg shadow-lg"
         >
           <div className="flex items-center gap-2">
-            <AlertCircle className="w-5 h-5" />
+            <AlertCircle className="w-5 h-5 flex-shrink-0" />
             <p className="text-sm">{error}</p>
           </div>
         </motion.div>
@@ -213,6 +293,31 @@ const Header = () => (
       </div>
     </div>
   </header>
+);
+
+const BoothInfoCard = () => (
+  <motion.div
+    initial={{ opacity: 0, y: 20 }}
+    animate={{ opacity: 1, y: 0 }}
+    transition={{ delay: 0.3 }}
+    className="p-4"
+  >
+    <div className="bg-gradient-to-r from-emerald-600 to-emerald-700 rounded-2xl p-4 text-white">
+      <div className="flex items-center gap-4">
+        <img src={barudanLogo} alt="Barudan" className="h-8 object-contain" />
+        <div className="flex-1">
+          <h3 className="font-bold">Visit Barudan</h3>
+          <p className="text-sm text-emerald-100">
+            {EXPO_DETAILS.name} • {EXPO_DETAILS.dates}
+          </p>
+        </div>
+        <div className="text-right">
+          <span className="text-xs text-emerald-200">Booth</span>
+          <p className="font-bold text-lg">{BARUDAN_BOOTH.boothNumber}</p>
+        </div>
+      </div>
+    </div>
+  </motion.div>
 );
 
 export default ExpoFinder;

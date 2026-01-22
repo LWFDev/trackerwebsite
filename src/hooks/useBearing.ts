@@ -51,9 +51,17 @@ const formatDistance = (meters: number): string => {
     return "You're here!";
   } else if (feet < 500) {
     return `${Math.round(feet)} ft away`;
-  } else {
+  } else if (feet < 5280) {
+    // Under 1 mile, show yards
     const yards = Math.round(feet / 3);
     return `${yards} yards away`;
+  } else {
+    // 1+ miles, show miles
+    const miles = feet / 5280;
+    if (miles < 10) {
+      return `${miles.toFixed(1)} miles away`;
+    }
+    return `${Math.round(miles)} miles away`;
   }
 };
 
