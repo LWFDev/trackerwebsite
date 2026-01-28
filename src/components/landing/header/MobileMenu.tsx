@@ -6,7 +6,6 @@ import { X, ChevronRight } from "lucide-react";
 import FlagSelector from "@/components/ui/FlagSelector";
 import { scrollToTop } from "@/utils/navigation";
 import { useLocalization } from "@/contexts/LocalizationContext";
-import { useBanner } from "@/components/layout/Layout";
 
 interface MobileMenuProps {
   isOpen: boolean;
@@ -15,10 +14,8 @@ interface MobileMenuProps {
 
 const MobileMenu = ({ isOpen, setIsOpen }: MobileMenuProps) => {
   const { t } = useLocalization();
-  const { bannerVisible } = useBanner();
   
-  // Calculate top offset based on banner visibility
-  const topOffset = bannerVisible ? "top-[calc(44px+52px)]" : "top-[52px]";
+  const topOffset = "top-[52px]";
 
   useEffect(() => {
     return () => {
