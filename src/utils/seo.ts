@@ -145,7 +145,7 @@ export const generateDatasetSchema = (dataset: {
     "@type": "Organization",
     "name": "Tracker"
   },
-  "license": "https://www.trackmybusiness.us/terms"
+  "license": "https://www.trackmybusiness.com/terms"
 });
 
 // === Module-specific SoftwareApplication Schema ===
