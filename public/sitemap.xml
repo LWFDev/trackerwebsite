@@ -2,99 +2,99 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <!-- Main pages -->
   <url>
-    <loc>https://www.trackmybusiness.us/</loc>
+    <loc>https://www.trackmybusiness.com/</loc>
     <lastmod>2026-03-03T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://www.trackmybusiness.us/pricing</loc>
+    <loc>https://www.trackmybusiness.com/pricing</loc>
     <lastmod>2026-03-03T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://www.trackmybusiness.us/about</loc>
+    <loc>https://www.trackmybusiness.com/about</loc>
     <lastmod>2026-03-03T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.trackmybusiness.us/contact</loc>
+    <loc>https://www.trackmybusiness.com/contact</loc>
     <lastmod>2026-03-03T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.trackmybusiness.us/industries</loc>
+    <loc>https://www.trackmybusiness.com/industries</loc>
     <lastmod>2026-03-03T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.trackmybusiness.us/modules</loc>
+    <loc>https://www.trackmybusiness.com/modules</loc>
     <lastmod>2026-03-03T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.trackmybusiness.us/integrations</loc>
+    <loc>https://www.trackmybusiness.com/integrations</loc>
     <lastmod>2026-03-03T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.trackmybusiness.us/blog</loc>
+    <loc>https://www.trackmybusiness.com/blog</loc>
     <lastmod>2026-03-03T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.trackmybusiness.us/support</loc>
+    <loc>https://www.trackmybusiness.com/support</loc>
     <lastmod>2026-03-03T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.trackmybusiness.us/documentation</loc>
+    <loc>https://www.trackmybusiness.com/documentation</loc>
     <lastmod>2026-03-03T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.trackmybusiness.us/get-started</loc>
+    <loc>https://www.trackmybusiness.com/get-started</loc>
     <lastmod>2026-03-03T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://www.trackmybusiness.us/faq</loc>
+    <loc>https://www.trackmybusiness.com/faq</loc>
     <lastmod>2026-03-03T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://www.trackmybusiness.us/videos</loc>
+    <loc>https://www.trackmybusiness.com/videos</loc>
     <lastmod>2026-03-03T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
 
-  <!-- New dedicated feature pages -->
+  <!-- Dedicated feature pages -->
   <url>
-    <loc>https://www.trackmybusiness.us/logo-management</loc>
+    <loc>https://www.trackmybusiness.com/logo-management</loc>
     <lastmod>2026-03-03T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://www.trackmybusiness.us/production-scheduling</loc>
+    <loc>https://www.trackmybusiness.com/production-scheduling</loc>
     <lastmod>2026-03-03T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://www.trackmybusiness.us/proof-approvals</loc>
+    <loc>https://www.trackmybusiness.com/proof-approvals</loc>
     <lastmod>2026-03-03T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
@@ -102,61 +102,61 @@
 
   <!-- Industry pages -->
   <url>
-    <loc>https://www.trackmybusiness.us/industries/high-volume-embroidery</loc>
+    <loc>https://www.trackmybusiness.com/industries/high-volume-embroidery</loc>
     <lastmod>2026-03-03T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.trackmybusiness.us/industries/screen-printing</loc>
+    <loc>https://www.trackmybusiness.com/industries/screen-printing</loc>
     <lastmod>2026-03-03T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.trackmybusiness.us/industries/apparel-manufacturing</loc>
+    <loc>https://www.trackmybusiness.com/industries/apparel-manufacturing</loc>
     <lastmod>2026-03-03T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.trackmybusiness.us/industries/corporate-apparel</loc>
+    <loc>https://www.trackmybusiness.com/industries/corporate-apparel</loc>
     <lastmod>2026-03-03T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.trackmybusiness.us/industries/promotional-products</loc>
+    <loc>https://www.trackmybusiness.com/industries/promotional-products</loc>
     <lastmod>2026-03-03T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.trackmybusiness.us/industries/sports-and-uniforms</loc>
+    <loc>https://www.trackmybusiness.com/industries/sports-and-uniforms</loc>
     <lastmod>2026-03-03T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.trackmybusiness.us/industries/workwear-uniforms</loc>
+    <loc>https://www.trackmybusiness.com/industries/workwear-uniforms</loc>
     <lastmod>2026-03-03T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.trackmybusiness.us/industries/fashion-brands</loc>
+    <loc>https://www.trackmybusiness.com/industries/fashion-brands</loc>
     <lastmod>2026-03-03T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.trackmybusiness.us/industries/print-on-demand</loc>
+    <loc>https://www.trackmybusiness.com/industries/print-on-demand</loc>
     <lastmod>2026-03-03T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.trackmybusiness.us/industries/contract-decoration</loc>
+    <loc>https://www.trackmybusiness.com/industries/contract-decoration</loc>
     <lastmod>2026-03-03T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -164,73 +164,73 @@
 
   <!-- Module pages -->
   <url>
-    <loc>https://www.trackmybusiness.us/modules/sales-orders</loc>
+    <loc>https://www.trackmybusiness.com/modules/sales-orders</loc>
     <lastmod>2026-03-03T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.trackmybusiness.us/modules/warehouse</loc>
+    <loc>https://www.trackmybusiness.com/modules/warehouse</loc>
     <lastmod>2026-03-03T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.trackmybusiness.us/modules/customer-database</loc>
+    <loc>https://www.trackmybusiness.com/modules/customer-database</loc>
     <lastmod>2026-03-03T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.trackmybusiness.us/modules/base-garments</loc>
+    <loc>https://www.trackmybusiness.com/modules/base-garments</loc>
     <lastmod>2026-03-03T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.trackmybusiness.us/modules/logos</loc>
+    <loc>https://www.trackmybusiness.com/modules/logos</loc>
     <lastmod>2026-03-03T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.trackmybusiness.us/modules/product-designer</loc>
+    <loc>https://www.trackmybusiness.com/modules/product-designer</loc>
     <lastmod>2026-03-03T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.trackmybusiness.us/modules/inventory</loc>
+    <loc>https://www.trackmybusiness.com/modules/inventory</loc>
     <lastmod>2026-03-03T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.trackmybusiness.us/modules/production</loc>
+    <loc>https://www.trackmybusiness.com/modules/production</loc>
     <lastmod>2026-03-03T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.trackmybusiness.us/modules/suppliers</loc>
+    <loc>https://www.trackmybusiness.com/modules/suppliers</loc>
     <lastmod>2026-03-03T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.trackmybusiness.us/modules/purchase-orders</loc>
+    <loc>https://www.trackmybusiness.com/modules/purchase-orders</loc>
     <lastmod>2026-03-03T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.trackmybusiness.us/modules/artworkers</loc>
+    <loc>https://www.trackmybusiness.com/modules/artworkers</loc>
     <lastmod>2026-03-03T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.trackmybusiness.us/modules/customer-portal</loc>
+    <loc>https://www.trackmybusiness.com/modules/customer-portal</loc>
     <lastmod>2026-03-03T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -238,25 +238,25 @@
 
   <!-- Case studies -->
   <url>
-    <loc>https://www.trackmybusiness.us/case-studies</loc>
+    <loc>https://www.trackmybusiness.com/case-studies</loc>
     <lastmod>2026-03-03T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://www.trackmybusiness.us/case-studies/pure-optical</loc>
+    <loc>https://www.trackmybusiness.com/case-studies/pure-optical</loc>
     <lastmod>2026-03-03T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://www.trackmybusiness.us/case-studies/woolcool</loc>
+    <loc>https://www.trackmybusiness.com/case-studies/woolcool</loc>
     <lastmod>2026-03-03T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://www.trackmybusiness.us/case-studies/agame</loc>
+    <loc>https://www.trackmybusiness.com/case-studies/agame</loc>
     <lastmod>2026-03-03T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
@@ -264,51 +264,83 @@
 
   <!-- Blog posts -->
   <url>
-    <loc>https://www.trackmybusiness.us/blog/streamline-garment-decoration-workflow</loc>
+    <loc>https://www.trackmybusiness.com/blog/streamline-garment-decoration-workflow</loc>
     <lastmod>2023-06-15T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://www.trackmybusiness.us/blog/screen-printing-vs-dtg</loc>
+    <loc>https://www.trackmybusiness.com/blog/screen-printing-vs-dtg</loc>
     <lastmod>2023-05-28T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://www.trackmybusiness.us/blog/new-integration-platform-features</loc>
+    <loc>https://www.trackmybusiness.com/blog/new-integration-platform-features</loc>
     <lastmod>2023-04-10T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://www.trackmybusiness.us/blog/cloud-logo-management-embroidery-dtg</loc>
+    <loc>https://www.trackmybusiness.com/blog/cloud-logo-management-embroidery-dtg</loc>
     <lastmod>2026-02-20T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://www.trackmybusiness.us/blog/production-scheduling-thread-optimisation</loc>
+    <loc>https://www.trackmybusiness.com/blog/production-scheduling-thread-optimisation</loc>
     <lastmod>2026-02-25T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://www.trackmybusiness.us/blog/digital-proof-plm-licensed-team-gear</loc>
+    <loc>https://www.trackmybusiness.com/blog/digital-proof-plm-licensed-team-gear</loc>
     <lastmod>2026-03-01T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
 
+  <!-- Integration detail pages -->
+  <url>
+    <loc>https://www.trackmybusiness.com/integrations/shopify</loc>
+    <lastmod>2026-03-03T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.trackmybusiness.com/integrations/woocommerce</loc>
+    <lastmod>2026-03-03T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.trackmybusiness.com/integrations/shipstation</loc>
+    <lastmod>2026-03-03T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.trackmybusiness.com/integrations/alphabroder</loc>
+    <lastmod>2026-03-03T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.trackmybusiness.com/integrations/sanmar</loc>
+    <lastmod>2026-03-03T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
   <!-- Other pages -->
   <url>
-    <loc>https://www.trackmybusiness.us/terms</loc>
+    <loc>https://www.trackmybusiness.com/terms</loc>
     <lastmod>2026-03-03T00:00:00+00:00</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
   <url>
-    <loc>https://www.trackmybusiness.us/privacy</loc>
+    <loc>https://www.trackmybusiness.com/privacy</loc>
     <lastmod>2026-03-03T00:00:00+00:00</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
