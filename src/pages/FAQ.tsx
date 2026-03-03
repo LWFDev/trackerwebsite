@@ -33,7 +33,15 @@ const FAQ = () => {
           question: "How do I know if Tracker is right for us?",
           answer: (
             <>
-              Tracker is designed for <a href="/about" className="text-gold hover:text-gold-light underline font-medium" onClick={scrollToTop}>garment decoration businesses</a> of all sizes, from small startups to large enterprises. If you're managing orders, inventory, production, or customer relationships in the custom apparel industry, Tracker can streamline your operations. We offer <a href="/contact" className="text-gold hover:text-gold-light underline font-medium" onClick={scrollToTop}>demos and consultations</a> to help you evaluate if our platform fits your specific needs.
+              Tracker is designed for <a href="/about" className="text-gold hover:text-gold-light underline font-medium" onClick={scrollToTop}>garment decoration businesses</a> of all sizes — from small embroidery shops to large multi-location enterprises. If you manage orders, logos, production, or inventory for embroidery, DTG, DTF, screen printing, heat seal, or licensed team gear, Tracker can streamline your operations. We offer <a href="/contact" className="text-gold hover:text-gold-light underline font-medium" onClick={scrollToTop}>personalised demos</a> to evaluate fit.
+            </>
+          )
+        },
+        {
+          question: "What decoration methods does Tracker support?",
+          answer: (
+            <>
+              Tracker supports all major garment decoration methods: embroidery (multi-head, single-head, and flat), direct-to-garment (DTG) printing, DTF transfers, screen printing, heat-seal/heat-transfer vinyl, sublimation, and hybrid workflows. The platform manages <a href="/logo-management" className="text-gold hover:text-gold-light underline font-medium" onClick={scrollToTop}>logo files</a> in the appropriate format for each method — EMB/DST for embroidery, print-ready files for DTG/DTF, and separation files for screen printing.
             </>
           )
         },
@@ -41,23 +49,81 @@ const FAQ = () => {
           question: "Can I have a demo to see Tracker in action?",
           answer: (
             <>
-              Absolutely! We provide personalized demos tailored to your business needs. During the demo, we'll show you how Tracker's <a href="/modules" className="text-gold hover:text-gold-light underline font-medium" onClick={scrollToTop}>modules</a> work together to manage your entire workflow, from order intake to production and delivery. <a href="/contact" className="text-gold hover:text-gold-light underline font-medium" onClick={scrollToTop}>Contact our sales team</a> to schedule a demo at your convenience.
+              Absolutely! We provide personalised demos tailored to your business needs. During the demo, we'll show you how Tracker's <a href="/modules" className="text-gold hover:text-gold-light underline font-medium" onClick={scrollToTop}>modules</a> work together — from <a href="/logo-management" className="text-gold hover:text-gold-light underline font-medium" onClick={scrollToTop}>cloud logo management</a> and <a href="/proof-approvals" className="text-gold hover:text-gold-light underline font-medium" onClick={scrollToTop}>digital proof approvals</a> to <a href="/production-scheduling" className="text-gold hover:text-gold-light underline font-medium" onClick={scrollToTop}>production scheduling</a> with barcode-to-machine integration. <a href="/contact" className="text-gold hover:text-gold-light underline font-medium" onClick={scrollToTop}>Contact our sales team</a> to schedule.
+            </>
+          )
+        }
+      ]
+    },
+    {
+      title: "Logo & Artwork Management",
+      icon: <Sparkles size={20} className="text-gold" />,
+      faqs: [
+        {
+          question: "How does Tracker handle embroidery logo files (EMB, DST)?",
+          answer: (
+            <>
+              Tracker provides <a href="/logo-management" className="text-gold hover:text-gold-light underline font-medium" onClick={scrollToTop}>cloud-based logo management</a> with full support for embroidery formats (EMB, DST, PES, EXP, JEF, XXX) and print-separation files. Every logo is tagged to its customer, versioned with an audit trail, and delivered to embroidery machines (Barudan bNET, Tajima Pulse) or DTG printers via barcode scanning — eliminating wrong-version reprints.
             </>
           )
         },
         {
-          question: "Is Tracker only for garment decoration businesses?",
+          question: "How do digital proof approvals work?",
           answer: (
             <>
-              Yes, Tracker is specifically designed for the garment decoration industry, including screen printing, embroidery, promotional products, and custom apparel businesses. Our specialized <a href="/modules" className="text-gold hover:text-gold-light underline font-medium" onClick={scrollToTop}>modules and workflows</a> are built to handle the unique challenges of this industry, from <a href="/modules/logos" className="text-gold hover:text-gold-light underline font-medium" onClick={scrollToTop}>artwork management</a> to <a href="/modules/production" className="text-gold hover:text-gold-light underline font-medium" onClick={scrollToTop}>production scheduling</a>.
+              Tracker's <a href="/proof-approvals" className="text-gold hover:text-gold-light underline font-medium" onClick={scrollToTop}>digital proof approval system</a> generates professional proofs from your cloud logo library with garment mockups, thread charts, and placement views. Proofs are sent via email or customer portal. Customers review on any device, leave threaded comments, and approve digitally. On approval, the job auto-releases to <a href="/production-scheduling" className="text-gold hover:text-gold-light underline font-medium" onClick={scrollToTop}>production scheduling</a> with the approved file version locked.
+            </>
+          )
+        }
+      ]
+    },
+    {
+      title: "Production & Machines",
+      icon: <Settings size={20} className="text-gold" />,
+      faqs: [
+        {
+          question: "What embroidery and printing machines does Tracker integrate with?",
+          answer: (
+            <>
+              Tracker integrates with Barudan embroidery machines (via bNET), Tajima machines (via Pulse/DG16), Brother and Epson DTG printers, DTF transfer systems, Kornit digital printers, M&R and ROQ screen-printing presses, and heat-seal equipment. Barcode scanning triggers automatic file delivery and time tracking. See the full list on our <a href="/integrations" className="text-gold hover:text-gold-light underline font-medium" onClick={scrollToTop}>integrations page</a>.
             </>
           )
         },
         {
-          question: "What size / type of businesses use Tracker?",
+          question: "How does thread colour optimisation improve production?",
           answer: (
             <>
-              Tracker serves businesses ranging from small family-owned shops to large commercial operations. Our customers include screen printers, embroiderers, promotional product companies, corporate apparel suppliers, and multi-location enterprises. Our scalable platform grows with your business needs. Learn more <a href="/about" className="text-gold hover:text-gold-light underline font-medium" onClick={scrollToTop}>about our story</a> and the businesses we serve.
+              Tracker's <a href="/production-scheduling" className="text-gold hover:text-gold-light underline font-medium" onClick={scrollToTop}>production scheduler</a> analyses queued jobs and groups them by thread palette, reducing changeovers by up to 40%. The algorithm considers needle positions, colour proximity, due dates, and hoop compatibility. Combined with order stacking (multiple small orders on one hoop run), shops report 20–25% more stitches per machine-hour.
+            </>
+          )
+        },
+        {
+          question: "Does Tracker track operator time and machine efficiency?",
+          answer: (
+            <>
+              Yes. Operators clock on/off each job via barcode scan. Tracker captures actual run times, compares to estimates, and feeds data into quoting for more accurate pricing. Real-time dashboards show head utilisation, downtime reasons, stitch counts per hour, and job completion rates across all machines and shifts.
+            </>
+          )
+        }
+      ]
+    },
+    {
+      title: "Integrations & Supply Chain",
+      icon: <Globe size={20} className="text-emerald-400" />,
+      faqs: [
+        {
+          question: "What PLM and distributor integrations does Tracker support?",
+          answer: (
+            <>
+              Tracker integrates with blank-garment distributors including SanMar, alphabroder, and S&S Activewear for real-time inventory, pricing, and product catalogues. For PLM, Tracker connects to ERP systems (SAP, NetSuite, Sage, QuickBooks), e-commerce platforms (Shopify, WooCommerce), and shipping providers (ShipStation, UPS, FedEx). See the full ecosystem on our <a href="/integrations" className="text-emerald-400 hover:text-emerald-300 underline font-medium" onClick={scrollToTop}>integrations page</a>.
+            </>
+          )
+        },
+        {
+          question: "Can Tracker connect to my Shopify or WooCommerce store?",
+          answer: (
+            <>
+              Yes. Tracker's e-commerce integrations provide two-way sync of orders, inventory, and products with <a href="/integrations/shopify" className="text-emerald-400 hover:text-emerald-300 underline font-medium" onClick={scrollToTop}>Shopify</a> and <a href="/integrations/woocommerce" className="text-emerald-400 hover:text-emerald-300 underline font-medium" onClick={scrollToTop}>WooCommerce</a>. Orders flow into Tracker's production pipeline automatically. Fulfilment status and tracking numbers push back to the store so customers see live updates.
             </>
           )
         }
@@ -71,15 +137,7 @@ const FAQ = () => {
           question: "How much is Tracker?",
           answer: (
             <>
-              Tracker offers flexible <a href="/pricing" className="text-gold hover:text-gold-light underline font-medium" onClick={scrollToTop}>pricing plans</a> to suit different business sizes and needs. Our pricing is based on the <a href="/modules" className="text-gold hover:text-gold-light underline font-medium" onClick={scrollToTop}>modules</a> you need and the number of users. We offer Starter, Professional, and Enterprise tiers, with the option to customize your package. <a href="/contact" className="text-gold hover:text-gold-light underline font-medium" onClick={scrollToTop}>Contact us</a> for detailed pricing information and to discuss which plan works best for your business.
-            </>
-          )
-        },
-        {
-          question: "Do I have to pay for scoping?",
-          answer: (
-            <>
-              Initial <a href="/contact" className="text-gold hover:text-gold-light underline font-medium" onClick={scrollToTop}>consultations</a> and basic scoping are provided at no cost to help us understand your requirements. For complex implementations requiring extensive customization or integration work, detailed scoping may be part of the implementation project cost. We'll always be transparent about any costs involved upfront.
+              Tracker offers flexible <a href="/pricing" className="text-gold hover:text-gold-light underline font-medium" onClick={scrollToTop}>pricing plans</a> based on the modules you need and user count. We offer Starter, Professional, and Enterprise tiers. Pricing includes hosting, support, and regular updates. <a href="/contact" className="text-gold hover:text-gold-light underline font-medium" onClick={scrollToTop}>Contact us</a> for a custom quote.
             </>
           )
         },
@@ -87,121 +145,37 @@ const FAQ = () => {
           question: "Are there hidden costs once I have Tracker?",
           answer: (
             <>
-              All costs will be clear on your project agreement and licensing agreement. Nobody likes those sorts of surprises! Our <a href="/pricing" className="text-gold hover:text-gold-light underline font-medium" onClick={scrollToTop}>pricing</a> includes hosting, <a href="/support" className="text-gold hover:text-gold-light underline font-medium" onClick={scrollToTop}>support</a>, and regular updates. Any additional costs for extra <a href="/modules" className="text-gold hover:text-gold-light underline font-medium" onClick={scrollToTop}>modules</a>, integrations, or customizations will be discussed and agreed upon before implementation.
+              No. All costs are documented in your project and licensing agreements. <a href="/pricing" className="text-gold hover:text-gold-light underline font-medium" onClick={scrollToTop}>Pricing</a> includes hosting, <a href="/support" className="text-gold hover:text-gold-light underline font-medium" onClick={scrollToTop}>support</a>, and updates. Any additional modules, integrations, or customisations are discussed and agreed upon before implementation.
             </>
           )
         }
       ]
     },
     {
-      title: "Implementation & Setup",
+      title: "Implementation & Support",
       icon: <Settings size={20} className="text-gold" />,
       faqs: [
         {
           question: "How long does it take to implement Tracker?",
           answer: (
             <>
-              Depending on the complexity of the setup, it can be anything from 6 weeks to 12-18 months. Very big projects with multiple <a href="/modules/integration-platform" className="text-gold hover:text-gold-light underline font-medium" onClick={scrollToTop}>integrations</a> (e.g. ERPs) will take longer than a smaller business with just website/accounts integration. We'll provide a detailed timeline during the scoping phase based on your specific requirements. <a href="/get-started" className="text-gold hover:text-gold-light underline font-medium" onClick={scrollToTop}>Get started</a> with our implementation process today.
+              Depending on complexity, implementation ranges from 6 weeks to 12–18 months. A small embroidery shop with basic <a href="/integrations" className="text-gold hover:text-gold-light underline font-medium" onClick={scrollToTop}>integrations</a> goes live quickly, while large multi-location enterprises with ERP connectors need more time. We provide a detailed timeline during scoping. <a href="/get-started" className="text-gold hover:text-gold-light underline font-medium" onClick={scrollToTop}>Get started</a> today.
             </>
           )
         },
         {
-          question: "Do I need anything special to be able to use Tracker?",
+          question: "Is Tracker available globally?",
           answer: (
             <>
-              Once setup, you can use Tracker anywhere you have an internet connection, via a modern web browser. No special software installation is required on your computers. We recommend using updated versions of Chrome, Firefox, Safari, or Edge for the best experience. Learn more about our system requirements in our <a href="/documentation" className="text-gold hover:text-gold-light underline font-medium" onClick={scrollToTop}>documentation</a>.
+              Yes. We have customers in the UK, Europe, and USA, and the platform is accessible from any internet connection worldwide. The interface is currently available in English. Our cloud infrastructure ensures reliable performance globally.
             </>
           )
         },
         {
-          question: "How is training / onboarding managed?",
+          question: "Do I need technical knowledge to use Tracker?",
           answer: (
             <>
-              This will be agreed as part of the implementation process, and can be online / face to face, or a 'train the trainer' approach. Most onboarding is a mixture of online and in-person, depending on your location and the nature of the project. We provide comprehensive <a href="/documentation" className="text-gold hover:text-gold-light underline font-medium" onClick={scrollToTop}>documentation</a>, video tutorials, and ongoing <a href="/support" className="text-gold hover:text-gold-light underline font-medium" onClick={scrollToTop}>support</a> to ensure your team is successful.
-            </>
-          )
-        },
-        {
-          question: "Can I see / talk to someone already using Tracker?",
-          answer: (
-            <>
-              As part of the discovery/onboarding process, we can arrange this for you. We have many satisfied customers who are happy to share their experiences and discuss how Tracker has improved their operations. Customer references and case studies can be provided upon request. <a href="/contact" className="text-gold hover:text-gold-light underline font-medium" onClick={scrollToTop}>Contact us</a> to arrange a customer reference call.
-            </>
-          )
-        }
-      ]
-    },
-    {
-      title: "Support & Access",
-      icon: <Globe size={20} className="text-emerald-400" />,
-      faqs: [
-        {
-          question: "Is Tracker available globally or just in the UK?",
-          answer: (
-            <>
-              We have customers in UK/Europe and USA, but the system can be accessed from any internet connection. Currently we only offer the interface in English, however. Our cloud-based platform ensures reliable access worldwide with data centers strategically located for optimal performance. Learn more <a href="/about" className="text-emerald-400 hover:text-emerald-300 underline font-medium" onClick={scrollToTop}>about our global reach</a>.
-            </>
-          )
-        }
-      ]
-    },
-    {
-      title: "Account Management",
-      icon: <Sparkles size={20} className="text-gold" />,
-      faqs: [
-        {
-          question: "Can I switch plans later?",
-          answer: (
-            <>
-              Yes, you can upgrade or downgrade your <a href="/pricing" className="text-gold hover:text-gold-light underline font-medium" onClick={scrollToTop}>plan</a> at any time. When upgrading, your new features will be available immediately. If downgrading, the changes will apply at the start of your next billing cycle. Our team will help ensure a smooth transition and assist with any <a href="/modules" className="text-gold hover:text-gold-light underline font-medium" onClick={scrollToTop}>module</a> adjustments needed.
-            </>
-          )
-        },
-        {
-          question: "What happens after my evaluation period?",
-          answer: (
-            <>
-              After your evaluation period, you'll have the opportunity to choose the <a href="/pricing" className="text-gold hover:text-gold-light underline font-medium" onClick={scrollToTop}>plan</a> that best fits your needs. We'll work with you to ensure you're selecting the right <a href="/modules" className="text-gold hover:text-gold-light underline font-medium" onClick={scrollToTop}>modules</a> and user count for your business. There's no automatic billing - we'll discuss your options and help you make an informed decision.
-            </>
-          )
-        },
-        {
-          question: "Do you offer discounts for annual billing?",
-          answer: (
-            <>
-              Yes, we offer significant savings for customers who choose annual billing over monthly payments. The exact discount varies by <a href="/pricing" className="text-gold hover:text-gold-light underline font-medium" onClick={scrollToTop}>plan level</a>, and we'll calculate the savings for your specific configuration. Annual billing also simplifies your budgeting and reduces administrative overhead.
-            </>
-          )
-        },
-        {
-          question: "What payment methods do you accept?",
-          answer: (
-            <>
-              We accept various payment methods including bank transfers, checks, and major credit cards for smaller accounts. For enterprise customers, we can work with your preferred payment terms and methods. Our billing team will coordinate with your accounts payable process to ensure smooth payments. <a href="/contact" className="text-gold hover:text-gold-light underline font-medium" onClick={scrollToTop}>Contact us</a> for specific payment arrangements.
-            </>
-          )
-        },
-        {
-          question: "Can I get a refund if I'm not satisfied?",
-          answer: (
-            <>
-              We stand behind our product and want you to be completely satisfied. Refund requests are reviewed on a case-by-case basis in accordance with our <a href="/terms-of-service" className="text-gold hover:text-gold-light underline font-medium" onClick={scrollToTop}>Terms of Use</a>, and we work hard to address any concerns. Our evaluation and <a href="/contact" className="text-gold hover:text-gold-light underline font-medium" onClick={scrollToTop}>demo process</a> helps ensure a good fit before you commit.
-            </>
-          )
-        },
-        {
-          question: "Do I need technical knowledge to use your platform?",
-          answer: (
-            <>
-              No, Tracker is designed to be user-friendly for garment decoration professionals, not IT experts. While some admin functions may require basic technical understanding, day-to-day operations are intuitive. We provide comprehensive <a href="/documentation" className="text-gold hover:text-gold-light underline font-medium" onClick={scrollToTop}>training and documentation</a> and <a href="/support" className="text-gold hover:text-gold-light underline font-medium" onClick={scrollToTop}>support</a> to help your team become proficient quickly.
-            </>
-          )
-        },
-        {
-          question: "Can I customize the platform to match my brand?",
-          answer: (
-            <>
-              Yes, Tracker can be customized to reflect your brand identity. This includes adding your logo, adjusting color schemes, and customizing certain interface elements. More extensive customizations are available depending on your <a href="/pricing" className="text-gold hover:text-gold-light underline font-medium" onClick={scrollToTop}>plan level</a> and specific requirements. We'll discuss branding options during implementation.
+              No. Tracker is designed for garment decoration professionals, not IT experts. Day-to-day operations are intuitive. We provide comprehensive <a href="/documentation" className="text-gold hover:text-gold-light underline font-medium" onClick={scrollToTop}>documentation</a>, <a href="/videos" className="text-gold hover:text-gold-light underline font-medium" onClick={scrollToTop}>video guides</a>, and ongoing <a href="/support" className="text-gold hover:text-gold-light underline font-medium" onClick={scrollToTop}>support</a> to ensure your team is proficient quickly.
             </>
           )
         }

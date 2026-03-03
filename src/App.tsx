@@ -39,6 +39,9 @@ const Integrations = React.lazy(() => import("@/pages/Integrations"));
 const IntegrationDetail = React.lazy(() => import("@/pages/integrations/IntegrationDetail"));
 const ExpoFinder = React.lazy(() => import("@/pages/ExpoFinder"));
 const Videos = React.lazy(() => import("@/pages/Videos"));
+const LogoManagement = React.lazy(() => import("@/pages/LogoManagement"));
+const ProductionScheduling = React.lazy(() => import("@/pages/ProductionScheduling"));
+const ProofApprovals = React.lazy(() => import("@/pages/ProofApprovals"));
 
 // Module pages - lazy loaded
 const ModuleIndex = React.lazy(() => import("@/pages/modules/ModuleIndex"));
@@ -127,6 +130,9 @@ const App = () => {
                     <Route path="/integrations/:integrationId" element={<Layout><IntegrationDetail /></Layout>} />
                     <Route path="/expo" element={<ExpoFinder />} />
                     <Route path="/videos" element={<Layout><Videos /></Layout>} />
+                    <Route path="/logo-management" element={<Layout><LogoManagement /></Layout>} />
+                    <Route path="/production-scheduling" element={<Layout><ProductionScheduling /></Layout>} />
+                    <Route path="/proof-approvals" element={<Layout><ProofApprovals /></Layout>} />
                     
                     {/* Case Studies Routes */}
                     <Route path="/case-studies" element={<Layout><CaseStudies /></Layout>} />
