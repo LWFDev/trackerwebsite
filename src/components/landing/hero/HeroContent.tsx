@@ -12,7 +12,7 @@ export const HeroContent = () => {
       <div className="inline-block px-4 py-2 bg-gradient-to-r from-gold-opacity-10 via-slate-50/60 to-emerald-50/40 dark:from-gold-opacity-20 dark:via-slate-900/60 dark:to-emerald-900/20 backdrop-blur-sm rounded-full border border-gold-opacity-50 dark:border-gold-opacity-30 mb-6 shadow-sm">
         <div className="text-sm text-gold-dark dark:text-gold-light uppercase font-medium tracking-wider flex items-center">
           <span className="inline-block w-2 h-2 rounded-full bg-gold mr-3 animate-pulse"></span>
-          {t("AUTOMATE. ORGANIZE. SIMPLIFY.")}
+          {t("LOGOS. PROOFS. ADVANCED PRODUCTION SCHEDULING.")}
         </div>
       </div>
       
