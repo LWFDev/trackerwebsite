@@ -11,14 +11,14 @@ const FeaturesSection = () => {
   const { t } = useLocalization();
 
   return <>
-      <SectionTitle label={t("Features")} title={<>
-            {t("Everything Garment Decorators Need in ")} <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-500 via-green-400 to-emerald-600">{t("One Platform")}</span>
-          </>} description={t("TRACKER covers all of your key needs in one business platform")} />
+      <SectionTitle label={t("Garment Decoration Software Features")} title={<>
+            {t("Everything Embroidery, DTG, DTF & Screen Print Shops Need in ")} <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-500 via-green-400 to-emerald-600">{t("One Platform")}</span>
+          </>} description={t("TRACKER covers logo management, production scheduling, digital proof approvals, and machine integrations")} />
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
-        <FeatureCard title={t("Streamlined Workflow")} description={t("A common intuitive place and streamline your workflow from sales ordering to fulfillment.")} delay={0.1} />
-        <FeatureCard title={t("Centralized Data")} description={t("The ultimate Logo, Proof, and Approvals management system, to include Wilcom EMB/DST renderings, Job Sheets, in-plant order management, scheduling, and tracking as well as fulfillment logistics tracking.")} delay={0.2} lottieSource="https://lottie.host/220d2e76-382d-4908-a817-6bcc6f3e87b8/DgUxlrKJnu.lottie" />
-        <FeatureCard title={t("Real-time Insights")} description={t("Art jobs & productivity, Scheduling and production dashboards, staging, orders on the floor, QA/QC & fulfilment. Metabase & PowerBI dashboarding available.")} delay={0.3} lottieSource="https://lottie.host/0df94694-68d2-4628-9b38-8bcf2ff9d8a0/zEiHejuuNO.lottie" />
+        <FeatureCard title={t("Streamlined DTG & DTF Workflow")} description={t("A common intuitive place to streamline your garment decoration workflow from sales ordering to fulfillment — including DTG printing management, DTF transfer tracking, and heat seal production.")} delay={0.1} />
+        <FeatureCard title={t("Cloud Logo Management")} description={t("The ultimate embroidery logo software: manage EMB/DST files, print separation files, proof creation, digital proof approvals with comments, job sheets, in-plant order management, scheduling, and fulfillment logistics.")} delay={0.2} lottieSource="https://lottie.host/220d2e76-382d-4908-a817-6bcc6f3e87b8/DgUxlrKJnu.lottie" />
+        <FeatureCard title={t("Production Scheduling & Insights")} description={t("Production scheduling for embroidery with thread color optimization, machine efficiencies, time tracking, QA routing, staging dashboards, and Metabase & PowerBI integration.")} delay={0.3} lottieSource="https://lottie.host/0df94694-68d2-4628-9b38-8bcf2ff9d8a0/zEiHejuuNO.lottie" />
       </div>
 
       <ScrollReveal>
@@ -36,8 +36,8 @@ const FeaturesSection = () => {
               </div>
               
               <div className="max-w-xl">
-                <h3 className="text-2xl font-bold mb-4 text-white">{t("Advanced ")} <span className="text-emerald-400">{t("Logo Management")}</span></h3>
-                <p className="text-emerald-100">{t("Our platform will deliver logos directly to embroidery machines (Barudan/Tajima) using bNET or Pulse.  Sending images to screen burners or tablets next to heat seal to get orientations correct.  From orders to logos to proofs to production and fulfillment its all cloud based - you can access it from anywhere.")}</p>
+                <h3 className="text-2xl font-bold mb-4 text-white">{t("Advanced ")} <span className="text-emerald-400">{t("Embroidery Logo Management")}</span></h3>
+                <p className="text-emerald-100">{t("Cloud-based embroidery logo software delivering logos directly to machines (Barudan/Tajima) via bNET or Pulse. Send print separation files to screen burners, images to DTG/DTF printers, or orientations to heat seal tablets. From orders to logos to digital proof approvals to production and fulfillment — access it from anywhere.")}</p>
               </div>
               
               <div className="flex gap-6">
@@ -45,14 +45,14 @@ const FeaturesSection = () => {
                   <div className="w-12 h-12 rounded-full bg-emerald-800/70 dark:bg-emerald-800/50 light:bg-emerald-800/70 border border-emerald-600/50 dark:border-emerald-700/50 light:border-emerald-600/50 flex items-center justify-center text-emerald-400 mb-2">
                     <Cpu className="w-5 h-5" />
                   </div>
-                  <span className="text-sm text-emerald-200">{t("Smart Monitoring")}</span>
+                  <span className="text-sm text-emerald-200">{t("Barcode Integrations")}</span>
                 </div>
                 
                 <div className="flex flex-col items-center">
                   <div className="w-12 h-12 rounded-full bg-emerald-800/70 dark:bg-emerald-800/50 light:bg-emerald-800/70 border border-emerald-600/50 dark:border-emerald-700/50 light:border-emerald-600/50 flex items-center justify-center text-emerald-400 mb-2">
                     <Globe className="w-5 h-5" />
                   </div>
-                  <span className="text-sm text-emerald-200">{t("Remote Access")}</span>
+                  <span className="text-sm text-emerald-200">{t("Cloud Access")}</span>
                 </div>
               </div>
             </div>
