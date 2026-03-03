@@ -7,6 +7,7 @@ import CTA from "@/components/landing/CTA";
 import Results from "@/components/landing/Results";
 import StatsSection from "@/components/landing/StatsSection";
 import AnimatedBoxesDivider from "@/components/landing/AnimatedBoxesDivider";
+import HomeVideoSection from "@/components/landing/HomeVideoSection";
 import { useIsMobile } from "@/hooks/use-mobile";
 import { motion } from "framer-motion";
 import PageSEO from "@/components/seo/PageSEO";
@@ -87,9 +88,14 @@ const Index = () => {
         <div className="bg-gradient-to-b from-emerald-50/25 via-slate-100/20 to-gold-light-opacity-30 dark:from-emerald-950/10 dark:via-slate-900/10 dark:to-gold-opacity-15">
           <Results />
         </div>
+
+        {/* Video Demos Section */}
+        <div className="bg-gradient-to-b from-gold-light-opacity-30 via-slate-100/15 to-emerald-50/20 dark:from-gold-opacity-15 dark:via-slate-950/10 dark:to-emerald-950/10">
+          <HomeVideoSection />
+        </div>
         
         {/* Integration Section */}
-        <div className="bg-gradient-to-b from-gold-light-opacity-30 via-emerald-50/20 to-slate-50/25 dark:from-gold-opacity-15 dark:via-emerald-950/10 dark:to-slate-950/10">
+        <div className="bg-gradient-to-b from-emerald-50/20 via-slate-100/15 to-gold-light-opacity-25 dark:from-emerald-950/10 dark:via-slate-900/10 dark:to-gold-opacity-10">
           <Integration />
         </div>
         

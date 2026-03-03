@@ -57,6 +57,11 @@ const ResourcesDropdown = ({ scrollToTop }: ResourcesDropdownProps) => {
               Contact
             </Link>
           </DropdownMenuItem>
+          <DropdownMenuItem className="hover:bg-zinc-800 hover:text-gold focus:bg-zinc-800 focus:text-gold cursor-pointer">
+            <Link to="/videos" className="w-full py-1" onClick={scrollToTop}>
+              Video Guides
+            </Link>
+          </DropdownMenuItem>
         </DropdownMenuContent>
       </DropdownMenu>
     </div>
