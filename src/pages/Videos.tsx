@@ -1,10 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { ArrowLeft, Play, Video } from "lucide-react";
 import { scrollToTop } from "@/utils/navigation";
 import PageSEO from "@/components/seo/PageSEO";
-import { generatePageSEO } from "@/utils/seo";
+import { videosSEO, videosBreadcrumb, videoGuidesSchema } from "@/data/seoData";
 
 interface VideoItem {
   id: string;
@@ -31,11 +31,15 @@ const videos: VideoItem[] = [
 export { videos };
 export type { VideoItem };
 
+/** Lazy-loaded Loom embed — only loads iframe when user clicks play */
 const VideoEmbed = ({ video }: { video: VideoItem }) => {
+  const [loaded, setLoaded] = useState(false);
+
   if (video.nativeSrc) {
     return (
       <video
         controls
+        preload="none"
         className="w-full aspect-video rounded-lg"
         poster={`https://cdn.loom.com/sessions/thumbnails/${video.loomId}-full.jpg`}
       >
@@ -45,14 +49,38 @@ const VideoEmbed = ({ video }: { video: VideoItem }) => {
     );
   }
 
+  if (!loaded) {
+    return (
+      <button
+        type="button"
+        onClick={() => setLoaded(true)}
+        className="relative w-full aspect-video rounded-lg overflow-hidden bg-zinc-800 group cursor-pointer"
+        aria-label={`Play ${video.title}`}
+      >
+        <img
+          src={`https://cdn.loom.com/sessions/thumbnails/${video.loomId}-full.jpg`}
+          alt={video.title}
+          className="absolute inset-0 w-full h-full object-cover"
+          loading="lazy"
+        />
+        <div className="absolute inset-0 bg-black/30 group-hover:bg-black/20 transition-colors flex items-center justify-center">
+          <div className="w-16 h-16 rounded-full bg-gold/90 flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform">
+            <Play className="h-7 w-7 text-black ml-1" fill="currentColor" />
+          </div>
+        </div>
+      </button>
+    );
+  }
+
   return (
     <div className="relative w-full aspect-video rounded-lg overflow-hidden">
       <iframe
-        src={`https://www.loom.com/embed/${video.loomId}?hide_owner=true&hide_share=true&hide_title=true&hideEmbedTopBar=true`}
+        src={`https://www.loom.com/embed/${video.loomId}?hide_owner=true&hide_share=true&hide_title=true&hideEmbedTopBar=true&autoplay=1`}
         frameBorder="0"
         allowFullScreen
         className="absolute inset-0 w-full h-full"
         title={video.title}
+        loading="lazy"
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
       />
     </div>
@@ -62,15 +90,9 @@ const VideoEmbed = ({ video }: { video: VideoItem }) => {
 export { VideoEmbed };
 
 const Videos = () => {
-  const seo = generatePageSEO({
-    title: "Video Guides - See Tracker in Action",
-    description: "Watch video demos of Tracker's garment decoration software. See how to manage customers, sales orders, logos, production, warehouse operations & more.",
-    keywords: "garment decoration software demo, Tracker video guides, embroidery software walkthrough, production management demo",
-  });
-
   return (
     <div className="min-h-screen bg-black text-white">
-      <PageSEO seo={seo} />
+      <PageSEO seo={videosSEO} breadcrumbs={videosBreadcrumb} extraSchema={videoGuidesSchema} />
 
       {/* Hero */}
       <section className="pt-32 md:pt-36 pb-16 bg-gradient-to-br from-zinc-800 to-zinc-900">

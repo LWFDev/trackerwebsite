@@ -3,26 +3,9 @@
 
 User-agent: *
 Allow: /
-
-# Crawl priority directives
-User-agent: Googlebot
-Allow: /
 Crawl-delay: 1
 
-User-agent: Bingbot
-Allow: /
-Crawl-delay: 1
-
-User-agent: Twitterbot
-Allow: /
-
-User-agent: facebookexternalhit
-Allow: /
-
-User-agent: LinkedInBot
-Allow: /
-
-# Disallow admin and internal paths
+# Disallow admin, internal, and utility paths
 Disallow: /admin/
 Disallow: /api/
 Disallow: /temp/
@@ -30,10 +13,8 @@ Disallow: /*.json$
 Disallow: /*?*utm_*
 Disallow: /*?*ref=*
 Disallow: /search?*
-# Utility pages (noindex)
 Disallow: /login
 Disallow: /payment-success
-Disallow: /404
 
 # Allow important pages
 Allow: /pricing
@@ -47,6 +28,8 @@ Allow: /documentation
 Allow: /case-studies/
 Allow: /faq
 Allow: /get-started
+Allow: /videos
+Allow: /integrations/
 
 # Sitemap location
 Sitemap: https://www.trackmybusiness.us/sitemap.xml

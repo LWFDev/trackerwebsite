@@ -92,24 +92,22 @@ export const SEOHead = ({ seoData }: SEOHeadProps) => {
 
     // Add structured data if provided
     if (seoData.schema) {
-      const existingSchema = document.querySelector('script[type="application/ld+json"][data-page-schema]');
-      if (existingSchema) {
-        existingSchema.remove();
-      }
+      // Remove any existing page schemas
+      document.querySelectorAll('script[type="application/ld+json"][data-page-schema]').forEach(el => el.remove());
 
-      const script = document.createElement('script');
-      script.type = 'application/ld+json';
-      script.setAttribute('data-page-schema', 'true');
-      script.textContent = JSON.stringify(seoData.schema);
-      document.head.appendChild(script);
+      const schemas = Array.isArray(seoData.schema) ? seoData.schema : [seoData.schema];
+      schemas.forEach((schemaItem, index) => {
+        const script = document.createElement('script');
+        script.type = 'application/ld+json';
+        script.setAttribute('data-page-schema', 'true');
+        script.textContent = JSON.stringify(schemaItem);
+        document.head.appendChild(script);
+      });
     }
 
     // Cleanup function to remove page-specific schema and link tags when component unmounts
     return () => {
-      const pageSchema = document.querySelector('script[type="application/ld+json"][data-page-schema]');
-      if (pageSchema) {
-        pageSchema.remove();
-      }
+      document.querySelectorAll('script[type="application/ld+json"][data-page-schema]').forEach(el => el.remove());
       document.querySelectorAll('link[rel="alternate"][data-page-hreflang]').forEach((n) => n.remove());
       document.querySelectorAll('link[data-page-pagination]').forEach((n) => n.remove());
     };

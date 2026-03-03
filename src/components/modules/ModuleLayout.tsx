@@ -5,7 +5,7 @@ import { ArrowLeft, Star, ArrowRight, X, ZoomIn } from 'lucide-react';
 import { Dialog, DialogContent, DialogTrigger } from '@/components/ui/dialog';
 import { scrollToTop } from '@/utils/navigation';
 import PageSEO from '@/components/seo/PageSEO';
-import { generateModuleSEO, modulesBreadcrumb } from '@/data/seoData';
+import { generateModuleSEO, modulesBreadcrumb, moduleSchemas } from '@/data/seoData';
 
 interface Stats {
   value: string;
@@ -227,6 +227,9 @@ const ModuleLayout = ({
     }
   };
   
+  const moduleSlug = title.toLowerCase().replace(/\s+/g, '-').replace(/&/g, '').replace(/--+/g, '-');
+  const moduleJsonLd = moduleSchemas[moduleSlug];
+
   return <div className="min-h-screen flex flex-col bg-black">
       <PageSEO 
         seo={generateModuleSEO(
@@ -235,6 +238,7 @@ const ModuleLayout = ({
           seoKeywords || `${title.toLowerCase()}, production management, garment decoration software`
         )}
         breadcrumbs={modulesBreadcrumb}
+        extraSchema={moduleJsonLd}
       />
       {/* Hero Section */}
       <section className={`pt-32 md:pt-36 pb-16 ${getBgColor()} text-white`}>
