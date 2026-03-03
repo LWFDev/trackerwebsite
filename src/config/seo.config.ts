@@ -3,7 +3,7 @@ import { getDomainUrl } from '@/utils/domain';
 export const SEO_CONFIG = {
   // Domain and Site Info
   siteUrl: getDomainUrl(), // Dynamic domain based on current site
-  siteName: "TrackMyBusiness",
+  siteName: "Tracker",
   
   // Analytics
   ga4MeasurementId: "G-XXXXXXXXXX", // Replace with your actual GA4 ID
@@ -15,8 +15,8 @@ export const SEO_CONFIG = {
   pinterestSiteVerification: "",
   
   // Business Information
-  businessName: "TrackMyBusiness",
-  businessDescription: "Enterprise production management software for garment decoration, apparel manufacturing, and custom embroidery businesses",
+  businessName: "Tracker",
+  businessDescription: "Cloud-based garment decoration software for embroidery, DTG, DTF, screen printing, heat seal & licensed team gear production management",
   businessPhone: "+1-800-TRACKER",
   businessEmail: "info@trackmybusiness.us",
   

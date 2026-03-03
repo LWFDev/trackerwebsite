@@ -1,5 +1,5 @@
-# Tracker Systems - Production Management Software
-# https://tracker-systems.com
+# Tracker - Cloud-Based Garment Decoration Software
+# https://www.trackmybusiness.us
 
 User-agent: *
 Allow: /
@@ -44,9 +44,12 @@ Allow: /modules/
 Allow: /blog/
 Allow: /support
 Allow: /documentation
+Allow: /case-studies/
+Allow: /faq
+Allow: /get-started
 
 # Sitemap location
-Sitemap: https://tracker-systems.com/sitemap.xml
+Sitemap: https://www.trackmybusiness.us/sitemap.xml
 
 # Preferred domain
-Host: tracker-systems.com
+Host: www.trackmybusiness.us

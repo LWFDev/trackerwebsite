@@ -1,18 +1,20 @@
 import { SEOData, generateBreadcrumbSchema, generateProductSchema, generateFAQSchema } from '@/utils/seo';
 import { getCurrentOrigin } from '@/utils/domain';
 
+const GARMENT_KEYWORDS = "garment decoration software, DTG printing management, DTF transfer tracking, embroidery logo software, screen printing workflow, heat seal production, licensed team gear ordering, team gear customization, cloud logo management, production scheduling for embroidery, digital proof approvals, PLM garment integrations";
+
 // Home page SEO
 export const homeSEO: SEOData = {
-  title: "Production Management Software | TrackMyBusiness - Enterprise Garment Decoration Platform",
-  description: "The leading end-to-end production management software for garment decoration, apparel manufacturing, and custom embroidery businesses. Automate order handling, manage inventory, and optimize production workflow instantly with enterprise-grade features.",
-  keywords: "production management software, garment decoration software, apparel manufacturing system, embroidery business software, screen printing management, custom apparel production, automated production scheduling, enterprise software",
+  title: "Tracker: Cloud-Based Garment Decoration Software for Embroidery, DTG, DTF & Team Gear",
+  description: "Streamline garment decoration with Tracker. Manage logos, proofs, production scheduling & machine integrations for embroidery, DTG, DTF, screen printing & team gear.",
+  keywords: GARMENT_KEYWORDS + ", production management software, apparel manufacturing system, automated production scheduling, enterprise software, barcode integrations, thread color optimization",
   canonical: `${getCurrentOrigin()}/`,
   schema: {
     "@context": "https://schema.org",
     "@type": "WebSite",
-    "name": "TrackMyBusiness",
-    "alternateName": "TrackMyBusiness Production Management Software",
-    "description": "Enterprise production management software for garment decoration, apparel manufacturing, and custom embroidery businesses",
+    "name": "Tracker",
+    "alternateName": "Tracker Garment Decoration Software",
+    "description": "Cloud-based garment decoration software for embroidery, DTG, DTF, screen printing, heat seal & licensed team gear production management",
     "url": getCurrentOrigin(),
     "potentialAction": {
       "@type": "SearchAction",
@@ -24,17 +26,17 @@ export const homeSEO: SEOData = {
 
 // Pricing page SEO
 export const pricingSEO: SEOData = {
-  title: "Pricing Plans - Affordable Production Management Software for Garment Decoration",
-  description: "Choose the perfect TrackMyBusiness plan for your garment decoration business. Enterprise-grade features with flexible pricing for small shops to large manufacturers. Get started today with our comprehensive production management platform.",
-  keywords: "production management software pricing, garment decoration software cost, apparel manufacturing software plans, embroidery business software pricing, enterprise production software, screen printing management pricing",
+  title: "Pricing - Cloud Garment Decoration Software for Embroidery, DTG & DTF",
+  description: "Flexible pricing for Tracker's cloud garment decoration platform. Plans for embroidery shops, DTG/DTF printers, screen printers & licensed team gear operations.",
+  keywords: GARMENT_KEYWORDS + ", production management software pricing, garment decoration software cost, embroidery business software pricing",
   canonical: `${getCurrentOrigin()}/pricing`,
   schema: generateProductSchema({
-    name: "TrackMyBusiness Production Management Software",
-    description: "Complete enterprise production management solution for garment decoration businesses with integrated modules for sales, production, inventory, and customer management",
+    name: "Tracker Garment Decoration Software",
+    description: "Cloud-based production management for embroidery, DTG, DTF, screen printing, heat seal & licensed team gear businesses",
     offers: {
       "@type": "AggregateOffer",
       "lowPrice": "99",
-      "highPrice": "499", 
+      "highPrice": "499",
       "priceCurrency": "USD",
       "offerCount": "3"
     }
@@ -43,115 +45,115 @@ export const pricingSEO: SEOData = {
 
 // About page SEO
 export const aboutSEO: SEOData = {
-  title: "About Us - Leading Production Management Software Company",
-  description: "Learn about TrackMyBusiness, the innovative company behind the leading production management software for garment decoration and apparel manufacturing industries.",
-  keywords: "trackmybusiness company, production management software company, garment decoration software developers, apparel manufacturing technology, enterprise software provider",
+  title: "About Tracker - Cloud Logo Management & Production Scheduling Software",
+  description: "Learn how Tracker helps garment decorators manage embroidery logos, DTG/DTF production, digital proofs & PLM integrations from a single cloud platform.",
+  keywords: GARMENT_KEYWORDS + ", trackmybusiness company, garment decoration software developers, apparel manufacturing technology",
   canonical: `${getCurrentOrigin()}/about`
 };
 
 // Contact page SEO
 export const contactSEO: SEOData = {
-  title: "Contact Us - Get Support for Production Management Software",
-  description: "Get in touch with TrackMyBusiness for sales, support, or questions about our production management software. Expert support for your garment decoration business.",
-  keywords: "trackmybusiness contact, production management software support, garment decoration software help, customer service, enterprise support",
+  title: "Contact Us - Garment Decoration Software Support & Sales",
+  description: "Get in touch for demos, support, or questions about Tracker's embroidery logo software, DTG printing management, production scheduling & ERP integrations.",
+  keywords: GARMENT_KEYWORDS + ", trackmybusiness contact, production management software support, customer service",
   canonical: `${getCurrentOrigin()}/contact`
 };
 
 // Industries SEO data
 export const industriesSEO: SEOData = {
-  title: "Industries We Serve - Production Management Software Solutions",
-  description: "Discover how TrackMyBusiness serves various industries including apparel manufacturing, embroidery, screen printing, promotional products, and custom decoration businesses.",
-  keywords: "apparel manufacturing software, embroidery business software, screen printing management, promotional products software, custom decoration software, enterprise solutions",
+  title: "Industries - Garment Decoration Software for Embroidery, Screen Printing & DTG",
+  description: "See how Tracker serves embroidery shops, screen printers, DTG/DTF operations, licensed team gear companies & apparel manufacturers with cloud production tools.",
+  keywords: GARMENT_KEYWORDS + ", apparel manufacturing software, promotional products software, custom decoration software, enterprise solutions",
   canonical: `${getCurrentOrigin()}/industries`
 };
 
 // Modules SEO data
 export const modulesSEO: SEOData = {
-  title: "Software Modules - Complete Production Management Features",
-  description: "Explore all modules of TrackMyBusiness including inventory management, order processing, production scheduling, customer management, and more.",
-  keywords: "production management modules, inventory management software, order processing system, production scheduling software, customer management system, enterprise modules",
+  title: "Software Modules - Logo Management, Production Scheduling & Proof Approvals",
+  description: "Explore Tracker modules: embroidery logo management, DTG/DTF tracking, digital proof approvals, production scheduling, PLM garment integrations & more.",
+  keywords: GARMENT_KEYWORDS + ", inventory management software, order processing system, production scheduling software, customer management system",
   canonical: `${getCurrentOrigin()}/modules`
 };
 
 // Blog SEO data
 export const blogSEO: SEOData = {
-  title: "Production Management Blog - Industry Insights & Best Practices",
-  description: "Stay updated with the latest trends, tips, and best practices in production management, garment decoration, and apparel manufacturing industry.",
-  keywords: "production management blog, garment decoration tips, apparel manufacturing insights, embroidery business advice, industry trends",
+  title: "Blog - Garment Decoration Tips, DTG/DTF Insights & Embroidery Best Practices",
+  description: "Industry insights on garment decoration software, embroidery production, DTG printing, DTF transfers, screen printing workflows & team gear customization.",
+  keywords: GARMENT_KEYWORDS + ", production management blog, apparel manufacturing insights, industry trends",
   canonical: `${getCurrentOrigin()}/blog`
 };
 
 // Documentation SEO data
 export const docsSEO: SEOData = {
-  title: "Documentation - TrackMyBusiness User Guide & API Reference",
-  description: "Complete documentation for TrackMyBusiness production management software including user guides, API reference, and integration tutorials.",
-  keywords: "trackmybusiness documentation, production management software guide, API documentation, user manual, enterprise documentation",
+  title: "Documentation - Tracker User Guide & API Reference",
+  description: "Complete documentation for Tracker garment decoration software including user guides, API reference, and integration tutorials for embroidery, DTG & DTF workflows.",
+  keywords: GARMENT_KEYWORDS + ", trackmybusiness documentation, API documentation, user manual",
   canonical: `${getCurrentOrigin()}/documentation`
 };
 
 // Support SEO data
 export const supportSEO: SEOData = {
-  title: "Support Center - Help & Resources for Production Management Software",
-  description: "Get help with TrackMyBusiness production management software. Access FAQs, tutorials, and contact our support team for assistance.",
-  keywords: "trackmybusiness support, production management software help, customer support, technical assistance, enterprise support",
+  title: "Support - Help for Garment Decoration & Embroidery Software",
+  description: "Get help with Tracker's garment decoration platform. FAQs, tutorials & support for logo management, production scheduling, proof approvals & integrations.",
+  keywords: GARMENT_KEYWORDS + ", trackmybusiness support, customer support, technical assistance",
   canonical: `${getCurrentOrigin()}/support`
 };
 
 // FAQ Schema for support page
 export const supportFAQSchema = generateFAQSchema([
   {
-    question: "How do I get started with TrackMyBusiness?",
-    answer: "You can start with our evaluation period by signing up on our website. Our onboarding team will help you set up your account and import your existing data."
+    question: "How do I get started with Tracker?",
+    answer: "You can start with our evaluation period by signing up on our website. Our onboarding team will help you set up your account, configure your embroidery, DTG, DTF, screen printing, or heat seal workflows, and import your existing logo and order data."
   },
   {
-    question: "What types of businesses can use TrackMyBusiness?",
-    answer: "TrackMyBusiness is designed for garment decoration businesses including embroidery shops, screen printers, promotional product companies, apparel manufacturers, and custom decoration services."
+    question: "What types of businesses can use Tracker?",
+    answer: "Tracker is designed for garment decoration businesses including embroidery shops, DTG and DTF printers, screen printers, heat seal operations, licensed team gear companies, promotional product firms, apparel manufacturers, and contract decorators."
   },
   {
-    question: "Do you offer integrations with other software?",
-    answer: "Yes, we integrate with popular e-commerce platforms like Shopify and WooCommerce, accounting software like QuickBooks, and shipping providers like ShipStation."
+    question: "Does Tracker integrate with embroidery and printing machines?",
+    answer: "Yes, Tracker provides barcode integrations to embroidery machines (Barudan, Tajima via bNET/Pulse), DTG printers, DTF transfer systems, and heat seal equipment. Logos and production files are delivered directly to machines."
   },
   {
-    question: "Is there a mobile app available?",
-    answer: "Yes, TrackMyBusiness offers mobile apps for both iOS and Android, allowing you to manage your business on the go."
+    question: "How does Tracker handle logo management and digital proofs?",
+    answer: "Tracker provides cloud-based logo management with embroidery and print separation files (EMB, DST), quick proof creation, digital proof approvals with customer comments, and version tracking for all artwork assets."
   },
   {
-    question: "What kind of support do you provide?",
-    answer: "We provide comprehensive support including phone support, live chat, email support, video tutorials, and detailed documentation. Enterprise customers get dedicated account managers."
+    question: "What integrations does Tracker support?",
+    answer: "Tracker integrates with blank garment distributors (SanMar, alphabroder), PLM systems for costs, pricing, and supply chain, e-commerce platforms (Shopify, WooCommerce), ERP systems, shipping providers (ShipStation), and accounting software."
   }
 ]);
 
 // Industry-specific SEO data
 export const industryPagesSEO = {
   'apparel-manufacturing': {
-    title: "Apparel Manufacturing Software - Production Management Solutions",
-    description: "Streamline your apparel manufacturing operations with TrackMyBusiness. Manage orders, inventory, production schedules, and quality control in one platform.",
-    keywords: "apparel manufacturing software, clothing production management, garment manufacturing system, textile production software",
+    title: "Apparel Manufacturing Software - Garment Decoration & Production Management",
+    description: "Streamline apparel manufacturing with Tracker. Manage embroidery, DTG, DTF, screen printing & heat seal production with PLM integrations and supply chain tools.",
+    keywords: GARMENT_KEYWORDS + ", apparel manufacturing software, clothing production management, textile production software",
     canonical: `${getCurrentOrigin()}/industries/apparel-manufacturing`
   },
   'embroidery': {
-    title: "Embroidery Business Software - Complete Shop Management System",
-    description: "Manage your embroidery business efficiently with TrackMyBusiness. Handle orders, designs, production scheduling, and customer management seamlessly.",
-    keywords: "embroidery business software, embroidery shop management, custom embroidery software, digitizing business software",
+    title: "Embroidery Business Software - Logo Management & Machine Integration",
+    description: "Manage your embroidery business with Tracker. Cloud logo management, thread color optimization, production scheduling, and barcode integrations to Barudan & Tajima machines.",
+    keywords: GARMENT_KEYWORDS + ", embroidery business software, embroidery shop management, digitizing business software, Barudan, Tajima",
     canonical: `${getCurrentOrigin()}/industries/embroidery`
   },
   'screen-printing': {
-    title: "Screen Printing Software - Shop Management & Production Control",
-    description: "Optimize your screen printing operations with TrackMyBusiness. Manage orders, ink inventory, production schedules, and customer communications efficiently.",
-    keywords: "screen printing software, screen print shop management, custom printing software, silk screen business software",
+    title: "Screen Printing Software - Workflow Management & Production Scheduling",
+    description: "Optimize screen printing operations with Tracker. Manage print separation files, screen burning workflows, production scheduling, ink inventory & order tracking.",
+    keywords: GARMENT_KEYWORDS + ", screen printing software, screen print shop management, print separation files",
     canonical: `${getCurrentOrigin()}/industries/screen-printing`
   }
 };
 
 // Module-specific SEO data templates
 export const generateModuleSEO = (moduleName: string, description: string, keywords: string): SEOData => ({
-  title: `${moduleName} Module - Production Management Software Feature`,
-  description: `${description} Part of TrackMyBusiness comprehensive production management platform for garment decoration businesses.`,
-  keywords: `${keywords}, production management software, garment decoration software`,
+  title: `${moduleName} - Garment Decoration Software Module`,
+  description: `${description} Part of Tracker's cloud-based garment decoration platform for embroidery, DTG, DTF, screen printing & team gear businesses.`,
+  keywords: `${keywords}, ${GARMENT_KEYWORDS}`,
   canonical: `${getCurrentOrigin()}/modules/${moduleName.toLowerCase().replace(/\s+/g, '-')}`
 });
 
-// Breadcrumb schemas for different page types
+// Breadcrumb schemas
 export const homeBreadcrumb = generateBreadcrumbSchema([
   { name: "Home", url: `${getCurrentOrigin()}/` }
 ]);
@@ -223,36 +225,36 @@ export const privacyBreadcrumb = generateBreadcrumbSchema([
 
 // Additional page SEO
 export const caseStudiesSEO: SEOData = {
-  title: "Case Studies - Real Results with TrackMyBusiness Production Management",
-  description: "See how businesses transformed operations with TrackMyBusiness production management platform across embroidery, screen printing, and apparel manufacturing industries.",
-  keywords: "trackmybusiness case studies, production management results, embroidery software success, screen printing ROI, enterprise software results",
+  title: "Case Studies - Real Results with Tracker Garment Decoration Software",
+  description: "See how garment decorators transformed operations with Tracker. Results from embroidery, screen printing, DTG/DTF & licensed team gear businesses.",
+  keywords: GARMENT_KEYWORDS + ", trackmybusiness case studies, production management results, embroidery software success",
   canonical: `${getCurrentOrigin()}/case-studies`
 };
 
 export const faqSEO: SEOData = {
-  title: "FAQ - Answers About TrackMyBusiness Production Management Software",
-  description: "Find answers to common questions about TrackMyBusiness pricing, implementation, integrations, and enterprise support services.",
-  keywords: "trackmybusiness faq, production management faq, garment decoration software questions, enterprise software support",
+  title: "FAQ - Garment Decoration Software Questions & Answers",
+  description: "Find answers about Tracker's garment decoration software: embroidery logo management, DTG/DTF production, digital proofs, PLM integrations & pricing.",
+  keywords: GARMENT_KEYWORDS + ", trackmybusiness faq, garment decoration software questions",
   canonical: `${getCurrentOrigin()}/faq`
 };
 
 export const getStartedSEO: SEOData = {
-  title: "Get Started - Onboarding with TrackMyBusiness Production Management",
-  description: "Kick off your TrackMyBusiness onboarding process. Answer a few questions and our team will tailor your implementation for maximum efficiency.",
-  keywords: "trackmybusiness onboarding, get started, implementation questionnaire, production management setup",
+  title: "Get Started - Onboarding with Tracker Garment Decoration Software",
+  description: "Start your Tracker onboarding. Configure embroidery, DTG, DTF, screen printing & heat seal workflows. Import logos, set up production scheduling & integrations.",
+  keywords: GARMENT_KEYWORDS + ", trackmybusiness onboarding, get started, implementation",
   canonical: `${getCurrentOrigin()}/get-started`
 };
 
 export const termsSEO: SEOData = {
-  title: "Terms of Service - TrackMyBusiness Legal Terms",
-  description: "Read the legal terms governing the use of TrackMyBusiness production management software and enterprise services.",
-  keywords: "trackmybusiness terms of service, software terms, legal terms, enterprise agreement",
+  title: "Terms of Service - Tracker Legal Terms",
+  description: "Read the legal terms governing the use of Tracker garment decoration software and enterprise services.",
+  keywords: "trackmybusiness terms of service, software terms, legal terms",
   canonical: `${getCurrentOrigin()}/terms`
 };
 
 export const privacySEO: SEOData = {
-  title: "Privacy Policy - TrackMyBusiness Data Protection",
-  description: "Learn how TrackMyBusiness collects, uses, and protects your business data in compliance with privacy regulations and enterprise security standards.",
-  keywords: "trackmybusiness privacy policy, data protection, GDPR, enterprise security, business data privacy",
+  title: "Privacy Policy - Tracker Data Protection",
+  description: "Learn how Tracker collects, uses, and protects your business data in compliance with privacy regulations and enterprise security standards.",
+  keywords: "trackmybusiness privacy policy, data protection, GDPR, enterprise security",
   canonical: `${getCurrentOrigin()}/privacy`
 };

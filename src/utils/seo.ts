@@ -17,9 +17,9 @@ export interface SEOData {
 }
 
 export const defaultSEO: SEOData = {
-  title: "TrackMyBusiness - Enterprise Production Management Software | Garment Decoration Platform",
-  description: "The leading end-to-end production management software for garment decoration, apparel manufacturing, and custom embroidery businesses. Automate order handling, manage inventory, and optimize production workflow instantly.",
-  keywords: "production management software, garment decoration software, apparel manufacturing system, embroidery business software, screen printing management, custom apparel production, automated production scheduling, enterprise software",
+  title: "Tracker: Cloud-Based Garment Decoration Software for Embroidery, DTG, DTF & Team Gear",
+  description: "Streamline garment decoration with Tracker. Manage logos, proofs, production scheduling & machine integrations for embroidery, DTG, DTF, screen printing & team gear.",
+  keywords: "garment decoration software, DTG printing management, DTF transfer tracking, embroidery logo software, screen printing workflow, heat seal production, licensed team gear ordering, cloud logo management, production scheduling for embroidery, digital proof approvals, PLM garment integrations",
   ogImage: `${getCurrentOrigin()}/assets/og-image.png`,
   canonical: `${getCurrentOrigin()}/`,
   robots: "index,follow",
@@ -29,15 +29,15 @@ export const defaultSEO: SEOData = {
 export const organizationSchema = {
   "@context": "https://schema.org",
   "@type": ["Organization", "SoftwareApplication"],
-  "name": "TrackMyBusiness",
-  "alternateName": "TrackMyBusiness Production Management",
-  "description": "Enterprise production management software for garment decoration, apparel manufacturing, and custom embroidery businesses",
+  "name": "Tracker",
+  "alternateName": "Tracker Garment Decoration Software",
+  "description": "Cloud-based garment decoration software for embroidery, DTG, DTF, screen printing, heat seal & licensed team gear production management with logo management, digital proof approvals, and machine integrations",
   "url": getCurrentOrigin(),
   "logo": `${getCurrentOrigin()}/assets/logo.png`,
   "foundingDate": "2020",
   "numberOfEmployees": "50-100",
-  "industry": "Software Development",
-  "keywords": "production management, garment decoration, apparel manufacturing, embroidery software, screen printing",
+  "industry": "Garment Decoration Software",
+  "keywords": "garment decoration software, embroidery logo software, DTG printing management, DTF transfer tracking, screen printing workflow, heat seal production, licensed team gear, cloud logo management, production scheduling, digital proof approvals, PLM integrations, barcode machine integrations",
   "contactPoint": {
     "@type": "ContactPoint",
     "telephone": "+1-800-TRACKER",
@@ -56,6 +56,7 @@ export const organizationSchema = {
     "https://facebook.com/trackmybusiness"
   ],
   "applicationCategory": "BusinessApplication",
+  "applicationSubCategory": "Garment Decoration Production Management",
   "operatingSystem": "Web Browser"
 };
 
@@ -78,7 +79,7 @@ export const generatePageSEO = (pageSEO: Partial<SEOData>): SEOData => {
   return {
     ...defaultSEO,
     ...pageSEO,
-    title: pageSEO.title ? `${pageSEO.title} | TrackMyBusiness` : defaultSEO.title,
+    title: pageSEO.title ? `${pageSEO.title} | Tracker` : defaultSEO.title,
     robots: pageSEO.robots ?? defaultSEO.robots,
     ogType: pageSEO.ogType ?? defaultSEO.ogType
   };
@@ -111,11 +112,11 @@ export const generateProductSchema = (product: {
     "image": product.image,
     "brand": {
       "@type": "Brand",
-      "name": "TrackMyBusiness"
+      "name": "Tracker"
     },
     "manufacturer": {
       "@type": "Organization",
-      "name": "TrackMyBusiness"
+      "name": "Tracker"
     },
     "offers": product.offers || {
       "@type": "Offer",
