@@ -125,13 +125,21 @@ export const supportFAQSchema = generateFAQSchema([
 
 // === FAQ Page Schema (comprehensive) ===
 export const faqPageSchema = generateFAQSchema([
-  { question: "How do I know if Tracker is right for us?", answer: "Tracker is designed for garment decoration businesses of all sizes, from small startups to large enterprises. If you're managing orders, inventory, production, or customer relationships in the custom apparel industry, Tracker can streamline your operations." },
-  { question: "Can I have a demo to see Tracker in action?", answer: "Absolutely! We provide personalized demos tailored to your business needs. During the demo, we'll show you how Tracker's modules work together to manage your entire workflow." },
-  { question: "How much is Tracker?", answer: "Tracker offers flexible pricing plans to suit different business sizes and needs. Our pricing is based on the modules you need and the number of users with Starter, Professional, and Enterprise tiers." },
-  { question: "How long does it take to implement Tracker?", answer: "Depending on the complexity, it can be anything from 6 weeks to 12-18 months. Very big projects with multiple integrations (e.g. ERPs) will take longer than a smaller business with just website/accounts integration." },
-  { question: "Is Tracker available globally or just in the UK?", answer: "We have customers in UK/Europe and USA, and the system can be accessed from any internet connection. Currently we only offer the interface in English." },
-  { question: "Do I need technical knowledge to use your platform?", answer: "No, Tracker is designed to be user-friendly for garment decoration professionals, not IT experts. We provide comprehensive training, documentation and support." },
-  { question: "Can I customize the platform to match my brand?", answer: "Yes, Tracker can be customized to reflect your brand identity including your logo, color schemes, and certain interface elements." }
+  { question: "How do I know if Tracker is right for us?", answer: "Tracker is designed for garment decoration businesses of all sizes. If you manage orders, logos, production, or inventory for embroidery, DTG, DTF, screen printing, heat seal, or licensed team gear, Tracker can streamline your operations." },
+  { question: "What decoration methods does Tracker support?", answer: "Tracker supports embroidery (multi-head, single-head), DTG printing, DTF transfers, screen printing, heat-seal/heat-transfer vinyl, sublimation, and hybrid workflows with format-specific logo management." },
+  { question: "How does Tracker handle embroidery logo files (EMB, DST)?", answer: "Tracker provides cloud-based logo management with full support for EMB, DST, PES, EXP, JEF, and XXX formats. Every logo is versioned, tagged to customers, and delivered to machines via barcode scanning." },
+  { question: "How do digital proof approvals work?", answer: "Tracker generates professional proofs with garment mockups, thread charts, and placement views. Customers review on any device, leave comments, and approve digitally. On approval, jobs auto-release to production with the approved version locked." },
+  { question: "What embroidery and printing machines does Tracker integrate with?", answer: "Tracker integrates with Barudan (bNET), Tajima (Pulse/DG16), Brother and Epson DTG printers, DTF transfer systems, Kornit digital printers, M&R and ROQ screen presses, and heat-seal equipment via barcode scanning." },
+  { question: "How does thread colour optimisation improve production?", answer: "The production scheduler analyses queued jobs and groups them by thread palette, reducing changeovers by up to 40%. Combined with order stacking, shops report 20–25% more stitches per machine-hour." },
+  { question: "Does Tracker track operator time and machine efficiency?", answer: "Yes. Operators clock on/off via barcode scan. Tracker captures run times, compares to estimates, and provides real-time dashboards of head utilisation, downtime, stitch counts, and job completion rates." },
+  { question: "What PLM and distributor integrations does Tracker support?", answer: "Tracker integrates with SanMar, alphabroder, S&S Activewear for inventory and pricing. It connects to SAP, NetSuite, Sage, QuickBooks, Shopify, WooCommerce, ShipStation, and more." },
+  { question: "Can Tracker connect to my Shopify or WooCommerce store?", answer: "Yes. Two-way sync of orders, inventory, and products. Orders flow into Tracker automatically. Fulfilment status and tracking numbers push back to the store." },
+  { question: "How much is Tracker?", answer: "Tracker offers Starter, Professional, and Enterprise pricing tiers based on modules and user count. Pricing includes hosting, support, and updates. Contact us for a custom quote." },
+  { question: "Are there hidden costs once I have Tracker?", answer: "No. All costs are documented in your project and licensing agreements. Additional modules or integrations are discussed and agreed upon before implementation." },
+  { question: "How long does it take to implement Tracker?", answer: "Implementation ranges from 6 weeks to 12–18 months depending on complexity, number of integrations, and business size." },
+  { question: "Is Tracker available globally?", answer: "Yes. Customers in UK, Europe, and USA. Accessible from any internet connection worldwide. Interface currently available in English." },
+  { question: "Do I need technical knowledge to use Tracker?", answer: "No. Designed for garment decoration professionals. Comprehensive documentation, video guides, and ongoing support ensure quick proficiency." },
+  { question: "Can I have a demo to see Tracker in action?", answer: "Yes. We provide personalised demos covering cloud logo management, digital proof approvals, production scheduling with barcode-to-machine integration, and more." }
 ]);
 
 // === HowTo Schema for Get Started ===
@@ -283,6 +291,26 @@ export const privacyBreadcrumb = generateBreadcrumbSchema([
 export const videosBreadcrumb = generateBreadcrumbSchema([
   { name: "Home", url: `${getCurrentOrigin()}/` },
   { name: "Video Guides", url: `${getCurrentOrigin()}/videos` }
+]);
+
+export const logoManagementBreadcrumb = generateBreadcrumbSchema([
+  { name: "Home", url: `${getCurrentOrigin()}/` },
+  { name: "Logo Management", url: `${getCurrentOrigin()}/logo-management` }
+]);
+
+export const productionSchedulingBreadcrumb = generateBreadcrumbSchema([
+  { name: "Home", url: `${getCurrentOrigin()}/` },
+  { name: "Production Scheduling", url: `${getCurrentOrigin()}/production-scheduling` }
+]);
+
+export const proofApprovalsBreadcrumb = generateBreadcrumbSchema([
+  { name: "Home", url: `${getCurrentOrigin()}/` },
+  { name: "Proof Approvals", url: `${getCurrentOrigin()}/proof-approvals` }
+]);
+
+export const integrationsBreadcrumb = generateBreadcrumbSchema([
+  { name: "Home", url: `${getCurrentOrigin()}/` },
+  { name: "Integrations", url: `${getCurrentOrigin()}/integrations` }
 ]);
 
 // Additional page SEO

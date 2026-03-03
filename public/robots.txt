@@ -30,6 +30,9 @@ Allow: /faq
 Allow: /get-started
 Allow: /videos
 Allow: /integrations/
+Allow: /logo-management
+Allow: /production-scheduling
+Allow: /proof-approvals
 
 # Sitemap location
 Sitemap: https://www.trackmybusiness.us/sitemap.xml

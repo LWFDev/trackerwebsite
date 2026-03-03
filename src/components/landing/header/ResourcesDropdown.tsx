@@ -62,6 +62,21 @@ const ResourcesDropdown = ({ scrollToTop }: ResourcesDropdownProps) => {
               Video Guides
             </Link>
           </DropdownMenuItem>
+          <DropdownMenuItem className="hover:bg-zinc-800 hover:text-gold focus:bg-zinc-800 focus:text-gold cursor-pointer">
+            <Link to="/logo-management" className="w-full py-1" onClick={scrollToTop}>
+              Logo Management
+            </Link>
+          </DropdownMenuItem>
+          <DropdownMenuItem className="hover:bg-zinc-800 hover:text-gold focus:bg-zinc-800 focus:text-gold cursor-pointer">
+            <Link to="/production-scheduling" className="w-full py-1" onClick={scrollToTop}>
+              Production Scheduling
+            </Link>
+          </DropdownMenuItem>
+          <DropdownMenuItem className="hover:bg-zinc-800 hover:text-gold focus:bg-zinc-800 focus:text-gold cursor-pointer">
+            <Link to="/proof-approvals" className="w-full py-1" onClick={scrollToTop}>
+              Proof Approvals
+            </Link>
+          </DropdownMenuItem>
         </DropdownMenuContent>
       </DropdownMenu>
     </div>
