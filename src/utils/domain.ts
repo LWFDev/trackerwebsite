@@ -26,9 +26,16 @@ export const getCurrentDomain = (): DomainType => {
 export const getDomainUrl = (domain?: DomainType): string => {
   const currentDomain = domain || getCurrentDomain();
   
-  return currentDomain === 'com' 
-    ? 'https://www.trackmybusiness.com'
-    : 'https://www.trackmybusiness.us';
+  return currentDomain === 'us' 
+    ? 'https://www.trackmybusiness.us'
+    : 'https://www.trackmybusiness.com';
+};
+
+/**
+ * Gets the canonical (primary) domain URL — always .com
+ */
+export const getCanonicalDomainUrl = (): string => {
+  return 'https://www.trackmybusiness.com';
 };
 
 /**

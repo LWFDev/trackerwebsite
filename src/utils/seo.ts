@@ -1,4 +1,4 @@
-import { getCurrentOrigin } from './domain';
+import { getCurrentOrigin, getCanonicalDomainUrl } from './domain';
 
 export interface HreflangAlternate { hrefLang: string; href: string; }
 export interface PaginationLinks { prev?: string; next?: string; }
@@ -177,12 +177,25 @@ export const generateModuleSchema = (module: {
 });
 
 export const generatePageSEO = (pageSEO: Partial<SEOData>): SEOData => {
+  const canonical = pageSEO.canonical ?? defaultSEO.canonical;
+  
+  // Auto-generate hreflang alternates for .com and .us if not provided
+  const path = canonical ? new URL(canonical).pathname : '/';
+  const alternates = pageSEO.alternates ?? [
+    { hrefLang: 'en', href: `https://www.trackmybusiness.com${path}` },
+    { hrefLang: 'en-us', href: `https://www.trackmybusiness.us${path}` },
+    { hrefLang: 'x-default', href: `https://www.trackmybusiness.com${path}` },
+  ];
+
   return {
     ...defaultSEO,
     ...pageSEO,
     title: pageSEO.title ? `${pageSEO.title} | Tracker` : defaultSEO.title,
     robots: pageSEO.robots ?? defaultSEO.robots,
-    ogType: pageSEO.ogType ?? defaultSEO.ogType
+    ogType: pageSEO.ogType ?? defaultSEO.ogType,
+    // Use .com as canonical domain
+    canonical: canonical?.replace('trackmybusiness.us', 'trackmybusiness.com'),
+    alternates,
   };
 };
 

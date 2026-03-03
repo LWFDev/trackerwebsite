@@ -1,5 +1,6 @@
 # Tracker - Cloud-Based Garment Decoration Software
-# https://www.trackmybusiness.us
+# Primary: https://www.trackmybusiness.com
+# Alternate: https://www.trackmybusiness.us
 
 User-agent: *
 Allow: /
@@ -34,8 +35,9 @@ Allow: /logo-management
 Allow: /production-scheduling
 Allow: /proof-approvals
 
-# Sitemap location
+# Sitemaps for both domains
+Sitemap: https://www.trackmybusiness.com/sitemap.xml
 Sitemap: https://www.trackmybusiness.us/sitemap.xml
 
 # Preferred domain
-Host: www.trackmybusiness.us
+Host: www.trackmybusiness.com
