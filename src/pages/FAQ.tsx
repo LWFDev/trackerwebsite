@@ -33,7 +33,7 @@ const FAQ = () => {
           question: "How do I know if Tracker is right for us?",
           answer: (
             <>
-              Tracker is designed for <a href="/about" className="text-gold hover:text-gold-light underline font-medium" onClick={scrollToTop}>garment decoration businesses</a> of all sizes — from small embroidery shops to large multi-location enterprises. If you manage orders, logos, production, or inventory for embroidery, DTG, DTF, screen printing, heat seal, or licensed team gear, Tracker can streamline your operations. We offer <a href="/contact" className="text-gold hover:text-gold-light underline font-medium" onClick={scrollToTop}>personalised demos</a> to evaluate fit.
+              Tracker is designed for <a href="/about" className="text-gold hover:text-gold-light underline font-medium" onClick={scrollToTop}>garment decoration businesses</a> of all sizes — from a single-head embroidery shop to a multi-location enterprise running embroidery, DTG, DTF, screen printing, heat seal, and licensed team gear simultaneously. If you manage customer logos, send proofs for approval, schedule production across machines, track operator time, or source blank garments from distributors like SanMar and alphabroder, Tracker replaces the spreadsheets, shared drives, and disconnected tools you currently juggle. We offer <a href="/contact" className="text-gold hover:text-gold-light underline font-medium" onClick={scrollToTop}>personalised demos</a> tailored to your specific decoration methods, volume, and integration needs so you can evaluate fit before committing. Most customers see ROI within the first 90 days through reduced reprints, faster proof cycles, and better machine utilisation.
             </>
           )
         },
@@ -41,7 +41,7 @@ const FAQ = () => {
           question: "What decoration methods does Tracker support?",
           answer: (
             <>
-              Tracker supports all major garment decoration methods: embroidery (multi-head, single-head, and flat), direct-to-garment (DTG) printing, DTF transfers, screen printing, heat-seal/heat-transfer vinyl, sublimation, and hybrid workflows. The platform manages <a href="/logo-management" className="text-gold hover:text-gold-light underline font-medium" onClick={scrollToTop}>logo files</a> in the appropriate format for each method — EMB/DST for embroidery, print-ready files for DTG/DTF, and separation files for screen printing.
+              Tracker supports every major garment decoration method used in commercial production: multi-head and single-head embroidery, direct-to-garment (DTG) printing, DTF (direct-to-film) transfers, screen printing (manual and automatic presses), heat-seal and heat-transfer vinyl (HTV), sublimation, and hybrid workflows that combine multiple methods on a single order. The platform manages <a href="/logo-management" className="text-gold hover:text-gold-light underline font-medium" onClick={scrollToTop}>logo files</a> in the appropriate format for each method — EMB and DST for embroidery, high-resolution print files for DTG and DTF, and colour-separated films for screen printing. <a href="/production-scheduling" className="text-gold hover:text-gold-light underline font-medium" onClick={scrollToTop}>Production scheduling</a> is method-aware, so thread-colour optimisation applies to embroidery jobs while ink-channel management applies to DTG queues.
             </>
           )
         },
@@ -49,7 +49,7 @@ const FAQ = () => {
           question: "Can I have a demo to see Tracker in action?",
           answer: (
             <>
-              Absolutely! We provide personalised demos tailored to your business needs. During the demo, we'll show you how Tracker's <a href="/modules" className="text-gold hover:text-gold-light underline font-medium" onClick={scrollToTop}>modules</a> work together — from <a href="/logo-management" className="text-gold hover:text-gold-light underline font-medium" onClick={scrollToTop}>cloud logo management</a> and <a href="/proof-approvals" className="text-gold hover:text-gold-light underline font-medium" onClick={scrollToTop}>digital proof approvals</a> to <a href="/production-scheduling" className="text-gold hover:text-gold-light underline font-medium" onClick={scrollToTop}>production scheduling</a> with barcode-to-machine integration. <a href="/contact" className="text-gold hover:text-gold-light underline font-medium" onClick={scrollToTop}>Contact our sales team</a> to schedule.
+              Absolutely! We provide personalised demos tailored to your specific business needs, decoration methods, and operational challenges. During a typical 45-minute demo, we walk through the <a href="/modules" className="text-gold hover:text-gold-light underline font-medium" onClick={scrollToTop}>modules</a> most relevant to you — whether that's <a href="/logo-management" className="text-gold hover:text-gold-light underline font-medium" onClick={scrollToTop}>cloud logo management</a> with EMB/DST file handling, <a href="/proof-approvals" className="text-gold hover:text-gold-light underline font-medium" onClick={scrollToTop}>digital proof approvals</a> with customer commenting, <a href="/production-scheduling" className="text-gold hover:text-gold-light underline font-medium" onClick={scrollToTop}>production scheduling</a> with thread-colour optimisation and barcode-to-machine integration, or distributor feeds from SanMar and alphabroder. Demos are conducted live by a product specialist who understands garment decoration workflows. <a href="/contact" className="text-gold hover:text-gold-light underline font-medium" onClick={scrollToTop}>Contact our sales team</a> to schedule a session.
             </>
           )
         }
@@ -63,7 +63,7 @@ const FAQ = () => {
           question: "How does Tracker handle embroidery logo files (EMB, DST)?",
           answer: (
             <>
-              Tracker provides <a href="/logo-management" className="text-gold hover:text-gold-light underline font-medium" onClick={scrollToTop}>cloud-based logo management</a> with full support for embroidery formats (EMB, DST, PES, EXP, JEF, XXX) and print-separation files. Every logo is tagged to its customer, versioned with an audit trail, and delivered to embroidery machines (Barudan bNET, Tajima Pulse) or DTG printers via barcode scanning — eliminating wrong-version reprints.
+              Tracker provides <a href="/logo-management" className="text-gold hover:text-gold-light underline font-medium" onClick={scrollToTop}>cloud-based logo management</a> with full support for industry-standard embroidery formats including EMB, DST, PES, EXP, JEF, and XXX. When you upload an embroidery file, Tracker auto-detects the format, reads stitch count and colour-stop data, and indexes the file by customer, logo name, thread palette, and hoop size. Every logo is automatically versioned with a complete audit trail showing who uploaded, edited, or approved each revision. When production begins, operators scan a job barcode and Tracker pushes the correct file version directly to the embroidery machine controller — Barudan via bNET or Tajima via Pulse/DG16 — with pre-configured needle assignments and thread sequences. This eliminates USB transfers, wrong-version errors, and the 3–5% reprint rate that plagues shops using shared drives.
             </>
           )
         },
@@ -71,7 +71,7 @@ const FAQ = () => {
           question: "How do digital proof approvals work?",
           answer: (
             <>
-              Tracker's <a href="/proof-approvals" className="text-gold hover:text-gold-light underline font-medium" onClick={scrollToTop}>digital proof approval system</a> generates professional proofs from your cloud logo library with garment mockups, thread charts, and placement views. Proofs are sent via email or customer portal. Customers review on any device, leave threaded comments, and approve digitally. On approval, the job auto-releases to <a href="/production-scheduling" className="text-gold hover:text-gold-light underline font-medium" onClick={scrollToTop}>production scheduling</a> with the approved file version locked.
+              Tracker's <a href="/proof-approvals" className="text-gold hover:text-gold-light underline font-medium" onClick={scrollToTop}>digital proof approval system</a> generates professional proofs from your cloud logo library. You select a logo, choose a garment mockup (polo, hoodie, cap, bag), position the decoration, and add thread-chart or ink specifications. The proof is sent to your customer via email with a unique approval link, or through the customer portal. Customers review on any device — desktop, tablet, or mobile — zoom into stitch detail, and leave threaded comments directly on the proof image. When satisfied, they click 'Approve' and the job automatically releases to <a href="/production-scheduling" className="text-gold hover:text-gold-light underline font-medium" onClick={scrollToTop}>production scheduling</a> with the approved file version locked. For licensed team gear, proofs can be routed through multiple stakeholders (coach, compliance officer, purchasing manager) before reaching production.
             </>
           )
         }
@@ -85,7 +85,7 @@ const FAQ = () => {
           question: "What embroidery and printing machines does Tracker integrate with?",
           answer: (
             <>
-              Tracker integrates with Barudan embroidery machines (via bNET), Tajima machines (via Pulse/DG16), Brother and Epson DTG printers, DTF transfer systems, Kornit digital printers, M&R and ROQ screen-printing presses, and heat-seal equipment. Barcode scanning triggers automatic file delivery and time tracking. See the full list on our <a href="/integrations" className="text-gold hover:text-gold-light underline font-medium" onClick={scrollToTop}>integrations page</a>.
+              Tracker's barcode-to-machine integration supports the industry's most widely used production equipment. For embroidery: Barudan machines via the bNET protocol and Tajima machines via Pulse/DG16 controllers — the design file, thread chart, speed settings, and needle assignments are pushed directly to the machine controller. For DTG printing: Brother GTX series, Epson SureColor F-series, and Kornit digital printers with platen assignment and pre-treatment workflow management. For DTF: Epson-based DTF systems with film-print, powder-cure, and press-application stage scheduling. For screen printing: M&R and ROQ automatic presses with screen-burn sequence scheduling. For heat seal: temperature, pressure, and dwell-time parameters are pre-loaded per job. See the full list on our <a href="/integrations" className="text-gold hover:text-gold-light underline font-medium" onClick={scrollToTop}>integrations page</a>.
             </>
           )
         },
@@ -93,7 +93,7 @@ const FAQ = () => {
           question: "How does thread colour optimisation improve production?",
           answer: (
             <>
-              Tracker's <a href="/production-scheduling" className="text-gold hover:text-gold-light underline font-medium" onClick={scrollToTop}>production scheduler</a> analyses queued jobs and groups them by thread palette, reducing changeovers by up to 40%. The algorithm considers needle positions, colour proximity, due dates, and hoop compatibility. Combined with order stacking (multiple small orders on one hoop run), shops report 20–25% more stitches per machine-hour.
+              Tracker's <a href="/production-scheduling" className="text-gold hover:text-gold-light underline font-medium" onClick={scrollToTop}>production scheduler</a> analyses all queued embroidery jobs and groups them by thread palette similarity. Orders that share the same thread colours are batched together into sequential runs, eliminating redundant needle re-threading. The algorithm considers needle positions (which colours are loaded on which needles), colour proximity (grouping similar palettes even if not identical), due dates (ensuring urgent orders aren't delayed by batching), and hoop compatibility (matching similar garment sizes). Combined with order stacking — where multiple small orders are placed on the same hoop run — Tracker customers report 20–25% more stitches per machine-hour and up to 40% fewer thread changeovers. For a typical 12-head Barudan machine, this translates to 1.5–2 additional productive hours per shift.
             </>
           )
         },
@@ -101,7 +101,7 @@ const FAQ = () => {
           question: "Does Tracker track operator time and machine efficiency?",
           answer: (
             <>
-              Yes. Operators clock on/off each job via barcode scan. Tracker captures actual run times, compares to estimates, and feeds data into quoting for more accurate pricing. Real-time dashboards show head utilisation, downtime reasons, stitch counts per hour, and job completion rates across all machines and shifts.
+              Yes. Operators clock on and off each job by scanning a barcode at their workstation. Tracker captures the actual run time for every job, compares it to the estimated time from your quoting system, and calculates labour cost per piece and per decoration method. Real-time dashboards display head utilisation percentages, downtime reasons (thread break, maintenance, setup), stitch counts per hour, and job completion rates across all machines and shifts. Supervisors can view performance by operator, machine, or decoration method to identify training opportunities and equipment issues. The time-tracking data feeds back into Tracker's quoting engine so future quotes reflect actual production costs rather than guesswork — improving margin accuracy by 15–20% on average.
             </>
           )
         }
@@ -115,7 +115,7 @@ const FAQ = () => {
           question: "What PLM and distributor integrations does Tracker support?",
           answer: (
             <>
-              Tracker integrates with blank-garment distributors including SanMar, alphabroder, and S&S Activewear for real-time inventory, pricing, and product catalogues. For PLM, Tracker connects to ERP systems (SAP, NetSuite, Sage, QuickBooks), e-commerce platforms (Shopify, WooCommerce), and shipping providers (ShipStation, UPS, FedEx). See the full ecosystem on our <a href="/integrations" className="text-emerald-400 hover:text-emerald-300 underline font-medium" onClick={scrollToTop}>integrations page</a>.
+              Tracker connects to blank-garment distributors including SanMar (50,000+ styles with live inventory, volume-tier pricing, and size/colour matrix), alphabroder (real-time stock and pricing API), and S&S Activewear. These <a href="/integrations" className="text-emerald-400 hover:text-emerald-300 underline font-medium" onClick={scrollToTop}>integrations</a> pull product catalogues, live pricing, and warehouse inventory directly into Tracker so your sales team quotes with accurate blank-garment costs. For PLM and ERP, Tracker integrates with SAP Business One, Oracle NetSuite, Sage 50/Intacct, QuickBooks Online and Desktop, Xero, and Microsoft Dynamics 365 — providing bi-directional data flow for invoices, payments, cost of goods, and general-ledger postings. E-commerce integrations with <a href="/integrations/shopify" className="text-emerald-400 hover:text-emerald-300 underline font-medium" onClick={scrollToTop}>Shopify</a> and <a href="/integrations/woocommerce" className="text-emerald-400 hover:text-emerald-300 underline font-medium" onClick={scrollToTop}>WooCommerce</a> sync orders, inventory, and fulfilment status.
             </>
           )
         },
@@ -123,7 +123,7 @@ const FAQ = () => {
           question: "Can Tracker connect to my Shopify or WooCommerce store?",
           answer: (
             <>
-              Yes. Tracker's e-commerce integrations provide two-way sync of orders, inventory, and products with <a href="/integrations/shopify" className="text-emerald-400 hover:text-emerald-300 underline font-medium" onClick={scrollToTop}>Shopify</a> and <a href="/integrations/woocommerce" className="text-emerald-400 hover:text-emerald-300 underline font-medium" onClick={scrollToTop}>WooCommerce</a>. Orders flow into Tracker's production pipeline automatically. Fulfilment status and tracking numbers push back to the store so customers see live updates.
+              Yes. Tracker's e-commerce integrations provide two-way sync with <a href="/integrations/shopify" className="text-emerald-400 hover:text-emerald-300 underline font-medium" onClick={scrollToTop}>Shopify</a> (including Shopify Plus) and <a href="/integrations/woocommerce" className="text-emerald-400 hover:text-emerald-300 underline font-medium" onClick={scrollToTop}>WooCommerce</a> stores. Orders placed on your webstore flow into Tracker's production pipeline automatically — including decoration specifications like logo selection, placement, thread colours, and garment sizes if you use a product configurator. Inventory levels sync across channels to prevent overselling. When orders are fulfilled, Tracker pushes tracking numbers and shipping status back to the store so customers receive automated fulfilment notifications. Product data (descriptions, images, pricing) can also be synchronised from Tracker to the storefront for consistent catalogue management.
             </>
           )
         }
@@ -137,7 +137,7 @@ const FAQ = () => {
           question: "How much is Tracker?",
           answer: (
             <>
-              Tracker offers flexible <a href="/pricing" className="text-gold hover:text-gold-light underline font-medium" onClick={scrollToTop}>pricing plans</a> based on the modules you need and user count. We offer Starter, Professional, and Enterprise tiers. Pricing includes hosting, support, and regular updates. <a href="/contact" className="text-gold hover:text-gold-light underline font-medium" onClick={scrollToTop}>Contact us</a> for a custom quote.
+              Tracker offers three <a href="/pricing" className="text-gold hover:text-gold-light underline font-medium" onClick={scrollToTop}>pricing tiers</a> — Starter, Professional, and Enterprise — based on the modules you need, user count, and decoration volume. All plans include cloud hosting, customer support, software updates, and data backups. The Starter plan suits small shops with core needs (order management, logo storage, basic scheduling). Professional adds advanced features like barcode-to-machine integration, distributor feeds, and digital proof approvals. Enterprise includes multi-location support, custom integrations, dedicated account management, and SLA guarantees. Pricing is subscription-based with no per-transaction fees. <a href="/contact" className="text-gold hover:text-gold-light underline font-medium" onClick={scrollToTop}>Contact us</a> for a custom quote tailored to your configuration.
             </>
           )
         },
@@ -145,7 +145,7 @@ const FAQ = () => {
           question: "Are there hidden costs once I have Tracker?",
           answer: (
             <>
-              No. All costs are documented in your project and licensing agreements. <a href="/pricing" className="text-gold hover:text-gold-light underline font-medium" onClick={scrollToTop}>Pricing</a> includes hosting, <a href="/support" className="text-gold hover:text-gold-light underline font-medium" onClick={scrollToTop}>support</a>, and updates. Any additional modules, integrations, or customisations are discussed and agreed upon before implementation.
+              No. All costs are documented in your project scope and licensing agreement before implementation begins. Your subscription includes cloud hosting, <a href="/support" className="text-gold hover:text-gold-light underline font-medium" onClick={scrollToTop}>support</a>, software updates, and security patches. If you need additional modules, integrations, or user seats in the future, these are discussed, scoped, and agreed upon before any work begins — with clear pricing. There are no per-transaction fees, no storage overage charges, and no surprise maintenance costs. Implementation services (data migration, integration configuration, training) are quoted separately at the start of the project so you know the total investment before signing.
             </>
           )
         }
@@ -159,7 +159,7 @@ const FAQ = () => {
           question: "How long does it take to implement Tracker?",
           answer: (
             <>
-              Depending on complexity, implementation ranges from 6 weeks to 12–18 months. A small embroidery shop with basic <a href="/integrations" className="text-gold hover:text-gold-light underline font-medium" onClick={scrollToTop}>integrations</a> goes live quickly, while large multi-location enterprises with ERP connectors need more time. We provide a detailed timeline during scoping. <a href="/get-started" className="text-gold hover:text-gold-light underline font-medium" onClick={scrollToTop}>Get started</a> today.
+              Implementation timelines depend on your business complexity, data migration requirements, and number of <a href="/integrations" className="text-gold hover:text-gold-light underline font-medium" onClick={scrollToTop}>integrations</a>. A small embroidery shop with basic order management and logo storage can go live in as few as 6 weeks. Mid-size operations with distributor integrations (SanMar, alphabroder), machine connections (Barudan, Tajima), and e-commerce sync (Shopify) typically take 3–4 months. Large multi-location enterprises with ERP connectors (SAP, NetSuite), custom workflows, and data migration from legacy systems may require 6–12 months. Every implementation includes a dedicated project manager, data migration support, integration configuration, user training (online or on-site), and a parallel-run period. <a href="/get-started" className="text-gold hover:text-gold-light underline font-medium" onClick={scrollToTop}>Get started</a> today.
             </>
           )
         },
@@ -167,7 +167,7 @@ const FAQ = () => {
           question: "Is Tracker available globally?",
           answer: (
             <>
-              Yes. We have customers in the UK, Europe, and USA, and the platform is accessible from any internet connection worldwide. The interface is currently available in English. Our cloud infrastructure ensures reliable performance globally.
+              Yes. Tracker is a cloud-based SaaS platform accessible from any internet connection worldwide. We have active customers in the United Kingdom, across Europe, and throughout the United States. The platform infrastructure is hosted on enterprise-grade cloud servers with data centres in multiple regions for low-latency access. The interface is currently available in English, with multi-language support on the roadmap. Currency handling supports GBP, EUR, USD, and other currencies for international operations. Support is provided during UK and US business hours with emergency coverage available for Enterprise customers.
             </>
           )
         },
@@ -175,7 +175,7 @@ const FAQ = () => {
           question: "Do I need technical knowledge to use Tracker?",
           answer: (
             <>
-              No. Tracker is designed for garment decoration professionals, not IT experts. Day-to-day operations are intuitive. We provide comprehensive <a href="/documentation" className="text-gold hover:text-gold-light underline font-medium" onClick={scrollToTop}>documentation</a>, <a href="/videos" className="text-gold hover:text-gold-light underline font-medium" onClick={scrollToTop}>video guides</a>, and ongoing <a href="/support" className="text-gold hover:text-gold-light underline font-medium" onClick={scrollToTop}>support</a> to ensure your team is proficient quickly.
+              No. Tracker is designed for garment decoration professionals — production managers, sales coordinators, shop-floor operators, and business owners — not IT specialists. Day-to-day operations like entering orders, managing logos, sending proofs, and scanning barcodes are intuitive and require minimal training. We provide comprehensive onboarding including role-based training sessions, detailed <a href="/documentation" className="text-gold hover:text-gold-light underline font-medium" onClick={scrollToTop}>documentation</a> with step-by-step guides, <a href="/videos" className="text-gold hover:text-gold-light underline font-medium" onClick={scrollToTop}>video walkthroughs</a> for every major workflow, and ongoing <a href="/support" className="text-gold hover:text-gold-light underline font-medium" onClick={scrollToTop}>support</a> via phone, email, and live chat. Most operators are proficient within 1–2 weeks.
             </>
           )
         }
