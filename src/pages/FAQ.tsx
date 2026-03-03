@@ -6,7 +6,7 @@ import { ScrollReveal } from "@/components/ui/scroll-reveal";
 import { Sparkles, HelpCircle, DollarSign, Settings, Globe } from "lucide-react";
 import { scrollToTop } from "@/utils/navigation";
 import PageSEO from "@/components/seo/PageSEO";
-import { faqSEO, faqBreadcrumb } from "@/data/seoData";
+import { faqSEO, faqBreadcrumb, faqPageSchema } from "@/data/seoData";
 import { useLocalization } from "@/contexts/LocalizationContext";
 
 interface FAQItem {
@@ -234,7 +234,7 @@ const FAQ = () => {
 
   return (
     <div className="min-h-screen bg-black">
-      <PageSEO seo={faqSEO} breadcrumbs={faqBreadcrumb} />
+      <PageSEO seo={faqSEO} breadcrumbs={faqBreadcrumb} extraSchema={faqPageSchema} />
       {/* Dark theme header gradient */}
       <div className="bg-gradient-to-r from-zinc-900 via-black to-emerald-950 relative overflow-hidden">
         {/* Background pattern */}

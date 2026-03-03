@@ -12,7 +12,7 @@ import { useIsMobile } from "@/hooks/use-mobile";
 import { motion } from "framer-motion";
 import PageSEO from "@/components/seo/PageSEO";
 import { homeSEO, homeBreadcrumb } from "@/data/seoData";
-import { organizationSchema } from "@/utils/seo";
+import { organizationSchema, softwareApplicationSchema } from "@/utils/seo";
 
 // Enhanced floating icons with gold and green harmony
 const FloatingIcons = () => {
@@ -52,7 +52,7 @@ const Index = () => {
       animate="visible" 
       variants={fadeInVariants}
     >
-      <PageSEO seo={homeSEO} breadcrumbs={homeBreadcrumb} extraSchema={organizationSchema} />
+      <PageSEO seo={homeSEO} breadcrumbs={homeBreadcrumb} extraSchema={[organizationSchema, softwareApplicationSchema]} />
       
       {/* Professional background with gold and green gradients */}
       <div className="fixed inset-0 pointer-events-none">

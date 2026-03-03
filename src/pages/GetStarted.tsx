@@ -6,7 +6,7 @@ import { OnboardingLayout } from "@/components/onboarding/OnboardingLayout";
 import { CurrentQuestion } from "@/components/onboarding/CurrentQuestion";
 import { CompleteStep } from "@/components/onboarding/CompleteStep";
 import PageSEO from "@/components/seo/PageSEO";
-import { getStartedSEO, getStartedBreadcrumb } from "@/data/seoData";
+import { getStartedSEO, getStartedBreadcrumb, getStartedHowToSchema } from "@/data/seoData";
 
 const GetStarted = () => {
   const { formData, updateFormData } = useOnboardingForm();
@@ -24,7 +24,7 @@ const GetStarted = () => {
 
   return (
     <>
-      <PageSEO seo={getStartedSEO} breadcrumbs={getStartedBreadcrumb} />
+      <PageSEO seo={getStartedSEO} breadcrumbs={getStartedBreadcrumb} extraSchema={getStartedHowToSchema} />
       <OnboardingLayout
         currentStep={currentStep}
         totalSteps={totalSteps}

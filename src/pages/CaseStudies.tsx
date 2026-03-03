@@ -7,7 +7,7 @@ import { ScrollReveal } from '@/components/ui/scroll-reveal';
 import { motion } from 'framer-motion';
 import { scrollToTop } from '@/utils/navigation';
 import PageSEO from "@/components/seo/PageSEO";
-import { caseStudiesSEO, caseStudiesBreadcrumb } from "@/data/seoData";
+import { caseStudiesSEO, caseStudiesBreadcrumb, benchmarkDatasetSchema } from "@/data/seoData";
 const CaseStudies = () => {
   const caseStudies = [{
     id: 'pure-optical',
@@ -74,7 +74,7 @@ const CaseStudies = () => {
     }]
   }];
   return <div className="min-h-screen bg-gradient-to-br from-white via-slate-50/30 to-emerald-50/20 dark:from-black dark:via-slate-950/30 dark:to-emerald-950/20">
-      <PageSEO seo={caseStudiesSEO} breadcrumbs={caseStudiesBreadcrumb} />
+      <PageSEO seo={caseStudiesSEO} breadcrumbs={caseStudiesBreadcrumb} extraSchema={benchmarkDatasetSchema} />
       {/* Hero Section */}
       <section className="pt-32 md:pt-36 pb-16">
         <div className="container mx-auto px-4">

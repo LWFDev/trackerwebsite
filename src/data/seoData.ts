@@ -1,4 +1,4 @@
-import { SEOData, generateBreadcrumbSchema, generateProductSchema, generateFAQSchema } from '@/utils/seo';
+import { SEOData, generateBreadcrumbSchema, generateProductSchema, generateFAQSchema, generateHowToSchema, generateDatasetSchema, generateModuleSchema, softwareApplicationSchema, generateVideoSchema } from '@/utils/seo';
 import { getCurrentOrigin } from '@/utils/domain';
 
 const GARMENT_KEYWORDS = "garment decoration software, DTG printing management, DTF transfer tracking, embroidery logo software, screen printing workflow, heat seal production, licensed team gear ordering, team gear customization, cloud logo management, production scheduling for embroidery, digital proof approvals, PLM garment integrations";
@@ -123,6 +123,63 @@ export const supportFAQSchema = generateFAQSchema([
   }
 ]);
 
+// === FAQ Page Schema (comprehensive) ===
+export const faqPageSchema = generateFAQSchema([
+  { question: "How do I know if Tracker is right for us?", answer: "Tracker is designed for garment decoration businesses of all sizes, from small startups to large enterprises. If you're managing orders, inventory, production, or customer relationships in the custom apparel industry, Tracker can streamline your operations." },
+  { question: "Can I have a demo to see Tracker in action?", answer: "Absolutely! We provide personalized demos tailored to your business needs. During the demo, we'll show you how Tracker's modules work together to manage your entire workflow." },
+  { question: "How much is Tracker?", answer: "Tracker offers flexible pricing plans to suit different business sizes and needs. Our pricing is based on the modules you need and the number of users with Starter, Professional, and Enterprise tiers." },
+  { question: "How long does it take to implement Tracker?", answer: "Depending on the complexity, it can be anything from 6 weeks to 12-18 months. Very big projects with multiple integrations (e.g. ERPs) will take longer than a smaller business with just website/accounts integration." },
+  { question: "Is Tracker available globally or just in the UK?", answer: "We have customers in UK/Europe and USA, and the system can be accessed from any internet connection. Currently we only offer the interface in English." },
+  { question: "Do I need technical knowledge to use your platform?", answer: "No, Tracker is designed to be user-friendly for garment decoration professionals, not IT experts. We provide comprehensive training, documentation and support." },
+  { question: "Can I customize the platform to match my brand?", answer: "Yes, Tracker can be customized to reflect your brand identity including your logo, color schemes, and certain interface elements." }
+]);
+
+// === HowTo Schema for Get Started ===
+export const getStartedHowToSchema = generateHowToSchema({
+  name: "How to Get Started with Tracker Garment Decoration Software",
+  description: "Step-by-step guide to onboarding with Tracker and setting up your garment decoration workflows.",
+  totalTime: "PT30M",
+  steps: [
+    { name: "Request a Demo", text: "Contact our sales team to schedule a personalized demo of Tracker tailored to your garment decoration business needs." },
+    { name: "Configure Your Workflows", text: "Work with our onboarding team to set up your embroidery, DTG, DTF, screen printing, or heat seal production workflows." },
+    { name: "Import Your Data", text: "Import your existing customer records, logo files, product catalogs, and order history into Tracker." },
+    { name: "Connect Integrations", text: "Connect Tracker to your existing tools: e-commerce platforms, ERP systems, embroidery machines, and shipping providers." },
+    { name: "Train Your Team", text: "Complete training sessions (online or in-person) to ensure your team is proficient with the platform." },
+    { name: "Go Live", text: "Launch Tracker for your production environment and start managing orders, logos, and production scheduling." }
+  ]
+});
+
+// === Dataset Schemas for benchmark assets ===
+export const benchmarkDatasetSchema = generateDatasetSchema({
+  name: "Tracker Garment Decoration Industry Benchmarks",
+  description: "Industry benchmark data for garment decoration businesses including production efficiency metrics, order processing times, and inventory accuracy rates.",
+  url: `${getCurrentOrigin()}/case-studies`,
+  keywords: ["garment decoration benchmarks", "embroidery production metrics", "DTG efficiency data", "screen printing performance"]
+});
+
+// === Video Schemas ===
+export const videoGuidesSchema = [
+  generateVideoSchema({ name: "Creating a New Customer Record in Tracker", description: "Learn how to create and manage customer records in Tracker's garment decoration software.", thumbnailUrl: "https://cdn.loom.com/sessions/thumbnails/787d441efae24527b4f3727d96dc1161-full.jpg", uploadDate: "2025-01-15", duration: "PT3M", embedUrl: "https://www.loom.com/embed/787d441efae24527b4f3727d96dc1161" }),
+  generateVideoSchema({ name: "Keying a Sales Order in Tracker", description: "Step-by-step walkthrough of entering a sales order in Tracker for garment decoration production.", thumbnailUrl: "https://cdn.loom.com/sessions/thumbnails/d2a5af2615e6447e944f285f6c3ff623-full.jpg", uploadDate: "2025-01-15", duration: "PT6M", embedUrl: "https://www.loom.com/embed/d2a5af2615e6447e944f285f6c3ff623" }),
+  generateVideoSchema({ name: "Printing, Starting and Finishing a Production Pick", description: "How to manage production picks from start to finish in Tracker's production management system.", thumbnailUrl: "https://cdn.loom.com/sessions/thumbnails/2cfc27bacef24dcb9ec97dc12d68186e-full.jpg", uploadDate: "2025-01-15", duration: "PT5M", embedUrl: "https://www.loom.com/embed/2cfc27bacef24dcb9ec97dc12d68186e" })
+];
+
+// === Module JSON-LD Schemas ===
+export const moduleSchemas: Record<string, object> = {
+  'sales-orders': generateModuleSchema({ name: "Sales & Order Management", description: "Manage garment decoration sales orders from quote to delivery with automated workflows, digital proofs, and customer approvals.", url: `${getCurrentOrigin()}/modules/sales-orders`, features: ["Quote generation", "Order entry", "Digital proof approvals", "Order tracking", "Invoice management"] }),
+  'warehouse': generateModuleSchema({ name: "Warehouse Management", description: "Track inventory movement, manage stock locations, and streamline receiving and shipping for garment decoration operations.", url: `${getCurrentOrigin()}/modules/warehouse`, features: ["Stock location tracking", "Receiving management", "Shipping integration", "Barcode scanning", "Pick & pack workflows"] }),
+  'customer-database': generateModuleSchema({ name: "Customer Database", description: "Centralized customer management with order history, logo preferences, pricing tiers, and communication tracking.", url: `${getCurrentOrigin()}/modules/customer-database`, features: ["Customer profiles", "Order history", "Pricing tiers", "Communication log", "Logo preferences"] }),
+  'logos': generateModuleSchema({ name: "Logo Management", description: "Cloud-based logo management for embroidery files (EMB, DST), print separations, and digital artwork with version control.", url: `${getCurrentOrigin()}/modules/logos`, features: ["Logo file storage", "Version control", "Embroidery file management", "Print separation files", "Digital proof creation"] }),
+  'product-designer': generateModuleSchema({ name: "Product Designer", description: "Design and configure decorated garment products with logo placement, thread colors, and decoration specifications.", url: `${getCurrentOrigin()}/modules/product-designer`, features: ["Logo placement", "Thread color selection", "Decoration specs", "Product configuration", "Mockup generation"] }),
+  'inventory': generateModuleSchema({ name: "Inventory Management", description: "Real-time inventory tracking for blank garments, decorated products, and supplies across all warehouse locations.", url: `${getCurrentOrigin()}/modules/inventory`, features: ["Real-time stock levels", "Reorder alerts", "Multi-location tracking", "Batch tracking", "Stock valuation"] }),
+  'production': generateModuleSchema({ name: "Production Management", description: "Schedule and track garment decoration production across embroidery, DTG, DTF, screen printing, and heat seal operations.", url: `${getCurrentOrigin()}/modules/production`, features: ["Production scheduling", "Machine integration", "Job tracking", "Quality control", "Capacity planning"] }),
+  'suppliers': generateModuleSchema({ name: "Supplier Management", description: "Manage blank garment suppliers, decoration supplies vendors, and track pricing, lead times, and purchase history.", url: `${getCurrentOrigin()}/modules/suppliers`, features: ["Supplier profiles", "Price lists", "Lead time tracking", "Purchase history", "Vendor evaluation"] }),
+  'purchase-orders': generateModuleSchema({ name: "Purchase Orders", description: "Create and manage purchase orders for blank garments, supplies, and materials with automated reordering and receiving.", url: `${getCurrentOrigin()}/modules/purchase-orders`, features: ["PO creation", "Auto-reorder", "Receiving workflow", "Cost tracking", "Supplier integration"] }),
+  'artworkers': generateModuleSchema({ name: "Artworkers", description: "Manage artwork and digitizing workflows for embroidery, screen printing, and digital printing with task assignment and approvals.", url: `${getCurrentOrigin()}/modules/artworkers`, features: ["Task assignment", "Artwork queue", "Digitizing workflow", "Approval process", "File management"] }),
+  'customer-portal': generateModuleSchema({ name: "Customer Portal", description: "Self-service portal for customers to place orders, approve proofs, track shipments, and manage their garment decoration accounts.", url: `${getCurrentOrigin()}/modules/customer-portal`, features: ["Online ordering", "Proof approvals", "Order tracking", "Account management", "Reorder functionality"] }),
+  'base-garments': generateModuleSchema({ name: "Base Garments", description: "Catalog and manage blank garment products from distributors like SanMar and alphabroder with real-time pricing and availability.", url: `${getCurrentOrigin()}/modules/base-garments`, features: ["Product catalog", "Distributor integration", "Real-time pricing", "Size/color matrix", "Availability checking"] }),
+};
+
 // Industry-specific SEO data
 export const industryPagesSEO = {
   'apparel-manufacturing': {
@@ -223,6 +280,11 @@ export const privacyBreadcrumb = generateBreadcrumbSchema([
   { name: "Privacy Policy", url: `${getCurrentOrigin()}/privacy` }
 ]);
 
+export const videosBreadcrumb = generateBreadcrumbSchema([
+  { name: "Home", url: `${getCurrentOrigin()}/` },
+  { name: "Video Guides", url: `${getCurrentOrigin()}/videos` }
+]);
+
 // Additional page SEO
 export const caseStudiesSEO: SEOData = {
   title: "Case Studies - Real Results with Tracker Garment Decoration Software",
@@ -243,6 +305,13 @@ export const getStartedSEO: SEOData = {
   description: "Start your Tracker onboarding. Configure embroidery, DTG, DTF, screen printing & heat seal workflows. Import logos, set up production scheduling & integrations.",
   keywords: GARMENT_KEYWORDS + ", trackmybusiness onboarding, get started, implementation",
   canonical: `${getCurrentOrigin()}/get-started`
+};
+
+export const videosSEO: SEOData = {
+  title: "Video Guides - See Tracker Garment Decoration Software in Action",
+  description: "Watch video demos of Tracker's garment decoration software. See how to manage customers, sales orders, logos, production, warehouse operations & more.",
+  keywords: GARMENT_KEYWORDS + ", garment decoration software demo, Tracker video guides, embroidery software walkthrough",
+  canonical: `${getCurrentOrigin()}/videos`
 };
 
 export const termsSEO: SEOData = {
