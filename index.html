@@ -14,8 +14,13 @@
     <meta name="language" content="English" />
     <meta name="revisit-after" content="3 days" />
     
-    <!-- Canonical URL -->
-    <link rel="canonical" href="https://www.trackmybusiness.us/" />
+    <!-- Canonical URL — .com is primary -->
+    <link rel="canonical" href="https://www.trackmybusiness.com/" />
+    
+    <!-- Hreflang alternates for dual-domain setup -->
+    <link rel="alternate" hreflang="en-us" href="https://www.trackmybusiness.us/" />
+    <link rel="alternate" hreflang="en" href="https://www.trackmybusiness.com/" />
+    <link rel="alternate" hreflang="x-default" href="https://www.trackmybusiness.com/" />
     
     <!-- Favicon -->
     <link rel="icon" href="/favicon.ico" type="image/x-icon" />
@@ -62,5 +67,118 @@
   <body>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
+
+    <!-- Static JSON-LD for crawlers that don't execute JavaScript -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "Tracker",
+      "alternateName": "Tracker Garment Decoration Software",
+      "description": "Cloud-based garment decoration software for embroidery, DTG, DTF, screen printing, heat seal & licensed team gear production management with logo management, digital proof approvals, and machine integrations",
+      "url": "https://www.trackmybusiness.com",
+      "applicationCategory": "BusinessApplication",
+      "applicationSubCategory": "Production Management Software",
+      "operatingSystem": "Web Browser (Chrome, Firefox, Safari, Edge)",
+      "offers": {
+        "@type": "AggregateOffer",
+        "priceCurrency": "USD",
+        "lowPrice": "99",
+        "highPrice": "499",
+        "offerCount": "3"
+      },
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.8",
+        "ratingCount": "92",
+        "bestRating": "5",
+        "worstRating": "1"
+      },
+      "featureList": [
+        "Cloud-based logo management",
+        "Digital proof approvals",
+        "Production scheduling",
+        "Embroidery machine integrations (Barudan, Tajima)",
+        "DTG/DTF print management",
+        "Screen printing workflow",
+        "Inventory & warehouse management",
+        "Sales order management",
+        "Customer portal",
+        "Purchase order management",
+        "Supplier management",
+        "Product designer"
+      ],
+      "screenshot": "https://www.trackmybusiness.com/lovable-uploads/c56cb027-984f-4170-9f87-1c1f0fc3760f.png",
+      "softwareVersion": "2025",
+      "releaseNotes": "Cloud-based SaaS platform with continuous updates"
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "Tracker",
+      "alternateName": "Tracker Garment Decoration Software",
+      "description": "Cloud-based garment decoration software for embroidery, DTG, DTF, screen printing, heat seal & licensed team gear production management",
+      "url": "https://www.trackmybusiness.com",
+      "logo": "https://www.trackmybusiness.com/lovable-uploads/c56cb027-984f-4170-9f87-1c1f0fc3760f.png",
+      "foundingDate": "2020",
+      "numberOfEmployees": "50-100",
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+1-800-TRACKER",
+        "contactType": "Customer Service",
+        "areaServed": ["US", "GB", "EU"],
+        "availableLanguage": ["en"],
+        "email": "info@trackmybusiness.us"
+      },
+      "address": {
+        "@type": "PostalAddress",
+        "addressCountry": "US"
+      },
+      "sameAs": [
+        "https://twitter.com/trackmybusiness",
+        "https://linkedin.com/company/trackmybusiness",
+        "https://facebook.com/trackmybusiness"
+      ]
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "Tracker",
+      "url": "https://www.trackmybusiness.com",
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": "https://www.trackmybusiness.com/search?q={search_term_string}",
+        "query-input": "required name=search_term_string"
+      }
+    }
+    </script>
+
+    <!-- Noscript fallback for crawlers -->
+    <noscript>
+      <div style="padding:40px;max-width:800px;margin:0 auto;font-family:system-ui,sans-serif">
+        <h1>Tracker - Cloud-Based Garment Decoration Software</h1>
+        <p>Streamline garment decoration with Tracker. Cloud-based software for embroidery, DTG, DTF, screen printing &amp; licensed team gear. Manage logos, proofs, production scheduling &amp; machine integrations.</p>
+        <h2>Core Features</h2>
+        <ul>
+          <li><a href="/logo-management">Cloud Logo Management</a> - EMB, DST, print-ready files</li>
+          <li><a href="/proof-approvals">Digital Proof Approvals</a> - Comments, versioning, auto-release</li>
+          <li><a href="/production-scheduling">Production Scheduling</a> - Thread optimisation, barcode-to-machine</li>
+          <li><a href="/integrations">Integrations</a> - SanMar, alphabroder, Shopify, ERP</li>
+          <li><a href="/modules">All Modules</a></li>
+        </ul>
+        <h2>Resources</h2>
+        <ul>
+          <li><a href="/faq">Frequently Asked Questions</a></li>
+          <li><a href="/videos">Video Guides</a></li>
+          <li><a href="/blog">Blog</a></li>
+          <li><a href="/pricing">Pricing</a></li>
+          <li><a href="/contact">Contact Us</a></li>
+        </ul>
+      </div>
+    </noscript>
   </body>
 </html>
