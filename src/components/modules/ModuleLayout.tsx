@@ -44,6 +44,7 @@ interface ModuleLayoutProps {
     title: string;
     description: string;
     image?: string;
+    images?: string[];
   };
   keyFeatures?: KeyFeatureSection;
   specialSection?: {
