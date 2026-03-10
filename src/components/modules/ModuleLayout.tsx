@@ -94,6 +94,7 @@ const ModuleLayout = ({
 }: ModuleLayoutProps) => {
   const mainRef = useRef<HTMLDivElement>(null);
    const [isLightboxOpen, setIsLightboxOpen] = useState(false);
+   const [isCarouselLightboxOpen, setIsCarouselLightboxOpen] = useState(false);
    const [carouselIndex, setCarouselIndex] = useState(0);
    const [lightboxIndex, setLightboxIndex] = useState(0);
   
