@@ -59,7 +59,12 @@ const ProductDesigner = () => {
       ]}
       mainSection={{
         title: "Design Stunning Products in Minutes",
-        description: "Whether you're creating custom garments, promotional items, or branded merchandise, our designer makes it fast and easy to produce professional results that impress."
+        description: "Whether you're creating custom garments, promotional items, or branded merchandise, our designer makes it fast and easy to produce professional results that impress.",
+        images: [
+          "/lovable-uploads/designer-show-saved.png",
+          "/lovable-uploads/designer-stores-publish.png",
+          "/lovable-uploads/designer-positions.png"
+        ]
       }}
       keyFeatures={{
         title: "Powerful Design Tools",
