@@ -52,7 +52,8 @@ const BaseGarments = () => {
       ]}
       mainSection={{
         title: "Build Your Core Product Catalog",
-        description: "Our Base Garments module lets you create a comprehensive product library that serves as the foundation for your entire decoration business."
+        description: "Our Base Garments module lets you create a comprehensive product library that serves as the foundation for your entire decoration business.",
+        image: "/lovable-uploads/base-garments-browse.png"
       }}
       keyFeatures={{
         title: "Complete Product Management",
