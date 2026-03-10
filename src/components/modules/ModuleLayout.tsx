@@ -1,8 +1,8 @@
 import { ReactNode, useRef, useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
-import { ArrowLeft, Star, ArrowRight, X, ZoomIn } from 'lucide-react';
-import { Dialog, DialogContent, DialogTrigger } from '@/components/ui/dialog';
+import { ArrowLeft, Star, ArrowRight, ZoomIn } from 'lucide-react';
+import { Dialog, DialogContent } from '@/components/ui/dialog';
 import { scrollToTop } from '@/utils/navigation';
 import PageSEO from '@/components/seo/PageSEO';
 import { generateModuleSEO, modulesBreadcrumb, moduleSchemas } from '@/data/seoData';
