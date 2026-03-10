@@ -410,49 +410,99 @@ const ModuleLayout = ({
                   {/* Glowing border effect */}
                   <div className="absolute -inset-1 bg-gradient-to-r from-gold-opacity-50 to-blue-500/50 rounded-lg blur opacity-25 group-hover:opacity-40 transition duration-300"></div>
                   
-                  <div className="relative bg-zinc-800/50 p-4 rounded-lg shadow-2xl border border-zinc-700/50 backdrop-blur-sm">
+                   <div className="relative bg-zinc-800/50 p-4 rounded-lg shadow-2xl border border-zinc-700/50 backdrop-blur-sm">
                     <img 
-                      src={allMainImages[carouselIndex]} 
-                      alt={`${mainSection.title} - ${carouselIndex + 1}`} 
-                      className="w-full max-h-[525px] rounded-lg shadow-lg border border-zinc-800 object-contain transform transition-all duration-500" 
-                    />
+                       src={allMainImages[carouselIndex]} 
+                       alt={`${mainSection.title} - ${carouselIndex + 1}`} 
+                       className="w-full max-h-[525px] rounded-lg shadow-lg border border-zinc-800 object-contain transform transition-all duration-500 cursor-pointer hover:opacity-90" 
+                       onClick={() => { setLightboxIndex(carouselIndex); setIsLightboxOpen(true); }}
+                     />
                     
-                    {/* Carousel controls */}
-                    {allMainImages.length > 1 && (
-                      <>
-                        <button 
-                          onClick={() => setCarouselIndex((prev) => (prev - 1 + allMainImages.length) % allMainImages.length)}
-                          className="absolute left-2 top-1/2 -translate-y-1/2 bg-zinc-900/80 hover:bg-zinc-800 text-white p-2 rounded-full transition-colors backdrop-blur-sm border border-zinc-700"
-                          aria-label="Previous screenshot"
-                        >
-                          <ArrowLeft className="h-4 w-4" />
-                        </button>
-                        <button 
-                          onClick={() => setCarouselIndex((prev) => (prev + 1) % allMainImages.length)}
-                          className="absolute right-2 top-1/2 -translate-y-1/2 bg-zinc-900/80 hover:bg-zinc-800 text-white p-2 rounded-full transition-colors backdrop-blur-sm border border-zinc-700"
-                          aria-label="Next screenshot"
-                        >
-                          <ArrowRight className="h-4 w-4" />
-                        </button>
-                        <div className="absolute bottom-6 left-1/2 -translate-x-1/2 flex gap-2">
-                          {allMainImages.map((_, i) => (
-                            <button 
-                              key={i}
-                              onClick={() => setCarouselIndex(i)}
-                              className={`w-2.5 h-2.5 rounded-full transition-all ${i === carouselIndex ? 'bg-gold scale-125' : 'bg-zinc-500 hover:bg-zinc-400'}`}
-                              aria-label={`View screenshot ${i + 1}`}
-                            />
-                          ))}
-                        </div>
-                      </>
-                    )}
+                     {/* Click to enlarge hint */}
+                     <div className="absolute top-6 right-6 bg-zinc-900/80 text-white/70 text-xs px-2 py-1 rounded-full flex items-center gap-1 opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none">
+                       <ZoomIn className="h-3 w-3" /> Click to enlarge
+                     </div>
                     
-                    {/* Floating indicators */}
-                    <div className="absolute -top-2 -right-2 w-4 h-4 bg-green-400 rounded-full animate-ping"></div>
-                    <div className="absolute -bottom-2 -left-2 w-3 h-3 bg-gold rounded-full animate-pulse delay-150"></div>
-                  </div>
-                </div>
-              </div>}
+                     {/* Carousel controls */}
+                     {allMainImages.length > 1 && (
+                       <>
+                         <button 
+                           onClick={(e) => { e.stopPropagation(); setCarouselIndex((prev) => (prev - 1 + allMainImages.length) % allMainImages.length); }}
+                           className="absolute left-2 top-1/2 -translate-y-1/2 bg-zinc-900/80 hover:bg-zinc-800 text-white p-2 rounded-full transition-colors backdrop-blur-sm border border-zinc-700"
+                           aria-label="Previous screenshot"
+                         >
+                           <ArrowLeft className="h-4 w-4" />
+                         </button>
+                         <button 
+                           onClick={(e) => { e.stopPropagation(); setCarouselIndex((prev) => (prev + 1) % allMainImages.length); }}
+                           className="absolute right-2 top-1/2 -translate-y-1/2 bg-zinc-900/80 hover:bg-zinc-800 text-white p-2 rounded-full transition-colors backdrop-blur-sm border border-zinc-700"
+                           aria-label="Next screenshot"
+                         >
+                           <ArrowRight className="h-4 w-4" />
+                         </button>
+                         <div className="absolute bottom-6 left-1/2 -translate-x-1/2 flex gap-2">
+                           {allMainImages.map((_, i) => (
+                             <button 
+                               key={i}
+                               onClick={(e) => { e.stopPropagation(); setCarouselIndex(i); }}
+                               className={`w-2.5 h-2.5 rounded-full transition-all ${i === carouselIndex ? 'bg-gold scale-125' : 'bg-zinc-500 hover:bg-zinc-400'}`}
+                               aria-label={`View screenshot ${i + 1}`}
+                             />
+                           ))}
+                         </div>
+                       </>
+                     )}
+                    
+                     {/* Floating indicators */}
+                     <div className="absolute -top-2 -right-2 w-4 h-4 bg-green-400 rounded-full animate-ping"></div>
+                     <div className="absolute -bottom-2 -left-2 w-3 h-3 bg-gold rounded-full animate-pulse delay-150"></div>
+                   </div>
+                 </div>
+               </div>}
+               
+               {/* Lightbox Dialog */}
+               {allMainImages.length > 0 && (
+                 <Dialog open={isLightboxOpen} onOpenChange={setIsLightboxOpen}>
+                   <DialogContent className="max-w-[90vw] max-h-[90vh] w-auto p-0 bg-zinc-950 border-zinc-700 overflow-hidden">
+                     <div className="relative flex items-center justify-center p-2">
+                       <img 
+                         src={allMainImages[lightboxIndex]} 
+                         alt={`${mainSection.title} - ${lightboxIndex + 1}`} 
+                         className="max-w-full max-h-[85vh] object-contain rounded-lg"
+                       />
+                       
+                       {allMainImages.length > 1 && (
+                         <>
+                           <button 
+                             onClick={() => setLightboxIndex((prev) => (prev - 1 + allMainImages.length) % allMainImages.length)}
+                             className="absolute left-3 top-1/2 -translate-y-1/2 bg-zinc-900/90 hover:bg-zinc-800 text-white p-3 rounded-full transition-colors backdrop-blur-sm border border-zinc-700"
+                             aria-label="Previous screenshot"
+                           >
+                             <ArrowLeft className="h-5 w-5" />
+                           </button>
+                           <button 
+                             onClick={() => setLightboxIndex((prev) => (prev + 1) % allMainImages.length)}
+                             className="absolute right-3 top-1/2 -translate-y-1/2 bg-zinc-900/90 hover:bg-zinc-800 text-white p-3 rounded-full transition-colors backdrop-blur-sm border border-zinc-700"
+                             aria-label="Next screenshot"
+                           >
+                             <ArrowRight className="h-5 w-5" />
+                           </button>
+                           <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2 bg-zinc-900/80 px-3 py-2 rounded-full backdrop-blur-sm">
+                             {allMainImages.map((_, i) => (
+                               <button 
+                                 key={i}
+                                 onClick={() => setLightboxIndex(i)}
+                                 className={`w-3 h-3 rounded-full transition-all ${i === lightboxIndex ? 'bg-gold scale-125' : 'bg-zinc-500 hover:bg-zinc-400'}`}
+                                 aria-label={`View screenshot ${i + 1}`}
+                               />
+                             ))}
+                           </div>
+                         </>
+                       )}
+                     </div>
+                   </DialogContent>
+                 </Dialog>
+               )}
             </div>
             
           </div>
