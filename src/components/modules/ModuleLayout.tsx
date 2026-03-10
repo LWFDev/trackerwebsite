@@ -416,7 +416,7 @@ const ModuleLayout = ({
                        src={allMainImages[carouselIndex]} 
                        alt={`${mainSection.title} - ${carouselIndex + 1}`} 
                        className="w-full max-h-[525px] rounded-lg shadow-lg border border-zinc-800 object-contain transform transition-all duration-500 cursor-pointer hover:opacity-90" 
-                       onClick={() => { setLightboxIndex(carouselIndex); setIsLightboxOpen(true); }}
+                       onClick={() => { setLightboxIndex(carouselIndex); setIsCarouselLightboxOpen(true); }}
                      />
                     
                      {/* Click to enlarge hint */}
