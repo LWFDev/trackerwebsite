@@ -52,7 +52,8 @@ const BaseGarments = () => {
       ]}
       mainSection={{
         title: "Build Your Core Product Catalog",
-        description: "Our Base Garments module lets you create a comprehensive product library that serves as the foundation for your entire decoration business."
+        description: "Our Base Garments module lets you create a comprehensive product library that serves as the foundation for your entire decoration business.",
+        image: "/lovable-uploads/base-garments-browse.png"
       }}
       keyFeatures={{
         title: "Complete Product Management",
@@ -94,6 +95,7 @@ const BaseGarments = () => {
         title: "Supplier Integration",
         subtitle: "Connected Catalog",
         description: "Maintain an up-to-date product catalog with direct connections to your key suppliers.",
+        image: "/lovable-uploads/base-garments-store-publish.png",
         items: [
           { text: "Direct import of new styles from major industry suppliers", icon: <PlusCircle className="h-5 w-5" /> },
           { text: "Automatic price updates from connected suppliers", icon: <Tag className="h-5 w-5" /> },
