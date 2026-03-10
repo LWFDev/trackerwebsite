@@ -53,7 +53,11 @@ const CustomerDatabase = () => {
       mainSection={{
         title: "Centralize Your Customer Information",
         description: "Our Customer Database module creates a single source of truth for all customer data, making it easy to access complete information and provide exceptional service.",
-        image: "/lovable-uploads/customers-browse.png"
+        images: [
+          "/lovable-uploads/customers-browse.png",
+          "/lovable-uploads/customers-types.png",
+          "/lovable-uploads/customers-mail-logs.png"
+        ]
       }}
       keyFeatures={{
         title: "Comprehensive Customer Management",

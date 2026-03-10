@@ -44,6 +44,7 @@ interface ModuleLayoutProps {
     title: string;
     description: string;
     image?: string;
+    images?: string[];
   };
   keyFeatures?: KeyFeatureSection;
   specialSection?: {
@@ -93,6 +94,9 @@ const ModuleLayout = ({
 }: ModuleLayoutProps) => {
   const mainRef = useRef<HTMLDivElement>(null);
   const [isLightboxOpen, setIsLightboxOpen] = useState(false);
+  const [carouselIndex, setCarouselIndex] = useState(0);
+  
+  const allMainImages = mainSection?.images || (mainSection?.image ? [mainSection.image] : []);
   
   const getBgColor = () => {
     switch (color) {
@@ -392,13 +396,47 @@ const ModuleLayout = ({
                 </div>
               </div>
               
-              {mainSection.image && <div className="flex justify-center">
-                <div className="relative group">
+              {allMainImages.length > 0 && <div className="flex justify-center">
+                <div className="relative group w-full">
                   {/* Glowing border effect */}
                   <div className="absolute -inset-1 bg-gradient-to-r from-gold-opacity-50 to-blue-500/50 rounded-lg blur opacity-25 group-hover:opacity-40 transition duration-300"></div>
                   
                   <div className="relative bg-zinc-800/50 p-4 rounded-lg shadow-2xl border border-zinc-700/50 backdrop-blur-sm">
-                    <img src={mainSection.image} alt={mainSection.title} className="w-full max-h-[525px] rounded-lg shadow-lg border border-zinc-800 object-contain transform transition-transform duration-300 group-hover:scale-105" />
+                    <img 
+                      src={allMainImages[carouselIndex]} 
+                      alt={`${mainSection.title} - ${carouselIndex + 1}`} 
+                      className="w-full max-h-[525px] rounded-lg shadow-lg border border-zinc-800 object-contain transform transition-all duration-500" 
+                    />
+                    
+                    {/* Carousel controls */}
+                    {allMainImages.length > 1 && (
+                      <>
+                        <button 
+                          onClick={() => setCarouselIndex((prev) => (prev - 1 + allMainImages.length) % allMainImages.length)}
+                          className="absolute left-2 top-1/2 -translate-y-1/2 bg-zinc-900/80 hover:bg-zinc-800 text-white p-2 rounded-full transition-colors backdrop-blur-sm border border-zinc-700"
+                          aria-label="Previous screenshot"
+                        >
+                          <ArrowLeft className="h-4 w-4" />
+                        </button>
+                        <button 
+                          onClick={() => setCarouselIndex((prev) => (prev + 1) % allMainImages.length)}
+                          className="absolute right-2 top-1/2 -translate-y-1/2 bg-zinc-900/80 hover:bg-zinc-800 text-white p-2 rounded-full transition-colors backdrop-blur-sm border border-zinc-700"
+                          aria-label="Next screenshot"
+                        >
+                          <ArrowRight className="h-4 w-4" />
+                        </button>
+                        <div className="absolute bottom-6 left-1/2 -translate-x-1/2 flex gap-2">
+                          {allMainImages.map((_, i) => (
+                            <button 
+                              key={i}
+                              onClick={() => setCarouselIndex(i)}
+                              className={`w-2.5 h-2.5 rounded-full transition-all ${i === carouselIndex ? 'bg-gold scale-125' : 'bg-zinc-500 hover:bg-zinc-400'}`}
+                              aria-label={`View screenshot ${i + 1}`}
+                            />
+                          ))}
+                        </div>
+                      </>
+                    )}
                     
                     {/* Floating indicators */}
                     <div className="absolute -top-2 -right-2 w-4 h-4 bg-green-400 rounded-full animate-ping"></div>
