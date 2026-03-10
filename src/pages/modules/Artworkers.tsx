@@ -33,8 +33,7 @@ const Artworkers = () => {
       ]}
       mainSection={{
         title: "Streamline Your Artwork Workflow",
-        description: "Our Artworkers module provides the tools you need to manage artwork creation, revisions, and approvals with complete visibility and control.",
-        image: "/lovable-uploads/artworkers-manager.png"
+        description: "Our Artworkers module provides the tools you need to manage artwork creation, revisions, and approvals with complete visibility and control."
       }}
       keyFeatures={{
         title: "Comprehensive Artwork Management",
