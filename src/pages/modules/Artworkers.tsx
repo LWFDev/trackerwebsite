@@ -8,7 +8,7 @@ const Artworkers = () => {
       title="Artworkers"
       description="Assign artwork tasks, manage approvals, and ensure timely proof delivery for every order."
       color="emerald"
-      heroImage="/lovable-uploads/artworkers-overview-report.png"
+      heroImage="/lovable-uploads/artworkers-manager.png"
       stats={[
         {
           value: "60%",
