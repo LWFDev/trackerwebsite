@@ -94,6 +94,9 @@ const ModuleLayout = ({
 }: ModuleLayoutProps) => {
   const mainRef = useRef<HTMLDivElement>(null);
   const [isLightboxOpen, setIsLightboxOpen] = useState(false);
+  const [carouselIndex, setCarouselIndex] = useState(0);
+  
+  const allMainImages = mainSection?.images || (mainSection?.image ? [mainSection.image] : []);
   
   const getBgColor = () => {
     switch (color) {
