@@ -94,6 +94,7 @@ const ModuleLayout = ({
 }: ModuleLayoutProps) => {
   const mainRef = useRef<HTMLDivElement>(null);
    const [isLightboxOpen, setIsLightboxOpen] = useState(false);
+   const [isCarouselLightboxOpen, setIsCarouselLightboxOpen] = useState(false);
    const [carouselIndex, setCarouselIndex] = useState(0);
    const [lightboxIndex, setLightboxIndex] = useState(0);
   
@@ -415,7 +416,7 @@ const ModuleLayout = ({
                        src={allMainImages[carouselIndex]} 
                        alt={`${mainSection.title} - ${carouselIndex + 1}`} 
                        className="w-full max-h-[525px] rounded-lg shadow-lg border border-zinc-800 object-contain transform transition-all duration-500 cursor-pointer hover:opacity-90" 
-                       onClick={() => { setLightboxIndex(carouselIndex); setIsLightboxOpen(true); }}
+                       onClick={() => { setLightboxIndex(carouselIndex); setIsCarouselLightboxOpen(true); }}
                      />
                     
                      {/* Click to enlarge hint */}
@@ -462,7 +463,7 @@ const ModuleLayout = ({
                
                {/* Lightbox Dialog */}
                {allMainImages.length > 0 && (
-                 <Dialog open={isLightboxOpen} onOpenChange={setIsLightboxOpen}>
+                 <Dialog open={isCarouselLightboxOpen} onOpenChange={setIsCarouselLightboxOpen}>
                    <DialogContent className="max-w-[90vw] max-h-[90vh] w-auto p-0 bg-zinc-950 border-zinc-700 overflow-hidden">
                      <div className="relative flex items-center justify-center p-2">
                        <img 
