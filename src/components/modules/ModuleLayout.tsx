@@ -1,4 +1,4 @@
-import { ReactNode, useRef, useState } from 'react';
+import { ReactNode, useRef, useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { ArrowLeft, Star, ArrowRight, X, ZoomIn } from 'lucide-react';
@@ -97,7 +97,15 @@ const ModuleLayout = ({
   const [carouselIndex, setCarouselIndex] = useState(0);
   
   const allMainImages = mainSection?.images || (mainSection?.image ? [mainSection.image] : []);
-  
+
+  useEffect(() => {
+    if (allMainImages.length <= 1) return;
+    const timer = setInterval(() => {
+      setCarouselIndex((prev) => (prev + 1) % allMainImages.length);
+    }, 4000);
+    return () => clearInterval(timer);
+  }, [allMainImages.length]);
+
   const getBgColor = () => {
     switch (color) {
       case 'blue':
