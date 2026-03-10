@@ -408,9 +408,6 @@ const ModuleLayout = ({
               </div>
             </div>
             
-            {mainSection.image && <div className="flex justify-center mt-12">
-                <img src={mainSection.image} alt={mainSection.title} className="max-w-full rounded-lg shadow-lg border border-zinc-800" />
-              </div>}
           </div>
         </section>}
 
