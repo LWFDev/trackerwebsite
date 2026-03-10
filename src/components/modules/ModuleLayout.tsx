@@ -93,8 +93,9 @@ const ModuleLayout = ({
   seoKeywords
 }: ModuleLayoutProps) => {
   const mainRef = useRef<HTMLDivElement>(null);
-  const [isLightboxOpen, setIsLightboxOpen] = useState(false);
-  const [carouselIndex, setCarouselIndex] = useState(0);
+   const [isLightboxOpen, setIsLightboxOpen] = useState(false);
+   const [carouselIndex, setCarouselIndex] = useState(0);
+   const [lightboxIndex, setLightboxIndex] = useState(0);
   
   const allMainImages = mainSection?.images || (mainSection?.image ? [mainSection.image] : []);
 
